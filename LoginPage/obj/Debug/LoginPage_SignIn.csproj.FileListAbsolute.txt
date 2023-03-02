@@ -1,0 +1,17 @@
+E:\C#\GiaoDienPBL3\LoginPage\bin\Debug\LoginPage.exe.config
+E:\C#\GiaoDienPBL3\LoginPage\bin\Debug\LoginPage.exe
+E:\C#\GiaoDienPBL3\LoginPage\bin\Debug\LoginPage.pdb
+E:\C#\GiaoDienPBL3\LoginPage\bin\Debug\Guna.UI2.dll
+E:\C#\GiaoDienPBL3\LoginPage\obj\Debug\LoginPage_SignIn.csproj.AssemblyReference.cache
+E:\C#\GiaoDienPBL3\LoginPage\obj\Debug\LoginPage_SignIn.csproj.SuggestedBindingRedirects.cache
+E:\C#\GiaoDienPBL3\LoginPage\obj\Debug\LoginPage.Form1.resources
+E:\C#\GiaoDienPBL3\LoginPage\obj\Debug\LoginPage.Properties.Resources.resources
+E:\C#\GiaoDienPBL3\LoginPage\obj\Debug\LoginPage_SignIn.csproj.GenerateResource.cache
+E:\C#\GiaoDienPBL3\LoginPage\obj\Debug\LoginPage_SignIn.csproj.CoreCompileInputs.cache
+E:\C#\GiaoDienPBL3\LoginPage\obj\Debug\LoginPage_SignIn.csproj.CopyComplete
+E:\C#\GiaoDienPBL3\LoginPage\obj\Debug\LoginPage.exe
+E:\C#\GiaoDienPBL3\LoginPage\obj\Debug\LoginPage.pdb
+E:\C#\GiaoDienPBL3\LoginPage\bin\Debug\Bunifu.UI.WinForms.BunifuFormDock.dll
+E:\C#\GiaoDienPBL3\LoginPage\obj\Debug\LoginPage.exe.licenses
+E:\C#\GiaoDienPBL3\LoginPage\bin\Debug\Bunifu.UI.WinForms.BunifuTextbox.dll
+E:\C#\GiaoDienPBL3\LoginPage\bin\Debug\Bunifu_UI_v1.5.3.dll
