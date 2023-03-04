@@ -41,6 +41,13 @@ namespace GiaoDienPBL3.UC
                 panelBackGroundMonAn.BackColor = Color.FromArgb(4, 121, 171);
             else
                 panelBackGroundMonAn.BackColor = Color.Transparent;
+            UC_ChiTietMonAn myUCChiTietMonAn = new UC_ChiTietMonAn();
+            myUCChiTietMonAn.TextTenMonAn = lblTenMonAn.Text;
+            myUCChiTietMonAn.TextGiaMonAn = lblGiaMonAn.Text;
+            myUCChiTietMonAn.TextSoLuongMonAn = 1 + "";
+            lblTenMonAn.Tag = (Convert.ToInt32(lblTenMonAn.Tag) + 1).ToString();
+            myUCChiTietMonAn.Width = 270;
+            Form1.myUC_QuanLyMenu.flowLayoutPanelChiTietMonAn.Controls.Add(myUCChiTietMonAn);
         }
     }
 }

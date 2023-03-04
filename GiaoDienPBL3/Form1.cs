@@ -7,14 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using GiaoDienPBL3.UC;
+using Guna.UI2.WinForms;
 
 namespace GiaoDienPBL3
 {
     public partial class Form1 : Form
     {
-        UC_TrangChu myUC_TrangChu = new UC_TrangChu();
-        UC_QuanLyMenu myUC_QuanLyMenu = new UC_QuanLyMenu();
-        UC_QuanLyMay myUC_QuanLyMay = new UC_QuanLyMay();
+        public static UC_TrangChu myUC_TrangChu = new UC_TrangChu();
+        public static UC_QuanLyMenu myUC_QuanLyMenu = new UC_QuanLyMenu();
+        public static UC_QuanLyMay myUC_QuanLyMay = new UC_QuanLyMay();
         public Form1()
         {
             InitializeComponent();

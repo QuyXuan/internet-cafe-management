@@ -20,38 +20,19 @@ namespace GiaoDienPBL3.UC
 
         private void UC_QuanLyMenu_Load(object sender, EventArgs e)
         {
-            //SetScrollBarMonAn();
         }
 
-        //private void SetScrollBarMonAn()
-        //{
-        //    // Gán sự kiện Scroll cho thanh cuộn
-        //    scrollBarMonAn.Maximum = panelMonAn.Height;
-        //    scrollBarMonAn.Scroll += new ScrollEventHandler(ScrollBarControl);
-        //}
-
-        //private void ScrollBarControl(object sender, ScrollEventArgs e)
-        //{
-        //    // Thay đổi vị trí của Panel dựa trên giá trị của thanh cuộn
-        //    panelMonAn.Location = new Point(panelMonAn.Location.X, -e.NewValue);
-        //}
-
-        private void btnAnhMonAn_Click(object sender, EventArgs e)
+        private void uC_MonAn_Click(object sender, EventArgs e)
         {
-            OpenFileDialog openFileDialog1 = new OpenFileDialog();
-            // Cấu hình để hiển thị chi tiết các tập tin ảnh
-            openFileDialog1.Filter = "Image files (*.jpg, *.jpeg, *.png) | *.jpg; *.jpeg; *.png";
-            // Mở hộp thoại FileDialog
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)
-            {
-                // Kiểm tra xem người dùng đã chọn một tập tin ảnh hợp lệ chưa
-                if (openFileDialog1.CheckFileExists)
-                {
-                    // Tải ảnh được chọn vào chương trình của bạn
-                    Image img = Image.FromFile(openFileDialog1.FileName);
-                    //
-                }
-            }
+            //UC_MonAn myUC_MonAn = sender as UC_MonAn;
+            //UC_ChiTietMonAn myUcChiTietMonAn = new UC_ChiTietMonAn();
+            //myUcChiTietMonAn.TextGiaMonAn = myUC_MonAn.TextGiaMonAn;
+            //myUcChiTietMonAn.TextSoLuongMonAn = myUC_MonAn.Tag.ToString();
+            //myUcChiTietMonAn.TextGiaMonAn = myUC_MonAn.TextGiaMonAn;
+            //myUC_MonAn.Tag = (Convert.ToInt32(myUC_MonAn.Tag) + 1).ToString();
+            //myUcChiTietMonAn.Width = 370;
+            //flowLayoutPanelChiTietMonAn.Controls.Add(myUcChiTietMonAn);
+            
         }
     }
 }

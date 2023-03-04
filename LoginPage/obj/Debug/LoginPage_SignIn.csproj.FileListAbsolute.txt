@@ -15,3 +15,17 @@ E:\C#\GiaoDienPBL3\LoginPage\bin\Debug\Bunifu.UI.WinForms.BunifuFormDock.dll
 E:\C#\GiaoDienPBL3\LoginPage\obj\Debug\LoginPage.exe.licenses
 E:\C#\GiaoDienPBL3\LoginPage\bin\Debug\Bunifu.UI.WinForms.BunifuTextbox.dll
 E:\C#\GiaoDienPBL3\LoginPage\bin\Debug\Bunifu_UI_v1.5.3.dll
+C:\Users\ADMIN\source\repos\DemoPBL03_GUI\LoginPage\bin\Debug\LoginPage.exe.config
+C:\Users\ADMIN\source\repos\DemoPBL03_GUI\LoginPage\bin\Debug\LoginPage.exe
+C:\Users\ADMIN\source\repos\DemoPBL03_GUI\LoginPage\bin\Debug\LoginPage.pdb
+C:\Users\ADMIN\source\repos\DemoPBL03_GUI\LoginPage\bin\Debug\Guna.UI2.dll
+C:\Users\ADMIN\source\repos\DemoPBL03_GUI\LoginPage\obj\Debug\LoginPage_SignIn.csproj.AssemblyReference.cache
+C:\Users\ADMIN\source\repos\DemoPBL03_GUI\LoginPage\obj\Debug\LoginPage_SignIn.csproj.SuggestedBindingRedirects.cache
+C:\Users\ADMIN\source\repos\DemoPBL03_GUI\LoginPage\obj\Debug\LoginPage.Form1.resources
+C:\Users\ADMIN\source\repos\DemoPBL03_GUI\LoginPage\obj\Debug\LoginPage.Properties.Resources.resources
+C:\Users\ADMIN\source\repos\DemoPBL03_GUI\LoginPage\obj\Debug\LoginPage_SignIn.csproj.GenerateResource.cache
+C:\Users\ADMIN\source\repos\DemoPBL03_GUI\LoginPage\obj\Debug\LoginPage.exe.licenses
+C:\Users\ADMIN\source\repos\DemoPBL03_GUI\LoginPage\obj\Debug\LoginPage_SignIn.csproj.CoreCompileInputs.cache
+C:\Users\ADMIN\source\repos\DemoPBL03_GUI\LoginPage\obj\Debug\LoginPage_SignIn.csproj.CopyComplete
+C:\Users\ADMIN\source\repos\DemoPBL03_GUI\LoginPage\obj\Debug\LoginPage.exe
+C:\Users\ADMIN\source\repos\DemoPBL03_GUI\LoginPage\obj\Debug\LoginPage.pdb
