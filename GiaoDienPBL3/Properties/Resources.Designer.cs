@@ -363,6 +363,16 @@ namespace GiaoDienPBL3.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Lovepik_com_450045211_Vector_Trash_Icon {
+            get {
+                object obj = ResourceManager.GetObject("Lovepik_com-450045211-Vector Trash Icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap mae_mu_H5Hj8QV2Tx4_unsplash {
             get {
                 object obj = ResourceManager.GetObject("mae-mu-H5Hj8QV2Tx4-unsplash", resourceCulture);
@@ -386,6 +396,16 @@ namespace GiaoDienPBL3.Properties {
         internal static System.Drawing.Bitmap melissa_walker_horn_gtDYwUIr9Vg_unsplash {
             get {
                 object obj = ResourceManager.GetObject("melissa-walker-horn-gtDYwUIr9Vg-unsplash", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pngtree_trash_bin_icon_png_image_1252142 {
+            get {
+                object obj = ResourceManager.GetObject("pngtree-trash-bin-icon-png-image_1252142", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

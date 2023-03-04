@@ -139,6 +139,9 @@
   <data name="icons8-filled-circle-24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-filled-circle-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="pngtree-trash-bin-icon-png-image_1252142" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pngtree-trash-bin-icon-png-image_1252142.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icons8-logout-40" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-logout-40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -193,6 +196,9 @@
   <data name="icons8-blur-50" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-blur-50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icons8-available-updates-24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-available-updates-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="demi-deherrera-L-sm1B4L1Ns-unsplash" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\demi-deherrera-L-sm1B4L1Ns-unsplash.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -214,7 +220,7 @@
   <data name="mae-mu-H5Hj8QV2Tx4-unsplash" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\mae-mu-H5Hj8QV2Tx4-unsplash.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-available-updates-24" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-available-updates-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Lovepik_com-450045211-Vector Trash Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Lovepik_com-450045211-Vector Trash Icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

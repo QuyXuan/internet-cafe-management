@@ -258,5 +258,11 @@
   <ItemGroup>
     <None Include="Resources\icons8-available-updates-24.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pngtree-trash-bin-icon-png-image_1252142.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Lovepik_com-450045211-Vector Trash Icon.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
