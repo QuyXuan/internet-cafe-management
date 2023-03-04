@@ -128,12 +128,11 @@
         }
 
         #endregion
-
-        private Guna.UI2.WinForms.Guna2ShadowPanel panelBackGroundMonAn;
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel2;
         private System.Windows.Forms.Label lblTenMonAn;
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
         private System.Windows.Forms.Label lblGiaMonAn;
         private System.Windows.Forms.PictureBox picMonAn;
+        public Guna.UI2.WinForms.Guna2ShadowPanel panelBackGroundMonAn;
     }
 }
