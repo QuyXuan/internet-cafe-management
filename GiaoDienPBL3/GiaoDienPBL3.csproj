@@ -264,5 +264,8 @@
   <ItemGroup>
     <None Include="Resources\Lovepik_com-450045211-Vector Trash Icon.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-close-30.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

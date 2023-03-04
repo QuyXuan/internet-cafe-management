@@ -50,7 +50,7 @@ namespace GiaoDienPBL3.UC
             myUCChiTietMonAn.TextGiaMonAn = lblGiaMonAn.Text;
             myUCChiTietMonAn.TextSoLuongMonAn = 1 + "";
             lblTenMonAn.Tag = (Convert.ToInt32(lblTenMonAn.Tag) + 1).ToString();
-            myUCChiTietMonAn.Width = 270;
+            myUCChiTietMonAn.Width = 285;
             myUCChiTietMonAn.Tag = this;
             Form1.myUC_QuanLyMenu.flowLayoutPanelChiTietMonAn.Controls.Add(myUCChiTietMonAn);
         }

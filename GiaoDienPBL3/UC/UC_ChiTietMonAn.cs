@@ -45,7 +45,7 @@ namespace GiaoDienPBL3.UC
             return GiaMon;
         }
 
-        private void btnCongTruMon_Click(object sender, EventArgs e)
+        private void btnCongTruXoaMon_Click(object sender, EventArgs e)
         {
             Guna2Button btn = sender as Guna2Button;
             int TongTien = Convert.ToInt32(Form1.myUC_QuanLyMenu.lblTongTien.Tag);
@@ -56,7 +56,7 @@ namespace GiaoDienPBL3.UC
                 lblSoLuongMon.Text = (Convert.ToInt32(lblSoLuongMon.Text) + 1).ToString();
                 TongTien += GiaMon;
             }
-            else if(btn.Name == "btnXoa")
+            else if(btn.Name == "btnXoaMon")
             {
                 Form1.myUC_QuanLyMenu.flowLayoutPanelChiTietMonAn.Controls.Remove(this);
                 TongTien -= GiaMon * Convert.ToInt32(lblSoLuongMon.Text);
