@@ -7,9 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Windows.Forms.DataVisualization.Charting;
-using GiaoDienPBL3.UC;
-using Guna.UI2.WinForms;
 
 namespace GiaoDienPBL3
 {
