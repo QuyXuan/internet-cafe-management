@@ -44,13 +44,18 @@
             this.uC_MonAn6 = new GiaoDienPBL3.UC.UC_MonAn();
             this.uC_MonAn7 = new GiaoDienPBL3.UC.UC_MonAn();
             this.uC_MonAn10 = new GiaoDienPBL3.UC.UC_MonAn();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblTongTien = new System.Windows.Forms.Label();
             this.guna2CustomGradientPanel1.SuspendLayout();
             this.panelMonAn.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2CustomGradientPanel1
             // 
+            this.guna2CustomGradientPanel1.Controls.Add(this.panel2);
             this.guna2CustomGradientPanel1.Controls.Add(this.flowLayoutPanelChiTietMonAn);
             this.guna2CustomGradientPanel1.Controls.Add(this.panelMonAn);
             this.guna2CustomGradientPanel1.Controls.Add(this.panel1);
@@ -68,10 +73,10 @@
             // 
             this.flowLayoutPanelChiTietMonAn.AutoScroll = true;
             this.flowLayoutPanelChiTietMonAn.BackColor = System.Drawing.Color.Transparent;
-            this.flowLayoutPanelChiTietMonAn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanelChiTietMonAn.Dock = System.Windows.Forms.DockStyle.Top;
             this.flowLayoutPanelChiTietMonAn.Location = new System.Drawing.Point(860, 68);
             this.flowLayoutPanelChiTietMonAn.Name = "flowLayoutPanelChiTietMonAn";
-            this.flowLayoutPanelChiTietMonAn.Size = new System.Drawing.Size(354, 621);
+            this.flowLayoutPanelChiTietMonAn.Size = new System.Drawing.Size(354, 509);
             this.flowLayoutPanelChiTietMonAn.TabIndex = 4;
             // 
             // panelMonAn
@@ -246,6 +251,41 @@
             this.uC_MonAn10.TextTenMonAn = "Bún Chả Cá";
             this.uC_MonAn10.Click += new System.EventHandler(this.uC_MonAn_Click);
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.Controls.Add(this.lblTongTien);
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(860, 577);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(354, 112);
+            this.panel2.TabIndex = 5;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(0)))), ((int)(((byte)(102)))));
+            this.label2.Location = new System.Drawing.Point(6, 5);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(133, 31);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Tổng Tiền :";
+            // 
+            // lblTongTien
+            // 
+            this.lblTongTien.AutoSize = true;
+            this.lblTongTien.Dock = System.Windows.Forms.DockStyle.Right;
+            this.lblTongTien.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTongTien.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.lblTongTien.Location = new System.Drawing.Point(327, 0);
+            this.lblTongTien.Name = "lblTongTien";
+            this.lblTongTien.Size = new System.Drawing.Size(27, 31);
+            this.lblTongTien.TabIndex = 0;
+            this.lblTongTien.Text = "0";
+            this.lblTongTien.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // UC_QuanLyMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -257,6 +297,8 @@
             this.guna2CustomGradientPanel1.ResumeLayout(false);
             this.panelMonAn.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -278,5 +320,8 @@
         private System.Windows.Forms.FlowLayoutPanel panelMonAn;
         private UC_MonAn uC_MonAn10;
         public System.Windows.Forms.FlowLayoutPanel flowLayoutPanelChiTietMonAn;
+        private System.Windows.Forms.Panel panel2;
+        public System.Windows.Forms.Label lblTongTien;
+        private System.Windows.Forms.Label label2;
     }
 }
