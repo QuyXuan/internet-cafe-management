@@ -46,7 +46,6 @@
             this.uC_MonAn9 = new GiaoDienPBL3.UC.UC_MonAn();
             this.uC_MonAn6 = new GiaoDienPBL3.UC.UC_MonAn();
             this.uC_MonAn7 = new GiaoDienPBL3.UC.UC_MonAn();
-            this.uC_MonAn10 = new GiaoDienPBL3.UC.UC_MonAn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2CustomGradientPanel1.SuspendLayout();
@@ -78,9 +77,9 @@
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.guna2Button1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(860, 577);
+            this.panel2.Location = new System.Drawing.Point(878, 577);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(354, 112);
+            this.panel2.Size = new System.Drawing.Size(336, 112);
             this.panel2.TabIndex = 5;
             // 
             // panel3
@@ -90,7 +89,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(354, 34);
+            this.panel3.Size = new System.Drawing.Size(336, 34);
             this.panel3.TabIndex = 2;
             // 
             // label2
@@ -111,7 +110,7 @@
             this.lblTongTien.Dock = System.Windows.Forms.DockStyle.Right;
             this.lblTongTien.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTongTien.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.lblTongTien.Location = new System.Drawing.Point(327, 0);
+            this.lblTongTien.Location = new System.Drawing.Point(309, 0);
             this.lblTongTien.Name = "lblTongTien";
             this.lblTongTien.Size = new System.Drawing.Size(27, 31);
             this.lblTongTien.TabIndex = 0;
@@ -131,7 +130,7 @@
             this.guna2Button1.ForeColor = System.Drawing.Color.White;
             this.guna2Button1.Location = new System.Drawing.Point(0, 77);
             this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(354, 35);
+            this.guna2Button1.Size = new System.Drawing.Size(336, 35);
             this.guna2Button1.TabIndex = 1;
             this.guna2Button1.Text = "Thanh Toán";
             // 
@@ -140,9 +139,9 @@
             this.flowLayoutPanelChiTietMonAn.AutoScroll = true;
             this.flowLayoutPanelChiTietMonAn.BackColor = System.Drawing.Color.Transparent;
             this.flowLayoutPanelChiTietMonAn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.flowLayoutPanelChiTietMonAn.Location = new System.Drawing.Point(860, 68);
+            this.flowLayoutPanelChiTietMonAn.Location = new System.Drawing.Point(878, 68);
             this.flowLayoutPanelChiTietMonAn.Name = "flowLayoutPanelChiTietMonAn";
-            this.flowLayoutPanelChiTietMonAn.Size = new System.Drawing.Size(354, 509);
+            this.flowLayoutPanelChiTietMonAn.Size = new System.Drawing.Size(336, 509);
             this.flowLayoutPanelChiTietMonAn.TabIndex = 4;
             // 
             // panelMonAn
@@ -158,11 +157,10 @@
             this.panelMonAn.Controls.Add(this.uC_MonAn9);
             this.panelMonAn.Controls.Add(this.uC_MonAn6);
             this.panelMonAn.Controls.Add(this.uC_MonAn7);
-            this.panelMonAn.Controls.Add(this.uC_MonAn10);
             this.panelMonAn.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMonAn.Location = new System.Drawing.Point(0, 68);
             this.panelMonAn.Name = "panelMonAn";
-            this.panelMonAn.Size = new System.Drawing.Size(860, 621);
+            this.panelMonAn.Size = new System.Drawing.Size(878, 621);
             this.panelMonAn.TabIndex = 3;
             // 
             // uC_MonAn1
@@ -282,19 +280,6 @@
             this.uC_MonAn7.TextTenMonAn = "Bún Chả Cá";
             this.uC_MonAn7.Click += new System.EventHandler(this.uC_MonAn_Click);
             // 
-            // uC_MonAn10
-            // 
-            this.uC_MonAn10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.uC_MonAn10.ImagePanel = global::GiaoDienPBL3.Properties.Resources.mae_mu_H5Hj8QV2Tx4_unsplash;
-            this.uC_MonAn10.Location = new System.Drawing.Point(687, 174);
-            this.uC_MonAn10.Name = "uC_MonAn10";
-            this.uC_MonAn10.Size = new System.Drawing.Size(165, 165);
-            this.uC_MonAn10.TabIndex = 19;
-            this.uC_MonAn10.Tag = "1";
-            this.uC_MonAn10.TextGiaMonAn = "60.000VND";
-            this.uC_MonAn10.TextTenMonAn = "Bún Chả Cá";
-            this.uC_MonAn10.Click += new System.EventHandler(this.uC_MonAn_Click);
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
@@ -350,7 +335,6 @@
         private UC_MonAn uC_MonAn2;
         private UC_MonAn uC_MonAn1;
         private System.Windows.Forms.FlowLayoutPanel panelMonAn;
-        private UC_MonAn uC_MonAn10;
         public System.Windows.Forms.FlowLayoutPanel flowLayoutPanelChiTietMonAn;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label2;

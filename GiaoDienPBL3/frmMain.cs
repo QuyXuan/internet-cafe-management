@@ -12,12 +12,13 @@ using Guna.UI2.WinForms;
 
 namespace GiaoDienPBL3
 {
-    public partial class Form1 : Form
+    public partial class frmMain : Form
     {
         public static UC_TrangChu myUC_TrangChu = new UC_TrangChu();
         public static UC_QuanLyMenu myUC_QuanLyMenu = new UC_QuanLyMenu();
         public static UC_QuanLyMay myUC_QuanLyMay = new UC_QuanLyMay();
-        public Form1()
+        public static UC_QuanLyKho myUC_QuanLyKho = new UC_QuanLyKho();
+        public frmMain()
         {
             InitializeComponent();
         }
@@ -33,7 +34,7 @@ namespace GiaoDienPBL3
             SetOffAllCheckStateButton();
             AddUserControlOnBackGround(myUC_TrangChu);
             btnTrangChu.Checked = true;
-            imgbtnThoat.Location = new Point(12, 600);
+            imgbtnThoat.Location = new Point(12, 750);
             myUC_TrangChu.Visible = true;
         }
 
@@ -140,6 +141,11 @@ namespace GiaoDienPBL3
         private void btnQuanLyMay_Click(object sender, EventArgs e)
         {
             AddUserControlOnBackGround(myUC_QuanLyMay);
+        }
+
+        private void btnQuanLyKho_Click(object sender, EventArgs e)
+        {
+            AddUserControlOnBackGround(myUC_QuanLyKho);
         }
     }
 }

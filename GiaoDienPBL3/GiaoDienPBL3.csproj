@@ -78,11 +78,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -97,6 +97,12 @@
     </Compile>
     <Compile Include="UC\UC_MonAn.Designer.cs">
       <DependentUpon>UC_MonAn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UC_QuanLyKho.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UC_QuanLyKho.Designer.cs">
+      <DependentUpon>UC_QuanLyKho.cs</DependentUpon>
     </Compile>
     <Compile Include="UC\UC_QuanLyMay.cs">
       <SubType>UserControl</SubType>
@@ -116,8 +122,8 @@
     <Compile Include="UC\UC_TrangChu.Designer.cs">
       <DependentUpon>UC_TrangChu.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -135,6 +141,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UC\UC_MonAn.resx">
       <DependentUpon>UC_MonAn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UC_QuanLyKho.resx">
+      <DependentUpon>UC_QuanLyKho.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC\UC_QuanLyMay.resx">
       <DependentUpon>UC_QuanLyMay.cs</DependentUpon>
@@ -266,6 +275,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-close-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-search-80.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-search-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-search-301.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -50,17 +50,17 @@ namespace GiaoDienPBL3.UC
             myUCChiTietMonAn.TextGiaMonAn = lblGiaMonAn.Text;
             myUCChiTietMonAn.TextSoLuongMonAn = 1 + "";
             lblTenMonAn.Tag = (Convert.ToInt32(lblTenMonAn.Tag) + 1).ToString();
-            myUCChiTietMonAn.Width = 285;
+            myUCChiTietMonAn.Width = 265;
             myUCChiTietMonAn.Tag = this;
-            Form1.myUC_QuanLyMenu.flowLayoutPanelChiTietMonAn.Controls.Add(myUCChiTietMonAn);
+            frmMain.myUC_QuanLyMenu.flowLayoutPanelChiTietMonAn.Controls.Add(myUCChiTietMonAn);
         }
 
         private void HienThiVaTinhTongTien()
         {
-            int TongTien = Convert.ToInt32(Form1.myUC_QuanLyMenu.lblTongTien.Tag);
+            int TongTien = Convert.ToInt32(frmMain.myUC_QuanLyMenu.lblTongTien.Tag);
             TongTien += Convert.ToInt32(lblGiaMonAn.Text.Substring(0, lblGiaMonAn.Text.Length - 7));
-            Form1.myUC_QuanLyMenu.lblTongTien.Text = string.Format("{0:N3}VNĐ", TongTien);
-            Form1.myUC_QuanLyMenu.lblTongTien.Tag = TongTien;
+            frmMain.myUC_QuanLyMenu.lblTongTien.Text = string.Format("{0:N3}VNĐ", TongTien);
+            frmMain.myUC_QuanLyMenu.lblTongTien.Tag = TongTien;
         }
 
         private void picMonAn_Click(object sender, EventArgs e)

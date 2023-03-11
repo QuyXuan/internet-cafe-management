@@ -1,6 +1,6 @@
 ﻿namespace GiaoDienPBL3
 {
-    partial class Form1
+    partial class frmMain
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.panel3 = new System.Windows.Forms.Panel();
             this.guna2ImageButton1 = new Guna.UI2.WinForms.Guna2ImageButton();
@@ -283,7 +283,7 @@
             this.btnCaiDatQuayThuong.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btnCaiDatQuayThuong.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(225)))), ((int)(((byte)(232)))));
             this.btnCaiDatQuayThuong.CheckedState.ForeColor = System.Drawing.Color.White;
-            this.btnCaiDatQuayThuong.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.btnCaiDatQuayThuong.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
             this.btnCaiDatQuayThuong.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCaiDatQuayThuong.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnCaiDatQuayThuong.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -572,6 +572,7 @@
             this.btnQuanLyKho.Size = new System.Drawing.Size(216, 45);
             this.btnQuanLyKho.TabIndex = 6;
             this.btnQuanLyKho.Text = "Quản Lý Kho";
+            this.btnQuanLyKho.Click += new System.EventHandler(this.btnQuanLyKho_Click);
             // 
             // panel8
             // 
@@ -623,7 +624,7 @@
             this.btnQuanLyMay.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btnQuanLyMay.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(225)))), ((int)(((byte)(232)))));
             this.btnQuanLyMay.CheckedState.ForeColor = System.Drawing.Color.White;
-            this.btnQuanLyMay.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            this.btnQuanLyMay.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image11")));
             this.btnQuanLyMay.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnQuanLyMay.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnQuanLyMay.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -723,7 +724,7 @@
             this.uC_TrangChu1.Size = new System.Drawing.Size(833, 652);
             this.uC_TrangChu1.TabIndex = 0;
             // 
-            // Form1
+            // frmMain
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
@@ -734,7 +735,7 @@
             this.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "Form1";
+            this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

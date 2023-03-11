@@ -48,7 +48,7 @@ namespace GiaoDienPBL3.UC
         private void btnCongTruXoaMon_Click(object sender, EventArgs e)
         {
             Guna2Button btn = sender as Guna2Button;
-            int TongTien = Convert.ToInt32(Form1.myUC_QuanLyMenu.lblTongTien.Tag);
+            int TongTien = Convert.ToInt32(frmMain.myUC_QuanLyMenu.lblTongTien.Tag);
             int GiaMon = Convert.ToInt32(ChuyenDoiGiaMon(lblGiaMon.Text));
             //int SoLuongMon = Convert.ToInt32(lblSoLuongMon.Text);
             if (btn.Text == "+")
@@ -58,14 +58,14 @@ namespace GiaoDienPBL3.UC
             }
             else if(btn.Name == "btnXoaMon")
             {
-                Form1.myUC_QuanLyMenu.flowLayoutPanelChiTietMonAn.Controls.Remove(this);
+                frmMain.myUC_QuanLyMenu.flowLayoutPanelChiTietMonAn.Controls.Remove(this);
                 TongTien -= GiaMon * Convert.ToInt32(lblSoLuongMon.Text);
                 UC_MonAn myUCMonAn = this.Tag as UC_MonAn;
                 myUCMonAn.panelBackGroundMonAn.BackColor = Color.Transparent;
             }
             else if (lblSoLuongMon.Text == "1")
             {
-                Form1.myUC_QuanLyMenu.flowLayoutPanelChiTietMonAn.Controls.Remove(this);
+                frmMain.myUC_QuanLyMenu.flowLayoutPanelChiTietMonAn.Controls.Remove(this);
                 TongTien -= GiaMon;
                 UC_MonAn myUCMonAn = this.Tag as UC_MonAn;
                 myUCMonAn.panelBackGroundMonAn.BackColor = Color.Transparent;
@@ -75,8 +75,8 @@ namespace GiaoDienPBL3.UC
                 lblSoLuongMon.Text = (Convert.ToInt32(lblSoLuongMon.Text) - 1).ToString();
                 TongTien -= GiaMon;
             }
-            Form1.myUC_QuanLyMenu.lblTongTien.Text = string.Format("{0:N3}VNĐ", TongTien);
-            Form1.myUC_QuanLyMenu.lblTongTien.Tag = TongTien;
+            frmMain.myUC_QuanLyMenu.lblTongTien.Text = string.Format("{0:N3}VNĐ", TongTien);
+            frmMain.myUC_QuanLyMenu.lblTongTien.Tag = TongTien;
         }
     }
 }
