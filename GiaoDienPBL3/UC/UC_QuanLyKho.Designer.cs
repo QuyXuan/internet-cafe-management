@@ -37,6 +37,12 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.dgvKho = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.MaMon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenMon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Loai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GiaGoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoLuongTru = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
@@ -65,12 +71,6 @@
             this.btnDoAn = new Guna.UI2.WinForms.Guna2Button();
             this.btnTimKiem = new Guna.UI2.WinForms.Guna2CircleButton();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.Column1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.MaMon = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenMon = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Loai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GiaGoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoLuongTru = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guna2CustomGradientPanel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKho)).BeginInit();
@@ -122,7 +122,6 @@
             this.dgvKho.AllowUserToOrderColumns = true;
             this.dgvKho.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(204)))), ((int)(((byte)(143)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Empty;
             this.dgvKho.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvKho.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvKho.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(194)))), ((int)(((byte)(113)))));
@@ -167,6 +166,55 @@
             this.dgvKho.TabIndex = 9;
             this.dgvKho.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvKho_CellClick);
             // 
+            // Column1
+            // 
+            this.Column1.FillWeight = 30F;
+            this.Column1.HeaderText = "";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // MaMon
+            // 
+            this.MaMon.FillWeight = 80F;
+            this.MaMon.HeaderText = "Mã Món";
+            this.MaMon.MinimumWidth = 6;
+            this.MaMon.Name = "MaMon";
+            this.MaMon.ReadOnly = true;
+            // 
+            // TenMon
+            // 
+            this.TenMon.FillWeight = 130F;
+            this.TenMon.HeaderText = "Tên Món";
+            this.TenMon.MinimumWidth = 6;
+            this.TenMon.Name = "TenMon";
+            this.TenMon.ReadOnly = true;
+            // 
+            // Loai
+            // 
+            this.Loai.HeaderText = "Loại";
+            this.Loai.MinimumWidth = 6;
+            this.Loai.Name = "Loai";
+            this.Loai.ReadOnly = true;
+            // 
+            // GiaGoc
+            // 
+            this.GiaGoc.FillWeight = 90F;
+            this.GiaGoc.HeaderText = "Giá Gốc";
+            this.GiaGoc.MinimumWidth = 6;
+            this.GiaGoc.Name = "GiaGoc";
+            this.GiaGoc.ReadOnly = true;
+            // 
+            // SoLuongTru
+            // 
+            this.SoLuongTru.FillWeight = 80F;
+            this.SoLuongTru.HeaderText = "Số Lượng Trữ";
+            this.SoLuongTru.MinimumWidth = 6;
+            this.SoLuongTru.Name = "SoLuongTru";
+            this.SoLuongTru.ReadOnly = true;
+            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
@@ -195,7 +243,7 @@
             // 
             // label8
             // 
-            this.label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.label8.Dock = System.Windows.Forms.DockStyle.Top;
             this.label8.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.label8.Location = new System.Drawing.Point(0, 0);
@@ -494,7 +542,7 @@
             // 
             // label2
             // 
-            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.label2.Dock = System.Windows.Forms.DockStyle.Top;
             this.label2.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.label2.Location = new System.Drawing.Point(0, 0);
@@ -655,55 +703,6 @@
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             this.imageList1.Images.SetKeyName(0, "iconMonAn");
             this.imageList1.Images.SetKeyName(1, "iconNuocUong");
-            // 
-            // Column1
-            // 
-            this.Column1.FillWeight = 30F;
-            this.Column1.HeaderText = "";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // MaMon
-            // 
-            this.MaMon.FillWeight = 80F;
-            this.MaMon.HeaderText = "Mã Món";
-            this.MaMon.MinimumWidth = 6;
-            this.MaMon.Name = "MaMon";
-            this.MaMon.ReadOnly = true;
-            // 
-            // TenMon
-            // 
-            this.TenMon.FillWeight = 130F;
-            this.TenMon.HeaderText = "Tên Món";
-            this.TenMon.MinimumWidth = 6;
-            this.TenMon.Name = "TenMon";
-            this.TenMon.ReadOnly = true;
-            // 
-            // Loai
-            // 
-            this.Loai.HeaderText = "Loại";
-            this.Loai.MinimumWidth = 6;
-            this.Loai.Name = "Loai";
-            this.Loai.ReadOnly = true;
-            // 
-            // GiaGoc
-            // 
-            this.GiaGoc.FillWeight = 90F;
-            this.GiaGoc.HeaderText = "Giá Gốc";
-            this.GiaGoc.MinimumWidth = 6;
-            this.GiaGoc.Name = "GiaGoc";
-            this.GiaGoc.ReadOnly = true;
-            // 
-            // SoLuongTru
-            // 
-            this.SoLuongTru.FillWeight = 80F;
-            this.SoLuongTru.HeaderText = "Số Lượng Trữ";
-            this.SoLuongTru.MinimumWidth = 6;
-            this.SoLuongTru.Name = "SoLuongTru";
-            this.SoLuongTru.ReadOnly = true;
             // 
             // UC_QuanLyKho
             // 
