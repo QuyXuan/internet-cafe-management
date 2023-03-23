@@ -313,6 +313,16 @@ namespace GiaoDienPBL3.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_react_60 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-react-60", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_redux_50__1_ {
             get {
                 object obj = ResourceManager.GetObject("icons8-redux-50 (1)", resourceCulture);
