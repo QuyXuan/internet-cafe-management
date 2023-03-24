@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GiaoDienPBL3;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -52,7 +53,12 @@ namespace LoginPage
 
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
-            if (txtTaiKhoan.Text == "1" && txtMatKhau.Text == "1") return;
+            if (txtTaiKhoan.Text == "1" && txtMatKhau.Text == "1")
+            {
+                this.Hide();
+                frmMain Main = new frmMain();
+                Main.ShowDialog();
+            }
             ShowThongBao("Tên Tài Khoản Hoặc Mật Khẩu Sai" + Environment.NewLine + "VUI LÒNG NHẬP LẠI!!!");
             //showNotification("Tên Tài Khoản Hoặc Mật Khẩu Sai");
         }
@@ -62,7 +68,7 @@ namespace LoginPage
             lblThongBao.Text = message;
             while (lblThongBao.Visible)
             {
-                await Task.Delay(5000);
+                await Task.Delay(3000);
                 lblThongBao.Visible = false;
             }
         }

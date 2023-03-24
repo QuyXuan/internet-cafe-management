@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using GiaoDienPBL3.UC;
+using GiaoDienPBL3.User_Controls;
 using Guna.UI2.WinForms;
 
 namespace GiaoDienPBL3
@@ -18,6 +19,7 @@ namespace GiaoDienPBL3
         public static UC_QuanLyMenu myUC_QuanLyMenu = new UC_QuanLyMenu();
         public static UC_QuanLyMay myUC_QuanLyMay = new UC_QuanLyMay();
         public static UC_QuanLyKho myUC_QuanLyKho = new UC_QuanLyKho();
+        public static UC_QuanLyHoaDon myUC_QuanLyHoaDon = new UC_QuanLyHoaDon();
         public frmMain()
         {
             InitializeComponent();
@@ -146,6 +148,11 @@ namespace GiaoDienPBL3
         private void btnQuanLyKho_Click(object sender, EventArgs e)
         {
             AddUserControlOnBackGround(myUC_QuanLyKho);
+        }
+
+        private void btnQuanLyHoaDon_Click(object sender, EventArgs e)
+        {
+            AddUserControlOnBackGround(myUC_QuanLyHoaDon);
         }
     }
 }

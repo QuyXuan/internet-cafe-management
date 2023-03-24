@@ -54,6 +54,7 @@
             this.panel10 = new System.Windows.Forms.Panel();
             this.btnQuanLy3 = new Guna.UI2.WinForms.Guna2Button();
             this.panelQuanLy2 = new System.Windows.Forms.Panel();
+            this.btnQuanLyHoaDon = new Guna.UI2.WinForms.Guna2Button();
             this.btnQuanLyCaLamViec = new Guna.UI2.WinForms.Guna2Button();
             this.btnQuanLyDoanhThu = new Guna.UI2.WinForms.Guna2Button();
             this.btnQuanLyKho = new Guna.UI2.WinForms.Guna2Button();
@@ -170,7 +171,7 @@
             this.panelBackGround.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelBackGround.Location = new System.Drawing.Point(283, 98);
             this.panelBackGround.Name = "panelBackGround";
-            this.panelBackGround.Size = new System.Drawing.Size(1179, 652);
+            this.panelBackGround.Size = new System.Drawing.Size(1179, 697);
             this.panelBackGround.TabIndex = 2;
             // 
             // panel2
@@ -245,7 +246,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(283, 750);
+            this.panel1.Size = new System.Drawing.Size(283, 795);
             this.panel1.TabIndex = 0;
             // 
             // panelCaiDat
@@ -256,7 +257,7 @@
             this.panelCaiDat.Controls.Add(this.btnCaiDatTienGio);
             this.panelCaiDat.Controls.Add(this.btnCaiDatLoaiKhachHang);
             this.panelCaiDat.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelCaiDat.Location = new System.Drawing.Point(0, 696);
+            this.panelCaiDat.Location = new System.Drawing.Point(0, 746);
             this.panelCaiDat.Name = "panelCaiDat";
             this.panelCaiDat.Size = new System.Drawing.Size(262, 212);
             this.panelCaiDat.TabIndex = 11;
@@ -357,7 +358,7 @@
             // 
             this.panel7.Controls.Add(this.btnCaiDat);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel7.Location = new System.Drawing.Point(0, 651);
+            this.panel7.Location = new System.Drawing.Point(0, 701);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(262, 45);
             this.panel7.TabIndex = 10;
@@ -392,7 +393,7 @@
             this.panelQuanLy3.Controls.Add(this.btnQuanLyKhachHang);
             this.panelQuanLy3.Controls.Add(this.btnQuanLyNhanVien);
             this.panelQuanLy3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelQuanLy3.Location = new System.Drawing.Point(0, 543);
+            this.panelQuanLy3.Location = new System.Drawing.Point(0, 593);
             this.panelQuanLy3.Name = "panelQuanLy3";
             this.panelQuanLy3.Size = new System.Drawing.Size(262, 108);
             this.panelQuanLy3.TabIndex = 9;
@@ -447,7 +448,7 @@
             // 
             this.panel10.Controls.Add(this.btnQuanLy3);
             this.panel10.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel10.Location = new System.Drawing.Point(0, 498);
+            this.panel10.Location = new System.Drawing.Point(0, 548);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(262, 45);
             this.panel10.TabIndex = 9;
@@ -479,14 +480,39 @@
             // panelQuanLy2
             // 
             this.panelQuanLy2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(165)))), ((int)(((byte)(208)))));
+            this.panelQuanLy2.Controls.Add(this.btnQuanLyHoaDon);
             this.panelQuanLy2.Controls.Add(this.btnQuanLyCaLamViec);
             this.panelQuanLy2.Controls.Add(this.btnQuanLyDoanhThu);
             this.panelQuanLy2.Controls.Add(this.btnQuanLyKho);
             this.panelQuanLy2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelQuanLy2.Location = new System.Drawing.Point(0, 339);
             this.panelQuanLy2.Name = "panelQuanLy2";
-            this.panelQuanLy2.Size = new System.Drawing.Size(262, 159);
+            this.panelQuanLy2.Size = new System.Drawing.Size(262, 209);
             this.panelQuanLy2.TabIndex = 8;
+            // 
+            // btnQuanLyHoaDon
+            // 
+            this.btnQuanLyHoaDon.BorderRadius = 15;
+            this.btnQuanLyHoaDon.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnQuanLyHoaDon.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(225)))), ((int)(((byte)(232)))));
+            this.btnQuanLyHoaDon.CheckedState.ForeColor = System.Drawing.Color.White;
+            this.btnQuanLyHoaDon.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image7")));
+            this.btnQuanLyHoaDon.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnQuanLyHoaDon.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnQuanLyHoaDon.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnQuanLyHoaDon.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnQuanLyHoaDon.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnQuanLyHoaDon.FillColor = System.Drawing.SystemColors.Control;
+            this.btnQuanLyHoaDon.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQuanLyHoaDon.ForeColor = System.Drawing.Color.Black;
+            this.btnQuanLyHoaDon.Image = ((System.Drawing.Image)(resources.GetObject("btnQuanLyHoaDon.Image")));
+            this.btnQuanLyHoaDon.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnQuanLyHoaDon.Location = new System.Drawing.Point(51, 159);
+            this.btnQuanLyHoaDon.Name = "btnQuanLyHoaDon";
+            this.btnQuanLyHoaDon.Size = new System.Drawing.Size(216, 45);
+            this.btnQuanLyHoaDon.TabIndex = 6;
+            this.btnQuanLyHoaDon.Text = "Quản Lý Hóa Đơn";
+            this.btnQuanLyHoaDon.Click += new System.EventHandler(this.btnQuanLyHoaDon_Click);
             // 
             // btnQuanLyCaLamViec
             // 
@@ -494,7 +520,7 @@
             this.btnQuanLyCaLamViec.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btnQuanLyCaLamViec.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(225)))), ((int)(((byte)(232)))));
             this.btnQuanLyCaLamViec.CheckedState.ForeColor = System.Drawing.Color.White;
-            this.btnQuanLyCaLamViec.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image7")));
+            this.btnQuanLyCaLamViec.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image8")));
             this.btnQuanLyCaLamViec.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnQuanLyCaLamViec.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnQuanLyCaLamViec.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -517,7 +543,7 @@
             this.btnQuanLyDoanhThu.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btnQuanLyDoanhThu.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(225)))), ((int)(((byte)(232)))));
             this.btnQuanLyDoanhThu.CheckedState.ForeColor = System.Drawing.Color.White;
-            this.btnQuanLyDoanhThu.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image8")));
+            this.btnQuanLyDoanhThu.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image9")));
             this.btnQuanLyDoanhThu.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnQuanLyDoanhThu.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnQuanLyDoanhThu.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -540,7 +566,7 @@
             this.btnQuanLyKho.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btnQuanLyKho.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(225)))), ((int)(((byte)(232)))));
             this.btnQuanLyKho.CheckedState.ForeColor = System.Drawing.Color.White;
-            this.btnQuanLyKho.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image9")));
+            this.btnQuanLyKho.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image10")));
             this.btnQuanLyKho.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnQuanLyKho.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnQuanLyKho.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -573,7 +599,7 @@
             this.btnQuanLy2.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btnQuanLy2.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(165)))), ((int)(((byte)(208)))));
             this.btnQuanLy2.CheckedState.ForeColor = System.Drawing.Color.White;
-            this.btnQuanLy2.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image10")));
+            this.btnQuanLy2.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image11")));
             this.btnQuanLy2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnQuanLy2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnQuanLy2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -608,7 +634,7 @@
             this.btnQuanLyMay.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btnQuanLyMay.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(225)))), ((int)(((byte)(232)))));
             this.btnQuanLyMay.CheckedState.ForeColor = System.Drawing.Color.White;
-            this.btnQuanLyMay.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image11")));
+            this.btnQuanLyMay.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image12")));
             this.btnQuanLyMay.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnQuanLyMay.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnQuanLyMay.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -632,7 +658,7 @@
             this.btnQuanLyMenu.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btnQuanLyMenu.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(225)))), ((int)(((byte)(232)))));
             this.btnQuanLyMenu.CheckedState.ForeColor = System.Drawing.Color.White;
-            this.btnQuanLyMenu.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image12")));
+            this.btnQuanLyMenu.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image13")));
             this.btnQuanLyMenu.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnQuanLyMenu.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnQuanLyMenu.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -665,7 +691,7 @@
             this.btnQuanLy1.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btnQuanLy1.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(165)))), ((int)(((byte)(208)))));
             this.btnQuanLy1.CheckedState.ForeColor = System.Drawing.Color.White;
-            this.btnQuanLy1.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image13")));
+            this.btnQuanLy1.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image14")));
             this.btnQuanLy1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnQuanLy1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnQuanLy1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -692,7 +718,7 @@
             this.imgbtnThoat.Image = global::GiaoDienPBL3.Properties.Resources.icons8_logout_40;
             this.imgbtnThoat.ImageOffset = new System.Drawing.Point(0, 0);
             this.imgbtnThoat.ImageRotate = 0F;
-            this.imgbtnThoat.Location = new System.Drawing.Point(12, 923);
+            this.imgbtnThoat.Location = new System.Drawing.Point(12, 956);
             this.imgbtnThoat.Name = "imgbtnThoat";
             this.imgbtnThoat.PressedState.ImageSize = new System.Drawing.Size(64, 64);
             this.imgbtnThoat.Size = new System.Drawing.Size(74, 56);
@@ -712,7 +738,7 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.ClientSize = new System.Drawing.Size(1462, 750);
+            this.ClientSize = new System.Drawing.Size(1462, 795);
             this.Controls.Add(this.panelBackGround);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
@@ -782,6 +808,7 @@
         private Guna.UI2.WinForms.Guna2Button btnCaiDatLoaiKhachHang;
         private System.Windows.Forms.Panel panel7;
         private UC_TrangChu uC_TrangChu1;
+        private Guna.UI2.WinForms.Guna2Button btnQuanLyHoaDon;
     }
 }
 

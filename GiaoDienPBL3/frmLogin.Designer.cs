@@ -30,14 +30,14 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties73 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties74 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties75 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties76 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties77 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties78 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties79 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties80 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties17 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties18 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties19 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties20 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties21 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties22 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties23 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties24 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             this.panelDangNhap = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.lblThongBao = new System.Windows.Forms.Label();
             this.chkHienThiMatKhau = new Guna.UI2.WinForms.Guna2CheckBox();
@@ -102,7 +102,7 @@
             this.chkHienThiMatKhau.Location = new System.Drawing.Point(303, 350);
             this.chkHienThiMatKhau.Name = "chkHienThiMatKhau";
             this.chkHienThiMatKhau.Size = new System.Drawing.Size(174, 27);
-            this.chkHienThiMatKhau.TabIndex = 5;
+            this.chkHienThiMatKhau.TabIndex = 4;
             this.chkHienThiMatKhau.Text = "Hiển Thị Mật Khẩu";
             this.chkHienThiMatKhau.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.chkHienThiMatKhau.UncheckedState.BorderRadius = 0;
@@ -126,7 +126,7 @@
             this.btnDangNhap.Location = new System.Drawing.Point(285, 400);
             this.btnDangNhap.Name = "btnDangNhap";
             this.btnDangNhap.Size = new System.Drawing.Size(180, 45);
-            this.btnDangNhap.TabIndex = 3;
+            this.btnDangNhap.TabIndex = 5;
             this.btnDangNhap.Text = "Đăng Nhập";
             this.btnDangNhap.Click += new System.EventHandler(this.btnDangNhap_Click);
             // 
@@ -163,26 +163,26 @@
             this.txtMatKhau.Modified = false;
             this.txtMatKhau.Multiline = false;
             this.txtMatKhau.Name = "txtMatKhau";
-            stateProperties73.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(65)))), ((int)(((byte)(168)))));
-            stateProperties73.FillColor = System.Drawing.Color.Empty;
-            stateProperties73.ForeColor = System.Drawing.Color.Empty;
-            stateProperties73.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtMatKhau.OnActiveState = stateProperties73;
-            stateProperties74.BorderColor = System.Drawing.Color.Transparent;
-            stateProperties74.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            stateProperties74.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            stateProperties74.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.txtMatKhau.OnDisabledState = stateProperties74;
-            stateProperties75.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(65)))), ((int)(((byte)(168)))));
-            stateProperties75.FillColor = System.Drawing.Color.Empty;
-            stateProperties75.ForeColor = System.Drawing.Color.Empty;
-            stateProperties75.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtMatKhau.OnHoverState = stateProperties75;
-            stateProperties76.BorderColor = System.Drawing.Color.Silver;
-            stateProperties76.FillColor = System.Drawing.Color.White;
-            stateProperties76.ForeColor = System.Drawing.Color.Empty;
-            stateProperties76.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtMatKhau.OnIdleState = stateProperties76;
+            stateProperties17.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(65)))), ((int)(((byte)(168)))));
+            stateProperties17.FillColor = System.Drawing.Color.Empty;
+            stateProperties17.ForeColor = System.Drawing.Color.Empty;
+            stateProperties17.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtMatKhau.OnActiveState = stateProperties17;
+            stateProperties18.BorderColor = System.Drawing.Color.Transparent;
+            stateProperties18.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            stateProperties18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            stateProperties18.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.txtMatKhau.OnDisabledState = stateProperties18;
+            stateProperties19.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(65)))), ((int)(((byte)(168)))));
+            stateProperties19.FillColor = System.Drawing.Color.Empty;
+            stateProperties19.ForeColor = System.Drawing.Color.Empty;
+            stateProperties19.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtMatKhau.OnHoverState = stateProperties19;
+            stateProperties20.BorderColor = System.Drawing.Color.Silver;
+            stateProperties20.FillColor = System.Drawing.Color.White;
+            stateProperties20.ForeColor = System.Drawing.Color.Empty;
+            stateProperties20.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtMatKhau.OnIdleState = stateProperties20;
             this.txtMatKhau.Padding = new System.Windows.Forms.Padding(3);
             this.txtMatKhau.PasswordChar = '\0';
             this.txtMatKhau.PlaceholderForeColor = System.Drawing.Color.Silver;
@@ -195,7 +195,7 @@
             this.txtMatKhau.ShortcutsEnabled = true;
             this.txtMatKhau.Size = new System.Drawing.Size(386, 49);
             this.txtMatKhau.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
-            this.txtMatKhau.TabIndex = 4;
+            this.txtMatKhau.TabIndex = 3;
             this.txtMatKhau.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtMatKhau.TextMarginBottom = 0;
             this.txtMatKhau.TextMarginLeft = 3;
@@ -238,26 +238,26 @@
             this.txtTaiKhoan.Modified = false;
             this.txtTaiKhoan.Multiline = false;
             this.txtTaiKhoan.Name = "txtTaiKhoan";
-            stateProperties77.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(65)))), ((int)(((byte)(168)))));
-            stateProperties77.FillColor = System.Drawing.Color.Empty;
-            stateProperties77.ForeColor = System.Drawing.Color.Empty;
-            stateProperties77.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtTaiKhoan.OnActiveState = stateProperties77;
-            stateProperties78.BorderColor = System.Drawing.Color.Transparent;
-            stateProperties78.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            stateProperties78.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            stateProperties78.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.txtTaiKhoan.OnDisabledState = stateProperties78;
-            stateProperties79.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(65)))), ((int)(((byte)(168)))));
-            stateProperties79.FillColor = System.Drawing.Color.Empty;
-            stateProperties79.ForeColor = System.Drawing.Color.Empty;
-            stateProperties79.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtTaiKhoan.OnHoverState = stateProperties79;
-            stateProperties80.BorderColor = System.Drawing.Color.Silver;
-            stateProperties80.FillColor = System.Drawing.Color.White;
-            stateProperties80.ForeColor = System.Drawing.Color.Empty;
-            stateProperties80.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtTaiKhoan.OnIdleState = stateProperties80;
+            stateProperties21.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(65)))), ((int)(((byte)(168)))));
+            stateProperties21.FillColor = System.Drawing.Color.Empty;
+            stateProperties21.ForeColor = System.Drawing.Color.Empty;
+            stateProperties21.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtTaiKhoan.OnActiveState = stateProperties21;
+            stateProperties22.BorderColor = System.Drawing.Color.Transparent;
+            stateProperties22.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            stateProperties22.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            stateProperties22.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.txtTaiKhoan.OnDisabledState = stateProperties22;
+            stateProperties23.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(65)))), ((int)(((byte)(168)))));
+            stateProperties23.FillColor = System.Drawing.Color.Empty;
+            stateProperties23.ForeColor = System.Drawing.Color.Empty;
+            stateProperties23.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtTaiKhoan.OnHoverState = stateProperties23;
+            stateProperties24.BorderColor = System.Drawing.Color.Silver;
+            stateProperties24.FillColor = System.Drawing.Color.White;
+            stateProperties24.ForeColor = System.Drawing.Color.Empty;
+            stateProperties24.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtTaiKhoan.OnIdleState = stateProperties24;
             this.txtTaiKhoan.Padding = new System.Windows.Forms.Padding(3);
             this.txtTaiKhoan.PasswordChar = '\0';
             this.txtTaiKhoan.PlaceholderForeColor = System.Drawing.Color.Silver;
@@ -270,7 +270,7 @@
             this.txtTaiKhoan.ShortcutsEnabled = true;
             this.txtTaiKhoan.Size = new System.Drawing.Size(386, 49);
             this.txtTaiKhoan.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
-            this.txtTaiKhoan.TabIndex = 4;
+            this.txtTaiKhoan.TabIndex = 2;
             this.txtTaiKhoan.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtTaiKhoan.TextMarginBottom = 0;
             this.txtTaiKhoan.TextMarginLeft = 3;
@@ -312,7 +312,7 @@
             this.guna2ControlBox2.Location = new System.Drawing.Point(440, 0);
             this.guna2ControlBox2.Name = "guna2ControlBox2";
             this.guna2ControlBox2.Size = new System.Drawing.Size(52, 28);
-            this.guna2ControlBox2.TabIndex = 1;
+            this.guna2ControlBox2.TabIndex = 6;
             // 
             // guna2ControlBox1
             // 
@@ -322,7 +322,7 @@
             this.guna2ControlBox1.Location = new System.Drawing.Point(492, 0);
             this.guna2ControlBox1.Name = "guna2ControlBox1";
             this.guna2ControlBox1.Size = new System.Drawing.Size(52, 28);
-            this.guna2ControlBox1.TabIndex = 1;
+            this.guna2ControlBox1.TabIndex = 7;
             // 
             // guna2Elipse1
             // 
@@ -331,6 +331,7 @@
             // 
             // frmLogin
             // 
+            this.AcceptButton = this.btnDangNhap;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(544, 461);
