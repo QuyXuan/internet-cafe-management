@@ -53,24 +53,7 @@ namespace GiaoDienPBL3.UC
         }
         private void ThemXoaSuaClick(object sender, EventArgs e)
         {
-            Guna2Button btn = sender as Guna2Button;
-            SetAllButtonDisableAndVisible();
-            if (btn.Name == "btnThem")
-            {
-                btnThem.Enabled = true;
-                ClearComboboxAndTextBox();
-                SetEnableComboboxAndTextBox(true);
-            }
-            else if (btn.Name == "btnSua")
-            {
-                btnSua.Enabled = true;
-                SetEnableComboboxAndTextBox(true);
-            }
-            else
-            {
-                btnXoa.Enabled = true;
-                ClearComboboxAndTextBox();
-            }
+
         }
         private void HuyOKClick(object sender, EventArgs e)
         {
