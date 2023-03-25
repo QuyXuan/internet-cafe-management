@@ -17,22 +17,79 @@ namespace GiaoDienPBL3.UC
         {
             InitializeComponent();
         }
-
-        private void UC_QuanLyMenu_Load(object sender, EventArgs e)
+        private void SetAllButtonDisableAndVisible()
         {
+            btnThem.Enabled = false;
+            btnXoa.Enabled = false;
+            btnSua.Enabled = false;
+            btnHuy.Visible = true;
+            btnOK.Visible = true;
+        }
+        private void SetAllButtonEnableAndInvisible()
+        {
+            btnThem.Enabled = true;
+            btnXoa.Enabled = true;
+            btnSua.Enabled = true;
+            btnThem.Checked = false;
+            btnXoa.Checked = false;
+            btnSua.Checked = false;
+            btnHuy.Visible = false;
+            btnOK.Visible = false;
+        }
+        private void SetEnableComboboxAndTextBox(bool status)
+        {
+            txtMaMon.Enabled = status;
+            txtTenMon.Enabled = status;
+            txtGia.Enabled = status;
+            cboLoai.Enabled = status;
+            btnThemAnh.Enabled = status;
+        }
+        private void ClearComboboxAndTextBox()
+        {
+            txtMaMon.Text = "";
+            txtTenMon.Text = "";
+            txtGia.Text = "";
+            cboLoai.SelectedIndex = -1;
+        }
+        private void ThemXoaSuaClick(object sender, EventArgs e)
+        {
+            Guna2Button btn = sender as Guna2Button;
+            SetAllButtonDisableAndVisible();
+            if (btn.Name == "btnThem")
+            {
+                btnThem.Enabled = true;
+                ClearComboboxAndTextBox();
+                SetEnableComboboxAndTextBox(true);
+            }
+            else if (btn.Name == "btnSua")
+            {
+                btnSua.Enabled = true;
+                SetEnableComboboxAndTextBox(true);
+            }
+            else
+            {
+                btnXoa.Enabled = true;
+                ClearComboboxAndTextBox();
+            }
+        }
+        private void HuyOKClick(object sender, EventArgs e)
+        {
+            //Guna2Button btn = sender as Guna2Button;
+            SetAllButtonEnableAndInvisible();
+            SetEnableComboboxAndTextBox(false);
         }
 
-        private void uC_MonAn_Click(object sender, EventArgs e)
+        private void btnCaiDat_Click(object sender, EventArgs e)
         {
-            //UC_MonAn myUC_MonAn = sender as UC_MonAn;
-            //UC_ChiTietMonAn myUcChiTietMonAn = new UC_ChiTietMonAn();
-            //myUcChiTietMonAn.TextGiaMonAn = myUC_MonAn.TextGiaMonAn;
-            //myUcChiTietMonAn.TextSoLuongMonAn = myUC_MonAn.Tag.ToString();
-            //myUcChiTietMonAn.TextGiaMonAn = myUC_MonAn.TextGiaMonAn;
-            //myUC_MonAn.Tag = (Convert.ToInt32(myUC_MonAn.Tag) + 1).ToString();
-            //myUcChiTietMonAn.Width = 370;
-            //flowLayoutPanelChiTietMonAn.Controls.Add(myUcChiTietMonAn);
-            
+            Guna2Button button = sender as Guna2Button;
+            if (button.Checked == false)
+            {
+                panelCaiDat.Visible = true;
+            }
+            else
+            {
+                panelCaiDat.Visible = false;
+            }
         }
     }
 }

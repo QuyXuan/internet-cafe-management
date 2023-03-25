@@ -98,6 +98,12 @@
     <Compile Include="User_Controls\UC_ChiTietMonAn.Designer.cs">
       <DependentUpon>UC_ChiTietMonAn.cs</DependentUpon>
     </Compile>
+    <Compile Include="User_Controls\UC_QuanLyDoanhThu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User_Controls\UC_QuanLyDoanhThu.Designer.cs">
+      <DependentUpon>UC_QuanLyDoanhThu.cs</DependentUpon>
+    </Compile>
     <Compile Include="User_Controls\UC_QuanLyHoaDon.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -153,6 +159,9 @@
     </Compile>
     <EmbeddedResource Include="User_Controls\UC_ChiTietMonAn.resx">
       <DependentUpon>UC_ChiTietMonAn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_Controls\UC_QuanLyDoanhThu.resx">
+      <DependentUpon>UC_QuanLyDoanhThu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User_Controls\UC_QuanLyHoaDon.resx">
       <DependentUpon>UC_QuanLyHoaDon.cs</DependentUpon>
