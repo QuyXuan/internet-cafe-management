@@ -42,6 +42,11 @@
             this.uC_MonAn2 = new GiaoDienPBL3.UC.UC_MonAn();
             this.uC_MonAn3 = new GiaoDienPBL3.UC.UC_MonAn();
             this.uC_MonAn4 = new GiaoDienPBL3.UC.UC_MonAn();
+            this.uC_MonAn5 = new GiaoDienPBL3.UC.UC_MonAn();
+            this.uC_MonAn6 = new GiaoDienPBL3.UC.UC_MonAn();
+            this.uC_MonAn7 = new GiaoDienPBL3.UC.UC_MonAn();
+            this.uC_MonAn8 = new GiaoDienPBL3.UC.UC_MonAn();
+            this.uC_MonAn9 = new GiaoDienPBL3.UC.UC_MonAn();
             this.panelCaiDat = new System.Windows.Forms.Panel();
             this.guna2GroupBox2 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.btnThem = new Guna.UI2.WinForms.Guna2Button();
@@ -180,6 +185,11 @@
             this.flowLayoutPanel1.Controls.Add(this.uC_MonAn2);
             this.flowLayoutPanel1.Controls.Add(this.uC_MonAn3);
             this.flowLayoutPanel1.Controls.Add(this.uC_MonAn4);
+            this.flowLayoutPanel1.Controls.Add(this.uC_MonAn5);
+            this.flowLayoutPanel1.Controls.Add(this.uC_MonAn6);
+            this.flowLayoutPanel1.Controls.Add(this.uC_MonAn7);
+            this.flowLayoutPanel1.Controls.Add(this.uC_MonAn8);
+            this.flowLayoutPanel1.Controls.Add(this.uC_MonAn9);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
@@ -200,35 +210,90 @@
             // uC_MonAn2
             // 
             this.uC_MonAn2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.uC_MonAn2.ImagePanel = ((System.Drawing.Image)(resources.GetObject("uC_MonAn2.ImagePanel")));
+            this.uC_MonAn2.ImagePanel = global::GiaoDienPBL3.Properties.Resources.clovis_wood_photography_iUtcVxqxkPk_unsplash;
             this.uC_MonAn2.Location = new System.Drawing.Point(174, 3);
             this.uC_MonAn2.Name = "uC_MonAn2";
             this.uC_MonAn2.Size = new System.Drawing.Size(165, 165);
             this.uC_MonAn2.TabIndex = 1;
             this.uC_MonAn2.TextGiaMonAn = "50.000VND";
-            this.uC_MonAn2.TextTenMonAn = "Pizza";
+            this.uC_MonAn2.TextTenMonAn = "Blue Soda";
             // 
             // uC_MonAn3
             // 
             this.uC_MonAn3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.uC_MonAn3.ImagePanel = ((System.Drawing.Image)(resources.GetObject("uC_MonAn3.ImagePanel")));
+            this.uC_MonAn3.ImagePanel = global::GiaoDienPBL3.Properties.Resources.demi_deherrera_L_sm1B4L1Ns_unsplash;
             this.uC_MonAn3.Location = new System.Drawing.Point(345, 3);
             this.uC_MonAn3.Name = "uC_MonAn3";
             this.uC_MonAn3.Size = new System.Drawing.Size(165, 165);
             this.uC_MonAn3.TabIndex = 2;
             this.uC_MonAn3.TextGiaMonAn = "50.000VND";
-            this.uC_MonAn3.TextTenMonAn = "Pizza";
+            this.uC_MonAn3.TextTenMonAn = "Cafe Sữa";
             // 
             // uC_MonAn4
             // 
             this.uC_MonAn4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.uC_MonAn4.ImagePanel = ((System.Drawing.Image)(resources.GetObject("uC_MonAn4.ImagePanel")));
+            this.uC_MonAn4.ImagePanel = global::GiaoDienPBL3.Properties.Resources.food_photographer_jennifer_pallian_sSnCZlEWN5E_unsplash;
             this.uC_MonAn4.Location = new System.Drawing.Point(3, 174);
             this.uC_MonAn4.Name = "uC_MonAn4";
             this.uC_MonAn4.Size = new System.Drawing.Size(165, 165);
             this.uC_MonAn4.TabIndex = 3;
             this.uC_MonAn4.TextGiaMonAn = "50.000VND";
-            this.uC_MonAn4.TextTenMonAn = "Pizza";
+            this.uC_MonAn4.TextTenMonAn = "Trà Đào";
+            // 
+            // uC_MonAn5
+            // 
+            this.uC_MonAn5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.uC_MonAn5.ImagePanel = global::GiaoDienPBL3.Properties.Resources.jennifer_schmidt_zOlQ7lF_3vs_unsplash;
+            this.uC_MonAn5.Location = new System.Drawing.Point(174, 174);
+            this.uC_MonAn5.Name = "uC_MonAn5";
+            this.uC_MonAn5.Size = new System.Drawing.Size(165, 165);
+            this.uC_MonAn5.TabIndex = 4;
+            this.uC_MonAn5.TextGiaMonAn = "50.000VND";
+            this.uC_MonAn5.TextTenMonAn = "Miến Gà";
+            // 
+            // uC_MonAn6
+            // 
+            this.uC_MonAn6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.uC_MonAn6.ImagePanel = global::GiaoDienPBL3.Properties.Resources.kadir_celep_paBXUXUwJmo_unsplash;
+            this.uC_MonAn6.Location = new System.Drawing.Point(345, 174);
+            this.uC_MonAn6.Name = "uC_MonAn6";
+            this.uC_MonAn6.Size = new System.Drawing.Size(165, 165);
+            this.uC_MonAn6.TabIndex = 5;
+            this.uC_MonAn6.TextGiaMonAn = "50.000VND";
+            this.uC_MonAn6.TextTenMonAn = "Bánh Mỳ";
+            // 
+            // uC_MonAn7
+            // 
+            this.uC_MonAn7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.uC_MonAn7.ImagePanel = global::GiaoDienPBL3.Properties.Resources.mae_mu_H5Hj8QV2Tx4_unsplash;
+            this.uC_MonAn7.Location = new System.Drawing.Point(3, 345);
+            this.uC_MonAn7.Name = "uC_MonAn7";
+            this.uC_MonAn7.Size = new System.Drawing.Size(165, 165);
+            this.uC_MonAn7.TabIndex = 6;
+            this.uC_MonAn7.TextGiaMonAn = "50.000VND";
+            this.uC_MonAn7.TextTenMonAn = "Bún Chả Cá";
+            // 
+            // uC_MonAn8
+            // 
+            this.uC_MonAn8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.uC_MonAn8.ImagePanel = global::GiaoDienPBL3.Properties.Resources.markus_winkler_08aic3qPcag_unsplash;
+            this.uC_MonAn8.Location = new System.Drawing.Point(174, 345);
+            this.uC_MonAn8.Name = "uC_MonAn8";
+            this.uC_MonAn8.Size = new System.Drawing.Size(165, 165);
+            this.uC_MonAn8.TabIndex = 7;
+            this.uC_MonAn8.TextGiaMonAn = "50.000VND";
+            this.uC_MonAn8.TextTenMonAn = "Phở Bò";
+            // 
+            // uC_MonAn9
+            // 
+            this.uC_MonAn9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.uC_MonAn9.ImagePanel = global::GiaoDienPBL3.Properties.Resources.melissa_walker_horn_gtDYwUIr9Vg_unsplash;
+            this.uC_MonAn9.Location = new System.Drawing.Point(345, 345);
+            this.uC_MonAn9.Name = "uC_MonAn9";
+            this.uC_MonAn9.Size = new System.Drawing.Size(165, 165);
+            this.uC_MonAn9.TabIndex = 8;
+            this.uC_MonAn9.TextGiaMonAn = "50.000VND";
+            this.uC_MonAn9.TextTenMonAn = "Chanh Muối";
             // 
             // panelCaiDat
             // 
@@ -653,5 +718,10 @@
         private Guna.UI2.WinForms.Guna2Button btnHuy;
         private Guna.UI2.WinForms.Guna2Button btnXoa;
         private Guna.UI2.WinForms.Guna2Button btnThemAnh;
+        private UC_MonAn uC_MonAn5;
+        private UC_MonAn uC_MonAn6;
+        private UC_MonAn uC_MonAn7;
+        private UC_MonAn uC_MonAn8;
+        private UC_MonAn uC_MonAn9;
     }
 }
