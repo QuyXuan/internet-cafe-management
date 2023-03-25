@@ -19,11 +19,11 @@ namespace GiaoDienPBL3.UC
         public UC_QuanLyMay()
         {
             InitializeComponent();
+            my_UC = new UC_ThongTinVaCaiDatMay();
         }
 
         private void btnCaiDat_Click(object sender, EventArgs e)
         {
-            my_UC = new UC_ThongTinVaCaiDatMay();
             if (checkBtnCaiDat == false)
             {
                 panelThongTin.Controls.Add(my_UC);

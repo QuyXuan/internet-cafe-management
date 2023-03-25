@@ -58,14 +58,14 @@ namespace GiaoDienPBL3.UC
             }
             else if(btn.Name == "btnXoaMon")
             {
-                frmMain.myUC_QuanLyMenu.flowLayoutPanelChiTietMonAn.Controls.Remove(this);
+                frmMain.myUC_QuanLyMenu.panelChiTietMonAn.Controls.Remove(this);
                 TongTien -= GiaMon * Convert.ToInt32(lblSoLuongMon.Text);
                 UC_MonAn myUCMonAn = this.Tag as UC_MonAn;
                 myUCMonAn.panelBackGroundMonAn.BackColor = Color.Transparent;
             }
             else if (lblSoLuongMon.Text == "1")
             {
-                frmMain.myUC_QuanLyMenu.flowLayoutPanelChiTietMonAn.Controls.Remove(this);
+                frmMain.myUC_QuanLyMenu.panelChiTietMonAn.Controls.Remove(this);
                 TongTien -= GiaMon;
                 UC_MonAn myUCMonAn = this.Tag as UC_MonAn;
                 myUCMonAn.panelBackGroundMonAn.BackColor = Color.Transparent;
