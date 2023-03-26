@@ -45,6 +45,7 @@
             this.btnOK = new Guna.UI2.WinForms.Guna2Button();
             this.btnHuy = new Guna.UI2.WinForms.Guna2Button();
             this.btnXoa = new Guna.UI2.WinForms.Guna2Button();
+            this.txtPath = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2GroupBox1.SuspendLayout();
             this.guna2GroupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -53,6 +54,7 @@
             // 
             this.guna2GroupBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.guna2GroupBox1.BorderThickness = 3;
+            this.guna2GroupBox1.Controls.Add(this.txtPath);
             this.guna2GroupBox1.Controls.Add(this.btnThemAnh);
             this.guna2GroupBox1.Controls.Add(this.cboLoai);
             this.guna2GroupBox1.Controls.Add(this.label6);
@@ -70,7 +72,7 @@
             this.guna2GroupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.guna2GroupBox1.Location = new System.Drawing.Point(0, 0);
             this.guna2GroupBox1.Name = "guna2GroupBox1";
-            this.guna2GroupBox1.Size = new System.Drawing.Size(365, 409);
+            this.guna2GroupBox1.Size = new System.Drawing.Size(365, 431);
             this.guna2GroupBox1.TabIndex = 2;
             this.guna2GroupBox1.Text = "Thông Tin Chung";
             // 
@@ -82,6 +84,7 @@
             this.btnThemAnh.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnThemAnh.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnThemAnh.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnThemAnh.Enabled = false;
             this.btnThemAnh.FillColor = System.Drawing.Color.Gray;
             this.btnThemAnh.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThemAnh.ForeColor = System.Drawing.SystemColors.Control;
@@ -90,6 +93,7 @@
             this.btnThemAnh.Size = new System.Drawing.Size(286, 36);
             this.btnThemAnh.TabIndex = 14;
             this.btnThemAnh.Text = "Thêm Ảnh";
+            this.btnThemAnh.Click += new System.EventHandler(this.btnThemAnh_Click);
             // 
             // cboLoai
             // 
@@ -245,9 +249,9 @@
             this.guna2GroupBox2.FillColor = System.Drawing.Color.Transparent;
             this.guna2GroupBox2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2GroupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.guna2GroupBox2.Location = new System.Drawing.Point(0, 409);
+            this.guna2GroupBox2.Location = new System.Drawing.Point(0, 431);
             this.guna2GroupBox2.Name = "guna2GroupBox2";
-            this.guna2GroupBox2.Size = new System.Drawing.Size(365, 249);
+            this.guna2GroupBox2.Size = new System.Drawing.Size(365, 227);
             this.guna2GroupBox2.TabIndex = 3;
             this.guna2GroupBox2.Text = "Xử Lý";
             // 
@@ -307,7 +311,7 @@
             this.btnOK.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btnOK.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOK.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.btnOK.Location = new System.Drawing.Point(204, 176);
+            this.btnOK.Location = new System.Drawing.Point(204, 160);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(132, 41);
             this.btnOK.TabIndex = 10;
@@ -325,7 +329,7 @@
             this.btnHuy.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnHuy.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHuy.ForeColor = System.Drawing.Color.Silver;
-            this.btnHuy.Location = new System.Drawing.Point(29, 176);
+            this.btnHuy.Location = new System.Drawing.Point(29, 160);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(132, 41);
             this.btnHuy.TabIndex = 9;
@@ -356,6 +360,30 @@
             this.btnXoa.TabIndex = 11;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.Click += new System.EventHandler(this.ThemXoaSuaClick);
+            // 
+            // txtPath
+            // 
+            this.txtPath.BorderRadius = 8;
+            this.txtPath.BorderThickness = 2;
+            this.txtPath.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtPath.DefaultText = "";
+            this.txtPath.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtPath.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtPath.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtPath.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtPath.Enabled = false;
+            this.txtPath.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtPath.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtPath.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtPath.Location = new System.Drawing.Point(25, 398);
+            this.txtPath.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtPath.Name = "txtPath";
+            this.txtPath.PasswordChar = '\0';
+            this.txtPath.PlaceholderText = "";
+            this.txtPath.ReadOnly = true;
+            this.txtPath.SelectedText = "";
+            this.txtPath.Size = new System.Drawing.Size(330, 26);
+            this.txtPath.TabIndex = 15;
             // 
             // UC_ThongTinVaCaiDatMonAn
             // 
@@ -391,5 +419,6 @@
         private Guna.UI2.WinForms.Guna2Button btnOK;
         private Guna.UI2.WinForms.Guna2Button btnHuy;
         private Guna.UI2.WinForms.Guna2Button btnXoa;
+        private Guna.UI2.WinForms.Guna2TextBox txtPath;
     }
 }

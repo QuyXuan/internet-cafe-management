@@ -84,12 +84,13 @@
             this.cboTrangThai.Enabled = false;
             this.cboTrangThai.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cboTrangThai.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cboTrangThai.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboTrangThai.Font = new System.Drawing.Font("Segoe UI", 10.2F);
             this.cboTrangThai.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cboTrangThai.ItemHeight = 30;
             this.cboTrangThai.Items.AddRange(new object[] {
             "Còn 5 Phút",
-            "Bảo Trì"});
+            "Bảo Trì",
+            "Bình Thường"});
             this.cboTrangThai.Location = new System.Drawing.Point(53, 315);
             this.cboTrangThai.Name = "cboTrangThai";
             this.cboTrangThai.Size = new System.Drawing.Size(191, 36);
@@ -105,13 +106,13 @@
             this.cboLoaiMay.Enabled = false;
             this.cboLoaiMay.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cboLoaiMay.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cboLoaiMay.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboLoaiMay.Font = new System.Drawing.Font("Segoe UI", 10.2F);
             this.cboLoaiMay.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cboLoaiMay.ItemHeight = 30;
             this.cboLoaiMay.Items.AddRange(new object[] {
             "Khách",
             "Khách Thường Xuyên",
-            "Admistrator",
+            "Administrator",
             "Nhân Viên",
             "Học Sinh",
             "Online",
