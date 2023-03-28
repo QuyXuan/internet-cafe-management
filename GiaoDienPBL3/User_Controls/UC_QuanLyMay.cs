@@ -16,13 +16,15 @@ namespace GiaoDienPBL3.UC
 {
     public partial class UC_QuanLyMay : UserControl
     {
-        public static UC_ThongTinVaCaiDatMay my_UC;
+        public static UC_ThongTinVaCaiDatMay my_UCThongTinVaCaiDatMay;
+        private UC_ChiTietMay my_UCChiTietMay;
         private bool checkBtnCaiDat = false;
         private Dictionary<string, Color> COLOR;
         public UC_QuanLyMay()
         {
             InitializeComponent();
-            my_UC = new UC_ThongTinVaCaiDatMay();
+            my_UCThongTinVaCaiDatMay = new UC_ThongTinVaCaiDatMay();
+            my_UCChiTietMay = new UC_ChiTietMay();
             AddMauSac();
         }
         private void AddMauSac()
@@ -71,13 +73,33 @@ namespace GiaoDienPBL3.UC
                 button.FillColor = COLOR["Blue"];
             button.Tag = may;
             frmMain.myUC_QuanLyMay.panelQuanLyMay.Controls.Add(button);
+            button.MouseEnter += new EventHandler(button_MouseEnter);
+            button.MouseLeave += new EventHandler(button_MouseLeave);
+        }
+        private void button_MouseEnter(object sender, EventArgs e)
+        {
+            my_UCChiTietMay.Visible = true;
+            Guna2Button button = sender as Guna2Button;
+            May may = button.Tag as May;
+            my_UCChiTietMay.TextMaMay = may.MaMay;
+            my_UCChiTietMay.TextSoMay = may.SoMay;
+            my_UCChiTietMay.TextGiaMay = may.Gia.ToString();
+            my_UCChiTietMay.TextLoaiMay = may.LoaiMay;
+            my_UCChiTietMay.TextTrangThai = may.TrangThai;
+            panelPhu.Controls.Add(my_UCChiTietMay);
+            my_UCChiTietMay.Location = new Point(button.Location.X + 60, button.Location.Y + 60);
+            my_UCChiTietMay.BringToFront();
+        }
+        private void button_MouseLeave(object sender, EventArgs e)
+        {
+            my_UCChiTietMay.Visible = false;
         }
         private void btnCaiDat_Click(object sender, EventArgs e)
         {
             if (checkBtnCaiDat == false)
             {
-                panelThongTin.Controls.Add(my_UC);
-                my_UC.Dock = DockStyle.Fill;
+                panelThongTin.Controls.Add(my_UCThongTinVaCaiDatMay);
+                my_UCThongTinVaCaiDatMay.Dock = DockStyle.Fill;
                 panelChiTietQuanLyMay.SendToBack();
                 checkBtnCaiDat = true;
             }

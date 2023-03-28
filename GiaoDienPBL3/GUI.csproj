@@ -92,11 +92,23 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="User_Controls\UC_ChiTietMay.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User_Controls\UC_ChiTietMay.Designer.cs">
+      <DependentUpon>UC_ChiTietMay.cs</DependentUpon>
+    </Compile>
     <Compile Include="User_Controls\UC_ChiTietMonAn.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="User_Controls\UC_ChiTietMonAn.Designer.cs">
       <DependentUpon>UC_ChiTietMonAn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User_Controls\UC_Loading.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User_Controls\UC_Loading.Designer.cs">
+      <DependentUpon>UC_Loading.cs</DependentUpon>
     </Compile>
     <Compile Include="User_Controls\UC_QuanLyDoanhThu.cs">
       <SubType>UserControl</SubType>
@@ -169,8 +181,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="User_Controls\UC_ChiTietMay.resx">
+      <DependentUpon>UC_ChiTietMay.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="User_Controls\UC_ChiTietMonAn.resx">
       <DependentUpon>UC_ChiTietMonAn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_Controls\UC_Loading.resx">
+      <DependentUpon>UC_Loading.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User_Controls\UC_QuanLyDoanhThu.resx">
       <DependentUpon>UC_QuanLyDoanhThu.cs</DependentUpon>

@@ -30,7 +30,7 @@ namespace BLL
             {
                 new May("m001", "1", 15, "Khách", "Bình Thường"),
                 new May("m002", "2", 12, "Khách Thường Xuyên", "Bình Thường"),
-                new May("m003", "3", 0, "Admistrator", "Bình Thường"),
+                new May("m003", "3", 0, "Administrator", "Bình Thường"),
                 new May("m004", "4", 5, "Nhân Viên", "Bình Thường"),
                 new May("m005", "5", 10, "Học Sinh", "Bình Thường"),
                 new May("m006", "6", 15, "Online", "Bình Thường"),

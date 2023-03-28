@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.panelPhu = new System.Windows.Forms.Panel();
             this.panelQuanLyMay = new System.Windows.Forms.FlowLayoutPanel();
             this.panelThongTin = new System.Windows.Forms.Panel();
             this.panelChiTietQuanLyMay = new System.Windows.Forms.Panel();
@@ -75,7 +75,7 @@
             this.btnCaiDat = new Guna.UI2.WinForms.Guna2Button();
             this.label32 = new System.Windows.Forms.Label();
             this.guna2CustomGradientPanel1.SuspendLayout();
-            this.panel3.SuspendLayout();
+            this.panelPhu.SuspendLayout();
             this.panelThongTin.SuspendLayout();
             this.panelChiTietQuanLyMay.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox3)).BeginInit();
@@ -86,7 +86,7 @@
             // 
             // guna2CustomGradientPanel1
             // 
-            this.guna2CustomGradientPanel1.Controls.Add(this.panel3);
+            this.guna2CustomGradientPanel1.Controls.Add(this.panelPhu);
             this.guna2CustomGradientPanel1.Controls.Add(this.panelThongTin);
             this.guna2CustomGradientPanel1.Controls.Add(this.panel1);
             this.guna2CustomGradientPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -99,15 +99,15 @@
             this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(1241, 689);
             this.guna2CustomGradientPanel1.TabIndex = 0;
             // 
-            // panel3
+            // panelPhu
             // 
-            this.panel3.BackColor = System.Drawing.Color.Transparent;
-            this.panel3.Controls.Add(this.panelQuanLyMay);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(0, 90);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(987, 599);
-            this.panel3.TabIndex = 2;
+            this.panelPhu.BackColor = System.Drawing.Color.Transparent;
+            this.panelPhu.Controls.Add(this.panelQuanLyMay);
+            this.panelPhu.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelPhu.Location = new System.Drawing.Point(0, 90);
+            this.panelPhu.Name = "panelPhu";
+            this.panelPhu.Size = new System.Drawing.Size(987, 599);
+            this.panelPhu.TabIndex = 2;
             // 
             // panelQuanLyMay
             // 
@@ -669,7 +669,7 @@
             this.Size = new System.Drawing.Size(1241, 689);
             this.Load += new System.EventHandler(this.UC_QuanLyMay_Load);
             this.guna2CustomGradientPanel1.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
+            this.panelPhu.ResumeLayout(false);
             this.panelThongTin.ResumeLayout(false);
             this.panelChiTietQuanLyMay.ResumeLayout(false);
             this.panelChiTietQuanLyMay.PerformLayout();
@@ -687,7 +687,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panelThongTin;
         private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panelPhu;
         private Guna.UI2.WinForms.Guna2Button btnCaiDat;
         private System.Windows.Forms.Panel panelChiTietQuanLyMay;
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox3;

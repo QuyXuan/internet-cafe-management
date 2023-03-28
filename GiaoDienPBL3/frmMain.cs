@@ -20,6 +20,7 @@ namespace GiaoDienPBL3
         public static UC_QuanLyMay myUC_QuanLyMay = new UC_QuanLyMay();
         public static UC_QuanLyKho myUC_QuanLyKho = new UC_QuanLyKho();
         public static UC_QuanLyHoaDon myUC_QuanLyHoaDon = new UC_QuanLyHoaDon();
+        public static UC_Loading myUC_Loading = new UC_Loading();
         public frmMain()
         {
             InitializeComponent();
@@ -119,7 +120,10 @@ namespace GiaoDienPBL3
 
         private void AddUserControlOnBackGround(UserControl userControl)
         {
+            myUC_Loading.Visible = true;
+            myUC_Loading.circlerProgressBarLoad.Value = 0;
             panelBackGround.Controls.Clear();
+            panelBackGround.Controls.Add(myUC_Loading);
             panelBackGround.Controls.Add(userControl);
             userControl.Dock = DockStyle.Fill;
         }
