@@ -49,6 +49,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.panelChiTietMonAn = new System.Windows.Forms.FlowLayoutPanel();
+            this.cboMenhGia = new Guna.UI2.WinForms.Guna2ComboBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
@@ -59,9 +60,8 @@
             this.panelMonAn = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnCaiDat = new Guna.UI2.WinForms.Guna2Button();
-            this.cboMenhGia = new Guna.UI2.WinForms.Guna2ComboBox();
             this.uC_MonAn1 = new GiaoDienPBL3.UC.UC_MonAn();
+            this.btnCaiDat = new Guna.UI2.WinForms.Guna2Button();
             this.guna2CustomGradientPanel1.SuspendLayout();
             this.panelThongTinChiTietMonAn.SuspendLayout();
             this.panelCaiDatVaThongTin.SuspendLayout();
@@ -412,11 +412,35 @@
             this.panelChiTietMonAn.BackColor = System.Drawing.Color.Transparent;
             this.panelChiTietMonAn.Controls.Add(this.cboMenhGia);
             this.panelChiTietMonAn.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelChiTietMonAn.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.panelChiTietMonAn.Location = new System.Drawing.Point(0, 313);
             this.panelChiTietMonAn.Name = "panelChiTietMonAn";
             this.panelChiTietMonAn.Size = new System.Drawing.Size(365, 233);
             this.panelChiTietMonAn.TabIndex = 12;
+            // 
+            // cboMenhGia
+            // 
+            this.cboMenhGia.BackColor = System.Drawing.Color.Transparent;
+            this.cboMenhGia.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cboMenhGia.BorderThickness = 2;
+            this.cboMenhGia.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cboMenhGia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboMenhGia.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cboMenhGia.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cboMenhGia.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cboMenhGia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cboMenhGia.ItemHeight = 30;
+            this.cboMenhGia.Items.AddRange(new object[] {
+            "10.000VNĐ",
+            "20.000VNĐ",
+            "50.000VNĐ",
+            "100.000VNĐ",
+            "200.000VNĐ",
+            "500.000VNĐ"});
+            this.cboMenhGia.Location = new System.Drawing.Point(3, 3);
+            this.cboMenhGia.Name = "cboMenhGia";
+            this.cboMenhGia.Size = new System.Drawing.Size(359, 36);
+            this.cboMenhGia.TabIndex = 0;
+            this.cboMenhGia.Visible = false;
             // 
             // panel3
             // 
@@ -540,6 +564,17 @@
             this.label1.Text = "Quản Lý Menu Món Ăn/Nước Uống";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // uC_MonAn1
+            // 
+            this.uC_MonAn1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.uC_MonAn1.ImagePanel = global::GiaoDienPBL3.Properties.Resources.icons8_credit_card_100;
+            this.uC_MonAn1.Location = new System.Drawing.Point(3, 3);
+            this.uC_MonAn1.Name = "uC_MonAn1";
+            this.uC_MonAn1.Size = new System.Drawing.Size(164, 158);
+            this.uC_MonAn1.TabIndex = 0;
+            this.uC_MonAn1.TextGiaMonAn = "Nạp Tiền";
+            this.uC_MonAn1.TextTenMonAn = "Nạp Tiền";
+            // 
             // btnCaiDat
             // 
             this.btnCaiDat.BorderColor = System.Drawing.Color.Transparent;
@@ -562,42 +597,6 @@
             this.btnCaiDat.TabIndex = 2;
             this.btnCaiDat.Text = "Cài Đặt";
             this.btnCaiDat.Click += new System.EventHandler(this.btnCaiDat_Click);
-            // 
-            // cboMenhGia
-            // 
-            this.cboMenhGia.BackColor = System.Drawing.Color.Transparent;
-            this.cboMenhGia.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.cboMenhGia.BorderThickness = 2;
-            this.cboMenhGia.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cboMenhGia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboMenhGia.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cboMenhGia.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cboMenhGia.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cboMenhGia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.cboMenhGia.ItemHeight = 30;
-            this.cboMenhGia.Items.AddRange(new object[] {
-            "10.000VNĐ",
-            "20.000VNĐ",
-            "50.000VNĐ",
-            "100.000VNĐ",
-            "200.000VNĐ",
-            "500.000VNĐ"});
-            this.cboMenhGia.Location = new System.Drawing.Point(3, 3);
-            this.cboMenhGia.Name = "cboMenhGia";
-            this.cboMenhGia.Size = new System.Drawing.Size(359, 36);
-            this.cboMenhGia.TabIndex = 0;
-            this.cboMenhGia.Visible = false;
-            // 
-            // uC_MonAn1
-            // 
-            this.uC_MonAn1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.uC_MonAn1.ImagePanel = global::GiaoDienPBL3.Properties.Resources.icons8_credit_card_100;
-            this.uC_MonAn1.Location = new System.Drawing.Point(3, 3);
-            this.uC_MonAn1.Name = "uC_MonAn1";
-            this.uC_MonAn1.Size = new System.Drawing.Size(164, 158);
-            this.uC_MonAn1.TabIndex = 0;
-            this.uC_MonAn1.TextGiaMonAn = "Nạp Tiền";
-            this.uC_MonAn1.TextTenMonAn = "Nạp Tiền";
             // 
             // UC_QuanLyMenu
             // 

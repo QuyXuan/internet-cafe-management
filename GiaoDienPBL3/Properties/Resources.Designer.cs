@@ -93,6 +93,16 @@ namespace GiaoDienPBL3.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Cocktail {
+            get {
+                object obj = ResourceManager.GetObject("Cocktail", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap demi_deherrera_L_sm1B4L1Ns_unsplash {
             get {
                 object obj = ResourceManager.GetObject("demi-deherrera-L-sm1B4L1Ns-unsplash", resourceCulture);
