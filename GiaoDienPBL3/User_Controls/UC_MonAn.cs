@@ -70,15 +70,15 @@ namespace GiaoDienPBL3.UC
             {
                 if (panelBackGroundMonAn.BackColor == Color.Transparent)
                 {
-                    frmMain.myUC_QuanLyMenu.cboMenhGia.Visible = true;
-                    frmMain.myUC_QuanLyMenu.btnXacNhan.Visible = true;
+                    //frmMain.myUC_QuanLyMenu.cboMenhGia.Visible = true;
+                    //frmMain.myUC_QuanLyMenu.btnXacNhan.Visible = true;
                     frmMain.myUC_QuanLyMenu.panelXacNhanLuaChon.Visible = true;
                     panelBackGroundMonAn.BackColor = Color.FromArgb(4, 121, 171);
                 }
                 else
                 {
-                    frmMain.myUC_QuanLyMenu.cboMenhGia.Visible = false;
-                    frmMain.myUC_QuanLyMenu.btnXacNhan.Visible = false;
+                    //frmMain.myUC_QuanLyMenu.cboMenhGia.Visible = false;
+                    //frmMain.myUC_QuanLyMenu.btnXacNhan.Visible = false;
                     frmMain.myUC_QuanLyMenu.panelXacNhanLuaChon.Visible = false;
                     panelBackGroundMonAn.BackColor = Color.Transparent;
                 }

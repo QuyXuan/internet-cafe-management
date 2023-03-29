@@ -92,7 +92,8 @@ namespace GiaoDienPBL3.UC
         {
             if (checkBtnXacNhan == true)
             {
-                int TongMenhGia = Convert.ToInt32(cboMenhGia.Text.Substring(0, cboMenhGia.Text.Length - 4)) + Convert.ToInt32(my_UCChiTietMonAn.TextGiaMonAn.Substring(0, my_UCChiTietMonAn.TextGiaMonAn.Length - 7));
+                int TongMenhGia = Convert.ToInt32(ConvertIfGraterThan1000(cboMenhGia.Text.Substring(0, cboMenhGia.Text.Length - 4)))
+                    + Convert.ToInt32(ConvertIfGraterThan1000(my_UCChiTietMonAn.TextGiaMonAn.Substring(0, my_UCChiTietMonAn.TextGiaMonAn.Length - 7)));
                 my_UCChiTietMonAn.TextGiaMonAn = string.Format("{0:N3}VNĐ", TongMenhGia);
             }
             else
@@ -105,6 +106,10 @@ namespace GiaoDienPBL3.UC
                 my_UCChiTietMonAn.Tag = this;
                 frmMain.myUC_QuanLyMenu.panelChiTietMonAn.Controls.Add(my_UCChiTietMonAn);
             }
+        }
+        private string ConvertIfGraterThan1000(string cash)
+        {
+            return cash.Replace(",", "");
         }
         private void HienThiVaTinhTongTien()
         {

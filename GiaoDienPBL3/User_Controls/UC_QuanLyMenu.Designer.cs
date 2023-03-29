@@ -427,6 +427,7 @@
             this.panelXacNhanLuaChon.Name = "panelXacNhanLuaChon";
             this.panelXacNhanLuaChon.Size = new System.Drawing.Size(340, 48);
             this.panelXacNhanLuaChon.TabIndex = 2;
+            this.panelXacNhanLuaChon.Visible = false;
             // 
             // btnXacNhan
             // 
@@ -444,7 +445,6 @@
             this.btnXacNhan.Size = new System.Drawing.Size(340, 24);
             this.btnXacNhan.TabIndex = 2;
             this.btnXacNhan.Text = "Xác Nhận";
-            this.btnXacNhan.Visible = false;
             this.btnXacNhan.Click += new System.EventHandler(this.btnXacNhan_Click);
             // 
             // cboMenhGia
@@ -462,7 +462,6 @@
             this.cboMenhGia.Name = "cboMenhGia";
             this.cboMenhGia.Size = new System.Drawing.Size(340, 24);
             this.cboMenhGia.TabIndex = 1;
-            this.cboMenhGia.Visible = false;
             // 
             // panel3
             // 
@@ -681,7 +680,7 @@
         private UC_MonAn uC_MonAn1;
         public System.Windows.Forms.Panel panelCaiDatVaThongTin;
         public System.Windows.Forms.Panel panelXacNhanLuaChon;
-        public System.Windows.Forms.ComboBox cboMenhGia;
-        public Guna.UI2.WinForms.Guna2Button btnXacNhan;
+        private System.Windows.Forms.ComboBox cboMenhGia;
+        private Guna.UI2.WinForms.Guna2Button btnXacNhan;
     }
 }

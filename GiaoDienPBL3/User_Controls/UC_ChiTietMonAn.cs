@@ -49,12 +49,15 @@ namespace GiaoDienPBL3.UC
         {
             Guna2Button btn = sender as Guna2Button;
             int TongTien = Convert.ToInt32(frmMain.myUC_QuanLyMenu.lblTongTien.Tag);
-            int GiaMon = Convert.ToInt32(ChuyenDoiGiaMon(lblGiaMon.Text));
+            int GiaMon = Convert.ToInt32(ChuyenDoiGiaMon(lblGiaMon.Text).Replace(",", ""));
             //int SoLuongMon = Convert.ToInt32(lblSoLuongMon.Text);
             if (btn.Text == "+")
             {
-                lblSoLuongMon.Text = (Convert.ToInt32(lblSoLuongMon.Text) + 1).ToString();
-                TongTien += GiaMon;
+                if (lblTenMon.Text != "Nạp Tiền")
+                {
+                    lblSoLuongMon.Text = (Convert.ToInt32(lblSoLuongMon.Text) + 1).ToString();
+                    TongTien += GiaMon;
+                }
             }
             else if(btn.Name == "btnXoaMon")
             {
@@ -72,10 +75,10 @@ namespace GiaoDienPBL3.UC
             }
             else if (lblSoLuongMon.Text == "1")
             {
-                frmMain.myUC_QuanLyMenu.panelChiTietMonAn.Controls.Remove(this);
-                TongTien -= GiaMon;
                 if (lblTenMon.Text != "Nạp Tiền")
                 {
+                    frmMain.myUC_QuanLyMenu.panelChiTietMonAn.Controls.Remove(this);
+                    TongTien -= GiaMon;
                     UC_MonAn myUCMonAn = this.Tag as UC_MonAn;
                     myUCMonAn.panelBackGroundMonAn.BackColor = Color.Transparent;
                 }
