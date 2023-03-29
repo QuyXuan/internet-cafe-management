@@ -17,8 +17,10 @@ namespace GiaoDienPBL3.UC
 {
     public partial class UC_QuanLyMenu : UserControl
     {
-        public static UC_ThongTinVaCaiDatMonAn my_UCThongTinVaCaiDatMonAn = new UC_ThongTinVaCaiDatMonAn();
+        public static UC_ThongTinVaCaiDatMonAn my_UCThongTinVaCaiDatMonAn;
+        public UC_ChiTietMonAn my_UCChiTietMonAn;
         private bool checkBtnCaiDat = false;
+        public static bool checkBtnXacNhan = false;
         public UC_QuanLyMenu()
         {
             InitializeComponent();
@@ -73,6 +75,44 @@ namespace GiaoDienPBL3.UC
             {
                 return null;
             }
+        }
+
+
+        private void btnXacNhan_Click(object sender, EventArgs e)
+        {
+            if (checkBtnXacNhan == false)
+            {
+                my_UCChiTietMonAn = new UC_ChiTietMonAn();
+            }
+            ThemChiTietMonAnVaoFlowLayoutPanel();
+            HienThiVaTinhTongTien();
+            checkBtnXacNhan = true;
+        }
+        private void ThemChiTietMonAnVaoFlowLayoutPanel()
+        {
+            if (checkBtnXacNhan == true)
+            {
+                int TongMenhGia = Convert.ToInt32(cboMenhGia.Text.Substring(0, cboMenhGia.Text.Length - 4)) + Convert.ToInt32(my_UCChiTietMonAn.TextGiaMonAn.Substring(0, my_UCChiTietMonAn.TextGiaMonAn.Length - 7));
+                my_UCChiTietMonAn.TextGiaMonAn = string.Format("{0:N3}VNĐ", TongMenhGia);
+            }
+            else
+            {
+                my_UCChiTietMonAn.TextTenMonAn = "Nạp Tiền";
+                my_UCChiTietMonAn.TextGiaMonAn = string.Format("{0:N3}VNĐ", cboMenhGia.Text);
+                my_UCChiTietMonAn.TextSoLuongMonAn = 1 + "";
+                btnXacNhan.Tag = (Convert.ToInt32(btnXacNhan.Tag) + 1).ToString();
+                my_UCChiTietMonAn.Width = 255;
+                my_UCChiTietMonAn.Tag = this;
+                frmMain.myUC_QuanLyMenu.panelChiTietMonAn.Controls.Add(my_UCChiTietMonAn);
+            }
+        }
+        private void HienThiVaTinhTongTien()
+        {
+            string textMenhGia = string.Format("{0:N3}VNĐ", cboMenhGia.Text);
+            int TongTien = Convert.ToInt32(frmMain.myUC_QuanLyMenu.lblTongTien.Tag);
+            TongTien += Convert.ToInt32(textMenhGia.Substring(0, textMenhGia.Length - 7));
+            frmMain.myUC_QuanLyMenu.lblTongTien.Text = string.Format("{0:N3}VNĐ", TongTien);
+            frmMain.myUC_QuanLyMenu.lblTongTien.Tag = TongTien;
         }
     }
 }

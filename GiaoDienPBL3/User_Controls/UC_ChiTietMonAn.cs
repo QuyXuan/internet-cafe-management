@@ -38,7 +38,7 @@ namespace GiaoDienPBL3.UC
         {
             InitializeComponent();
         }
-
+        //700.000VND
         private string ChuyenDoiGiaMon(string GiaMon)
         {
             GiaMon = GiaMon.Substring(0, GiaMon.Length - 7);
@@ -60,15 +60,25 @@ namespace GiaoDienPBL3.UC
             {
                 frmMain.myUC_QuanLyMenu.panelChiTietMonAn.Controls.Remove(this);
                 TongTien -= GiaMon * Convert.ToInt32(lblSoLuongMon.Text);
-                UC_MonAn myUCMonAn = this.Tag as UC_MonAn;
-                myUCMonAn.panelBackGroundMonAn.BackColor = Color.Transparent;
+                if (lblTenMon.Text != "Nạp Tiền")
+                {
+                    UC_MonAn myUCMonAn = this.Tag as UC_MonAn;
+                    myUCMonAn.panelBackGroundMonAn.BackColor = Color.Transparent;
+                }
+                else
+                {
+                    UC_QuanLyMenu.checkBtnXacNhan = false;
+                }
             }
             else if (lblSoLuongMon.Text == "1")
             {
                 frmMain.myUC_QuanLyMenu.panelChiTietMonAn.Controls.Remove(this);
                 TongTien -= GiaMon;
-                UC_MonAn myUCMonAn = this.Tag as UC_MonAn;
-                myUCMonAn.panelBackGroundMonAn.BackColor = Color.Transparent;
+                if (lblTenMon.Text != "Nạp Tiền")
+                {
+                    UC_MonAn myUCMonAn = this.Tag as UC_MonAn;
+                    myUCMonAn.panelBackGroundMonAn.BackColor = Color.Transparent;
+                }
             }
             else
             {

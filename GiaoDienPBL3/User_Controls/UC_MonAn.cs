@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace GiaoDienPBL3.UC
 {
@@ -70,12 +71,15 @@ namespace GiaoDienPBL3.UC
                 if (panelBackGroundMonAn.BackColor == Color.Transparent)
                 {
                     frmMain.myUC_QuanLyMenu.cboMenhGia.Visible = true;
-                    frmMain.myUC_QuanLyMenu.cboMenhGia.SelectedItem = "Chọn Mệnh Giá Để Nạp";
+                    frmMain.myUC_QuanLyMenu.btnXacNhan.Visible = true;
+                    frmMain.myUC_QuanLyMenu.panelXacNhanLuaChon.Visible = true;
                     panelBackGroundMonAn.BackColor = Color.FromArgb(4, 121, 171);
                 }
                 else
                 {
                     frmMain.myUC_QuanLyMenu.cboMenhGia.Visible = false;
+                    frmMain.myUC_QuanLyMenu.btnXacNhan.Visible = false;
+                    frmMain.myUC_QuanLyMenu.panelXacNhanLuaChon.Visible = false;
                     panelBackGroundMonAn.BackColor = Color.Transparent;
                 }
                 return;
@@ -85,10 +89,5 @@ namespace GiaoDienPBL3.UC
             ThemChiTietMonAnVaoFlowLayoutPanel();
             HienThiVaTinhTongTien();
         }
-        //private void HienThiNapTien()
-        //{
-        //    Panel panel = frmMain.myUC_QuanLyMenu.panelCaiDatVaThongTin;
-        //    frmMain.myUC_QuanLyMenu.cboMenhGia.Location = new Point(panel.Location.X + 30, panel.Location.Y);
-        //}
     }
 }
