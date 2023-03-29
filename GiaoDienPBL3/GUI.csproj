@@ -361,5 +361,8 @@
   <ItemGroup>
     <None Include="Resources\icons8-react-60.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-credit-card-100.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

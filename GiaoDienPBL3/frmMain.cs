@@ -133,9 +133,6 @@ namespace GiaoDienPBL3
             Guna2Button btn = sender as Guna2Button;
             SetOnCheckStateButton(btn);
             HideSubMenu();
-            //panelBackGround.Controls.Clear();
-            //panelBackGround.Controls.Add(myUC_TrangChu);
-            //myUC_TrangChu.Dock = DockStyle.Fill;
             AddUserControlOnBackGround(myUC_TrangChu);
         }
 

@@ -65,11 +65,30 @@ namespace GiaoDienPBL3.UC
 
         private void picMonAn_Click(object sender, EventArgs e)
         {
+            if (lblGiaMonAn.Text == lblTenMonAn.Text)
+            {
+                if (panelBackGroundMonAn.BackColor == Color.Transparent)
+                {
+                    frmMain.myUC_QuanLyMenu.cboMenhGia.Visible = true;
+                    frmMain.myUC_QuanLyMenu.cboMenhGia.SelectedItem = "Chọn Mệnh Giá Để Nạp";
+                    panelBackGroundMonAn.BackColor = Color.FromArgb(4, 121, 171);
+                }
+                else
+                {
+                    frmMain.myUC_QuanLyMenu.cboMenhGia.Visible = false;
+                    panelBackGroundMonAn.BackColor = Color.Transparent;
+                }
+                return;
+            }
             if (panelBackGroundMonAn.BackColor == Color.FromArgb(4, 121, 171)) return;
             ChinhMauVienMonAn();
             ThemChiTietMonAnVaoFlowLayoutPanel();
             HienThiVaTinhTongTien();
         }
-        
+        //private void HienThiNapTien()
+        //{
+        //    Panel panel = frmMain.myUC_QuanLyMenu.panelCaiDatVaThongTin;
+        //    frmMain.myUC_QuanLyMenu.cboMenhGia.Location = new Point(panel.Location.X + 30, panel.Location.Y);
+        //}
     }
 }

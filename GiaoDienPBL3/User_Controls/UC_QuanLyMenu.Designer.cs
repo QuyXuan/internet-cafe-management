@@ -58,15 +58,19 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.panelMonAn = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnCaiDat = new Guna.UI2.WinForms.Guna2Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnCaiDat = new Guna.UI2.WinForms.Guna2Button();
+            this.cboMenhGia = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.uC_MonAn1 = new GiaoDienPBL3.UC.UC_MonAn();
             this.guna2CustomGradientPanel1.SuspendLayout();
             this.panelThongTinChiTietMonAn.SuspendLayout();
             this.panelCaiDatVaThongTin.SuspendLayout();
             this.guna2GroupBox1.SuspendLayout();
+            this.panelChiTietMonAn.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.panelMonAn.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -406,7 +410,9 @@
             // 
             this.panelChiTietMonAn.AutoScroll = true;
             this.panelChiTietMonAn.BackColor = System.Drawing.Color.Transparent;
+            this.panelChiTietMonAn.Controls.Add(this.cboMenhGia);
             this.panelChiTietMonAn.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelChiTietMonAn.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.panelChiTietMonAn.Location = new System.Drawing.Point(0, 313);
             this.panelChiTietMonAn.Name = "panelChiTietMonAn";
             this.panelChiTietMonAn.Size = new System.Drawing.Size(365, 233);
@@ -504,6 +510,7 @@
             // 
             // panelMonAn
             // 
+            this.panelMonAn.Controls.Add(this.uC_MonAn1);
             this.panelMonAn.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMonAn.Location = new System.Drawing.Point(0, 0);
             this.panelMonAn.Name = "panelMonAn";
@@ -520,6 +527,18 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1249, 68);
             this.panel1.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(1249, 68);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Quản Lý Menu Món Ăn/Nước Uống";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnCaiDat
             // 
@@ -544,17 +563,41 @@
             this.btnCaiDat.Text = "Cài Đặt";
             this.btnCaiDat.Click += new System.EventHandler(this.btnCaiDat_Click);
             // 
-            // label1
+            // cboMenhGia
             // 
-            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1249, 68);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Quản Lý Menu Món Ăn/Nước Uống";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.cboMenhGia.BackColor = System.Drawing.Color.Transparent;
+            this.cboMenhGia.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cboMenhGia.BorderThickness = 2;
+            this.cboMenhGia.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cboMenhGia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboMenhGia.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cboMenhGia.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cboMenhGia.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cboMenhGia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cboMenhGia.ItemHeight = 30;
+            this.cboMenhGia.Items.AddRange(new object[] {
+            "10.000VNĐ",
+            "20.000VNĐ",
+            "50.000VNĐ",
+            "100.000VNĐ",
+            "200.000VNĐ",
+            "500.000VNĐ"});
+            this.cboMenhGia.Location = new System.Drawing.Point(3, 3);
+            this.cboMenhGia.Name = "cboMenhGia";
+            this.cboMenhGia.Size = new System.Drawing.Size(359, 36);
+            this.cboMenhGia.TabIndex = 0;
+            this.cboMenhGia.Visible = false;
+            // 
+            // uC_MonAn1
+            // 
+            this.uC_MonAn1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.uC_MonAn1.ImagePanel = global::GiaoDienPBL3.Properties.Resources.icons8_credit_card_100;
+            this.uC_MonAn1.Location = new System.Drawing.Point(3, 3);
+            this.uC_MonAn1.Name = "uC_MonAn1";
+            this.uC_MonAn1.Size = new System.Drawing.Size(164, 158);
+            this.uC_MonAn1.TabIndex = 0;
+            this.uC_MonAn1.TextGiaMonAn = "Nạp Tiền";
+            this.uC_MonAn1.TextTenMonAn = "Nạp Tiền";
             // 
             // UC_QuanLyMenu
             // 
@@ -569,10 +612,12 @@
             this.panelCaiDatVaThongTin.ResumeLayout(false);
             this.guna2GroupBox1.ResumeLayout(false);
             this.guna2GroupBox1.PerformLayout();
+            this.panelChiTietMonAn.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.panel4.ResumeLayout(false);
+            this.panelMonAn.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -586,7 +631,6 @@
         private System.Windows.Forms.Panel panel4;
         private Guna.UI2.WinForms.Guna2Button btnCaiDat;
         private System.Windows.Forms.Panel panelThongTinChiTietMonAn;
-        private System.Windows.Forms.Panel panelCaiDatVaThongTin;
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox1;
         private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker1;
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBox6;
@@ -612,5 +656,8 @@
         public System.Windows.Forms.Label lblTongTien;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         public System.Windows.Forms.FlowLayoutPanel panelMonAn;
+        private UC_MonAn uC_MonAn1;
+        public System.Windows.Forms.Panel panelCaiDatVaThongTin;
+        public Guna.UI2.WinForms.Guna2ComboBox cboMenhGia;
     }
 }

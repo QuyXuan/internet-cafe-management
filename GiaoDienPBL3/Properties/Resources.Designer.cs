@@ -193,6 +193,16 @@ namespace GiaoDienPBL3.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_credit_card_100 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-credit-card-100", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_doorbell_40 {
             get {
                 object obj = ResourceManager.GetObject("icons8-doorbell-40", resourceCulture);
