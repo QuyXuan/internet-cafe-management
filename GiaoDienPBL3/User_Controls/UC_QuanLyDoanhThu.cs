@@ -104,7 +104,7 @@ namespace GiaoDienPBL3.User_Controls
             if (result.ChartElementType == ChartElementType.DataPoint)
             {
                 var dataPoint = result.Series.Points[result.PointIndex];
-                var tooltip = string.Format("Value X: {0}\nValue Y: {1}", dataPoint.XValue, dataPoint.YValues[0]);
+                var tooltip = string.Format("Value Y: {0}", dataPoint.YValues[0]);
                 toolTip1.SetToolTip(chart, tooltip);
                 dataPoint.MarkerStyle = MarkerStyle.Circle;
             }

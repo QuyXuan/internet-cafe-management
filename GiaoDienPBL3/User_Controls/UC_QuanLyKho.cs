@@ -7,15 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using GiaoDienPBL3.User_Controls;
 using Guna.UI2.WinForms;
 
 namespace GiaoDienPBL3.UC
 {
     public partial class UC_QuanLyKho : UserControl
     {
+        public static UC_HoaDonNhapKho my_UCHoaDonNhapKho;
+        private bool checkBtnHoaDon = false;
         public UC_QuanLyKho()
         {
             InitializeComponent();
+            my_UCHoaDonNhapKho = new UC_HoaDonNhapKho();
+            AddUC();
             TestData();
         }
         private void TestData()
@@ -36,7 +41,6 @@ namespace GiaoDienPBL3.UC
         }
         private void SetAllButtonDisableAndVisible()
         {
-            btnThem.Enabled = false;
             btnXoa.Enabled = false;
             btnSua.Enabled = false;
             btnHuy.Visible = true;
@@ -44,10 +48,8 @@ namespace GiaoDienPBL3.UC
         }
         private void SetAllButtonEnableAndInvisible()
         {
-            btnThem.Enabled = true;
             btnXoa.Enabled = true;
             btnSua.Enabled = true;
-            btnThem.Checked = false;
             btnXoa.Checked = false;
             btnSua.Checked = false;
             btnHuy.Visible = false;
@@ -73,13 +75,7 @@ namespace GiaoDienPBL3.UC
         {
             Guna2Button btn = sender as Guna2Button;
             SetAllButtonDisableAndVisible();
-            if (btn.Name == "btnThem")
-            {
-                btnThem.Enabled = true;
-                ClearComboboxAndTextBox();
-                SetEnableComboboxAndTextBox(true);
-            }
-            else if (btn.Name == "btnSua")
+            if (btn.Name == "btnSua")
             {
                 btnSua.Enabled = true;
                 SetEnableComboboxAndTextBox(true);
@@ -114,6 +110,27 @@ namespace GiaoDienPBL3.UC
                 cboLoai.SelectedIndex = 0;
             else
                 cboLoai.SelectedIndex = 1;
+        }
+
+        private void btnHoaDon_Click(object sender, EventArgs e)
+        {
+            if (checkBtnHoaDon == false)
+            {
+                panelThongTin.SendToBack();
+                checkBtnHoaDon = true;
+            }
+            else
+            {
+                panelThongTin.BringToFront();
+                checkBtnHoaDon = false;
+                btnHoaDon.Checked = false;
+            }
+        }
+        private void AddUC()
+        {
+            panelThongTinVaHoaDon.Controls.Add(my_UCHoaDonNhapKho);
+            my_UCHoaDonNhapKho.Dock = DockStyle.Fill;
+            panelThongTin.BringToFront();
         }
     }
 }

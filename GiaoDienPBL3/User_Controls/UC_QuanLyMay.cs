@@ -25,6 +25,7 @@ namespace GiaoDienPBL3.UC
             InitializeComponent();
             my_UCThongTinVaCaiDatMay = new UC_ThongTinVaCaiDatMay();
             my_UCChiTietMay = new UC_ChiTietMay();
+            AddUC();
             AddMauSac();
         }
         private void AddMauSac()
@@ -98,8 +99,6 @@ namespace GiaoDienPBL3.UC
         {
             if (checkBtnCaiDat == false)
             {
-                panelThongTin.Controls.Add(my_UCThongTinVaCaiDatMay);
-                my_UCThongTinVaCaiDatMay.Dock = DockStyle.Fill;
                 panelChiTietQuanLyMay.SendToBack();
                 checkBtnCaiDat = true;
             }
@@ -109,7 +108,12 @@ namespace GiaoDienPBL3.UC
                 checkBtnCaiDat = false;
             }
         }
-
+        private void AddUC()
+        {
+            panelThongTin.Controls.Add(my_UCThongTinVaCaiDatMay);
+            panelChiTietQuanLyMay.BringToFront();
+            my_UCThongTinVaCaiDatMay.Dock = DockStyle.Fill;
+        }
         private void UC_QuanLyMay_Load(object sender, EventArgs e)
         {
             foreach (May item in BLLMay.Instance.GetListMay())

@@ -25,13 +25,12 @@ namespace GiaoDienPBL3.UC
         {
             InitializeComponent();
             my_UCThongTinVaCaiDatMonAn = new UC_ThongTinVaCaiDatMonAn();
+            AddUC();
         }
         private void btnCaiDat_Click(object sender, EventArgs e)
         {
             if (checkBtnCaiDat == false)
             {
-                panelThongTinChiTietMonAn.Controls.Add(my_UCThongTinVaCaiDatMonAn);
-                my_UCThongTinVaCaiDatMonAn.Dock = DockStyle.Fill;
                 panelCaiDatVaThongTin.SendToBack();
                 checkBtnCaiDat = true;
             }
@@ -40,6 +39,12 @@ namespace GiaoDienPBL3.UC
                 panelCaiDatVaThongTin.BringToFront();
                 checkBtnCaiDat = false;
             }
+        }
+        private void AddUC()
+        {
+            panelThongTinChiTietMonAn.Controls.Add(my_UCThongTinVaCaiDatMonAn);
+            my_UCThongTinVaCaiDatMonAn.Dock = DockStyle.Fill;
+            panelCaiDatVaThongTin.BringToFront();
         }
         private void UC_QuanLyMenu_Load(object sender, EventArgs e)
         {
