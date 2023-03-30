@@ -21,7 +21,9 @@ namespace GiaoDienPBL3
         public static UC_QuanLyMay myUC_QuanLyMay = new UC_QuanLyMay();
         public static UC_QuanLyKho myUC_QuanLyKho = new UC_QuanLyKho();
         public static UC_QuanLyHoaDon myUC_QuanLyHoaDon = new UC_QuanLyHoaDon();
+        public static UC_QuanLyDoanhThu myUC_QuanLyDoanhThu = new UC_QuanLyDoanhThu();
         public static UC_Loading myUC_Loading = new UC_Loading();
+        private bool checkSideBarExpand = false;
         public frmMain()
         {
             InitializeComponent();
@@ -155,6 +157,11 @@ namespace GiaoDienPBL3
         private void btnQuanLyHoaDon_Click(object sender, EventArgs e)
         {
             AddUserControlOnBackGround(myUC_QuanLyHoaDon);
+        }
+
+        private void btnQuanLyDoanhThu_Click(object sender, EventArgs e)
+        {
+            AddUserControlOnBackGround(myUC_QuanLyDoanhThu);
         }
     }
 }

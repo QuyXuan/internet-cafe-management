@@ -37,10 +37,9 @@
             this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.panelBackGround = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.btnTrangChu = new Guna.UI2.WinForms.Guna2Button();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panelSideBar = new System.Windows.Forms.Panel();
             this.panelCaiDat = new System.Windows.Forms.Panel();
             this.btnCaiDatQuayThuong = new Guna.UI2.WinForms.Guna2Button();
             this.btnCaiDatIP = new Guna.UI2.WinForms.Guna2Button();
@@ -69,10 +68,8 @@
             this.uC_TrangChu1 = new GiaoDienPBL3.UC_TrangChu();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel5.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.panelSideBar.SuspendLayout();
             this.panelCaiDat.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panelQuanLy3.SuspendLayout();
@@ -177,22 +174,11 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.Control;
-            this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(262, 98);
             this.panel2.TabIndex = 2;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::GiaoDienPBL3.Properties.Resources.icons8_blur_50;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 21);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(50, 50);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // panel5
             // 
@@ -228,26 +214,26 @@
             this.btnTrangChu.Text = "Trang Chủ";
             this.btnTrangChu.Click += new System.EventHandler(this.btnTrangChu_Click);
             // 
-            // panel1
+            // panelSideBar
             // 
-            this.panel1.AutoScroll = true;
-            this.panel1.BackColor = System.Drawing.SystemColors.Control;
-            this.panel1.Controls.Add(this.panelCaiDat);
-            this.panel1.Controls.Add(this.panel7);
-            this.panel1.Controls.Add(this.panelQuanLy3);
-            this.panel1.Controls.Add(this.panel10);
-            this.panel1.Controls.Add(this.panelQuanLy2);
-            this.panel1.Controls.Add(this.panel8);
-            this.panel1.Controls.Add(this.panelQuanLy1);
-            this.panel1.Controls.Add(this.panel6);
-            this.panel1.Controls.Add(this.panel5);
-            this.panel1.Controls.Add(this.imgbtnThoat);
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(283, 795);
-            this.panel1.TabIndex = 0;
+            this.panelSideBar.AutoScroll = true;
+            this.panelSideBar.BackColor = System.Drawing.SystemColors.Control;
+            this.panelSideBar.Controls.Add(this.panelCaiDat);
+            this.panelSideBar.Controls.Add(this.panel7);
+            this.panelSideBar.Controls.Add(this.panelQuanLy3);
+            this.panelSideBar.Controls.Add(this.panel10);
+            this.panelSideBar.Controls.Add(this.panelQuanLy2);
+            this.panelSideBar.Controls.Add(this.panel8);
+            this.panelSideBar.Controls.Add(this.panelQuanLy1);
+            this.panelSideBar.Controls.Add(this.panel6);
+            this.panelSideBar.Controls.Add(this.panel5);
+            this.panelSideBar.Controls.Add(this.imgbtnThoat);
+            this.panelSideBar.Controls.Add(this.panel2);
+            this.panelSideBar.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelSideBar.Location = new System.Drawing.Point(0, 0);
+            this.panelSideBar.Name = "panelSideBar";
+            this.panelSideBar.Size = new System.Drawing.Size(283, 795);
+            this.panelSideBar.TabIndex = 0;
             // 
             // panelCaiDat
             // 
@@ -559,6 +545,7 @@
             this.btnQuanLyDoanhThu.Size = new System.Drawing.Size(216, 45);
             this.btnQuanLyDoanhThu.TabIndex = 6;
             this.btnQuanLyDoanhThu.Text = "Quản Lý Doanh Thu";
+            this.btnQuanLyDoanhThu.Click += new System.EventHandler(this.btnQuanLyDoanhThu_Click);
             // 
             // btnQuanLyKho
             // 
@@ -718,7 +705,7 @@
             this.imgbtnThoat.Image = global::GiaoDienPBL3.Properties.Resources.icons8_logout_40;
             this.imgbtnThoat.ImageOffset = new System.Drawing.Point(0, 0);
             this.imgbtnThoat.ImageRotate = 0F;
-            this.imgbtnThoat.Location = new System.Drawing.Point(12, 956);
+            this.imgbtnThoat.Location = new System.Drawing.Point(12, 1053);
             this.imgbtnThoat.Name = "imgbtnThoat";
             this.imgbtnThoat.PressedState.ImageSize = new System.Drawing.Size(64, 64);
             this.imgbtnThoat.Size = new System.Drawing.Size(74, 56);
@@ -741,7 +728,7 @@
             this.ClientSize = new System.Drawing.Size(1462, 795);
             this.Controls.Add(this.panelBackGround);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panelSideBar);
             this.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -753,11 +740,8 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel5.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
+            this.panelSideBar.ResumeLayout(false);
             this.panelCaiDat.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             this.panelQuanLy3.ResumeLayout(false);
@@ -779,12 +763,11 @@
         private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButton1;
         private System.Windows.Forms.Panel panelBackGround;
         private Guna.UI2.WinForms.Guna2Button btnCaiDat;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panelSideBar;
         private System.Windows.Forms.Panel panel5;
         private Guna.UI2.WinForms.Guna2Button btnTrangChu;
         private Guna.UI2.WinForms.Guna2ImageButton imgbtnThoat;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panelQuanLy3;
         private Guna.UI2.WinForms.Guna2Button btnQuanLyKhachHang;
         private Guna.UI2.WinForms.Guna2Button btnQuanLyNhanVien;

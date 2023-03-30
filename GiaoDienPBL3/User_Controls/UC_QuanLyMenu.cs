@@ -26,7 +26,6 @@ namespace GiaoDienPBL3.UC
             InitializeComponent();
             my_UCThongTinVaCaiDatMonAn = new UC_ThongTinVaCaiDatMonAn();
         }
-
         private void btnCaiDat_Click(object sender, EventArgs e)
         {
             if (checkBtnCaiDat == false)
@@ -42,7 +41,6 @@ namespace GiaoDienPBL3.UC
                 checkBtnCaiDat = false;
             }
         }
-
         private void UC_QuanLyMenu_Load(object sender, EventArgs e)
         {
             SetFullMonAn();
@@ -76,13 +74,16 @@ namespace GiaoDienPBL3.UC
                 return null;
             }
         }
-
-
         private void btnXacNhan_Click(object sender, EventArgs e)
         {
             if (checkBtnXacNhan == false)
             {
                 my_UCChiTietMonAn = new UC_ChiTietMonAn();
+            }
+            if ((cboMenhGia.Text.Length < 4) || cboMenhGia.Text.Substring(cboMenhGia.Text.Length - 4) != ".000")
+            {
+                MessageBox.Show("Bạn Phải Nhập Theo Định Dạng #,###.000" + Environment.NewLine + "Ví Dụ: 20.000 / 1,000.000", "Cảnh Báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                return;
             }
             ThemChiTietMonAnVaoFlowLayoutPanel();
             HienThiVaTinhTongTien();

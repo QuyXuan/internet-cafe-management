@@ -36,7 +36,7 @@ namespace BLL
                 new MonAn("ma003", "Phở Bò", 55, "Món Ăn", ConvertFromNameToPath("markus-winkler-08aic3qPcag-unsplash.jpg")),
                 new MonAn("ma004", "Trà Đào", 40, "Nước Uống", ConvertFromNameToPath("food-photographer-jennifer-pallian-sSnCZlEWN5E-unsplash.jpg")),
                 new MonAn("ma005", "Bánh Mỳ", 25, "Món Ăn", ConvertFromNameToPath("kadir-celep-paBXUXUwJmo-unsplash.jpg")),
-                new MonAn("ma006", "BlueSoda", 65, "Nước Uống", ConvertFromNameToPath("clovis-wood-photography-iUtcVxqxkPk-unsplash.jpg")),
+                new MonAn("ma006", "Blue Soda", 65, "Nước Uống", ConvertFromNameToPath("clovis-wood-photography-iUtcVxqxkPk-unsplash.jpg")),
                 new MonAn("ma007", "Bún Chả Cá", 45, "Món Ăn", ConvertFromNameToPath("mae-mu-H5Hj8QV2Tx4-unsplash.jpg")),
                 new MonAn("ma008", "Cafe Sữa", 20, "Nước Uống", ConvertFromNameToPath("demi-deherrera-L-sm1B4L1Ns-unsplash.jpg")),
                 new MonAn("ma009", "Chanh Muối", 30, "Nước Uống", ConvertFromNameToPath("melissa-walker-horn-gtDYwUIr9Vg-unsplash.jpg")),
