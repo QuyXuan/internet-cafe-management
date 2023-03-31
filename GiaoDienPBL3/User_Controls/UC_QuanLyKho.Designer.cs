@@ -68,7 +68,6 @@
             this.txtTimKiem = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnThucUong = new Guna.UI2.WinForms.Guna2Button();
             this.btnTatCa = new Guna.UI2.WinForms.Guna2Button();
-            this.btnHoaDon = new Guna.UI2.WinForms.Guna2Button();
             this.btnDoAn = new Guna.UI2.WinForms.Guna2Button();
             this.btnTimKiem = new Guna.UI2.WinForms.Guna2CircleButton();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
@@ -550,7 +549,6 @@
             this.panel2.Controls.Add(this.txtTimKiem);
             this.panel2.Controls.Add(this.btnThucUong);
             this.panel2.Controls.Add(this.btnTatCa);
-            this.panel2.Controls.Add(this.btnHoaDon);
             this.panel2.Controls.Add(this.btnDoAn);
             this.panel2.Controls.Add(this.btnTimKiem);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
@@ -645,29 +643,6 @@
             this.btnTatCa.TabIndex = 6;
             this.btnTatCa.Text = "Tất Cả";
             this.btnTatCa.Click += new System.EventHandler(this.TatCaMonAnNuocUongClick);
-            // 
-            // btnHoaDon
-            // 
-            this.btnHoaDon.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnHoaDon.BorderRadius = 8;
-            this.btnHoaDon.BorderThickness = 2;
-            this.btnHoaDon.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.btnHoaDon.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnHoaDon.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnHoaDon.CheckedState.ForeColor = System.Drawing.Color.Silver;
-            this.btnHoaDon.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnHoaDon.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnHoaDon.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnHoaDon.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnHoaDon.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnHoaDon.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHoaDon.ForeColor = System.Drawing.Color.Black;
-            this.btnHoaDon.Location = new System.Drawing.Point(1047, 75);
-            this.btnHoaDon.Name = "btnHoaDon";
-            this.btnHoaDon.Size = new System.Drawing.Size(121, 41);
-            this.btnHoaDon.TabIndex = 0;
-            this.btnHoaDon.Text = "Hóa Đơn";
-            this.btnHoaDon.Click += new System.EventHandler(this.btnHoaDon_Click);
             // 
             // btnDoAn
             // 
@@ -778,7 +753,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Loai;
         private System.Windows.Forms.DataGridViewTextBoxColumn GiaGoc;
         private System.Windows.Forms.DataGridViewTextBoxColumn SoLuongTru;
-        private Guna.UI2.WinForms.Guna2Button btnHoaDon;
         private System.Windows.Forms.Panel panelThongTin;
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox2;
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox1;

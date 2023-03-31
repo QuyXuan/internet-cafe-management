@@ -14,13 +14,9 @@ namespace GiaoDienPBL3.UC
 {
     public partial class UC_QuanLyKho : UserControl
     {
-        public static UC_HoaDonNhapKho my_UCHoaDonNhapKho;
-        private bool checkBtnHoaDon = false;
         public UC_QuanLyKho()
         {
             InitializeComponent();
-            my_UCHoaDonNhapKho = new UC_HoaDonNhapKho();
-            AddUC();
             TestData();
         }
         private void TestData()
@@ -110,27 +106,6 @@ namespace GiaoDienPBL3.UC
                 cboLoai.SelectedIndex = 0;
             else
                 cboLoai.SelectedIndex = 1;
-        }
-
-        private void btnHoaDon_Click(object sender, EventArgs e)
-        {
-            if (checkBtnHoaDon == false)
-            {
-                panelThongTin.SendToBack();
-                checkBtnHoaDon = true;
-            }
-            else
-            {
-                panelThongTin.BringToFront();
-                checkBtnHoaDon = false;
-                btnHoaDon.Checked = false;
-            }
-        }
-        private void AddUC()
-        {
-            panelThongTinVaHoaDon.Controls.Add(my_UCHoaDonNhapKho);
-            my_UCHoaDonNhapKho.Dock = DockStyle.Fill;
-            panelThongTin.BringToFront();
         }
     }
 }

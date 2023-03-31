@@ -89,5 +89,5 @@ C:\Users\ADMIN\source\repos\PBL3Quy\GiaoDienPBL3\obj\Debug\GUI.csproj.CoreCompil
 C:\Users\ADMIN\source\repos\PBL3Quy\GiaoDienPBL3\obj\Debug\GUI.csproj.CopyComplete
 C:\Users\ADMIN\source\repos\PBL3Quy\GiaoDienPBL3\obj\Debug\GiaoDienPBL3.exe
 C:\Users\ADMIN\source\repos\PBL3Quy\GiaoDienPBL3\obj\Debug\GiaoDienPBL3.pdb
-C:\Users\ADMIN\source\repos\PBL3Quy\GiaoDienPBL3\obj\Debug\GiaoDienPBL3.User_Controls.UC_HoaDonNhapKho.resources
 C:\Users\ADMIN\source\repos\PBL3Quy\GiaoDienPBL3\obj\Debug\GiaoDienPBL3.User_Controls.UC_ChiTietHoaDonNhapKho.resources
+C:\Users\ADMIN\source\repos\PBL3Quy\GiaoDienPBL3\obj\Debug\GiaoDienPBL3.User_Controls.UC_QuanLyHoaDonNhapKho.resources

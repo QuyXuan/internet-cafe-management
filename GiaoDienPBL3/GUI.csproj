@@ -110,11 +110,11 @@
     <Compile Include="User_Controls\UC_ChiTietMonAn.Designer.cs">
       <DependentUpon>UC_ChiTietMonAn.cs</DependentUpon>
     </Compile>
-    <Compile Include="User_Controls\UC_HoaDonNhapKho.cs">
+    <Compile Include="User_Controls\UC_QuanLyHoaDonNhapKho.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="User_Controls\UC_HoaDonNhapKho.Designer.cs">
-      <DependentUpon>UC_HoaDonNhapKho.cs</DependentUpon>
+    <Compile Include="User_Controls\UC_QuanLyHoaDonNhapKho.Designer.cs">
+      <DependentUpon>UC_QuanLyHoaDonNhapKho.cs</DependentUpon>
     </Compile>
     <Compile Include="User_Controls\UC_Loading.cs">
       <SubType>UserControl</SubType>
@@ -202,8 +202,8 @@
     <EmbeddedResource Include="User_Controls\UC_ChiTietMonAn.resx">
       <DependentUpon>UC_ChiTietMonAn.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="User_Controls\UC_HoaDonNhapKho.resx">
-      <DependentUpon>UC_HoaDonNhapKho.cs</DependentUpon>
+    <EmbeddedResource Include="User_Controls\UC_QuanLyHoaDonNhapKho.resx">
+      <DependentUpon>UC_QuanLyHoaDonNhapKho.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User_Controls\UC_Loading.resx">
       <DependentUpon>UC_Loading.cs</DependentUpon>
