@@ -7,6 +7,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -38,16 +39,19 @@ namespace GiaoDienPBL3.User_Controls
                 my_UCChiTietMonAn.btnTruMon.Visible = false;
                 int ThanhTien = Convert.ToInt32(txtSoLuong.Text) * Convert.ToInt32((txtGiaGoc.Text.Substring(0, txtGiaGoc.Text.Length - 4).Replace(",", "")));
                 my_UCChiTietMonAn.TextGiaMonAn = string.Format("{0:N3}VNĐ", ThanhTien);
-                my_UCChiTietMonAn.TextTenMonAn = txtTenMon.Text;
+                my_UCChiTietMonAn.TextTenMonAn = txtTenHangHoa.Text;
                 my_UCChiTietMonAn.TextSoLuongMonAn = txtSoLuong.Text;
+                my_UCChiTietMonAn.Size = new Size(300, 56);
                 listUCThongTinHangHoa.Add(my_UCChiTietMonAn);
                 panelHoaDon.Controls.Add(my_UCChiTietMonAn);
-                panelHoaDon.Controls.SetChildIndex(my_UCChiTietMonAn, 1);
+                //panelHoaDon.Controls.SetChildIndex(my_UCChiTietMonAn, 1);
                 int TongTien = Convert.ToInt32(lblTongTien.Text.Substring(0, lblTongTien.Text.Length - 7).Replace(",", "")) + ThanhTien;
                 lblTongTien.Text = string.Format("{0:N3}VNĐ", TongTien);
+                HangHoa hangHoa = new HangHoa(txtMaHangHoa.Text, txtTenHangHoa.Text, Convert.ToInt32(txtSoLuong.Text), cboLoai.Text, my_UCChiTietMonAn.TextGiaMonAn);
+                my_UCChiTietMonAn.Tag = hangHoa;
             }
-            txtMaMon.Text = "";
-            txtTenMon.Text = "";
+            txtMaHangHoa.Text = "";
+            txtTenHangHoa.Text = "";
             txtSoLuong.Text = "";
             txtGiaGoc.Text = "";
             txtTongTien.Text = "";
@@ -61,7 +65,7 @@ namespace GiaoDienPBL3.User_Controls
                 MessageBox.Show("Mã Hóa Đơn Không Được Để Trống", "Cảnh Báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
                 return false;
             }
-            else if (txtTenMon.Text == "")
+            else if (txtTenHangHoa.Text == "")
             {
                 MessageBox.Show("Tên Món Không Được Để Trống", "Cảnh Báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
                 return false;
@@ -100,11 +104,12 @@ namespace GiaoDienPBL3.User_Controls
         private void btnThem_Click(object sender, EventArgs e)
         {
             panelChiTietHangNhap.Visible = true;
+            panelHoaDon.Controls.SetChildIndex(panelChiTietHangNhap, panelHoaDon.Controls.Count - 1);
             //panelChiTietHangNhap.Size.Width = panelHoaDon.Size.Width - 2;
             txtNhaCungCap.Enabled = true;
             txtGiamGia.Enabled = true;
             dtpNgayNhan.Enabled = true;
-            txtMaMon.Focus();
+            txtMaHangHoa.Focus();
         }
         private void SetAllButtonDisableAndVisible()
         {
@@ -178,17 +183,22 @@ namespace GiaoDienPBL3.User_Controls
 
         private void btnThemChiTietHangNhap_Click(object sender, EventArgs e)
         {
-            //HoaDonNhap hoaDonNhap = new HoaDonNhap();
-            //hoaDonNhap.MaHoaDon = txtMaHoaDon.Text;
-            //hoaDonNhap.MaNhanVien = txtMaNhanVien.Text;
-            //hoaDonNhap.NhaCungCap = txtNhaCungCap.Text;
-            //hoaDonNhap.ChietKhau = txtGiamGia.Text;
-            //hoaDonNhap.NgayNhan = dtpNgayNhan.Value;
-            dgvHoaDonNhap.Rows.Add(new object[]
+            if (listUCThongTinHangHoa.Count == 0) return;
+            List<HangHoa> listHangHoa = new List<HangHoa>();
+            foreach (Control control in listUCThongTinHangHoa)
             {
-                txtMaHoaDon.Text, txtMaNhanVien.Text, txtNhaCungCap.Text, dtpNgayNhan.Value.ToString("dd/MM/yyyy"), txtGiamGia.Text, lblTongTien.Text
-            });
-            btnHuyTatCa.PerformClick();
+                HangHoa hangHoa = (control as UC_ChiTietMonAn).Tag as HangHoa;
+                listHangHoa.Add(hangHoa);
+                panelHoaDon.Controls.Remove(control);
+                control.Dispose();
+            }
+            listUCThongTinHangHoa.Clear();
+            lblTongTien.Text = "0.000VNĐ";
+            DataGridViewRow row = new DataGridViewRow();
+            row.Height = 40;
+            row.CreateCells(dgvHoaDonNhap, txtMaHoaDon.Text, txtMaNhanVien.Text, txtNhaCungCap.Text, dtpNgayNhan.Value.ToString("dd/MM/yyyy"), txtGiamGia.Text, lblTongTien.Text);
+            row.Tag = listHangHoa;
+            dgvHoaDonNhap.Rows.Add(row);
         }
 
         private void btnHuyTatCa_Click(object sender, EventArgs e)
@@ -198,6 +208,7 @@ namespace GiaoDienPBL3.User_Controls
                 panelHoaDon.Controls.Remove(control);
                 control.Dispose();
             }
+            listUCThongTinHangHoa.Clear();
             lblTongTien.Text = "0.000VNĐ";
         }
 
@@ -208,9 +219,25 @@ namespace GiaoDienPBL3.User_Controls
             txtMaHoaDon.Text = Row.Cells["MaHoaDon"].Value.ToString();
             txtMaNhanVien.Text = Row.Cells["MaNhanVien"].Value.ToString();
             txtNhaCungCap.Text = Row.Cells["NhaCungCap"].Value.ToString();
-            dtpNgayNhan.Value = Convert.ToDateTime(Row.Cells["NgayNhan"].Value);
+            dtpNgayNhan.Value = DateTime.ParseExact(Row.Cells["NgayNhan"].Value.ToString(), "dd/MM/yyyy", CultureInfo.InvariantCulture);
             txtGiamGia.Text = Row.Cells["ChietKhau"].Value.ToString();
             txtTongTien.Text = Row.Cells["TongTien"].Value.ToString();
+            if (Row.Tag == null)
+            {
+                lvThongTinHangHoa.Items.Clear();
+                return;
+            }
+            List<HangHoa> listHangHoa = Row.Tag as List<HangHoa>;
+            lvThongTinHangHoa.Items.Clear();
+            foreach (HangHoa hangHoa in listHangHoa)
+            {
+                ListViewItem item = new ListViewItem(hangHoa.MaHangHoa);
+                item.SubItems.Add(hangHoa.TenHangHoa);
+                item.SubItems.Add(hangHoa.SoLuong.ToString());
+                item.SubItems.Add(hangHoa.Gia);
+                item.SubItems.Add(hangHoa.Loai);
+                lvThongTinHangHoa.Items.Add(item);
+            }
         }
     }
 }

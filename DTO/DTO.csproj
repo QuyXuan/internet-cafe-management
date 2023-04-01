@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HangHoa.cs" />
     <Compile Include="HoaDonNhap.cs" />
     <Compile Include="May.cs" />
     <Compile Include="MonAn.cs" />
