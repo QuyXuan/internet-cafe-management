@@ -43,17 +43,15 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.tabControlThongKe = new Guna.UI2.WinForms.Guna2TabControl();
-            this.tabThongKeTheoNgay = new System.Windows.Forms.TabPage();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.tabBieuDoThongKeTheoNgay = new System.Windows.Forms.TabPage();
             this.LineChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.dtpNgayTruoc = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.dtpNgaySau = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.btnXemDoanhThuNgay = new Guna.UI2.WinForms.Guna2Button();
-            this.tabThongKeTheoThang = new System.Windows.Forms.TabPage();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dtpNgaySau = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.dtpNgayTruoc = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.tabBieuDoThongKeTheoThang = new System.Windows.Forms.TabPage();
             this.ColumnChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel5 = new System.Windows.Forms.Panel();
             this.btnXemDoanhThuThang = new Guna.UI2.WinForms.Guna2Button();
@@ -61,18 +59,22 @@
             this.label5 = new System.Windows.Forms.Label();
             this.dtpThangSau = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.dtpThangTruoc = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.tabHoaDonThongKeTheoNgay = new System.Windows.Forms.TabPage();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
             this.guna2CustomGradientPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.tabControlThongKe.SuspendLayout();
-            this.tabThongKeTheoNgay.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.tabBieuDoThongKeTheoNgay.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LineChart)).BeginInit();
-            this.tabThongKeTheoThang.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.tabBieuDoThongKeTheoThang.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ColumnChart)).BeginInit();
             this.panel5.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2CustomGradientPanel1
@@ -110,8 +112,10 @@
             // 
             // tabControlThongKe
             // 
-            this.tabControlThongKe.Controls.Add(this.tabThongKeTheoNgay);
-            this.tabControlThongKe.Controls.Add(this.tabThongKeTheoThang);
+            this.tabControlThongKe.Controls.Add(this.tabBieuDoThongKeTheoNgay);
+            this.tabControlThongKe.Controls.Add(this.tabBieuDoThongKeTheoThang);
+            this.tabControlThongKe.Controls.Add(this.tabHoaDonThongKeTheoNgay);
+            this.tabControlThongKe.Controls.Add(this.tabPage1);
             this.tabControlThongKe.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControlThongKe.ItemSize = new System.Drawing.Size(300, 40);
             this.tabControlThongKe.Location = new System.Drawing.Point(0, 0);
@@ -139,52 +143,17 @@
             this.tabControlThongKe.TabMenuOrientation = Guna.UI2.WinForms.TabMenuOrientation.HorizontalTop;
             this.tabControlThongKe.SelectedIndexChanged += new System.EventHandler(this.tabControlThongKe_SelectedIndexChanged);
             // 
-            // tabThongKeTheoNgay
+            // tabBieuDoThongKeTheoNgay
             // 
-            this.tabThongKeTheoNgay.BackColor = System.Drawing.Color.LightGray;
-            this.tabThongKeTheoNgay.Controls.Add(this.LineChart);
-            this.tabThongKeTheoNgay.Controls.Add(this.panel4);
-            this.tabThongKeTheoNgay.Location = new System.Drawing.Point(4, 44);
-            this.tabThongKeTheoNgay.Name = "tabThongKeTheoNgay";
-            this.tabThongKeTheoNgay.Padding = new System.Windows.Forms.Padding(3);
-            this.tabThongKeTheoNgay.Size = new System.Drawing.Size(1246, 598);
-            this.tabThongKeTheoNgay.TabIndex = 0;
-            this.tabThongKeTheoNgay.Text = "Thống Kê Theo Ngày";
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.btnXemDoanhThuNgay);
-            this.panel4.Controls.Add(this.label3);
-            this.panel4.Controls.Add(this.label2);
-            this.panel4.Controls.Add(this.dtpNgaySau);
-            this.panel4.Controls.Add(this.dtpNgayTruoc);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(3, 3);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1240, 42);
-            this.panel4.TabIndex = 2;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1254, 75);
-            this.panel1.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1254, 75);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Quản Lý Doanh Thu";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.tabBieuDoThongKeTheoNgay.BackColor = System.Drawing.Color.LightGray;
+            this.tabBieuDoThongKeTheoNgay.Controls.Add(this.LineChart);
+            this.tabBieuDoThongKeTheoNgay.Controls.Add(this.panel4);
+            this.tabBieuDoThongKeTheoNgay.Location = new System.Drawing.Point(4, 44);
+            this.tabBieuDoThongKeTheoNgay.Name = "tabBieuDoThongKeTheoNgay";
+            this.tabBieuDoThongKeTheoNgay.Padding = new System.Windows.Forms.Padding(3);
+            this.tabBieuDoThongKeTheoNgay.Size = new System.Drawing.Size(1246, 598);
+            this.tabBieuDoThongKeTheoNgay.TabIndex = 0;
+            this.tabBieuDoThongKeTheoNgay.Text = "Biểu Đồ Thống Kê Theo Ngày";
             // 
             // LineChart
             // 
@@ -228,55 +197,18 @@
             this.LineChart.Text = "chart1";
             this.LineChart.MouseMove += new System.Windows.Forms.MouseEventHandler(this.LineChart_MouseMove);
             // 
-            // dtpNgayTruoc
+            // panel4
             // 
-            this.dtpNgayTruoc.Checked = true;
-            this.dtpNgayTruoc.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dtpNgayTruoc.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.dtpNgayTruoc.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.dtpNgayTruoc.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpNgayTruoc.Location = new System.Drawing.Point(92, 3);
-            this.dtpNgayTruoc.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.dtpNgayTruoc.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.dtpNgayTruoc.Name = "dtpNgayTruoc";
-            this.dtpNgayTruoc.Size = new System.Drawing.Size(238, 36);
-            this.dtpNgayTruoc.TabIndex = 0;
-            this.dtpNgayTruoc.Value = new System.DateTime(2023, 3, 30, 15, 24, 2, 909);
-            // 
-            // dtpNgaySau
-            // 
-            this.dtpNgaySau.Checked = true;
-            this.dtpNgaySau.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dtpNgaySau.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.dtpNgaySau.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.dtpNgaySau.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpNgaySau.Location = new System.Drawing.Point(475, 3);
-            this.dtpNgaySau.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.dtpNgaySau.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.dtpNgaySau.Name = "dtpNgaySau";
-            this.dtpNgaySau.Size = new System.Drawing.Size(238, 36);
-            this.dtpNgaySau.TabIndex = 1;
-            this.dtpNgaySau.Value = new System.DateTime(2023, 3, 30, 15, 24, 14, 901);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(9, 11);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(77, 20);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Từ Ngày :";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(383, 11);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(86, 20);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Đến Ngày :";
+            this.panel4.Controls.Add(this.btnXemDoanhThuNgay);
+            this.panel4.Controls.Add(this.label3);
+            this.panel4.Controls.Add(this.label2);
+            this.panel4.Controls.Add(this.dtpNgaySau);
+            this.panel4.Controls.Add(this.dtpNgayTruoc);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel4.Location = new System.Drawing.Point(3, 3);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1240, 42);
+            this.panel4.TabIndex = 2;
             // 
             // btnXemDoanhThuNgay
             // 
@@ -298,17 +230,67 @@
             this.btnXemDoanhThuNgay.Text = "Xem";
             this.btnXemDoanhThuNgay.Click += new System.EventHandler(this.btnXemDoanhThuNgay_Click);
             // 
-            // tabThongKeTheoThang
+            // label3
             // 
-            this.tabThongKeTheoThang.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.tabThongKeTheoThang.Controls.Add(this.ColumnChart);
-            this.tabThongKeTheoThang.Controls.Add(this.panel5);
-            this.tabThongKeTheoThang.Location = new System.Drawing.Point(4, 44);
-            this.tabThongKeTheoThang.Name = "tabThongKeTheoThang";
-            this.tabThongKeTheoThang.Padding = new System.Windows.Forms.Padding(3);
-            this.tabThongKeTheoThang.Size = new System.Drawing.Size(1246, 598);
-            this.tabThongKeTheoThang.TabIndex = 1;
-            this.tabThongKeTheoThang.Text = "Thống Kê Theo Tháng";
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(383, 11);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(86, 20);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Đến Ngày :";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(9, 11);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(77, 20);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Từ Ngày :";
+            // 
+            // dtpNgaySau
+            // 
+            this.dtpNgaySau.Checked = true;
+            this.dtpNgaySau.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dtpNgaySau.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.dtpNgaySau.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.dtpNgaySau.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpNgaySau.Location = new System.Drawing.Point(475, 3);
+            this.dtpNgaySau.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtpNgaySau.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtpNgaySau.Name = "dtpNgaySau";
+            this.dtpNgaySau.Size = new System.Drawing.Size(238, 36);
+            this.dtpNgaySau.TabIndex = 1;
+            this.dtpNgaySau.Value = new System.DateTime(2023, 3, 30, 15, 24, 14, 901);
+            // 
+            // dtpNgayTruoc
+            // 
+            this.dtpNgayTruoc.Checked = true;
+            this.dtpNgayTruoc.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dtpNgayTruoc.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.dtpNgayTruoc.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.dtpNgayTruoc.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpNgayTruoc.Location = new System.Drawing.Point(92, 3);
+            this.dtpNgayTruoc.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtpNgayTruoc.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtpNgayTruoc.Name = "dtpNgayTruoc";
+            this.dtpNgayTruoc.Size = new System.Drawing.Size(238, 36);
+            this.dtpNgayTruoc.TabIndex = 0;
+            this.dtpNgayTruoc.Value = new System.DateTime(2023, 3, 30, 15, 24, 2, 909);
+            // 
+            // tabBieuDoThongKeTheoThang
+            // 
+            this.tabBieuDoThongKeTheoThang.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.tabBieuDoThongKeTheoThang.Controls.Add(this.ColumnChart);
+            this.tabBieuDoThongKeTheoThang.Controls.Add(this.panel5);
+            this.tabBieuDoThongKeTheoThang.Location = new System.Drawing.Point(4, 44);
+            this.tabBieuDoThongKeTheoThang.Name = "tabBieuDoThongKeTheoThang";
+            this.tabBieuDoThongKeTheoThang.Padding = new System.Windows.Forms.Padding(3);
+            this.tabBieuDoThongKeTheoThang.Size = new System.Drawing.Size(1246, 598);
+            this.tabBieuDoThongKeTheoThang.TabIndex = 1;
+            this.tabBieuDoThongKeTheoThang.Text = "Biểu Đồ Thống Kê Theo Tháng";
             // 
             // ColumnChart
             // 
@@ -431,6 +413,48 @@
             this.dtpThangTruoc.TabIndex = 0;
             this.dtpThangTruoc.Value = new System.DateTime(2023, 3, 30, 14, 41, 40, 79);
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1254, 75);
+            this.panel1.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(1254, 75);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Quản Lý Doanh Thu";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // tabHoaDonThongKeTheoNgay
+            // 
+            this.tabHoaDonThongKeTheoNgay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.tabHoaDonThongKeTheoNgay.Location = new System.Drawing.Point(4, 44);
+            this.tabHoaDonThongKeTheoNgay.Name = "tabHoaDonThongKeTheoNgay";
+            this.tabHoaDonThongKeTheoNgay.Padding = new System.Windows.Forms.Padding(3);
+            this.tabHoaDonThongKeTheoNgay.Size = new System.Drawing.Size(1246, 598);
+            this.tabHoaDonThongKeTheoNgay.TabIndex = 2;
+            this.tabHoaDonThongKeTheoNgay.Text = "Hóa Đơn Thống Kê Theo Ngày";
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.tabPage1.Location = new System.Drawing.Point(4, 44);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(1246, 598);
+            this.tabPage1.TabIndex = 3;
+            this.tabPage1.Text = "Hóa Đơn Thống Kê Theo Tháng";
+            // 
             // UC_QuanLyDoanhThu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -442,15 +466,15 @@
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.tabControlThongKe.ResumeLayout(false);
-            this.tabThongKeTheoNgay.ResumeLayout(false);
+            this.tabBieuDoThongKeTheoNgay.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.LineChart)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.LineChart)).EndInit();
-            this.tabThongKeTheoThang.ResumeLayout(false);
+            this.tabBieuDoThongKeTheoThang.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ColumnChart)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -463,7 +487,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel3;
         private Guna.UI2.WinForms.Guna2TabControl tabControlThongKe;
-        private System.Windows.Forms.TabPage tabThongKeTheoNgay;
+        private System.Windows.Forms.TabPage tabBieuDoThongKeTheoNgay;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.DataVisualization.Charting.Chart LineChart;
         private Guna.UI2.WinForms.Guna2Button btnXemDoanhThuNgay;
@@ -471,7 +495,7 @@
         private System.Windows.Forms.Label label2;
         private Guna.UI2.WinForms.Guna2DateTimePicker dtpNgaySau;
         private Guna.UI2.WinForms.Guna2DateTimePicker dtpNgayTruoc;
-        private System.Windows.Forms.TabPage tabThongKeTheoThang;
+        private System.Windows.Forms.TabPage tabBieuDoThongKeTheoThang;
         private System.Windows.Forms.DataVisualization.Charting.Chart ColumnChart;
         private System.Windows.Forms.Panel panel5;
         private Guna.UI2.WinForms.Guna2Button btnXemDoanhThuThang;
@@ -480,5 +504,7 @@
         private Guna.UI2.WinForms.Guna2DateTimePicker dtpThangSau;
         private Guna.UI2.WinForms.Guna2DateTimePicker dtpThangTruoc;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.TabPage tabHoaDonThongKeTheoNgay;
+        private System.Windows.Forms.TabPage tabPage1;
     }
 }

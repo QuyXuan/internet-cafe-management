@@ -53,6 +53,7 @@
             this.panel10 = new System.Windows.Forms.Panel();
             this.btnQuanLy3 = new Guna.UI2.WinForms.Guna2Button();
             this.panelQuanLy2 = new System.Windows.Forms.Panel();
+            this.btnQuanLyHoaDonNhap = new Guna.UI2.WinForms.Guna2Button();
             this.btnQuanLyHoaDon = new Guna.UI2.WinForms.Guna2Button();
             this.btnQuanLyCaLamViec = new Guna.UI2.WinForms.Guna2Button();
             this.btnQuanLyDoanhThu = new Guna.UI2.WinForms.Guna2Button();
@@ -65,7 +66,6 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.btnQuanLy1 = new Guna.UI2.WinForms.Guna2Button();
             this.imgbtnThoat = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.btnQuanLyHoaDonNhap = new Guna.UI2.WinForms.Guna2Button();
             this.uC_TrangChu1 = new GiaoDienPBL3.UC_TrangChu();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
@@ -478,6 +478,30 @@
             this.panelQuanLy2.Size = new System.Drawing.Size(262, 259);
             this.panelQuanLy2.TabIndex = 8;
             // 
+            // btnQuanLyHoaDonNhap
+            // 
+            this.btnQuanLyHoaDonNhap.BorderRadius = 15;
+            this.btnQuanLyHoaDonNhap.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnQuanLyHoaDonNhap.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(225)))), ((int)(((byte)(232)))));
+            this.btnQuanLyHoaDonNhap.CheckedState.ForeColor = System.Drawing.Color.White;
+            this.btnQuanLyHoaDonNhap.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image7")));
+            this.btnQuanLyHoaDonNhap.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnQuanLyHoaDonNhap.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnQuanLyHoaDonNhap.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnQuanLyHoaDonNhap.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnQuanLyHoaDonNhap.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnQuanLyHoaDonNhap.FillColor = System.Drawing.SystemColors.Control;
+            this.btnQuanLyHoaDonNhap.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQuanLyHoaDonNhap.ForeColor = System.Drawing.Color.Black;
+            this.btnQuanLyHoaDonNhap.Image = ((System.Drawing.Image)(resources.GetObject("btnQuanLyHoaDonNhap.Image")));
+            this.btnQuanLyHoaDonNhap.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnQuanLyHoaDonNhap.Location = new System.Drawing.Point(51, 208);
+            this.btnQuanLyHoaDonNhap.Name = "btnQuanLyHoaDonNhap";
+            this.btnQuanLyHoaDonNhap.Size = new System.Drawing.Size(216, 45);
+            this.btnQuanLyHoaDonNhap.TabIndex = 6;
+            this.btnQuanLyHoaDonNhap.Text = "Quản Lý Hóa Đơn Nhập";
+            this.btnQuanLyHoaDonNhap.Click += new System.EventHandler(this.btnQuanLyHoaDonNhap_Click);
+            // 
             // btnQuanLyHoaDon
             // 
             this.btnQuanLyHoaDon.BorderRadius = 15;
@@ -524,6 +548,7 @@
             this.btnQuanLyCaLamViec.Size = new System.Drawing.Size(216, 45);
             this.btnQuanLyCaLamViec.TabIndex = 6;
             this.btnQuanLyCaLamViec.Text = "Quản Lý Ca Làm Việc";
+            this.btnQuanLyCaLamViec.Click += new System.EventHandler(this.btnQuanLyCaLamViec_Click);
             // 
             // btnQuanLyDoanhThu
             // 
@@ -713,30 +738,6 @@
             this.imgbtnThoat.Size = new System.Drawing.Size(74, 56);
             this.imgbtnThoat.TabIndex = 3;
             this.imgbtnThoat.Click += new System.EventHandler(this.imgbtnThoat_Click);
-            // 
-            // btnQuanLyHoaDonNhap
-            // 
-            this.btnQuanLyHoaDonNhap.BorderRadius = 15;
-            this.btnQuanLyHoaDonNhap.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.btnQuanLyHoaDonNhap.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(225)))), ((int)(((byte)(232)))));
-            this.btnQuanLyHoaDonNhap.CheckedState.ForeColor = System.Drawing.Color.White;
-            this.btnQuanLyHoaDonNhap.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image7")));
-            this.btnQuanLyHoaDonNhap.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnQuanLyHoaDonNhap.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnQuanLyHoaDonNhap.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnQuanLyHoaDonNhap.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnQuanLyHoaDonNhap.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnQuanLyHoaDonNhap.FillColor = System.Drawing.SystemColors.Control;
-            this.btnQuanLyHoaDonNhap.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnQuanLyHoaDonNhap.ForeColor = System.Drawing.Color.Black;
-            this.btnQuanLyHoaDonNhap.Image = ((System.Drawing.Image)(resources.GetObject("btnQuanLyHoaDonNhap.Image")));
-            this.btnQuanLyHoaDonNhap.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnQuanLyHoaDonNhap.Location = new System.Drawing.Point(51, 208);
-            this.btnQuanLyHoaDonNhap.Name = "btnQuanLyHoaDonNhap";
-            this.btnQuanLyHoaDonNhap.Size = new System.Drawing.Size(216, 45);
-            this.btnQuanLyHoaDonNhap.TabIndex = 6;
-            this.btnQuanLyHoaDonNhap.Text = "Quản Lý Hóa Đơn Nhập";
-            this.btnQuanLyHoaDonNhap.Click += new System.EventHandler(this.btnQuanLyHoaDonNhap_Click);
             // 
             // uC_TrangChu1
             // 

@@ -70,6 +70,12 @@
             this.btnXoa = new Guna.UI2.WinForms.Guna2Button();
             this.btnSua = new Guna.UI2.WinForms.Guna2Button();
             this.groupBoxThongTinChung = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.lvThongTinHangHoa = new System.Windows.Forms.ListView();
+            this.MaHangHoa = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.TenHangHoa = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.SoLuong = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.GiaGoc = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Loai = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.dtpNgayNhan = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.txtTongTien = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtGiamGia = new Guna.UI2.WinForms.Guna2TextBox();
@@ -86,12 +92,6 @@
             this.label9 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label13 = new System.Windows.Forms.Label();
-            this.lvThongTinHangHoa = new System.Windows.Forms.ListView();
-            this.MaHangHoa = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.TenHangHoa = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.SoLuong = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.GiaGoc = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Loai = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.guna2CustomGradientPanel1.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panelHoaDon.SuspendLayout();
@@ -507,6 +507,7 @@
             // 
             // btnHuyTatCa
             // 
+            this.btnHuyTatCa.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnHuyTatCa.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnHuyTatCa.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnHuyTatCa.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -543,6 +544,7 @@
             // lblTongTien
             // 
             this.lblTongTien.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.lblTongTien.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.lblTongTien.Dock = System.Windows.Forms.DockStyle.Right;
             this.lblTongTien.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTongTien.Location = new System.Drawing.Point(595, 41);
@@ -610,6 +612,7 @@
             // btnHuy
             // 
             this.btnHuy.BorderRadius = 8;
+            this.btnHuy.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnHuy.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnHuy.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnHuy.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -628,6 +631,7 @@
             // btnOK
             // 
             this.btnOK.BorderRadius = 8;
+            this.btnOK.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnOK.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnOK.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnOK.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -653,6 +657,7 @@
             this.btnXoa.CheckedState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnXoa.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnXoa.CheckedState.ForeColor = System.Drawing.Color.Silver;
+            this.btnXoa.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnXoa.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnXoa.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnXoa.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -676,6 +681,7 @@
             this.btnSua.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnSua.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnSua.CheckedState.ForeColor = System.Drawing.Color.Silver;
+            this.btnSua.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSua.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnSua.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnSua.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -717,6 +723,51 @@
             this.groupBoxThongTinChung.Size = new System.Drawing.Size(334, 451);
             this.groupBoxThongTinChung.TabIndex = 16;
             this.groupBoxThongTinChung.Text = "Thông Tin Chung";
+            // 
+            // lvThongTinHangHoa
+            // 
+            this.lvThongTinHangHoa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.lvThongTinHangHoa.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.MaHangHoa,
+            this.TenHangHoa,
+            this.SoLuong,
+            this.GiaGoc,
+            this.Loai});
+            this.lvThongTinHangHoa.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.lvThongTinHangHoa.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lvThongTinHangHoa.FullRowSelect = true;
+            this.lvThongTinHangHoa.GridLines = true;
+            this.lvThongTinHangHoa.HideSelection = false;
+            this.lvThongTinHangHoa.Location = new System.Drawing.Point(0, 258);
+            this.lvThongTinHangHoa.Name = "lvThongTinHangHoa";
+            this.lvThongTinHangHoa.Size = new System.Drawing.Size(334, 193);
+            this.lvThongTinHangHoa.TabIndex = 6;
+            this.lvThongTinHangHoa.UseCompatibleStateImageBehavior = false;
+            this.lvThongTinHangHoa.View = System.Windows.Forms.View.Details;
+            // 
+            // MaHangHoa
+            // 
+            this.MaHangHoa.Text = "Mã";
+            this.MaHangHoa.Width = 45;
+            // 
+            // TenHangHoa
+            // 
+            this.TenHangHoa.Text = "Tên";
+            this.TenHangHoa.Width = 65;
+            // 
+            // SoLuong
+            // 
+            this.SoLuong.Text = "Số Lượng";
+            // 
+            // GiaGoc
+            // 
+            this.GiaGoc.Text = "Giá";
+            this.GiaGoc.Width = 75;
+            // 
+            // Loai
+            // 
+            this.Loai.Text = "Loại";
+            this.Loai.Width = 85;
             // 
             // dtpNgayNhan
             // 
@@ -998,51 +1049,6 @@
             this.label13.TabIndex = 0;
             this.label13.Text = "Quản Lý Hóa Đơn Nhập";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lvThongTinHangHoa
-            // 
-            this.lvThongTinHangHoa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.lvThongTinHangHoa.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.MaHangHoa,
-            this.TenHangHoa,
-            this.SoLuong,
-            this.GiaGoc,
-            this.Loai});
-            this.lvThongTinHangHoa.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.lvThongTinHangHoa.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lvThongTinHangHoa.FullRowSelect = true;
-            this.lvThongTinHangHoa.GridLines = true;
-            this.lvThongTinHangHoa.HideSelection = false;
-            this.lvThongTinHangHoa.Location = new System.Drawing.Point(0, 258);
-            this.lvThongTinHangHoa.Name = "lvThongTinHangHoa";
-            this.lvThongTinHangHoa.Size = new System.Drawing.Size(334, 193);
-            this.lvThongTinHangHoa.TabIndex = 6;
-            this.lvThongTinHangHoa.UseCompatibleStateImageBehavior = false;
-            this.lvThongTinHangHoa.View = System.Windows.Forms.View.Details;
-            // 
-            // MaHangHoa
-            // 
-            this.MaHangHoa.Text = "Mã";
-            this.MaHangHoa.Width = 45;
-            // 
-            // TenHangHoa
-            // 
-            this.TenHangHoa.Text = "Tên";
-            this.TenHangHoa.Width = 65;
-            // 
-            // SoLuong
-            // 
-            this.SoLuong.Text = "Số Lượng";
-            // 
-            // GiaGoc
-            // 
-            this.GiaGoc.Text = "Giá";
-            this.GiaGoc.Width = 75;
-            // 
-            // Loai
-            // 
-            this.Loai.Text = "Loại";
-            this.Loai.Width = 85;
             // 
             // UC_QuanLyHoaDonNhapKho
             // 
