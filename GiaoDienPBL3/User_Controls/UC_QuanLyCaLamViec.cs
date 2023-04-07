@@ -17,8 +17,10 @@ namespace GiaoDienPBL3.User_Controls
         public UC_QuanLyCaLamViec()
         {
             InitializeComponent();
-            SetData();
+            SetDataQuanLyLichSuCaLamViec();
+            SetDataQuanLyCaLamViecTrongNgay();
             AddColumnButton();
+            timerThoiGianHienTai.Start();
         }
         private void AddColumnButton()
         {
@@ -28,16 +30,18 @@ namespace GiaoDienPBL3.User_Controls
             buttonXoa.Name = "btnXoa";
             buttonXoa.FillWeight = 40;
             buttonXoa.UseColumnTextForButtonValue = true;
-            dgvQuanLyCaLamViec.Columns.Add(buttonXoa);
+            dgvQuanLyLichSuCaLamViec.Columns.Add(buttonXoa);
+            dgvQuanLyCaLamViecTrongNgay.Columns.Add(buttonXoa.Clone() as DataGridViewButtonColumn);
             DataGridViewButtonColumn buttonSua = new DataGridViewButtonColumn();
             buttonSua.HeaderText = "";
             buttonSua.Text = "Sửa";
             buttonSua.Name = "btnSua";
             buttonSua.FillWeight = 40;
             buttonSua.UseColumnTextForButtonValue = true;
-            dgvQuanLyCaLamViec.Columns.Add(buttonSua);
+            dgvQuanLyLichSuCaLamViec.Columns.Add(buttonSua);
+            dgvQuanLyCaLamViecTrongNgay.Columns.Add(buttonSua.Clone() as DataGridViewButtonColumn);
         }
-        private void SetData()
+        private void SetDataQuanLyLichSuCaLamViec()
         {
             string[] CaLamViec = { "Sáng Trưa", "Trưa Chiều", "Chiều Tối", "Tối Sáng" };
             string[] NhanViens = { "Quý", "Trường", "Sơn" };
@@ -45,7 +49,7 @@ namespace GiaoDienPBL3.User_Controls
             int count = 1;
             for (int i = 0; i < 50; i++)
             {
-                dgvQuanLyCaLamViec.Rows.Add(new object[]
+                dgvQuanLyLichSuCaLamViec.Rows.Add(new object[]
                 {
                     (count++).ToString(), DateTime.Now.AddDays(-count).ToString("dd/MM/yyyy"), CaLamViec[random.Next(CaLamViec.Length)],
                     NhanViens[random.Next(NhanViens.Length)], string.Format("{0:N3}VNĐ", random.Next(100)),
@@ -62,25 +66,26 @@ namespace GiaoDienPBL3.User_Controls
             cboCaLamViec1.SelectedIndex = 0;
         }
 
-        private void dgvQuanLyCaLamViec_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvQuanLyVaLichSuCaLamViec_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
-                if (e.ColumnIndex == dgvQuanLyCaLamViec.Columns["btnXoa"].Index && e.RowIndex >= 0)
+                DataGridView dgv = sender as DataGridView;
+                if (e.ColumnIndex == dgv.Columns["btnXoa"].Index && e.RowIndex >= 0)
                 {
-                    dgvQuanLyCaLamViec.Rows.RemoveAt(e.RowIndex);
+                    dgv.Rows.RemoveAt(e.RowIndex);
                 }
-                else if (e.ColumnIndex == dgvQuanLyCaLamViec.Columns["btnSua"].Index && e.RowIndex >= 0)
+                else if (e.ColumnIndex == dgv.Columns["btnSua"].Index && e.RowIndex >= 0)
                 {
-                    dgvQuanLyCaLamViec.ReadOnly = false;
-                    dgvQuanLyCaLamViec.BeginEdit(true);
-                    dgvQuanLyCaLamViec.Rows[e.RowIndex].ReadOnly = false;
-                    dgvQuanLyCaLamViec.Rows[e.RowIndex].Cells["CaLamViec"].ReadOnly = false;
+                    dgv.ReadOnly = false;
+                    dgv.BeginEdit(true);
+                    dgv.Rows[e.RowIndex].ReadOnly = false;
+                    dgv.Rows[e.RowIndex].Cells["CaLamViec"].ReadOnly = false;
                     lastRowIndex = e.RowIndex;
                 }
                 else if (e.RowIndex != lastRowIndex)
                 {
-                    dgvQuanLyCaLamViec.ReadOnly = true;
+                    dgv.ReadOnly = true;
                 }
             }
             catch (Exception)
@@ -91,14 +96,14 @@ namespace GiaoDienPBL3.User_Controls
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-            foreach (DataGridViewRow row in dgvQuanLyCaLamViec.Rows)
+            foreach (DataGridViewRow row in dgvQuanLyLichSuCaLamViec.Rows)
             {
                 row.Visible = true;
             }
             if (dtpNgayLamViec1.Value <= DateTime.Now
                     && cboCaLamViec1.SelectedIndex == 0 && cboNhanVien.SelectedIndex == 0)
             {
-                foreach (DataGridViewRow row in dgvQuanLyCaLamViec.Rows)
+                foreach (DataGridViewRow row in dgvQuanLyLichSuCaLamViec.Rows)
                 {
                     if (DateTime.ParseExact(row.Cells["NgayLamViec"].Value.ToString(), "dd/MM/yyyy", CultureInfo.InvariantCulture) != dtpNgayLamViec1.Value.Date)
                     {
@@ -109,7 +114,7 @@ namespace GiaoDienPBL3.User_Controls
             else if (dtpNgayLamViec1.Value <= DateTime.Now
                     && cboCaLamViec1.SelectedIndex > 0 && cboNhanVien.SelectedIndex == 0)
             {
-                foreach (DataGridViewRow row in dgvQuanLyCaLamViec.Rows)
+                foreach (DataGridViewRow row in dgvQuanLyLichSuCaLamViec.Rows)
                 {
                     if (DateTime.ParseExact(row.Cells["NgayLamViec"].Value.ToString(), "dd/MM/yyyy", CultureInfo.InvariantCulture) != dtpNgayLamViec1.Value.Date
                         || row.Cells["CaLamViec"].Value.ToString() != cboCaLamViec1.SelectedItem.ToString())
@@ -121,7 +126,7 @@ namespace GiaoDienPBL3.User_Controls
             else if (dtpNgayLamViec1.Value <= DateTime.Now
                     && cboCaLamViec1.SelectedIndex == 0 && cboNhanVien.SelectedIndex > 0)
             {
-                foreach (DataGridViewRow row in dgvQuanLyCaLamViec.Rows)
+                foreach (DataGridViewRow row in dgvQuanLyLichSuCaLamViec.Rows)
                 {
                     if (DateTime.ParseExact(row.Cells["NgayLamViec"].Value.ToString(), "dd/MM/yyyy", CultureInfo.InvariantCulture) != dtpNgayLamViec1.Value.Date
                         || row.Cells["NhanVien"].Value.ToString() != cboNhanVien.SelectedItem.ToString())
@@ -133,7 +138,7 @@ namespace GiaoDienPBL3.User_Controls
             else if (dtpNgayLamViec1.Value <= DateTime.Now
                     && cboCaLamViec1.SelectedIndex > 0 && cboNhanVien.SelectedIndex > 0)
             {
-                foreach (DataGridViewRow row in dgvQuanLyCaLamViec.Rows)
+                foreach (DataGridViewRow row in dgvQuanLyLichSuCaLamViec.Rows)
                 {
                     if (DateTime.ParseExact(row.Cells["NgayLamViec"].Value.ToString(), "dd/MM/yyyy", CultureInfo.InvariantCulture) != dtpNgayLamViec1.Value.Date
                         || row.Cells["CaLamViec"].Value.ToString() != cboCaLamViec1.SelectedItem.ToString()
@@ -146,7 +151,7 @@ namespace GiaoDienPBL3.User_Controls
             else if (dtpNgayLamViec1.Value > DateTime.Now
                     && cboCaLamViec1.SelectedIndex > 0 && cboNhanVien.SelectedIndex > 0)
             {
-                foreach (DataGridViewRow row in dgvQuanLyCaLamViec.Rows)
+                foreach (DataGridViewRow row in dgvQuanLyLichSuCaLamViec.Rows)
                 {
                     if (row.Cells["CaLamViec"].Value.ToString() != cboCaLamViec1.SelectedItem.ToString()
                         || row.Cells["NhanVien"].Value.ToString() != cboNhanVien.SelectedItem.ToString())
@@ -158,7 +163,7 @@ namespace GiaoDienPBL3.User_Controls
             else if (dtpNgayLamViec1.Value > DateTime.Now
                     && cboCaLamViec1.SelectedIndex == 0 && cboNhanVien.SelectedIndex > 0)
             {
-                foreach (DataGridViewRow row in dgvQuanLyCaLamViec.Rows)
+                foreach (DataGridViewRow row in dgvQuanLyLichSuCaLamViec.Rows)
                 {
                     if (row.Cells["NhanVien"].Value.ToString() != cboNhanVien.SelectedItem.ToString())
                     {
@@ -169,7 +174,7 @@ namespace GiaoDienPBL3.User_Controls
             else if (dtpNgayLamViec1.Value > DateTime.Now
                     && cboCaLamViec1.SelectedIndex > 0 && cboNhanVien.SelectedIndex == 0)
             {
-                foreach (DataGridViewRow row in dgvQuanLyCaLamViec.Rows)
+                foreach (DataGridViewRow row in dgvQuanLyLichSuCaLamViec.Rows)
                 {
                     if (row.Cells["CaLamViec"].Value.ToString() != cboCaLamViec1.SelectedItem.ToString())
                     {
@@ -179,7 +184,7 @@ namespace GiaoDienPBL3.User_Controls
             }
             else
             {
-                foreach (DataGridViewRow row in dgvQuanLyCaLamViec.Rows)
+                foreach (DataGridViewRow row in dgvQuanLyLichSuCaLamViec.Rows)
                 {
                     row.Visible = true;
                 }
@@ -190,25 +195,31 @@ namespace GiaoDienPBL3.User_Controls
         {
             txtMaNhanVien.Text = "";
             txtTenNhanVien.Text = "";
-            dtpNgayLamViec2.Value = DateTime.Now;
+            //dtpNgayLamViec2.Value = DateTime.Now;
             cboCaLamViec2.SelectedIndex = -1;
         }
 
         private void btnThem_Click(object sender, EventArgs e)
         {
             DataGridViewRow row = new DataGridViewRow();
-            row.CreateCells(dgvQuanLyCaLamViec);
-            row.Cells[0].Value = (dgvQuanLyCaLamViec.Rows.Count + 1).ToString();
-            row.Cells[1].Value = dtpNgayLamViec2.Value.ToString("dd/MM/yyyy");
-            row.Cells[2].Value = cboCaLamViec2.SelectedItem.ToString().Substring(0, cboCaLamViec2.SelectedItem.ToString().Length - 14);
-            row.Cells[3].Value = txtTenNhanVien.Text;
-            row.Cells[4].Value = row.Cells[5].Value = row.Cells[6].Value
-                = row.Cells[7].Value = row.Cells[8].Value = row.Cells[9].Value
-                = row.Cells[10].Value = "";
+            row.CreateCells(dgvQuanLyCaLamViecTrongNgay);
+            row.Cells[0].Value = (dgvQuanLyCaLamViecTrongNgay.Rows.Count + 1).ToString();
+            //row.Cells[1].Value = dtpNgayLamViec2.Value.ToString("dd/MM/yyyy");
+            row.Cells[1].Value = cboCaLamViec2.SelectedItem.ToString().Substring(0, cboCaLamViec2.SelectedItem.ToString().Length - 14);
+            row.Cells[2].Value = txtTenNhanVien.Text;
             row.Height = 40;
-            dgvQuanLyCaLamViec.Rows.Add(row);
+            dgvQuanLyCaLamViecTrongNgay.Rows.Add(row);
             MessageBox.Show("Thêm Ca Làm Việc Thành Công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             btnHuy.PerformClick();
+        }
+        private void SetDataQuanLyCaLamViecTrongNgay()
+        {
+            lblNgayHienTai.Text = DateTime.Now.ToString("dd/MM/yyyy");
+        }
+
+        private void timerThoiGianHienTai_Tick(object sender, EventArgs e)
+        {
+            lblNgayHienTai.Text = DateTime.Now.ToString();
         }
     }
 }
