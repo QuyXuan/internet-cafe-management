@@ -49,9 +49,12 @@ namespace GiaoDienPBL3
 
         private void SetOffAllCheckStateButton()
         {
-            btnQuanLy1.Checked = false;
-            btnQuanLy2.Checked = false;
-            btnQuanLy3.Checked = false;
+            btnQuanLyMenu.Checked = false;
+            btnQuanLyMay.Checked = false;
+            btnQuanLyDoanhThu.Checked = false;
+            btnQuanLyKhachHang.Checked = false;
+            btnQuanLyKho.Checked = false;
+            btnQuanLyNhanVien.Checked = false;
             btnCaiDat.Checked = false;
             btnTrangChu.Checked = false;
         }
@@ -64,10 +67,10 @@ namespace GiaoDienPBL3
 
         private void HideSubMenu()
         {
-            if (panelQuanLy1.Visible == true)
-                panelQuanLy1.Visible = false;
-            if (panelQuanLy2.Visible == true)
-                panelQuanLy2.Visible = false;
+            if (panelQuanLyMenu.Visible == true)
+                panelQuanLyMenu.Visible = false;
+            if (panelQuanLyKho.Visible == true)
+                panelQuanLyKho.Visible = false;
             if (panelQuanLy3.Visible == true)
                 panelQuanLy3.Visible = false;
             if (panelCaiDat.Visible == true)
@@ -76,8 +79,8 @@ namespace GiaoDienPBL3
 
         private void TurnOffAllPanelQuanLy()
         {
-            panelQuanLy1.Visible = false;
-            panelQuanLy2.Visible = false;
+            panelQuanLyMenu.Visible = false;
+            panelQuanLyKho.Visible = false;
             panelQuanLy3.Visible = false;
             panelCaiDat.Visible = false;
         }
@@ -96,21 +99,21 @@ namespace GiaoDienPBL3
             }
         }
 
-        private void btnQuanLy1_Click(object sender, EventArgs e)
+        private void btnQuanLyMenu_Click(object sender, EventArgs e)
         {
             Guna2Button btn = sender as Guna2Button;
             SetOnCheckStateButton(btn);
-            ShowSubMenu(panelQuanLy1);
+            ShowSubMenu(panelQuanLyMenu);
         }
 
-        private void btnQuanLy2_Click(object sender, EventArgs e)
+        private void btnQuanLyKho_Click(object sender, EventArgs e)
         {
             Guna2Button btn = sender as Guna2Button;
             SetOnCheckStateButton(btn);
-            ShowSubMenu(panelQuanLy2);
+            ShowSubMenu(panelQuanLyKho);
         }
 
-        private void btnQuanLy3_Click(object sender, EventArgs e)
+        private void btnQuanLyNhanVien_Click(object sender, EventArgs e)
         {
             Guna2Button btn = sender as Guna2Button;
             SetOnCheckStateButton(btn);
@@ -142,17 +145,20 @@ namespace GiaoDienPBL3
             AddUserControlOnBackGround(myUC_TrangChu);
         }
 
-        private void btnQuanLyMenu_Click(object sender, EventArgs e)
+        private void btnMenu_Click(object sender, EventArgs e)
         {
             AddUserControlOnBackGround(myUC_QuanLyMenu);
         }
 
         private void btnQuanLyMay_Click(object sender, EventArgs e)
         {
+            Guna2Button btn = sender as Guna2Button;
+            SetOnCheckStateButton(btn);
+            HideSubMenu();
             AddUserControlOnBackGround(myUC_QuanLyMay);
         }
 
-        private void btnQuanLyKho_Click(object sender, EventArgs e)
+        private void btnKho_Click(object sender, EventArgs e)
         {
             AddUserControlOnBackGround(myUC_QuanLyKho);
         }
@@ -164,6 +170,9 @@ namespace GiaoDienPBL3
 
         private void btnQuanLyDoanhThu_Click(object sender, EventArgs e)
         {
+            Guna2Button btn = sender as Guna2Button;
+            SetOnCheckStateButton(btn);
+            HideSubMenu();
             AddUserControlOnBackGround(myUC_QuanLyDoanhThu);
         }
 
@@ -179,6 +188,9 @@ namespace GiaoDienPBL3
 
         private void btnQuanLyKhachHang_Click(object sender, EventArgs e)
         {
+            Guna2Button btn = sender as Guna2Button;
+            SetOnCheckStateButton(btn);
+            HideSubMenu();
             AddUserControlOnBackGround(myUC_QuanLyKhachHang);
         }
     }

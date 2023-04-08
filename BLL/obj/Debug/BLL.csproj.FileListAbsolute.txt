@@ -34,3 +34,15 @@ C:\Users\ADMIN\source\repos\PBL3Quy\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.c
 C:\Users\ADMIN\source\repos\PBL3Quy\BLL\obj\Debug\BLL.csproj.CopyComplete
 C:\Users\ADMIN\source\repos\PBL3Quy\BLL\obj\Debug\BLL.dll
 C:\Users\ADMIN\source\repos\PBL3Quy\BLL\obj\Debug\BLL.pdb
+C:\Users\ADMIN\Source\Repos\pbl3\BLL\bin\Debug\BLL.dll
+C:\Users\ADMIN\Source\Repos\pbl3\BLL\bin\Debug\BLL.pdb
+C:\Users\ADMIN\Source\Repos\pbl3\BLL\bin\Debug\DAL.dll
+C:\Users\ADMIN\Source\Repos\pbl3\BLL\bin\Debug\DTO.dll
+C:\Users\ADMIN\Source\Repos\pbl3\BLL\bin\Debug\DAL.pdb
+C:\Users\ADMIN\Source\Repos\pbl3\BLL\bin\Debug\DAL.dll.config
+C:\Users\ADMIN\Source\Repos\pbl3\BLL\bin\Debug\DTO.pdb
+C:\Users\ADMIN\Source\Repos\pbl3\BLL\obj\Debug\BLL.csproj.AssemblyReference.cache
+C:\Users\ADMIN\Source\Repos\pbl3\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+C:\Users\ADMIN\Source\Repos\pbl3\BLL\obj\Debug\BLL.csproj.CopyComplete
+C:\Users\ADMIN\Source\Repos\pbl3\BLL\obj\Debug\BLL.dll
+C:\Users\ADMIN\Source\Repos\pbl3\BLL\obj\Debug\BLL.pdb

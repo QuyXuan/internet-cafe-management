@@ -28,3 +28,13 @@ C:\Users\ADMIN\source\repos\PBL3Quy\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.c
 C:\Users\ADMIN\source\repos\PBL3Quy\DAL\obj\Debug\DAL.csproj.CopyComplete
 C:\Users\ADMIN\source\repos\PBL3Quy\DAL\obj\Debug\DAL.dll
 C:\Users\ADMIN\source\repos\PBL3Quy\DAL\obj\Debug\DAL.pdb
+C:\Users\ADMIN\Source\Repos\pbl3\DAL\bin\Debug\DAL.dll.config
+C:\Users\ADMIN\Source\Repos\pbl3\DAL\bin\Debug\DAL.dll
+C:\Users\ADMIN\Source\Repos\pbl3\DAL\bin\Debug\DAL.pdb
+C:\Users\ADMIN\Source\Repos\pbl3\DAL\bin\Debug\DTO.dll
+C:\Users\ADMIN\Source\Repos\pbl3\DAL\bin\Debug\DTO.pdb
+C:\Users\ADMIN\Source\Repos\pbl3\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+C:\Users\ADMIN\Source\Repos\pbl3\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\ADMIN\Source\Repos\pbl3\DAL\obj\Debug\DAL.csproj.CopyComplete
+C:\Users\ADMIN\Source\Repos\pbl3\DAL\obj\Debug\DAL.dll
+C:\Users\ADMIN\Source\Repos\pbl3\DAL\obj\Debug\DAL.pdb
