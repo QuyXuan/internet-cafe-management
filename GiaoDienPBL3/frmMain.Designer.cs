@@ -407,6 +407,7 @@
             this.btnQuanLyKhachHang.Size = new System.Drawing.Size(216, 45);
             this.btnQuanLyKhachHang.TabIndex = 6;
             this.btnQuanLyKhachHang.Text = "Quản Lý Khách Hàng";
+            this.btnQuanLyKhachHang.Click += new System.EventHandler(this.btnQuanLyKhachHang_Click);
             // 
             // btnQuanLyNhanVien
             // 

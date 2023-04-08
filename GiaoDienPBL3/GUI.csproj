@@ -147,6 +147,12 @@
     <Compile Include="User_Controls\UC_MonAn.Designer.cs">
       <DependentUpon>UC_MonAn.cs</DependentUpon>
     </Compile>
+    <Compile Include="User_Controls\UC_QuanLyKhachHang.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User_Controls\UC_QuanLyKhachHang.Designer.cs">
+      <DependentUpon>UC_QuanLyKhachHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="User_Controls\UC_QuanLyKho.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -226,6 +232,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="User_Controls\UC_MonAn.resx">
       <DependentUpon>UC_MonAn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_Controls\UC_QuanLyKhachHang.resx">
+      <DependentUpon>UC_QuanLyKhachHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User_Controls\UC_QuanLyKho.resx">
       <DependentUpon>UC_QuanLyKho.cs</DependentUpon>

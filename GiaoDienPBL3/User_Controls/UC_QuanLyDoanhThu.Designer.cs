@@ -84,24 +84,11 @@
             this.label13 = new System.Windows.Forms.Label();
             this.btnXemThongKeHoaDonTheoNgay = new Guna.UI2.WinForms.Guna2Button();
             this.panel12 = new System.Windows.Forms.Panel();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.btnXemThongKeHoaDonTheoThang = new Guna.UI2.WinForms.Guna2Button();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.guna2DateTimePicker3 = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.guna2DateTimePicker4 = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.panel13 = new System.Windows.Forms.Panel();
-            this.panel14 = new System.Windows.Forms.Panel();
-            this.panel15 = new System.Windows.Forms.Panel();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label16 = new System.Windows.Forms.Label();
-            this.panel16 = new System.Windows.Forms.Panel();
-            this.panel17 = new System.Windows.Forms.Panel();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label19 = new System.Windows.Forms.Label();
             this.panel18 = new System.Windows.Forms.Panel();
             this.panel20 = new System.Windows.Forms.Panel();
             this.panel19 = new System.Windows.Forms.Panel();
@@ -111,6 +98,28 @@
             this.label22 = new System.Windows.Forms.Label();
             this.lblTongLoiNhuan = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.panel14 = new System.Windows.Forms.Panel();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.panel15 = new System.Windows.Forms.Panel();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.panel16 = new System.Windows.Forms.Panel();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.panel17 = new System.Windows.Forms.Panel();
+            this.panel21 = new System.Windows.Forms.Panel();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label25 = new System.Windows.Forms.Label();
+            this.panel22 = new System.Windows.Forms.Panel();
+            this.panel23 = new System.Windows.Forms.Panel();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label28 = new System.Windows.Forms.Label();
             this.guna2CustomGradientPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -131,13 +140,17 @@
             this.panel10.SuspendLayout();
             this.panel11.SuspendLayout();
             this.panel12.SuspendLayout();
+            this.panel18.SuspendLayout();
+            this.panel20.SuspendLayout();
+            this.panel19.SuspendLayout();
+            this.panel13.SuspendLayout();
             this.panel14.SuspendLayout();
             this.panel15.SuspendLayout();
             this.panel16.SuspendLayout();
             this.panel17.SuspendLayout();
-            this.panel18.SuspendLayout();
-            this.panel20.SuspendLayout();
-            this.panel19.SuspendLayout();
+            this.panel21.SuspendLayout();
+            this.panel22.SuspendLayout();
+            this.panel23.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2CustomGradientPanel1
@@ -450,8 +463,8 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.tabPage1.Controls.Add(this.panel16);
-            this.tabPage1.Controls.Add(this.panel14);
+            this.tabPage1.Controls.Add(this.panel22);
+            this.tabPage1.Controls.Add(this.panel17);
             this.tabPage1.Controls.Add(this.panel13);
             this.tabPage1.Controls.Add(this.panel12);
             this.tabPage1.Location = new System.Drawing.Point(4, 44);
@@ -758,7 +771,7 @@
             // 
             // panel12
             // 
-            this.panel12.Controls.Add(this.guna2Button1);
+            this.panel12.Controls.Add(this.btnXemThongKeHoaDonTheoThang);
             this.panel12.Controls.Add(this.label11);
             this.panel12.Controls.Add(this.label12);
             this.panel12.Controls.Add(this.guna2DateTimePicker3);
@@ -769,24 +782,24 @@
             this.panel12.Size = new System.Drawing.Size(1240, 42);
             this.panel12.TabIndex = 4;
             // 
-            // guna2Button1
+            // btnXemThongKeHoaDonTheoThang
             // 
-            this.guna2Button1.BorderColor = System.Drawing.Color.Gray;
-            this.guna2Button1.BorderRadius = 8;
-            this.guna2Button1.BorderThickness = 2;
-            this.guna2Button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Location = new System.Drawing.Point(1040, 3);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(159, 35);
-            this.guna2Button1.TabIndex = 4;
-            this.guna2Button1.Text = "Xem";
+            this.btnXemThongKeHoaDonTheoThang.BorderColor = System.Drawing.Color.Gray;
+            this.btnXemThongKeHoaDonTheoThang.BorderRadius = 8;
+            this.btnXemThongKeHoaDonTheoThang.BorderThickness = 2;
+            this.btnXemThongKeHoaDonTheoThang.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnXemThongKeHoaDonTheoThang.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnXemThongKeHoaDonTheoThang.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnXemThongKeHoaDonTheoThang.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnXemThongKeHoaDonTheoThang.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnXemThongKeHoaDonTheoThang.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnXemThongKeHoaDonTheoThang.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXemThongKeHoaDonTheoThang.ForeColor = System.Drawing.Color.White;
+            this.btnXemThongKeHoaDonTheoThang.Location = new System.Drawing.Point(1040, 3);
+            this.btnXemThongKeHoaDonTheoThang.Name = "btnXemThongKeHoaDonTheoThang";
+            this.btnXemThongKeHoaDonTheoThang.Size = new System.Drawing.Size(159, 35);
+            this.btnXemThongKeHoaDonTheoThang.TabIndex = 4;
+            this.btnXemThongKeHoaDonTheoThang.Text = "Xem";
             // 
             // label11
             // 
@@ -837,154 +850,6 @@
             this.guna2DateTimePicker4.Size = new System.Drawing.Size(238, 36);
             this.guna2DateTimePicker4.TabIndex = 0;
             this.guna2DateTimePicker4.Value = new System.DateTime(2023, 3, 30, 15, 24, 2, 909);
-            // 
-            // panel13
-            // 
-            this.panel13.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel13.Location = new System.Drawing.Point(3, 550);
-            this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(1240, 45);
-            this.panel13.TabIndex = 5;
-            // 
-            // panel14
-            // 
-            this.panel14.Controls.Add(this.panel15);
-            this.panel14.Controls.Add(this.flowLayoutPanel1);
-            this.panel14.Controls.Add(this.label16);
-            this.panel14.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel14.Location = new System.Drawing.Point(3, 45);
-            this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(588, 505);
-            this.panel14.TabIndex = 7;
-            // 
-            // panel15
-            // 
-            this.panel15.Controls.Add(this.label14);
-            this.panel15.Controls.Add(this.label15);
-            this.panel15.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel15.Location = new System.Drawing.Point(0, 448);
-            this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(588, 57);
-            this.panel15.TabIndex = 8;
-            // 
-            // label14
-            // 
-            this.label14.BackColor = System.Drawing.Color.Silver;
-            this.label14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label14.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label14.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(182, 0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(406, 57);
-            this.label14.TabIndex = 4;
-            this.label14.Text = "TongTienKhachHang";
-            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label15
-            // 
-            this.label15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.label15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label15.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label15.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(0, 0);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(182, 57);
-            this.label15.TabIndex = 3;
-            this.label15.Text = "Tổng Tiền ";
-            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 33);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(588, 415);
-            this.flowLayoutPanel1.TabIndex = 7;
-            // 
-            // label16
-            // 
-            this.label16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label16.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label16.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.ForeColor = System.Drawing.Color.Maroon;
-            this.label16.Location = new System.Drawing.Point(0, 0);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(588, 33);
-            this.label16.TabIndex = 6;
-            this.label16.Text = "Hóa Đơn Khách Hàng";
-            this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // panel16
-            // 
-            this.panel16.Controls.Add(this.panel17);
-            this.panel16.Controls.Add(this.flowLayoutPanel2);
-            this.panel16.Controls.Add(this.label19);
-            this.panel16.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel16.Location = new System.Drawing.Point(591, 45);
-            this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(652, 505);
-            this.panel16.TabIndex = 8;
-            // 
-            // panel17
-            // 
-            this.panel17.Controls.Add(this.label17);
-            this.panel17.Controls.Add(this.label18);
-            this.panel17.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel17.Location = new System.Drawing.Point(0, 448);
-            this.panel17.Name = "panel17";
-            this.panel17.Size = new System.Drawing.Size(652, 57);
-            this.panel17.TabIndex = 8;
-            // 
-            // label17
-            // 
-            this.label17.BackColor = System.Drawing.Color.Silver;
-            this.label17.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label17.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label17.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(182, 0);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(470, 57);
-            this.label17.TabIndex = 6;
-            this.label17.Text = "TongTienNhapKho";
-            this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label18
-            // 
-            this.label18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.label18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label18.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label18.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(0, 0);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(182, 57);
-            this.label18.TabIndex = 5;
-            this.label18.Text = "Tổng Tiền ";
-            this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // flowLayoutPanel2
-            // 
-            this.flowLayoutPanel2.AutoScroll = true;
-            this.flowLayoutPanel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(0, 33);
-            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(652, 415);
-            this.flowLayoutPanel2.TabIndex = 7;
-            // 
-            // label19
-            // 
-            this.label19.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label19.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label19.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.ForeColor = System.Drawing.Color.Maroon;
-            this.label19.Location = new System.Drawing.Point(0, 0);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(652, 33);
-            this.label19.TabIndex = 6;
-            this.label19.Text = "Hóa Đơn Nhập Kho";
-            this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel18
             // 
@@ -1094,6 +959,265 @@
             this.label24.Text = "Tổng Lợi Nhuận";
             this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // panel13
+            // 
+            this.panel13.Controls.Add(this.panel14);
+            this.panel13.Controls.Add(this.panel15);
+            this.panel13.Controls.Add(this.panel16);
+            this.panel13.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel13.Location = new System.Drawing.Point(3, 492);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(1240, 103);
+            this.panel13.TabIndex = 5;
+            // 
+            // panel14
+            // 
+            this.panel14.Controls.Add(this.label14);
+            this.panel14.Controls.Add(this.label15);
+            this.panel14.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel14.Location = new System.Drawing.Point(413, 0);
+            this.panel14.Name = "panel14";
+            this.panel14.Size = new System.Drawing.Size(414, 103);
+            this.panel14.TabIndex = 2;
+            // 
+            // label14
+            // 
+            this.label14.BackColor = System.Drawing.Color.DarkSalmon;
+            this.label14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label14.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label14.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(0, 53);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(414, 50);
+            this.label14.TabIndex = 7;
+            this.label14.Text = "0.000VNĐ";
+            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label15
+            // 
+            this.label15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.label15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label15.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label15.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(0, 0);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(414, 53);
+            this.label15.TabIndex = 6;
+            this.label15.Text = "Tổng Chi Trả";
+            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel15
+            // 
+            this.panel15.Controls.Add(this.label16);
+            this.panel15.Controls.Add(this.label17);
+            this.panel15.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel15.Location = new System.Drawing.Point(827, 0);
+            this.panel15.Name = "panel15";
+            this.panel15.Size = new System.Drawing.Size(413, 103);
+            this.panel15.TabIndex = 1;
+            // 
+            // label16
+            // 
+            this.label16.BackColor = System.Drawing.Color.DarkSalmon;
+            this.label16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label16.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label16.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(0, 53);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(413, 50);
+            this.label16.TabIndex = 7;
+            this.label16.Text = "0.000VNĐ";
+            this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label17
+            // 
+            this.label17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.label17.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label17.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label17.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(0, 0);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(413, 53);
+            this.label17.TabIndex = 6;
+            this.label17.Text = "Tổng Lợi Nhuận";
+            this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel16
+            // 
+            this.panel16.Controls.Add(this.label18);
+            this.panel16.Controls.Add(this.label19);
+            this.panel16.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel16.Location = new System.Drawing.Point(0, 0);
+            this.panel16.Name = "panel16";
+            this.panel16.Size = new System.Drawing.Size(413, 103);
+            this.panel16.TabIndex = 0;
+            // 
+            // label18
+            // 
+            this.label18.BackColor = System.Drawing.Color.DarkSalmon;
+            this.label18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label18.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label18.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(0, 53);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(413, 50);
+            this.label18.TabIndex = 5;
+            this.label18.Text = "0.000VNĐ";
+            this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label19
+            // 
+            this.label19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.label19.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label19.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label19.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(0, 0);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(413, 53);
+            this.label19.TabIndex = 4;
+            this.label19.Text = "Tổng Doanh Thu ";
+            this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel17
+            // 
+            this.panel17.Controls.Add(this.panel21);
+            this.panel17.Controls.Add(this.flowLayoutPanel1);
+            this.panel17.Controls.Add(this.label25);
+            this.panel17.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel17.Location = new System.Drawing.Point(3, 45);
+            this.panel17.Name = "panel17";
+            this.panel17.Size = new System.Drawing.Size(588, 447);
+            this.panel17.TabIndex = 7;
+            // 
+            // panel21
+            // 
+            this.panel21.Controls.Add(this.label21);
+            this.panel21.Controls.Add(this.label23);
+            this.panel21.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel21.Location = new System.Drawing.Point(0, 389);
+            this.panel21.Name = "panel21";
+            this.panel21.Size = new System.Drawing.Size(588, 58);
+            this.panel21.TabIndex = 8;
+            // 
+            // label21
+            // 
+            this.label21.BackColor = System.Drawing.Color.Silver;
+            this.label21.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label21.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label21.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(182, 0);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(406, 58);
+            this.label21.TabIndex = 4;
+            this.label21.Text = "0.000VNĐ";
+            this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label23
+            // 
+            this.label23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.label23.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label23.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label23.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Location = new System.Drawing.Point(0, 0);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(182, 58);
+            this.label23.TabIndex = 3;
+            this.label23.Text = "Tổng Tiền ";
+            this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.AutoScroll = true;
+            this.flowLayoutPanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 33);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(588, 356);
+            this.flowLayoutPanel1.TabIndex = 7;
+            // 
+            // label25
+            // 
+            this.label25.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label25.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label25.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.ForeColor = System.Drawing.Color.Maroon;
+            this.label25.Location = new System.Drawing.Point(0, 0);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(588, 33);
+            this.label25.TabIndex = 6;
+            this.label25.Text = "Hóa Đơn Khách Hàng";
+            this.label25.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel22
+            // 
+            this.panel22.Controls.Add(this.panel23);
+            this.panel22.Controls.Add(this.flowLayoutPanel2);
+            this.panel22.Controls.Add(this.label28);
+            this.panel22.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel22.Location = new System.Drawing.Point(591, 45);
+            this.panel22.Name = "panel22";
+            this.panel22.Size = new System.Drawing.Size(652, 447);
+            this.panel22.TabIndex = 8;
+            // 
+            // panel23
+            // 
+            this.panel23.Controls.Add(this.label26);
+            this.panel23.Controls.Add(this.label27);
+            this.panel23.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel23.Location = new System.Drawing.Point(0, 389);
+            this.panel23.Name = "panel23";
+            this.panel23.Size = new System.Drawing.Size(652, 58);
+            this.panel23.TabIndex = 8;
+            // 
+            // label26
+            // 
+            this.label26.BackColor = System.Drawing.Color.Silver;
+            this.label26.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label26.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label26.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.Location = new System.Drawing.Point(182, 0);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(470, 58);
+            this.label26.TabIndex = 6;
+            this.label26.Text = "0.000VNĐ";
+            this.label26.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label27
+            // 
+            this.label27.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.label27.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label27.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label27.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.Location = new System.Drawing.Point(0, 0);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(182, 58);
+            this.label27.TabIndex = 5;
+            this.label27.Text = "Tổng Tiền ";
+            this.label27.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.AutoScroll = true;
+            this.flowLayoutPanel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(0, 33);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(652, 356);
+            this.flowLayoutPanel2.TabIndex = 7;
+            // 
+            // label28
+            // 
+            this.label28.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label28.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label28.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.ForeColor = System.Drawing.Color.Maroon;
+            this.label28.Location = new System.Drawing.Point(0, 0);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(652, 33);
+            this.label28.TabIndex = 6;
+            this.label28.Text = "Hóa Đơn Nhập Kho";
+            this.label28.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // UC_QuanLyDoanhThu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1125,13 +1249,17 @@
             this.panel11.ResumeLayout(false);
             this.panel12.ResumeLayout(false);
             this.panel12.PerformLayout();
+            this.panel18.ResumeLayout(false);
+            this.panel20.ResumeLayout(false);
+            this.panel19.ResumeLayout(false);
+            this.panel13.ResumeLayout(false);
             this.panel14.ResumeLayout(false);
             this.panel15.ResumeLayout(false);
             this.panel16.ResumeLayout(false);
             this.panel17.ResumeLayout(false);
-            this.panel18.ResumeLayout(false);
-            this.panel20.ResumeLayout(false);
-            this.panel19.ResumeLayout(false);
+            this.panel21.ResumeLayout(false);
+            this.panel22.ResumeLayout(false);
+            this.panel23.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1182,21 +1310,8 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label lblTongTienKhachHang;
         private Guna.UI2.WinForms.Guna2Button btnXemThongKeHoaDonTheoNgay;
-        private System.Windows.Forms.Panel panel16;
-        private System.Windows.Forms.Panel panel17;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Panel panel14;
-        private System.Windows.Forms.Panel panel15;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Panel panel13;
         private System.Windows.Forms.Panel panel12;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2Button btnXemThongKeHoaDonTheoThang;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker3;
@@ -1210,5 +1325,27 @@
         private System.Windows.Forms.Panel panel18;
         private System.Windows.Forms.Label lblTongDoanhThu;
         private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Panel panel22;
+        private System.Windows.Forms.Panel panel23;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Panel panel17;
+        private System.Windows.Forms.Panel panel21;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Panel panel13;
+        private System.Windows.Forms.Panel panel14;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Panel panel15;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Panel panel16;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label19;
     }
 }
