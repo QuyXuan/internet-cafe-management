@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 using GiaoDienPBL3.UC;
 using GiaoDienPBL3.User_Controls;
 using Guna.UI2.WinForms;
@@ -30,6 +32,7 @@ namespace GiaoDienPBL3
         public frmMain()
         {
             InitializeComponent();
+            //MessageBox.Show(Path.Combine(AppDomain.CurrentDomain.BaseDirectory/*.Replace(@"\bin\Debug", "")*/, "img", "comchien.jpg"));
         }
 
         private void imgbtnThoat_Click(object sender, EventArgs e)

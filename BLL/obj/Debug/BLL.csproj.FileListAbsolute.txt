@@ -46,3 +46,9 @@ C:\Users\ADMIN\Source\Repos\pbl3\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cach
 C:\Users\ADMIN\Source\Repos\pbl3\BLL\obj\Debug\BLL.csproj.CopyComplete
 C:\Users\ADMIN\Source\Repos\pbl3\BLL\obj\Debug\BLL.dll
 C:\Users\ADMIN\Source\Repos\pbl3\BLL\obj\Debug\BLL.pdb
+C:\Users\ADMIN\source\repos\pbl3\BLL\bin\Debug\BLL.dll.config
+C:\Users\ADMIN\source\repos\pbl3\BLL\bin\Debug\EntityFramework.dll
+C:\Users\ADMIN\source\repos\pbl3\BLL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\ADMIN\source\repos\pbl3\BLL\bin\Debug\DTO.dll.config
+C:\Users\ADMIN\source\repos\pbl3\BLL\bin\Debug\EntityFramework.xml
+C:\Users\ADMIN\source\repos\pbl3\BLL\bin\Debug\EntityFramework.SqlServer.xml

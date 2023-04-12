@@ -52,26 +52,27 @@ namespace GiaoDienPBL3.UC
         }
         private void SetFullMonAn()
         {
-            List<MonAn> listFullMonAn = BLLMonAn.Instance.GetListMonAn();
-            foreach (MonAn item in listFullMonAn)
+            List<Product> listProduct = BLLMonAn.Instance.GetListProduct();
+            foreach (Product item in listProduct)
             {
                 AddMonAn(item);
             }
         }
-        private void AddMonAn(MonAn monAn)
+        private void AddMonAn(Product product)
         {
             UC_MonAn my_UCMonAn = new UC_MonAn();
-            my_UCMonAn.TextGiaMonAn = string.Format("{0:N3}VNĐ", monAn.Gia);
-            my_UCMonAn.TextTenMonAn = monAn.TenMonAn;
-            my_UCMonAn.ImagePanel = GetAnhByPathAnhMon(monAn.PathAnhMon);
-            my_UCMonAn.Tag = monAn;
+            my_UCMonAn.TextGiaMonAn = string.Format("{0:N3}VNĐ", product.SellingPrice);
+            my_UCMonAn.TextTenMonAn = product.ProductName;
+            my_UCMonAn.ImagePanel = GetAnhByPathAnhMon(product.ImageFilePath);
+            my_UCMonAn.Tag = product;
             frmMain.myUC_QuanLyMenu.panelMonAn.Controls.Add(my_UCMonAn);
         }
-        private Image GetAnhByPathAnhMon(string path)
+        private Image GetAnhByPathAnhMon(string nameImg)
         {
+            string imgFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory.Replace(@"GiaoDienPBL3\bin\Debug", ""), "img", nameImg);
             try
             {
-                Image image = Image.FromFile(path);
+                Image image = Image.FromFile(imgFilePath);
                 return image;
             }
             catch (FileNotFoundException)

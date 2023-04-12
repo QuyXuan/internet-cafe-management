@@ -128,3 +128,12 @@ C:\Users\ADMIN\Source\Repos\pbl3\GiaoDienPBL3\obj\Debug\GUI.csproj.CoreCompileIn
 C:\Users\ADMIN\Source\Repos\pbl3\GiaoDienPBL3\obj\Debug\GUI.csproj.CopyComplete
 C:\Users\ADMIN\Source\Repos\pbl3\GiaoDienPBL3\obj\Debug\GiaoDienPBL3.exe
 C:\Users\ADMIN\Source\Repos\pbl3\GiaoDienPBL3\obj\Debug\GiaoDienPBL3.pdb
+C:\Users\ADMIN\source\repos\pbl3\GiaoDienPBL3\bin\Debug\EntityFramework.dll
+C:\Users\ADMIN\source\repos\pbl3\GiaoDienPBL3\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\ADMIN\source\repos\pbl3\GiaoDienPBL3\bin\Debug\DAL.dll
+C:\Users\ADMIN\source\repos\pbl3\GiaoDienPBL3\bin\Debug\BLL.dll.config
+C:\Users\ADMIN\source\repos\pbl3\GiaoDienPBL3\bin\Debug\DTO.dll.config
+C:\Users\ADMIN\source\repos\pbl3\GiaoDienPBL3\bin\Debug\EntityFramework.xml
+C:\Users\ADMIN\source\repos\pbl3\GiaoDienPBL3\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\ADMIN\source\repos\pbl3\GiaoDienPBL3\bin\Debug\DAL.pdb
+C:\Users\ADMIN\source\repos\pbl3\GiaoDienPBL3\bin\Debug\DAL.dll.config
