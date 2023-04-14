@@ -28,7 +28,6 @@ namespace GiaoDienPBL3
         public static UC_QuanLyCaLamViec myUC_QuanLyCaLamViec = new UC_QuanLyCaLamViec();
         public static UC_QuanLyKhachHang myUC_QuanLyKhachHang = new UC_QuanLyKhachHang();
         public static UC_Loading myUC_Loading = new UC_Loading();
-        private bool checkSideBarExpand = false;
         public frmMain()
         {
             InitializeComponent();

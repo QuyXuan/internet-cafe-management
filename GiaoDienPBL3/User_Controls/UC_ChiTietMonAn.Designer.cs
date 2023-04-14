@@ -165,10 +165,10 @@
 
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
         private System.Windows.Forms.Label lblGiaMon;
-        private Guna.UI2.WinForms.Guna2Button btnXoaMon;
         private System.Windows.Forms.Label lblTenMon;
         private System.Windows.Forms.Label lblSoLuongMon;
         public Guna.UI2.WinForms.Guna2Button btnCongMon;
         public Guna.UI2.WinForms.Guna2Button btnTruMon;
+        public Guna.UI2.WinForms.Guna2Button btnXoaMon;
     }
 }

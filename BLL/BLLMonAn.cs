@@ -60,9 +60,5 @@ namespace BLL
                 return products;
             }
         }
-        private string ConvertFromNameToPath(string nameImage)
-        {
-            return Path.Combine(AppDomain.CurrentDomain.BaseDirectory.Replace(@"\DAL\bin\Debug", ""), "img", nameImage);
-        }
     }
 }

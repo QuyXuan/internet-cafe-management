@@ -21,6 +21,8 @@ namespace GiaoDienPBL3.UC
         public UC_ChiTietMonAn my_UCChiTietMonAn;
         private bool checkBtnCaiDat = false;
         public static bool checkBtnXacNhan = false;
+        //kiểm tra đây là form admin hay là client, false là admin
+        private bool checkFormAdminOrClient = false;
         public UC_QuanLyMenu()
         {
             InitializeComponent();
@@ -65,6 +67,10 @@ namespace GiaoDienPBL3.UC
             my_UCMonAn.TextTenMonAn = product.ProductName;
             my_UCMonAn.ImagePanel = GetAnhByPathAnhMon(product.ImageFilePath);
             my_UCMonAn.Tag = product;
+            //if (checkFormAdminOrClient == true)
+            //{
+
+            //}
             frmMain.myUC_QuanLyMenu.panelMonAn.Controls.Add(my_UCMonAn);
         }
         private Image GetAnhByPathAnhMon(string nameImg)
@@ -73,9 +79,18 @@ namespace GiaoDienPBL3.UC
             try
             {
                 Image image = Image.FromFile(imgFilePath);
+                checkFormAdminOrClient = false;
                 return image;
             }
             catch (FileNotFoundException)
+            {
+                imgFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory.Replace(@"\GUIClient\bin\Debug", ""), "img", nameImg);
+                Image image = Image.FromFile(imgFilePath);
+                image = Image.FromFile(imgFilePath);
+                checkFormAdminOrClient = true;
+                return image;
+            }
+            catch (Exception)
             {
                 return null;
             }
