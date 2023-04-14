@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Guna.UI2.WinForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,6 +14,8 @@ namespace GiaoDienPBL3.UC
 {
     public partial class UC_MonAn : UserControl
     {
+        private Panel panelHetMon;
+        private Label lblHetMon;
         public Image ImagePanel
         {
             get { return picMonAn.Image; }
@@ -34,6 +37,7 @@ namespace GiaoDienPBL3.UC
         public UC_MonAn()
         {
             InitializeComponent();
+            SetPanelHetMon();
         }
 
         private void ChinhMauVienMonAn()
@@ -84,6 +88,34 @@ namespace GiaoDienPBL3.UC
             ChinhMauVienMonAn();
             ThemChiTietMonAnVaoFlowLayoutPanel();
             HienThiVaTinhTongTien();
+        }
+
+        private void msDaHetMon_Click(object sender, EventArgs e)
+        {
+            picMonAn.Controls.Add(panelHetMon);
+            picMonAn.BringToFront();
+            panelHetMon.BringToFront();
+        }
+        private void SetPanelHetMon()
+        {
+            panelHetMon = new Panel();
+            panelHetMon.BackColor = Color.FromArgb(150, 0, 0, 0);
+            panelHetMon.Dock = DockStyle.Fill;
+            lblHetMon = new Label();
+            lblHetMon.Text = "Đã Hết Món";
+            lblHetMon.Font = new Font("Segoe UI", 9, FontStyle.Bold);
+            lblHetMon.BackColor = Color.FromArgb(150, 255, 153, 153);
+            lblHetMon.ForeColor = Color.Black;
+            lblHetMon.TextAlign = ContentAlignment.MiddleCenter;
+            panelHetMon.Controls.Add(lblHetMon);
+            lblHetMon.Location = new Point((this.Size.Width - lblHetMon.Size.Width) / 2, (this.Size.Height - lblHetMon.Size.Height) / 2);
+        }
+
+        private void msDaCoMon_Click(object sender, EventArgs e)
+        {
+            picMonAn.Controls.Remove(panelHetMon);
+            panelTenMonAn.BringToFront();
+            panelGiaMonAn.BringToFront();
         }
     }
 }

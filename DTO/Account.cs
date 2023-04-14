@@ -26,10 +26,8 @@ namespace DTO
         public string Password { get; set; }
 
         [Required]
-        [RegularExpression("^(Administrator|Khách Hàng|Quản Lý|Nhân Viên)$")]
+        [RegularExpression("^(Chủ Quán|Khách Hàng|Nhân Viên)$")]
         public string Role { get; set; }
-
-        [StringLength(10)]
-        public string TypeDiscount { get; set; }
+        public Nullable<DateTime> DateCreate { get; set; }
     }
 }

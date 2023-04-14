@@ -21,5 +21,7 @@ namespace DTO
         public string DiscountName { get; set; }
 
         public Nullable<float> DiscountPercent { get; set; }
+
+        //public virtual ICollection<Customer> Customers { get; set; }
     }
 }

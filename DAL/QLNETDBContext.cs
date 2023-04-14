@@ -45,7 +45,6 @@ namespace DAL
         public DbSet<Account> Accounts { get; set; }
         public DbSet<Bill> Bills { get; set; }
         public DbSet<Computer> Computers { get; set; }
-        public DbSet<ComputerManvenue> ComputerManvenues { get; set; }
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Discount> Discounts { get; set; }
         public DbSet<Employee> Employees { get; set; }

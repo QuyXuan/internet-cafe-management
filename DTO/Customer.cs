@@ -22,6 +22,10 @@ namespace DTO
         public string CustomerName { get; set; }
 
         public Nullable<float> Balance { get; set; }
+        public Nullable<float> TotalTime { get; set; }
+
+        [Required]
+        public bool TypeCustomer { get; set; }
 
         [Required]
         [StringLength(10)]
@@ -29,5 +33,12 @@ namespace DTO
         public string AccountId { get; set; }
         [ForeignKey("AccountId")]
         public virtual Account Account { get; set; }
+
+        [Required]
+        [StringLength(10)]
+        [Column(TypeName = "varchar")]
+        public string DiscountId { get; set; }
+        [ForeignKey("DiscountId")]
+        public virtual Discount Discount { get; set; }
     }
 }

@@ -21,5 +21,6 @@ namespace DTO
         public string NameType { get; set; }
 
         public Nullable<float> Price { get; set; }
+        public virtual ICollection<Computer> Computers { get; set; }
     }
 }

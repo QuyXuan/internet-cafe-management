@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.panelBackGround = new System.Windows.Forms.Panel();
-            this.btnNapGioChoi = new Guna.UI2.WinForms.Guna2Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
@@ -40,6 +39,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panelSideBar = new System.Windows.Forms.Panel();
             this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.btnNapGioChoi = new Guna.UI2.WinForms.Guna2Button();
             this.btnMenu = new Guna.UI2.WinForms.Guna2Button();
             this.btnTrangChu = new Guna.UI2.WinForms.Guna2Button();
             this.imgbtnThoat = new Guna.UI2.WinForms.Guna2ImageButton();
@@ -59,29 +59,6 @@
             this.panelBackGround.Name = "panelBackGround";
             this.panelBackGround.Size = new System.Drawing.Size(1179, 697);
             this.panelBackGround.TabIndex = 9;
-            // 
-            // btnNapGioChoi
-            // 
-            this.btnNapGioChoi.BorderRadius = 15;
-            this.btnNapGioChoi.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.btnNapGioChoi.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(165)))), ((int)(((byte)(208)))));
-            this.btnNapGioChoi.CheckedState.ForeColor = System.Drawing.Color.White;
-            this.btnNapGioChoi.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNapGioChoi.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnNapGioChoi.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnNapGioChoi.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnNapGioChoi.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnNapGioChoi.FillColor = System.Drawing.SystemColors.Control;
-            this.btnNapGioChoi.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNapGioChoi.ForeColor = System.Drawing.Color.Black;
-            this.btnNapGioChoi.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnNapGioChoi.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnNapGioChoi.Location = new System.Drawing.Point(12, 0);
-            this.btnNapGioChoi.Name = "btnNapGioChoi";
-            this.btnNapGioChoi.Size = new System.Drawing.Size(241, 45);
-            this.btnNapGioChoi.TabIndex = 6;
-            this.btnNapGioChoi.Text = "Nạp Giờ Chơi";
-            this.btnNapGioChoi.Click += new System.EventHandler(this.btnNapGioChoi_Click);
             // 
             // panel1
             // 
@@ -191,6 +168,31 @@
             this.guna2CirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.guna2CirclePictureBox1.TabIndex = 0;
             this.guna2CirclePictureBox1.TabStop = false;
+            // 
+            // btnNapGioChoi
+            // 
+            this.btnNapGioChoi.BorderRadius = 15;
+            this.btnNapGioChoi.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnNapGioChoi.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(165)))), ((int)(((byte)(208)))));
+            this.btnNapGioChoi.CheckedState.ForeColor = System.Drawing.Color.White;
+            this.btnNapGioChoi.CheckedState.Image = global::GUIClient.Properties.Resources.icons8_chart_arrow_rise_30__1_;
+            this.btnNapGioChoi.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNapGioChoi.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnNapGioChoi.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnNapGioChoi.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnNapGioChoi.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnNapGioChoi.FillColor = System.Drawing.SystemColors.Control;
+            this.btnNapGioChoi.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNapGioChoi.ForeColor = System.Drawing.Color.Black;
+            this.btnNapGioChoi.Image = global::GUIClient.Properties.Resources.icons8_chart_arrow_rise_30;
+            this.btnNapGioChoi.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnNapGioChoi.ImageSize = new System.Drawing.Size(30, 30);
+            this.btnNapGioChoi.Location = new System.Drawing.Point(12, 0);
+            this.btnNapGioChoi.Name = "btnNapGioChoi";
+            this.btnNapGioChoi.Size = new System.Drawing.Size(241, 45);
+            this.btnNapGioChoi.TabIndex = 6;
+            this.btnNapGioChoi.Text = "Nạp Giờ Chơi";
+            this.btnNapGioChoi.Click += new System.EventHandler(this.btnNapGioChoi_Click);
             // 
             // btnMenu
             // 

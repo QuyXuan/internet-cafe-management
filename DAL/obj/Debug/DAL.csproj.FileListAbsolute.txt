@@ -66,3 +66,4 @@ C:\Users\ADMIN\source\repos\pbl03quy\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.
 C:\Users\ADMIN\source\repos\pbl03quy\DAL\obj\Debug\DAL.csproj.CopyComplete
 C:\Users\ADMIN\source\repos\pbl03quy\DAL\obj\Debug\DAL.dll
 C:\Users\ADMIN\source\repos\pbl03quy\DAL\obj\Debug\DAL.pdb
+C:\Users\ADMIN\source\repos\pbl03quy\DAL\obj\Debug\DAL.Migrations.updatedb3.resources

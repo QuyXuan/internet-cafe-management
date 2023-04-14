@@ -32,8 +32,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_Loading));
             this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.label1 = new System.Windows.Forms.Label();
-            this.timerLoad = new System.Windows.Forms.Timer(this.components);
             this.circlerProgressBarLoad = new Bunifu.Framework.UI.BunifuCircleProgressbar();
+            this.timerLoad = new System.Windows.Forms.Timer(this.components);
             this.guna2CustomGradientPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,12 +63,6 @@
             this.label1.Text = "Đang Tải Dữ Liệu...";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // timerLoad
-            // 
-            this.timerLoad.Enabled = true;
-            this.timerLoad.Interval = 1;
-            this.timerLoad.Tick += new System.EventHandler(this.timerLoad_Tick);
-            // 
             // circlerProgressBarLoad
             // 
             this.circlerProgressBarLoad.animated = true;
@@ -90,6 +84,12 @@
             this.circlerProgressBarLoad.Size = new System.Drawing.Size(154, 154);
             this.circlerProgressBarLoad.TabIndex = 1;
             this.circlerProgressBarLoad.Value = 0;
+            // 
+            // timerLoad
+            // 
+            this.timerLoad.Enabled = true;
+            this.timerLoad.Interval = 1;
+            this.timerLoad.Tick += new System.EventHandler(this.timerLoad_Tick);
             // 
             // UC_Loading
             // 

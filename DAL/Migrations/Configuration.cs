@@ -15,39 +15,39 @@
         {
             AutomaticMigrationsEnabled = false;
         }
-
+        //khởi tạo sẵn dữ liệu
         protected override void Seed(DAL.QLNETDBContext context)
         {
             //tạo sẵn dữ liệu
             CreateAccounts(context);
+            CreateDiscounts(context);
             CreateCustomers(context);
             CreateEmployees(context);
             CreateProducts(context);
             CreateTypeComputers(context);
             CreateComputers(context);
-            CreateDiscounts(context);
         }
         private void CreateAccounts(DAL.QLNETDBContext context)
         {
             var accounts = new List<Account>
             {
-                new Account {AccountId = "acc0001", UserName = "mtxq2003", Password = "123", Role = "Administrator", TypeDiscount = "type0"},
-                new Account {AccountId = "acc0002", UserName = "mxt2003", Password = "123", Role = "Administrator", TypeDiscount = "type0"},
-                new Account {AccountId = "acc0003", UserName = "tvs2003", Password = "123", Role = "Administrator", TypeDiscount = "type0"},
-                new Account {AccountId = "acc0004", UserName = "nhanvien001", Password = "123", Role = "Nhân Viên", TypeDiscount = "type1"},
-                new Account {AccountId = "acc0005", UserName = "nhanvien002", Password = "123", Role = "Nhân Viên", TypeDiscount = "type1"},
-                new Account {AccountId = "acc0006", UserName = "nhanvien003", Password = "123", Role = "Nhân Viên", TypeDiscount = "type1"},
-                new Account {AccountId = "acc0007", UserName = "nhanvien004", Password = "123", Role = "Nhân Viên", TypeDiscount = "type1"},
-                new Account {AccountId = "acc0008", UserName = "khachhang001", Password = "123", Role = "Khách Hàng", TypeDiscount = "type2"},
-                new Account {AccountId = "acc0009", UserName = "khachhang002", Password = "123", Role = "Khách Hàng", TypeDiscount = "type2"},
-                new Account {AccountId = "acc0010", UserName = "khachhang003", Password = "123", Role = "Khách Hàng", TypeDiscount = "type2"},
-                new Account {AccountId = "acc0011", UserName = "khachhang004", Password = "123", Role = "Khách Hàng", TypeDiscount = "type2"},
-                new Account {AccountId = "acc0012", UserName = "khachhang005", Password = "123", Role = "Khách Hàng", TypeDiscount = "type2"},
-                new Account {AccountId = "acc0013", UserName = "khachhang006", Password = "123", Role = "Khách Hàng", TypeDiscount = "type2"},
-                new Account {AccountId = "acc0014", UserName = "khachhang007", Password = "123", Role = "Khách Hàng", TypeDiscount = "type2"},
-                new Account {AccountId = "acc0015", UserName = "khachhang008", Password = "123", Role = "Khách Hàng", TypeDiscount = "type2"},
-                new Account {AccountId = "acc0016", UserName = "khachhang009", Password = "123", Role = "Khách Hàng", TypeDiscount = "type2"},
-                new Account {AccountId = "acc0017", UserName = "khachhang010", Password = "123", Role = "Khách Hàng", TypeDiscount = "type2"}
+                new Account {AccountId = "acc0001", UserName = "mtxq2003", Password = "123", Role = "Chủ Quán", DateCreate = DateTime.Now.Date},
+                new Account {AccountId = "acc0002", UserName = "mxt2003", Password = "123", Role = "Chủ Quán", DateCreate = DateTime.Now.Date},
+                new Account {AccountId = "acc0003", UserName = "tvs2003", Password = "123", Role = "Chủ Quán", DateCreate = DateTime.Now.Date},
+                new Account {AccountId = "acc0004", UserName = "nhanvien001", Password = "123", Role = "Nhân Viên", DateCreate = DateTime.Now.Date},
+                new Account {AccountId = "acc0005", UserName = "nhanvien002", Password = "123", Role = "Nhân Viên", DateCreate = DateTime.Now.Date},
+                new Account {AccountId = "acc0006", UserName = "nhanvien003", Password = "123", Role = "Nhân Viên", DateCreate = DateTime.Now.Date},
+                new Account {AccountId = "acc0007", UserName = "nhanvien004", Password = "123", Role = "Nhân Viên", DateCreate = DateTime.Now.Date},
+                new Account {AccountId = "acc0008", UserName = "khachhang001", Password = "123", Role = "Khách Hàng", DateCreate = DateTime.Now.Date},
+                new Account {AccountId = "acc0009", UserName = "khachhang002", Password = "123", Role = "Khách Hàng", DateCreate = DateTime.Now.Date},
+                new Account {AccountId = "acc0010", UserName = "khachhang003", Password = "123", Role = "Khách Hàng", DateCreate = DateTime.Now.Date},
+                new Account {AccountId = "acc0011", UserName = "khachhang004", Password = "123", Role = "Khách Hàng", DateCreate = DateTime.Now.Date},
+                new Account {AccountId = "acc0012", UserName = "khachhang005", Password = "123", Role = "Khách Hàng", DateCreate = DateTime.Now.Date},
+                new Account {AccountId = "acc0013", UserName = "khachhang006", Password = "123", Role = "Khách Hàng", DateCreate = DateTime.Now.Date},
+                new Account {AccountId = "acc0014", UserName = "khachhang007", Password = "123", Role = "Khách Hàng", DateCreate = DateTime.Now.Date},
+                new Account {AccountId = "acc0015", UserName = "khachhang008", Password = "123", Role = "Khách Hàng", DateCreate = DateTime.Now.Date},
+                new Account {AccountId = "acc0016", UserName = "khachhang009", Password = "123", Role = "Khách Hàng", DateCreate = DateTime.Now.Date},
+                new Account {AccountId = "acc0017", UserName = "khachhang010", Password = "123", Role = "Khách Hàng", DateCreate = DateTime.Now.Date}
             };
             accounts.ForEach(p => context.Accounts.AddOrUpdate(
                 account => account.AccountId,
@@ -57,7 +57,7 @@
                     UserName = p.UserName,
                     Password = p.Password,
                     Role = p.Role,
-                    TypeDiscount = p.TypeDiscount
+                    DateCreate = p.DateCreate
                 }));
             context.SaveChanges();
         }
@@ -65,16 +65,16 @@
         {
             var customers = new List<Customer>
             {
-                new Customer {CustomerId = "kh0001", CustomerName = "Bùi Thị Duyên", Balance = 0, AccountId = "acc0008"},
-                new Customer {CustomerId = "kh0002", CustomerName = "Ngô Thành Nam", Balance = 0, AccountId = "acc0009"},
-                new Customer {CustomerId = "kh0003", CustomerName = "Đỗ Văn Đức", Balance = 0, AccountId = "acc0010"},
-                new Customer {CustomerId = "kh0004", CustomerName = "Đặng Bá Cường", Balance = 0, AccountId = "acc0011"},
-                new Customer {CustomerId = "kh0005", CustomerName = "Phạm Tuấn Anh", Balance = 0, AccountId = "acc0012"},
-                new Customer {CustomerId = "kh0006", CustomerName = "Vũ Anh Ninh", Balance = 0, AccountId = "acc0013"},
-                new Customer {CustomerId = "kh0007", CustomerName = "Đào Văn Thanh", Balance = 0, AccountId = "acc0014"},
-                new Customer {CustomerId = "kh0008", CustomerName = "Lưu Thùy Vân", Balance = 0, AccountId = "acc0015"},
-                new Customer {CustomerId = "kh0009", CustomerName = "Trương Thành Long", Balance = 0, AccountId = "acc0016"},
-                new Customer {CustomerId = "kh0010", CustomerName = "Đinh Hoàng Vũ", Balance = 0, AccountId = "acc0017"},
+                new Customer {CustomerId = "kh0001", CustomerName = "Bùi Thị Duyên", Balance = 0, TypeCustomer = false, AccountId = "acc0008", TotalTime = 60, DiscountId = "gg0002"},
+                new Customer {CustomerId = "kh0002", CustomerName = "Ngô Thành Nam", Balance = 0, TypeCustomer = false, AccountId = "acc0009", TotalTime = 60, DiscountId = "gg0002"},
+                new Customer {CustomerId = "kh0003", CustomerName = "Đỗ Văn Đức", Balance = 0, TypeCustomer = false, AccountId = "acc0010", TotalTime = 60, DiscountId = "gg0002"},
+                new Customer {CustomerId = "kh0004", CustomerName = "Đặng Bá Cường", Balance = 0, TypeCustomer = false, AccountId = "acc0011", TotalTime = 60, DiscountId = "gg0002"},
+                new Customer {CustomerId = "kh0005", CustomerName = "Phạm Tuấn Anh", Balance = 0, TypeCustomer = false, AccountId = "acc0012", TotalTime = 60, DiscountId = "gg0002"},
+                new Customer {CustomerId = "kh0006", CustomerName = "Vũ Anh Ninh", Balance = 0, TypeCustomer = false, AccountId = "acc0013", TotalTime = 60, DiscountId = "gg0002"},
+                new Customer {CustomerId = "kh0007", CustomerName = "Đào Văn Thanh", Balance = 0, TypeCustomer = false, AccountId = "acc0014", TotalTime = 60, DiscountId = "gg0002"},
+                new Customer {CustomerId = "kh0008", CustomerName = "Lưu Thùy Vân", Balance = 0, TypeCustomer = false, AccountId = "acc0015", TotalTime = 60, DiscountId = "gg0002"},
+                new Customer {CustomerId = "kh0009", CustomerName = "Trương Thành Long", Balance = 0, TypeCustomer = false, AccountId = "acc0016", TotalTime = 60, DiscountId = "gg0002"},
+                new Customer {CustomerId = "kh0010", CustomerName = "Đinh Hoàng Vũ", Balance = 0, TypeCustomer = false, AccountId = "acc0017", TotalTime = 60, DiscountId = "gg0002"}
             };
             customers.ForEach(p => context.Customers.AddOrUpdate(
                 customer => customer.CustomerId,
@@ -83,7 +83,9 @@
                     CustomerId = p.CustomerId,
                     CustomerName = p.CustomerName,
                     Balance = p.Balance,
-                    AccountId = p.AccountId
+                    AccountId = p.AccountId,
+                    TotalTime = p.TotalTime,
+                    DiscountId = p.DiscountId
                 }));
             context.SaveChanges();
         }
@@ -185,27 +187,27 @@
                 }));
             context.SaveChanges();
         }
-        private string ConvertToFilePath(string nameImg)
-        {
-            return Path.Combine(AppDomain.CurrentDomain.BaseDirectory.Replace(@"\DAL\bin\Debug", ""), "img", nameImg);
-        }
-        private byte[] GetImageByFilePath(string filePath)
-        {
-            Image img = Image.FromFile(filePath);
-            byte[] imageBytes;
-            using (MemoryStream ms = new MemoryStream())
-            {
-                img.Save(ms, img.RawFormat);
-                imageBytes = ms.ToArray();
-            }
-            return imageBytes;
-        }
+        //private string ConvertToFilePath(string nameImg)
+        //{
+        //    return Path.Combine(AppDomain.CurrentDomain.BaseDirectory.Replace(@"\DAL\bin\Debug", ""), "img", nameImg);
+        //}
+        //private byte[] GetImageByFilePath(string filePath)
+        //{
+        //    Image img = Image.FromFile(filePath);
+        //    byte[] imageBytes;
+        //    using (MemoryStream ms = new MemoryStream())
+        //    {
+        //        img.Save(ms, img.RawFormat);
+        //        imageBytes = ms.ToArray();
+        //    }
+        //    return imageBytes;
+        //}
         private void CreateDiscounts(DAL.QLNETDBContext context)
         {
             var discounts = new List<Discount>
             {
-                new Discount {DiscountId = "gg0001", DiscountName = "VIP(10%)", DiscountPercent = 10},
-                new Discount {DiscountId = "gg0002", DiscountName = "Thường(0%)", DiscountPercent = 0}
+                new Discount {DiscountId = "gg0001", DiscountName = "VIP", DiscountPercent = 10},
+                new Discount {DiscountId = "gg0002", DiscountName = "Thường", DiscountPercent = 0}
             };
             discounts.ForEach(p => context.Discounts.AddOrUpdate(
                 discount => discount.DiscountId,

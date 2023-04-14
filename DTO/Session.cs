@@ -23,8 +23,6 @@ namespace DTO
 
         public Nullable<float> TotalTime { get; set; }
 
-        public Nullable<float> UsedTime { get; set; }
-
         [StringLength(10)]
         [Column(TypeName = "varchar")]
         [Required]
