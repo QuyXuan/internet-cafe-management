@@ -31,9 +31,9 @@
         {
             var accounts = new List<Account>
             {
-                new Account {AccountId = "acc0001", UserName = "mtxq2003", Password = "123", Role = "Chủ Quán", DateCreate = DateTime.Now.Date},
-                new Account {AccountId = "acc0002", UserName = "mxt2003", Password = "123", Role = "Chủ Quán", DateCreate = DateTime.Now.Date},
-                new Account {AccountId = "acc0003", UserName = "tvs2003", Password = "123", Role = "Chủ Quán", DateCreate = DateTime.Now.Date},
+                new Account {AccountId = "acc0001", UserName = "mtxq2003", Password = "123", Role = "Quản Lý", DateCreate = DateTime.Now.Date},
+                new Account {AccountId = "acc0002", UserName = "mxt2003", Password = "123", Role = "Quản Lý", DateCreate = DateTime.Now.Date},
+                new Account {AccountId = "acc0003", UserName = "tvs2003", Password = "123", Role = "Quản Lý", DateCreate = DateTime.Now.Date},
                 new Account {AccountId = "acc0004", UserName = "nhanvien001", Password = "123", Role = "Nhân Viên", DateCreate = DateTime.Now.Date},
                 new Account {AccountId = "acc0005", UserName = "nhanvien002", Password = "123", Role = "Nhân Viên", DateCreate = DateTime.Now.Date},
                 new Account {AccountId = "acc0006", UserName = "nhanvien003", Password = "123", Role = "Nhân Viên", DateCreate = DateTime.Now.Date},
@@ -93,10 +93,13 @@
         {
             var employees = new List<Employee>
             {
-                new Employee {EmployeeId = "nv0001", EmployeeName = "Phạm Tuấn Anh", Salary = 2000, AccountId = "acc0004", OtherInfomation = " "},
-                new Employee {EmployeeId = "nv0002", EmployeeName = "Hạ Huyền Chi", Salary = 2000, AccountId = "acc0005", OtherInfomation = " "},
-                new Employee {EmployeeId = "nv0003", EmployeeName = "Hoàng Trâm Anh", Salary = 2000, AccountId = "acc0006", OtherInfomation = " "},
-                new Employee {EmployeeId = "nv0004", EmployeeName = "Huỳnh Anh Dũng", Salary = 2000, AccountId = "acc0007", OtherInfomation = " "}
+                new Employee {EmployeeId = "nv0001", EmployeeName = "Mai Trịnh Xuân Quý", Salary = 10000, AccountId = "acc0001", OtherInfomation = " "},
+                new Employee {EmployeeId = "nv0002", EmployeeName = "Mai Xuân Trường", Salary = 10000, AccountId = "acc0002", OtherInfomation = " "},
+                new Employee {EmployeeId = "nv0003", EmployeeName = "Trần Văn Sơn", Salary = 10000, AccountId = "acc0003", OtherInfomation = " "},
+                new Employee {EmployeeId = "nv0004", EmployeeName = "Phạm Tuấn Anh", Salary = 2000, AccountId = "acc0004", OtherInfomation = " "},
+                new Employee {EmployeeId = "nv0005", EmployeeName = "Hạ Huyền Chi", Salary = 2000, AccountId = "acc0005", OtherInfomation = " "},
+                new Employee {EmployeeId = "nv0006", EmployeeName = "Hoàng Trâm Anh", Salary = 2000, AccountId = "acc0006", OtherInfomation = " "},
+                new Employee {EmployeeId = "nv0007", EmployeeName = "Huỳnh Anh Dũng", Salary = 2000, AccountId = "acc0007", OtherInfomation = " "}
             };
             employees.ForEach(p => context.Employees.AddOrUpdate(
                 employee => employee.EmployeeId,

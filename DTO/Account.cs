@@ -26,8 +26,10 @@ namespace DTO
         public string Password { get; set; }
 
         [Required]
-        [RegularExpression("^(Chủ Quán|Khách Hàng|Nhân Viên)$")]
+        [RegularExpression("^(Quản Lý|Khách Hàng|Nhân Viên)$")]
         public string Role { get; set; }
+
+        [Column(TypeName = "Date")]
         public Nullable<DateTime> DateCreate { get; set; }
     }
 }
