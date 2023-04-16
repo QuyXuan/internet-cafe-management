@@ -1,4 +1,6 @@
-﻿using GiaoDienPBL3;
+﻿using BLL;
+using DTO;
+using GiaoDienPBL3;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,9 +15,11 @@ namespace LoginPage
 {
     public partial class frmLogin : Form
     {
+        //private List<Account> ListAccounts;
         public frmLogin()
         {
             InitializeComponent();
+            //ListAccounts = AccountBLL.Instance.GetListAccount();
         }
 
         private void txtMatKhau_TextChanged(object sender, EventArgs e)
@@ -53,12 +57,18 @@ namespace LoginPage
 
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
-            if (txtTaiKhoan.Text == "1" && txtMatKhau.Text == "1")
+            if (AccountBLL.Instance.CheckDangNhap(txtTaiKhoan.Text, txtMatKhau.Text))
             {
                 this.Hide();
                 frmMain Main = new frmMain();
                 Main.ShowDialog();
             }
+            //if (txtTaiKhoan.Text == "1" && txtMatKhau.Text == "1")
+            //{
+            //    this.Hide();
+            //    frmMain Main = new frmMain();
+            //    Main.ShowDialog();
+            //}
             ShowThongBao("Tên Tài Khoản Hoặc Mật Khẩu Sai" + Environment.NewLine + "VUI LÒNG NHẬP LẠI!!!");
             //showNotification("Tên Tài Khoản Hoặc Mật Khẩu Sai");
         }

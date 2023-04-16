@@ -51,8 +51,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccountBLL.cs" />
     <Compile Include="BLLMay.cs" />
-    <Compile Include="BLLMonAn.cs" />
+    <Compile Include="ProductBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

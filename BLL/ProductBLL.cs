@@ -12,22 +12,22 @@ using System.Threading.Tasks;
 
 namespace BLL
 {
-    public class BLLMonAn
+    public class ProductBLL
     {
-        private static BLLMonAn instance;
-        public static BLLMonAn Instance
+        private static ProductBLL instance;
+        public static ProductBLL Instance
         {
             get
             {
                 if (instance == null)
                 {
-                    instance = new BLLMonAn();
+                    instance = new ProductBLL();
                 }
                 return instance;
             }
             private set { instance = value; }
         }
-        private BLLMonAn() { }
+        private ProductBLL() { }
         //public List<MonAn> GetListMonAn()
         //{
         //    //chưa có dữ liệu trong database nên thêm thủ công

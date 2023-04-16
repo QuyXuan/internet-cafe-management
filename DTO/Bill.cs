@@ -51,11 +51,27 @@ namespace DTO
         public string ProductId { get; set; }
         [ForeignKey("ProductId")]
         public virtual Product Product { get; set; }
+        public virtual ICollection<Product> Products { get; set; }
 
         [Required]
         [StringLength(50)]
         public string ProductName { get; set; }
 
         public Nullable<float> Quantity { get; set; }
+
+        [StringLength(10)]
+        [Column(TypeName = "varchar")]
+        public string ComputerId { get; set; }
+        [ForeignKey("ProductId")]
+        public virtual Computer Computer { get; set; }
+
+        [Column(TypeName = "varchar")]
+        public string IPClient { get; set; }
+
+        [StringLength(10)]
+        [Column(TypeName = "varchar")]
+        public string CustomerId { get; set; }
+        [ForeignKey("ProductId")]
+        public virtual Customer Customer { get; set; }
     }
 }

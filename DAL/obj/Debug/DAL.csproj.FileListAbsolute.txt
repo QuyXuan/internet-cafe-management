@@ -67,3 +67,7 @@ C:\Users\ADMIN\source\repos\pbl03quy\DAL\obj\Debug\DAL.csproj.CopyComplete
 C:\Users\ADMIN\source\repos\pbl03quy\DAL\obj\Debug\DAL.dll
 C:\Users\ADMIN\source\repos\pbl03quy\DAL\obj\Debug\DAL.pdb
 C:\Users\ADMIN\source\repos\pbl03quy\DAL\obj\Debug\DAL.Migrations.updatedb3.resources
+C:\Users\ADMIN\source\repos\pbl03quy\DAL\obj\Debug\DAL.Migrations.updatedb4.resources
+C:\Users\ADMIN\source\repos\pbl03quy\DAL\obj\Debug\DAL.Migrations.updatedb5.resources
+C:\Users\ADMIN\source\repos\pbl03quy\DAL\obj\Debug\DAL.Migrations.updatedb6.resources
+C:\Users\ADMIN\source\repos\pbl03quy\DAL\obj\Debug\DAL.Migrations.updatedb7.resources

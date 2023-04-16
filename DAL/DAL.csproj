@@ -68,6 +68,22 @@
     <Compile Include="Migrations\202304141711483_updatedb3.designer.cs">
       <DependentUpon>202304141711483_updatedb3.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202304151704030_updatedb4.cs" />
+    <Compile Include="Migrations\202304151704030_updatedb4.designer.cs">
+      <DependentUpon>202304151704030_updatedb4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202304151708528_updatedb5.cs" />
+    <Compile Include="Migrations\202304151708528_updatedb5.designer.cs">
+      <DependentUpon>202304151708528_updatedb5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202304160547322_updatedb6.cs" />
+    <Compile Include="Migrations\202304160547322_updatedb6.designer.cs">
+      <DependentUpon>202304160547322_updatedb6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202304160556525_updatedb7.cs" />
+    <Compile Include="Migrations\202304160556525_updatedb7.designer.cs">
+      <DependentUpon>202304160556525_updatedb7.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
@@ -104,6 +120,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202304141711483_updatedb3.resx">
       <DependentUpon>202304141711483_updatedb3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304151704030_updatedb4.resx">
+      <DependentUpon>202304151704030_updatedb4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304151708528_updatedb5.resx">
+      <DependentUpon>202304151708528_updatedb5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304160547322_updatedb6.resx">
+      <DependentUpon>202304160547322_updatedb6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304160556525_updatedb7.resx">
+      <DependentUpon>202304160556525_updatedb7.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -54,7 +54,7 @@ namespace GiaoDienPBL3.UC
         }
         private void SetFullMonAn()
         {
-            List<Product> listProduct = BLLMonAn.Instance.GetListProduct();
+            List<Product> listProduct = ProductBLL.Instance.GetListProduct();
             foreach (Product item in listProduct)
             {
                 AddMonAn(item);

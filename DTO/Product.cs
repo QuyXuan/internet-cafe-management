@@ -34,5 +34,7 @@ namespace DTO
         //public byte[] Image { get; set; }
         [MaxLength]
         public string ImageFilePath { get; set; }
+        public virtual ICollection<Bill> Bills { get; set; }
+        public virtual ICollection<Reciept> Reciepts { get; set; }
     }
 }

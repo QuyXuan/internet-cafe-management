@@ -30,10 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.panel3 = new System.Windows.Forms.Panel();
-            this.guna2ImageButton1 = new Guna.UI2.WinForms.Guna2ImageButton();
             this.guna2ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblVaiTro = new System.Windows.Forms.Label();
+            this.lblTen = new System.Windows.Forms.Label();
             this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.panelBackGround = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -90,32 +89,15 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.Control;
-            this.panel3.Controls.Add(this.guna2ImageButton1);
             this.panel3.Controls.Add(this.guna2ComboBox1);
-            this.panel3.Controls.Add(this.label2);
-            this.panel3.Controls.Add(this.label1);
+            this.panel3.Controls.Add(this.lblVaiTro);
+            this.panel3.Controls.Add(this.lblTen);
             this.panel3.Controls.Add(this.guna2CirclePictureBox1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(283, 0);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1179, 98);
             this.panel3.TabIndex = 1;
-            // 
-            // guna2ImageButton1
-            // 
-            this.guna2ImageButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2ImageButton1.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2ImageButton1.HoverState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButton1.Image = global::GiaoDienPBL3.Properties.Resources.icons8_doorbell_40;
-            this.guna2ImageButton1.ImageOffset = new System.Drawing.Point(0, 0);
-            this.guna2ImageButton1.ImageRotate = 0F;
-            this.guna2ImageButton1.ImageSize = new System.Drawing.Size(40, 40);
-            this.guna2ImageButton1.Location = new System.Drawing.Point(936, 22);
-            this.guna2ImageButton1.Name = "guna2ImageButton1";
-            this.guna2ImageButton1.PressedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButton1.Size = new System.Drawing.Size(53, 55);
-            this.guna2ImageButton1.TabIndex = 5;
             // 
             // guna2ComboBox1
             // 
@@ -135,33 +117,32 @@
             this.guna2ComboBox1.Size = new System.Drawing.Size(32, 36);
             this.guna2ComboBox1.TabIndex = 2;
             // 
-            // label2
+            // lblVaiTro
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(1071, 54);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(50, 17);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Admin";
+            this.lblVaiTro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblVaiTro.AutoSize = true;
+            this.lblVaiTro.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblVaiTro.Location = new System.Drawing.Point(996, 55);
+            this.lblVaiTro.Name = "lblVaiTro";
+            this.lblVaiTro.Size = new System.Drawing.Size(47, 17);
+            this.lblVaiTro.TabIndex = 4;
+            this.lblVaiTro.Text = "VaiTro";
             // 
-            // label1
+            // lblTen
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(1071, 21);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(63, 19);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Admin";
+            this.lblTen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblTen.AutoSize = true;
+            this.lblTen.Location = new System.Drawing.Point(996, 22);
+            this.lblTen.Name = "lblTen";
+            this.lblTen.Size = new System.Drawing.Size(37, 19);
+            this.lblTen.TabIndex = 4;
+            this.lblTen.Text = "Ten";
             // 
             // guna2CirclePictureBox1
             // 
             this.guna2CirclePictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2CirclePictureBox1.Image = global::GiaoDienPBL3.Properties.Resources.idolmxy;
             this.guna2CirclePictureBox1.ImageRotate = 0F;
-            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(1001, 17);
+            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(926, 18);
             this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
             this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.guna2CirclePictureBox1.Size = new System.Drawing.Size(64, 64);
@@ -828,9 +809,8 @@
         private System.Windows.Forms.Panel panel3;
         private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox1;
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButton1;
+        private System.Windows.Forms.Label lblVaiTro;
+        private System.Windows.Forms.Label lblTen;
         private System.Windows.Forms.Panel panelBackGround;
         private System.Windows.Forms.Panel panelSideBar;
         private System.Windows.Forms.Panel panel5;

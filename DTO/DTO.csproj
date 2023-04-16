@@ -53,6 +53,7 @@
   <ItemGroup>
     <Compile Include="Account.cs" />
     <Compile Include="Bill.cs" />
+    <Compile Include="BillDay.cs" />
     <Compile Include="Computer.cs" />
     <Compile Include="Customer.cs" />
     <Compile Include="Discount.cs" />
