@@ -53,8 +53,38 @@ namespace DAL
         public DbSet<Session> Sessions { get; set; }
         public DbSet<BillDay> BillDays { get; set; }
         public DbSet<TypeComputer> TypeComputers { get; set; }
+        public DbSet<BillProduct> BillProducts { get; set; }
+        public DbSet<RecieptProduct> RecieptProducts { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<BillProduct>().HasKey(p => new
+            {
+                p.ProductId,
+                p.BillId
+            });
+            modelBuilder.Entity<BillProduct>()
+                .HasRequired(p => p.Product)
+                .WithMany(p => p.Bills)
+                .HasForeignKey(p => p.ProductId);
+            modelBuilder.Entity<BillProduct>()
+                .HasRequired(p => p.Bill)
+                .WithMany(p => p.Products)
+                .HasForeignKey(p => p.BillId);
+
+            modelBuilder.Entity<RecieptProduct>().HasKey(p => new
+            {
+                p.ProductId,
+                p.RecieptId
+            });
+            modelBuilder.Entity<RecieptProduct>()
+                .HasRequired(p => p.Product)
+                .WithMany(p => p.Reciepts)
+                .HasForeignKey(p => p.ProductId);
+            modelBuilder.Entity<RecieptProduct>()
+                .HasRequired(p => p.Reciept)
+                .WithMany(p => p.Products)
+                .HasForeignKey(p => p.RecieptId);
         }
     }
 }

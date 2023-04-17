@@ -34,12 +34,7 @@ namespace DTO
 
         public Nullable<float> CostPrice { get; set; }
 
-        [StringLength(10)]
-        [Column(TypeName = "varchar")]
-        public string ProductId { get; set; }
-        [ForeignKey("ProductId")]
-        public virtual Product Product { get; set; }
-        public virtual ICollection<Product> Products { get; set; }
+        public virtual ICollection<RecieptProduct> Products { get; set; }
 
         [StringLength(50)]
         public string ProductName { get; set; }

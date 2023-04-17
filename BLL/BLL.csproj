@@ -52,7 +52,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccountBLL.cs" />
-    <Compile Include="BLLMay.cs" />
+    <Compile Include="ComputerBLL.cs" />
+    <Compile Include="CustomerBLL.cs" />
     <Compile Include="ProductBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

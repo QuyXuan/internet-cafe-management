@@ -121,10 +121,10 @@
             // 
             this.lblVaiTro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblVaiTro.AutoSize = true;
-            this.lblVaiTro.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblVaiTro.Font = new System.Drawing.Font("Segoe UI Semibold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblVaiTro.Location = new System.Drawing.Point(996, 55);
             this.lblVaiTro.Name = "lblVaiTro";
-            this.lblVaiTro.Size = new System.Drawing.Size(47, 17);
+            this.lblVaiTro.Size = new System.Drawing.Size(44, 17);
             this.lblVaiTro.TabIndex = 4;
             this.lblVaiTro.Text = "VaiTro";
             // 
@@ -132,9 +132,10 @@
             // 
             this.lblTen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTen.AutoSize = true;
+            this.lblTen.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTen.Location = new System.Drawing.Point(996, 22);
             this.lblTen.Name = "lblTen";
-            this.lblTen.Size = new System.Drawing.Size(37, 19);
+            this.lblTen.Size = new System.Drawing.Size(37, 23);
             this.lblTen.TabIndex = 4;
             this.lblTen.Text = "Ten";
             // 
@@ -246,7 +247,7 @@
             this.btnCaiDatQuayThuong.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btnCaiDatQuayThuong.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(225)))), ((int)(((byte)(232)))));
             this.btnCaiDatQuayThuong.CheckedState.ForeColor = System.Drawing.Color.White;
-            this.btnCaiDatQuayThuong.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            this.btnCaiDatQuayThuong.CheckedState.Image = global::GiaoDienPBL3.Properties.Resources.icons8_circle_24;
             this.btnCaiDatQuayThuong.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCaiDatQuayThuong.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnCaiDatQuayThuong.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -269,7 +270,7 @@
             this.btnCaiDatIP.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btnCaiDatIP.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(225)))), ((int)(((byte)(232)))));
             this.btnCaiDatIP.CheckedState.ForeColor = System.Drawing.Color.White;
-            this.btnCaiDatIP.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.btnCaiDatIP.CheckedState.Image = global::GiaoDienPBL3.Properties.Resources.icons8_circle_24;
             this.btnCaiDatIP.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCaiDatIP.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnCaiDatIP.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -292,7 +293,7 @@
             this.btnCaiDatTienGio.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btnCaiDatTienGio.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(225)))), ((int)(((byte)(232)))));
             this.btnCaiDatTienGio.CheckedState.ForeColor = System.Drawing.Color.White;
-            this.btnCaiDatTienGio.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
+            this.btnCaiDatTienGio.CheckedState.Image = global::GiaoDienPBL3.Properties.Resources.icons8_circle_24;
             this.btnCaiDatTienGio.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCaiDatTienGio.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnCaiDatTienGio.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -315,7 +316,7 @@
             this.btnCaiDatLoaiKhachHang.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btnCaiDatLoaiKhachHang.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(225)))), ((int)(((byte)(232)))));
             this.btnCaiDatLoaiKhachHang.CheckedState.ForeColor = System.Drawing.Color.White;
-            this.btnCaiDatLoaiKhachHang.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
+            this.btnCaiDatLoaiKhachHang.CheckedState.Image = global::GiaoDienPBL3.Properties.Resources.icons8_circle_24;
             this.btnCaiDatLoaiKhachHang.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCaiDatLoaiKhachHang.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnCaiDatLoaiKhachHang.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -380,7 +381,7 @@
             this.btnQuanLyDoanhThu.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btnQuanLyDoanhThu.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(165)))), ((int)(((byte)(208)))));
             this.btnQuanLyDoanhThu.CheckedState.ForeColor = System.Drawing.Color.White;
-            this.btnQuanLyDoanhThu.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image4")));
+            this.btnQuanLyDoanhThu.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
             this.btnQuanLyDoanhThu.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnQuanLyDoanhThu.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnQuanLyDoanhThu.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -415,7 +416,7 @@
             this.btnNhanVien.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btnNhanVien.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(225)))), ((int)(((byte)(232)))));
             this.btnNhanVien.CheckedState.ForeColor = System.Drawing.Color.White;
-            this.btnNhanVien.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image5")));
+            this.btnNhanVien.CheckedState.Image = global::GiaoDienPBL3.Properties.Resources.icons8_circle_24;
             this.btnNhanVien.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNhanVien.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnNhanVien.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -438,7 +439,7 @@
             this.btnQuanLyCaLamViec.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btnQuanLyCaLamViec.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(225)))), ((int)(((byte)(232)))));
             this.btnQuanLyCaLamViec.CheckedState.ForeColor = System.Drawing.Color.White;
-            this.btnQuanLyCaLamViec.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image6")));
+            this.btnQuanLyCaLamViec.CheckedState.Image = global::GiaoDienPBL3.Properties.Resources.icons8_circle_24;
             this.btnQuanLyCaLamViec.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnQuanLyCaLamViec.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnQuanLyCaLamViec.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -507,7 +508,7 @@
             this.btnQuanLyHoaDonNhap.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btnQuanLyHoaDonNhap.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(225)))), ((int)(((byte)(232)))));
             this.btnQuanLyHoaDonNhap.CheckedState.ForeColor = System.Drawing.Color.White;
-            this.btnQuanLyHoaDonNhap.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image7")));
+            this.btnQuanLyHoaDonNhap.CheckedState.Image = global::GiaoDienPBL3.Properties.Resources.icons8_circle_24;
             this.btnQuanLyHoaDonNhap.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnQuanLyHoaDonNhap.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnQuanLyHoaDonNhap.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -531,7 +532,7 @@
             this.btnKho.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btnKho.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(225)))), ((int)(((byte)(232)))));
             this.btnKho.CheckedState.ForeColor = System.Drawing.Color.White;
-            this.btnKho.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image8")));
+            this.btnKho.CheckedState.Image = global::GiaoDienPBL3.Properties.Resources.icons8_circle_24;
             this.btnKho.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnKho.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnKho.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -634,7 +635,7 @@
             this.btnMenu.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btnMenu.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(225)))), ((int)(((byte)(232)))));
             this.btnMenu.CheckedState.ForeColor = System.Drawing.Color.White;
-            this.btnMenu.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image9")));
+            this.btnMenu.CheckedState.Image = global::GiaoDienPBL3.Properties.Resources.icons8_circle_24;
             this.btnMenu.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMenu.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnMenu.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -658,7 +659,7 @@
             this.btnQuanLyHoaDon.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btnQuanLyHoaDon.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(225)))), ((int)(((byte)(232)))));
             this.btnQuanLyHoaDon.CheckedState.ForeColor = System.Drawing.Color.White;
-            this.btnQuanLyHoaDon.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image10")));
+            this.btnQuanLyHoaDon.CheckedState.Image = global::GiaoDienPBL3.Properties.Resources.icons8_circle_24;
             this.btnQuanLyHoaDon.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnQuanLyHoaDon.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnQuanLyHoaDon.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;

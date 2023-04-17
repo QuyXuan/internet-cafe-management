@@ -42,7 +42,7 @@ namespace GiaoDienPBL3.UC
             COLOR.Add("Pink", Color.FromArgb(225, 33, 246));
             COLOR.Add("Blue", Color.Blue);
         }
-        private void AddMay(May may)
+        private void AddMayOnPanel(Computer computer)
         {
             Guna2Button button = new Guna2Button();
             button.Size = new Size(60, 60);
@@ -51,28 +51,29 @@ namespace GiaoDienPBL3.UC
             button.BorderRadius = 8;
             button.BorderThickness = 3;
             button.Margin = new Padding(10, 10, 10, 10);
-            button.Text = may.SoMay;
-            if (may.LoaiMay == "Khách")
+            button.Font = new Font("Segoe UI", 9, FontStyle.Bold);
+            button.Text = computer.ComputerName;
+            if (computer.NameType == "Khách")
                 button.BorderColor = COLOR["Purple"];
-            else if (may.LoaiMay == "Khách Thường Xuyên")
+            else if (computer.NameType == "Khách Thường Xuyên")
                 button.BorderColor = COLOR["BrightBlue"];
-            else if (may.LoaiMay == "Administrator")
+            else if (computer.NameType == "Administrator")
                 button.BorderColor = COLOR["Brown"];
-            else if (may.LoaiMay == "Nhân Viên")
+            else if (computer.NameType == "Nhân Viên")
                 button.BorderColor = COLOR["Yellow"];
-            else if (may.LoaiMay == "Học Sinh")
+            else if (computer.NameType == "Học Sinh/Sinh Viên")
                 button.BorderColor = COLOR["BrightYellow"];
-            else if (may.LoaiMay == "Online")
+            else if (computer.NameType == "Online")
                 button.BorderColor = COLOR["Green"];
-            else if (may.LoaiMay == "Offline")
+            else if (computer.NameType == "Offline")
                 button.BorderColor = COLOR["Black"];
-            else if (may.LoaiMay == "Trả Sau")
+            else if (computer.NameType == "Khách Trả Sau")
                 button.BorderColor = COLOR["Pink"];
-            if (may.TrangThai == "Còn 5 Phút")
+            if (computer.Status == "Còn 5 Phút")
                 button.FillColor = COLOR["Red"];
-            else if (may.TrangThai == "Bảo Trì")
+            else if (computer.Status == "Bảo Trì")
                 button.FillColor = COLOR["Blue"];
-            button.Tag = may;
+            button.Tag = computer;
             frmMain.myUC_QuanLyMay.panelQuanLyMay.Controls.Add(button);
             button.MouseEnter += new EventHandler(button_MouseEnter);
             button.MouseLeave += new EventHandler(button_MouseLeave);
@@ -81,12 +82,12 @@ namespace GiaoDienPBL3.UC
         {
             my_UCChiTietMay.Visible = true;
             Guna2Button button = sender as Guna2Button;
-            May may = button.Tag as May;
-            my_UCChiTietMay.TextMaMay = may.MaMay;
-            my_UCChiTietMay.TextSoMay = may.SoMay;
-            my_UCChiTietMay.TextGiaMay = may.Gia.ToString();
-            my_UCChiTietMay.TextLoaiMay = may.LoaiMay;
-            my_UCChiTietMay.TextTrangThai = may.TrangThai;
+            Computer computer = button.Tag as Computer;
+            my_UCChiTietMay.TextMaMay = computer.ComputerId;
+            my_UCChiTietMay.TextSoMay = computer.ComputerName;
+            my_UCChiTietMay.TextGiaMay = string.Format("{0:N3}VNĐ", 10);
+            my_UCChiTietMay.TextLoaiMay = computer.NameType;
+            my_UCChiTietMay.TextTrangThai = computer.Status;
             panelPhu.Controls.Add(my_UCChiTietMay);
             my_UCChiTietMay.Location = new Point(button.Location.X + 60, button.Location.Y + 60);
             my_UCChiTietMay.BringToFront();
@@ -116,9 +117,9 @@ namespace GiaoDienPBL3.UC
         }
         private void UC_QuanLyMay_Load(object sender, EventArgs e)
         {
-            foreach (May item in BLLMay.Instance.GetListMay())
+            foreach (Computer computer in ComputerBLL.Instance.GetListComputer())
             {
-                AddMay(item);
+                AddMayOnPanel(computer);
             }
         }
 

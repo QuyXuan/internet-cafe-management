@@ -10,6 +10,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
+using BLL;
 using GiaoDienPBL3.UC;
 using GiaoDienPBL3.User_Controls;
 using Guna.UI2.WinForms;
@@ -18,6 +19,7 @@ namespace GiaoDienPBL3
 {
     public partial class frmMain : Form
     {
+        private string AccountId;
         public static UC_TrangChu myUC_TrangChu = new UC_TrangChu();
         public static UC_QuanLyMenu myUC_QuanLyMenu = new UC_QuanLyMenu();
         public static UC_QuanLyMay myUC_QuanLyMay = new UC_QuanLyMay();
@@ -28,10 +30,11 @@ namespace GiaoDienPBL3
         public static UC_QuanLyCaLamViec myUC_QuanLyCaLamViec = new UC_QuanLyCaLamViec();
         public static UC_QuanLyKhachHang myUC_QuanLyKhachHang = new UC_QuanLyKhachHang();
         public static UC_Loading myUC_Loading = new UC_Loading();
-        public frmMain()
+
+        public frmMain(string accountId = null)
         {
             InitializeComponent();
-            //MessageBox.Show(Path.Combine(AppDomain.CurrentDomain.BaseDirectory/*.Replace(@"\bin\Debug", "")*/, "img", "comchien.jpg"));
+            AccountId = accountId;
         }
 
         private void imgbtnThoat_Click(object sender, EventArgs e)
@@ -41,6 +44,9 @@ namespace GiaoDienPBL3
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            KeyValuePair<string, string>? TenVaVaiTro = AccountBLL.Instance.GetTenVaVaiTro(AccountId);
+            lblTen.Text = TenVaVaiTro.Value.Key;
+            lblVaiTro.Text = TenVaVaiTro.Value.Value;
             TurnOffAllPanelQuanLy();
             SetOffAllCheckStateButton();
             AddUserControlOnBackGround(myUC_TrangChu);
@@ -48,7 +54,6 @@ namespace GiaoDienPBL3
             imgbtnThoat.Location = new Point(12, 750);
             myUC_TrangChu.Visible = true;
         }
-
         private void SetOffAllCheckStateButton()
         {
             btnQuanLyMenu.Checked = false;

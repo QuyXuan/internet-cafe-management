@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BLL;
+using DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -32,13 +34,22 @@ namespace GiaoDienPBL3.User_Controls
         }
         private void SetData()
         {
-            string[] KhachHangs = { "Quý", "Trường", "Sơn" };
-            string[] LoaiTaiKhoan = { "Tài Khoảng Thường", "Tài Khoản VIP" };
-            for (int i = 0; i < 50; i++)
+            //string[] KhachHangs = { "Quý", "Trường", "Sơn" };
+            //string[] LoaiTaiKhoan = { "Tài Khoảng Thường", "Tài Khoản VIP" };
+            //for (int i = 0; i < 50; i++)
+            //{
+            //    dgvQuanLyThongTinKhachHang.Rows.Add(new object[]
+            //    {
+            //        "mkh" + random.Next(100), KhachHangs[random.Next(KhachHangs.Length)], LoaiTaiKhoan[random.Next(LoaiTaiKhoan.Length)], DateTime.Now.ToString("dd/MM/yyyy")
+            //    });
+            //}
+            foreach (Customer customer in CustomerBLL.Instance.GetListCustomer())
             {
+                string typeCustomer = "Khách Thường";
+                if (customer.TypeCustomer == true) typeCustomer = "Khách VIP";
                 dgvQuanLyThongTinKhachHang.Rows.Add(new object[]
                 {
-                    "mkh" + random.Next(100), KhachHangs[random.Next(KhachHangs.Length)], LoaiTaiKhoan[random.Next(LoaiTaiKhoan.Length)], DateTime.Now.ToString("dd/MM/yyyy")
+                    customer.CustomerId, customer.CustomerName, typeCustomer, string.Format("{0:N3}VNĐ", customer.Balance), customer.TotalTime + " Phút"
                 });
             }
         }
@@ -55,8 +66,9 @@ namespace GiaoDienPBL3.User_Controls
                 {
                     txtMaKhachHang.Text = dgvQuanLyThongTinKhachHang.Rows[e.RowIndex].Cells["MaKhachHang"].Value.ToString();
                     txtTenKhachHang.Text = dgvQuanLyThongTinKhachHang.Rows[e.RowIndex].Cells["TenKhachHang"].Value.ToString();
-                    txtNgayDangKy.Text = dgvQuanLyThongTinKhachHang.Rows[e.RowIndex].Cells["NgayDangKy"].Value.ToString();
+                    txtSoDuTaiKhoan.Text = dgvQuanLyThongTinKhachHang.Rows[e.RowIndex].Cells["SoDuTaiKhoan"].Value.ToString();
                     txtLoaiTaiKhoan.Text = dgvQuanLyThongTinKhachHang.Rows[e.RowIndex].Cells["LoaiTaiKhoan"].Value.ToString();
+                    txtThoiGianConLai.Text = dgvQuanLyThongTinKhachHang.Rows[e.RowIndex].Cells["ThoiGianConLai"].Value.ToString();
                 }
             }
             catch(Exception) 

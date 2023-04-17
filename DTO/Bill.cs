@@ -41,28 +41,14 @@ namespace DTO
         [RegularExpression("^(Chờ Chấp Nhận|Chấp Nhận|Từ Chối)$")]
         public string Status { get; set; }
 
-        [Required]
-        [StringLength(50)]
-        public string CreatedBy { get; set; }
-
-
-        [StringLength(10)]
-        [Column(TypeName = "varchar")]
-        public string ProductId { get; set; }
-        [ForeignKey("ProductId")]
-        public virtual Product Product { get; set; }
-        public virtual ICollection<Product> Products { get; set; }
-
-        [Required]
-        [StringLength(50)]
-        public string ProductName { get; set; }
+        public virtual ICollection<BillProduct> Products { get; set; }
 
         public Nullable<float> Quantity { get; set; }
 
         [StringLength(10)]
         [Column(TypeName = "varchar")]
         public string ComputerId { get; set; }
-        [ForeignKey("ProductId")]
+        [ForeignKey("ComputerId")]
         public virtual Computer Computer { get; set; }
 
         [Column(TypeName = "varchar")]
@@ -71,7 +57,7 @@ namespace DTO
         [StringLength(10)]
         [Column(TypeName = "varchar")]
         public string CustomerId { get; set; }
-        [ForeignKey("ProductId")]
+        [ForeignKey("CustomerId")]
         public virtual Customer Customer { get; set; }
     }
 }

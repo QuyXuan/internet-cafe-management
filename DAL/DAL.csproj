@@ -88,6 +88,26 @@
     <Compile Include="Migrations\202304160655335_updatedb8.designer.cs">
       <DependentUpon>202304160655335_updatedb8.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202304161532130_updatedb9.cs" />
+    <Compile Include="Migrations\202304161532130_updatedb9.designer.cs">
+      <DependentUpon>202304161532130_updatedb9.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202304161553318_updatedb10.cs" />
+    <Compile Include="Migrations\202304161553318_updatedb10.designer.cs">
+      <DependentUpon>202304161553318_updatedb10.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202304171932176_updatedb11.cs" />
+    <Compile Include="Migrations\202304171932176_updatedb11.designer.cs">
+      <DependentUpon>202304171932176_updatedb11.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202304171939053_updatedb12.cs" />
+    <Compile Include="Migrations\202304171939053_updatedb12.designer.cs">
+      <DependentUpon>202304171939053_updatedb12.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202304171952228_updatedb13.cs" />
+    <Compile Include="Migrations\202304171952228_updatedb13.designer.cs">
+      <DependentUpon>202304171952228_updatedb13.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
@@ -139,6 +159,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202304160655335_updatedb8.resx">
       <DependentUpon>202304160655335_updatedb8.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304161532130_updatedb9.resx">
+      <DependentUpon>202304161532130_updatedb9.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304161553318_updatedb10.resx">
+      <DependentUpon>202304161553318_updatedb10.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304171932176_updatedb11.resx">
+      <DependentUpon>202304171932176_updatedb11.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304171939053_updatedb12.resx">
+      <DependentUpon>202304171939053_updatedb12.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304171952228_updatedb13.resx">
+      <DependentUpon>202304171952228_updatedb13.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

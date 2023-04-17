@@ -15,11 +15,9 @@ namespace LoginPage
 {
     public partial class frmLogin : Form
     {
-        //private List<Account> ListAccounts;
         public frmLogin()
         {
             InitializeComponent();
-            //ListAccounts = AccountBLL.Instance.GetListAccount();
         }
 
         private void txtMatKhau_TextChanged(object sender, EventArgs e)
@@ -59,8 +57,15 @@ namespace LoginPage
         {
             if (AccountBLL.Instance.CheckDangNhap(txtTaiKhoan.Text, txtMatKhau.Text))
             {
+                string AccountId = AccountBLL.Instance.GetAccountIdByUserName(txtTaiKhoan.Text);
+                KeyValuePair<string, string>? TenVaVaiTro = AccountBLL.Instance.GetTenVaVaiTro(AccountId);
+                if (TenVaVaiTro == null)
+                {
+                    MessageBox.Show("Bạn Đang Đăng Nhập Với Tư Cách Là Khách Hàng" + Environment.NewLine + "Đây Không Phải Form Login Của Khách Hàng");
+                    return;
+                }
                 this.Hide();
-                frmMain Main = new frmMain();
+                frmMain Main = new frmMain(AccountId);
                 Main.ShowDialog();
             }
             //if (txtTaiKhoan.Text == "1" && txtMatKhau.Text == "1")

@@ -22,11 +22,15 @@ namespace DTO
 
         public Nullable<float> SellingPrice { get; set; }
 
+        public Nullable<float> CostPrice { get; set; }
+
         [Required]
-        [RegularExpression(@"^(Nước Uống|Đồ Ăn|Thẻ)$")]
+        [RegularExpression(@"^(Nước Uống|Đồ Ăn)$")]
         public string Type { get; set; }
 
         public Nullable<float> Stock { get; set; }
+        
+        //public Nullable<float> Quantity { get; set; }
 
         public string Discription { get; set; }
 
@@ -34,7 +38,7 @@ namespace DTO
         //public byte[] Image { get; set; }
         [MaxLength]
         public string ImageFilePath { get; set; }
-        public virtual ICollection<Bill> Bills { get; set; }
-        public virtual ICollection<Reciept> Reciepts { get; set; }
+        public virtual ICollection<BillProduct> Bills { get; set; }
+        public virtual ICollection<RecieptProduct> Reciepts { get; set; }
     }
 }
