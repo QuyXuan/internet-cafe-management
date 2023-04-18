@@ -22,6 +22,7 @@ namespace GiaoDienPBL3.UC
         public UC_QuanLyMay()
         {
             InitializeComponent();
+<<<<<<< HEAD
             my_UC = new UC_ThongTinVaCaiDatMay();
             AddMauSac();
         }
@@ -71,9 +72,12 @@ namespace GiaoDienPBL3.UC
                 button.FillColor = COLOR["Blue"];
             button.Tag = may;
             frmMain.myUC_QuanLyMay.panelQuanLyMay.Controls.Add(button);
+=======
+>>>>>>> parent of 792afe9 (11:14 pm 3/25/2023 quy changed)
         }
         private void btnCaiDat_Click(object sender, EventArgs e)
         {
+            my_UC = new UC_ThongTinVaCaiDatMay();
             if (checkBtnCaiDat == false)
             {
                 panelThongTin.Controls.Add(my_UC);

@@ -50,9 +50,9 @@ namespace GiaoDienPBL3.UC
             myUCChiTietMonAn.TextGiaMonAn = lblGiaMonAn.Text;
             myUCChiTietMonAn.TextSoLuongMonAn = 1 + "";
             lblTenMonAn.Tag = (Convert.ToInt32(lblTenMonAn.Tag) + 1).ToString();
-            myUCChiTietMonAn.Width = 255;
+            myUCChiTietMonAn.Width = 265;
             myUCChiTietMonAn.Tag = this;
-            frmMain.myUC_QuanLyMenu.panelChiTietMonAn.Controls.Add(myUCChiTietMonAn);
+            frmMain.myUC_QuanLyMenu.flowLayoutPanelChiTietMonAn.Controls.Add(myUCChiTietMonAn);
         }
 
         private void HienThiVaTinhTongTien()

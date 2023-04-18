@@ -140,12 +140,6 @@
     <Compile Include="User_Controls\UC_ThongTinVaCaiDatMay.Designer.cs">
       <DependentUpon>UC_ThongTinVaCaiDatMay.cs</DependentUpon>
     </Compile>
-    <Compile Include="User_Controls\UC_ThongTinVaCaiDatMonAn.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="User_Controls\UC_ThongTinVaCaiDatMonAn.Designer.cs">
-      <DependentUpon>UC_ThongTinVaCaiDatMonAn.cs</DependentUpon>
-    </Compile>
     <Compile Include="User_Controls\UC_TrangChu.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -192,9 +186,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="User_Controls\UC_ThongTinVaCaiDatMay.resx">
       <DependentUpon>UC_ThongTinVaCaiDatMay.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="User_Controls\UC_ThongTinVaCaiDatMonAn.resx">
-      <DependentUpon>UC_ThongTinVaCaiDatMonAn.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User_Controls\UC_TrangChu.resx">
       <DependentUpon>UC_TrangChu.cs</DependentUpon>

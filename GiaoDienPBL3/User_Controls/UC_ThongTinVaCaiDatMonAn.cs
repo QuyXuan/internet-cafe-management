@@ -1,8 +1,12 @@
+<<<<<<< HEAD
 ﻿using BLL;
 using DTO;
 using GiaoDienPBL3.UC;
 using Guna.UI2.WinForms;
 using System;
+=======
+﻿using System;
+>>>>>>> parent of 792afe9 (11:14 pm 3/25/2023 quy changed)
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,6 +21,7 @@ namespace GiaoDienPBL3.User_Controls
 {
     public partial class UC_ThongTinVaCaiDatMonAn : UserControl
     {
+<<<<<<< HEAD
         private Guna2Button lastButton = null;
         public string TextMaMon
         {
@@ -44,10 +49,13 @@ namespace GiaoDienPBL3.User_Controls
                 }
             }
         }
+=======
+>>>>>>> parent of 792afe9 (11:14 pm 3/25/2023 quy changed)
         public UC_ThongTinVaCaiDatMonAn()
         {
             InitializeComponent();
         }
+<<<<<<< HEAD
         private void SetAllButtonDisableAndVisible()
         {
             btnThem.Enabled = false;
@@ -169,5 +177,7 @@ namespace GiaoDienPBL3.User_Controls
                 txtPath.Text = "Đường Dẫn Không Hợp Lệ";
             }
         }
+=======
+>>>>>>> parent of 792afe9 (11:14 pm 3/25/2023 quy changed)
     }
 }

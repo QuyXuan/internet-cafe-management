@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BLL
 {
-    public class BLLMonAn
+    public class Class1
     {
         private static BLLMonAn instance;
         public static BLLMonAn Instance

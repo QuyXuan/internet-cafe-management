@@ -8,36 +8,77 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+<<<<<<< HEAD
 using BLL;
 using DTO;
 using GiaoDienPBL3.User_Controls;
+=======
+>>>>>>> parent of 792afe9 (11:14 pm 3/25/2023 quy changed)
 using Guna.UI2.WinForms;
 
 namespace GiaoDienPBL3.UC
 {
     public partial class UC_QuanLyMenu : UserControl
     {
-        public static UC_ThongTinVaCaiDatMonAn my_UCThongTinVaCaiDatMonAn = new UC_ThongTinVaCaiDatMonAn();
-        private bool checkBtnCaiDat = false;
         public UC_QuanLyMenu()
         {
             InitializeComponent();
-            my_UCThongTinVaCaiDatMonAn = new UC_ThongTinVaCaiDatMonAn();
+        }
+        private void SetAllButtonDisableAndVisible()
+        {
+            btnThem.Enabled = false;
+            btnXoa.Enabled = false;
+            btnSua.Enabled = false;
+            btnHuy.Visible = true;
+            btnOK.Visible = true;
+        }
+        private void SetAllButtonEnableAndInvisible()
+        {
+            btnThem.Enabled = true;
+            btnXoa.Enabled = true;
+            btnSua.Enabled = true;
+            btnThem.Checked = false;
+            btnXoa.Checked = false;
+            btnSua.Checked = false;
+            btnHuy.Visible = false;
+            btnOK.Visible = false;
+        }
+        private void SetEnableComboboxAndTextBox(bool status)
+        {
+            txtMaMon.Enabled = status;
+            txtTenMon.Enabled = status;
+            txtGia.Enabled = status;
+            cboLoai.Enabled = status;
+            btnThemAnh.Enabled = status;
+        }
+        private void ClearComboboxAndTextBox()
+        {
+            txtMaMon.Text = "";
+            txtTenMon.Text = "";
+            txtGia.Text = "";
+            cboLoai.SelectedIndex = -1;
+        }
+        private void ThemXoaSuaClick(object sender, EventArgs e)
+        {
+
+        }
+        private void HuyOKClick(object sender, EventArgs e)
+        {
+            //Guna2Button btn = sender as Guna2Button;
+            SetAllButtonEnableAndInvisible();
+            SetEnableComboboxAndTextBox(false);
         }
 
         private void btnCaiDat_Click(object sender, EventArgs e)
         {
-            if (checkBtnCaiDat == false)
+            Guna2Button button = sender as Guna2Button;
+            if (button.Checked == false)
             {
-                panelThongTinChiTietMonAn.Controls.Add(my_UCThongTinVaCaiDatMonAn);
-                my_UCThongTinVaCaiDatMonAn.Dock = DockStyle.Fill;
-                panelCaiDatVaThongTin.SendToBack();
-                checkBtnCaiDat = true;
+                panelCaiDat.Visible = true;
             }
             else
             {
-                panelCaiDatVaThongTin.BringToFront();
-                checkBtnCaiDat = false;
+                panelCaiDat.Visible = false;
             }
         }
 

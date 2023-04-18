@@ -41,8 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <Compile Include="BLLMay.cs" />
     <Compile Include="BLLMonAn.cs" />
+=======
+    <Compile Include="Class1.cs" />
+>>>>>>> parent of 792afe9 (11:14 pm 3/25/2023 quy changed)
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
