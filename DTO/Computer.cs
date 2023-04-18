@@ -33,5 +33,9 @@ namespace DTO
         [StringLength(255)]
         [RegularExpression(@"^(Bảo Trì|Đang Hoạt Động|Đã Tắt|Còn 5 Phút)$")]
         public string Status { get; set; }
+
+        [StringLength(100)]
+        [Column(TypeName = "varchar")]
+        public string IPComputer { get; set; }
     }
 }
