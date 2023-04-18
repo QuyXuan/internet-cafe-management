@@ -59,7 +59,7 @@ namespace LoginPage
             {
                 string AccountId = AccountBLL.Instance.GetAccountIdByUserName(txtTaiKhoan.Text);
                 KeyValuePair<string, string>? TenVaVaiTro = AccountBLL.Instance.GetTenVaVaiTro(AccountId);
-                if (TenVaVaiTro == null)
+                if (TenVaVaiTro.Value.Value != "Quản Lý" && TenVaVaiTro.Value.Value != "Nhân Viên")
                 {
                     MessageBox.Show("Bạn Đang Đăng Nhập Với Tư Cách Là Khách Hàng" + Environment.NewLine + "Đây Không Phải Form Login Của Khách Hàng");
                     return;

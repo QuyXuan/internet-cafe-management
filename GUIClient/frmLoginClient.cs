@@ -56,13 +56,13 @@ namespace GUIClient
             {
                 string AccountId = AccountBLL.Instance.GetAccountIdByUserName(txtTaiKhoan.Text);
                 KeyValuePair<string, string>? TenVaVaiTro = AccountBLL.Instance.GetTenVaVaiTro(AccountId);
-                if (TenVaVaiTro != null)
+                if (TenVaVaiTro.Value.Value != "Khách hàng thường" && TenVaVaiTro.Value.Value != "Khách hàng VIP")
                 {
                     MessageBox.Show("Bạn Đang Đăng Nhập Với Tư Cách Là Quản Lí" + Environment.NewLine + "Đây Không Phải Form Login Của Quản Lí");
                     return;
                 }
                 this.Hide();
-                frmClient Client = new frmClient();
+                frmClient Client = new frmClient(AccountId);
                 Client.ShowDialog();
             }
             //if (txtTaiKhoan.Text == "1" && txtMatKhau.Text == "1")
