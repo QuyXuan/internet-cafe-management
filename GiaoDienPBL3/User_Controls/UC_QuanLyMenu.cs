@@ -8,12 +8,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-<<<<<<< HEAD
 using BLL;
 using DTO;
 using GiaoDienPBL3.User_Controls;
-=======
->>>>>>> parent of 792afe9 (11:14 pm 3/25/2023 quy changed)
 using Guna.UI2.WinForms;
 
 namespace GiaoDienPBL3.UC
@@ -34,15 +31,15 @@ namespace GiaoDienPBL3.UC
         }
         private void btnCaiDat_Click(object sender, EventArgs e)
         {
-            Guna2Button button = sender as Guna2Button;
-            if (button.Checked == false)
+            if (checkBtnCaiDat == false)
             {
                 panelCaiDatVaThongTin.SendToBack();
                 checkBtnCaiDat = true;
             }
             else
             {
-                panelCaiDat.Visible = false;
+                panelCaiDatVaThongTin.BringToFront();
+                checkBtnCaiDat = false;
             }
         }
         private void AddUC()

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-<<<<<<< HEAD
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.btnThemAnh = new Guna.UI2.WinForms.Guna2Button();
             this.cboLoai = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -389,15 +388,10 @@
             // UC_ThongTinVaCaiDatMonAn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-=======
             components = new System.ComponentModel.Container();
->>>>>>> parent of 792afe9 (11:14 pm 3/25/2023 quy changed)
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
         }
-
         #endregion
-<<<<<<< HEAD
-
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox1;
         private Guna.UI2.WinForms.Guna2Button btnThemAnh;
         private Guna.UI2.WinForms.Guna2ComboBox cboLoai;
@@ -416,7 +410,5 @@
         private Guna.UI2.WinForms.Guna2Button btnHuy;
         private Guna.UI2.WinForms.Guna2Button btnXoa;
         private Guna.UI2.WinForms.Guna2TextBox txtPath;
-=======
->>>>>>> parent of 792afe9 (11:14 pm 3/25/2023 quy changed)
     }
 }

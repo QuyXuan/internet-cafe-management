@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
-<<<<<<< HEAD
             this.panelThongTinChiTietMonAn = new System.Windows.Forms.Panel();
             this.panelCaiDatVaThongTin = new System.Windows.Forms.Panel();
             this.groupBoxThongTinChung = new Guna.UI2.WinForms.Guna2GroupBox();
@@ -57,7 +56,6 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.lblTongTien = new System.Windows.Forms.Label();
-<<<<<<< HEAD
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.btnYeuCau = new Guna.UI2.WinForms.Guna2Button();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -66,10 +64,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnCaiDat = new Guna.UI2.WinForms.Guna2Button();
             this.label1 = new System.Windows.Forms.Label();
-=======
-            this.btnYeuCau = new Guna.UI2.WinForms.Guna2Button();
-            this.panelChiTietMonAn = new System.Windows.Forms.FlowLayoutPanel();
->>>>>>> parent of 792afe9 (11:14 pm 3/25/2023 quy changed)
             this.guna2CustomGradientPanel1.SuspendLayout();
             this.panelThongTinChiTietMonAn.SuspendLayout();
             this.panelCaiDatVaThongTin.SuspendLayout();
@@ -98,7 +92,6 @@
             this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(1249, 726);
             this.guna2CustomGradientPanel1.TabIndex = 0;
             // 
-<<<<<<< HEAD
             // panelThongTinChiTietMonAn
             // 
             this.panelThongTinChiTietMonAn.BackColor = System.Drawing.Color.Transparent;
@@ -108,7 +101,6 @@
             this.panelThongTinChiTietMonAn.Size = new System.Drawing.Size(365, 658);
             this.panelThongTinChiTietMonAn.TabIndex = 1;
             // 
-<<<<<<< HEAD
             // panelCaiDatVaThongTin
             // 
             this.panelCaiDatVaThongTin.Controls.Add(this.groupBoxThongTinChung);
@@ -475,30 +467,23 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.Transparent;
             this.panel3.Controls.Add(this.panel5);
-<<<<<<< HEAD
             this.panel3.Controls.Add(this.guna2Button1);
-=======
->>>>>>> parent of 792afe9 (11:14 pm 3/25/2023 quy changed)
             this.panel3.Controls.Add(this.btnYeuCau);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel3.Location = new System.Drawing.Point(0, 546);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(365, 112);
-<<<<<<< HEAD
             this.panel3.TabIndex = 11;
-=======
-            this.panel3.TabIndex = 7;
->>>>>>> parent of 792afe9 (11:14 pm 3/25/2023 quy changed)
             // 
             // panel5
             // 
             this.panel5.Controls.Add(this.label2);
             this.panel5.Controls.Add(this.lblTongTien);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.Location = new System.Drawing.Point(0, 0);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(365, 34);
-            this.panel5.TabIndex = 2;
+            this.panel5.Size = new System.Drawing.Size(365, 42);
+            this.panel5.TabIndex = 7;
             // 
             // label2
             // 
@@ -526,7 +511,6 @@
             this.lblTongTien.Text = "0";
             this.lblTongTien.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-<<<<<<< HEAD
             // guna2Button1
             // 
             this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -543,8 +527,6 @@
             this.guna2Button1.TabIndex = 6;
             this.guna2Button1.Text = "In Hóa Đơn";
             // 
-=======
->>>>>>> parent of 792afe9 (11:14 pm 3/25/2023 quy changed)
             // btnYeuCau
             // 
             this.btnYeuCau.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -561,7 +543,6 @@
             this.btnYeuCau.TabIndex = 1;
             this.btnYeuCau.Text = "Yêu Cầu";
             // 
-<<<<<<< HEAD
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.Transparent;
@@ -637,17 +618,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Quản Lý Menu Món Ăn/Nước Uống";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-=======
-            // panelChiTietMonAn
-            // 
-            this.panelChiTietMonAn.AutoScroll = true;
-            this.panelChiTietMonAn.BackColor = System.Drawing.Color.Transparent;
-            this.panelChiTietMonAn.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelChiTietMonAn.Location = new System.Drawing.Point(0, 275);
-            this.panelChiTietMonAn.Name = "panelChiTietMonAn";
-            this.panelChiTietMonAn.Size = new System.Drawing.Size(365, 271);
-            this.panelChiTietMonAn.TabIndex = 9;
->>>>>>> parent of 792afe9 (11:14 pm 3/25/2023 quy changed)
             // 
             // UC_QuanLyMenu
             // 
@@ -699,10 +669,12 @@
         private System.Windows.Forms.Label label9;
         public System.Windows.Forms.FlowLayoutPanel panelChiTietMonAn;
         private System.Windows.Forms.Panel panel3;
+        private Guna.UI2.WinForms.Guna2Button btnYeuCau;
+        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox7;
+        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label2;
         public System.Windows.Forms.Label lblTongTien;
-<<<<<<< HEAD
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         public System.Windows.Forms.FlowLayoutPanel panelMonAn;
         private UC_MonAn uC_MonAn1;
