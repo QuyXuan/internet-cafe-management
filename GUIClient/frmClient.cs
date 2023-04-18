@@ -1,5 +1,4 @@
-﻿using BLL;
-using GiaoDienPBL3;
+﻿using GiaoDienPBL3;
 using GiaoDienPBL3.UC;
 using GUIClient.User_Controls;
 using Guna.UI2.WinForms;
@@ -17,21 +16,15 @@ namespace GUIClient
 {
     public partial class frmClient : Form
     {
-        private string AccountId;
-        public static UC_TrangChuKhachHang myUC_TrangChuKhachHang;
+        public static UC_TrangChuKhachHang myUC_TrangChuKhachHang = new UC_TrangChuKhachHang();
         //public static UC_QuanLyMenu myUC_QuanLyMenu = new UC_QuanLyMenu();
         public static UC_NapGioChoi myUC_NapGioChoi = new UC_NapGioChoi();
-        public frmClient(string accountId)
+        public frmClient()
         {
             InitializeComponent();
-            AccountId = accountId;
-            myUC_TrangChuKhachHang = new UC_TrangChuKhachHang(accountId);
         }
         private void frmClient_Load(object sender, EventArgs e)
         {
-            KeyValuePair<string, string>? TenVaVaiTro = AccountBLL.Instance.GetTenVaVaiTro(AccountId);
-            lblTenKhachHang.Text = TenVaVaiTro.Value.Key;
-            lblLoaiKhachHang.Text = TenVaVaiTro.Value.Value;
             AddUserControlOnBackGround(myUC_TrangChuKhachHang);
         }
         private void imgbtnThoat_Click(object sender, EventArgs e)

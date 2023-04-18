@@ -40,15 +40,3 @@ C:\Users\ADMIN\source\repos\pbl03quy\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.
 C:\Users\ADMIN\source\repos\pbl03quy\DTO\obj\Debug\DTO.csproj.CopyComplete
 C:\Users\ADMIN\source\repos\pbl03quy\DTO\obj\Debug\DTO.dll
 C:\Users\ADMIN\source\repos\pbl03quy\DTO\obj\Debug\DTO.pdb
-E:\LEARN\PBL3\MYCODE\DemoPBL03_GUI\DTO\bin\Debug\DTO.dll.config
-E:\LEARN\PBL3\MYCODE\DemoPBL03_GUI\DTO\bin\Debug\DTO.dll
-E:\LEARN\PBL3\MYCODE\DemoPBL03_GUI\DTO\bin\Debug\DTO.pdb
-E:\LEARN\PBL3\MYCODE\DemoPBL03_GUI\DTO\bin\Debug\EntityFramework.dll
-E:\LEARN\PBL3\MYCODE\DemoPBL03_GUI\DTO\bin\Debug\EntityFramework.SqlServer.dll
-E:\LEARN\PBL3\MYCODE\DemoPBL03_GUI\DTO\bin\Debug\EntityFramework.xml
-E:\LEARN\PBL3\MYCODE\DemoPBL03_GUI\DTO\bin\Debug\EntityFramework.SqlServer.xml
-E:\LEARN\PBL3\MYCODE\DemoPBL03_GUI\DTO\obj\Debug\DTO.csproj.AssemblyReference.cache
-E:\LEARN\PBL3\MYCODE\DemoPBL03_GUI\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
-E:\LEARN\PBL3\MYCODE\DemoPBL03_GUI\DTO\obj\Debug\DTO.csproj.CopyComplete
-E:\LEARN\PBL3\MYCODE\DemoPBL03_GUI\DTO\obj\Debug\DTO.dll
-E:\LEARN\PBL3\MYCODE\DemoPBL03_GUI\DTO\obj\Debug\DTO.pdb
