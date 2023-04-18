@@ -129,6 +129,10 @@
       <Project>{63CD5474-228E-4F7F-B795-E87645B27017}</Project>
       <Name>BLL</Name>
     </ProjectReference>
+    <ProjectReference Include="..\DTO\DTO.csproj">
+      <Project>{064BD462-197D-4E0D-A095-EF3E41B6EDBC}</Project>
+      <Name>DTO</Name>
+    </ProjectReference>
     <ProjectReference Include="..\GiaoDienPBL3\GUI.csproj">
       <Project>{15c08c32-9b3d-4410-99a8-23c8b3f82a5a}</Project>
       <Name>GUI</Name>

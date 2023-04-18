@@ -65,8 +65,10 @@ namespace BLL
                 {
                     return null;
                 }
+
                 var account = context.Accounts.FirstOrDefault(p => p.AccountId == accountId);
                 var employee = context.Employees.FirstOrDefault(p => p.AccountId == accountId);
+                var customer = context.Customers.FirstOrDefault(p => p.AccountId == accountId);
 
                 KeyValuePair<string, string>? result = null;
 
@@ -74,6 +76,19 @@ namespace BLL
                 {
                     result = new KeyValuePair<string, string>(employee.EmployeeName, account.Role);
                 }
+
+                if (account != null && customer != null)
+                {
+                    if (customer.TypeCustomer)
+                    {
+                        result = new KeyValuePair<string, string>(customer.CustomerName, "Khách hàng VIP");
+                    }
+                    else
+                    {
+                        result = new KeyValuePair<string, string>(customer.CustomerName, "Khách hàng thường");
+                    }
+                }
+
                 return result;
             }
         }
