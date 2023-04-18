@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
+<<<<<<< HEAD:DTO/MonAn.cs
     public class MonAn
+=======
+    public class Class1
+>>>>>>> parent of 792afe9 (11:14 pm 3/25/2023 quy changed):DTO/Class1.cs
     {
         public string MaMonAn { get; set; }
         public string TenMonAn { get; set; }
