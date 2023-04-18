@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BLL;
+using DTO;
+using GiaoDienPBL3.User_Controls;
 using Guna.UI2.WinForms;
 
 namespace GiaoDienPBL3.UC
@@ -16,27 +19,33 @@ namespace GiaoDienPBL3.UC
         public UC_QuanLyKho()
         {
             InitializeComponent();
-            TestData();
+            SetData();
         }
-        private void TestData()
+        private void SetData()
         {
-            int id = 1;
-            for (int i = 0; i < 50; i++)
+            foreach (Product product in ProductBLL.Instance.GetListProduct())
             {
-                dgvKho.Rows.Add(new object[]
+                string typeProduct = product.Type;
+                if (typeProduct == "Đồ Ăn")
                 {
-                    imageList1.Images[0], id++, "Thùng Mỳ Gói", "Món Ăn", "100.000VNĐ", "15"
-                });
-                dgvKho.Rows.Add(new object[]
+                    dgvKho.Rows.Add(new object[]
+                    {
+                        imageList1.Images[0], product.ProductId, product.ProductName, product.Type, string.Format("{0:N3}VNĐ", product.CostPrice), product.Stock
+                    });
+                }
+                else
                 {
-                    imageList1.Images[1], id++, "Két Sting", "Nước Uống", "125.000VNĐ", "25"
-                });
+                    dgvKho.Rows.Add(new object[]
+                    {
+                        imageList1.Images[1], product.ProductId, product.ProductName, product.Type, string.Format("{0:N3}VNĐ", product.CostPrice), product.Stock
+                    });
+                }
+
             }
             dgvKho.ClearSelection();
         }
         private void SetAllButtonDisableAndVisible()
         {
-            btnThem.Enabled = false;
             btnXoa.Enabled = false;
             btnSua.Enabled = false;
             btnHuy.Visible = true;
@@ -44,10 +53,8 @@ namespace GiaoDienPBL3.UC
         }
         private void SetAllButtonEnableAndInvisible()
         {
-            btnThem.Enabled = true;
             btnXoa.Enabled = true;
             btnSua.Enabled = true;
-            btnThem.Checked = false;
             btnXoa.Checked = false;
             btnSua.Checked = false;
             btnHuy.Visible = false;
@@ -73,13 +80,7 @@ namespace GiaoDienPBL3.UC
         {
             Guna2Button btn = sender as Guna2Button;
             SetAllButtonDisableAndVisible();
-            if (btn.Name == "btnThem")
-            {
-                btnThem.Enabled = true;
-                ClearComboboxAndTextBox();
-                SetEnableComboboxAndTextBox(true);
-            }
-            else if (btn.Name == "btnSua")
+            if (btn.Name == "btnSua")
             {
                 btnSua.Enabled = true;
                 SetEnableComboboxAndTextBox(true);
@@ -98,7 +99,35 @@ namespace GiaoDienPBL3.UC
         }
         private void TatCaMonAnNuocUongClick(object sender, EventArgs e)
         {
-
+            foreach (DataGridViewRow row in dgvKho.Rows)
+            {
+                row.Visible = true;
+            }
+            Guna2Button button = sender as Guna2Button;
+            if (button.Name == "btnDoAn")
+            {
+                foreach (DataGridViewRow row in dgvKho.Rows)
+                {
+                    if (row.Cells["Loai"].Value.ToString() != "Đồ Ăn")
+                    {
+                        row.Visible = false;
+                    }
+                }
+            }
+            else if (button.Name == "btnNuocUong")
+            {
+                foreach (DataGridViewRow row in dgvKho.Rows)
+                {
+                    if (row.Cells["Loai"].Value.ToString() != "Nước Uống")
+                    {
+                        row.Visible = false;
+                    }
+                }
+            }
+            else
+            {
+                return;
+            }
         }
         private void dgvKho_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -114,6 +143,18 @@ namespace GiaoDienPBL3.UC
                 cboLoai.SelectedIndex = 0;
             else
                 cboLoai.SelectedIndex = 1;
+        }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            btnTatCa.PerformClick();
+            foreach (DataGridViewRow row in dgvKho.Rows)
+            {
+                if (!row.Cells["TenMon"].Value.ToString().ToLower().Contains(txtTimKiem.Text.ToLower()))
+                {
+                    row.Visible = false;
+                }
+            }
         }
     }
 }

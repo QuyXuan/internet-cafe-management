@@ -32,7 +32,7 @@
 <<<<<<< HEAD
             this.panelThongTinChiTietMonAn = new System.Windows.Forms.Panel();
             this.panelCaiDatVaThongTin = new System.Windows.Forms.Panel();
-            this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.groupBoxThongTinChung = new Guna.UI2.WinForms.Guna2GroupBox();
             this.guna2DateTimePicker1 = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.guna2TextBox7 = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2TextBox6 = new Guna.UI2.WinForms.Guna2TextBox();
@@ -50,23 +50,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.panelChiTietMonAn = new System.Windows.Forms.FlowLayoutPanel();
-=======
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.uC_MonAn1 = new GiaoDienPBL3.UC.UC_MonAn();
-            this.uC_MonAn2 = new GiaoDienPBL3.UC.UC_MonAn();
-            this.uC_MonAn3 = new GiaoDienPBL3.UC.UC_MonAn();
-            this.uC_MonAn4 = new GiaoDienPBL3.UC.UC_MonAn();
-            this.uC_MonAn5 = new GiaoDienPBL3.UC.UC_MonAn();
-            this.uC_MonAn6 = new GiaoDienPBL3.UC.UC_MonAn();
-            this.uC_MonAn7 = new GiaoDienPBL3.UC.UC_MonAn();
-            this.uC_MonAn8 = new GiaoDienPBL3.UC.UC_MonAn();
-            this.uC_MonAn9 = new GiaoDienPBL3.UC.UC_MonAn();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnCaiDat = new Guna.UI2.WinForms.Guna2Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panelThongTinChiTietMonAn = new System.Windows.Forms.Panel();
->>>>>>> parent of 792afe9 (11:14 pm 3/25/2023 quy changed)
+            this.panelXacNhanLuaChon = new System.Windows.Forms.Panel();
+            this.btnXacNhan = new Guna.UI2.WinForms.Guna2Button();
+            this.cboMenhGia = new System.Windows.Forms.ComboBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
@@ -76,6 +62,7 @@
             this.btnYeuCau = new Guna.UI2.WinForms.Guna2Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panelMonAn = new System.Windows.Forms.FlowLayoutPanel();
+            this.uC_MonAn1 = new GiaoDienPBL3.UC.UC_MonAn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnCaiDat = new Guna.UI2.WinForms.Guna2Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -85,9 +72,14 @@
 >>>>>>> parent of 792afe9 (11:14 pm 3/25/2023 quy changed)
             this.guna2CustomGradientPanel1.SuspendLayout();
             this.panelThongTinChiTietMonAn.SuspendLayout();
+            this.panelCaiDatVaThongTin.SuspendLayout();
+            this.groupBoxThongTinChung.SuspendLayout();
+            this.panelChiTietMonAn.SuspendLayout();
+            this.panelXacNhanLuaChon.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.panelMonAn.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -111,186 +103,6 @@
             // 
             this.panelThongTinChiTietMonAn.BackColor = System.Drawing.Color.Transparent;
             this.panelThongTinChiTietMonAn.Controls.Add(this.panelCaiDatVaThongTin);
-=======
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.Transparent;
-            this.panel4.Controls.Add(this.flowLayoutPanel1);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel4.Location = new System.Drawing.Point(0, 68);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(884, 658);
-            this.panel4.TabIndex = 0;
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Controls.Add(this.uC_MonAn1);
-            this.flowLayoutPanel1.Controls.Add(this.uC_MonAn2);
-            this.flowLayoutPanel1.Controls.Add(this.uC_MonAn3);
-            this.flowLayoutPanel1.Controls.Add(this.uC_MonAn4);
-            this.flowLayoutPanel1.Controls.Add(this.uC_MonAn5);
-            this.flowLayoutPanel1.Controls.Add(this.uC_MonAn6);
-            this.flowLayoutPanel1.Controls.Add(this.uC_MonAn7);
-            this.flowLayoutPanel1.Controls.Add(this.uC_MonAn8);
-            this.flowLayoutPanel1.Controls.Add(this.uC_MonAn9);
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(884, 658);
-            this.flowLayoutPanel1.TabIndex = 0;
-            // 
-            // uC_MonAn1
-            // 
-            this.uC_MonAn1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.uC_MonAn1.ImagePanel = ((System.Drawing.Image)(resources.GetObject("uC_MonAn1.ImagePanel")));
-            this.uC_MonAn1.Location = new System.Drawing.Point(3, 3);
-            this.uC_MonAn1.Name = "uC_MonAn1";
-            this.uC_MonAn1.Size = new System.Drawing.Size(165, 165);
-            this.uC_MonAn1.TabIndex = 0;
-            this.uC_MonAn1.TextGiaMonAn = "50.000VND";
-            this.uC_MonAn1.TextTenMonAn = "Pizza";
-            // 
-            // uC_MonAn2
-            // 
-            this.uC_MonAn2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.uC_MonAn2.ImagePanel = global::GiaoDienPBL3.Properties.Resources.clovis_wood_photography_iUtcVxqxkPk_unsplash;
-            this.uC_MonAn2.Location = new System.Drawing.Point(174, 3);
-            this.uC_MonAn2.Name = "uC_MonAn2";
-            this.uC_MonAn2.Size = new System.Drawing.Size(165, 165);
-            this.uC_MonAn2.TabIndex = 1;
-            this.uC_MonAn2.TextGiaMonAn = "50.000VND";
-            this.uC_MonAn2.TextTenMonAn = "Blue Soda";
-            // 
-            // uC_MonAn3
-            // 
-            this.uC_MonAn3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.uC_MonAn3.ImagePanel = global::GiaoDienPBL3.Properties.Resources.demi_deherrera_L_sm1B4L1Ns_unsplash;
-            this.uC_MonAn3.Location = new System.Drawing.Point(345, 3);
-            this.uC_MonAn3.Name = "uC_MonAn3";
-            this.uC_MonAn3.Size = new System.Drawing.Size(165, 165);
-            this.uC_MonAn3.TabIndex = 2;
-            this.uC_MonAn3.TextGiaMonAn = "50.000VND";
-            this.uC_MonAn3.TextTenMonAn = "Cafe Sữa";
-            // 
-            // uC_MonAn4
-            // 
-            this.uC_MonAn4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.uC_MonAn4.ImagePanel = global::GiaoDienPBL3.Properties.Resources.food_photographer_jennifer_pallian_sSnCZlEWN5E_unsplash;
-            this.uC_MonAn4.Location = new System.Drawing.Point(516, 3);
-            this.uC_MonAn4.Name = "uC_MonAn4";
-            this.uC_MonAn4.Size = new System.Drawing.Size(165, 165);
-            this.uC_MonAn4.TabIndex = 3;
-            this.uC_MonAn4.TextGiaMonAn = "50.000VND";
-            this.uC_MonAn4.TextTenMonAn = "Trà Đào";
-            // 
-            // uC_MonAn5
-            // 
-            this.uC_MonAn5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.uC_MonAn5.ImagePanel = global::GiaoDienPBL3.Properties.Resources.jennifer_schmidt_zOlQ7lF_3vs_unsplash;
-            this.uC_MonAn5.Location = new System.Drawing.Point(687, 3);
-            this.uC_MonAn5.Name = "uC_MonAn5";
-            this.uC_MonAn5.Size = new System.Drawing.Size(165, 165);
-            this.uC_MonAn5.TabIndex = 4;
-            this.uC_MonAn5.TextGiaMonAn = "50.000VND";
-            this.uC_MonAn5.TextTenMonAn = "Miến Gà";
-            // 
-            // uC_MonAn6
-            // 
-            this.uC_MonAn6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.uC_MonAn6.ImagePanel = global::GiaoDienPBL3.Properties.Resources.kadir_celep_paBXUXUwJmo_unsplash;
-            this.uC_MonAn6.Location = new System.Drawing.Point(3, 174);
-            this.uC_MonAn6.Name = "uC_MonAn6";
-            this.uC_MonAn6.Size = new System.Drawing.Size(165, 165);
-            this.uC_MonAn6.TabIndex = 5;
-            this.uC_MonAn6.TextGiaMonAn = "50.000VND";
-            this.uC_MonAn6.TextTenMonAn = "Bánh Mỳ";
-            // 
-            // uC_MonAn7
-            // 
-            this.uC_MonAn7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.uC_MonAn7.ImagePanel = global::GiaoDienPBL3.Properties.Resources.mae_mu_H5Hj8QV2Tx4_unsplash;
-            this.uC_MonAn7.Location = new System.Drawing.Point(174, 174);
-            this.uC_MonAn7.Name = "uC_MonAn7";
-            this.uC_MonAn7.Size = new System.Drawing.Size(165, 165);
-            this.uC_MonAn7.TabIndex = 6;
-            this.uC_MonAn7.TextGiaMonAn = "50.000VND";
-            this.uC_MonAn7.TextTenMonAn = "Bún Chả Cá";
-            // 
-            // uC_MonAn8
-            // 
-            this.uC_MonAn8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.uC_MonAn8.ImagePanel = global::GiaoDienPBL3.Properties.Resources.markus_winkler_08aic3qPcag_unsplash;
-            this.uC_MonAn8.Location = new System.Drawing.Point(345, 174);
-            this.uC_MonAn8.Name = "uC_MonAn8";
-            this.uC_MonAn8.Size = new System.Drawing.Size(165, 165);
-            this.uC_MonAn8.TabIndex = 7;
-            this.uC_MonAn8.TextGiaMonAn = "50.000VND";
-            this.uC_MonAn8.TextTenMonAn = "Phở Bò";
-            // 
-            // uC_MonAn9
-            // 
-            this.uC_MonAn9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.uC_MonAn9.ImagePanel = global::GiaoDienPBL3.Properties.Resources.melissa_walker_horn_gtDYwUIr9Vg_unsplash;
-            this.uC_MonAn9.Location = new System.Drawing.Point(516, 174);
-            this.uC_MonAn9.Name = "uC_MonAn9";
-            this.uC_MonAn9.Size = new System.Drawing.Size(165, 165);
-            this.uC_MonAn9.TabIndex = 8;
-            this.uC_MonAn9.TextGiaMonAn = "50.000VND";
-            this.uC_MonAn9.TextTenMonAn = "Chanh Muối";
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Controls.Add(this.btnCaiDat);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1249, 68);
-            this.panel1.TabIndex = 0;
-            // 
-            // btnCaiDat
-            // 
-            this.btnCaiDat.BorderColor = System.Drawing.Color.Transparent;
-            this.btnCaiDat.BorderRadius = 8;
-            this.btnCaiDat.BorderThickness = 2;
-            this.btnCaiDat.CheckedState.BorderColor = System.Drawing.Color.Red;
-            this.btnCaiDat.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCaiDat.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnCaiDat.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnCaiDat.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnCaiDat.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnCaiDat.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnCaiDat.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCaiDat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnCaiDat.Image = global::GiaoDienPBL3.Properties.Resources.icons8_settings_30__1_;
-            this.btnCaiDat.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnCaiDat.Location = new System.Drawing.Point(1059, 23);
-            this.btnCaiDat.Name = "btnCaiDat";
-            this.btnCaiDat.Size = new System.Drawing.Size(132, 45);
-            this.btnCaiDat.TabIndex = 2;
-            this.btnCaiDat.Text = "Cài Đặt";
-            this.btnCaiDat.Click += new System.EventHandler(this.btnCaiDat_Click);
-            // 
-            // label1
-            // 
-            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1249, 68);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Quản Lý Menu Món Ăn/Nước Uống";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // panelThongTinChiTietMonAn
-            // 
-            this.panelThongTinChiTietMonAn.BackColor = System.Drawing.Color.Transparent;
-            this.panelThongTinChiTietMonAn.Controls.Add(this.panelChiTietMonAn);
-            this.panelThongTinChiTietMonAn.Controls.Add(this.panel3);
->>>>>>> parent of 792afe9 (11:14 pm 3/25/2023 quy changed)
-            this.panelThongTinChiTietMonAn.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelThongTinChiTietMonAn.Location = new System.Drawing.Point(884, 68);
             this.panelThongTinChiTietMonAn.Name = "panelThongTinChiTietMonAn";
             this.panelThongTinChiTietMonAn.Size = new System.Drawing.Size(365, 658);
@@ -299,7 +111,7 @@
 <<<<<<< HEAD
             // panelCaiDatVaThongTin
             // 
-            this.panelCaiDatVaThongTin.Controls.Add(this.guna2GroupBox1);
+            this.panelCaiDatVaThongTin.Controls.Add(this.groupBoxThongTinChung);
             this.panelCaiDatVaThongTin.Controls.Add(this.panelChiTietMonAn);
             this.panelCaiDatVaThongTin.Controls.Add(this.panel3);
             this.panelCaiDatVaThongTin.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -308,34 +120,34 @@
             this.panelCaiDatVaThongTin.Size = new System.Drawing.Size(365, 658);
             this.panelCaiDatVaThongTin.TabIndex = 0;
             // 
-            // guna2GroupBox1
+            // groupBoxThongTinChung
             // 
-            this.guna2GroupBox1.Controls.Add(this.guna2DateTimePicker1);
-            this.guna2GroupBox1.Controls.Add(this.guna2TextBox7);
-            this.guna2GroupBox1.Controls.Add(this.guna2TextBox6);
-            this.guna2GroupBox1.Controls.Add(this.guna2TextBox5);
-            this.guna2GroupBox1.Controls.Add(this.guna2TextBox4);
-            this.guna2GroupBox1.Controls.Add(this.guna2TextBox3);
-            this.guna2GroupBox1.Controls.Add(this.guna2TextBox2);
-            this.guna2GroupBox1.Controls.Add(this.guna2TextBox1);
-            this.guna2GroupBox1.Controls.Add(this.label5);
-            this.guna2GroupBox1.Controls.Add(this.label10);
-            this.guna2GroupBox1.Controls.Add(this.label8);
-            this.guna2GroupBox1.Controls.Add(this.label7);
-            this.guna2GroupBox1.Controls.Add(this.label6);
-            this.guna2GroupBox1.Controls.Add(this.label4);
-            this.guna2GroupBox1.Controls.Add(this.label3);
-            this.guna2GroupBox1.Controls.Add(this.label9);
-            this.guna2GroupBox1.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.guna2GroupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2GroupBox1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.guna2GroupBox1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2GroupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.guna2GroupBox1.Location = new System.Drawing.Point(0, 0);
-            this.guna2GroupBox1.Name = "guna2GroupBox1";
-            this.guna2GroupBox1.Size = new System.Drawing.Size(365, 313);
-            this.guna2GroupBox1.TabIndex = 13;
-            this.guna2GroupBox1.Text = "Thông Tin Chung";
+            this.groupBoxThongTinChung.Controls.Add(this.guna2DateTimePicker1);
+            this.groupBoxThongTinChung.Controls.Add(this.guna2TextBox7);
+            this.groupBoxThongTinChung.Controls.Add(this.guna2TextBox6);
+            this.groupBoxThongTinChung.Controls.Add(this.guna2TextBox5);
+            this.groupBoxThongTinChung.Controls.Add(this.guna2TextBox4);
+            this.groupBoxThongTinChung.Controls.Add(this.guna2TextBox3);
+            this.groupBoxThongTinChung.Controls.Add(this.guna2TextBox2);
+            this.groupBoxThongTinChung.Controls.Add(this.guna2TextBox1);
+            this.groupBoxThongTinChung.Controls.Add(this.label5);
+            this.groupBoxThongTinChung.Controls.Add(this.label10);
+            this.groupBoxThongTinChung.Controls.Add(this.label8);
+            this.groupBoxThongTinChung.Controls.Add(this.label7);
+            this.groupBoxThongTinChung.Controls.Add(this.label6);
+            this.groupBoxThongTinChung.Controls.Add(this.label4);
+            this.groupBoxThongTinChung.Controls.Add(this.label3);
+            this.groupBoxThongTinChung.Controls.Add(this.label9);
+            this.groupBoxThongTinChung.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.groupBoxThongTinChung.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBoxThongTinChung.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.groupBoxThongTinChung.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBoxThongTinChung.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.groupBoxThongTinChung.Location = new System.Drawing.Point(0, 0);
+            this.groupBoxThongTinChung.Name = "groupBoxThongTinChung";
+            this.groupBoxThongTinChung.Size = new System.Drawing.Size(365, 313);
+            this.groupBoxThongTinChung.TabIndex = 13;
+            this.groupBoxThongTinChung.Text = "Thông Tin Chung";
             // 
             // guna2DateTimePicker1
             // 
@@ -608,14 +420,57 @@
             // 
             this.panelChiTietMonAn.AutoScroll = true;
             this.panelChiTietMonAn.BackColor = System.Drawing.Color.Transparent;
+            this.panelChiTietMonAn.Controls.Add(this.panelXacNhanLuaChon);
             this.panelChiTietMonAn.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelChiTietMonAn.Location = new System.Drawing.Point(0, 313);
             this.panelChiTietMonAn.Name = "panelChiTietMonAn";
             this.panelChiTietMonAn.Size = new System.Drawing.Size(365, 233);
             this.panelChiTietMonAn.TabIndex = 12;
             // 
-=======
->>>>>>> parent of 792afe9 (11:14 pm 3/25/2023 quy changed)
+            // panelXacNhanLuaChon
+            // 
+            this.panelXacNhanLuaChon.Controls.Add(this.btnXacNhan);
+            this.panelXacNhanLuaChon.Controls.Add(this.cboMenhGia);
+            this.panelXacNhanLuaChon.Location = new System.Drawing.Point(3, 3);
+            this.panelXacNhanLuaChon.Name = "panelXacNhanLuaChon";
+            this.panelXacNhanLuaChon.Size = new System.Drawing.Size(340, 48);
+            this.panelXacNhanLuaChon.TabIndex = 2;
+            this.panelXacNhanLuaChon.Visible = false;
+            // 
+            // btnXacNhan
+            // 
+            this.btnXacNhan.BorderThickness = 1;
+            this.btnXacNhan.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnXacNhan.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnXacNhan.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnXacNhan.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnXacNhan.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnXacNhan.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnXacNhan.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXacNhan.ForeColor = System.Drawing.Color.DimGray;
+            this.btnXacNhan.Location = new System.Drawing.Point(0, 24);
+            this.btnXacNhan.Name = "btnXacNhan";
+            this.btnXacNhan.Size = new System.Drawing.Size(340, 24);
+            this.btnXacNhan.TabIndex = 2;
+            this.btnXacNhan.Text = "Xác Nhận";
+            this.btnXacNhan.Click += new System.EventHandler(this.btnXacNhan_Click);
+            // 
+            // cboMenhGia
+            // 
+            this.cboMenhGia.Dock = System.Windows.Forms.DockStyle.Top;
+            this.cboMenhGia.FormattingEnabled = true;
+            this.cboMenhGia.Items.AddRange(new object[] {
+            "10.000",
+            "20.000",
+            "50.000",
+            "100.000",
+            "200.000",
+            "500.000"});
+            this.cboMenhGia.Location = new System.Drawing.Point(0, 0);
+            this.cboMenhGia.Name = "cboMenhGia";
+            this.cboMenhGia.Size = new System.Drawing.Size(340, 24);
+            this.cboMenhGia.TabIndex = 1;
+            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Transparent;
@@ -719,11 +574,23 @@
             // 
             // panelMonAn
             // 
+            this.panelMonAn.Controls.Add(this.uC_MonAn1);
             this.panelMonAn.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMonAn.Location = new System.Drawing.Point(0, 0);
             this.panelMonAn.Name = "panelMonAn";
             this.panelMonAn.Size = new System.Drawing.Size(884, 658);
             this.panelMonAn.TabIndex = 0;
+            // 
+            // uC_MonAn1
+            // 
+            this.uC_MonAn1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.uC_MonAn1.ImagePanel = global::GiaoDienPBL3.Properties.Resources.icons8_credit_card_100;
+            this.uC_MonAn1.Location = new System.Drawing.Point(3, 3);
+            this.uC_MonAn1.Name = "uC_MonAn1";
+            this.uC_MonAn1.Size = new System.Drawing.Size(164, 158);
+            this.uC_MonAn1.TabIndex = 0;
+            this.uC_MonAn1.TextGiaMonAn = "Nạp Tiền";
+            this.uC_MonAn1.TextTenMonAn = "Nạp Tiền";
             // 
             // panel1
             // 
@@ -792,10 +659,16 @@
             this.Load += new System.EventHandler(this.UC_QuanLyMenu_Load);
             this.guna2CustomGradientPanel1.ResumeLayout(false);
             this.panelThongTinChiTietMonAn.ResumeLayout(false);
+            this.panelCaiDatVaThongTin.ResumeLayout(false);
+            this.groupBoxThongTinChung.ResumeLayout(false);
+            this.groupBoxThongTinChung.PerformLayout();
+            this.panelChiTietMonAn.ResumeLayout(false);
+            this.panelXacNhanLuaChon.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.panel4.ResumeLayout(false);
+            this.panelMonAn.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -809,6 +682,22 @@
         private System.Windows.Forms.Panel panel4;
         private Guna.UI2.WinForms.Guna2Button btnCaiDat;
         private System.Windows.Forms.Panel panelThongTinChiTietMonAn;
+        private Guna.UI2.WinForms.Guna2GroupBox groupBoxThongTinChung;
+        private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker1;
+        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox6;
+        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox5;
+        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox4;
+        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox3;
+        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox2;
+        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label9;
+        public System.Windows.Forms.FlowLayoutPanel panelChiTietMonAn;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label2;
@@ -816,9 +705,10 @@
 <<<<<<< HEAD
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         public System.Windows.Forms.FlowLayoutPanel panelMonAn;
-=======
-        private Guna.UI2.WinForms.Guna2Button btnYeuCau;
-        public System.Windows.Forms.FlowLayoutPanel panelChiTietMonAn;
->>>>>>> parent of 792afe9 (11:14 pm 3/25/2023 quy changed)
+        private UC_MonAn uC_MonAn1;
+        public System.Windows.Forms.Panel panelCaiDatVaThongTin;
+        public System.Windows.Forms.Panel panelXacNhanLuaChon;
+        private System.Windows.Forms.ComboBox cboMenhGia;
+        private Guna.UI2.WinForms.Guna2Button btnXacNhan;
     }
 }

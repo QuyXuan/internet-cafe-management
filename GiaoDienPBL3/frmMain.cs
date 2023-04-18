@@ -3,10 +3,14 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
+using BLL;
 using GiaoDienPBL3.UC;
 using GiaoDienPBL3.User_Controls;
 using Guna.UI2.WinForms;
@@ -15,14 +19,22 @@ namespace GiaoDienPBL3
 {
     public partial class frmMain : Form
     {
+        private string AccountId;
         public static UC_TrangChu myUC_TrangChu = new UC_TrangChu();
         public static UC_QuanLyMenu myUC_QuanLyMenu = new UC_QuanLyMenu();
         public static UC_QuanLyMay myUC_QuanLyMay = new UC_QuanLyMay();
         public static UC_QuanLyKho myUC_QuanLyKho = new UC_QuanLyKho();
         public static UC_QuanLyHoaDon myUC_QuanLyHoaDon = new UC_QuanLyHoaDon();
-        public frmMain()
+        public static UC_QuanLyDoanhThu myUC_QuanLyDoanhThu = new UC_QuanLyDoanhThu();
+        public static UC_QuanLyHoaDonNhapKho myUC_QuanLyHoaDonNhapKho = new UC_QuanLyHoaDonNhapKho();
+        public static UC_QuanLyCaLamViec myUC_QuanLyCaLamViec = new UC_QuanLyCaLamViec();
+        public static UC_QuanLyKhachHang myUC_QuanLyKhachHang = new UC_QuanLyKhachHang();
+        public static UC_Loading myUC_Loading = new UC_Loading();
+
+        public frmMain(string accountId = null)
         {
             InitializeComponent();
+            AccountId = accountId;
         }
 
         private void imgbtnThoat_Click(object sender, EventArgs e)
@@ -32,6 +44,9 @@ namespace GiaoDienPBL3
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            KeyValuePair<string, string>? TenVaVaiTro = AccountBLL.Instance.GetTenVaVaiTro(AccountId);
+            lblTen.Text = TenVaVaiTro.Value.Key;
+            lblVaiTro.Text = TenVaVaiTro.Value.Value;
             TurnOffAllPanelQuanLy();
             SetOffAllCheckStateButton();
             AddUserControlOnBackGround(myUC_TrangChu);
@@ -39,12 +54,14 @@ namespace GiaoDienPBL3
             imgbtnThoat.Location = new Point(12, 750);
             myUC_TrangChu.Visible = true;
         }
-
         private void SetOffAllCheckStateButton()
         {
-            btnQuanLy1.Checked = false;
-            btnQuanLy2.Checked = false;
-            btnQuanLy3.Checked = false;
+            btnQuanLyMenu.Checked = false;
+            btnQuanLyMay.Checked = false;
+            btnQuanLyDoanhThu.Checked = false;
+            btnQuanLyKhachHang.Checked = false;
+            btnQuanLyKho.Checked = false;
+            btnQuanLyNhanVien.Checked = false;
             btnCaiDat.Checked = false;
             btnTrangChu.Checked = false;
         }
@@ -57,10 +74,10 @@ namespace GiaoDienPBL3
 
         private void HideSubMenu()
         {
-            if (panelQuanLy1.Visible == true)
-                panelQuanLy1.Visible = false;
-            if (panelQuanLy2.Visible == true)
-                panelQuanLy2.Visible = false;
+            if (panelQuanLyMenu.Visible == true)
+                panelQuanLyMenu.Visible = false;
+            if (panelQuanLyKho.Visible == true)
+                panelQuanLyKho.Visible = false;
             if (panelQuanLy3.Visible == true)
                 panelQuanLy3.Visible = false;
             if (panelCaiDat.Visible == true)
@@ -69,8 +86,8 @@ namespace GiaoDienPBL3
 
         private void TurnOffAllPanelQuanLy()
         {
-            panelQuanLy1.Visible = false;
-            panelQuanLy2.Visible = false;
+            panelQuanLyMenu.Visible = false;
+            panelQuanLyKho.Visible = false;
             panelQuanLy3.Visible = false;
             panelCaiDat.Visible = false;
         }
@@ -89,21 +106,21 @@ namespace GiaoDienPBL3
             }
         }
 
-        private void btnQuanLy1_Click(object sender, EventArgs e)
+        private void btnQuanLyMenu_Click(object sender, EventArgs e)
         {
             Guna2Button btn = sender as Guna2Button;
             SetOnCheckStateButton(btn);
-            ShowSubMenu(panelQuanLy1);
+            ShowSubMenu(panelQuanLyMenu);
         }
 
-        private void btnQuanLy2_Click(object sender, EventArgs e)
+        private void btnQuanLyKho_Click(object sender, EventArgs e)
         {
             Guna2Button btn = sender as Guna2Button;
             SetOnCheckStateButton(btn);
-            ShowSubMenu(panelQuanLy2);
+            ShowSubMenu(panelQuanLyKho);
         }
 
-        private void btnQuanLy3_Click(object sender, EventArgs e)
+        private void btnQuanLyNhanVien_Click(object sender, EventArgs e)
         {
             Guna2Button btn = sender as Guna2Button;
             SetOnCheckStateButton(btn);
@@ -119,7 +136,10 @@ namespace GiaoDienPBL3
 
         private void AddUserControlOnBackGround(UserControl userControl)
         {
+            myUC_Loading.Visible = true;
+            myUC_Loading.circlerProgressBarLoad.Value = 0;
             panelBackGround.Controls.Clear();
+            panelBackGround.Controls.Add(myUC_Loading);
             panelBackGround.Controls.Add(userControl);
             userControl.Dock = DockStyle.Fill;
         }
@@ -129,23 +149,23 @@ namespace GiaoDienPBL3
             Guna2Button btn = sender as Guna2Button;
             SetOnCheckStateButton(btn);
             HideSubMenu();
-            //panelBackGround.Controls.Clear();
-            //panelBackGround.Controls.Add(myUC_TrangChu);
-            //myUC_TrangChu.Dock = DockStyle.Fill;
             AddUserControlOnBackGround(myUC_TrangChu);
         }
 
-        private void btnQuanLyMenu_Click(object sender, EventArgs e)
+        private void btnMenu_Click(object sender, EventArgs e)
         {
             AddUserControlOnBackGround(myUC_QuanLyMenu);
         }
 
         private void btnQuanLyMay_Click(object sender, EventArgs e)
         {
+            Guna2Button btn = sender as Guna2Button;
+            SetOnCheckStateButton(btn);
+            HideSubMenu();
             AddUserControlOnBackGround(myUC_QuanLyMay);
         }
 
-        private void btnQuanLyKho_Click(object sender, EventArgs e)
+        private void btnKho_Click(object sender, EventArgs e)
         {
             AddUserControlOnBackGround(myUC_QuanLyKho);
         }
@@ -153,6 +173,32 @@ namespace GiaoDienPBL3
         private void btnQuanLyHoaDon_Click(object sender, EventArgs e)
         {
             AddUserControlOnBackGround(myUC_QuanLyHoaDon);
+        }
+
+        private void btnQuanLyDoanhThu_Click(object sender, EventArgs e)
+        {
+            Guna2Button btn = sender as Guna2Button;
+            SetOnCheckStateButton(btn);
+            HideSubMenu();
+            AddUserControlOnBackGround(myUC_QuanLyDoanhThu);
+        }
+
+        private void btnQuanLyHoaDonNhap_Click(object sender, EventArgs e)
+        {
+            AddUserControlOnBackGround(myUC_QuanLyHoaDonNhapKho);
+        }
+
+        private void btnQuanLyCaLamViec_Click(object sender, EventArgs e)
+        {
+            AddUserControlOnBackGround(myUC_QuanLyCaLamViec);
+        }
+
+        private void btnQuanLyKhachHang_Click(object sender, EventArgs e)
+        {
+            Guna2Button btn = sender as Guna2Button;
+            SetOnCheckStateButton(btn);
+            HideSubMenu();
+            AddUserControlOnBackGround(myUC_QuanLyKhachHang);
         }
     }
 }

@@ -1,4 +1,6 @@
-﻿using GiaoDienPBL3;
+﻿using BLL;
+using DTO;
+using GiaoDienPBL3;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -53,12 +55,25 @@ namespace LoginPage
 
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
-            if (txtTaiKhoan.Text == "1" && txtMatKhau.Text == "1")
+            if (AccountBLL.Instance.CheckDangNhap(txtTaiKhoan.Text, txtMatKhau.Text))
             {
+                string AccountId = AccountBLL.Instance.GetAccountIdByUserName(txtTaiKhoan.Text);
+                KeyValuePair<string, string>? TenVaVaiTro = AccountBLL.Instance.GetTenVaVaiTro(AccountId);
+                if (TenVaVaiTro == null)
+                {
+                    MessageBox.Show("Bạn Đang Đăng Nhập Với Tư Cách Là Khách Hàng" + Environment.NewLine + "Đây Không Phải Form Login Của Khách Hàng");
+                    return;
+                }
                 this.Hide();
-                frmMain Main = new frmMain();
+                frmMain Main = new frmMain(AccountId);
                 Main.ShowDialog();
             }
+            //if (txtTaiKhoan.Text == "1" && txtMatKhau.Text == "1")
+            //{
+            //    this.Hide();
+            //    frmMain Main = new frmMain();
+            //    Main.ShowDialog();
+            //}
             ShowThongBao("Tên Tài Khoản Hoặc Mật Khẩu Sai" + Environment.NewLine + "VUI LÒNG NHẬP LẠI!!!");
             //showNotification("Tên Tài Khoản Hoặc Mật Khẩu Sai");
         }
