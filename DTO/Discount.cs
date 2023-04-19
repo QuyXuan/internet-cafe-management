@@ -22,6 +22,8 @@ namespace DTO
 
         public Nullable<float> DiscountPercent { get; set; }
 
+        [Required]
+        public bool TypeCustomer { get; set; }
         //public virtual ICollection<Customer> Customers { get; set; }
     }
 }

@@ -43,7 +43,7 @@ namespace DTO
 
         public virtual ICollection<BillProduct> Products { get; set; }
 
-        public Nullable<float> Quantity { get; set; }
+        //public Nullable<float> Quantity { get; set; }
 
         [StringLength(10)]
         [Column(TypeName = "varchar")]
