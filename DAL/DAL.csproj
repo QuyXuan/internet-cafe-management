@@ -108,6 +108,38 @@
     <Compile Include="Migrations\202304171952228_updatedb13.designer.cs">
       <DependentUpon>202304171952228_updatedb13.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202304181630139_updatedb14.cs" />
+    <Compile Include="Migrations\202304181630139_updatedb14.designer.cs">
+      <DependentUpon>202304181630139_updatedb14.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202304182252026_updatedb15.cs" />
+    <Compile Include="Migrations\202304182252026_updatedb15.designer.cs">
+      <DependentUpon>202304182252026_updatedb15.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202304182253353_updatedb16.cs" />
+    <Compile Include="Migrations\202304182253353_updatedb16.designer.cs">
+      <DependentUpon>202304182253353_updatedb16.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202304182328379_updatedb17.cs" />
+    <Compile Include="Migrations\202304182328379_updatedb17.designer.cs">
+      <DependentUpon>202304182328379_updatedb17.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202304190115567_updatedb18.cs" />
+    <Compile Include="Migrations\202304190115567_updatedb18.designer.cs">
+      <DependentUpon>202304190115567_updatedb18.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202304190209266_updatedb19.cs" />
+    <Compile Include="Migrations\202304190209266_updatedb19.designer.cs">
+      <DependentUpon>202304190209266_updatedb19.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202304190226108_updatedb20.cs" />
+    <Compile Include="Migrations\202304190226108_updatedb20.designer.cs">
+      <DependentUpon>202304190226108_updatedb20.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202304190248284_updatedb21.cs" />
+    <Compile Include="Migrations\202304190248284_updatedb21.designer.cs">
+      <DependentUpon>202304190248284_updatedb21.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
@@ -117,12 +149,6 @@
     </Compile>
     <Compile Include="QLNETDBContextSingleton.cs" />
     <Compile Include="QLNETDBContext.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\DTO\DTO.csproj">
-      <Project>{064bd462-197d-4e0d-a095-ef3e41b6edbc}</Project>
-      <Name>DTO</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -175,6 +201,36 @@
     <EmbeddedResource Include="Migrations\202304171952228_updatedb13.resx">
       <DependentUpon>202304171952228_updatedb13.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304181630139_updatedb14.resx">
+      <DependentUpon>202304181630139_updatedb14.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304182252026_updatedb15.resx">
+      <DependentUpon>202304182252026_updatedb15.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304182253353_updatedb16.resx">
+      <DependentUpon>202304182253353_updatedb16.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304182328379_updatedb17.resx">
+      <DependentUpon>202304182328379_updatedb17.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304190115567_updatedb18.resx">
+      <DependentUpon>202304190115567_updatedb18.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304190209266_updatedb19.resx">
+      <DependentUpon>202304190209266_updatedb19.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304190226108_updatedb20.resx">
+      <DependentUpon>202304190226108_updatedb20.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304190248284_updatedb21.resx">
+      <DependentUpon>202304190248284_updatedb21.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DTO\DTO.csproj">
+      <Project>{064bd462-197d-4e0d-a095-ef3e41b6edbc}</Project>
+      <Name>DTO</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

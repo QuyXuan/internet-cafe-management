@@ -54,6 +54,7 @@
     <Compile Include="Account.cs" />
     <Compile Include="Bill.cs" />
     <Compile Include="BillDay.cs" />
+    <Compile Include="BillDiscount.cs" />
     <Compile Include="BillProduct.cs" />
     <Compile Include="Computer.cs" />
     <Compile Include="Customer.cs" />
@@ -62,7 +63,6 @@
     <Compile Include="HangHoa.cs" />
     <Compile Include="HoaDonNhap.cs" />
     <Compile Include="May.cs" />
-    <Compile Include="MonAn.cs" />
     <Compile Include="Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reciept.cs" />

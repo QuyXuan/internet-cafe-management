@@ -59,23 +59,14 @@ namespace LoginPage
             {
                 string AccountId = AccountBLL.Instance.GetAccountIdByUserName(txtTaiKhoan.Text);
                 KeyValuePair<string, string>? TenVaVaiTro = AccountBLL.Instance.GetTenVaVaiTro(AccountId);
-                if (TenVaVaiTro == null)
+                if (TenVaVaiTro != null)
                 {
-                    MessageBox.Show("Bạn Đang Đăng Nhập Với Tư Cách Là Khách Hàng" + Environment.NewLine + "Đây Không Phải Form Login Của Khách Hàng");
-                    return;
+                    this.Hide();
+                    frmMain Main = new frmMain(AccountId);
+                    Main.ShowDialog();
                 }
-                this.Hide();
-                frmMain Main = new frmMain(AccountId);
-                Main.ShowDialog();
             }
-            //if (txtTaiKhoan.Text == "1" && txtMatKhau.Text == "1")
-            //{
-            //    this.Hide();
-            //    frmMain Main = new frmMain();
-            //    Main.ShowDialog();
-            //}
             ShowThongBao("Tên Tài Khoản Hoặc Mật Khẩu Sai" + Environment.NewLine + "VUI LÒNG NHẬP LẠI!!!");
-            //showNotification("Tên Tài Khoản Hoặc Mật Khẩu Sai");
         }
         private async void ShowThongBao(string message)
         {

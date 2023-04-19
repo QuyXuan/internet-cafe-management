@@ -388,20 +388,10 @@
             // UC_ThongTinVaCaiDatMonAn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.guna2GroupBox2);
-            this.Controls.Add(this.guna2GroupBox1);
-            this.Name = "UC_ThongTinVaCaiDatMonAn";
-            this.Size = new System.Drawing.Size(365, 658);
-            this.guna2GroupBox1.ResumeLayout(false);
-            this.guna2GroupBox1.PerformLayout();
-            this.guna2GroupBox2.ResumeLayout(false);
-            this.ResumeLayout(false);
-
         }
-
         #endregion
-
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox1;
         private Guna.UI2.WinForms.Guna2Button btnThemAnh;
         private Guna.UI2.WinForms.Guna2ComboBox cboLoai;

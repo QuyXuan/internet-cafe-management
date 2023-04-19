@@ -34,11 +34,11 @@ namespace DTO
         [ForeignKey("AccountId")]
         public virtual Account Account { get; set; }
 
-        [Required]
-        [StringLength(10)]
-        [Column(TypeName = "varchar")]
-        public string DiscountId { get; set; }
-        [ForeignKey("DiscountId")]
-        public virtual Discount Discount { get; set; }
+        //[Required]
+        //[StringLength(10)]
+        //[Column(TypeName = "varchar")]
+        //public string DiscountId { get; set; }
+        //[ForeignKey("DiscountId")]
+        //public virtual Discount Discount { get; set; }
     }
 }
