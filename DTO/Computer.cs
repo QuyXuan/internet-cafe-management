@@ -27,8 +27,8 @@ namespace DTO
         public virtual TypeComputer TypeComputer { get; set; }
 
 
-        [StringLength(50)]
-        public string NameType { get; set; }
+        //[StringLength(50)]
+        //public string NameType { get; set; }
         [Required]
         [StringLength(255)]
         [RegularExpression(@"^(Bảo Trì|Đang Hoạt Động|Đã Tắt|Còn 5 Phút)$")]
