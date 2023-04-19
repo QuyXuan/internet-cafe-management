@@ -54,6 +54,7 @@
     <Compile Include="Account.cs" />
     <Compile Include="Bill.cs" />
     <Compile Include="BillDay.cs" />
+    <Compile Include="BillDiscount.cs" />
     <Compile Include="BillProduct.cs" />
     <Compile Include="Computer.cs" />
     <Compile Include="Customer.cs" />

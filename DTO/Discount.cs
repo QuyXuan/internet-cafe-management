@@ -24,6 +24,7 @@ namespace DTO
 
         [Required]
         public bool TypeCustomer { get; set; }
-        //public virtual ICollection<Customer> Customers { get; set; }
+
+        public virtual ICollection<BillDiscount> Bills { get; set; }
     }
 }

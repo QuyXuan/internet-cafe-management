@@ -82,3 +82,6 @@ C:\Users\ADMIN\source\repos\pbl03quy\DAL\obj\Debug\DAL.Migrations.updatedb15.res
 C:\Users\ADMIN\source\repos\pbl03quy\DAL\obj\Debug\DAL.Migrations.updatedb16.resources
 C:\Users\ADMIN\source\repos\pbl03quy\DAL\obj\Debug\DAL.Migrations.updatedb17.resources
 C:\Users\ADMIN\source\repos\pbl03quy\DAL\obj\Debug\DAL.Migrations.updatedb18.resources
+C:\Users\ADMIN\source\repos\pbl03quy\DAL\obj\Debug\DAL.Migrations.updatedb19.resources
+C:\Users\ADMIN\source\repos\pbl03quy\DAL\obj\Debug\DAL.Migrations.updatedb20.resources
+C:\Users\ADMIN\source\repos\pbl03quy\DAL\obj\Debug\DAL.Migrations.updatedb21.resources
