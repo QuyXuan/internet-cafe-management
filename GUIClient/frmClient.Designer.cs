@@ -43,6 +43,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panelSideBar = new System.Windows.Forms.Panel();
             this.imgbtnThoat = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.txtTime = new Guna.UI2.WinForms.Guna2TextBox();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -152,6 +153,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.Control;
+            this.panel3.Controls.Add(this.txtTime);
             this.panel3.Controls.Add(this.guna2ControlBox3);
             this.panel3.Controls.Add(this.lblLoaiKhachHang);
             this.panel3.Controls.Add(this.lblTenKhachHang);
@@ -261,6 +263,28 @@
             this.imgbtnThoat.TabIndex = 3;
             this.imgbtnThoat.Click += new System.EventHandler(this.imgbtnThoat_Click);
             // 
+            // txtTime
+            // 
+            this.txtTime.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.txtTime.BorderColor = System.Drawing.Color.Cyan;
+            this.txtTime.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtTime.DefaultText = "";
+            this.txtTime.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtTime.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtTime.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTime.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTime.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtTime.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtTime.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtTime.Location = new System.Drawing.Point(6, 34);
+            this.txtTime.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtTime.Name = "txtTime";
+            this.txtTime.PasswordChar = '\0';
+            this.txtTime.PlaceholderText = "";
+            this.txtTime.SelectedText = "";
+            this.txtTime.Size = new System.Drawing.Size(157, 38);
+            this.txtTime.TabIndex = 7;
+            // 
             // frmClient
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -303,6 +327,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panelSideBar;
         private Guna.UI2.WinForms.Guna2ImageButton imgbtnThoat;
+        private Guna.UI2.WinForms.Guna2TextBox txtTime;
     }
 }
 

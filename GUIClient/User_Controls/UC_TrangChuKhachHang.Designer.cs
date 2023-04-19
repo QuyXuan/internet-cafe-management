@@ -52,7 +52,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblTrangChu = new System.Windows.Forms.Label();
+            this.label = new System.Windows.Forms.Label();
+            this.lblTenTaiKhoan = new System.Windows.Forms.Label();
+            this.lblThongBao = new System.Windows.Forms.Label();
             this.guna2CustomGradientPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.guna2GroupBox2.SuspendLayout();
@@ -65,7 +68,7 @@
             // 
             this.guna2CustomGradientPanel1.Controls.Add(this.panel2);
             this.guna2CustomGradientPanel1.Controls.Add(this.panel1);
-            this.guna2CustomGradientPanel1.Controls.Add(this.label1);
+            this.guna2CustomGradientPanel1.Controls.Add(this.lblTrangChu);
             this.guna2CustomGradientPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2CustomGradientPanel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.guna2CustomGradientPanel1.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
@@ -89,6 +92,7 @@
             // 
             // guna2GroupBox2
             // 
+            this.guna2GroupBox2.Controls.Add(this.lblThongBao);
             this.guna2GroupBox2.Controls.Add(this.btnCapNhatMatKhau);
             this.guna2GroupBox2.Controls.Add(this.label9);
             this.guna2GroupBox2.Controls.Add(this.label8);
@@ -100,9 +104,9 @@
             this.guna2GroupBox2.FillColor = System.Drawing.Color.Transparent;
             this.guna2GroupBox2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2GroupBox2.ForeColor = System.Drawing.Color.Black;
-            this.guna2GroupBox2.Location = new System.Drawing.Point(0, 232);
+            this.guna2GroupBox2.Location = new System.Drawing.Point(0, 210);
             this.guna2GroupBox2.Name = "guna2GroupBox2";
-            this.guna2GroupBox2.Size = new System.Drawing.Size(604, 367);
+            this.guna2GroupBox2.Size = new System.Drawing.Size(604, 389);
             this.guna2GroupBox2.TabIndex = 1;
             this.guna2GroupBox2.Text = "Đổi Mật Khẩu";
             // 
@@ -115,21 +119,21 @@
             this.btnCapNhatMatKhau.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnCapNhatMatKhau.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnCapNhatMatKhau.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnCapNhatMatKhau.Enabled = false;
             this.btnCapNhatMatKhau.FillColor = System.Drawing.Color.Silver;
             this.btnCapNhatMatKhau.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCapNhatMatKhau.ForeColor = System.Drawing.Color.White;
-            this.btnCapNhatMatKhau.Location = new System.Drawing.Point(209, 286);
+            this.btnCapNhatMatKhau.Location = new System.Drawing.Point(235, 327);
             this.btnCapNhatMatKhau.Name = "btnCapNhatMatKhau";
             this.btnCapNhatMatKhau.Size = new System.Drawing.Size(207, 45);
             this.btnCapNhatMatKhau.TabIndex = 5;
-            this.btnCapNhatMatKhau.Text = "Chưa Chính Xác";
+            this.btnCapNhatMatKhau.Text = "Xác Nhận";
+            this.btnCapNhatMatKhau.Click += new System.EventHandler(this.btnCapNhatMatKhau_Click);
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(47, 203);
+            this.label9.Location = new System.Drawing.Point(47, 245);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(214, 23);
             this.label9.TabIndex = 4;
@@ -139,7 +143,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(47, 129);
+            this.label8.Location = new System.Drawing.Point(47, 176);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(134, 23);
             this.label8.TabIndex = 4;
@@ -149,7 +153,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(47, 55);
+            this.label7.Location = new System.Drawing.Point(47, 106);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(123, 23);
             this.label7.TabIndex = 4;
@@ -170,7 +174,7 @@
             this.txtMatKhauCu.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtMatKhauCu.ForeColor = System.Drawing.Color.Black;
             this.txtMatKhauCu.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtMatKhauCu.Location = new System.Drawing.Point(119, 82);
+            this.txtMatKhauCu.Location = new System.Drawing.Point(119, 133);
             this.txtMatKhauCu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtMatKhauCu.Name = "txtMatKhauCu";
             this.txtMatKhauCu.PasswordChar = '\0';
@@ -194,7 +198,7 @@
             this.txtMatKhauMoi.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtMatKhauMoi.ForeColor = System.Drawing.Color.Black;
             this.txtMatKhauMoi.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtMatKhauMoi.Location = new System.Drawing.Point(119, 156);
+            this.txtMatKhauMoi.Location = new System.Drawing.Point(119, 205);
             this.txtMatKhauMoi.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtMatKhauMoi.Name = "txtMatKhauMoi";
             this.txtMatKhauMoi.PasswordChar = '\0';
@@ -218,7 +222,7 @@
             this.txtXacNhanMatKhau.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtXacNhanMatKhau.ForeColor = System.Drawing.Color.Black;
             this.txtXacNhanMatKhau.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtXacNhanMatKhau.Location = new System.Drawing.Point(119, 230);
+            this.txtXacNhanMatKhau.Location = new System.Drawing.Point(119, 275);
             this.txtXacNhanMatKhau.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtXacNhanMatKhau.Name = "txtXacNhanMatKhau";
             this.txtXacNhanMatKhau.PasswordChar = '\0';
@@ -235,7 +239,7 @@
             this.guna2GroupBox1.ForeColor = System.Drawing.Color.Black;
             this.guna2GroupBox1.Location = new System.Drawing.Point(0, 0);
             this.guna2GroupBox1.Name = "guna2GroupBox1";
-            this.guna2GroupBox1.Size = new System.Drawing.Size(604, 232);
+            this.guna2GroupBox1.Size = new System.Drawing.Size(604, 210);
             this.guna2GroupBox1.TabIndex = 0;
             this.guna2GroupBox1.Text = "Giảm Giá Của Tôi";
             // 
@@ -252,6 +256,8 @@
             // 
             // guna2GroupBox3
             // 
+            this.guna2GroupBox3.Controls.Add(this.lblTenTaiKhoan);
+            this.guna2GroupBox3.Controls.Add(this.label);
             this.guna2GroupBox3.Controls.Add(this.lblSoDuTaiKhoan);
             this.guna2GroupBox3.Controls.Add(this.lblLoaiTaiKhoan);
             this.guna2GroupBox3.Controls.Add(this.lblTenKhachHang);
@@ -291,7 +297,7 @@
             this.lblLoaiTaiKhoan.BackColor = System.Drawing.Color.DimGray;
             this.lblLoaiTaiKhoan.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLoaiTaiKhoan.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lblLoaiTaiKhoan.Location = new System.Drawing.Point(257, 370);
+            this.lblLoaiTaiKhoan.Location = new System.Drawing.Point(257, 387);
             this.lblLoaiTaiKhoan.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
             this.lblLoaiTaiKhoan.Name = "lblLoaiTaiKhoan";
             this.lblLoaiTaiKhoan.Size = new System.Drawing.Size(357, 41);
@@ -304,7 +310,7 @@
             this.lblTenKhachHang.BackColor = System.Drawing.Color.DimGray;
             this.lblTenKhachHang.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTenKhachHang.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lblTenKhachHang.Location = new System.Drawing.Point(257, 280);
+            this.lblTenKhachHang.Location = new System.Drawing.Point(257, 250);
             this.lblTenKhachHang.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
             this.lblTenKhachHang.Name = "lblTenKhachHang";
             this.lblTenKhachHang.Size = new System.Drawing.Size(357, 41);
@@ -317,7 +323,7 @@
             this.lblMaKhachHang.BackColor = System.Drawing.Color.DimGray;
             this.lblMaKhachHang.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMaKhachHang.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lblMaKhachHang.Location = new System.Drawing.Point(257, 190);
+            this.lblMaKhachHang.Location = new System.Drawing.Point(257, 176);
             this.lblMaKhachHang.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
             this.lblMaKhachHang.Name = "lblMaKhachHang";
             this.lblMaKhachHang.Size = new System.Drawing.Size(357, 41);
@@ -378,7 +384,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(34, 378);
+            this.label4.Location = new System.Drawing.Point(34, 395);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(136, 23);
             this.label4.TabIndex = 7;
@@ -389,7 +395,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(34, 288);
+            this.label3.Location = new System.Drawing.Point(34, 259);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(148, 23);
             this.label3.TabIndex = 8;
@@ -400,7 +406,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(34, 198);
+            this.label2.Location = new System.Drawing.Point(34, 186);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(146, 23);
             this.label2.TabIndex = 9;
@@ -418,18 +424,56 @@
             this.guna2CirclePictureBox1.TabIndex = 4;
             this.guna2CirclePictureBox1.TabStop = false;
             // 
-            // label1
+            // lblTrangChu
             // 
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1241, 98);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Trang Chủ";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblTrangChu.BackColor = System.Drawing.Color.Transparent;
+            this.lblTrangChu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblTrangChu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblTrangChu.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTrangChu.Location = new System.Drawing.Point(0, 0);
+            this.lblTrangChu.Name = "lblTrangChu";
+            this.lblTrangChu.Size = new System.Drawing.Size(1241, 98);
+            this.lblTrangChu.TabIndex = 1;
+            this.lblTrangChu.Text = "Trang Chủ";
+            this.lblTrangChu.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label
+            // 
+            this.label.AutoSize = true;
+            this.label.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label.ForeColor = System.Drawing.Color.Black;
+            this.label.Location = new System.Drawing.Point(34, 330);
+            this.label.Name = "label";
+            this.label.Size = new System.Drawing.Size(125, 23);
+            this.label.TabIndex = 15;
+            this.label.Text = "Tên Tài Khoản:";
+            // 
+            // lblTenTaiKhoan
+            // 
+            this.lblTenTaiKhoan.BackColor = System.Drawing.Color.DimGray;
+            this.lblTenTaiKhoan.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTenTaiKhoan.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.lblTenTaiKhoan.Location = new System.Drawing.Point(257, 316);
+            this.lblTenTaiKhoan.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
+            this.lblTenTaiKhoan.Name = "lblTenTaiKhoan";
+            this.lblTenTaiKhoan.Size = new System.Drawing.Size(357, 41);
+            this.lblTenTaiKhoan.TabIndex = 16;
+            this.lblTenTaiKhoan.Text = "Tên Tài Khoản";
+            this.lblTenTaiKhoan.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblThongBao
+            // 
+            this.lblThongBao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.lblThongBao.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblThongBao.ForeColor = System.Drawing.Color.Red;
+            this.lblThongBao.Location = new System.Drawing.Point(177, 40);
+            this.lblThongBao.Name = "lblThongBao";
+            this.lblThongBao.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lblThongBao.Size = new System.Drawing.Size(315, 66);
+            this.lblThongBao.TabIndex = 7;
+            this.lblThongBao.Text = "ThongBao";
+            this.lblThongBao.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblThongBao.Visible = false;
             // 
             // UC_TrangChuKhachHang
             // 
@@ -472,10 +516,13 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblTrangChu;
         private System.Windows.Forms.Label lblSoDuTaiKhoan;
         private System.Windows.Forms.Label lblLoaiTaiKhoan;
         private System.Windows.Forms.Label lblTenKhachHang;
         private System.Windows.Forms.Label lblMaKhachHang;
+        private System.Windows.Forms.Label lblTenTaiKhoan;
+        private System.Windows.Forms.Label label;
+        private System.Windows.Forms.Label lblThongBao;
     }
 }

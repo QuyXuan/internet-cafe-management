@@ -1,4 +1,5 @@
 ﻿using BLL;
+using DTO;
 using GiaoDienPBL3;
 using GiaoDienPBL3.UC;
 using GUIClient.User_Controls;
@@ -17,20 +18,22 @@ namespace GUIClient
 {
     public partial class frmClient : Form
     {
-        private string AccountId;
+        private Customer customer;
         public static UC_TrangChuKhachHang myUC_TrangChuKhachHang;
         //public static UC_QuanLyMenu myUC_QuanLyMenu = new UC_QuanLyMenu();
         public static UC_NapGioChoi myUC_NapGioChoi = new UC_NapGioChoi();
         public frmClient(string accountId)
         {
             InitializeComponent();
-            AccountId = accountId;
-            myUC_TrangChuKhachHang = new UC_TrangChuKhachHang(accountId);
+            customer = CustomerBLL.Instance.GetCustomerByID(accountId);
+            myUC_TrangChuKhachHang = new UC_TrangChuKhachHang(customer);
         }
         private void frmClient_Load(object sender, EventArgs e)
         {
-            KeyValuePair<string, string>? TenVaVaiTro = AccountBLL.Instance.GetTenVaVaiTro(AccountId);
             AddUserControlOnBackGround(myUC_TrangChuKhachHang);
+            lblTenKhachHang.Text = customer.CustomerName;
+            if (customer.TypeCustomer) lblLoaiKhachHang.Text = "Khách Hàng VIP";
+            else lblLoaiKhachHang.Text = "Khách Hàng Thường";
         }
         private void imgbtnThoat_Click(object sender, EventArgs e)
         {
@@ -73,6 +76,12 @@ namespace GUIClient
             panelBackGround.Controls.Clear();
             panelBackGround.Controls.Add(userControl);
             userControl.Dock = DockStyle.Fill;
+        }
+
+        //Hàm đếm ngược thời gian còn lại
+        public void CountDownTimer(float totaltime)
+        {
+            txtTime.Text = totaltime.ToString();
         }
     }
 }
