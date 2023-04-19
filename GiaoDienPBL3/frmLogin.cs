@@ -59,12 +59,7 @@ namespace LoginPage
             {
                 string AccountId = AccountBLL.Instance.GetAccountIdByUserName(txtTaiKhoan.Text);
                 KeyValuePair<string, string>? TenVaVaiTro = AccountBLL.Instance.GetTenVaVaiTro(AccountId);
-<<<<<<< HEAD
-                if (TenVaVaiTro.Value.Value != "Quản Lý" && TenVaVaiTro.Value.Value != "Nhân Viên")
-=======
-                //nếu null thì khách hàng
                 if (TenVaVaiTro != null)
->>>>>>> origin/main
                 {
                     this.Hide();
                     frmMain Main = new frmMain(AccountId);

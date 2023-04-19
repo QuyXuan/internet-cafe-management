@@ -30,8 +30,6 @@ namespace GUIClient
         private void frmClient_Load(object sender, EventArgs e)
         {
             KeyValuePair<string, string>? TenVaVaiTro = AccountBLL.Instance.GetTenVaVaiTro(AccountId);
-            lblTenKhachHang.Text = TenVaVaiTro.Value.Key;
-            lblLoaiKhachHang.Text = TenVaVaiTro.Value.Value;
             AddUserControlOnBackGround(myUC_TrangChuKhachHang);
         }
         private void imgbtnThoat_Click(object sender, EventArgs e)

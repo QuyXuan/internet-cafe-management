@@ -118,3 +118,11 @@ C:\Users\ADMIN\source\repos\pbl03quy\DAL\obj\Debug\DAL.Migrations.updatedb19.res
 C:\Users\ADMIN\source\repos\pbl03quy\DAL\obj\Debug\DAL.Migrations.updatedb20.resources
 C:\Users\ADMIN\source\repos\pbl03quy\DAL\obj\Debug\DAL.Migrations.updatedb21.resources
 >>>>>>> origin/main
+E:\LEARN\PBL3\PBL3myCODE\DemoPBL03_GUI\DemoPBL03_GUI\DAL\obj\Debug\DAL.Migrations.updatedb131.resources
+E:\LEARN\PBL3\PBL3myCODE\DemoPBL03_GUI\DemoPBL03_GUI\DAL\obj\Debug\DAL.Migrations.updatedb15.resources
+E:\LEARN\PBL3\PBL3myCODE\DemoPBL03_GUI\DemoPBL03_GUI\DAL\obj\Debug\DAL.Migrations.updatedb16.resources
+E:\LEARN\PBL3\PBL3myCODE\DemoPBL03_GUI\DemoPBL03_GUI\DAL\obj\Debug\DAL.Migrations.updatedb17.resources
+E:\LEARN\PBL3\PBL3myCODE\DemoPBL03_GUI\DemoPBL03_GUI\DAL\obj\Debug\DAL.Migrations.updatedb18.resources
+E:\LEARN\PBL3\PBL3myCODE\DemoPBL03_GUI\DemoPBL03_GUI\DAL\obj\Debug\DAL.Migrations.updatedb19.resources
+E:\LEARN\PBL3\PBL3myCODE\DemoPBL03_GUI\DemoPBL03_GUI\DAL\obj\Debug\DAL.Migrations.updatedb20.resources
+E:\LEARN\PBL3\PBL3myCODE\DemoPBL03_GUI\DemoPBL03_GUI\DAL\obj\Debug\DAL.Migrations.updatedb21.resources
