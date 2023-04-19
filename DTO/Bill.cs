@@ -24,13 +24,13 @@ namespace DTO
         [ForeignKey("EmployeeId")]
         public virtual Employee Employee { get; set; }
 
-        [StringLength(10)]
-        [Column(TypeName = "varchar")]
-        public string DiscountId { get; set; }
-        [ForeignKey("DiscountId")]
-        public virtual Discount Discount { get; set; }
+        //[StringLength(10)]
+        //[Column(TypeName = "varchar")]
+        //public string DiscountId { get; set; }
+        //[ForeignKey("DiscountId")]
+        //public virtual Discount Discount { get; set; }
 
-        public Nullable<float> DiscountPercent { get; set; }
+        //public Nullable<float> DiscountPercent { get; set; }
 
         public Nullable<float> Total { get; set; }
 
@@ -43,7 +43,8 @@ namespace DTO
 
         public virtual ICollection<BillProduct> Products { get; set; }
 
-        public Nullable<float> Quantity { get; set; }
+        public virtual ICollection<BillDiscount> Discounts { get; set; }
+        //public Nullable<float> Quantity { get; set; }
 
         [StringLength(10)]
         [Column(TypeName = "varchar")]

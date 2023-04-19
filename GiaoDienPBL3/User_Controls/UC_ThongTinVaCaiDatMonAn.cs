@@ -1,4 +1,4 @@
-﻿using BLL;
+using BLL;
 using DTO;
 using GiaoDienPBL3.UC;
 using Guna.UI2.WinForms;
@@ -106,26 +106,26 @@ namespace GiaoDienPBL3.User_Controls
         }
         private void HuyOKClick(object sender, EventArgs e)
         {
-            Guna2Button btn = sender as Guna2Button;
-            if (btn.Name == "btnOK")
-            {
-                if (lastButton.Name == "btnThem")
-                {
-                    AddMonAn(SetMonAn());
-                }
-            }
-            SetAllButtonEnableAndInvisible();
-            SetEnableComboboxAndTextBox(false);
+            //Guna2Button btn = sender as Guna2Button;
+            //if (btn.Name == "btnOK")
+            //{
+            //    if (lastButton.Name == "btnThem")
+            //    {
+            //        AddMonAn(SetMonAn());
+            //    }
+            //}
+            //SetAllButtonEnableAndInvisible();
+            //SetEnableComboboxAndTextBox(false);
         }
-        private void AddMonAn(MonAn monAn)
-        {
-            UC_MonAn my_UCMonAn = new UC_MonAn();
-            my_UCMonAn.TextGiaMonAn = string.Format("{0:N3}VNĐ", monAn.Gia);
-            my_UCMonAn.TextTenMonAn = monAn.TenMonAn;
-            my_UCMonAn.ImagePanel = GetAnhByPathAnhMon(monAn.PathAnhMon);
-            my_UCMonAn.Tag = monAn;
-            frmMain.myUC_QuanLyMenu.panelMonAn.Controls.Add(my_UCMonAn);
-        }
+        //private void AddMonAn(MonAn monAn)
+        //{
+        //    UC_MonAn my_UCMonAn = new UC_MonAn();
+        //    my_UCMonAn.TextGiaMonAn = string.Format("{0:N3}VNĐ", monAn.Gia);
+        //    my_UCMonAn.TextTenMonAn = monAn.TenMonAn;
+        //    my_UCMonAn.ImagePanel = GetAnhByPathAnhMon(monAn.PathAnhMon);
+        //    my_UCMonAn.Tag = monAn;
+        //    frmMain.myUC_QuanLyMenu.panelMonAn.Controls.Add(my_UCMonAn);
+        //}
         private Image GetAnhByPathAnhMon(string path)
         {
             try
@@ -133,7 +133,7 @@ namespace GiaoDienPBL3.User_Controls
                 Image image = Image.FromFile(path);
                 return image;
             }
-            catch(FileNotFoundException)
+            catch (FileNotFoundException)
             {
                 return null;
             }
@@ -150,16 +150,16 @@ namespace GiaoDienPBL3.User_Controls
             }
             return null;
         }
-        private MonAn SetMonAn()
-        {
-            MonAn monAn = new MonAn();
-            monAn.MaMonAn = txtMaMon.Text.Trim();
-            monAn.TenMonAn = txtTenMon.Text.Trim();
-            monAn.Gia = Convert.ToInt32(txtGia.Text);
-            monAn.Loai = cboLoai.SelectedItem.ToString();
-            monAn.PathAnhMon = txtPath.Text.Trim();
-            return monAn;
-        }
+        //private MonAn SetMonAn()
+        //{
+        //    MonAn monAn = new MonAn();
+        //    monAn.MaMonAn = txtMaMon.Text.Trim();
+        //    monAn.TenMonAn = txtTenMon.Text.Trim();
+        //    monAn.Gia = Convert.ToInt32(txtGia.Text);
+        //    monAn.Loai = cboLoai.SelectedItem.ToString();
+        //    monAn.PathAnhMon = txtPath.Text.Trim();
+        //    return monAn;
+        //}
 
         private void btnThemAnh_Click(object sender, EventArgs e)
         {

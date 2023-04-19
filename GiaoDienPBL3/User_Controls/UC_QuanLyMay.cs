@@ -98,6 +98,7 @@ namespace GiaoDienPBL3.UC
         }
         private void btnCaiDat_Click(object sender, EventArgs e)
         {
+            my_UCThongTinVaCaiDatMay = new UC_ThongTinVaCaiDatMay();
             if (checkBtnCaiDat == false)
             {
                 panelChiTietQuanLyMay.SendToBack();

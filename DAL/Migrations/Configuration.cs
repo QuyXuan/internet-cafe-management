@@ -26,6 +26,7 @@
             CreateProducts(context);
             CreateTypeComputers(context);
             CreateComputers(context);
+            CreateBills(context);
         }
         private void CreateAccounts(DAL.QLNETDBContext context)
         {
@@ -65,16 +66,38 @@
         {
             var customers = new List<Customer>
             {
-                new Customer {CustomerId = "kh0001", CustomerName = "Bùi Thị Duyên", Balance = 0, TypeCustomer = false, AccountId = "acc0008", TotalTime = 60, DiscountId = "gg0002"},
-                new Customer {CustomerId = "kh0002", CustomerName = "Ngô Thành Nam", Balance = 0, TypeCustomer = false, AccountId = "acc0009", TotalTime = 60, DiscountId = "gg0002"},
-                new Customer {CustomerId = "kh0003", CustomerName = "Đỗ Văn Đức", Balance = 0, TypeCustomer = false, AccountId = "acc0010", TotalTime = 60, DiscountId = "gg0002"},
-                new Customer {CustomerId = "kh0004", CustomerName = "Đặng Bá Cường", Balance = 0, TypeCustomer = false, AccountId = "acc0011", TotalTime = 60, DiscountId = "gg0002"},
-                new Customer {CustomerId = "kh0005", CustomerName = "Phạm Tuấn Anh", Balance = 0, TypeCustomer = false, AccountId = "acc0012", TotalTime = 60, DiscountId = "gg0002"},
-                new Customer {CustomerId = "kh0006", CustomerName = "Vũ Anh Ninh", Balance = 0, TypeCustomer = false, AccountId = "acc0013", TotalTime = 60, DiscountId = "gg0002"},
-                new Customer {CustomerId = "kh0007", CustomerName = "Đào Văn Thanh", Balance = 0, TypeCustomer = false, AccountId = "acc0014", TotalTime = 60, DiscountId = "gg0002"},
-                new Customer {CustomerId = "kh0008", CustomerName = "Lưu Thùy Vân", Balance = 0, TypeCustomer = false, AccountId = "acc0015", TotalTime = 60, DiscountId = "gg0002"},
-                new Customer {CustomerId = "kh0009", CustomerName = "Trương Thành Long", Balance = 0, TypeCustomer = false, AccountId = "acc0016", TotalTime = 60, DiscountId = "gg0002"},
-                new Customer {CustomerId = "kh0010", CustomerName = "Đinh Hoàng Vũ", Balance = 0, TypeCustomer = false, AccountId = "acc0017", TotalTime = 60, DiscountId = "gg0002"}
+                #region Danh Sách Khách Hàng
+                new Customer {CustomerId = "kh0001", CustomerName = "Bùi Thị Duyên", Balance = 0, TypeCustomer = false, AccountId = "acc0008", TotalTime = 60},
+                new Customer {CustomerId = "kh0002", CustomerName = "Ngô Thành Nam", Balance = 0, TypeCustomer = false, AccountId = "acc0009", TotalTime = 60},
+                new Customer {CustomerId = "kh0003", CustomerName = "Đỗ Văn Đức", Balance = 0, TypeCustomer = false, AccountId = "acc0010", TotalTime = 60},
+                new Customer {CustomerId = "kh0004", CustomerName = "Đặng Bá Cường", Balance = 0, TypeCustomer = false, AccountId = "acc0011", TotalTime = 60},
+                new Customer {CustomerId = "kh0005", CustomerName = "Phạm Tuấn Anh", Balance = 0, TypeCustomer = false, AccountId = "acc0012", TotalTime = 60},
+                new Customer {CustomerId = "kh0006", CustomerName = "Vũ Anh Ninh", Balance = 0, TypeCustomer = false, AccountId = "acc0013", TotalTime = 60},
+                new Customer {CustomerId = "kh0007", CustomerName = "Đào Văn Thanh", Balance = 0, TypeCustomer = false, AccountId = "acc0014", TotalTime = 60},
+                new Customer {CustomerId = "kh0008", CustomerName = "Lưu Thùy Vân", Balance = 0, TypeCustomer = false, AccountId = "acc0015", TotalTime = 60},
+                new Customer {CustomerId = "kh0009", CustomerName = "Trương Thành Long", Balance = 0, TypeCustomer = false, AccountId = "acc0016", TotalTime = 60},
+                new Customer {CustomerId = "kh0010", CustomerName = "Đinh Hoàng Vũ", Balance = 0, TypeCustomer = false, AccountId = "acc0017", TotalTime = 60},
+                new Customer {CustomerId = "kh0011", CustomerName = "Trần Thị Mai", Balance = 0, TypeCustomer = false, AccountId = "acc0008", TotalTime = 60},
+                new Customer {CustomerId = "kh0012", CustomerName = "Hà Thị Băng", Balance = 0, TypeCustomer = false, AccountId = "acc0009", TotalTime = 60},
+                new Customer {CustomerId = "kh0013", CustomerName = "Lưu Bảo Ngọc", Balance = 0, TypeCustomer = false, AccountId = "acc0010", TotalTime = 60},
+                new Customer {CustomerId = "kh0014", CustomerName = "Ngô Quang Chuyên", Balance = 0, TypeCustomer = false, AccountId = "acc0011", TotalTime = 60},
+                new Customer {CustomerId = "kh0015", CustomerName = "Văn Thị Minh", Balance = 0, TypeCustomer = false, AccountId = "acc0012", TotalTime = 60},
+                new Customer {CustomerId = "kh0016", CustomerName = "Hoàng Thị Đoan", Balance = 0, TypeCustomer = false, AccountId = "acc0013", TotalTime = 60},
+                new Customer {CustomerId = "kh0017", CustomerName = "Trịnh Ngọc Đức", Balance = 0, TypeCustomer = false, AccountId = "acc0014", TotalTime = 60},
+                new Customer {CustomerId = "kh0018", CustomerName = "Trần Văn Giang", Balance = 0, TypeCustomer = false, AccountId = "acc0015", TotalTime = 60},
+                new Customer {CustomerId = "kh0019", CustomerName = "Nguyễn Quang Hiếu", Balance = 0, TypeCustomer = false, AccountId = "acc0016", TotalTime = 60},
+                new Customer {CustomerId = "kh0020", CustomerName = "Trần Thị Hoa", Balance = 0, TypeCustomer = false, AccountId = "acc0017", TotalTime = 60},
+                new Customer {CustomerId = "kh0021", CustomerName = "Đặng Thị Huyền", Balance = 0, TypeCustomer = false, AccountId = "acc0008", TotalTime = 60},
+                new Customer {CustomerId = "kh0022", CustomerName = "Nguyễn Văn Kiên", Balance = 0, TypeCustomer = false, AccountId = "acc0009", TotalTime = 60},
+                new Customer {CustomerId = "kh0023", CustomerName = "Lưu Thị Lan", Balance = 0, TypeCustomer = false, AccountId = "acc0010", TotalTime = 60},
+                new Customer {CustomerId = "kh0024", CustomerName = "Đinh Thị Liên", Balance = 0, TypeCustomer = false, AccountId = "acc0011", TotalTime = 60},
+                new Customer {CustomerId = "kh0025", CustomerName = "Nguyễn Xuân Mẫn", Balance = 0, TypeCustomer = false, AccountId = "acc0012", TotalTime = 60},
+                new Customer {CustomerId = "kh0026", CustomerName = "Trần Đắc Dũng", Balance = 0, TypeCustomer = false, AccountId = "acc0013", TotalTime = 60},
+                new Customer {CustomerId = "kh0027", CustomerName = "Võ Văn Quốc", Balance = 0, TypeCustomer = false, AccountId = "acc0014", TotalTime = 60},
+                new Customer {CustomerId = "kh0028", CustomerName = "Nguyễn Đình Ánh", Balance = 0, TypeCustomer = false, AccountId = "acc0015", TotalTime = 60},
+                new Customer {CustomerId = "kh0029", CustomerName = "Trương Quốc Hùng", Balance = 0, TypeCustomer = false, AccountId = "acc0016", TotalTime = 60},
+                new Customer {CustomerId = "kh0030", CustomerName = "Phan Văn Tài", Balance = 0, TypeCustomer = false, AccountId = "acc0017", TotalTime = 60}
+                #endregion
             };
             customers.ForEach(p => context.Customers.AddOrUpdate(
                 customer => customer.CustomerId,
@@ -85,7 +108,6 @@
                     Balance = p.Balance,
                     AccountId = p.AccountId,
                     TotalTime = p.TotalTime,
-                    DiscountId = p.DiscountId
                 }));
             context.SaveChanges();
         }
@@ -137,6 +159,7 @@
         {
             var computers = new List<Computer>
             {
+                #region Danh Sách Máy Tính
                 new Computer {ComputerId = "mt0001", ComputerName = "1", TypeId = "type0001", NameType = "Khách", Status = "Đang Hoạt Động"},
                 new Computer {ComputerId = "mt0002", ComputerName = "2", TypeId = "type0002", NameType = "Khách Thường Xuyên", Status = "Đang Hoạt Động"},
                 new Computer {ComputerId = "mt0003", ComputerName = "3", TypeId = "type0003", NameType = "Administrator", Status = "Đang Hoạt Động"},
@@ -146,7 +169,28 @@
                 new Computer {ComputerId = "mt0007", ComputerName = "7", TypeId = "type0001", NameType = "Khách", Status = "Bảo Trì"},
                 new Computer {ComputerId = "mt0008", ComputerName = "8", TypeId = "type0002", NameType = "Khách", Status = "Đang Hoạt Động"},
                 new Computer {ComputerId = "mt0009", ComputerName = "9", TypeId = "type0003", NameType = "Khách", Status = "Đã Tắt"},
-                new Computer {ComputerId = "mt0010", ComputerName = "10", TypeId = "type0004", NameType = "Khách", Status = "Còn 5 Phút"}
+                new Computer {ComputerId = "mt0010", ComputerName = "10", TypeId = "type0004", NameType = "Khách", Status = "Còn 5 Phút"},
+                new Computer {ComputerId = "mt0011", ComputerName = "11", TypeId = "type0001", NameType = "Khách", Status = "Đã Tắt"},
+                new Computer {ComputerId = "mt0012", ComputerName = "12", TypeId = "type0002", NameType = "Khách Thường Xuyên", Status = "Đã Tắt"},
+                new Computer {ComputerId = "mt0013", ComputerName = "13", TypeId = "type0003", NameType = "Administrator", Status = "Đã Tắt"},
+                new Computer {ComputerId = "mt0014", ComputerName = "14", TypeId = "type0004", NameType = "Nhân Viên", Status = "Đã Tắt"},
+                new Computer {ComputerId = "mt0015", ComputerName = "15", TypeId = "type0005", NameType = "Học Sinh/Sinh Viên", Status = "Đã Tắt"},
+                new Computer {ComputerId = "mt0016", ComputerName = "16", TypeId = "type0006", NameType = "Khách Trả Sau", Status = "Đã Tắt"},
+                new Computer {ComputerId = "mt0017", ComputerName = "17", TypeId = "type0001", NameType = "Khách", Status = "Đã Tắt"},
+                new Computer {ComputerId = "mt0018", ComputerName = "18", TypeId = "type0002", NameType = "Khách", Status = "Đã Tắt"},
+                new Computer {ComputerId = "mt0019", ComputerName = "19", TypeId = "type0003", NameType = "Khách", Status = "Đã Tắt"},
+                new Computer {ComputerId = "mt0020", ComputerName = "20", TypeId = "type0004", NameType = "Khách", Status = "Đã Tắt"},
+                new Computer {ComputerId = "mt0021", ComputerName = "21", TypeId = "type0001", NameType = "Khách", Status = "Đã Tắt"},
+                new Computer {ComputerId = "mt0022", ComputerName = "22", TypeId = "type0002", NameType = "Khách Thường Xuyên", Status = "Đã Tắt"},
+                new Computer {ComputerId = "mt0023", ComputerName = "23", TypeId = "type0003", NameType = "Administrator", Status = "Đã Tắt"},
+                new Computer {ComputerId = "mt0024", ComputerName = "24", TypeId = "type0004", NameType = "Nhân Viên", Status = "Đã Tắt"},
+                new Computer {ComputerId = "mt0025", ComputerName = "25", TypeId = "type0005", NameType = "Học Sinh/Sinh Viên", Status = "Đã Tắt"},
+                new Computer {ComputerId = "mt0026", ComputerName = "26", TypeId = "type0006", NameType = "Khách Trả Sau", Status = "Đã Tắt"},
+                new Computer {ComputerId = "mt0027", ComputerName = "27", TypeId = "type0001", NameType = "Khách", Status = "Đã Tắt"},
+                new Computer {ComputerId = "mt0028", ComputerName = "28", TypeId = "type0002", NameType = "Khách", Status = "Đã Tắt"},
+                new Computer {ComputerId = "mt0029", ComputerName = "29", TypeId = "type0003", NameType = "Khách", Status = "Đã Tắt"},
+                new Computer {ComputerId = "mt0030", ComputerName = "30", TypeId = "type0004", NameType = "Khách", Status = "Đã Tắt"}
+                #endregion
             };
             computers.ForEach(p => context.Computers.AddOrUpdate(
                 computer => computer.ComputerId,
@@ -209,8 +253,10 @@
         {
             var discounts = new List<Discount>
             {
-                new Discount {DiscountId = "gg0001", DiscountName = "VIP", DiscountPercent = 10},
-                new Discount {DiscountId = "gg0002", DiscountName = "Thường", DiscountPercent = 0}
+                new Discount {DiscountId = "gg0001", DiscountName = "Khách Thường Không Giảm Giá", DiscountPercent = 0, TypeCustomer = false},
+                new Discount {DiscountId = "gg0002", DiscountName = "Giảm Giá Khách VIP", DiscountPercent = 10, TypeCustomer = true},
+                new Discount {DiscountId = "gg0003", DiscountName = "Giảm Giá Sự Kiện", DiscountPercent = 10, TypeCustomer = false},
+                new Discount {DiscountId = "gg0004", DiscountName = "Giảm Giá Sự Kiện Khách VIP", DiscountPercent = 5, TypeCustomer = true}
             };
             discounts.ForEach(p => context.Discounts.AddOrUpdate(
                 discount => discount.DiscountId,
@@ -218,7 +264,214 @@
                 {
                     DiscountId = p.DiscountId,
                     DiscountName = p.DiscountName,
-                    DiscountPercent = p.DiscountPercent
+                    DiscountPercent = p.DiscountPercent,
+                    TypeCustomer = p.TypeCustomer
+                }));
+            context.SaveChanges();
+        }
+        private void CreateBills(DAL.QLNETDBContext context)
+        {
+            //#region Danh Sách Giảm Giá Trong Một Hóa Đơn
+            var billDiscount1 = new List<BillDiscount>
+            {
+                new BillDiscount {BillId = "hd0001", DiscountId = "gg0001"}
+            };
+            var billDiscount2 = new List<BillDiscount>
+            {
+                new BillDiscount {BillId = "hd0002", DiscountId = "gg0001"}
+            };
+            var billDiscount3 = new List<BillDiscount>
+            {
+                new BillDiscount {BillId = "hd0003", DiscountId = "gg0001"}
+            };
+            var billDiscount4 = new List<BillDiscount>
+            {
+                new BillDiscount {BillId = "hd0004", DiscountId = "gg0001"}
+            };
+            var billDiscount5 = new List<BillDiscount>
+            {
+                new BillDiscount {BillId = "hd0005", DiscountId = "gg0001"}
+            };
+            var billDiscount6 = new List<BillDiscount>
+            {
+                new BillDiscount {BillId = "hd0006", DiscountId = "gg0001"}
+            };
+            var billDiscount7 = new List<BillDiscount>
+            {
+                new BillDiscount {BillId = "hd0007", DiscountId = "gg0001"}
+            };
+            var billDiscount8 = new List<BillDiscount>
+            {
+                new BillDiscount {BillId = "hd0008", DiscountId = "gg0001"}
+            };
+            var billDiscount9 = new List<BillDiscount>
+            {
+                new BillDiscount {BillId = "hd0009", DiscountId = "gg0001"}
+            };
+            var billDiscount10 = new List<BillDiscount>
+            {
+                new BillDiscount {BillId = "hd0010", DiscountId = "gg0001"}
+            };
+            var billDiscount11 = new List<BillDiscount>
+            {
+                new BillDiscount {BillId = "hd0011", DiscountId = "gg0001"}
+            };
+            var billDiscount12 = new List<BillDiscount>
+            {
+                new BillDiscount {BillId = "hd0012", DiscountId = "gg0001"}
+            };
+            var billDiscount13 = new List<BillDiscount>
+            {
+                new BillDiscount {BillId = "hd0013", DiscountId = "gg0001"}
+            };
+            var billDiscount14 = new List<BillDiscount>
+            {
+                new BillDiscount {BillId = "hd0014", DiscountId = "gg0001"}
+            };
+            var billDiscount15 = new List<BillDiscount>
+            {
+                new BillDiscount {BillId = "hd0015", DiscountId = "gg0001"}
+            };
+           //#endregion
+            #region Danh Sách Món Ăn Trong 1 Hóa Đơn
+            //80
+            var billProduct1 = new List<BillProduct>
+            {
+                new BillProduct { ProductId = "sp0001", BillId = "hd0001", Quantity = 2},
+                new BillProduct { ProductId = "sp0008", BillId = "hd0001", Quantity = 2},
+                new BillProduct { ProductId = "sp0009", BillId = "hd0001", Quantity = 1}
+            };
+            //75
+            var billProduct2 = new List<BillProduct>
+            {
+                new BillProduct {ProductId = "sp0002", BillId = "hd0002", Quantity = 1},
+                new BillProduct {ProductId = "sp0004", BillId = "hd0002", Quantity = 2},
+                new BillProduct {ProductId = "sp0005", BillId = "hd0002", Quantity = 1}
+            };
+            //55
+            var billProduct3 = new List<BillProduct>
+            {
+                new BillProduct {ProductId = "sp0002", BillId = "hd0003", Quantity = 1},
+                new BillProduct {ProductId = "sp0003", BillId = "hd0003", Quantity = 1},
+                new BillProduct {ProductId = "sp0005", BillId = "hd0003", Quantity = 2}
+            };
+            //75
+            var billProduct4 = new List<BillProduct>
+            {
+                new BillProduct {ProductId = "sp0003", BillId = "hd0004", Quantity = 2},
+                new BillProduct {ProductId = "sp0004", BillId = "hd0004", Quantity = 1},
+                new BillProduct {ProductId = "sp0005", BillId = "hd0004", Quantity = 1}
+            };
+            //70
+            var billProduct5 = new List<BillProduct>
+            {
+                new BillProduct {ProductId = "sp0006", BillId = "hd0005", Quantity = 1},
+                new BillProduct {ProductId = "sp0004", BillId = "hd0005", Quantity = 2},
+                new BillProduct {ProductId = "sp0005", BillId = "hd0005", Quantity = 1}
+            };
+            //55
+            var billProduct6 = new List<BillProduct>
+            {
+                new BillProduct {ProductId = "sp0002", BillId = "hd0006", Quantity = 1},
+                new BillProduct {ProductId = "sp0007", BillId = "hd0006", Quantity = 2},
+                new BillProduct {ProductId = "sp0005", BillId = "hd0006", Quantity = 2}
+            };
+            //90
+            var billProduct7 = new List<BillProduct>
+            {
+                new BillProduct {ProductId = "sp0007", BillId = "hd0007", Quantity = 2},
+                new BillProduct {ProductId = "sp0004", BillId = "hd0007", Quantity = 2},
+                new BillProduct {ProductId = "sp0001", BillId = "hd0007", Quantity = 2}
+            };
+            //90
+            var billProduct8 = new List<BillProduct>
+            {
+                new BillProduct {ProductId = "sp0002", BillId = "hd0008", Quantity = 2},
+                new BillProduct {ProductId = "sp0008", BillId = "hd0008", Quantity = 1},
+                new BillProduct {ProductId = "sp0009", BillId = "hd0008", Quantity = 2}
+            };
+            //75
+            var billProduct9 = new List<BillProduct>
+            {
+                new BillProduct {ProductId = "sp0007", BillId = "hd0009", Quantity = 1},
+                new BillProduct {ProductId = "sp0010", BillId = "hd0009", Quantity = 2},
+                new BillProduct {ProductId = "sp0011", BillId = "hd0009", Quantity = 1}
+            };
+            //65
+            var billProduct10 = new List<BillProduct>
+            {
+                new BillProduct {ProductId = "sp0006", BillId = "hd0010", Quantity = 2},
+                new BillProduct {ProductId = "sp0008", BillId = "hd0010", Quantity = 1},
+                new BillProduct {ProductId = "sp0010", BillId = "hd0010", Quantity = 1}
+            };
+            //60
+            var billProduct11 = new List<BillProduct>
+            {
+                new BillProduct {ProductId = "sp0003", BillId = "hd0011", Quantity = 1},
+                new BillProduct {ProductId = "sp0006", BillId = "hd0011", Quantity = 2},
+                new BillProduct {ProductId = "sp0007", BillId = "hd0011", Quantity = 2}
+            };
+            //110
+            var billProduct12 = new List<BillProduct>
+            {
+                new BillProduct {ProductId = "sp0004", BillId = "hd0012", Quantity = 2},
+                new BillProduct {ProductId = "sp0009", BillId = "hd0012", Quantity = 2},
+                new BillProduct {ProductId = "sp0008", BillId = "hd0012", Quantity = 1}
+            };
+            //60
+            var billProduct13 = new List<BillProduct>
+            {
+                new BillProduct {ProductId = "sp0001", BillId = "hd0013", Quantity = 1},
+                new BillProduct {ProductId = "sp0003", BillId = "hd0013", Quantity = 2},
+                new BillProduct {ProductId = "sp0005", BillId = "hd0013", Quantity = 1}
+            };
+            //65
+            var billProduct14 = new List<BillProduct>
+            {
+                new BillProduct {ProductId = "sp0002", BillId = "hd0014", Quantity = 1},
+                new BillProduct {ProductId = "sp0006", BillId = "hd0014", Quantity = 1},
+                new BillProduct {ProductId = "sp0003", BillId = "hd0014", Quantity = 2}
+            };
+            //55
+            var billProduct15 = new List<BillProduct>
+            {
+                new BillProduct {ProductId = "sp0001", BillId = "hd0015", Quantity = 2},
+                new BillProduct {ProductId = "sp0002", BillId = "hd0015", Quantity = 1},
+                new BillProduct {ProductId = "sp0003", BillId = "hd0015", Quantity = 1}
+            };
+            #endregion
+            var bills = new List<Bill>
+            {
+                new Bill{BillId = "hd0001", EmployeeId = "nv0004", Status = "Chờ Chấp Nhận", Total = 80,ComputerId = "mt0001", CustomerId = "kh0001", Date = DateTime.Now.Date.AddDays(-10), Products = billProduct1, Discounts = billDiscount1},
+                new Bill{BillId = "hd0002", EmployeeId = "nv0005", Status = "Chờ Chấp Nhận", Total = 75,ComputerId = "mt0002", CustomerId = "kh0002", Date = DateTime.Now.Date.AddDays(-11), Products = billProduct2, Discounts = billDiscount2},
+                new Bill{BillId = "hd0003", EmployeeId = "nv0006", Status = "Chờ Chấp Nhận", Total = 55,ComputerId = "mt0003", CustomerId = "kh0003", Date = DateTime.Now.Date.AddDays(-12), Products = billProduct3, Discounts = billDiscount3},
+                new Bill{BillId = "hd0004", EmployeeId = "nv0007", Status = "Chấp Nhận", Total = 75,ComputerId = "mt0004", CustomerId = "kh0004", Date = DateTime.Now.Date.AddDays(-13), Products = billProduct4, Discounts = billDiscount4},
+                new Bill{BillId = "hd0005", EmployeeId = "nv0004", Status = "Chấp Nhận", Total = 70,ComputerId = "mt0005", CustomerId = "kh0005", Date = DateTime.Now.Date.AddDays(-14), Products = billProduct5, Discounts = billDiscount5},
+                new Bill{BillId = "hd0006", EmployeeId = "nv0005", Status = "Chấp Nhận", Total = 55,ComputerId = "mt0006", CustomerId = "kh0006", Date = DateTime.Now.Date.AddDays(-15), Products = billProduct6, Discounts = billDiscount6},
+                new Bill{BillId = "hd0007", EmployeeId = "nv0006", Status = "Chấp Nhận", Total = 90,ComputerId = "mt0007", CustomerId = "kh0007", Date = DateTime.Now.Date.AddDays(-16), Products = billProduct7, Discounts = billDiscount7},
+                new Bill{BillId = "hd0008", EmployeeId = "nv0007", Status = "Chấp Nhận", Total = 90,ComputerId = "mt0008", CustomerId = "kh0008", Date = DateTime.Now.Date.AddDays(-17), Products = billProduct8, Discounts = billDiscount8},
+                new Bill{BillId = "hd0009", EmployeeId = "nv0004", Status = "Chấp Nhận", Total = 75,ComputerId = "mt0009", CustomerId = "kh0009", Date = DateTime.Now.Date.AddDays(-18), Products = billProduct9, Discounts = billDiscount9},
+                new Bill{BillId = "hd0010", EmployeeId = "nv0005", Status = "Chấp Nhận", Total = 65,ComputerId = "mt0010", CustomerId = "kh0010", Date = DateTime.Now.Date.AddDays(-19), Products = billProduct10, Discounts = billDiscount10},
+                new Bill{BillId = "hd0011", EmployeeId = "nv0006", Status = "Chấp Nhận", Total = 60,ComputerId = "mt0011", CustomerId = "kh0011", Date = DateTime.Now.Date.AddDays(-20), Products = billProduct11, Discounts = billDiscount11},
+                new Bill{BillId = "hd0012", EmployeeId = "nv0007", Status = "Chấp Nhận", Total = 110,ComputerId = "mt0012", CustomerId = "kh0012", Date = DateTime.Now.Date.AddDays(-21), Products = billProduct12, Discounts = billDiscount12},
+                new Bill{BillId = "hd0013", EmployeeId = "nv0004", Status = "Chấp Nhận", Total = 60,ComputerId = "mt0013", CustomerId = "kh0013", Date = DateTime.Now.Date.AddDays(-22), Products = billProduct13, Discounts = billDiscount13},
+                new Bill{BillId = "hd0014", EmployeeId = "nv0005", Status = "Chấp Nhận", Total = 65,ComputerId = "mt0014", CustomerId = "kh0014", Date = DateTime.Now.Date.AddDays(-23), Products = billProduct14, Discounts = billDiscount14},
+                new Bill{BillId = "hd0015", EmployeeId = "nv0006", Status = "Chấp Nhận", Total = 55,ComputerId = "mt0015", CustomerId = "kh0015", Date = DateTime.Now.Date.AddDays(-24), Products = billProduct15, Discounts = billDiscount15}
+            };
+            bills.ForEach(p => context.Bills.AddOrUpdate(
+                bill => bill.BillId,
+                new Bill
+                {
+                    BillId = p.BillId,
+                    ComputerId = p.ComputerId,
+                    CustomerId = p.CustomerId,
+                    Status = p.Status,
+                    Date = p.Date,
+                    IPClient = p.IPClient,
+                    Total = p.Total,
+                    EmployeeId = p.EmployeeId,
+                    Products = p.Products,
+                    Discounts = p.Discounts
                 }));
             context.SaveChanges();
         }

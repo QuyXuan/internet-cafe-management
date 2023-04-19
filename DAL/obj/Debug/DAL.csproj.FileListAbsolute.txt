@@ -77,6 +77,7 @@ C:\Users\ADMIN\source\repos\pbl03quy\DAL\obj\Debug\DAL.Migrations.updatedb10.res
 C:\Users\ADMIN\source\repos\pbl03quy\DAL\obj\Debug\DAL.Migrations.updatedb11.resources
 C:\Users\ADMIN\source\repos\pbl03quy\DAL\obj\Debug\DAL.Migrations.updatedb12.resources
 C:\Users\ADMIN\source\repos\pbl03quy\DAL\obj\Debug\DAL.Migrations.updatedb13.resources
+<<<<<<< HEAD
 E:\LEARN\PBL3\PBL3myCODE\DemoPBL03_GUI\DemoPBL03_GUI\DAL\bin\Debug\DAL.dll.config
 E:\LEARN\PBL3\PBL3myCODE\DemoPBL03_GUI\DemoPBL03_GUI\DAL\bin\Debug\DAL.dll
 E:\LEARN\PBL3\PBL3myCODE\DemoPBL03_GUI\DemoPBL03_GUI\DAL\bin\Debug\DAL.pdb
@@ -107,3 +108,13 @@ E:\LEARN\PBL3\PBL3myCODE\DemoPBL03_GUI\DemoPBL03_GUI\DAL\obj\Debug\DAL.csproj.Co
 E:\LEARN\PBL3\PBL3myCODE\DemoPBL03_GUI\DemoPBL03_GUI\DAL\obj\Debug\DAL.csproj.CopyComplete
 E:\LEARN\PBL3\PBL3myCODE\DemoPBL03_GUI\DemoPBL03_GUI\DAL\obj\Debug\DAL.dll
 E:\LEARN\PBL3\PBL3myCODE\DemoPBL03_GUI\DemoPBL03_GUI\DAL\obj\Debug\DAL.pdb
+=======
+C:\Users\ADMIN\source\repos\pbl03quy\DAL\obj\Debug\DAL.Migrations.updatedb131.resources
+C:\Users\ADMIN\source\repos\pbl03quy\DAL\obj\Debug\DAL.Migrations.updatedb15.resources
+C:\Users\ADMIN\source\repos\pbl03quy\DAL\obj\Debug\DAL.Migrations.updatedb16.resources
+C:\Users\ADMIN\source\repos\pbl03quy\DAL\obj\Debug\DAL.Migrations.updatedb17.resources
+C:\Users\ADMIN\source\repos\pbl03quy\DAL\obj\Debug\DAL.Migrations.updatedb18.resources
+C:\Users\ADMIN\source\repos\pbl03quy\DAL\obj\Debug\DAL.Migrations.updatedb19.resources
+C:\Users\ADMIN\source\repos\pbl03quy\DAL\obj\Debug\DAL.Migrations.updatedb20.resources
+C:\Users\ADMIN\source\repos\pbl03quy\DAL\obj\Debug\DAL.Migrations.updatedb21.resources
+>>>>>>> origin/main
