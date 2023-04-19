@@ -3,6 +3,7 @@ using DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -35,6 +36,19 @@ namespace BLL
                 }
                 var customers = context.Customers.ToList();
                 return customers;
+            }
+        }
+
+        public Customer GetCustomerByID(string AccountID)
+        {
+            using (var context = new QLNETDBContext())
+            {
+                if (context == null)
+                {
+                    return null;
+                }
+                var customer = context.Customers.FirstOrDefault(p => p.AccountId == AccountID);
+                return customer;
             }
         }
     }

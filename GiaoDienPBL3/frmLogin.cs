@@ -59,7 +59,6 @@ namespace LoginPage
             {
                 string AccountId = AccountBLL.Instance.GetAccountIdByUserName(txtTaiKhoan.Text);
                 KeyValuePair<string, string>? TenVaVaiTro = AccountBLL.Instance.GetTenVaVaiTro(AccountId);
-                //nếu null thì khách hàng
                 if (TenVaVaiTro != null)
                 {
                     this.Hide();
