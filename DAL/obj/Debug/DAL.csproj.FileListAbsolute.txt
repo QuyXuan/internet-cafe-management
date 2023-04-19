@@ -126,3 +126,4 @@ E:\LEARN\PBL3\PBL3myCODE\DemoPBL03_GUI\DemoPBL03_GUI\DAL\obj\Debug\DAL.Migration
 E:\LEARN\PBL3\PBL3myCODE\DemoPBL03_GUI\DemoPBL03_GUI\DAL\obj\Debug\DAL.Migrations.updatedb19.resources
 E:\LEARN\PBL3\PBL3myCODE\DemoPBL03_GUI\DemoPBL03_GUI\DAL\obj\Debug\DAL.Migrations.updatedb20.resources
 E:\LEARN\PBL3\PBL3myCODE\DemoPBL03_GUI\DemoPBL03_GUI\DAL\obj\Debug\DAL.Migrations.updatedb21.resources
+C:\Users\ADMIN\source\repos\pbl03quy\DAL\obj\Debug\DAL.Migrations.updatedb22.resources

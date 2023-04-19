@@ -36,5 +36,22 @@ namespace BLL
                 return computers;
             }
         }
+        //Hàm lấy ra NameType bằng TypeId
+        public string GetNameTypeByTypeId(string typeId)
+        {
+            using (var context = new QLNETDBContext())
+            {
+                if (context == null)
+                {
+                    return null;
+                }
+                var typeComputer = context.TypeComputers.FirstOrDefault(p => p.TypeId == typeId);
+                if (typeComputer == null)
+                {
+                    return null;
+                }
+                return typeComputer.NameType;
+            }
+        }
     }
 }
