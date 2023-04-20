@@ -1,6 +1,7 @@
 ﻿using BLL;
 using DTO;
 using GiaoDienPBL3.UC;
+using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -64,7 +65,32 @@ namespace GiaoDienPBL3.User_Controls
             {
                 DataGridView dgv = sender as DataGridView;
                 int RowIndex = e.RowIndex;
-                if (e.ColumnIndex == dgv.Columns["btnXem"].Index && e.RowIndex >= 0)
+                if (e.ColumnIndex == dgv.Columns["btnXem"].Index && e.RowIndex >= 0 && dgv.Name == "dgvChoXacNhan")
+                {
+                    List<ProductIdNameQuantityPrice> productList = BillBLL.Instance.GetListProductByBillId(dgv.Rows[RowIndex].Cells[0].Value.ToString());
+                    foreach (var product in productList)
+                    {
+                        UC_ChiTietMonAn myUC_ChiTietMonAn = new UC_ChiTietMonAn();
+                        myUC_ChiTietMonAn.TextGiaMonAn = string.Format("{0:N3}VNĐ", product.SellingPrice);
+                        myUC_ChiTietMonAn.TextTenMonAn = product.ProductName;
+                        myUC_ChiTietMonAn.TextSoLuongMonAn = product.Quantity.ToString();
+                        myUC_ChiTietMonAn.Width = 190;
+                        frmMain.myUC_QuanLyMenu.panelChiTietMonAn.Controls.Add(myUC_ChiTietMonAn);
+                    }
+                    //Nếu xem hóa đơn đang trong trạng thái chờ xác nhận thì sẽ mở UCMenu lên,
+                    //đầu tiên là tìm cái form frmMain sau đó tìm cái button có name == btnMenu trong form đó
+                    //xong cho thao tác click để mở form
+                    Form mainForm = Application.OpenForms.OfType<frmMain>().FirstOrDefault();
+                    if (mainForm != null)
+                    {
+                        Guna2Button button = mainForm.Controls.Find("btnMenu", true).FirstOrDefault() as Guna2Button;
+                        if (button != null)
+                        {
+                            button.PerformClick();
+                        }
+                    }
+                }
+                else if (e.ColumnIndex == dgv.Columns["btnXem"].Index && e.RowIndex >= 0)
                 {
                     txtMaHoaDon.Text = dgv.Rows[RowIndex].Cells[0].Value.ToString();
                     txtMaKhachHang.Text = dgv.Rows[RowIndex].Cells[2].Value.ToString();
