@@ -170,6 +170,7 @@ namespace GiaoDienPBL3.UC
             txtTenNhanVien.Text = "";
             txtTongGiamGia.Text = "";
             lblTongTien.Text = "0.000VNĐ";
+            btnYeuCauThanhToan.Text = "Yêu Cầu";
             panelChiTietMonAn.Controls.Clear();
         }
     }
