@@ -6,7 +6,9 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity.Core.Common.CommandTrees.ExpressionBuilder;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -41,21 +43,21 @@ namespace GiaoDienPBL3.User_Controls
             {
                 dgvTatCaHoaDon.Rows.Add(new object[]
                 {
-                    bill.BillId, bill.EmployeeId, bill.CustomerId, BillBLL.Instance.GetNumberComputerByComputerId(bill.ComputerId), bill.Date, bill.Status, string.Format("{0:N3}VNĐ", bill.Total)
+                    bill.BillId, bill.EmployeeId, bill.CustomerId, ComputerBLL.Instance.GetNumberComputerByComputerId(bill.ComputerId), bill.Date, bill.Status, string.Format("{0:N3}VNĐ", bill.Total)
                 });
             }
             foreach (Bill bill in BillBLL.Instance.GetListBillWithStatus("Chấp Nhận"))
             {
                 dgvDaXacNhan.Rows.Add(new object[]
                 {
-                    bill.BillId, bill.EmployeeId, bill.CustomerId, BillBLL.Instance.GetNumberComputerByComputerId(bill.ComputerId), bill.Date, bill.Status, string.Format("{0:N3}VNĐ", bill.Total)
+                    bill.BillId, bill.EmployeeId, bill.CustomerId, ComputerBLL.Instance.GetNumberComputerByComputerId(bill.ComputerId), bill.Date, bill.Status, string.Format("{0:N3}VNĐ", bill.Total)
                 });
             }
             foreach (Bill bill in BillBLL.Instance.GetListBillWithStatus("Chờ Chấp Nhận"))
             {
                 dgvChoXacNhan.Rows.Add(new object[]
                 {
-                    bill.BillId, bill.EmployeeId, bill.CustomerId, BillBLL.Instance.GetNumberComputerByComputerId(bill.ComputerId), bill.Date, bill.Status, string.Format("{0:N3}VNĐ", bill.Total)
+                    bill.BillId, bill.EmployeeId, bill.CustomerId, ComputerBLL.Instance.GetNumberComputerByComputerId(bill.ComputerId), bill.Date, bill.Status, string.Format("{0:N3}VNĐ", bill.Total)
                 });
             }
         }
@@ -76,7 +78,16 @@ namespace GiaoDienPBL3.User_Controls
                         myUC_ChiTietMonAn.TextSoLuongMonAn = product.Quantity.ToString();
                         myUC_ChiTietMonAn.Width = 190;
                         frmMain.myUC_QuanLyMenu.panelChiTietMonAn.Controls.Add(myUC_ChiTietMonAn);
+                        frmMain.myUC_QuanLyMenu.txtMaHoaDon.Text = dgv.Rows[RowIndex].Cells[0].Value.ToString();
+                        frmMain.myUC_QuanLyMenu.dtpNgayNhan.Value = Convert.ToDateTime(dgv.Rows[RowIndex].Cells[4].Value.ToString());
+                        frmMain.myUC_QuanLyMenu.txtMaNhanVien.Text = dgv.Rows[RowIndex].Cells[1].Value.ToString();
+                        frmMain.myUC_QuanLyMenu.txtMaKhachHang.Text = dgv.Rows[RowIndex].Cells[2].Value.ToString();
+                        frmMain.myUC_QuanLyMenu.txtSoMay.Text = dgv.Rows[RowIndex].Cells[3].Value.ToString();
+                        frmMain.myUC_QuanLyMenu.txtTenKhachHang.Text = CustomerBLL.Instance.GetNameCustomerByCustomerId(dgv.Rows[RowIndex].Cells[2].Value.ToString());
+                        frmMain.myUC_QuanLyMenu.txtTenNhanVien.Text = EmployeeBLL.Instance.GetEmployeeNameByEmployeeId(dgv.Rows[RowIndex].Cells[1].Value.ToString());
+                        frmMain.myUC_QuanLyMenu.lblTongTien.Text = dgv.Rows[RowIndex].Cells[6].Value.ToString();
                     }
+                    
                     //Nếu xem hóa đơn đang trong trạng thái chờ xác nhận thì sẽ mở UCMenu lên,
                     //đầu tiên là tìm cái form frmMain sau đó tìm cái button có name == btnMenu trong form đó
                     //xong cho thao tác click để mở form

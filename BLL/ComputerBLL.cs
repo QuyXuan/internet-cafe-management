@@ -53,5 +53,21 @@ namespace BLL
                 return typeComputer.NameType;
             }
         }
+        public string GetNumberComputerByComputerId(string computerId)
+        {
+            using (var context = new QLNETDBContext())
+            {
+                if (context == null)
+                {
+                    return null;
+                }
+                var computer = context.Computers.FirstOrDefault(p => p.ComputerId == computerId);
+                if (computer == null)
+                {
+                    return null;
+                }
+                return computer.ComputerName;
+            }
+        }
     }
 }

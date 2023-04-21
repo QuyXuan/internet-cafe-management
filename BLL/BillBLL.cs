@@ -42,22 +42,22 @@ namespace BLL
             }
         }
 
-        public string GetNumberComputerByComputerId(string computerId)
-        {
-            using (var context = new QLNETDBContext())
-            {
-                if (context == null)
-                {
-                    return null;
-                }
-                var computer = context.Computers.FirstOrDefault(p => p.ComputerId == computerId);
-                if (computer == null)
-                {
-                    return null;
-                }
-                return computer.ComputerName;
-            }
-        }
+        //public string GetNumberComputerByComputerId(string computerId)
+        //{
+        //    using (var context = new QLNETDBContext())
+        //    {
+        //        if (context == null)
+        //        {
+        //            return null;
+        //        }
+        //        var computer = context.Computers.FirstOrDefault(p => p.ComputerId == computerId);
+        //        if (computer == null)
+        //        {
+        //            return null;
+        //        }
+        //        return computer.ComputerName;
+        //    }
+        //}
 
         public List<ProductIdNameQuantityPrice> GetListProductByBillId(string billId)
         {
@@ -102,5 +102,6 @@ namespace BLL
                 return discountList;
             }
         }
+        //public float GetTotalPriceBy
     }
 }
