@@ -102,6 +102,16 @@ namespace BLL
                 return discountList;
             }
         }
-        //public float GetTotalPriceBy
+        public void SetStatusChoXacNhanToXacNhan(string billId)
+        {
+            using (var context = new QLNETDBContext())
+            {
+                if (context == null) return;
+                var bill = context.Bills.FirstOrDefault(p => p.BillId == billId);
+                if (bill == null) return;
+                bill.Status = "Chấp Nhận";
+                context.SaveChanges();
+            }
+        }
     }
 }

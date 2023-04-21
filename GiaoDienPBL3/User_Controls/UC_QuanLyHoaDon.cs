@@ -43,21 +43,21 @@ namespace GiaoDienPBL3.User_Controls
             {
                 dgvTatCaHoaDon.Rows.Add(new object[]
                 {
-                    bill.BillId, bill.EmployeeId, bill.CustomerId, ComputerBLL.Instance.GetNumberComputerByComputerId(bill.ComputerId), bill.Date, bill.Status, string.Format("{0:N3}VNĐ", bill.Total)
+                    bill.BillId, bill.EmployeeId, bill.CustomerId, ComputerBLL.Instance.GetNumberComputerByComputerId(bill.ComputerId), bill.Date, bill.Status, bill.TotalDiscountPercent + "%", string.Format("{0:N3}VNĐ", bill.Total)
                 });
             }
             foreach (Bill bill in BillBLL.Instance.GetListBillWithStatus("Chấp Nhận"))
             {
                 dgvDaXacNhan.Rows.Add(new object[]
                 {
-                    bill.BillId, bill.EmployeeId, bill.CustomerId, ComputerBLL.Instance.GetNumberComputerByComputerId(bill.ComputerId), bill.Date, bill.Status, string.Format("{0:N3}VNĐ", bill.Total)
+                    bill.BillId, bill.EmployeeId, bill.CustomerId, ComputerBLL.Instance.GetNumberComputerByComputerId(bill.ComputerId), bill.Date, bill.Status, bill.TotalDiscountPercent + "%", string.Format("{0:N3}VNĐ", bill.Total)
                 });
             }
             foreach (Bill bill in BillBLL.Instance.GetListBillWithStatus("Chờ Chấp Nhận"))
             {
                 dgvChoXacNhan.Rows.Add(new object[]
                 {
-                    bill.BillId, bill.EmployeeId, bill.CustomerId, ComputerBLL.Instance.GetNumberComputerByComputerId(bill.ComputerId), bill.Date, bill.Status, string.Format("{0:N3}VNĐ", bill.Total)
+                    bill.BillId, bill.EmployeeId, bill.CustomerId, ComputerBLL.Instance.GetNumberComputerByComputerId(bill.ComputerId), bill.Date, bill.Status, bill.TotalDiscountPercent + "%", string.Format("{0:N3}VNĐ", bill.Total)
                 });
             }
         }
@@ -77,6 +77,9 @@ namespace GiaoDienPBL3.User_Controls
                         myUC_ChiTietMonAn.TextTenMonAn = product.ProductName;
                         myUC_ChiTietMonAn.TextSoLuongMonAn = product.Quantity.ToString();
                         myUC_ChiTietMonAn.Width = 190;
+                        myUC_ChiTietMonAn.btnCongMon.Visible = false;
+                        myUC_ChiTietMonAn.btnTruMon.Visible = false;
+                        myUC_ChiTietMonAn.btnXoaMon.Visible = false;
                         frmMain.myUC_QuanLyMenu.panelChiTietMonAn.Controls.Add(myUC_ChiTietMonAn);
                         frmMain.myUC_QuanLyMenu.txtMaHoaDon.Text = dgv.Rows[RowIndex].Cells[0].Value.ToString();
                         frmMain.myUC_QuanLyMenu.dtpNgayNhan.Value = Convert.ToDateTime(dgv.Rows[RowIndex].Cells[4].Value.ToString());
@@ -85,7 +88,9 @@ namespace GiaoDienPBL3.User_Controls
                         frmMain.myUC_QuanLyMenu.txtSoMay.Text = dgv.Rows[RowIndex].Cells[3].Value.ToString();
                         frmMain.myUC_QuanLyMenu.txtTenKhachHang.Text = CustomerBLL.Instance.GetNameCustomerByCustomerId(dgv.Rows[RowIndex].Cells[2].Value.ToString());
                         frmMain.myUC_QuanLyMenu.txtTenNhanVien.Text = EmployeeBLL.Instance.GetEmployeeNameByEmployeeId(dgv.Rows[RowIndex].Cells[1].Value.ToString());
-                        frmMain.myUC_QuanLyMenu.lblTongTien.Text = dgv.Rows[RowIndex].Cells[6].Value.ToString();
+                        frmMain.myUC_QuanLyMenu.txtTongGiamGia.Text = dgv.Rows[RowIndex].Cells[6].Value.ToString();
+                        frmMain.myUC_QuanLyMenu.lblTongTien.Text = dgv.Rows[RowIndex].Cells[7].Value.ToString();
+                        frmMain.myUC_QuanLyMenu.btnYeuCauThanhToan.Text = "Thanh Toán";
                     }
                     
                     //Nếu xem hóa đơn đang trong trạng thái chờ xác nhận thì sẽ mở UCMenu lên,
@@ -109,7 +114,8 @@ namespace GiaoDienPBL3.User_Controls
                     txtNgayNhan.Text = dgv.Rows[RowIndex].Cells[4].Value.ToString();
                     txtSoMay.Text = dgv.Rows[RowIndex].Cells[3].Value.ToString();
                     txtTrangThai.Text = dgv.Rows[RowIndex].Cells[5].Value.ToString();
-                    txtTongTien.Text = dgv.Rows[RowIndex].Cells[6].Value.ToString();
+                    txtTongGiamGia.Text = dgv.Rows[RowIndex].Cells[6].Value.ToString();
+                    txtTongTien.Text = dgv.Rows[RowIndex].Cells[7].Value.ToString();
                     SetListProduct(txtMaHoaDon.Text);
                     SetListDiscount(txtMaHoaDon.Text);
                     tabHoaDon.SelectedTab = tabHoaDon.TabPages[4];
