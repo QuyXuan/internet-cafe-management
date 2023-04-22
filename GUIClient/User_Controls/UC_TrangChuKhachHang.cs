@@ -35,7 +35,7 @@ namespace GUIClient.User_Controls
             lblSoDuTaiKhoan.Text = string.Format("{0:N3}VNĐ", customer.Balance);
             txtSoGioChoiConLai.Text = customer.TotalTime.ToString();
             txtSoGioChoiConLai.Enabled = false;
-            lblTenKhachHang.Text = AccountBLL.Instance.GetAccountByID(customer.AccountId).UserName;
+            lblTenTaiKhoan.Text = AccountBLL.Instance.GetAccountByID(customer.AccountId).UserName;
         }
 
         private void btnCapNhatMatKhau_Click(object sender, EventArgs e)
