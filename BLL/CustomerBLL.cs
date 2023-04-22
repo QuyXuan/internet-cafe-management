@@ -39,7 +39,7 @@ namespace BLL
             }
         }
 
-        public Customer GetCustomerByID(string AccountID)
+        public Customer GetCustomerByAccountId(string AccountID)
         {
             using (var context = new QLNETDBContext())
             {
@@ -49,6 +49,19 @@ namespace BLL
                 }
                 var customer = context.Customers.FirstOrDefault(p => p.AccountId == AccountID);
                 return customer;
+            }
+        }
+
+        public string GetNameCustomerByCustomerId(string customerId) 
+        {
+            using (var context = new QLNETDBContext())
+            {
+                if (context == null)
+                {
+                    return null;
+                }
+                var customer = context.Customers.FirstOrDefault(p => p.CustomerId == customerId);
+                return customer.CustomerName;
             }
         }
     }

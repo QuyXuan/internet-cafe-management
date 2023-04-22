@@ -824,7 +824,6 @@
         private System.Windows.Forms.Panel panel4;
         private Guna.UI2.WinForms.Guna2Button btnQuanLyKhachHang;
         private System.Windows.Forms.Panel panelQuanLyMenu;
-        private Guna.UI2.WinForms.Guna2Button btnMenu;
         private System.Windows.Forms.Panel panel6;
         private Guna.UI2.WinForms.Guna2Button btnQuanLyMenu;
         private System.Windows.Forms.Panel panel1;
@@ -847,6 +846,7 @@
         private Guna.UI2.WinForms.Guna2Button btnKho;
         private System.Windows.Forms.Panel panel8;
         private Guna.UI2.WinForms.Guna2Button btnQuanLyKho;
+        private Guna.UI2.WinForms.Guna2Button btnMenu;
     }
 }
 

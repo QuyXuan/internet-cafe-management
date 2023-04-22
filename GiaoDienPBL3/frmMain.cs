@@ -172,6 +172,8 @@ namespace GiaoDienPBL3
 
         private void btnQuanLyHoaDon_Click(object sender, EventArgs e)
         {
+            myUC_QuanLyHoaDon.ResetData();
+            myUC_QuanLyHoaDon.SetData();
             AddUserControlOnBackGround(myUC_QuanLyHoaDon);
         }
 
