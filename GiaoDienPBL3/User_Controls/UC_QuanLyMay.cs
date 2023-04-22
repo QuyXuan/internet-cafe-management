@@ -87,7 +87,7 @@ namespace GiaoDienPBL3.UC
             my_UCChiTietMay.TextMaMay = computer.ComputerId;
             my_UCChiTietMay.TextSoMay = computer.ComputerName;
             my_UCChiTietMay.TextGiaMay = string.Format("{0:N3}VNĐ", 10);
-            my_UCChiTietMay.TextLoaiMay = ComputerBLL.Instance.GetNameTypeByTypeId(computer.TypeId);
+            my_UCChiTietMay.TextLoaiMay = ComputerBLL.Instance.GetTypeComputerByTypeId(computer.TypeId).NameType;
             my_UCChiTietMay.TextTrangThai = computer.Status;
             panelPhu.Controls.Add(my_UCChiTietMay);
             my_UCChiTietMay.Location = new Point(button.Location.X + 60, button.Location.Y + 60);

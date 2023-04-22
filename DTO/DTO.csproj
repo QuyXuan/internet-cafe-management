@@ -68,6 +68,7 @@
     <Compile Include="Reciept.cs" />
     <Compile Include="RecieptProduct.cs" />
     <Compile Include="Session.cs" />
+    <Compile Include="Time.cs" />
     <Compile Include="TypeComputer.cs" />
   </ItemGroup>
   <ItemGroup>

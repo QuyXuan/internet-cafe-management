@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panelBackGround = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnMenu = new Guna.UI2.WinForms.Guna2Button();
@@ -36,19 +37,27 @@
             this.lblLoaiKhachHang = new System.Windows.Forms.Label();
             this.lblTenKhachHang = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.guna2ControlBox3 = new Guna.UI2.WinForms.Guna2ControlBox();
+            this.btnMinisize = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.btnTrangChu = new Guna.UI2.WinForms.Guna2Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.groupBoxTimer = new System.Windows.Forms.GroupBox();
+            this.lblSec = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.lblMin = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.lblHr = new System.Windows.Forms.Label();
             this.panelSideBar = new System.Windows.Forms.Panel();
             this.imgbtnThoat = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.txtTime = new Guna.UI2.WinForms.Guna2TextBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
             this.panel5.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.groupBoxTimer.SuspendLayout();
             this.panelSideBar.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -153,8 +162,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.Control;
-            this.panel3.Controls.Add(this.txtTime);
-            this.panel3.Controls.Add(this.guna2ControlBox3);
+            this.panel3.Controls.Add(this.btnMinisize);
             this.panel3.Controls.Add(this.lblLoaiKhachHang);
             this.panel3.Controls.Add(this.lblTenKhachHang);
             this.panel3.Controls.Add(this.guna2CirclePictureBox1);
@@ -164,17 +172,17 @@
             this.panel3.Size = new System.Drawing.Size(1179, 98);
             this.panel3.TabIndex = 8;
             // 
-            // guna2ControlBox3
+            // btnMinisize
             // 
-            this.guna2ControlBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2ControlBox3.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox;
-            this.guna2ControlBox3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2ControlBox3.FillColor = System.Drawing.Color.Gray;
-            this.guna2ControlBox3.IconColor = System.Drawing.Color.White;
-            this.guna2ControlBox3.Location = new System.Drawing.Point(1099, 0);
-            this.guna2ControlBox3.Name = "guna2ControlBox3";
-            this.guna2ControlBox3.Size = new System.Drawing.Size(80, 23);
-            this.guna2ControlBox3.TabIndex = 6;
+            this.btnMinisize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMinisize.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox;
+            this.btnMinisize.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMinisize.FillColor = System.Drawing.Color.Gray;
+            this.btnMinisize.IconColor = System.Drawing.Color.White;
+            this.btnMinisize.Location = new System.Drawing.Point(1099, 0);
+            this.btnMinisize.Name = "btnMinisize";
+            this.btnMinisize.Size = new System.Drawing.Size(80, 23);
+            this.btnMinisize.TabIndex = 6;
             // 
             // guna2CirclePictureBox1
             // 
@@ -226,11 +234,80 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.Control;
+            this.panel2.Controls.Add(this.groupBoxTimer);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(283, 98);
             this.panel2.TabIndex = 2;
+            // 
+            // groupBoxTimer
+            // 
+            this.groupBoxTimer.Controls.Add(this.lblSec);
+            this.groupBoxTimer.Controls.Add(this.label10);
+            this.groupBoxTimer.Controls.Add(this.lblMin);
+            this.groupBoxTimer.Controls.Add(this.label8);
+            this.groupBoxTimer.Controls.Add(this.lblHr);
+            this.groupBoxTimer.Location = new System.Drawing.Point(3, 12);
+            this.groupBoxTimer.Name = "groupBoxTimer";
+            this.groupBoxTimer.Size = new System.Drawing.Size(277, 72);
+            this.groupBoxTimer.TabIndex = 7;
+            this.groupBoxTimer.TabStop = false;
+            // 
+            // lblSec
+            // 
+            this.lblSec.AutoSize = true;
+            this.lblSec.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSec.Location = new System.Drawing.Point(218, 24);
+            this.lblSec.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblSec.Name = "lblSec";
+            this.lblSec.Size = new System.Drawing.Size(62, 42);
+            this.lblSec.TabIndex = 16;
+            this.lblSec.Text = "00";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(184, 22);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(29, 42);
+            this.label10.TabIndex = 15;
+            this.label10.Text = ":";
+            // 
+            // lblMin
+            // 
+            this.lblMin.AutoSize = true;
+            this.lblMin.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMin.Location = new System.Drawing.Point(114, 24);
+            this.lblMin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblMin.Name = "lblMin";
+            this.lblMin.Size = new System.Drawing.Size(62, 42);
+            this.lblMin.TabIndex = 14;
+            this.lblMin.Text = "00";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(77, 22);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(29, 42);
+            this.label8.TabIndex = 13;
+            this.label8.Text = ":";
+            // 
+            // lblHr
+            // 
+            this.lblHr.AutoSize = true;
+            this.lblHr.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHr.Location = new System.Drawing.Point(7, 24);
+            this.lblHr.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblHr.Name = "lblHr";
+            this.lblHr.Size = new System.Drawing.Size(62, 42);
+            this.lblHr.TabIndex = 12;
+            this.lblHr.Text = "00";
             // 
             // panelSideBar
             // 
@@ -263,27 +340,10 @@
             this.imgbtnThoat.TabIndex = 3;
             this.imgbtnThoat.Click += new System.EventHandler(this.imgbtnThoat_Click);
             // 
-            // txtTime
+            // timer1
             // 
-            this.txtTime.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.txtTime.BorderColor = System.Drawing.Color.Cyan;
-            this.txtTime.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtTime.DefaultText = "";
-            this.txtTime.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtTime.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtTime.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtTime.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtTime.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTime.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtTime.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTime.Location = new System.Drawing.Point(6, 34);
-            this.txtTime.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtTime.Name = "txtTime";
-            this.txtTime.PasswordChar = '\0';
-            this.txtTime.PlaceholderText = "";
-            this.txtTime.SelectedText = "";
-            this.txtTime.Size = new System.Drawing.Size(157, 38);
-            this.txtTime.TabIndex = 7;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // frmClient
             // 
@@ -305,6 +365,9 @@
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
             this.panel5.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.groupBoxTimer.ResumeLayout(false);
+            this.groupBoxTimer.PerformLayout();
             this.panelSideBar.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -320,14 +383,20 @@
         private System.Windows.Forms.Label lblLoaiKhachHang;
         private System.Windows.Forms.Label lblTenKhachHang;
         private System.Windows.Forms.Panel panel3;
-        private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox3;
+        private Guna.UI2.WinForms.Guna2ControlBox btnMinisize;
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
         private System.Windows.Forms.Panel panel5;
         private Guna.UI2.WinForms.Guna2Button btnTrangChu;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panelSideBar;
         private Guna.UI2.WinForms.Guna2ImageButton imgbtnThoat;
-        private Guna.UI2.WinForms.Guna2TextBox txtTime;
+        private System.Windows.Forms.GroupBox groupBoxTimer;
+        private System.Windows.Forms.Label lblSec;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label lblMin;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblHr;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 
