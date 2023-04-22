@@ -65,6 +65,10 @@ namespace BLL
                     return null;
                 }
                 var computer = context.Computers.FirstOrDefault(p => p.IPComputer == IP);
+<<<<<<< HEAD
+=======
+
+>>>>>>> aeae4fca473fc8667969f5ea7e4328d8bb08e518
                 if (computer == null)
                 {
                     return null;

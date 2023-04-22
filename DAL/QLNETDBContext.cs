@@ -59,6 +59,20 @@ namespace DAL
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<BillDiscount>().HasKey(p => new
+            {
+                p.DiscountId,
+                p.BillId
+            });
+            modelBuilder.Entity<BillDiscount>()
+                .HasRequired(p => p.Discount)
+                .WithMany(p => p.Bills)
+                .HasForeignKey(p => p.DiscountId);
+            modelBuilder.Entity<BillDiscount>()
+                .HasRequired(p => p.Bill)
+                .WithMany(p => p.Discounts)
+                .HasForeignKey(p => p.BillId);
+
             modelBuilder.Entity<BillProduct>().HasKey(p => new
             {
                 p.ProductId,
@@ -86,20 +100,6 @@ namespace DAL
                 .HasRequired(p => p.Reciept)
                 .WithMany(p => p.Products)
                 .HasForeignKey(p => p.RecieptId);
-
-            modelBuilder.Entity<BillDiscount>().HasKey(p => new
-            {
-                p.DiscountId,
-                p.BillId
-            });
-            modelBuilder.Entity<BillDiscount>()
-                .HasRequired(p => p.Discount)
-                .WithMany(p => p.Bills)
-                .HasForeignKey(p => p.DiscountId);
-            modelBuilder.Entity<BillDiscount>()
-                .HasRequired(p => p.Bill)
-                .WithMany(p => p.Discounts)
-                .HasForeignKey(p => p.BillId);
         }
     }
 }
