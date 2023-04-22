@@ -43,21 +43,21 @@ namespace GiaoDienPBL3.User_Controls
             {
                 dgvTatCaHoaDon.Rows.Add(new object[]
                 {
-                    bill.BillId, bill.EmployeeId, bill.CustomerId, ComputerBLL.Instance.GetNumberComputerByComputerId(bill.ComputerId), bill.Date, bill.Status, bill.TotalDiscountPercent + "%", string.Format("{0:N3}VNĐ", bill.Total)
+                    bill.BillId, bill.EmployeeId, bill.CustomerId, ComputerBLL.Instance.GetComputerByIP(bill.ComputerId).ComputerId, bill.Date, bill.Status, bill.TotalDiscountPercent + "%", string.Format("{0:N3}VNĐ", bill.Total)
                 });
             }
             foreach (Bill bill in BillBLL.Instance.GetListBillWithStatus("Chấp Nhận"))
             {
                 dgvDaXacNhan.Rows.Add(new object[]
                 {
-                    bill.BillId, bill.EmployeeId, bill.CustomerId, ComputerBLL.Instance.GetNumberComputerByComputerId(bill.ComputerId), bill.Date, bill.Status, bill.TotalDiscountPercent + "%", string.Format("{0:N3}VNĐ", bill.Total)
+                    bill.BillId, bill.EmployeeId, bill.CustomerId, ComputerBLL.Instance.GetComputerByIP(bill.ComputerId).ComputerId, bill.Date, bill.Status, bill.TotalDiscountPercent + "%", string.Format("{0:N3}VNĐ", bill.Total)
                 });
             }
             foreach (Bill bill in BillBLL.Instance.GetListBillWithStatus("Chờ Chấp Nhận"))
             {
                 dgvChoXacNhan.Rows.Add(new object[]
                 {
-                    bill.BillId, bill.EmployeeId, bill.CustomerId, ComputerBLL.Instance.GetNumberComputerByComputerId(bill.ComputerId), bill.Date, bill.Status, bill.TotalDiscountPercent + "%", string.Format("{0:N3}VNĐ", bill.Total)
+                    bill.BillId, bill.EmployeeId, bill.CustomerId, ComputerBLL.Instance.GetComputerByIP(bill.ComputerId).ComputerId, bill.Date, bill.Status, bill.TotalDiscountPercent + "%", string.Format("{0:N3}VNĐ", bill.Total)
                 });
             }
         }

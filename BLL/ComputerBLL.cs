@@ -55,12 +55,8 @@ namespace BLL
                 return typeComputer;
             }
         }
-<<<<<<< HEAD
         //Hàm lấy ra Computer bằng IP
         public Computer GetComputerByIP(string IP)
-=======
-        public string GetNumberComputerByComputerId(string computerId)
->>>>>>> origin/main
         {
             using (var context = new QLNETDBContext())
             {
@@ -68,16 +64,12 @@ namespace BLL
                 {
                     return null;
                 }
-<<<<<<< HEAD
                 var computer = context.Computers.FirstOrDefault(p => p.IPComputer == IP);
-=======
-                var computer = context.Computers.FirstOrDefault(p => p.ComputerId == computerId);
->>>>>>> origin/main
+
                 if (computer == null)
                 {
                     return null;
                 }
-<<<<<<< HEAD
                 return computer;
             }
         }
@@ -100,10 +92,5 @@ namespace BLL
             }
             return output;
         }
-=======
-                return computer.ComputerName;
-            }
-        }
->>>>>>> origin/main
     }
 }

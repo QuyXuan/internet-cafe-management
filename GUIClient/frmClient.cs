@@ -36,7 +36,7 @@ namespace GUIClient
         {
             
             InitializeComponent();
-            customer = CustomerBLL.Instance.GetCustomerByID(accountId);
+            customer = CustomerBLL.Instance.GetCustomerByAccountId(accountId);
             myUC_TrangChuKhachHang = new UC_TrangChuKhachHang(customer);
             IPComputer = ComputerBLL.Instance.GetLocalIPv4(NetworkInterfaceType.Wireless80211);
             if (string.IsNullOrEmpty(IPComputer))
