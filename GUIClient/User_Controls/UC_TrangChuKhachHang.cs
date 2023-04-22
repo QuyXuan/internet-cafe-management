@@ -29,9 +29,12 @@ namespace GUIClient.User_Controls
         public void setThongTinCaNhan(Customer customer)
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
             Customer customer = CustomerBLL.Instance.GetCustomerByAccountId(AccountID);
 >>>>>>> a5d95e68c4157f25b0b0177beb333a88787bf1f0
+=======
+>>>>>>> db4cf27b471460c2d841536b31bffcb5acc0f1ff
             lblMaKhachHang.Text = customer.CustomerId;
             lblTenKhachHang.Text = customer.CustomerName;
             if (customer.TypeCustomer) lblLoaiTaiKhoan.Text = "Khách Hàng VIP";
