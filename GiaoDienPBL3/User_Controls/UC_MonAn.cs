@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.UI.Design;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
@@ -70,6 +71,11 @@ namespace GiaoDienPBL3.UC
 
         private void picMonAn_Click(object sender, EventArgs e)
         {
+            if (CheckUCMenuFromUcHoaDon())
+            {
+                MessageBox.Show("Bạn Không Thể Thay Đổi Món Ăn Trong Hóa Đơn Này", "Thông Báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                return;
+            }
             if (lblGiaMonAn.Text == lblTenMonAn.Text)
             {
                 if (panelBackGroundMonAn.BackColor == Color.Transparent)
@@ -89,7 +95,18 @@ namespace GiaoDienPBL3.UC
             ThemChiTietMonAnVaoFlowLayoutPanel();
             HienThiVaTinhTongTien();
         }
-
+        private bool CheckUCMenuFromUcHoaDon()
+        {
+            foreach (Control control in frmMain.myUC_QuanLyMenu.panelChiTietMonAn.Controls)
+            {
+                UC_ChiTietMonAn myUC_ChiTietMonAn = control as UC_ChiTietMonAn;
+                if (myUC_ChiTietMonAn != null && myUC_ChiTietMonAn.btnXoaMon.Visible == false)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
         private void msDaHetMon_Click(object sender, EventArgs e)
         {
             picMonAn.Controls.Add(panelHetMon);
