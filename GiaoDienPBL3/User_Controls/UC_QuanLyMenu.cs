@@ -150,7 +150,7 @@ namespace GiaoDienPBL3.UC
                 if (button.Text == "Thanh Toán")
                 {
                     string MaHoaDon = txtMaHoaDon.Text;
-                    //BillBLL.Instance.SetStatusChoXacNhanToXacNhan(MaHoaDon);
+                    BillBLL.Instance.SetStatusChoXacNhanToXacNhan(MaHoaDon);
                     MessageBox.Show("Thanh Toán Thành Công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ResetUCQuanLyMenu();
                 }

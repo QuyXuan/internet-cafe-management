@@ -22,7 +22,7 @@ namespace GiaoDienPBL3.User_Controls
         {
             InitializeComponent();
             AddColumnButton();
-            SetData();
+            //SetData();
         }
         private void AddColumnButton()
         {
@@ -37,7 +37,7 @@ namespace GiaoDienPBL3.User_Controls
             dgvChoXacNhan.Columns.Add(buttonXem.Clone() as DataGridViewButtonColumn);
             dgvDaHuy.Columns.Add(buttonXem.Clone() as DataGridViewButtonColumn);
         }
-        private void SetData()
+        public void SetData()
         {
             foreach (Bill bill in BillBLL.Instance.GetListBillWithStatus())
             {
@@ -61,6 +61,24 @@ namespace GiaoDienPBL3.User_Controls
                 });
             }
         }
+        public void ResetData()
+        {
+            dgvTatCaHoaDon.SuspendLayout();
+            dgvDaXacNhan.SuspendLayout();
+            dgvChoXacNhan.SuspendLayout();
+            dgvDaHuy.SuspendLayout();
+
+            dgvTatCaHoaDon.Rows.Clear();
+            dgvDaXacNhan.Rows.Clear();
+            dgvChoXacNhan.Rows.Clear();
+            dgvDaHuy.Rows.Clear();
+
+            dgvTatCaHoaDon.ResumeLayout();
+            dgvDaXacNhan.ResumeLayout();
+            dgvChoXacNhan.ResumeLayout();
+            dgvDaHuy.ResumeLayout();
+        }
+
         private void dgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -126,14 +144,6 @@ namespace GiaoDienPBL3.User_Controls
                 return;
             }
         }
-
-        //private void tabHoaDon_Selecting(object sender, TabControlCancelEventArgs e)
-        //{
-        //    if (e.TabPage == tabThongTinHoaDon)
-        //    {
-        //        e.Cancel = true;
-        //    }
-        //}
         private void SetListProduct(string billId)
         {
             panelDanhSachMonAn.Controls.Clear();
