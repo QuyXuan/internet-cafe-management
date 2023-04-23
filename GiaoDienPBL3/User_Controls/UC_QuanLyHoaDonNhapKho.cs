@@ -100,6 +100,7 @@ namespace GiaoDienPBL3.User_Controls
                     "mdh" + random.Next(0, 100), "nv" + random.Next(0, 100), "QuyXuan", DateTime.Now.ToString("dd/MM/yyyy"), random.Next(0, 100) + "%", random.Next(1, 999) + ".000VNĐ"
                 });
             }
+            dgvHoaDonNhap.ClearSelection();
         }
         private void btnThem_Click(object sender, EventArgs e)
         {
@@ -220,7 +221,7 @@ namespace GiaoDienPBL3.User_Controls
             txtMaNhanVien.Text = Row.Cells["MaNhanVien"].Value.ToString();
             txtNhaCungCap.Text = Row.Cells["NhaCungCap"].Value.ToString();
             dtpNgayNhan.Value = DateTime.ParseExact(Row.Cells["NgayNhan"].Value.ToString(), "dd/MM/yyyy", CultureInfo.InvariantCulture);
-            txtGiamGia.Text = Row.Cells["ChietKhau"].Value.ToString();
+            txtGiamGia.Text = Row.Cells["GiamGia"].Value.ToString();
             txtTongTien.Text = Row.Cells["TongTien"].Value.ToString();
             if (Row.Tag == null)
             {
