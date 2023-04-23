@@ -341,7 +341,7 @@
         }
         private void CreateTypeComputers(DAL.QLNETDBContext context)
         {
-            #region Danh Sách Loại Máy Tính
+            #region Danh Sách Các Loại Máy Tính
             var typecomputers = new List<TypeComputer>
             {
                 new TypeComputer {TypeId = "type0001", NameType = "Máy Thường", Price = 8},
