@@ -42,5 +42,48 @@ namespace BLL
                 return products;
             }
         }
+        public List<string> GetListNameProduct()
+        {
+            using (var context = new QLNETDBContext())
+            {
+                if (context == null)
+                {
+                    return null;
+                }
+                var products = context.Products.Select(p => p.ProductName).ToList();
+                if (products == null) return null;
+                return products;
+            }
+        }
+        public Product GetProductByProductName(string productName)
+        {
+            using (var context = new QLNETDBContext())
+            {
+                if (context == null)
+                {
+                    return null;
+                }
+                var product = context.Products.FirstOrDefault(p => p.ProductName == productName);
+                if (product == null) return null;
+                return product;
+            }
+        }
+        public string SetRandomProductId()
+        {
+            using (var context = new QLNETDBContext())
+            {
+                if (context == null)
+                {
+                    return null;
+                }
+                Random random = new Random();
+                string productId = "sp" + random.Next(0, 1000).ToString().PadLeft(4, '0');
+                while (context.Products.Any(p => p.ProductId == productId))
+                {
+                    productId = "sp" + random.Next(0, 1000);
+                }
+                return productId;
+            }
+        }
     }
 }

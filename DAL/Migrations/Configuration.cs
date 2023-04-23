@@ -439,6 +439,7 @@
                     Stock = p.Stock,
                     Discription = p.Discription,
                     ImageFilePath = p.ImageFilePath,
+                    CostPrice = p.CostPrice
                 }));
             context.SaveChanges();
         }

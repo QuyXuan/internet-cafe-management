@@ -1,4 +1,5 @@
-﻿using DTO;
+﻿using BLL;
+using DTO;
 using GiaoDienPBL3.UC;
 using Guna.UI2.WinForms;
 using System;
@@ -13,7 +14,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 //using Utilities.BunifuTextBox.Transitions;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskBand;
+//using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskBand;
 
 namespace GiaoDienPBL3.User_Controls
 {
@@ -39,7 +40,7 @@ namespace GiaoDienPBL3.User_Controls
                 my_UCChiTietMonAn.btnTruMon.Visible = false;
                 int ThanhTien = Convert.ToInt32(txtSoLuong.Text) * Convert.ToInt32((txtGiaGoc.Text.Substring(0, txtGiaGoc.Text.Length - 4).Replace(",", "")));
                 my_UCChiTietMonAn.TextGiaMonAn = string.Format("{0:N3}VNĐ", ThanhTien);
-                my_UCChiTietMonAn.TextTenMonAn = txtTenHangHoa.Text;
+                my_UCChiTietMonAn.TextTenMonAn = cboTenHangHoa.Text;
                 my_UCChiTietMonAn.TextSoLuongMonAn = txtSoLuong.Text;
                 my_UCChiTietMonAn.Size = new Size(300, 56);
                 listUCThongTinHangHoa.Add(my_UCChiTietMonAn);
@@ -47,16 +48,17 @@ namespace GiaoDienPBL3.User_Controls
                 //panelHoaDon.Controls.SetChildIndex(my_UCChiTietMonAn, 1);
                 int TongTien = Convert.ToInt32(lblTongTien.Text.Substring(0, lblTongTien.Text.Length - 7).Replace(",", "")) + ThanhTien;
                 lblTongTien.Text = string.Format("{0:N3}VNĐ", TongTien);
-                HangHoa hangHoa = new HangHoa(txtMaHangHoa.Text, txtTenHangHoa.Text, Convert.ToInt32(txtSoLuong.Text), cboLoai.Text, my_UCChiTietMonAn.TextGiaMonAn);
+                HangHoa hangHoa = new HangHoa(txtMaHangHoa.Text, cboTenHangHoa.Text, Convert.ToInt32(txtSoLuong.Text), cboLoai.Text, my_UCChiTietMonAn.TextGiaMonAn);
                 my_UCChiTietMonAn.Tag = hangHoa;
             }
             txtMaHangHoa.Text = "";
-            txtTenHangHoa.Text = "";
+            cboTenHangHoa.SelectedIndex = -1;
             txtSoLuong.Text = "";
             txtGiaGoc.Text = "";
             txtTongTien.Text = "";
             cboLoai.SelectedIndex = -1;
             panelChiTietHangNhap.Visible = false;
+            SetEnableTextBoxAndCombobox2(false);
         }
         private bool CheckValid()
         {
@@ -65,7 +67,7 @@ namespace GiaoDienPBL3.User_Controls
                 MessageBox.Show("Mã Hóa Đơn Không Được Để Trống", "Cảnh Báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
                 return false;
             }
-            else if (txtTenHangHoa.Text == "")
+            else if (cboTenHangHoa.Text == "")
             {
                 MessageBox.Show("Tên Món Không Được Để Trống", "Cảnh Báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
                 return false;
@@ -75,7 +77,7 @@ namespace GiaoDienPBL3.User_Controls
                 MessageBox.Show("Số Lượng Phải Là Một Số Nguyên", "Cảnh Báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
                 return false;
             }
-            else if((txtGiaGoc.Text.Length < 4) || txtGiaGoc.Text.Substring(txtGiaGoc.Text.Length - 4) != ".000")
+            else if ((txtGiaGoc.Text.Length < 4) || txtGiaGoc.Text.Substring(txtGiaGoc.Text.Length - 4) != ".000")
             {
                 MessageBox.Show("Bạn Phải Nhập Theo Định Dạng #,###.000" + Environment.NewLine + "Ví Dụ: 20.000 / 1,000.000", "Cảnh Báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
                 return false;
@@ -89,15 +91,11 @@ namespace GiaoDienPBL3.User_Controls
         }
         private void SetData()
         {
-            txtMaHoaDon.Text = "mdh" + random.Next(0, 100);
-            txtMaNhanVien.Text = "nv" + random.Next(0, 100);
-            txtTenNhanVien.Text = "Quy";
-            txtGiamGia.Text = "0%";
-            for (int i = 0; i < 50; i++)
+            foreach (Reciept reciept in RecieptBLL.Instance.GetListReciept())
             {
                 dgvHoaDonNhap.Rows.Add(new object[]
                 {
-                    "mdh" + random.Next(0, 100), "nv" + random.Next(0, 100), "QuyXuan", DateTime.Now.ToString("dd/MM/yyyy"), random.Next(0, 100) + "%", random.Next(1, 999) + ".000VNĐ"
+                    reciept.RecieptId, reciept.EmployeeId, reciept.Manufacturer, reciept.Date.Value.ToString("dd/MM/yyyy"), reciept.Discount + "%", string.Format("{0:N3}VNĐ", reciept.TotalBill)
                 });
             }
             dgvHoaDonNhap.ClearSelection();
@@ -106,7 +104,6 @@ namespace GiaoDienPBL3.User_Controls
         {
             panelChiTietHangNhap.Visible = true;
             panelHoaDon.Controls.SetChildIndex(panelChiTietHangNhap, panelHoaDon.Controls.Count - 1);
-            //panelChiTietHangNhap.Size.Width = panelHoaDon.Size.Width - 2;
             txtNhaCungCap.Enabled = true;
             txtGiamGia.Enabled = true;
             dtpNgayNhan.Enabled = true;
@@ -182,6 +179,33 @@ namespace GiaoDienPBL3.User_Controls
             SetEnableComboboxAndTextBox(false);
         }
 
+        private void btnThemHangCuMoi_Click(object sender, EventArgs e)
+        {
+            SetEnableTextBoxAndCombobox2(true);
+            Guna2Button button = sender as Guna2Button;
+            if (button.Name == "btnThemHangCu")
+            {
+                txtMaHangHoa.ReadOnly = true;
+                txtGiaGoc.ReadOnly = true;
+                cboLoai.Enabled = true;
+                cboTenHangHoa.Enabled = true;
+                txtSoLuong.Enabled = true;
+                cboTenHangHoa.DataSource = ProductBLL.Instance.GetListNameProduct();
+            }
+            else
+            {
+                txtMaHangHoa.ReadOnly = true;
+                txtMaHangHoa.Text = ProductBLL.Instance.SetRandomProductId();
+            }
+        }
+        private void SetEnableTextBoxAndCombobox2(bool status)
+        {
+            txtMaHangHoa.Enabled = status;
+            cboTenHangHoa.Enabled = status;
+            cboLoai.Enabled = status;
+            txtSoLuong.Enabled = status;
+            txtGiaGoc.Enabled = status;
+        }
         private void btnThemChiTietHangNhap_Click(object sender, EventArgs e)
         {
             if (listUCThongTinHangHoa.Count == 0) return;
@@ -212,13 +236,13 @@ namespace GiaoDienPBL3.User_Controls
             listUCThongTinHangHoa.Clear();
             lblTongTien.Text = "0.000VNĐ";
         }
-
         private void dgvHoaDonNhap_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex == -1) return;
             DataGridViewRow Row = dgvHoaDonNhap.SelectedRows[0];
             txtMaHoaDon.Text = Row.Cells["MaHoaDon"].Value.ToString();
             txtMaNhanVien.Text = Row.Cells["MaNhanVien"].Value.ToString();
+            txtTenNhanVien.Text = EmployeeBLL.Instance.GetEmployeeNameByEmployeeId(txtMaNhanVien.Text);
             txtNhaCungCap.Text = Row.Cells["NhaCungCap"].Value.ToString();
             dtpNgayNhan.Value = DateTime.ParseExact(Row.Cells["NgayNhan"].Value.ToString(), "dd/MM/yyyy", CultureInfo.InvariantCulture);
             txtGiamGia.Text = Row.Cells["GiamGia"].Value.ToString();
@@ -239,6 +263,22 @@ namespace GiaoDienPBL3.User_Controls
                 item.SubItems.Add(hangHoa.Loai);
                 lvThongTinHangHoa.Items.Add(item);
             }
+        }
+
+        private void cboTenHangHoa_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboTenHangHoa.SelectedIndex == -1) return;
+            Product product = ProductBLL.Instance.GetProductByProductName(cboTenHangHoa.SelectedItem.ToString());
+            txtGiaGoc.Text = string.Format("{0:N3}", product.CostPrice);
+            if (product.Type == "Đồ Ăn")
+            {
+                cboLoai.SelectedIndex = 0;
+            }
+            else
+            {
+                cboLoai.SelectedIndex = 1;
+            }
+            txtMaHangHoa.Text = product.ProductId;
         }
     }
 }
