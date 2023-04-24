@@ -19,12 +19,13 @@ namespace GUIClient.User_Controls
     {
         private Computer computer;
         private TypeComputer typeComputer;
-        private Customer customer;
-        public UC_NapGioChoi(Computer computer, TypeComputer typeComputer)
+        public delegate void SendBalance(double Balance);
+        public SendBalance sendBalance;
+        public UC_NapGioChoi()
         {
             InitializeComponent();
-            this.computer = computer;
-            this.typeComputer = typeComputer;
+            this.computer = frmClient.computer;
+            this.typeComputer = frmClient.typeComputer;
             SetForm();
         }
         
@@ -57,9 +58,27 @@ namespace GUIClient.User_Controls
 
         }
 
-        private void guna2Button1_Click(object sender, EventArgs e)
+        private void btnXacNhan_Click(object sender, EventArgs e)
         {
-
+            if (Convert.ToDouble(frmClient.customer.Balance) >= Convert.ToDouble(lblSoTienMuonNap.Text.Split('V')[0]))
+            {
+                frmClient.myUC_DongHo.UpdateTime(float.Parse(lblQuyDoiThanhGioChoi.Text));
+                double CurrentBalance = Convert.ToDouble(frmClient.customer.Balance) - Convert.ToDouble(lblSoTienMuonNap.Text.Split('V')[0]);
+                CustomerBLL.Instance.SetBalance(CurrentBalance, frmClient.customer.CustomerId);
+                sendBalance(CurrentBalance);
+            }
+            else ShowThongBao("Số Dư Không Đủ");
+        }
+        //Hàm hiển thị thông báo hết tiền
+        public async void ShowThongBao(string thongbao)
+        {
+            lblThongBao.Visible = true;
+            lblThongBao.Text = thongbao;
+            while (lblThongBao.Visible)
+            {
+                await Task.Delay(3000);
+                lblThongBao.Visible = false;
+            }
         }
     }
 }

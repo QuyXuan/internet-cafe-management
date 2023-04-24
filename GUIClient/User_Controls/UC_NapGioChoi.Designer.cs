@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -36,9 +37,10 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.guna2GroupBox4 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.btnXacNhan = new Guna.UI2.WinForms.Guna2Button();
             this.lblTongTien = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.lblThongBao = new System.Windows.Forms.Label();
             this.lblQuyDoiThanhGioChoi = new System.Windows.Forms.Label();
             this.lblSoTienMuonNap = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -61,6 +63,7 @@
             this.lblSoMay = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2CustomGradientPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.guna2GroupBox4.SuspendLayout();
@@ -119,7 +122,7 @@
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.guna2Button1);
+            this.panel4.Controls.Add(this.btnXacNhan);
             this.panel4.Controls.Add(this.lblTongTien);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(0, 277);
@@ -127,22 +130,22 @@
             this.panel4.Size = new System.Drawing.Size(812, 76);
             this.panel4.TabIndex = 9;
             // 
-            // guna2Button1
+            // btnXacNhan
             // 
-            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Location = new System.Drawing.Point(489, 0);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(323, 76);
-            this.guna2Button1.TabIndex = 1;
-            this.guna2Button1.Text = "Xác Nhận Nạp Giờ";
-            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
+            this.btnXacNhan.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnXacNhan.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnXacNhan.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnXacNhan.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnXacNhan.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnXacNhan.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnXacNhan.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXacNhan.ForeColor = System.Drawing.Color.White;
+            this.btnXacNhan.Location = new System.Drawing.Point(489, 0);
+            this.btnXacNhan.Name = "btnXacNhan";
+            this.btnXacNhan.Size = new System.Drawing.Size(323, 76);
+            this.btnXacNhan.TabIndex = 1;
+            this.btnXacNhan.Text = "Xác Nhận Nạp Giờ";
+            this.btnXacNhan.Click += new System.EventHandler(this.btnXacNhan_Click);
             // 
             // lblTongTien
             // 
@@ -157,6 +160,7 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.lblThongBao);
             this.panel3.Controls.Add(this.lblQuyDoiThanhGioChoi);
             this.panel3.Controls.Add(this.lblSoTienMuonNap);
             this.panel3.Controls.Add(this.label10);
@@ -167,12 +171,26 @@
             this.panel3.Size = new System.Drawing.Size(812, 237);
             this.panel3.TabIndex = 8;
             // 
+            // lblThongBao
+            // 
+            this.lblThongBao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.lblThongBao.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblThongBao.ForeColor = System.Drawing.Color.Red;
+            this.lblThongBao.Location = new System.Drawing.Point(352, 0);
+            this.lblThongBao.Name = "lblThongBao";
+            this.lblThongBao.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lblThongBao.Size = new System.Drawing.Size(315, 66);
+            this.lblThongBao.TabIndex = 13;
+            this.lblThongBao.Text = "ThongBao";
+            this.lblThongBao.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblThongBao.Visible = false;
+            // 
             // lblQuyDoiThanhGioChoi
             // 
             this.lblQuyDoiThanhGioChoi.BackColor = System.Drawing.Color.DimGray;
             this.lblQuyDoiThanhGioChoi.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblQuyDoiThanhGioChoi.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lblQuyDoiThanhGioChoi.Location = new System.Drawing.Point(293, 156);
+            this.lblQuyDoiThanhGioChoi.Location = new System.Drawing.Point(293, 174);
             this.lblQuyDoiThanhGioChoi.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
             this.lblQuyDoiThanhGioChoi.Name = "lblQuyDoiThanhGioChoi";
             this.lblQuyDoiThanhGioChoi.Size = new System.Drawing.Size(432, 41);
@@ -185,7 +203,7 @@
             this.lblSoTienMuonNap.BackColor = System.Drawing.Color.DimGray;
             this.lblSoTienMuonNap.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSoTienMuonNap.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lblSoTienMuonNap.Location = new System.Drawing.Point(293, 68);
+            this.lblSoTienMuonNap.Location = new System.Drawing.Point(293, 90);
             this.lblSoTienMuonNap.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
             this.lblSoTienMuonNap.Name = "lblSoTienMuonNap";
             this.lblSoTienMuonNap.Size = new System.Drawing.Size(432, 41);
@@ -197,7 +215,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(87, 173);
+            this.label10.Location = new System.Drawing.Point(87, 183);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(184, 20);
             this.label10.TabIndex = 8;
@@ -207,7 +225,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(87, 77);
+            this.label9.Location = new System.Drawing.Point(87, 100);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(146, 20);
             this.label9.TabIndex = 9;
@@ -551,6 +569,11 @@
             this.label1.Text = "Nạp Giờ Chơi";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // guna2Elipse1
+            // 
+            this.guna2Elipse1.BorderRadius = 20;
+            this.guna2Elipse1.TargetControl = this.lblThongBao;
+            // 
             // UC_NapGioChoi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -582,7 +605,7 @@
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox4;
         private System.Windows.Forms.Panel panel4;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2Button btnXacNhan;
         private System.Windows.Forms.Label lblTongTien;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label lblQuyDoiThanhGioChoi;
@@ -605,5 +628,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblSoMay;
         private System.Windows.Forms.DataGridView dgvGiaMay;
+        private System.Windows.Forms.Label lblThongBao;
+        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
     }
 }

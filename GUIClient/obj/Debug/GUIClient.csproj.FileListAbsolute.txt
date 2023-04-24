@@ -68,3 +68,5 @@ E:\LEARN\PBL3\PBL3myCODE\DemoPBL03_GUI\DemoPBL03_GUI\GUIClient\obj\Debug\GUIClie
 E:\LEARN\PBL3\PBL3myCODE\DemoPBL03_GUI\DemoPBL03_GUI\GUIClient\obj\Debug\GUIClient.csproj.CopyComplete
 E:\LEARN\PBL3\PBL3myCODE\DemoPBL03_GUI\DemoPBL03_GUI\GUIClient\obj\Debug\GUIClient.exe
 E:\LEARN\PBL3\PBL3myCODE\DemoPBL03_GUI\DemoPBL03_GUI\GUIClient\obj\Debug\GUIClient.pdb
+E:\LEARN\PBL3\PBL3myCODE\DemoPBL03_GUI\DemoPBL03_GUI\GUIClient\obj\Debug\GUIClient.User_Controls.UC_DongHo.resources
+E:\LEARN\PBL3\PBL3myCODE\DemoPBL03_GUI\DemoPBL03_GUI\GUIClient\obj\Debug\GUIClient.frmDongHo.resources

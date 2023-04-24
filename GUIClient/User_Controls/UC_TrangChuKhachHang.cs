@@ -15,41 +15,41 @@ namespace GUIClient.User_Controls
 {
     public partial class UC_TrangChuKhachHang : UserControl
     {
-        private Customer customer;
         public UC_ChiTietMonAn my_UCChiTietMonAn;
         //private bool checkBtnXacNhan = false;
-        public UC_TrangChuKhachHang(Customer customer)
+        public UC_TrangChuKhachHang()
         {
             InitializeComponent();
-            this.customer = customer;
-            setThongTinCaNhan(customer);
+            setThongTinCaNhan(frmClient.customer);
+            SetThongTinGiamGia(frmClient.customer);
             lblThongBao.Visible = false;
         }
 
         public void setThongTinCaNhan(Customer customer)
         {
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-            Customer customer = CustomerBLL.Instance.GetCustomerByAccountId(AccountID);
->>>>>>> a5d95e68c4157f25b0b0177beb333a88787bf1f0
-=======
->>>>>>> db4cf27b471460c2d841536b31bffcb5acc0f1ff
             lblMaKhachHang.Text = customer.CustomerId;
             lblTenKhachHang.Text = customer.CustomerName;
             if (customer.TypeCustomer) lblLoaiTaiKhoan.Text = "Khách Hàng VIP";
             else lblLoaiTaiKhoan.Text = "Khách Hàng Thường";
             lblSoDuTaiKhoan.Text = string.Format("{0:N3}VNĐ", customer.Balance);
-            txtSoGioChoiConLai.Text = customer.TotalTime.ToString();
-            txtSoGioChoiConLai.Enabled = false;
             lblTenTaiKhoan.Text = AccountBLL.Instance.GetAccountByID(customer.AccountId).UserName;
+        }
+
+        public void SetThongTinGiamGia(Customer customer)
+        {
+            dgvGiamGia.DataSource = DiscountBLL.Instance.GetListBillWithType(customer.TypeCustomer);
+            dgvGiamGia.Columns[0].Visible = false;
+            dgvGiamGia.Columns[1].HeaderText = "Tên giảm giá";
+            dgvGiamGia.Columns[2].HeaderText = "Phần trăm";
+            dgvGiamGia.Columns[3].Visible = false;
+            dgvGiamGia.Columns[4].Visible = false;
         }
 
         private void btnCapNhatMatKhau_Click(object sender, EventArgs e)
         {
             if (txtMatKhauCu.Text != string.Empty && txtMatKhauMoi.Text != string.Empty && txtXacNhanMatKhau.Text != string.Empty)
             {
-                string message = AccountBLL.Instance.CheckDoiMatKhau(customer.AccountId, txtMatKhauCu.Text, txtMatKhauMoi.Text, txtXacNhanMatKhau.Text);
+                string message = AccountBLL.Instance.CheckDoiMatKhau(frmClient.customer.AccountId, txtMatKhauCu.Text, txtMatKhauMoi.Text, txtXacNhanMatKhau.Text);
                 if (message == null)
                 {
                     ShowThongBao("Thành Công");

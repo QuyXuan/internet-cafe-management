@@ -69,7 +69,7 @@ namespace GiaoDienPBL3.UC
             my_UCMonAn.Tag = product;
             //if (checkFormAdminOrClient == true)
             //{
-
+             
             //}
             frmMain.myUC_QuanLyMenu.panelMonAn.Controls.Add(my_UCMonAn);
         }

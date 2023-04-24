@@ -41,6 +41,21 @@ namespace BLL
             }
         }
 
+        //Hàm tính thời gian của người chơi về lại máy thường
+        public float ChangeTimeToMayThuong(float TotalTime, string NameType)
+        {
+            using (var context = new QLNETDBContext())
+            {
+                if (context == null)
+                {
+                    return 0;
+                }
+                var MayThuong = context.TypeComputers.FirstOrDefault(p => p.NameType == "Máy Thường");
+                var MayHienTai = context.TypeComputers.FirstOrDefault(p => p.NameType == NameType);
+                return (float)(TotalTime * (MayHienTai.Price / MayThuong.Price));
+            }
+        }
+
         //Hàm quy đổi tiền ra thời gian
         public float ChangeMoneyToTime(double Money, string NameType)
         {
@@ -62,8 +77,18 @@ namespace BLL
             Time time = new Time();
             time.hour = (int)(toataltime / 60);
             time.minute = (int)(toataltime - time.hour * 60);
-            time.second = 0;
+            time.second = (int)((toataltime - time.hour * 60 - time.minute) * 60);
             return time;
+        }
+
+        //Hàm chuyển giờ,phút sang totalTime
+        public float TranferTotalTime(Time time)
+        {
+            float totaltime = 0;
+            totaltime += time.hour * 60;
+            totaltime += time.minute;
+            totaltime += (float)time.second / 60;
+            return totaltime;
         }
 
         //Hàm tính thời gian
@@ -102,5 +127,13 @@ namespace BLL
                 return false;
             }
         }
+
+        //Hàm cộng thời gian
+        public Time SumTime(float CurrentTime, float UpdateTime)
+        {
+            float ToatalTime = CurrentTime + UpdateTime;
+            return TranferTime(ToatalTime);
+        }
+
     }
 }

@@ -20,49 +20,41 @@ namespace GUIClient
 {
     public partial class frmClient : Form
     {
-        [DllImport("user32.dll")]
-        private static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
-        private const int SW_RESTORE = 9;
-
-        private string IPComputer;
-        private Computer computer;
-        private TypeComputer typeComputer;
-        private Customer customer;
-        private Time time;
+        private string accountId;
+        public static Computer computer;
+        public static TypeComputer typeComputer;
+        public static Customer customer;
         public static UC_TrangChuKhachHang myUC_TrangChuKhachHang;
-        //public static UC_QuanLyMenu myUC_QuanLyMenu = new UC_QuanLyMenu();
         public static UC_NapGioChoi myUC_NapGioChoi;
-        public frmClient(string accountId)
+        public static UC_DongHo myUC_DongHo;
+        public static frmDongHo DongHo;
+        public frmClient(string accountId, Computer computer)
         {
-            
             InitializeComponent();
+            this.accountId = accountId;
+            frmClient.computer = computer;
             customer = CustomerBLL.Instance.GetCustomerByAccountId(accountId);
-            myUC_TrangChuKhachHang = new UC_TrangChuKhachHang(customer);
-            IPComputer = ComputerBLL.Instance.GetLocalIPv4(NetworkInterfaceType.Wireless80211);
-            if (string.IsNullOrEmpty(IPComputer))
-            {
-                IPComputer = ComputerBLL.Instance.GetLocalIPv4(NetworkInterfaceType.Ethernet);
-            }
-            computer = ComputerBLL.Instance.GetComputerByIP(IPComputer);
+            myUC_TrangChuKhachHang = new UC_TrangChuKhachHang();
             typeComputer = ComputerBLL.Instance.GetTypeComputerByTypeId(computer.TypeId);
-            myUC_NapGioChoi = new UC_NapGioChoi(computer, typeComputer);
-            float changtime = TimerBLL.Instance.ChangeTime((float)customer.TotalTime, typeComputer.NameType);
-            time = TimerBLL.Instance.TranferTime(changtime);
+            myUC_NapGioChoi = new UC_NapGioChoi();
+            myUC_NapGioChoi.sendBalance += new UC_NapGioChoi.SendBalance(SetBalance);
+            myUC_DongHo = new UC_DongHo(this.Handle);
+            myUC_DongHo.checkaccess += new UC_DongHo.CheckAccess(CheckAccess);
         }
         private void frmClient_Load(object sender, EventArgs e)
         {
             AddUserControlOnBackGround(myUC_TrangChuKhachHang);
+            SetDongHo();
             lblTenKhachHang.Text = customer.CustomerName;
             if (customer.TypeCustomer) lblLoaiKhachHang.Text = "Khách Hàng VIP";
             else lblLoaiKhachHang.Text = "Khách Hàng Thường";
-            lblHr.Text = time.hour.ToString();
-            lblMin.Text = time.minute.ToString();
-            lblSec.Text = time.second.ToString();
-            timer1.Enabled = true;
+            SetBalance((float)customer.Balance);
+            CheckAccess(myUC_DongHo.getCurrentTime());
         }
         private void imgbtnThoat_Click(object sender, EventArgs e)
         {
             frmLoginClient frmLoginClient = new frmLoginClient();
+            CustomerBLL.Instance.SetTotalTime(myUC_DongHo.getCurrentTime(), customer.CustomerId, typeComputer.NameType);
             frmLoginClient.Show();
             Dispose();
         }
@@ -105,27 +97,65 @@ namespace GUIClient
             userControl.Dock = DockStyle.Fill;
         }
 
-        //Hàm đếm ngược thời gian còn lại
-        private void timer1_Tick(object sender, EventArgs e)
+        public void SetDongHo()
         {
-            Time time = new Time(Convert.ToInt32(lblHr.Text), Convert.ToInt32(lblMin.Text), Convert.ToInt32(lblSec.Text)); 
-            if ((time.hour == 0) && (time.minute == 0) && (time.second == 0))
+            panelDongHo.Controls.Clear();
+            panelDongHo.Controls.Add(myUC_DongHo);
+        }
+
+        private void btnMinisize_Click(object sender, EventArgs e)
+        {
+            DongHo = new frmDongHo(this.Handle);
+            DongHo.Show();
+        }
+
+        //Hàm Set Số dư
+        public void SetBalance(double balance)
+        {
+            lblSoDu.Text = string.Format("{0:N3}VNĐ", balance);
+            customer = CustomerBLL.Instance.GetCustomerByAccountId(accountId);
+            myUC_TrangChuKhachHang.setThongTinCaNhan(customer);
+        }
+
+        //Hàm kiểm tra khả năng truy cập vào máy
+        public void CheckAccess(Time time)
+        {
+            if(time.hour == 0 && time.minute == 0 && time.second == 0)
             {
-                timer1.Enabled = false;
-                Console.Beep();
-                // Lấy handle của cửa sổ muốn hiển thị lại
-                IntPtr hWnd = this.Handle;
-                // Hiển thị lại cửa sổ
-                ShowWindow(hWnd, SW_RESTORE);
-                //btnMinisize.Visible = false;
+               btnMinisize.Visible = false;
             }
             else
             {
-                time = TimerBLL.Instance.timertick(time.hour,time.minute,time.second);
-                lblHr.Text = time.hour.ToString();
-                lblMin.Text = time.minute.ToString();
-                lblSec.Text = time.second.ToString();
+                btnMinisize.Visible = true;
             }
+        }
+        //Hàm tránh tắt chương trình
+        protected override bool ProcessDialogKey(Keys keyData)
+        {
+            switch (keyData)
+            {
+
+                case Keys.Control:
+                    {
+                        return true;
+                    }
+
+                case Keys.Alt | Keys.F4:
+                    {
+                        return true;
+                    }
+
+                case Keys.Alt | Keys.Control | Keys.Delete:
+                    {
+                        return true;
+                    }
+
+                case Keys.Control | Keys.Q:
+                    {
+                        return true;
+                    }
+            }
+            return base.ProcessDialogKey(keyData);
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using BLL;
+using DTO;
 using GiaoDienPBL3;
 using System;
 using System.Collections.Generic;
@@ -6,6 +7,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,13 +20,6 @@ namespace GUIClient
         public frmLoginClient()
         {
             InitializeComponent();
-            //this.CausesValidation = false;
-            //this.StartPosition = FormStartPosition.Manual;
-            //this.WindowState = FormWindowState.Maximized;
-            //this.MaximizeBox = false;
-            //this.MinimizeBox = false;
-            //this.ShowInTaskbar = false;
-            this.TopMost = true;
             timer1.Enabled = true;
         }
         private void txtMatKhau_TextChanged(object sender, EventArgs e)
@@ -63,18 +58,23 @@ namespace GUIClient
         {
             if (TimerBLL.Instance.hasInternetAccess())
             {
-                if (AccountBLL.Instance.CheckDangNhap(txtTaiKhoan.Text, txtMatKhau.Text))
+                Computer computer = ComputerBLL.Instance.GetComputerByIP();
+                if (computer != null)
                 {
-                    string AccountId = AccountBLL.Instance.GetAccountIdByUserName(txtTaiKhoan.Text);
-                    KeyValuePair<string, string>? TenVaVaiTro = AccountBLL.Instance.GetTenVaVaiTro(AccountId);
-                    if (TenVaVaiTro == null)
+                    if (AccountBLL.Instance.CheckDangNhap(txtTaiKhoan.Text, txtMatKhau.Text))
                     {
-                        this.Hide();
-                        frmClient Client = new frmClient(AccountId);
-                        Client.ShowDialog();
+                        string AccountId = AccountBLL.Instance.GetAccountIdByUserName(txtTaiKhoan.Text);
+                        KeyValuePair<string, string>? TenVaVaiTro = AccountBLL.Instance.GetTenVaVaiTro(AccountId);
+                        if (TenVaVaiTro == null)
+                        {
+                            this.Hide();
+                            frmClient Client = new frmClient(AccountId, computer);
+                            Client.ShowDialog();
+                        }
                     }
+                    ShowThongBao("Tên Tài Khoản Hoặc Mật Khẩu Sai" + Environment.NewLine + "VUI LÒNG NHẬP LẠI!!!");
                 }
-                ShowThongBao("Tên Tài Khoản Hoặc Mật Khẩu Sai" + Environment.NewLine + "VUI LÒNG NHẬP LẠI!!!");
+                else ShowThongBao("Máy không nằm trong hệ thống" + Environment.NewLine + "VUI LÒNG THIẾT KIỂM TRA LẠI!!!");
             }
             else ShowThongBao("Mất kết nối" + Environment.NewLine + "VUI LÒNG KẾT NỐI MẠNG!!!");
         }
