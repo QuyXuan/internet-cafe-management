@@ -51,6 +51,7 @@ namespace GUIClient.User_Controls
                 Console.Beep();
                 if(frmClient.DongHo != null)
                 {
+                    //MessageBox.Show("Vô rồi");
                     closedongho();
                 }
             }

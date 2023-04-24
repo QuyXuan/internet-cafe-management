@@ -30,7 +30,6 @@ namespace GUIClient
 
         private void btnMinisize_Click(object sender, EventArgs e)
         {
-            frmClient.myUC_DongHo.SetDiChuyen(false);
             CloseDongHo();
         }
 
@@ -71,6 +70,7 @@ namespace GUIClient
                 Panel panel = frmclient.Controls.Find("panelDongHo", true).FirstOrDefault() as Panel;
                 if (panel != null)
                 {
+                    frmClient.myUC_DongHo.SetDiChuyen(false);
                     panel.Controls.Add(frmClient.myUC_DongHo);
                 }
             }
