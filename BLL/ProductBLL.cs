@@ -2,6 +2,7 @@
 using DTO;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.Migrations;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -68,7 +69,7 @@ namespace BLL
                 return product;
             }
         }
-        public string SetRandomProductId()
+        public string GetRandomProductId()
         {
             using (var context = new QLNETDBContext())
             {
@@ -83,6 +84,35 @@ namespace BLL
                     productId = "sp" + random.Next(0, 1000);
                 }
                 return productId;
+            }
+        }
+        public void AddNewProduct(Product product)
+        {
+            using (var context = new QLNETDBContext())
+            {
+                if (context == null) return;
+                context.Products.AddOrUpdate(product);
+                context.SaveChanges();
+            }
+        }
+        public void AddNewListProduct(List<KeyValuePair<Product, float?>> listProduct)
+        {
+            using (var context = new QLNETDBContext())
+            {
+                if (context == null) return;
+                foreach (KeyValuePair<Product, float?> product in listProduct)
+                {
+                    context.Products.AddOrUpdate(new Product
+                    {
+                        ProductId = product.Key.ProductId,
+                        ProductName = product.Key.ProductName,
+                        CostPrice = product.Key.CostPrice,
+                        Type = product.Key.Type,
+                        Stock = product.Value ?? 0,
+                        SellingPrice = 0
+                    });
+                }
+                context.SaveChanges();
             }
         }
     }

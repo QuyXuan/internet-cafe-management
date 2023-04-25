@@ -19,7 +19,7 @@ namespace GiaoDienPBL3
 {
     public partial class frmMain : Form
     {
-        private string AccountId;
+        public static string AccountId;
         public static UC_TrangChu myUC_TrangChu = new UC_TrangChu();
         public static UC_QuanLyMenu myUC_QuanLyMenu = new UC_QuanLyMenu();
         public static UC_QuanLyMay myUC_QuanLyMay = new UC_QuanLyMay();

@@ -22,6 +22,10 @@ namespace GiaoDienPBL3.User_Controls
     {
         private Random random = new Random();
         private List<Control> listUCThongTinHangHoa;
+        //private bool checkThemHangMoi = false;
+        private List<KeyValuePair<Product, float?>> newProducts = new List<KeyValuePair<Product, float?>>();
+        private List<KeyValuePair<string, float?>> productsKVP = new List<KeyValuePair<string, float?>>();
+        private bool checkFirstAdd = false;
         public UC_QuanLyHoaDonNhapKho()
         {
             InitializeComponent();
@@ -39,26 +43,62 @@ namespace GiaoDienPBL3.User_Controls
                 my_UCChiTietMonAn.btnCongMon.Visible = false;
                 my_UCChiTietMonAn.btnTruMon.Visible = false;
                 int ThanhTien = Convert.ToInt32(txtSoLuong.Text) * Convert.ToInt32((txtGiaGoc.Text.Substring(0, txtGiaGoc.Text.Length - 4).Replace(",", "")));
-                my_UCChiTietMonAn.TextGiaMonAn = string.Format("{0:N3}VNĐ", ThanhTien);
+                my_UCChiTietMonAn.TextGiaMonAn = string.Format("{0:N3}VNĐ", ThanhTien); ;
                 my_UCChiTietMonAn.TextTenMonAn = cboTenHangHoa.Text;
                 my_UCChiTietMonAn.TextSoLuongMonAn = txtSoLuong.Text;
                 my_UCChiTietMonAn.Size = new Size(300, 56);
-                listUCThongTinHangHoa.Add(my_UCChiTietMonAn);
-                panelHoaDon.Controls.Add(my_UCChiTietMonAn);
+                
+                AddOrUpdateThongTinHangHoa(my_UCChiTietMonAn);
+                //panelHoaDon.Controls.Add(my_UCChiTietMonAn);
                 //panelHoaDon.Controls.SetChildIndex(my_UCChiTietMonAn, 1);
-                int TongTien = Convert.ToInt32(lblTongTien.Text.Substring(0, lblTongTien.Text.Length - 7).Replace(",", "")) + ThanhTien;
-                lblTongTien.Text = string.Format("{0:N3}VNĐ", TongTien);
-                HangHoa hangHoa = new HangHoa(txtMaHangHoa.Text, cboTenHangHoa.Text, Convert.ToInt32(txtSoLuong.Text), cboLoai.Text, my_UCChiTietMonAn.TextGiaMonAn);
-                my_UCChiTietMonAn.Tag = hangHoa;
+                int TotalMoney = Convert.ToInt32(lblTongTien.Text.Substring(0, lblTongTien.Text.Length - 7).Replace(",", "")) + ThanhTien;
+                lblTongTien.Text = string.Format("{0:N3}VNĐ", TotalMoney);
+                //HangHoa hangHoa = new HangHoa(txtMaHangHoa.Text, cboTenHangHoa.Text, Convert.ToInt32(txtSoLuong.Text), cboLoai.Text, my_UCChiTietMonAn.TextGiaMonAn);
+                if (btnThemHangMoi.Checked == true)
+                {
+                    Product product = new Product()
+                    {
+                        ProductId = txtMaHangHoa.Text,
+                        ProductName = cboTenHangHoa.Text,
+                        Type = cboLoai.Text,
+                        CostPrice = (float)Convert.ToDouble(txtGiaGoc.Text.Substring(0, txtGiaGoc.Text.Length - 4).Replace(",", ""))
+                    };
+                    newProducts.Add(new KeyValuePair<Product, float?>(product, (float)Convert.ToDouble(txtSoLuong.Text)));
+                    productsKVP.Add(new KeyValuePair<string, float?>(txtMaHangHoa.Text, (float)Convert.ToDouble(txtSoLuong.Text)));
+                }
+                else if (btnThemHangCu.Checked == true)
+                {
+                    productsKVP.Add(new KeyValuePair<string, float?>(txtMaHangHoa.Text, (float)Convert.ToDouble(txtSoLuong.Text)));
+                }
             }
             txtMaHangHoa.Text = "";
             cboTenHangHoa.SelectedIndex = -1;
             txtSoLuong.Text = "";
             txtGiaGoc.Text = "";
-            txtTongTien.Text = "";
+            if (txtGiamGia.Text != "")
+                txtTongTien.Text = string.Format("{0:N3}VNĐ", (Math.Ceiling(((float)Convert.ToDouble(lblTongTien.Text.Substring(0, lblTongTien.Text.Length - 7).Replace(",", ""))) * (100 - (Convert.ToDouble(txtGiamGia.Text)) / 100))));
+            else txtTongTien.Text = lblTongTien.Text;
             cboLoai.SelectedIndex = -1;
             panelChiTietHangNhap.Visible = false;
+            btnThemHangCu.Checked = false;
+            btnThemHangMoi.Checked = false;
             SetEnableTextBoxAndCombobox2(false);
+        }
+        private void AddOrUpdateThongTinHangHoa(UC_ChiTietMonAn myUC_NewChiTietMonAn)
+        {
+            foreach (Control control in listUCThongTinHangHoa)
+            {
+                UC_ChiTietMonAn myUC_ChiTietMonAn = control as UC_ChiTietMonAn;
+                if (myUC_ChiTietMonAn != null && myUC_ChiTietMonAn.TextTenMonAn == myUC_NewChiTietMonAn.TextTenMonAn)
+                {
+                    myUC_ChiTietMonAn.TextSoLuongMonAn = (Convert.ToInt32(myUC_ChiTietMonAn.TextSoLuongMonAn) + Convert.ToInt32(myUC_NewChiTietMonAn.TextSoLuongMonAn)).ToString();
+                    myUC_ChiTietMonAn.TextGiaMonAn = string.Format("{0:N3}VNĐ", (Convert.ToDouble(myUC_ChiTietMonAn.TextGiaMonAn.Substring(0, myUC_ChiTietMonAn.TextGiaMonAn.Length - 7).Replace(",", ""))) + 
+                        Convert.ToDouble(myUC_NewChiTietMonAn.TextGiaMonAn.Substring(0, myUC_NewChiTietMonAn.TextGiaMonAn.Length - 7).Replace(",", "")));
+                    return;
+                }
+            }
+            listUCThongTinHangHoa.Add(myUC_NewChiTietMonAn);
+            panelHoaDon.Controls.Add(myUC_NewChiTietMonAn);
         }
         private bool CheckValid()
         {
@@ -87,9 +127,14 @@ namespace GiaoDienPBL3.User_Controls
                 MessageBox.Show("Tên Nhà Cung Cấp Không Được Để Trống", "Cảnh Báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
                 return false;
             }
+            else if (txtGiamGia.Text.Length > 2 || (int.TryParse(txtGiamGia.Text, out _) == false && txtGiamGia.Text != ""))
+            {
+                MessageBox.Show("Giảm Giá Phải Là Một Số Nguyên", "Cảnh Báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                return false;
+            }
             return true;
         }
-        private void SetData()
+        public void SetData()
         {
             foreach (Reciept reciept in RecieptBLL.Instance.GetListReciept())
             {
@@ -100,8 +145,28 @@ namespace GiaoDienPBL3.User_Controls
             }
             dgvHoaDonNhap.ClearSelection();
         }
+        public void ResetData()
+        {
+            dgvHoaDonNhap.SuspendLayout();
+            dgvHoaDonNhap.Rows.Clear();
+            dgvHoaDonNhap.ResumeLayout();
+
+        }
         private void btnThem_Click(object sender, EventArgs e)
         {
+            checkFirstAdd = true;
+            if ((txtNhaCungCap.Text == "" && txtMaHoaDon.Text == "") || txtNhaCungCap.ReadOnly == true)
+            {
+                txtMaHoaDon.Text = RecieptBLL.Instance.GetRandomRecieptId();
+                dtpNgayNhan.Value = DateTime.Now;
+                txtMaNhanVien.Text = EmployeeBLL.Instance.GetEmployeeIdByAccountId(frmMain.AccountId);
+                txtTenNhanVien.Text = EmployeeBLL.Instance.GetEmployeeNameByEmployeeId(txtMaNhanVien.Text);
+                txtNhaCungCap.Text = "";
+                txtNhaCungCap.ReadOnly = false;
+                txtGiamGia.Text = "";
+                txtGiamGia.ReadOnly = false;
+                lvThongTinHangHoa.Items.Clear();
+            }
             panelChiTietHangNhap.Visible = true;
             panelHoaDon.Controls.SetChildIndex(panelChiTietHangNhap, panelHoaDon.Controls.Count - 1);
             txtNhaCungCap.Enabled = true;
@@ -195,7 +260,9 @@ namespace GiaoDienPBL3.User_Controls
             else
             {
                 txtMaHangHoa.ReadOnly = true;
-                txtMaHangHoa.Text = ProductBLL.Instance.SetRandomProductId();
+                txtGiaGoc.ReadOnly = false;
+                txtMaHangHoa.Text = ProductBLL.Instance.GetRandomProductId();
+                cboTenHangHoa.Items.Clear();
             }
         }
         private void SetEnableTextBoxAndCombobox2(bool status)
@@ -209,21 +276,47 @@ namespace GiaoDienPBL3.User_Controls
         private void btnThemChiTietHangNhap_Click(object sender, EventArgs e)
         {
             if (listUCThongTinHangHoa.Count == 0) return;
-            List<HangHoa> listHangHoa = new List<HangHoa>();
+            //List<KeyValuePair<Product, float?>> listProduct = new List<KeyValuePair<Product, float?>>();
             foreach (Control control in listUCThongTinHangHoa)
             {
-                HangHoa hangHoa = (control as UC_ChiTietMonAn).Tag as HangHoa;
-                listHangHoa.Add(hangHoa);
-                panelHoaDon.Controls.Remove(control);
-                control.Dispose();
+                UC_ChiTietMonAn ChiTietMonAn = control as UC_ChiTietMonAn;
+                if (control != null)
+                {
+                    panelHoaDon.Controls.Remove(control);
+                    control.Dispose();
+                }
+            }
+            ProductBLL.Instance.AddNewListProduct(newProducts);
+            RecieptBLL.Instance.AddNewReciept(new Reciept
+            {
+                RecieptId = txtMaHoaDon.Text,
+                Date = DateTime.Now.Date,
+                Discount = txtGiamGia.Text == string.Empty ? 0 : (float)Convert.ToDouble(txtGiamGia),
+                EmployeeId = txtMaNhanVien.Text,
+                Manufacturer = txtNhaCungCap.Text,
+                TotalBill = (float)Convert.ToDouble(txtTongTien.Text.Substring(0, txtTongTien.Text.Length - 7).Replace(",", "")),
+            });
+            foreach (var recieptProduct in productsKVP)
+            {
+                RecieptBLL.Instance.AddRecieptProduct(new RecieptProduct
+                {
+                    RecieptId = txtMaHoaDon.Text,
+                    ProductId = recieptProduct.Key,
+                    Quantity = recieptProduct.Value
+                });
             }
             listUCThongTinHangHoa.Clear();
             lblTongTien.Text = "0.000VNĐ";
-            DataGridViewRow row = new DataGridViewRow();
-            row.Height = 40;
-            row.CreateCells(dgvHoaDonNhap, txtMaHoaDon.Text, txtMaNhanVien.Text, txtNhaCungCap.Text, dtpNgayNhan.Value.ToString("dd/MM/yyyy"), txtGiamGia.Text, lblTongTien.Text);
-            row.Tag = listHangHoa;
-            dgvHoaDonNhap.Rows.Add(row);
+            //DataGridViewRow row = new DataGridViewRow();
+            //row.Height = 40;
+            //row.CreateCells(dgvHoaDonNhap, txtMaHoaDon.Text, txtMaNhanVien.Text, txtNhaCungCap.Text, dtpNgayNhan.Value.ToString("dd/MM/yyyy"), txtGiamGia.Text, lblTongTien.Text);
+            //row.Tag = listProduct;
+            //dgvHoaDonNhap.Rows.Add(row);
+            productsKVP.Clear();
+            newProducts.Clear();
+            checkFirstAdd = false;
+            ResetData();
+            SetData();
         }
 
         private void btnHuyTatCa_Click(object sender, EventArgs e)
@@ -238,6 +331,7 @@ namespace GiaoDienPBL3.User_Controls
         }
         private void dgvHoaDonNhap_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (checkFirstAdd == true) return;
             if (e.RowIndex == -1) return;
             DataGridViewRow Row = dgvHoaDonNhap.SelectedRows[0];
             txtMaHoaDon.Text = Row.Cells["MaHoaDon"].Value.ToString();
@@ -247,20 +341,17 @@ namespace GiaoDienPBL3.User_Controls
             dtpNgayNhan.Value = DateTime.ParseExact(Row.Cells["NgayNhan"].Value.ToString(), "dd/MM/yyyy", CultureInfo.InvariantCulture);
             txtGiamGia.Text = Row.Cells["GiamGia"].Value.ToString();
             txtTongTien.Text = Row.Cells["TongTien"].Value.ToString();
-            if (Row.Tag == null)
-            {
-                lvThongTinHangHoa.Items.Clear();
-                return;
-            }
-            List<HangHoa> listHangHoa = Row.Tag as List<HangHoa>;
+            txtGiamGia.ReadOnly = true;
+            txtNhaCungCap.ReadOnly = true;
             lvThongTinHangHoa.Items.Clear();
-            foreach (HangHoa hangHoa in listHangHoa)
+            List<KeyValuePair<Product, float?>> productList = RecieptBLL.Instance.GetListProductByRecieptId(txtMaHoaDon.Text);
+            foreach (var product in productList)
             {
-                ListViewItem item = new ListViewItem(hangHoa.MaHangHoa);
-                item.SubItems.Add(hangHoa.TenHangHoa);
-                item.SubItems.Add(hangHoa.SoLuong.ToString());
-                item.SubItems.Add(hangHoa.Gia);
-                item.SubItems.Add(hangHoa.Loai);
+                ListViewItem item = new ListViewItem(product.Key.ProductId);
+                item.SubItems.Add(product.Key.ProductName);
+                item.SubItems.Add(product.Value.ToString());
+                item.SubItems.Add(string.Format("{0:N3}VNĐ", product.Key.CostPrice));
+                item.SubItems.Add(product.Key.Type);
                 lvThongTinHangHoa.Items.Add(item);
             }
         }
