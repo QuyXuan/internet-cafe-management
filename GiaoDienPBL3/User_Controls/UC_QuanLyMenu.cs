@@ -103,7 +103,7 @@ namespace GiaoDienPBL3.UC
             }
             if ((cboMenhGia.Text.Length < 4) || cboMenhGia.Text.Substring(cboMenhGia.Text.Length - 4) != ".000")
             {
-                MessageBox.Show("Bạn Phải Nhập Theo Định Dạng #,###.000" + Environment.NewLine + "Ví Dụ: 20.000 / 1,000.000", "Cảnh Báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                frmMessageBox.Instance.ShowFrmMessageBox(frmMessageBox.StatusResult.Warning, "Bạn Phải Nhập Theo Định Dạng #,###.000" + Environment.NewLine + "Ví Dụ: 20.000 / 1,000.000");
                 return;
             }
             ThemChiTietMonAnVaoFlowLayoutPanel();
@@ -151,7 +151,7 @@ namespace GiaoDienPBL3.UC
                 {
                     string MaHoaDon = txtMaHoaDon.Text;
                     BillBLL.Instance.SetStatusChoXacNhanToXacNhan(MaHoaDon);
-                    MessageBox.Show("Thanh Toán Thành Công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    frmMessageBox.Instance.ShowFrmMessageBox(frmMessageBox.StatusResult.Warning, "Thanh Toán Thành Công");
                     ResetUCQuanLyMenu();
                 }
             }

@@ -23,8 +23,7 @@ namespace GiaoDienPBL3.User_Controls
         {
             if (dtpNgaySau.Value.Month != dtpNgayTruoc.Value.Month || dtpNgaySau.Value.Day <= dtpNgayTruoc.Value.Day)
             {
-                MessageBox.Show("Chỉ Xem Được Ngày Trong Cùng 1 Tháng" + Environment.NewLine + "Ngày Sau Phải Lớn Hơn Ngày Trước",
-                    "Cảnh Báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                frmMessageBox.Instance.ShowFrmMessageBox(frmMessageBox.StatusResult.Warning, "Chỉ Xem Được Ngày Trong Cùng 1 Tháng" + Environment.NewLine + "Ngày Sau Phải Lớn Hơn Ngày Trước");
                 return;
             }
             ColumnChart1.ChartAreas[0].AxisX.Title = "Ngày";
@@ -51,8 +50,7 @@ namespace GiaoDienPBL3.User_Controls
         {
             if (dtpNgaySau.Value.Year != dtpNgayTruoc.Value.Year || dtpThangSau.Value.Month <= dtpThangSau.Value.Month)
             {
-                MessageBox.Show("Chỉ Xem Được Tháng Trong Cùng 1 Năm" + Environment.NewLine + "Tháng Sau Phải Lớn Hơn Tháng Trước",
-                    "Cảnh Báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                frmMessageBox.Instance.ShowFrmMessageBox(frmMessageBox.StatusResult.Warning, "Chỉ Xem Được Tháng Trong Cùng 1 Năm" + Environment.NewLine + "Tháng Sau Phải Lớn Hơn Tháng Trước");
                 return;
             }
             ColumnChart2.ChartAreas[0].AxisX.Title = "Tháng";

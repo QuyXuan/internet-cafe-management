@@ -209,7 +209,7 @@ namespace GiaoDienPBL3.User_Controls
             row.Cells[2].Value = txtTenNhanVien.Text;
             row.Height = 40;
             dgvQuanLyCaLamViecTrongNgay.Rows.Add(row);
-            MessageBox.Show("Thêm Ca Làm Việc Thành Công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            frmMessageBox.Instance.ShowFrmMessageBox(frmMessageBox.StatusResult.Success, "Thêm Ca Làm Việc Thành Công");
             btnHuy.PerformClick();
         }
         private void SetDataQuanLyCaLamViecTrongNgay()

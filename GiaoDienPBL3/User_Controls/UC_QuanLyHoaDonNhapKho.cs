@@ -104,32 +104,32 @@ namespace GiaoDienPBL3.User_Controls
         {
             if (txtMaHoaDon.Text == "")
             {
-                MessageBox.Show("Mã Hóa Đơn Không Được Để Trống", "Cảnh Báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                frmMessageBox.Instance.ShowFrmMessageBox(frmMessageBox.StatusResult.Warning, "Mã Hóa Đơn Không Được Để Trống");
                 return false;
             }
             else if (cboTenHangHoa.Text == "")
             {
-                MessageBox.Show("Tên Món Không Được Để Trống", "Cảnh Báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                frmMessageBox.Instance.ShowFrmMessageBox(frmMessageBox.StatusResult.Warning, "Tên Món Không Được Để Trống");
                 return false;
             }
             else if (int.TryParse(txtSoLuong.Text, out _) == false)
             {
-                MessageBox.Show("Số Lượng Phải Là Một Số Nguyên", "Cảnh Báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                frmMessageBox.Instance.ShowFrmMessageBox(frmMessageBox.StatusResult.Warning, "Số Lượng Phải Là Một Số Nguyên");
                 return false;
             }
             else if ((txtGiaGoc.Text.Length < 4) || txtGiaGoc.Text.Substring(txtGiaGoc.Text.Length - 4) != ".000")
             {
-                MessageBox.Show("Bạn Phải Nhập Theo Định Dạng #,###.000" + Environment.NewLine + "Ví Dụ: 20.000 / 1,000.000", "Cảnh Báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                frmMessageBox.Instance.ShowFrmMessageBox(frmMessageBox.StatusResult.Warning, "Bạn Phải Nhập Theo Định Dạng #,###.000" + Environment.NewLine + "Ví Dụ: 20.000 / 1,000.000");
                 return false;
             }
             else if (txtNhaCungCap.Text == "")
             {
-                MessageBox.Show("Tên Nhà Cung Cấp Không Được Để Trống", "Cảnh Báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                frmMessageBox.Instance.ShowFrmMessageBox(frmMessageBox.StatusResult.Warning, "Tên Nhà Cung Cấp Không Được Để Trống");
                 return false;
             }
             else if (txtGiamGia.Text.Length > 2 || (int.TryParse(txtGiamGia.Text, out _) == false && txtGiamGia.Text != ""))
             {
-                MessageBox.Show("Giảm Giá Phải Là Một Số Nguyên", "Cảnh Báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                frmMessageBox.Instance.ShowFrmMessageBox(frmMessageBox.StatusResult.Warning, "Giảm Giá Phải Là Một Số Nguyên");
                 return false;
             }
             return true;
