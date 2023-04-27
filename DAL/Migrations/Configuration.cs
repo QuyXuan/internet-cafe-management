@@ -28,6 +28,7 @@
             CreateComputers(context);
             CreateBills(context);
             CreateReciepts(context);
+            CreateBillDays(context);
         }
         private void CreateAccounts(DAL.QLNETDBContext context)
         {
@@ -162,7 +163,7 @@
                 new Account {AccountId = "acc0126", UserName = "khachhang119", Password = "123", Role = "Khách Hàng", DateCreate = DateTime.Now.Date},
                 new Account {AccountId = "acc0127", UserName = "khachhang120", Password = "123", Role = "Khách Hàng", DateCreate = DateTime.Now.Date},
             };
-#endregion
+            #endregion
             accounts.ForEach(p => context.Accounts.AddOrUpdate(
                 account => account.AccountId,
                 new Account
@@ -367,8 +368,8 @@
             var computers = new List<Computer>
             {
                 #region Danh Sách Máy Tính
-                new Computer {ComputerId = "mt0001", ComputerName = "1", TypeId = "type0001", Status = "Đang Hoạt Động"},
-                new Computer {ComputerId = "mt0002", ComputerName = "2", TypeId = "type0002", Status = "Đang Hoạt Động"},
+                new Computer {ComputerId = "mt0001", ComputerName = "1", TypeId = "type0001", Status = "Đang Hoạt Động", IPComputer = "192.168.1.6"},
+                new Computer {ComputerId = "mt0002", ComputerName = "2", TypeId = "type0002", Status = "Đang Hoạt Động", IPComputer = "192.168.1.42"},
                 new Computer {ComputerId = "mt0003", ComputerName = "3", TypeId = "type0003", Status = "Đang Hoạt Động"},
                 new Computer {ComputerId = "mt0004", ComputerName = "4", TypeId = "type0004", Status = "Đang Hoạt Động"},
                 new Computer {ComputerId = "mt0005", ComputerName = "5", TypeId = "type0005", Status = "Đang Hoạt Động"},
@@ -406,7 +407,8 @@
                     ComputerId = p.ComputerId,
                     ComputerName = p.ComputerName,
                     TypeId = p.TypeId,
-                    Status = p.Status
+                    Status = p.Status,
+                    IPComputer = p.IPComputer
                 }));
             context.SaveChanges();
         }
@@ -2275,6 +2277,74 @@
                     context.BillProducts.AddOrUpdate(product);
                 }
             }
+        }
+        private void CreateBillDays(DAL.QLNETDBContext context)
+        {
+            var billDays = new List<BillDay>
+            {
+                new BillDay{BillDayId = "hdd0001", Date = DateTime.Now.Date.AddDays(-13), TotalBill = 150, Type = true},
+                new BillDay{BillDayId = "hdd0002", Date = DateTime.Now.Date.AddDays(-14), TotalBill = 126, Type = true},
+                new BillDay{BillDayId = "hdd0003", Date = DateTime.Now.Date.AddDays(-15), TotalBill = 100, Type = true},
+                new BillDay{BillDayId = "hdd0004", Date = DateTime.Now.Date.AddDays(-16), TotalBill = 154, Type = true},
+                new BillDay{BillDayId = "hdd0005", Date = DateTime.Now.Date.AddDays(-17), TotalBill = 180, Type = true},
+                new BillDay{BillDayId = "hdd0006", Date = DateTime.Now.Date.AddDays(-18), TotalBill = 136, Type = true},
+                new BillDay{BillDayId = "hdd0007", Date = DateTime.Now.Date.AddDays(-19), TotalBill = 118, Type = true},
+                new BillDay{BillDayId = "hdd0008", Date = DateTime.Now.Date.AddDays(-20), TotalBill = 102, Type = true},
+                new BillDay{BillDayId = "hdd0009", Date = DateTime.Now.Date.AddDays(-21), TotalBill = 220, Type = true},
+                new BillDay{BillDayId = "hdd0010", Date = DateTime.Now.Date.AddDays(-22), TotalBill = 102, Type = true},
+                new BillDay{BillDayId = "hdd0011", Date = DateTime.Now.Date.AddDays(-23), TotalBill = 118, Type = true},
+                new BillDay{BillDayId = "hdd0012", Date = DateTime.Now.Date.AddDays(-24), TotalBill = 100, Type = true},
+                new BillDay{BillDayId = "hdd0013", Date = DateTime.Now.Date.AddDays(-28), TotalBill = 150, Type = true},
+                new BillDay{BillDayId = "hdd0014", Date = DateTime.Now.Date.AddDays(-29), TotalBill = 120, Type = true},
+                new BillDay{BillDayId = "hdd0015", Date = DateTime.Now.Date.AddDays(-30), TotalBill = 100, Type = true},
+                new BillDay{BillDayId = "hdd0016", Date = DateTime.Now.Date.AddDays(-31), TotalBill = 162, Type = true},
+                new BillDay{BillDayId = "hdd0017", Date = DateTime.Now.Date.AddDays(-32), TotalBill = 180, Type = true},
+                new BillDay{BillDayId = "hdd0018", Date = DateTime.Now.Date.AddDays(-33), TotalBill = 128, Type = true},
+                new BillDay{BillDayId = "hdd0019", Date = DateTime.Now.Date.AddDays(-34), TotalBill = 118, Type = true},
+                new BillDay{BillDayId = "hdd0020", Date = DateTime.Now.Date.AddDays(-35), TotalBill = 108, Type = true},
+                new BillDay{BillDayId = "hdd0021", Date = DateTime.Now.Date.AddDays(-36), TotalBill = 220, Type = true},
+                new BillDay{BillDayId = "hdd0022", Date = DateTime.Now.Date.AddDays(-37), TotalBill = 90, Type = true},
+                new BillDay{BillDayId = "hdd0023", Date = DateTime.Now.Date.AddDays(-38), TotalBill = 118, Type = true},
+                new BillDay{BillDayId = "hdd0024", Date = DateTime.Now.Date.AddDays(-39), TotalBill = 100, Type = true},
+                new BillDay{BillDayId = "hdd0025", Date = DateTime.Now.Date.AddDays(-43), TotalBill = 150, Type = true},
+                new BillDay{BillDayId = "hdd0026", Date = DateTime.Now.Date.AddDays(-44), TotalBill = 123, Type = true},
+                new BillDay{BillDayId = "hdd0027", Date = DateTime.Now.Date.AddDays(-45), TotalBill = 100, Type = true},
+                new BillDay{BillDayId = "hdd0028", Date = DateTime.Now.Date.AddDays(-46), TotalBill = 158, Type = true},
+                new BillDay{BillDayId = "hdd0029", Date = DateTime.Now.Date.AddDays(-47), TotalBill = 180, Type = true},
+                new BillDay{BillDayId = "hdd0030", Date = DateTime.Now.Date.AddDays(-48), TotalBill = 132, Type = true},
+                new BillDay{BillDayId = "hdd0031", Date = DateTime.Now.Date.AddDays(-49), TotalBill = 118, Type = true},
+                new BillDay{BillDayId = "hdd0032", Date = DateTime.Now.Date.AddDays(-50), TotalBill = 105, Type = true},
+                new BillDay{BillDayId = "hdd0033", Date = DateTime.Now.Date.AddDays(-51), TotalBill = 220, Type = true},
+                new BillDay{BillDayId = "hdd0034", Date = DateTime.Now.Date.AddDays(-52), TotalBill = 96, Type = true},
+                new BillDay{BillDayId = "hdd0035", Date = DateTime.Now.Date.AddDays(-54), TotalBill = 100, Type = true},
+                new BillDay{BillDayId = "hdd0036", Date = DateTime.Now.Date.AddDays(-58), TotalBill = 150, Type = true},
+                new BillDay{BillDayId = "hdd0037", Date = DateTime.Now.Date.AddDays(-59), TotalBill = 123, Type = true},
+                new BillDay{BillDayId = "hdd0038", Date = DateTime.Now.Date.AddDays(-60), TotalBill = 100, Type = true},
+                new BillDay{BillDayId = "hdd0039", Date = DateTime.Now.Date.AddDays(-61), TotalBill = 158, Type = true},
+                new BillDay{BillDayId = "hdd0040", Date = DateTime.Now.Date.AddDays(-62), TotalBill = 180, Type = true},
+                new BillDay{BillDayId = "hdd0041", Date = DateTime.Now.Date.AddDays(-63), TotalBill = 132, Type = true},
+                new BillDay{BillDayId = "hdd0042", Date = DateTime.Now.Date.AddDays(-64), TotalBill = 118, Type = true},
+                new BillDay{BillDayId = "hdd0043", Date = DateTime.Now.Date.AddDays(-65), TotalBill = 105, Type = true},
+                new BillDay{BillDayId = "hdd0044", Date = DateTime.Now.Date.AddDays(-66), TotalBill = 220, Type = true},
+                new BillDay{BillDayId = "hdd0045", Date = DateTime.Now.Date.AddDays(-67), TotalBill = 96, Type = true},
+                new BillDay{BillDayId = "hdd0046", Date = DateTime.Now.Date.AddDays(-68), TotalBill = 118, Type = true},
+                new BillDay{BillDayId = "hdd0047", Date = DateTime.Now.Date.AddDays(-69), TotalBill = 100, Type = true},
+                new BillDay{BillDayId = "hdd0048", Date = DateTime.Now.Date.AddDays(-15), TotalBill = 990, Type = false},
+                new BillDay{BillDayId = "hdd0049", Date = DateTime.Now.Date.AddDays(-25), TotalBill = 1135, Type = false},
+                new BillDay{BillDayId = "hdd0050", Date = DateTime.Now.Date.AddDays(-35), TotalBill = 941, Type = false},
+                new BillDay{BillDayId = "hdd0051", Date = DateTime.Now.Date.AddDays(-45), TotalBill = 995, Type = false},
+                new BillDay{BillDayId = "hdd0052", Date = DateTime.Now.Date.AddDays(-55), TotalBill = 1100, Type = false},
+            };
+            billDays.ForEach(p => context.BillDays.AddOrUpdate(
+                billDay => billDay.BillDayId,
+                new BillDay
+                {
+                    BillDayId = p.BillDayId,
+                    TotalBill = p.TotalBill,
+                    Date = p.Date,
+                    Type = p.Type,
+                }));
+            context.SaveChanges();
         }
         private void CreateReciepts(DAL.QLNETDBContext context)
         {

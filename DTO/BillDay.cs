@@ -21,5 +21,8 @@ namespace DTO
 
         [Required]
         public float TotalBill { get; set; }
+
+        [Required]
+        public bool Type { get; set; }
     }
 }
