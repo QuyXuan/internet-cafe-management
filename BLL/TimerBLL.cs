@@ -65,6 +65,7 @@ namespace BLL
                 {
                     return 0;
                 }
+                Money = Money / 1000;
                 var MayThuong = context.TypeComputers.FirstOrDefault(p => p.NameType == "Máy Thường");
                 float Time = (float)(Money / MayThuong.Price) * 60;
                 return ChangeTime(Time, NameType);
@@ -114,26 +115,12 @@ namespace BLL
             return time;
         }
 
-        //Hàm kiểm tra kết nối internet
-        public bool hasInternetAccess()
-        {
-            try
-            {
-                System.Net.IPHostEntry i = System.Net.Dns.GetHostEntry("www.google.com");
-                return true;
-            }
-            catch
-            {
-                return false;
-            }
-        }
-
         //Hàm cộng thời gian
         public Time SumTime(float CurrentTime, float UpdateTime)
         {
             float ToatalTime = CurrentTime + UpdateTime;
             return TranferTime(ToatalTime);
         }
-
+        
     }
 }

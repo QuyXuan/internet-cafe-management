@@ -44,6 +44,7 @@
             this.panelDongHo = new System.Windows.Forms.Panel();
             this.panelSideBar = new System.Windows.Forms.Panel();
             this.imgbtnThoat = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.btnTat = new Guna.UI2.WinForms.Guna2ControlBox();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -153,6 +154,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.Control;
+            this.panel3.Controls.Add(this.btnTat);
             this.panel3.Controls.Add(this.lblSoDu);
             this.panel3.Controls.Add(this.btnMinisize);
             this.panel3.Controls.Add(this.lblLoaiKhachHang);
@@ -275,6 +277,18 @@
             this.imgbtnThoat.TabIndex = 3;
             this.imgbtnThoat.Click += new System.EventHandler(this.imgbtnThoat_Click);
             // 
+            // btnTat
+            // 
+            this.btnTat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnTat.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnTat.IconColor = System.Drawing.Color.White;
+            this.btnTat.Location = new System.Drawing.Point(1028, 0);
+            this.btnTat.Name = "btnTat";
+            this.btnTat.Size = new System.Drawing.Size(75, 23);
+            this.btnTat.TabIndex = 8;
+            this.btnTat.Visible = false;
+            this.btnTat.Click += new System.EventHandler(this.btnTat_Click);
+            // 
             // frmClient
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -287,7 +301,6 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmClient";
             this.Text = "Form1";
-            this.TopMost = true;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmClient_Load);
             this.panel1.ResumeLayout(false);
@@ -319,6 +332,7 @@
         private Guna.UI2.WinForms.Guna2ImageButton imgbtnThoat;
         private System.Windows.Forms.Panel panelDongHo;
         private System.Windows.Forms.Label lblSoDu;
+        private Guna.UI2.WinForms.Guna2ControlBox btnTat;
     }
 }
 

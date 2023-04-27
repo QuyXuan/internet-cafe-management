@@ -56,7 +56,7 @@ namespace GUIClient
 
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
-            if (TimerBLL.Instance.hasInternetAccess())
+            if (ConnectionBLL.Instance.hasInternetAccess())
             {
                 Computer computer = ComputerBLL.Instance.GetComputerByIP();
                 if (computer != null)
@@ -65,10 +65,12 @@ namespace GUIClient
                     {
                         string AccountId = AccountBLL.Instance.GetAccountIdByUserName(txtTaiKhoan.Text);
                         KeyValuePair<string, string>? TenVaVaiTro = AccountBLL.Instance.GetTenVaVaiTro(AccountId);
-                        if (TenVaVaiTro == null)
+                        bool Role = false;
+                        if(TenVaVaiTro == null) Role = true;
+                        if (TenVaVaiTro == null || TenVaVaiTro.Value.Value == "Quản Lý")
                         {
                             this.Hide();
-                            frmClient Client = new frmClient(AccountId, computer);
+                            frmClient Client = new frmClient(AccountId, computer, Role);
                             Client.ShowDialog();
                         }
                     }

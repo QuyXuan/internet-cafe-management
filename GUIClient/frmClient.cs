@@ -21,6 +21,7 @@ namespace GUIClient
     public partial class frmClient : Form
     {
         private string accountId;
+        public static bool Role;
         public static Computer computer;
         public static TypeComputer typeComputer;
         public static Customer customer;
@@ -28,16 +29,17 @@ namespace GUIClient
         public static UC_NapGioChoi myUC_NapGioChoi;
         public static UC_DongHo myUC_DongHo;
         public static frmDongHo DongHo;
-        public frmClient(string accountId, Computer computer)
+        public frmClient(string accountId, Computer computer, bool Role)
         {
             InitializeComponent();
             this.accountId = accountId;
+            frmClient.Role = Role;
             frmClient.computer = computer;
-            customer = CustomerBLL.Instance.GetCustomerByAccountId(accountId);
+            if(Role) customer = CustomerBLL.Instance.GetCustomerByAccountId(accountId);
             myUC_TrangChuKhachHang = new UC_TrangChuKhachHang();
             typeComputer = ComputerBLL.Instance.GetTypeComputerByTypeId(computer.TypeId);
             myUC_NapGioChoi = new UC_NapGioChoi();
-            myUC_NapGioChoi.sendBalance += new UC_NapGioChoi.SendBalance(SetBalance);
+            if(Role) myUC_NapGioChoi.sendBalance += new UC_NapGioChoi.SendBalance(SetBalance);
             myUC_DongHo = new UC_DongHo(this.Handle);
             myUC_DongHo.checkaccess += new UC_DongHo.CheckAccess(CheckAccess);
         }
@@ -45,16 +47,24 @@ namespace GUIClient
         {
             AddUserControlOnBackGround(myUC_TrangChuKhachHang);
             SetDongHo();
-            lblTenKhachHang.Text = customer.CustomerName;
-            if (customer.TypeCustomer) lblLoaiKhachHang.Text = "Khách Hàng VIP";
-            else lblLoaiKhachHang.Text = "Khách Hàng Thường";
-            SetBalance((float)customer.Balance);
-            CheckAccess(myUC_DongHo.getCurrentTime());
+            if(Role)
+            {
+                lblTenKhachHang.Text = customer.CustomerName;
+                if (customer.TypeCustomer) lblLoaiKhachHang.Text = "Khách Hàng VIP";
+                else lblLoaiKhachHang.Text = "Khách Hàng Thường";
+                SetBalance((float)customer.Balance);
+                CheckAccess(myUC_DongHo.getCurrentTime());
+                btnTat.Visible = false;
+            }
+            else
+            {
+                btnTat.Visible = true;
+            }
         }
         private void imgbtnThoat_Click(object sender, EventArgs e)
         {
             frmLoginClient frmLoginClient = new frmLoginClient();
-            CustomerBLL.Instance.SetTotalTime(myUC_DongHo.getCurrentTime(), customer.CustomerId, typeComputer.NameType);
+            if(Role) CustomerBLL.Instance.SetTotalTime(myUC_DongHo.getCurrentTime(), customer.CustomerId, typeComputer.NameType);
             frmLoginClient.Show();
             Dispose();
         }
@@ -156,6 +166,11 @@ namespace GUIClient
                     }
             }
             return base.ProcessDialogKey(keyData);
+        }
+
+        private void btnTat_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

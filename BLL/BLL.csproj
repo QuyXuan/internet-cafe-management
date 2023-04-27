@@ -55,6 +55,7 @@
     <Compile Include="AccountBLL.cs" />
     <Compile Include="BillBLL.cs" />
     <Compile Include="ComputerBLL.cs" />
+    <Compile Include="ConnectionBLL.cs" />
     <Compile Include="CustomerBLL.cs" />
     <Compile Include="DiscountBLL.cs" />
     <Compile Include="EmployeeBLL.cs" />

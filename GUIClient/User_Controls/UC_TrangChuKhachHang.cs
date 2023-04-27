@@ -20,8 +20,15 @@ namespace GUIClient.User_Controls
         public UC_TrangChuKhachHang()
         {
             InitializeComponent();
-            setThongTinCaNhan(frmClient.customer);
-            SetThongTinGiamGia(frmClient.customer);
+            if(frmClient.Role)
+            {
+                setThongTinCaNhan(frmClient.customer);
+                SetThongTinGiamGia(frmClient.customer);
+            }
+            else
+            {
+                btnCapNhatMatKhau.Enabled = false;
+            }
             lblThongBao.Visible = false;
         }
 

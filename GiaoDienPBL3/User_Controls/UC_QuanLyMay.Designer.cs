@@ -33,12 +33,6 @@
             this.panelQuanLyMay = new System.Windows.Forms.FlowLayoutPanel();
             this.panelThongTin = new System.Windows.Forms.Panel();
             this.panelChiTietQuanLyMay = new System.Windows.Forms.Panel();
-            this.guna2CirclePictureBox3 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.guna2CirclePictureBox2 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
@@ -47,9 +41,6 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
-            this.label31 = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
@@ -66,7 +57,6 @@
             this.guna2Button48 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button47 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button46 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Separator3 = new Guna.UI2.WinForms.Guna2Separator();
             this.guna2Separator2 = new Guna.UI2.WinForms.Guna2Separator();
             this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
             this.label9 = new System.Windows.Forms.Label();
@@ -78,9 +68,6 @@
             this.panelPhu.SuspendLayout();
             this.panelThongTin.SuspendLayout();
             this.panelChiTietQuanLyMay.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -129,12 +116,6 @@
             // 
             // panelChiTietQuanLyMay
             // 
-            this.panelChiTietQuanLyMay.Controls.Add(this.guna2CirclePictureBox3);
-            this.panelChiTietQuanLyMay.Controls.Add(this.guna2CirclePictureBox2);
-            this.panelChiTietQuanLyMay.Controls.Add(this.guna2CirclePictureBox1);
-            this.panelChiTietQuanLyMay.Controls.Add(this.label20);
-            this.panelChiTietQuanLyMay.Controls.Add(this.label19);
-            this.panelChiTietQuanLyMay.Controls.Add(this.label18);
             this.panelChiTietQuanLyMay.Controls.Add(this.label17);
             this.panelChiTietQuanLyMay.Controls.Add(this.label16);
             this.panelChiTietQuanLyMay.Controls.Add(this.label15);
@@ -143,9 +124,6 @@
             this.panelChiTietQuanLyMay.Controls.Add(this.label12);
             this.panelChiTietQuanLyMay.Controls.Add(this.label11);
             this.panelChiTietQuanLyMay.Controls.Add(this.label23);
-            this.panelChiTietQuanLyMay.Controls.Add(this.label31);
-            this.panelChiTietQuanLyMay.Controls.Add(this.label30);
-            this.panelChiTietQuanLyMay.Controls.Add(this.label29);
             this.panelChiTietQuanLyMay.Controls.Add(this.label28);
             this.panelChiTietQuanLyMay.Controls.Add(this.label27);
             this.panelChiTietQuanLyMay.Controls.Add(this.label26);
@@ -162,7 +140,6 @@
             this.panelChiTietQuanLyMay.Controls.Add(this.guna2Button48);
             this.panelChiTietQuanLyMay.Controls.Add(this.guna2Button47);
             this.panelChiTietQuanLyMay.Controls.Add(this.guna2Button46);
-            this.panelChiTietQuanLyMay.Controls.Add(this.guna2Separator3);
             this.panelChiTietQuanLyMay.Controls.Add(this.guna2Separator2);
             this.panelChiTietQuanLyMay.Controls.Add(this.guna2Separator1);
             this.panelChiTietQuanLyMay.Controls.Add(this.label9);
@@ -172,72 +149,6 @@
             this.panelChiTietQuanLyMay.Name = "panelChiTietQuanLyMay";
             this.panelChiTietQuanLyMay.Size = new System.Drawing.Size(254, 599);
             this.panelChiTietQuanLyMay.TabIndex = 0;
-            // 
-            // guna2CirclePictureBox3
-            // 
-            this.guna2CirclePictureBox3.Image = global::GiaoDienPBL3.Properties.Resources.icons8_available_updates_24;
-            this.guna2CirclePictureBox3.ImageRotate = 0F;
-            this.guna2CirclePictureBox3.Location = new System.Drawing.Point(9, 546);
-            this.guna2CirclePictureBox3.Name = "guna2CirclePictureBox3";
-            this.guna2CirclePictureBox3.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CirclePictureBox3.Size = new System.Drawing.Size(30, 29);
-            this.guna2CirclePictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.guna2CirclePictureBox3.TabIndex = 51;
-            this.guna2CirclePictureBox3.TabStop = false;
-            // 
-            // guna2CirclePictureBox2
-            // 
-            this.guna2CirclePictureBox2.Image = global::GiaoDienPBL3.Properties.Resources.icons8_filled_circle_24__2_;
-            this.guna2CirclePictureBox2.ImageRotate = 0F;
-            this.guna2CirclePictureBox2.Location = new System.Drawing.Point(14, 477);
-            this.guna2CirclePictureBox2.Name = "guna2CirclePictureBox2";
-            this.guna2CirclePictureBox2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CirclePictureBox2.Size = new System.Drawing.Size(20, 20);
-            this.guna2CirclePictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2CirclePictureBox2.TabIndex = 50;
-            this.guna2CirclePictureBox2.TabStop = false;
-            // 
-            // guna2CirclePictureBox1
-            // 
-            this.guna2CirclePictureBox1.Image = global::GiaoDienPBL3.Properties.Resources.icons8_filled_circle_24__1_;
-            this.guna2CirclePictureBox1.ImageRotate = 0F;
-            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(14, 438);
-            this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
-            this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(20, 20);
-            this.guna2CirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2CirclePictureBox1.TabIndex = 49;
-            this.guna2CirclePictureBox1.TabStop = false;
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(45, 550);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(74, 20);
-            this.label20.TabIndex = 39;
-            this.label20.Text = "Cập Nhật";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(45, 477);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(86, 20);
-            this.label19.TabIndex = 40;
-            this.label19.Text = "Còn 5 phút";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(45, 438);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(58, 20);
-            this.label18.TabIndex = 41;
-            this.label18.Text = "Bảo Trì";
             // 
             // label17
             // 
@@ -318,36 +229,6 @@
             this.label23.Size = new System.Drawing.Size(18, 20);
             this.label23.TabIndex = 37;
             this.label23.Text = "0";
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label31.Location = new System.Drawing.Point(224, 550);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(18, 20);
-            this.label31.TabIndex = 36;
-            this.label31.Text = "0";
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.Location = new System.Drawing.Point(224, 477);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(18, 20);
-            this.label30.TabIndex = 35;
-            this.label30.Text = "0";
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.Location = new System.Drawing.Point(224, 438);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(18, 20);
-            this.label29.TabIndex = 34;
-            this.label29.Text = "0";
             // 
             // label28
             // 
@@ -564,15 +445,6 @@
             this.guna2Button46.Size = new System.Drawing.Size(25, 25);
             this.guna2Button46.TabIndex = 19;
             // 
-            // guna2Separator3
-            // 
-            this.guna2Separator3.FillColor = System.Drawing.Color.Gray;
-            this.guna2Separator3.FillThickness = 5;
-            this.guna2Separator3.Location = new System.Drawing.Point(31, 517);
-            this.guna2Separator3.Name = "guna2Separator3";
-            this.guna2Separator3.Size = new System.Drawing.Size(200, 10);
-            this.guna2Separator3.TabIndex = 17;
-            // 
             // guna2Separator2
             // 
             this.guna2Separator2.FillColor = System.Drawing.Color.Gray;
@@ -673,9 +545,6 @@
             this.panelThongTin.ResumeLayout(false);
             this.panelChiTietQuanLyMay.ResumeLayout(false);
             this.panelChiTietQuanLyMay.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -690,12 +559,6 @@
         private System.Windows.Forms.Panel panelPhu;
         private Guna.UI2.WinForms.Guna2Button btnCaiDat;
         private System.Windows.Forms.Panel panelChiTietQuanLyMay;
-        private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox3;
-        private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox2;
-        private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
@@ -704,9 +567,6 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label26;
@@ -723,7 +583,6 @@
         private Guna.UI2.WinForms.Guna2Button guna2Button48;
         private Guna.UI2.WinForms.Guna2Button guna2Button47;
         private Guna.UI2.WinForms.Guna2Button guna2Button46;
-        private Guna.UI2.WinForms.Guna2Separator guna2Separator3;
         private Guna.UI2.WinForms.Guna2Separator guna2Separator2;
         private Guna.UI2.WinForms.Guna2Separator guna2Separator1;
         private System.Windows.Forms.Label label9;

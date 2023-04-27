@@ -22,22 +22,28 @@ namespace GUIClient.User_Controls
         public UC_DongHo(IntPtr hWnd)
         {
             InitializeComponent();
-            float changtime = TimerBLL.Instance.ChangeTime((float)frmClient.customer.TotalTime, frmClient.typeComputer.NameType);
-            time = TimerBLL.Instance.TranferTime(changtime);
-            this.hWnd = hWnd;
-            if (CustomerBLL.Instance.SetTotalTime(time, frmClient.customer.CustomerId, frmClient.typeComputer.NameType) == 0)
+            if(frmClient.Role)
             {
-                timer2.Enabled = false;
+                float changtime = TimerBLL.Instance.ChangeTime((float)frmClient.customer.TotalTime, frmClient.typeComputer.NameType);
+                time = TimerBLL.Instance.TranferTime(changtime);
+                this.hWnd = hWnd;
+                if (CustomerBLL.Instance.SetTotalTime(time, frmClient.customer.CustomerId, frmClient.typeComputer.NameType) == 0)
+                {
+                    timer2.Enabled = false;
+                }
             }
         }
 
         private void DongHo_Load(object sender, EventArgs e)
         {
-            lblHr.Text = time.hour.ToString();
-            lblMin.Text = time.minute.ToString();
-            lblSec.Text = time.second.ToString();
-            timer1.Enabled = true;
-            timer2.Enabled = true;
+            if(frmClient.Role)
+            {
+                lblHr.Text = time.hour.ToString();
+                lblMin.Text = time.minute.ToString();
+                lblSec.Text = time.second.ToString();
+                timer1.Enabled = true;
+                timer2.Enabled = true;
+            }
         }
 
         private void timer1_Tick(object sender, EventArgs e)
