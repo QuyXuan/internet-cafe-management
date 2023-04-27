@@ -39,14 +39,14 @@ namespace GiaoDienPBL3
                 backColorAlertBox = Color.LightGoldenrodYellow;
                 colorLineAlertBox = Color.Goldenrod;
                 imageAlertBox = Properties.Resources.warning;
-                titleAlertBox = "Thông Tin";
+                titleAlertBox = "Cảnh Báo";
             }
             else if (status == StatusResult.Information)
             {
                 backColorAlertBox = Color.LightSteelBlue;
                 colorLineAlertBox = Color.DodgerBlue;
                 imageAlertBox = Properties.Resources.information;
-                titleAlertBox = "Cảnh Báo";
+                titleAlertBox = "Thông Tin";
             }
             else if (status == StatusResult.Error)
             {

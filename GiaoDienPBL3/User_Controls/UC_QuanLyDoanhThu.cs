@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BLL;
+using DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,8 +18,6 @@ namespace GiaoDienPBL3.User_Controls
         public UC_QuanLyDoanhThu()
         {
             InitializeComponent();
-            SetHoaDonKhachHangVaNhapKho();
-            TinhTongTienKhachHangVaNhapKho();
         }
         private void SetColumnChart1()
         {
@@ -36,14 +36,43 @@ namespace GiaoDienPBL3.User_Controls
             }
             if ((int)dayDiff > 0) 
             {
-                for (int i = 0; i <= (int)dayDiff; i++)
+                List<RecieptBillDayTotalPrice> listRecieptBillDayPrice = new List<RecieptBillDayTotalPrice>();
+                foreach (BillDay billDay in BillBLL.Instance.GetListBillDayByType(true))
                 {
-                    ColumnChart1.Series["Doanh Thu"].Points.AddXY(dtpNgayTruoc.Value.AddDays(i).ToString("dMMM"), rd.Next(100, 1000));
-                    ColumnChart1.Series["Chi Trả"].Points.AddXY(dtpNgayTruoc.Value.AddDays(i).ToString("dMMM"), rd.Next(100, 1000));
-                    ColumnChart1.Series["Lợi Nhuận"].Points.AddXY(dtpNgayTruoc.Value.AddDays(i).ToString("dMMM"), rd.Next(100, 1000));
+                    if (billDay.Date >= dtpNgayTruoc.Value && billDay.Date <= dtpNgaySau.Value)
+                    {
+                        ColumnChart1.Series["Doanh Thu"].Points.AddXY(billDay.Date.ToString("dMMM"), billDay.TotalBill);
+                        listRecieptBillDayPrice.Add(new RecieptBillDayTotalPrice
+                        {
+                            BillPrice = billDay.TotalBill,
+                            Date = billDay.Date
+                        });
+                    }
                 }
-                ColumnChart1.ChartAreas[0].AxisY.Minimum = 99;
-                ColumnChart1.ChartAreas[0].AxisY.Maximum = 1001;
+                foreach (BillDay billDay in BillBLL.Instance.GetListBillDayByType(false))
+                {
+                    if (billDay.Date >= dtpNgayTruoc.Value && billDay.Date <= dtpNgaySau.Value)
+                    {
+                        ColumnChart1.Series["Chi Trả"].Points.AddXY(billDay.Date.ToString("dMMM"), billDay.TotalBill);
+                        foreach (RecieptBillDayTotalPrice item in listRecieptBillDayPrice)
+                        {
+                            if (item.Date == billDay.Date)
+                            {
+                                item.RecieptPrice = billDay.TotalBill;
+                            }
+                            else
+                            {
+                                item.RecieptPrice = 0;
+                            }
+                        }
+                    }
+                }
+                foreach (var item in listRecieptBillDayPrice)
+                {
+                    ColumnChart1.Series["Lợi Nhuận"].Points.AddXY(item.Date.ToString("dMMM"), (item.BillPrice - item.RecieptPrice) >= 0 ? item.BillPrice - item.RecieptPrice : 0);
+                }
+                //ColumnChart1.ChartAreas[0].AxisY.Minimum = MinTotalBill;
+                //ColumnChart1.ChartAreas[0].AxisY.Maximum = MaxTotalBill;
             }
         }
         private void SetColumnChart2()
@@ -118,51 +147,49 @@ namespace GiaoDienPBL3.User_Controls
         {
             SetColumnChart2();
         }
-        private void SetHoaDonKhachHangVaNhapKho()
+
+        private void btnXemThongKeHoaDonTheoNgay_Click(object sender, EventArgs e)
         {
-            Random random = new Random();
-            for (int i = 0; i < 7; i++)
+            if (dtpNgaySau2.Value.Month != dtpNgayTruoc2.Value.Month || dtpNgaySau2.Value.Day < dtpNgayTruoc2.Value.Day)
             {
-                UC_ChiTietHoaDonNhapKho myUC = new UC_ChiTietHoaDonNhapKho();
-                myUC.TextMaDon = "mhdhk" + random.Next(0, 100);
-                myUC.TextLoaiDon = "Đơn Khách Hàng";
-                myUC.TextNgayTaoDon = DateTime.Now.ToString("dd/MM/yyyy");
-                myUC.TextThanhTien = string.Format("{0:N3}VNĐ", random.Next(0, 1000));
-                myUC.Size = new Size(panelHoaDonKhachHang.Size.Width - 22, 50);
-                //myUC.Tag = myUC.TextThanhTien;
-                panelHoaDonKhachHang.Controls.Add(myUC);
+                frmMessageBox.Instance.ShowFrmMessageBox(frmMessageBox.StatusResult.Warning, "Chỉ Xem Được Ngày Trong Cùng 1 Tháng" + Environment.NewLine + "Ngày Sau Phải Lớn Hơn Hoặc Bằng Ngày Trước");
+                return;
             }
-            for (int i = 0; i < 5; i++)
+            panelHoaDonKhachHang.Controls.Clear();
+            panelHoaDonNhapKho.Controls.Clear();
+            float TongTienKhachHang = 0;
+            float TongTienNhapKho = 0;
+            foreach (Bill bill in BillBLL.Instance.GetListBillWithStatus("Chấp Nhận"))
             {
-                UC_ChiTietHoaDonNhapKho myUC = new UC_ChiTietHoaDonNhapKho();
-                myUC.TextMaDon = "mhdnk" + random.Next(0, 100);
-                myUC.TextLoaiDon = "Đơn Nhập Kho";
-                myUC.TextNgayTaoDon = DateTime.Now.ToString("dd/MM/yyyy");
-                myUC.TextThanhTien = string.Format("{0:N3}VNĐ", random.Next(0, 100));
-                myUC.BackColor = Color.FromArgb(255, 192, 192);
-                myUC.Size = new Size(panelHoaDonNhapKho.Size.Width - 22, 50);
-                panelHoaDonNhapKho.Controls.Add(myUC);
+                if (bill.Date >= dtpNgayTruoc2.Value && bill.Date <= dtpNgaySau2.Value)
+                {
+                    UC_ChiTietHoaDonNhapKho myUC = new UC_ChiTietHoaDonNhapKho();
+                    myUC.TextMaDon = bill.BillId;
+                    myUC.TextLoaiDon = "Đơn Khách Hàng";
+                    myUC.TextNgayTaoDon = bill.Date.Value.ToString("dd/MM/yyyy");
+                    myUC.TextThanhTien = string.Format("{0:N3}VNĐ", bill.Total);
+                    myUC.Size = new Size(panelHoaDonKhachHang.Size.Width - 22, 60);
+                    panelHoaDonKhachHang.Controls.Add(myUC);
+                    TongTienKhachHang = TongTienKhachHang + bill.Total ?? 0;
+                }
             }
-        }
-        private void TinhTongTienKhachHangVaNhapKho()
-        {
-            int TongTienKhachHang = 0;
-            int TongTienNhapKho = 0;
-            foreach (Control control in panelHoaDonKhachHang.Controls) 
+            foreach (Reciept reciept in RecieptBLL.Instance.GetListReciept())
             {
-                string Tien = (control as UC_ChiTietHoaDonNhapKho).TextThanhTien;
-                TongTienKhachHang += Convert.ToInt32(Tien.Substring(0, Tien.Length - 7).Replace(",", ""));
+                if (reciept.Date >= dtpNgayTruoc2.Value && reciept.Date <= dtpNgaySau2.Value)
+                {
+                    UC_ChiTietHoaDonNhapKho myUC = new UC_ChiTietHoaDonNhapKho();
+                    myUC.TextMaDon = reciept.RecieptId;
+                    myUC.TextLoaiDon = "Đơn Nhập Kho";
+                    myUC.TextNgayTaoDon = reciept.Date.Value.ToString("dd/MM/yyyy");
+                    myUC.TextThanhTien = string.Format("{0:N3}VNĐ", reciept.TotalBill);
+                    myUC.BackColor = Color.FromArgb(255, 192, 192);
+                    myUC.Size = new Size(panelHoaDonNhapKho.Size.Width - 22, 60);
+                    panelHoaDonNhapKho.Controls.Add(myUC);
+                    TongTienNhapKho = TongTienNhapKho + reciept.TotalBill ?? 0;
+                }
             }
-            lblTongTienKhachHang.Text = string.Format("{0:N3}VNĐ", TongTienKhachHang);
-            //
-            foreach (Control control in panelHoaDonNhapKho.Controls)
-            {
-                string Tien = (control as UC_ChiTietHoaDonNhapKho).TextThanhTien;
-                TongTienNhapKho += Convert.ToInt32(Tien.Substring(0, Tien.Length - 7).Replace(",", ""));
-            }
-            lblTongTienNhapKho.Text = string.Format("{0:N3}VNĐ", TongTienNhapKho);
-            lblTongDoanhThu.Text = lblTongTienKhachHang.Text;
-            lblTongChiTra.Text = lblTongTienNhapKho.Text;
+            lblTongTienKhachHang.Text = lblTongDoanhThu.Text = string.Format("{0:N3}VNĐ", TongTienKhachHang);
+            lblTongTienNhapKho.Text = lblTongChiTra.Text = string.Format("{0:N3}VNĐ", TongTienNhapKho);
             lblTongLoiNhuan.Text = string.Format("{0:N3}VNĐ", TongTienKhachHang - TongTienNhapKho);
         }
     }
