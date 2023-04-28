@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,88 +22,89 @@ namespace GiaoDienPBL3.User_Controls
         }
         private void SetColumnChart1()
         {
-            if (dtpNgaySau.Value.Month != dtpNgayTruoc.Value.Month || dtpNgaySau.Value.Day <= dtpNgayTruoc.Value.Day)
+            if (dtpNgaySau.Value.Month != dtpNgayTruoc.Value.Month || dtpNgaySau.Value.Day < dtpNgayTruoc.Value.Day)
             {
                 frmMessageBox.Instance.ShowFrmMessageBox(frmMessageBox.StatusResult.Warning, "Chỉ Xem Được Ngày Trong Cùng 1 Tháng" + Environment.NewLine + "Ngày Sau Phải Lớn Hơn Ngày Trước");
                 return;
             }
             ColumnChart1.ChartAreas[0].AxisX.Title = "Ngày";
             ColumnChart1.ChartAreas[0].AxisY.Title = "Nghìn đồng";
-            Random rd = new Random();
-            double dayDiff = (dtpNgaySau.Value.Day - dtpNgayTruoc.Value.Day);
             foreach (var series in ColumnChart1.Series)
             {
                 series.Points.Clear();
             }
-            if ((int)dayDiff > 0) 
+            List<RecieptBillDayTotalPrice> listRecieptBillDayPrice = new List<RecieptBillDayTotalPrice>();
+            foreach (BillDay billDay in BillBLL.Instance.GetListBillDayByType(true))
             {
-                List<RecieptBillDayTotalPrice> listRecieptBillDayPrice = new List<RecieptBillDayTotalPrice>();
-                foreach (BillDay billDay in BillBLL.Instance.GetListBillDayByType(true))
+                if (billDay.Date >= dtpNgayTruoc.Value.Date && billDay.Date <= dtpNgaySau.Value.Date)
                 {
-                    if (billDay.Date >= dtpNgayTruoc.Value && billDay.Date <= dtpNgaySau.Value)
+                    ColumnChart1.Series["Doanh Thu"].Points.AddXY(billDay.Date.ToString("dMMM"), billDay.TotalBill);
+                    listRecieptBillDayPrice.Add(new RecieptBillDayTotalPrice
                     {
-                        ColumnChart1.Series["Doanh Thu"].Points.AddXY(billDay.Date.ToString("dMMM"), billDay.TotalBill);
-                        listRecieptBillDayPrice.Add(new RecieptBillDayTotalPrice
-                        {
-                            BillPrice = billDay.TotalBill,
-                            Date = billDay.Date
-                        });
-                    }
+                        BillPrice = billDay.TotalBill,
+                        Date = billDay.Date
+                    });
                 }
-                foreach (BillDay billDay in BillBLL.Instance.GetListBillDayByType(false))
+            }
+            foreach (BillDay billDay in BillBLL.Instance.GetListBillDayByType(false))
+            {
+                if (billDay.Date >= dtpNgayTruoc.Value && billDay.Date <= dtpNgaySau.Value)
                 {
-                    if (billDay.Date >= dtpNgayTruoc.Value && billDay.Date <= dtpNgaySau.Value)
+                    ColumnChart1.Series["Chi Trả"].Points.AddXY(billDay.Date.ToString("dMMM"), billDay.TotalBill);
+                    foreach (RecieptBillDayTotalPrice item in listRecieptBillDayPrice)
                     {
-                        ColumnChart1.Series["Chi Trả"].Points.AddXY(billDay.Date.ToString("dMMM"), billDay.TotalBill);
-                        foreach (RecieptBillDayTotalPrice item in listRecieptBillDayPrice)
+                        if (item.Date == billDay.Date)
                         {
-                            if (item.Date == billDay.Date)
-                            {
-                                item.RecieptPrice = billDay.TotalBill;
-                            }
-                            else
-                            {
-                                item.RecieptPrice = 0;
-                            }
+                            item.RecieptPrice = billDay.TotalBill;
+                        }
+                        else
+                        {
+                            item.RecieptPrice = 0;
                         }
                     }
                 }
-                foreach (var item in listRecieptBillDayPrice)
-                {
-                    ColumnChart1.Series["Lợi Nhuận"].Points.AddXY(item.Date.ToString("dMMM"), (item.BillPrice - item.RecieptPrice) >= 0 ? item.BillPrice - item.RecieptPrice : 0);
-                }
-                //ColumnChart1.ChartAreas[0].AxisY.Minimum = MinTotalBill;
-                //ColumnChart1.ChartAreas[0].AxisY.Maximum = MaxTotalBill;
             }
+            foreach (var item in listRecieptBillDayPrice)
+            {
+                ColumnChart1.Series["Lợi Nhuận"].Points.AddXY(item.Date.ToString("dMMM"), (item.BillPrice - item.RecieptPrice) >= 0 ? item.BillPrice - item.RecieptPrice : 0);
+            }
+            //ColumnChart1.ChartAreas[0].AxisY.Minimum = MinTotalBill;
+            //ColumnChart1.ChartAreas[0].AxisY.Maximum = MaxTotalBill;
         }
         private void SetColumnChart2()
         {
-            if (dtpNgaySau.Value.Year != dtpNgayTruoc.Value.Year || dtpThangSau.Value.Month <= dtpThangSau.Value.Month)
+            if (dtpNgaySau2.Value.Year != dtpNgayTruoc2.Value.Year || dtpNgaySau2.Value.Month < dtpNgaySau2.Value.Month)
             {
-                frmMessageBox.Instance.ShowFrmMessageBox(frmMessageBox.StatusResult.Warning, "Chỉ Xem Được Tháng Trong Cùng 1 Năm" + Environment.NewLine + "Tháng Sau Phải Lớn Hơn Tháng Trước");
+                frmMessageBox.Instance.ShowFrmMessageBox(frmMessageBox.StatusResult.Warning, "Chỉ Xem Được Tháng Trong Cùng 1 Năm" + Environment.NewLine + "Tháng Sau Phải Lớn Hơn Hoặc Bằng Tháng Trước");
                 return;
             }
             ColumnChart2.ChartAreas[0].AxisX.Title = "Tháng";
             ColumnChart2.ChartAreas[0].AxisY.Title = "Nghìn đồng";
-            Random rd = new Random();
-            double monthDiff = (dtpThangSau.Value.Month - dtpThangTruoc.Value.Month);
-
             foreach (var series in ColumnChart2.Series)
             {
                 series.Points.Clear();
             }
-
-            if ((int)monthDiff > 0)
+            for (int i = dtpNgayTruoc2.Value.Month; i <= dtpNgaySau2.Value.Month; i++)
             {
-                for (int i = 0; i <= (int)monthDiff; i++)
+                float TotalBillMonth = 0;
+                foreach (BillDay billDay in BillBLL.Instance.GetListBillDayByType(true))
                 {
-                    ColumnChart2.Series["Doanh Thu"].Points.AddXY(dtpThangTruoc.Value.AddMonths(i).ToString("MMM"), rd.Next(100, 1000));
-                    ColumnChart2.Series["Chi Trả"].Points.AddXY(dtpThangTruoc.Value.AddMonths(i).ToString("MMM"), rd.Next(100, 1000));
-                    ColumnChart2.Series["Lợi Nhuận"].Points.AddXY(dtpThangTruoc.Value.AddMonths(i).ToString("MMM"), rd.Next(100, 1000));
+                    if (billDay.Date.Month == i)
+                    {
+                        TotalBillMonth += billDay.TotalBill;
+                    }
                 }
+                ColumnChart2.Series["Doanh Thu"].Points.AddXY(DateTimeFormatInfo.CurrentInfo.GetMonthName(i) + dtpNgayTruoc2.Value.Year, TotalBillMonth);
 
-                ColumnChart2.ChartAreas[0].AxisY.Minimum = 100;
-                ColumnChart2.ChartAreas[0].AxisY.Maximum = 3000;
+                float TotalRecieptMonth = 0;
+                foreach (BillDay billDay in BillBLL.Instance.GetListBillDayByType(false))
+                {
+                    if (billDay.Date.Month == i)
+                    {
+                        TotalRecieptMonth += billDay.TotalBill;
+                    }
+                }
+                ColumnChart2.Series["Chi Trả"].Points.AddXY(DateTimeFormatInfo.CurrentInfo.GetMonthName(i) + dtpNgayTruoc2.Value.Year, TotalRecieptMonth);
             }
         }
 
@@ -110,10 +112,10 @@ namespace GiaoDienPBL3.User_Controls
         {
             if (tabControlThongKe.SelectedIndex == 1)
             {
-                dtpThangTruoc.Format = DateTimePickerFormat.Custom;
-                dtpThangTruoc.CustomFormat = "MM/yyyy";
-                dtpThangSau.Format = DateTimePickerFormat.Custom;
-                dtpThangSau.CustomFormat = "MM/yyyy";
+                dtpNgayTruoc2.Format = DateTimePickerFormat.Custom;
+                dtpNgayTruoc2.CustomFormat = "MM/yyyy";
+                dtpNgaySau2.Format = DateTimePickerFormat.Custom;
+                dtpNgaySau2.CustomFormat = "MM/yyyy";
             }
         }
 
@@ -133,10 +135,6 @@ namespace GiaoDienPBL3.User_Controls
                 toolTip1.Hide(chart);
             }
         }
-        //private void SetSplitContainer()
-        //{
-        //    splitContainer1.Panel1.s
-        //}
 
         private void btnXemDoanhThuNgay_Click(object sender, EventArgs e)
         {
@@ -150,7 +148,7 @@ namespace GiaoDienPBL3.User_Controls
 
         private void btnXemThongKeHoaDonTheoNgay_Click(object sender, EventArgs e)
         {
-            if (dtpNgaySau2.Value.Month != dtpNgayTruoc2.Value.Month || dtpNgaySau2.Value.Day < dtpNgayTruoc2.Value.Day)
+            if (dtpNgaySau3.Value.Day < dtpNgayTruoc3.Value.Day)
             {
                 frmMessageBox.Instance.ShowFrmMessageBox(frmMessageBox.StatusResult.Warning, "Chỉ Xem Được Ngày Trong Cùng 1 Tháng" + Environment.NewLine + "Ngày Sau Phải Lớn Hơn Hoặc Bằng Ngày Trước");
                 return;
@@ -161,7 +159,7 @@ namespace GiaoDienPBL3.User_Controls
             float TongTienNhapKho = 0;
             foreach (Bill bill in BillBLL.Instance.GetListBillWithStatus("Chấp Nhận"))
             {
-                if (bill.Date >= dtpNgayTruoc2.Value && bill.Date <= dtpNgaySau2.Value)
+                if (bill.Date >= dtpNgayTruoc3.Value.Date && bill.Date <= dtpNgaySau3.Value.Date)
                 {
                     UC_ChiTietHoaDonNhapKho myUC = new UC_ChiTietHoaDonNhapKho();
                     myUC.TextMaDon = bill.BillId;
@@ -175,7 +173,7 @@ namespace GiaoDienPBL3.User_Controls
             }
             foreach (Reciept reciept in RecieptBLL.Instance.GetListReciept())
             {
-                if (reciept.Date >= dtpNgayTruoc2.Value && reciept.Date <= dtpNgaySau2.Value)
+                if (reciept.Date >= dtpNgayTruoc3.Value && reciept.Date <= dtpNgaySau3.Value)
                 {
                     UC_ChiTietHoaDonNhapKho myUC = new UC_ChiTietHoaDonNhapKho();
                     myUC.TextMaDon = reciept.RecieptId;
@@ -191,6 +189,56 @@ namespace GiaoDienPBL3.User_Controls
             lblTongTienKhachHang.Text = lblTongDoanhThu.Text = string.Format("{0:N3}VNĐ", TongTienKhachHang);
             lblTongTienNhapKho.Text = lblTongChiTra.Text = string.Format("{0:N3}VNĐ", TongTienNhapKho);
             lblTongLoiNhuan.Text = string.Format("{0:N3}VNĐ", TongTienKhachHang - TongTienNhapKho);
+        }
+
+        private void btnXemThongKeHoaDonTheoThang_Click(object sender, EventArgs e)
+        {
+            if (dtpNgaySau2.Value.Month < dtpNgaySau2.Value.Month)
+            {
+                frmMessageBox.Instance.ShowFrmMessageBox(frmMessageBox.StatusResult.Warning, "Chỉ Xem Được Tháng Trong Cùng 1 Năm" + Environment.NewLine + "Tháng Sau Phải Lớn Hơn Hoặc Bằng Tháng Trước");
+                return;
+            }
+            panelHoaDonKhachHang2.Controls.Clear();
+            panelHoaDonNhapKho2.Controls.Clear();
+            for (int i = dtpNgayTruoc4.Value.Month; i <= dtpNgaySau4.Value.Month; i++)
+            {
+                float TotalBillMonth = 0;
+                foreach (BillDay billDay in BillBLL.Instance.GetListBillDayByType(true))
+                {
+                    if (billDay.Date.Month == i)
+                    {
+                        UC_ChiTietHoaDonNhapKho myUC = new UC_ChiTietHoaDonNhapKho();
+                        myUC.TextMaDon = billDay.BillDayId;
+                        myUC.TextLoaiDon = "Đơn Khách Hàng";
+                        myUC.TextNgayTaoDon = billDay.Date.ToString("dd/MM/yyyy");
+                        myUC.TextThanhTien = string.Format("{0:N3}VNĐ", billDay.TotalBill);
+                        myUC.Size = new Size(panelHoaDonKhachHang.Size.Width - 22, 60);
+                        panelHoaDonKhachHang2.Controls.Add(myUC);
+                        TotalBillMonth = TotalBillMonth + billDay.TotalBill;
+                    }
+                }
+                lblTongTienKhachHang2.Text = lblTongDoanhThu2.Text = string.Format("{0:N3}VNĐ", TotalBillMonth);
+
+                float TotalRecieptMonth = 0;
+                foreach (BillDay billDay in BillBLL.Instance.GetListBillDayByType(false))
+                {
+                    if (billDay.Date.Month == i)
+                    {
+                        UC_ChiTietHoaDonNhapKho myUC = new UC_ChiTietHoaDonNhapKho();
+                        myUC.TextMaDon = billDay.BillDayId;
+                        myUC.TextLoaiDon = "Đơn Nhập Kho";
+                        myUC.TextNgayTaoDon = billDay.Date.ToString("dd/MM/yyyy");
+                        myUC.TextThanhTien = string.Format("{0:N3}VNĐ", billDay.TotalBill);
+                        myUC.Size = new Size(panelHoaDonKhachHang.Size.Width - 22, 60);
+                        myUC.BackColor = Color.FromArgb(255, 192, 192);
+                        panelHoaDonNhapKho2.Controls.Add(myUC);
+                        TotalRecieptMonth = TotalRecieptMonth + billDay.TotalBill;
+                    }
+                }
+                lblTongTienNhapKho2.Text = lblTongChiTra2.Text = string.Format("{0:N3}VNĐ", TotalRecieptMonth);
+                
+                lblTongLoiNhuan2.Text = string.Format("{0:N3}VNĐ", TotalBillMonth - TotalRecieptMonth);
+            }
         }
     }
 }

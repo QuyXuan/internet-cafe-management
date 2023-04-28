@@ -111,6 +111,7 @@ namespace GUIClient
         {
             panelDongHo.Controls.Clear();
             panelDongHo.Controls.Add(myUC_DongHo);
+            myUC_DongHo.Dock = DockStyle.Fill;
         }
 
         private void btnMinisize_Click(object sender, EventArgs e)
