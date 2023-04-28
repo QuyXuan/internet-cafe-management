@@ -68,3 +68,55 @@ E:\LEARN\PBL3\PBL3myCODE\DemoPBL03_GUI\DemoPBL03_GUI\GUIClient\obj\Debug\GUIClie
 E:\LEARN\PBL3\PBL3myCODE\DemoPBL03_GUI\DemoPBL03_GUI\GUIClient\obj\Debug\GUIClient.csproj.CopyComplete
 E:\LEARN\PBL3\PBL3myCODE\DemoPBL03_GUI\DemoPBL03_GUI\GUIClient\obj\Debug\GUIClient.exe
 E:\LEARN\PBL3\PBL3myCODE\DemoPBL03_GUI\DemoPBL03_GUI\GUIClient\obj\Debug\GUIClient.pdb
+<<<<<<< HEAD
+=======
+E:\LEARN\PBL3\PBL3myCODE\DemoPBL03_GUI\DemoPBL03_GUI\GUIClient\obj\Debug\GUIClient.User_Controls.UC_DongHo.resources
+E:\LEARN\PBL3\PBL3myCODE\DemoPBL03_GUI\DemoPBL03_GUI\GUIClient\obj\Debug\GUIClient.frmDongHo.resources
+C:\Users\ADMIN\source\repos\pbl3lan2\GUIClient\obj\Debug\GUIClient.exe
+C:\Users\ADMIN\source\repos\pbl3lan2\GUIClient\obj\Debug\GUIClient.pdb
+>>>>>>> f4209b762b78e5ae835b433750299f5adc1026cb
+C:\Users\ADMIN\source\repos\pbl3lan2\GUIClient\bin\Debug\GUIClient.exe.config
+C:\Users\ADMIN\source\repos\pbl3lan2\GUIClient\bin\Debug\GUIClient.exe
+C:\Users\ADMIN\source\repos\pbl3lan2\GUIClient\bin\Debug\GUIClient.pdb
+C:\Users\ADMIN\source\repos\pbl3lan2\GUIClient\bin\Debug\BLL.dll
+C:\Users\ADMIN\source\repos\pbl3lan2\GUIClient\bin\Debug\DTO.dll
+C:\Users\ADMIN\source\repos\pbl3lan2\GUIClient\bin\Debug\EntityFramework.dll
+C:\Users\ADMIN\source\repos\pbl3lan2\GUIClient\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\ADMIN\source\repos\pbl3lan2\GUIClient\bin\Debug\GiaoDienPBL3.exe
+C:\Users\ADMIN\source\repos\pbl3lan2\GUIClient\bin\Debug\Guna.UI2.dll
+C:\Users\ADMIN\source\repos\pbl3lan2\GUIClient\bin\Debug\DAL.dll
+C:\Users\ADMIN\source\repos\pbl3lan2\GUIClient\bin\Debug\Bunifu_UI_v1.5.3.dll
+C:\Users\ADMIN\source\repos\pbl3lan2\GUIClient\bin\Debug\Bunifu.UI.WinForms.BunifuTextBox.dll
+C:\Users\ADMIN\source\repos\pbl3lan2\GUIClient\bin\Debug\Bunifu.Licensing.dll
+C:\Users\ADMIN\source\repos\pbl3lan2\GUIClient\bin\Debug\BLL.pdb
+C:\Users\ADMIN\source\repos\pbl3lan2\GUIClient\bin\Debug\BLL.dll.config
+C:\Users\ADMIN\source\repos\pbl3lan2\GUIClient\bin\Debug\DTO.pdb
+C:\Users\ADMIN\source\repos\pbl3lan2\GUIClient\bin\Debug\DTO.dll.config
+C:\Users\ADMIN\source\repos\pbl3lan2\GUIClient\bin\Debug\GiaoDienPBL3.pdb
+C:\Users\ADMIN\source\repos\pbl3lan2\GUIClient\bin\Debug\GiaoDienPBL3.exe.config
+C:\Users\ADMIN\source\repos\pbl3lan2\GUIClient\bin\Debug\EntityFramework.xml
+C:\Users\ADMIN\source\repos\pbl3lan2\GUIClient\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\ADMIN\source\repos\pbl3lan2\GUIClient\bin\Debug\DAL.pdb
+C:\Users\ADMIN\source\repos\pbl3lan2\GUIClient\bin\Debug\DAL.dll.config
+C:\Users\ADMIN\source\repos\pbl3lan2\GUIClient\obj\Debug\GUIClient.csproj.AssemblyReference.cache
+C:\Users\ADMIN\source\repos\pbl3lan2\GUIClient\obj\Debug\GUIClient.csproj.SuggestedBindingRedirects.cache
+C:\Users\ADMIN\source\repos\pbl3lan2\GUIClient\obj\Debug\GUIClient.frmClient.resources
+<<<<<<< HEAD
+C:\Users\ADMIN\source\repos\pbl3lan2\GUIClient\obj\Debug\GUIClient.frmLoginClient.resources
+C:\Users\ADMIN\source\repos\pbl3lan2\GUIClient\obj\Debug\GUIClient.Properties.Resources.resources
+=======
+C:\Users\ADMIN\source\repos\pbl3lan2\GUIClient\obj\Debug\GUIClient.frmDongHo.resources
+C:\Users\ADMIN\source\repos\pbl3lan2\GUIClient\obj\Debug\GUIClient.frmLoginClient.resources
+C:\Users\ADMIN\source\repos\pbl3lan2\GUIClient\obj\Debug\GUIClient.Properties.Resources.resources
+C:\Users\ADMIN\source\repos\pbl3lan2\GUIClient\obj\Debug\GUIClient.User_Controls.UC_DongHo.resources
+>>>>>>> f4209b762b78e5ae835b433750299f5adc1026cb
+C:\Users\ADMIN\source\repos\pbl3lan2\GUIClient\obj\Debug\GUIClient.User_Controls.UC_NapGioChoi.resources
+C:\Users\ADMIN\source\repos\pbl3lan2\GUIClient\obj\Debug\GUIClient.User_Controls.UC_TrangChuKhachHang.resources
+C:\Users\ADMIN\source\repos\pbl3lan2\GUIClient\obj\Debug\GUIClient.csproj.GenerateResource.cache
+C:\Users\ADMIN\source\repos\pbl3lan2\GUIClient\obj\Debug\GUIClient.csproj.CoreCompileInputs.cache
+C:\Users\ADMIN\source\repos\pbl3lan2\GUIClient\obj\Debug\GUIClient.csproj.CopyComplete
+<<<<<<< HEAD
+C:\Users\ADMIN\source\repos\pbl3lan2\GUIClient\obj\Debug\GUIClient.exe
+C:\Users\ADMIN\source\repos\pbl3lan2\GUIClient\obj\Debug\GUIClient.pdb
+=======
+>>>>>>> f4209b762b78e5ae835b433750299f5adc1026cb
