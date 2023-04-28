@@ -3,6 +3,7 @@ using DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -96,6 +97,52 @@ namespace BLL
                 {
                     return account.AccountId;
                 }
+            }
+        }
+
+        //Hàm lấy Account từ accountID
+        public Account GetAccountByID(string accountId)
+        {
+            using (var context = new QLNETDBContext())
+            {
+                if (context == null)
+                {
+                    return null;
+                }
+                var account = context.Accounts.FirstOrDefault(p => p.AccountId == accountId);
+                if (account == null)
+                {
+                    return null;
+                }
+                else
+                {
+                    return account;
+                }
+            }
+        }
+
+        //Hàm kiểm tra thay đổi mật khẩu
+        public string CheckDoiMatKhau(string accountID, string oldPass, string newPass, string confirmPass)
+        {
+            using (var context = new QLNETDBContext())
+            {
+                if (context == null)
+                {
+                    return null;
+                }
+                var account = context.Accounts.FirstOrDefault(p => p.AccountId == accountID);
+                string message = null;
+                if (account.Password != oldPass)
+                {
+                    return message = "Mật Khẩu Sai";
+                }
+                if (newPass != confirmPass)
+                {
+                    return message = "Mật khẩu Không Khớp";
+                }
+                account.Password = newPass;
+                context.SaveChanges();
+                return message;
             }
         }
     }
