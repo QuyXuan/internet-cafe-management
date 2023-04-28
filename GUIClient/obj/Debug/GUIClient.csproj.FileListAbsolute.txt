@@ -101,22 +101,12 @@ C:\Users\ADMIN\source\repos\pbl3lan2\GUIClient\bin\Debug\DAL.dll.config
 C:\Users\ADMIN\source\repos\pbl3lan2\GUIClient\obj\Debug\GUIClient.csproj.AssemblyReference.cache
 C:\Users\ADMIN\source\repos\pbl3lan2\GUIClient\obj\Debug\GUIClient.csproj.SuggestedBindingRedirects.cache
 C:\Users\ADMIN\source\repos\pbl3lan2\GUIClient\obj\Debug\GUIClient.frmClient.resources
-<<<<<<< HEAD
 C:\Users\ADMIN\source\repos\pbl3lan2\GUIClient\obj\Debug\GUIClient.frmLoginClient.resources
 C:\Users\ADMIN\source\repos\pbl3lan2\GUIClient\obj\Debug\GUIClient.Properties.Resources.resources
-=======
 C:\Users\ADMIN\source\repos\pbl3lan2\GUIClient\obj\Debug\GUIClient.frmDongHo.resources
-C:\Users\ADMIN\source\repos\pbl3lan2\GUIClient\obj\Debug\GUIClient.frmLoginClient.resources
-C:\Users\ADMIN\source\repos\pbl3lan2\GUIClient\obj\Debug\GUIClient.Properties.Resources.resources
 C:\Users\ADMIN\source\repos\pbl3lan2\GUIClient\obj\Debug\GUIClient.User_Controls.UC_DongHo.resources
->>>>>>> f4209b762b78e5ae835b433750299f5adc1026cb
 C:\Users\ADMIN\source\repos\pbl3lan2\GUIClient\obj\Debug\GUIClient.User_Controls.UC_NapGioChoi.resources
 C:\Users\ADMIN\source\repos\pbl3lan2\GUIClient\obj\Debug\GUIClient.User_Controls.UC_TrangChuKhachHang.resources
 C:\Users\ADMIN\source\repos\pbl3lan2\GUIClient\obj\Debug\GUIClient.csproj.GenerateResource.cache
 C:\Users\ADMIN\source\repos\pbl3lan2\GUIClient\obj\Debug\GUIClient.csproj.CoreCompileInputs.cache
 C:\Users\ADMIN\source\repos\pbl3lan2\GUIClient\obj\Debug\GUIClient.csproj.CopyComplete
-<<<<<<< HEAD
-C:\Users\ADMIN\source\repos\pbl3lan2\GUIClient\obj\Debug\GUIClient.exe
-C:\Users\ADMIN\source\repos\pbl3lan2\GUIClient\obj\Debug\GUIClient.pdb
-=======
->>>>>>> f4209b762b78e5ae835b433750299f5adc1026cb
