@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:\Users\ADMIN\source\repos\PBL03\GiaoDienPBL3\bin\Debug\GiaoDienPBL3.exe.config
 C:\Users\ADMIN\source\repos\PBL03\GiaoDienPBL3\bin\Debug\GiaoDienPBL3.exe
 C:\Users\ADMIN\source\repos\PBL03\GiaoDienPBL3\bin\Debug\GiaoDienPBL3.pdb
@@ -225,12 +226,12 @@ E:\LEARN\PBL3\PBL3myCODE\DemoPBL03_GUI\DemoPBL03_GUI\GiaoDienPBL3\obj\Debug\GUI.
 E:\LEARN\PBL3\PBL3myCODE\DemoPBL03_GUI\DemoPBL03_GUI\GiaoDienPBL3\obj\Debug\GUI.csproj.CopyComplete
 E:\LEARN\PBL3\PBL3myCODE\DemoPBL03_GUI\DemoPBL03_GUI\GiaoDienPBL3\obj\Debug\GiaoDienPBL3.exe
 E:\LEARN\PBL3\PBL3myCODE\DemoPBL03_GUI\DemoPBL03_GUI\GiaoDienPBL3\obj\Debug\GiaoDienPBL3.pdb
-<<<<<<< HEAD
 =======
 C:\Users\ADMIN\source\repos\pbl03quy\GiaoDienPBL3\obj\Debug\GiaoDienPBL3.frmMessageBox.resources
 >>>>>>> 9b40c69fe19fd3c49316442af325722459edab1d
 >>>>>>> f4209b762b78e5ae835b433750299f5adc1026cb
 >>>>>>> 667d9aaf43f0a7144da2a87377b68e7d025b33d4
+>>>>>>> 3d049dd85cf7fbadfff3c4f35f7606723547fa25
 C:\Users\ADMIN\source\repos\pbl3lan2\GiaoDienPBL3\bin\Debug\GiaoDienPBL3.exe.config
 C:\Users\ADMIN\source\repos\pbl3lan2\GiaoDienPBL3\bin\Debug\GiaoDienPBL3.exe
 C:\Users\ADMIN\source\repos\pbl3lan2\GiaoDienPBL3\bin\Debug\GiaoDienPBL3.pdb
