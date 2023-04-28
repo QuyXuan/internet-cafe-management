@@ -73,7 +73,7 @@ namespace GiaoDienPBL3.UC
         {
             if (CheckUCMenuFromUcHoaDon())
             {
-                MessageBox.Show("Bạn Không Thể Thay Đổi Món Ăn Trong Hóa Đơn Này", "Thông Báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                frmMessageBox.Instance.ShowFrmMessageBox(frmMessageBox.StatusResult.Warning, "Bạn Không Thể Thay Đổi Món Ăn Trong Hóa Đơn Này");
                 return;
             }
             if (lblGiaMonAn.Text == lblTenMonAn.Text)

@@ -33,5 +33,15 @@ namespace BLL
                 return employee.EmployeeName;
             }
         }
+        public string GetEmployeeIdByAccountId(string accountId)
+        {
+            using (var context = new QLNETDBContext())
+            {
+                if (context == null) return null;
+                var employee = context.Employees.FirstOrDefault(p => p.AccountId == accountId);
+                if (employee == null) return null;
+                return employee.EmployeeId;
+            }
+        }
     }
 }

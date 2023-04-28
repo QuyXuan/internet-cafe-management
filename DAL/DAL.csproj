@@ -160,6 +160,34 @@
     <Compile Include="Migrations\202304211748187_updatedb26.designer.cs">
       <DependentUpon>202304211748187_updatedb26.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202304230049534_updatedb27.cs" />
+    <Compile Include="Migrations\202304230049534_updatedb27.designer.cs">
+      <DependentUpon>202304230049534_updatedb27.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202304231919049_updatedb28.cs" />
+    <Compile Include="Migrations\202304231919049_updatedb28.designer.cs">
+      <DependentUpon>202304231919049_updatedb28.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202304270245350_updatedb29.cs" />
+    <Compile Include="Migrations\202304270245350_updatedb29.designer.cs">
+      <DependentUpon>202304270245350_updatedb29.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202304270248569_updatedb30.cs" />
+    <Compile Include="Migrations\202304270248569_updatedb30.designer.cs">
+      <DependentUpon>202304270248569_updatedb30.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202304270422168_updatedb31.cs" />
+    <Compile Include="Migrations\202304270422168_updatedb31.designer.cs">
+      <DependentUpon>202304270422168_updatedb31.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202304270447315_updatedb32.cs" />
+    <Compile Include="Migrations\202304270447315_updatedb32.designer.cs">
+      <DependentUpon>202304270447315_updatedb32.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202304270522305_updatedb33.cs" />
+    <Compile Include="Migrations\202304270522305_updatedb33.designer.cs">
+      <DependentUpon>202304270522305_updatedb33.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
@@ -259,6 +287,27 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202304211748187_updatedb26.resx">
       <DependentUpon>202304211748187_updatedb26.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304230049534_updatedb27.resx">
+      <DependentUpon>202304230049534_updatedb27.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304231919049_updatedb28.resx">
+      <DependentUpon>202304231919049_updatedb28.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304270245350_updatedb29.resx">
+      <DependentUpon>202304270245350_updatedb29.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304270248569_updatedb30.resx">
+      <DependentUpon>202304270248569_updatedb30.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304270422168_updatedb31.resx">
+      <DependentUpon>202304270422168_updatedb31.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304270447315_updatedb32.resx">
+      <DependentUpon>202304270447315_updatedb32.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304270522305_updatedb33.resx">
+      <DependentUpon>202304270522305_updatedb33.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
