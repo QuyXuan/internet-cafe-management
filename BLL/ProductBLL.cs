@@ -109,7 +109,8 @@ namespace BLL
                         CostPrice = product.Key.CostPrice,
                         Type = product.Key.Type,
                         Stock = product.Value ?? 0,
-                        SellingPrice = 0
+                        SellingPrice = 0,
+                        ImageFilePath = "defaultFoodAndDrink.png"
                     });
                 }
                 context.SaveChanges();
