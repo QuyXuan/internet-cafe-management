@@ -64,10 +64,12 @@
     <Compile Include="HoaDonNhap.cs" />
     <Compile Include="May.cs" />
     <Compile Include="Product.cs" />
+    <Compile Include="ProductIdNameQuantityPrice.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reciept.cs" />
     <Compile Include="RecieptProduct.cs" />
     <Compile Include="Session.cs" />
+    <Compile Include="Time.cs" />
     <Compile Include="TypeComputer.cs" />
   </ItemGroup>
   <ItemGroup>

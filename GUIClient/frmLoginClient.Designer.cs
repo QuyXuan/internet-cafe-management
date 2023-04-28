@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panelDangNhap = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.btnThoat = new Guna.UI2.WinForms.Guna2ControlBox();
             this.txtMatKhau = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtTaiKhoan = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblThongBao = new System.Windows.Forms.Label();
@@ -37,15 +38,15 @@
             this.btnDangNhap = new Guna.UI2.WinForms.Guna2Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.guna2ControlBox2 = new Guna.UI2.WinForms.Guna2ControlBox();
-            this.btnThoat = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panelDangNhap.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelDangNhap
             // 
+            this.panelDangNhap.Controls.Add(this.btnThoat);
             this.panelDangNhap.Controls.Add(this.txtMatKhau);
             this.panelDangNhap.Controls.Add(this.txtTaiKhoan);
             this.panelDangNhap.Controls.Add(this.lblThongBao);
@@ -53,8 +54,6 @@
             this.panelDangNhap.Controls.Add(this.btnDangNhap);
             this.panelDangNhap.Controls.Add(this.pictureBox1);
             this.panelDangNhap.Controls.Add(this.label1);
-            this.panelDangNhap.Controls.Add(this.guna2ControlBox2);
-            this.panelDangNhap.Controls.Add(this.btnThoat);
             this.panelDangNhap.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDangNhap.FillColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.panelDangNhap.FillColor2 = System.Drawing.Color.Cyan;
@@ -62,11 +61,23 @@
             this.panelDangNhap.FillColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.panelDangNhap.Location = new System.Drawing.Point(0, 0);
             this.panelDangNhap.Name = "panelDangNhap";
-            this.panelDangNhap.Size = new System.Drawing.Size(544, 461);
+            this.panelDangNhap.Size = new System.Drawing.Size(545, 461);
             this.panelDangNhap.TabIndex = 1;
+            // 
+            // btnThoat
+            // 
+            this.btnThoat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnThoat.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnThoat.IconColor = System.Drawing.Color.White;
+            this.btnThoat.Location = new System.Drawing.Point(493, 0);
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(52, 28);
+            this.btnThoat.TabIndex = 8;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // txtMatKhau
             // 
+            this.txtMatKhau.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtMatKhau.BackColor = System.Drawing.Color.Transparent;
             this.txtMatKhau.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtMatKhau.BorderRadius = 10;
@@ -93,6 +104,7 @@
             // 
             // txtTaiKhoan
             // 
+            this.txtTaiKhoan.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtTaiKhoan.BackColor = System.Drawing.Color.Transparent;
             this.txtTaiKhoan.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtTaiKhoan.BorderRadius = 10;
@@ -118,6 +130,7 @@
             // 
             // lblThongBao
             // 
+            this.lblThongBao.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblThongBao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.lblThongBao.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblThongBao.ForeColor = System.Drawing.Color.Red;
@@ -131,6 +144,7 @@
             // 
             // chkHienThiMatKhau
             // 
+            this.chkHienThiMatKhau.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.chkHienThiMatKhau.AutoSize = true;
             this.chkHienThiMatKhau.BackColor = System.Drawing.Color.Transparent;
             this.chkHienThiMatKhau.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -155,6 +169,7 @@
             // 
             // btnDangNhap
             // 
+            this.btnDangNhap.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnDangNhap.BackColor = System.Drawing.Color.Transparent;
             this.btnDangNhap.BorderRadius = 20;
             this.btnDangNhap.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -174,7 +189,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::GUIClient.Properties.Resources.icons8_react_60;
             this.pictureBox1.Location = new System.Drawing.Point(242, 69);
@@ -186,6 +201,7 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -196,44 +212,28 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Đăng Nhập";
             // 
-            // guna2ControlBox2
-            // 
-            this.guna2ControlBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2ControlBox2.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox;
-            this.guna2ControlBox2.FillColor = System.Drawing.Color.Silver;
-            this.guna2ControlBox2.IconColor = System.Drawing.Color.White;
-            this.guna2ControlBox2.Location = new System.Drawing.Point(440, 0);
-            this.guna2ControlBox2.Name = "guna2ControlBox2";
-            this.guna2ControlBox2.Size = new System.Drawing.Size(52, 28);
-            this.guna2ControlBox2.TabIndex = 6;
-            // 
-            // btnThoat
-            // 
-            this.btnThoat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnThoat.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnThoat.IconColor = System.Drawing.Color.White;
-            this.btnThoat.Location = new System.Drawing.Point(492, 0);
-            this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(52, 28);
-            this.btnThoat.TabIndex = 7;
-            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
-            // 
             // guna2Elipse1
             // 
             this.guna2Elipse1.BorderRadius = 20;
             this.guna2Elipse1.TargetControl = this.lblThongBao;
             // 
+            // timer1
+            // 
+            this.timer1.Interval = 1;
+            // 
             // frmLoginClient
             // 
             this.AcceptButton = this.btnDangNhap;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(544, 461);
+            this.ClientSize = new System.Drawing.Size(545, 461);
             this.Controls.Add(this.panelDangNhap);
             this.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmLoginClient";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmLoginClient";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panelDangNhap.ResumeLayout(false);
             this.panelDangNhap.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -250,9 +250,9 @@
         private Guna.UI2.WinForms.Guna2Button btnDangNhap;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
-        private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox2;
-        private Guna.UI2.WinForms.Guna2ControlBox btnThoat;
         private Guna.UI2.WinForms.Guna2TextBox txtMatKhau;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
+        private Guna.UI2.WinForms.Guna2ControlBox btnThoat;
+        private System.Windows.Forms.Timer timer1;
     }
 }

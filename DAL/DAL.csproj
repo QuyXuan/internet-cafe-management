@@ -140,6 +140,26 @@
     <Compile Include="Migrations\202304190248284_updatedb21.designer.cs">
       <DependentUpon>202304190248284_updatedb21.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202304191533189_updatedb22.cs" />
+    <Compile Include="Migrations\202304191533189_updatedb22.designer.cs">
+      <DependentUpon>202304191533189_updatedb22.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202304211552572_updatedb23.cs" />
+    <Compile Include="Migrations\202304211552572_updatedb23.designer.cs">
+      <DependentUpon>202304211552572_updatedb23.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202304211607124_updatedb24.cs" />
+    <Compile Include="Migrations\202304211607124_updatedb24.designer.cs">
+      <DependentUpon>202304211607124_updatedb24.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202304211614270_updatedb25.cs" />
+    <Compile Include="Migrations\202304211614270_updatedb25.designer.cs">
+      <DependentUpon>202304211614270_updatedb25.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202304211748187_updatedb26.cs" />
+    <Compile Include="Migrations\202304211748187_updatedb26.designer.cs">
+      <DependentUpon>202304211748187_updatedb26.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
@@ -224,6 +244,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202304190248284_updatedb21.resx">
       <DependentUpon>202304190248284_updatedb21.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304191533189_updatedb22.resx">
+      <DependentUpon>202304191533189_updatedb22.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304211552572_updatedb23.resx">
+      <DependentUpon>202304211552572_updatedb23.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304211607124_updatedb24.resx">
+      <DependentUpon>202304211607124_updatedb24.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304211614270_updatedb25.resx">
+      <DependentUpon>202304211614270_updatedb25.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304211748187_updatedb26.resx">
+      <DependentUpon>202304211748187_updatedb26.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

@@ -36,13 +36,15 @@
             this.lblLoaiKhachHang = new System.Windows.Forms.Label();
             this.lblTenKhachHang = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.guna2ControlBox3 = new Guna.UI2.WinForms.Guna2ControlBox();
+            this.lblSoDu = new System.Windows.Forms.Label();
+            this.btnMinisize = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.btnTrangChu = new Guna.UI2.WinForms.Guna2Button();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.panelDongHo = new System.Windows.Forms.Panel();
             this.panelSideBar = new System.Windows.Forms.Panel();
             this.imgbtnThoat = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.btnTat = new Guna.UI2.WinForms.Guna2ControlBox();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -133,7 +135,7 @@
             this.lblLoaiKhachHang.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblLoaiKhachHang.AutoSize = true;
             this.lblLoaiKhachHang.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLoaiKhachHang.Location = new System.Drawing.Point(975, 67);
+            this.lblLoaiKhachHang.Location = new System.Drawing.Point(941, 37);
             this.lblLoaiKhachHang.Name = "lblLoaiKhachHang";
             this.lblLoaiKhachHang.Size = new System.Drawing.Size(88, 17);
             this.lblLoaiKhachHang.TabIndex = 4;
@@ -143,7 +145,7 @@
             // 
             this.lblTenKhachHang.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTenKhachHang.AutoSize = true;
-            this.lblTenKhachHang.Location = new System.Drawing.Point(975, 34);
+            this.lblTenKhachHang.Location = new System.Drawing.Point(940, 9);
             this.lblTenKhachHang.Name = "lblTenKhachHang";
             this.lblTenKhachHang.Size = new System.Drawing.Size(37, 19);
             this.lblTenKhachHang.TabIndex = 4;
@@ -152,7 +154,9 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.Control;
-            this.panel3.Controls.Add(this.guna2ControlBox3);
+            this.panel3.Controls.Add(this.btnTat);
+            this.panel3.Controls.Add(this.lblSoDu);
+            this.panel3.Controls.Add(this.btnMinisize);
             this.panel3.Controls.Add(this.lblLoaiKhachHang);
             this.panel3.Controls.Add(this.lblTenKhachHang);
             this.panel3.Controls.Add(this.guna2CirclePictureBox1);
@@ -162,23 +166,35 @@
             this.panel3.Size = new System.Drawing.Size(1179, 98);
             this.panel3.TabIndex = 8;
             // 
-            // guna2ControlBox3
+            // lblSoDu
             // 
-            this.guna2ControlBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2ControlBox3.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox;
-            this.guna2ControlBox3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2ControlBox3.FillColor = System.Drawing.Color.Gray;
-            this.guna2ControlBox3.IconColor = System.Drawing.Color.White;
-            this.guna2ControlBox3.Location = new System.Drawing.Point(1099, 0);
-            this.guna2ControlBox3.Name = "guna2ControlBox3";
-            this.guna2ControlBox3.Size = new System.Drawing.Size(80, 23);
-            this.guna2ControlBox3.TabIndex = 6;
+            this.lblSoDu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblSoDu.AutoSize = true;
+            this.lblSoDu.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSoDu.Location = new System.Drawing.Point(940, 65);
+            this.lblSoDu.Name = "lblSoDu";
+            this.lblSoDu.Size = new System.Drawing.Size(53, 19);
+            this.lblSoDu.TabIndex = 7;
+            this.lblSoDu.Text = "Số dư";
+            // 
+            // btnMinisize
+            // 
+            this.btnMinisize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMinisize.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox;
+            this.btnMinisize.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMinisize.FillColor = System.Drawing.Color.Gray;
+            this.btnMinisize.IconColor = System.Drawing.Color.White;
+            this.btnMinisize.Location = new System.Drawing.Point(1099, 0);
+            this.btnMinisize.Name = "btnMinisize";
+            this.btnMinisize.Size = new System.Drawing.Size(80, 23);
+            this.btnMinisize.TabIndex = 6;
+            this.btnMinisize.Click += new System.EventHandler(this.btnMinisize_Click);
             // 
             // guna2CirclePictureBox1
             // 
             this.guna2CirclePictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2CirclePictureBox1.ImageRotate = 0F;
-            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(905, 30);
+            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(870, 20);
             this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
             this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.guna2CirclePictureBox1.Size = new System.Drawing.Size(64, 64);
@@ -221,14 +237,14 @@
             this.btnTrangChu.Text = "Trang Chủ";
             this.btnTrangChu.Click += new System.EventHandler(this.btnTrangChu_Click);
             // 
-            // panel2
+            // panelDongHo
             // 
-            this.panel2.BackColor = System.Drawing.SystemColors.Control;
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(283, 98);
-            this.panel2.TabIndex = 2;
+            this.panelDongHo.BackColor = System.Drawing.SystemColors.Control;
+            this.panelDongHo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelDongHo.Location = new System.Drawing.Point(0, 0);
+            this.panelDongHo.Name = "panelDongHo";
+            this.panelDongHo.Size = new System.Drawing.Size(283, 98);
+            this.panelDongHo.TabIndex = 2;
             // 
             // panelSideBar
             // 
@@ -238,7 +254,7 @@
             this.panelSideBar.Controls.Add(this.panel1);
             this.panelSideBar.Controls.Add(this.panel5);
             this.panelSideBar.Controls.Add(this.imgbtnThoat);
-            this.panelSideBar.Controls.Add(this.panel2);
+            this.panelSideBar.Controls.Add(this.panelDongHo);
             this.panelSideBar.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelSideBar.Location = new System.Drawing.Point(0, 0);
             this.panelSideBar.Name = "panelSideBar";
@@ -260,6 +276,18 @@
             this.imgbtnThoat.Size = new System.Drawing.Size(74, 56);
             this.imgbtnThoat.TabIndex = 3;
             this.imgbtnThoat.Click += new System.EventHandler(this.imgbtnThoat_Click);
+            // 
+            // btnTat
+            // 
+            this.btnTat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnTat.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnTat.IconColor = System.Drawing.Color.White;
+            this.btnTat.Location = new System.Drawing.Point(1028, 0);
+            this.btnTat.Name = "btnTat";
+            this.btnTat.Size = new System.Drawing.Size(75, 23);
+            this.btnTat.TabIndex = 8;
+            this.btnTat.Visible = false;
+            this.btnTat.Click += new System.EventHandler(this.btnTat_Click);
             // 
             // frmClient
             // 
@@ -296,13 +324,15 @@
         private System.Windows.Forms.Label lblLoaiKhachHang;
         private System.Windows.Forms.Label lblTenKhachHang;
         private System.Windows.Forms.Panel panel3;
-        private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox3;
+        private Guna.UI2.WinForms.Guna2ControlBox btnMinisize;
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
         private System.Windows.Forms.Panel panel5;
         private Guna.UI2.WinForms.Guna2Button btnTrangChu;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panelSideBar;
         private Guna.UI2.WinForms.Guna2ImageButton imgbtnThoat;
+        private System.Windows.Forms.Panel panelDongHo;
+        private System.Windows.Forms.Label lblSoDu;
+        private Guna.UI2.WinForms.Guna2ControlBox btnTat;
     }
 }
 

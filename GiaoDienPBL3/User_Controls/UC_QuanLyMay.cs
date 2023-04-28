@@ -32,11 +32,11 @@ namespace GiaoDienPBL3.UC
         {
             COLOR = new Dictionary<string, Color>();
             COLOR.Add("Red", Color.Red);
-            COLOR.Add("Purple", Color.FromArgb(107, 13, 179));
-            COLOR.Add("BrightBlue", Color.FromArgb(77, 167, 236));
-            COLOR.Add("Brown", Color.FromArgb(128, 64, 0));
-            COLOR.Add("Yellow", Color.FromArgb(211, 240, 17));
-            COLOR.Add("BrightYellow", Color.FromArgb(185, 192, 138));
+            COLOR.Add("Purple", Color.FromArgb(107, 13, 179));//
+            COLOR.Add("BrightBlue", Color.FromArgb(77, 167, 236));//
+            COLOR.Add("Brown", Color.FromArgb(128, 64, 0));//
+            COLOR.Add("Yellow", Color.FromArgb(211, 240, 17));//
+            COLOR.Add("BrightYellow", Color.FromArgb(185, 192, 138));//
             COLOR.Add("Green", Color.FromArgb(17, 240, 55));
             COLOR.Add("Black", Color.Black);
             COLOR.Add("Pink", Color.FromArgb(225, 33, 246));
@@ -53,26 +53,27 @@ namespace GiaoDienPBL3.UC
             button.Margin = new Padding(10, 10, 10, 10);
             button.Font = new Font("Segoe UI", 9, FontStyle.Bold);
             button.Text = computer.ComputerName;
-            if (computer.NameType == "Khách")
+            button.ForeColor = Color.DarkGray;
+            if (computer.TypeId == "type0001")
                 button.BorderColor = COLOR["Purple"];
-            else if (computer.NameType == "Khách Thường Xuyên")
+            else if (computer.TypeId == "type0002")
                 button.BorderColor = COLOR["BrightBlue"];
-            else if (computer.NameType == "Administrator")
+            else if (computer.TypeId == "type0003")
                 button.BorderColor = COLOR["Brown"];
-            else if (computer.NameType == "Nhân Viên")
+            else if (computer.TypeId == "type0004")
                 button.BorderColor = COLOR["Yellow"];
-            else if (computer.NameType == "Học Sinh/Sinh Viên")
+            else if (computer.TypeId == "type0005")
                 button.BorderColor = COLOR["BrightYellow"];
-            else if (computer.NameType == "Online")
+            else if (computer.TypeId == "type0006")
                 button.BorderColor = COLOR["Green"];
-            else if (computer.NameType == "Offline")
-                button.BorderColor = COLOR["Black"];
-            else if (computer.NameType == "Khách Trả Sau")
-                button.BorderColor = COLOR["Pink"];
             if (computer.Status == "Còn 5 Phút")
                 button.FillColor = COLOR["Red"];
             else if (computer.Status == "Bảo Trì")
                 button.FillColor = COLOR["Blue"];
+            else if (computer.Status == "Đã Tắt")
+                button.FillColor = COLOR["Black"];
+            else if (computer.Status == "Đang Hoạt Động")
+                button.FillColor = COLOR["Pink"];
             button.Tag = computer;
             frmMain.myUC_QuanLyMay.panelQuanLyMay.Controls.Add(button);
             button.MouseEnter += new EventHandler(button_MouseEnter);
@@ -86,7 +87,7 @@ namespace GiaoDienPBL3.UC
             my_UCChiTietMay.TextMaMay = computer.ComputerId;
             my_UCChiTietMay.TextSoMay = computer.ComputerName;
             my_UCChiTietMay.TextGiaMay = string.Format("{0:N3}VNĐ", 10);
-            my_UCChiTietMay.TextLoaiMay = computer.NameType;
+            my_UCChiTietMay.TextLoaiMay = ComputerBLL.Instance.GetTypeComputerByTypeId(computer.TypeId).NameType;
             my_UCChiTietMay.TextTrangThai = computer.Status;
             panelPhu.Controls.Add(my_UCChiTietMay);
             my_UCChiTietMay.Location = new Point(button.Location.X + 60, button.Location.Y + 60);
