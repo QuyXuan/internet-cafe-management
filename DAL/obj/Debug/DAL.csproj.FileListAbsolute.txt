@@ -99,3 +99,10 @@ C:\Users\ADMIN\source\repos\pbl03quy\DAL\obj\Debug\DAL.Migrations.updatedb31.res
 C:\Users\ADMIN\source\repos\pbl03quy\DAL\obj\Debug\DAL.Migrations.updatedb32.resources
 C:\Users\ADMIN\source\repos\pbl03quy\DAL\obj\Debug\DAL.Migrations.updatedb33.resources
 >>>>>>> 9b40c69fe19fd3c49316442af325722459edab1d
+C:\Users\ADMIN\source\repos\pbl3lan2\DAL\obj\Debug\DAL.Migrations.updatedb27.resources
+C:\Users\ADMIN\source\repos\pbl3lan2\DAL\obj\Debug\DAL.Migrations.updatedb28.resources
+C:\Users\ADMIN\source\repos\pbl3lan2\DAL\obj\Debug\DAL.Migrations.updatedb29.resources
+C:\Users\ADMIN\source\repos\pbl3lan2\DAL\obj\Debug\DAL.Migrations.updatedb30.resources
+C:\Users\ADMIN\source\repos\pbl3lan2\DAL\obj\Debug\DAL.Migrations.updatedb31.resources
+C:\Users\ADMIN\source\repos\pbl3lan2\DAL\obj\Debug\DAL.Migrations.updatedb32.resources
+C:\Users\ADMIN\source\repos\pbl3lan2\DAL\obj\Debug\DAL.Migrations.updatedb33.resources
