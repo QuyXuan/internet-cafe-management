@@ -442,8 +442,9 @@
             this.dgvGiaMay.ColumnHeadersHeight = 29;
             this.dgvGiaMay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvGiaMay.Cursor = System.Windows.Forms.Cursors.Default;
+            this.dgvGiaMay.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvGiaMay.Enabled = false;
-            this.dgvGiaMay.Location = new System.Drawing.Point(-1, 40);
+            this.dgvGiaMay.Location = new System.Drawing.Point(0, 40);
             this.dgvGiaMay.Name = "dgvGiaMay";
             this.dgvGiaMay.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -463,7 +464,7 @@
             this.dgvGiaMay.RowTemplate.Height = 24;
             this.dgvGiaMay.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvGiaMay.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvGiaMay.Size = new System.Drawing.Size(427, 313);
+            this.dgvGiaMay.Size = new System.Drawing.Size(425, 313);
             this.dgvGiaMay.TabIndex = 0;
             // 
             // guna2GroupBox1
