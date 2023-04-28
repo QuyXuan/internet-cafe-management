@@ -113,5 +113,15 @@ namespace BLL
                 context.SaveChanges();
             }
         }
+        public List<BillDay> GetListBillDayByType(bool type)
+        {
+            using (var context = new QLNETDBContext())
+            {
+                if (context == null) return null;
+                var billDays = context.BillDays.Where(p => p.Type == type).ToList();
+                if (billDays == null) return null;
+                return billDays;
+            }
+        }
     }
 }

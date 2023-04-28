@@ -63,6 +63,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TimerBLL.cs" />
     <Compile Include="TypeComputerBLL.cs" />
+    <Compile Include="RecieptBLL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DAL\DAL.csproj">

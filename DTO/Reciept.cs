@@ -28,15 +28,17 @@ namespace DTO
         public virtual Employee Employee { get; set; }
 
         [StringLength(50)]
-        public string Storekeeper { get; set; }
+        public string Manufacturer { get; set; }
 
-        public Nullable<float> Quantity { get; set; }
+        public Nullable<float> Discount { get; set; }
 
-        public Nullable<float> CostPrice { get; set; }
+        //public Nullable<float> Quantity { get; set; }
+
+        //public Nullable<float> CostPrice { get; set; }
 
         public virtual ICollection<RecieptProduct> Products { get; set; }
 
-        [StringLength(50)]
-        public string ProductName { get; set; }
+        //[StringLength(50)]
+        //public string ProductName { get; set; }
     }
 }

@@ -86,7 +86,7 @@ namespace GiaoDienPBL3.User_Controls
 
         private void btnXacNhanThayDoi_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Thay Đổi Thành Công");
+            frmMessageBox.Instance.ShowFrmMessageBox(frmMessageBox.StatusResult.Success, "Thay Đổi Thành Công");
             txtMatKhau.Text = "";
             txtTenTaiKhoan.Text = "";
             SetVisibleControl(false);
@@ -124,7 +124,7 @@ namespace GiaoDienPBL3.User_Controls
             row.Cells[3].Value = DateTime.Now.ToString("dd/MM/yyyy");
             row.Height = 40;
             dgvQuanLyThongTinKhachHang.Rows.Add(row);
-            MessageBox.Show("Đăng Ký Tài Khoản Thành Công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            frmMessageBox.Instance.ShowFrmMessageBox(frmMessageBox.StatusResult.Success, "Thay Đổi Tài Khoản Thành Công");
             btnHuy.PerformClick();
             SetVisibleControlDangKy(false);
         }

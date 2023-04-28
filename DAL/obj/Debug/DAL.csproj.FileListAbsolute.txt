@@ -41,6 +41,7 @@ E:\LEARN\PBL3\PBL3myCODE\DemoPBL03_GUI\DemoPBL03_GUI\DAL\obj\Debug\DAL.csproj.Co
 E:\LEARN\PBL3\PBL3myCODE\DemoPBL03_GUI\DemoPBL03_GUI\DAL\obj\Debug\DAL.csproj.CopyComplete
 E:\LEARN\PBL3\PBL3myCODE\DemoPBL03_GUI\DemoPBL03_GUI\DAL\obj\Debug\DAL.dll
 E:\LEARN\PBL3\PBL3myCODE\DemoPBL03_GUI\DemoPBL03_GUI\DAL\obj\Debug\DAL.pdb
+<<<<<<< HEAD
 C:\Users\ADMIN\source\repos\pbl3lan2\DAL\bin\Debug\DAL.dll.config
 C:\Users\ADMIN\source\repos\pbl3lan2\DAL\bin\Debug\DAL.dll
 C:\Users\ADMIN\source\repos\pbl3lan2\DAL\bin\Debug\DAL.pdb
@@ -84,3 +85,17 @@ C:\Users\ADMIN\source\repos\pbl3lan2\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.
 C:\Users\ADMIN\source\repos\pbl3lan2\DAL\obj\Debug\DAL.csproj.CopyComplete
 C:\Users\ADMIN\source\repos\pbl3lan2\DAL\obj\Debug\DAL.dll
 C:\Users\ADMIN\source\repos\pbl3lan2\DAL\obj\Debug\DAL.pdb
+=======
+C:\Users\ADMIN\source\repos\pbl03quy\DAL\obj\Debug\DAL.Migrations.updatedb22.resources
+C:\Users\ADMIN\source\repos\pbl03quy\DAL\obj\Debug\DAL.Migrations.updatedb23.resources
+C:\Users\ADMIN\source\repos\pbl03quy\DAL\obj\Debug\DAL.Migrations.updatedb24.resources
+C:\Users\ADMIN\source\repos\pbl03quy\DAL\obj\Debug\DAL.Migrations.updatedb25.resources
+C:\Users\ADMIN\source\repos\pbl03quy\DAL\obj\Debug\DAL.Migrations.updatedb26.resources
+C:\Users\ADMIN\source\repos\pbl03quy\DAL\obj\Debug\DAL.Migrations.updatedb27.resources
+C:\Users\ADMIN\source\repos\pbl03quy\DAL\obj\Debug\DAL.Migrations.updatedb28.resources
+C:\Users\ADMIN\source\repos\pbl03quy\DAL\obj\Debug\DAL.Migrations.updatedb29.resources
+C:\Users\ADMIN\source\repos\pbl03quy\DAL\obj\Debug\DAL.Migrations.updatedb30.resources
+C:\Users\ADMIN\source\repos\pbl03quy\DAL\obj\Debug\DAL.Migrations.updatedb31.resources
+C:\Users\ADMIN\source\repos\pbl03quy\DAL\obj\Debug\DAL.Migrations.updatedb32.resources
+C:\Users\ADMIN\source\repos\pbl03quy\DAL\obj\Debug\DAL.Migrations.updatedb33.resources
+>>>>>>> 9b40c69fe19fd3c49316442af325722459edab1d
