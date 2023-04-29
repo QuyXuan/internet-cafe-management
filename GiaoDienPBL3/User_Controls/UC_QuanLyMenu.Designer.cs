@@ -63,7 +63,6 @@
             this.panelMonAn = new System.Windows.Forms.FlowLayoutPanel();
             this.uC_MonAn1 = new GiaoDienPBL3.UC.UC_MonAn();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnCaiDat = new Guna.UI2.WinForms.Guna2Button();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2CustomGradientPanel1.SuspendLayout();
             this.panelThongTinChiTietMonAn.SuspendLayout();
@@ -596,36 +595,12 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Controls.Add(this.btnCaiDat);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1249, 68);
             this.panel1.TabIndex = 0;
-            // 
-            // btnCaiDat
-            // 
-            this.btnCaiDat.BorderColor = System.Drawing.Color.Transparent;
-            this.btnCaiDat.BorderRadius = 8;
-            this.btnCaiDat.BorderThickness = 2;
-            this.btnCaiDat.CheckedState.BorderColor = System.Drawing.Color.Red;
-            this.btnCaiDat.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCaiDat.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnCaiDat.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnCaiDat.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnCaiDat.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnCaiDat.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnCaiDat.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCaiDat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnCaiDat.Image = global::GiaoDienPBL3.Properties.Resources.icons8_settings_30__1_;
-            this.btnCaiDat.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnCaiDat.Location = new System.Drawing.Point(1059, 23);
-            this.btnCaiDat.Name = "btnCaiDat";
-            this.btnCaiDat.Size = new System.Drawing.Size(132, 45);
-            this.btnCaiDat.TabIndex = 2;
-            this.btnCaiDat.Text = "Cài Đặt";
-            this.btnCaiDat.Click += new System.EventHandler(this.btnCaiDat_Click);
             // 
             // label1
             // 
@@ -670,7 +645,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel4;
-        private Guna.UI2.WinForms.Guna2Button btnCaiDat;
         private System.Windows.Forms.Panel panelThongTinChiTietMonAn;
         private Guna.UI2.WinForms.Guna2GroupBox groupBoxThongTinChung;
         private System.Windows.Forms.Label label5;

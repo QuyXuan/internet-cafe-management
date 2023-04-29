@@ -60,8 +60,6 @@
     <Compile Include="Customer.cs" />
     <Compile Include="Discount.cs" />
     <Compile Include="Employee.cs" />
-    <Compile Include="HangHoa.cs" />
-    <Compile Include="HoaDonNhap.cs" />
     <Compile Include="May.cs" />
     <Compile Include="Product.cs" />
     <Compile Include="ProductIdNameQuantityPrice.cs" />

@@ -29,19 +29,7 @@ namespace GiaoDienPBL3.UC
             my_UCThongTinVaCaiDatMonAn = new UC_ThongTinVaCaiDatMonAn();
             AddUC();
         }
-        private void btnCaiDat_Click(object sender, EventArgs e)
-        {
-            if (checkBtnCaiDat == false)
-            {
-                panelCaiDatVaThongTin.SendToBack();
-                checkBtnCaiDat = true;
-            }
-            else
-            {
-                panelCaiDatVaThongTin.BringToFront();
-                checkBtnCaiDat = false;
-            }
-        }
+
         private void AddUC()
         {
             panelThongTinChiTietMonAn.Controls.Add(my_UCThongTinVaCaiDatMonAn);
@@ -67,10 +55,6 @@ namespace GiaoDienPBL3.UC
             my_UCMonAn.TextTenMonAn = product.ProductName;
             my_UCMonAn.ImagePanel = GetAnhByPathAnhMon(product.ImageFilePath);
             my_UCMonAn.Tag = product;
-            //if (checkFormAdminOrClient == true)
-            //{
-             
-            //}
             frmMain.myUC_QuanLyMenu.panelMonAn.Controls.Add(my_UCMonAn);
         }
         private Image GetAnhByPathAnhMon(string nameImg)

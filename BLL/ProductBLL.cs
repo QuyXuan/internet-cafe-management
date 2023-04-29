@@ -86,6 +86,25 @@ namespace BLL
                 return productId;
             }
         }
+        public void UpdateProductWithPriceAndPath(string productId, string imageFilePath, float sellingPrice = 0)
+        {
+            using (var context = new QLNETDBContext())
+            {
+                if (context == null) return;
+                var product = context.Products.FirstOrDefault(p => productId == p.ProductId);
+                if (product == null) return;
+                if (imageFilePath == "")
+                {
+                    product.SellingPrice = sellingPrice;
+                }
+                else
+                {
+                    product.SellingPrice = sellingPrice;
+                    product.ImageFilePath = imageFilePath;
+                }
+                context.SaveChanges();
+            }
+        }
         public void AddNewProduct(Product product)
         {
             using (var context = new QLNETDBContext())

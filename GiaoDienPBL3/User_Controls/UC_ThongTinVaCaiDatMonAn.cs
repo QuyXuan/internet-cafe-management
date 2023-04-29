@@ -17,115 +17,15 @@ namespace GiaoDienPBL3.User_Controls
 {
     public partial class UC_ThongTinVaCaiDatMonAn : UserControl
     {
-        private Guna2Button lastButton = null;
-        public string TextMaMon
-        {
-            get { return txtMaMon.Text.Trim(); }
-            set { txtMaMon.Text = value; }
-        }
-        public string TextTenMon
-        {
-            get { return txtTenMon.Text.Trim(); }
-            set { txtTenMon.Text = value; }
-        }
         public string TextGia
         {
             get { return txtGia.Text.Trim(); }
             set { txtGia.Text = value; }
         }
-        public string TextLoai
-        {
-            get { return cboLoai.SelectedItem?.ToString(); }
-            set
-            {
-                if (cboLoai.Items.Contains(value))
-                {
-                    cboLoai.SelectedItem = value;
-                }
-            }
-        }
         public UC_ThongTinVaCaiDatMonAn()
         {
             InitializeComponent();
         }
-        private void SetAllButtonDisableAndVisible()
-        {
-            btnThem.Enabled = false;
-            btnXoa.Enabled = false;
-            btnSua.Enabled = false;
-            btnHuy.Visible = true;
-            btnOK.Visible = true;
-        }
-        private void SetAllButtonEnableAndInvisible()
-        {
-            btnThem.Enabled = true;
-            btnXoa.Enabled = true;
-            btnSua.Enabled = true;
-            btnThem.Checked = false;
-            btnXoa.Checked = false;
-            btnSua.Checked = false;
-            btnHuy.Visible = false;
-            btnOK.Visible = false;
-        }
-        private void SetEnableComboboxAndTextBox(bool status)
-        {
-            txtMaMon.Enabled = status;
-            txtTenMon.Enabled = status;
-            txtGia.Enabled = status;
-            cboLoai.Enabled = status;
-            btnThemAnh.Enabled = status;
-        }
-        private void ClearComboboxAndTextBox()
-        {
-            txtMaMon.Text = "";
-            txtTenMon.Text = "";
-            txtGia.Text = "";
-            cboLoai.SelectedIndex = -1;
-        }
-        private void ThemXoaSuaClick(object sender, EventArgs e)
-        {
-            Guna2Button btn = sender as Guna2Button;
-            SetAllButtonDisableAndVisible();
-            if (btn.Name == "btnThem")
-            {
-                btnThem.Enabled = true;
-                ClearComboboxAndTextBox();
-                SetEnableComboboxAndTextBox(true);
-            }
-            else if (btn.Name == "btnSua")
-            {
-                btnSua.Enabled = true;
-                SetEnableComboboxAndTextBox(true);
-            }
-            else
-            {
-                btnXoa.Enabled = true;
-                ClearComboboxAndTextBox();
-            }
-            lastButton = btn;
-        }
-        private void HuyOKClick(object sender, EventArgs e)
-        {
-            //Guna2Button btn = sender as Guna2Button;
-            //if (btn.Name == "btnOK")
-            //{
-            //    if (lastButton.Name == "btnThem")
-            //    {
-            //        AddMonAn(SetMonAn());
-            //    }
-            //}
-            //SetAllButtonEnableAndInvisible();
-            //SetEnableComboboxAndTextBox(false);
-        }
-        //private void AddMonAn(MonAn monAn)
-        //{
-        //    UC_MonAn my_UCMonAn = new UC_MonAn();
-        //    my_UCMonAn.TextGiaMonAn = string.Format("{0:N3}VNĐ", monAn.Gia);
-        //    my_UCMonAn.TextTenMonAn = monAn.TenMonAn;
-        //    my_UCMonAn.ImagePanel = GetAnhByPathAnhMon(monAn.PathAnhMon);
-        //    my_UCMonAn.Tag = monAn;
-        //    frmMain.myUC_QuanLyMenu.panelMonAn.Controls.Add(my_UCMonAn);
-        //}
         private Image GetAnhByPathAnhMon(string path)
         {
             try
@@ -150,24 +50,84 @@ namespace GiaoDienPBL3.User_Controls
             }
             return null;
         }
-        //private MonAn SetMonAn()
-        //{
-        //    MonAn monAn = new MonAn();
-        //    monAn.MaMonAn = txtMaMon.Text.Trim();
-        //    monAn.TenMonAn = txtTenMon.Text.Trim();
-        //    monAn.Gia = Convert.ToInt32(txtGia.Text);
-        //    monAn.Loai = cboLoai.SelectedItem.ToString();
-        //    monAn.PathAnhMon = txtPath.Text.Trim();
-        //    return monAn;
-        //}
 
         private void btnThemAnh_Click(object sender, EventArgs e)
         {
-            txtPath.Text = GetPath();
-            if (txtPath.Text == String.Empty)
+            try
+            {
+                txtPath.Text = GetPath();
+                if (txtPath.Text == String.Empty)
+                {
+                    txtPath.Text = "Đường Dẫn Không Hợp Lệ";
+                }
+            }
+            catch (Exception)
             {
                 txtPath.Text = "Đường Dẫn Không Hợp Lệ";
             }
+        }
+
+        private void btnHuy_Click(object sender, EventArgs e)
+        {
+            txtGia.ReadOnly = true;
+            txtGia.Text = "";
+            txtPath.Text = "";
+            txtMaMonAn.Text = "";
+            frmMain.myUC_QuanLyMenu.panelCaiDatVaThongTin.BringToFront();
+        }
+
+        private void btnThemGiaMon_Click(object sender, EventArgs e)
+        {
+            txtGia.ReadOnly = false;
+        }
+
+        private void btnXacNhan_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (CheckValid())
+                {
+                    if (txtGia.Text == "")
+                    {
+                        ProductBLL.Instance.UpdateProductWithPriceAndPath(txtMaMonAn.Text, SplitFilePath(txtPath.Text));
+                    }
+                    else if (txtPath.Text == "")
+                    {
+                        ProductBLL.Instance.UpdateProductWithPriceAndPath(txtMaMonAn.Text, "", (float)Convert.ToDouble(txtGia.Text));
+                    }
+                    frmMessageBox.Instance.ShowFrmMessageBox(frmMessageBox.StatusResult.Success, "Chỉnh Sửa Thành Công");
+                    btnHuy.PerformClick();
+                }
+            }
+            catch (Exception)
+            {
+                frmMessageBox.Instance.ShowFrmMessageBox(frmMessageBox.StatusResult.Error, "Lỗi, Chỉnh Sửa Thất Bại");
+                return;
+            }
+        }
+        private string SplitFilePath(string path)
+        {
+            string[] strings = path.Split(new char[] { '\\' }, StringSplitOptions.RemoveEmptyEntries);
+            return strings[strings.Length - 1];
+        }
+        private bool CheckValid()
+        {
+            if (txtGia.Text != "" && float.TryParse(txtGia.Text, out _) == false)
+            {
+                frmMessageBox.Instance.ShowFrmMessageBox(frmMessageBox.StatusResult.Warning, "Giá Phải Là Một Số Nguyên");
+                return false;
+            }
+            if (txtPath.Text == "Đường Dẫn Không Hợp Lệ")
+            {
+                frmMessageBox.Instance.ShowFrmMessageBox(frmMessageBox.StatusResult.Warning, "Đường Dẫn Không Hợp Lệ");
+                return false;
+            }
+            if (txtPath.Text == "" && txtGia.Text == "")
+            {
+                frmMessageBox.Instance.ShowFrmMessageBox(frmMessageBox.StatusResult.Warning, "Không Có Gì Để Thay Đổi");
+                return false;
+            }
+            return true;
         }
     }
 }
