@@ -234,6 +234,9 @@
             // ColumnChart1
             // 
             this.ColumnChart1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            chartArea1.AxisY.Crossing = -1.7976931348623157E+308D;
+            chartArea1.AxisY.Minimum = -5D;
+            chartArea1.AxisY.ScaleBreakStyle.Spacing = 2D;
             chartArea1.Name = "ChartArea1";
             this.ColumnChart1.ChartAreas.Add(chartArea1);
             this.ColumnChart1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -268,7 +271,7 @@
             this.ColumnChart1.Size = new System.Drawing.Size(1240, 550);
             this.ColumnChart1.TabIndex = 3;
             this.ColumnChart1.Text = "chart1";
-            this.ColumnChart1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.LineChart_MouseMove);
+            this.ColumnChart1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Chart_MouseMove);
             // 
             // panel4
             // 
@@ -368,6 +371,8 @@
             // ColumnChart2
             // 
             this.ColumnChart2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            chartArea2.AxisY.Crossing = -1.7976931348623157E+308D;
+            chartArea2.AxisY.Minimum = -5D;
             chartArea2.Name = "ChartArea1";
             this.ColumnChart2.ChartAreas.Add(chartArea2);
             this.ColumnChart2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -402,7 +407,7 @@
             this.ColumnChart2.Size = new System.Drawing.Size(1240, 550);
             this.ColumnChart2.TabIndex = 5;
             this.ColumnChart2.Text = "chart2";
-            this.ColumnChart2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.LineChart_MouseMove);
+            this.ColumnChart2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Chart_MouseMove);
             // 
             // panel5
             // 

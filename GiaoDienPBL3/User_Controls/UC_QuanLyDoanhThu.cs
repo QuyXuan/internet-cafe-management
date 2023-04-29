@@ -33,43 +33,30 @@ namespace GiaoDienPBL3.User_Controls
             {
                 series.Points.Clear();
             }
-            List<RecieptBillDayTotalPrice> listRecieptBillDayPrice = new List<RecieptBillDayTotalPrice>();
-            foreach (BillDay billDay in BillBLL.Instance.GetListBillDayByType(true))
+            for (int i = dtpNgayTruoc.Value.Day; i <= dtpNgaySau.Value.Day; i++)
             {
-                if (billDay.Date >= dtpNgayTruoc.Value.Date && billDay.Date <= dtpNgaySau.Value.Date)
+                float TotalBillDay = 0;
+                foreach (BillDay billDay in BillBLL.Instance.GetListBillDayByType(true))
                 {
-                    ColumnChart1.Series["Doanh Thu"].Points.AddXY(billDay.Date.ToString("dMMM"), billDay.TotalBill);
-                    listRecieptBillDayPrice.Add(new RecieptBillDayTotalPrice
+                    if (billDay.Date.Day == i)
                     {
-                        BillPrice = billDay.TotalBill,
-                        Date = billDay.Date
-                    });
-                }
-            }
-            foreach (BillDay billDay in BillBLL.Instance.GetListBillDayByType(false))
-            {
-                if (billDay.Date >= dtpNgayTruoc.Value && billDay.Date <= dtpNgaySau.Value)
-                {
-                    ColumnChart1.Series["Chi Trả"].Points.AddXY(billDay.Date.ToString("dMMM"), billDay.TotalBill);
-                    foreach (RecieptBillDayTotalPrice item in listRecieptBillDayPrice)
-                    {
-                        if (item.Date == billDay.Date)
-                        {
-                            item.RecieptPrice = billDay.TotalBill;
-                        }
-                        else
-                        {
-                            item.RecieptPrice = 0;
-                        }
+                        TotalBillDay += billDay.TotalBill;
                     }
                 }
+                ColumnChart1.Series["Doanh Thu"].Points.AddXY(i + dtpNgayTruoc.Value.Date.ToString("MMM"), TotalBillDay);
+                
+                float TotalRecieptDay = 0;
+                foreach (BillDay billDay in BillBLL.Instance.GetListBillDayByType(false))
+                {
+                    if (billDay.Date.Day == i)
+                    {
+                        TotalRecieptDay += billDay.TotalBill;
+                    }
+                }
+                ColumnChart1.Series["Chi Trả"].Points.AddXY(i + dtpNgayTruoc.Value.Date.ToString("MMM"), TotalRecieptDay);
+
+                ColumnChart1.Series["Lợi Nhuận"].Points.AddXY(i + dtpNgayTruoc.Value.Date.ToString("MMM"), (TotalBillDay - TotalRecieptDay) > 0 ? (TotalBillDay - TotalRecieptDay) : 0);
             }
-            foreach (var item in listRecieptBillDayPrice)
-            {
-                ColumnChart1.Series["Lợi Nhuận"].Points.AddXY(item.Date.ToString("dMMM"), (item.BillPrice - item.RecieptPrice) >= 0 ? item.BillPrice - item.RecieptPrice : 0);
-            }
-            //ColumnChart1.ChartAreas[0].AxisY.Minimum = MinTotalBill;
-            //ColumnChart1.ChartAreas[0].AxisY.Maximum = MaxTotalBill;
         }
         private void SetColumnChart2()
         {
@@ -105,6 +92,8 @@ namespace GiaoDienPBL3.User_Controls
                     }
                 }
                 ColumnChart2.Series["Chi Trả"].Points.AddXY(DateTimeFormatInfo.CurrentInfo.GetMonthName(i) + dtpNgayTruoc2.Value.Year, TotalRecieptMonth);
+
+                ColumnChart2.Series["Lợi Nhuận"].Points.AddXY(DateTimeFormatInfo.CurrentInfo.GetMonthName(i) + dtpNgayTruoc2.Value.Year, (TotalBillMonth - TotalRecieptMonth) > 0 ? (TotalBillMonth - TotalRecieptMonth) : 0);
             }
         }
 
@@ -119,22 +108,39 @@ namespace GiaoDienPBL3.User_Controls
             }
         }
 
-        private void LineChart_MouseMove(object sender, MouseEventArgs e)
+        private void Chart_MouseMove(object sender, MouseEventArgs e)
         {
-            var chart = (Chart)sender;
+            Chart chart = sender as Chart;
             var result = chart.HitTest(e.X, e.Y);
             if (result.ChartElementType == ChartElementType.DataPoint)
             {
-                var dataPoint = result.Series.Points[result.PointIndex];
-                var tooltip = string.Format("Value Y: {0}", dataPoint.YValues[0]);
-                toolTip1.SetToolTip(chart, tooltip);
-                dataPoint.MarkerStyle = MarkerStyle.Circle;
+                DataPoint dataPoint = result.Series.Points[result.PointIndex];
+                string toolTip = "Doanh Thu : " + string.Format("{0:N3}VNĐ", dataPoint.YValues[0]);
+                if (dataPoint.Color == Color.Blue)
+                {
+                    toolTip = "Lợi Nhuận : " + string.Format("{0:N3}VNĐ", dataPoint.YValues[0]); ;
+                }
+                else if (dataPoint.Color == Color.Green)
+                {
+                    toolTip = "Chi Trả : " + string.Format("{0:N3}VNĐ", dataPoint.YValues[0]);
+                }
+                toolTip1.SetToolTip(chart, toolTip);
+                dataPoint.BorderWidth = 2;
+                dataPoint.BorderColor = Color.Fuchsia;
             }
             else
             {
                 toolTip1.Hide(chart);
+                foreach (var series in chart.Series)
+                {
+                    foreach (var point in series.Points)
+                    {
+                        point.BorderWidth = 0;
+                    }
+                }
             }
         }
+        
 
         private void btnXemDoanhThuNgay_Click(object sender, EventArgs e)
         {
