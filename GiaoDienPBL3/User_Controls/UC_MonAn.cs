@@ -1,4 +1,6 @@
-﻿using Guna.UI2.WinForms;
+﻿using BLL;
+using DTO;
+using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -76,6 +78,12 @@ namespace GiaoDienPBL3.UC
                 frmMessageBox.Instance.ShowFrmMessageBox(frmMessageBox.StatusResult.Warning, "Bạn Không Thể Thay Đổi Món Ăn Trong Hóa Đơn Này");
                 return;
             }
+            //kiểm tra xem có chọn món ăn trong lúc chỉnh sửa không
+            if (UC_QuanLyMenu.my_UCThongTinVaCaiDatMonAn.txtMaMonAn.Text != "")
+            {
+                frmMessageBox.Instance.ShowFrmMessageBox(frmMessageBox.StatusResult.Warning, "Bạn Không Thể Chọn Món Ăn Trong Lúc Chỉnh Sửa");
+                return;
+            }
             if (lblGiaMonAn.Text == lblTenMonAn.Text)
             {
                 if (panelBackGroundMonAn.BackColor == Color.Transparent)
@@ -95,6 +103,7 @@ namespace GiaoDienPBL3.UC
             ThemChiTietMonAnVaoFlowLayoutPanel();
             HienThiVaTinhTongTien();
         }
+        //Kiểm tra xem có thêm món ăn vào cái hóa đơn món ăn của khách hàng không
         private bool CheckUCMenuFromUcHoaDon()
         {
             foreach (Control control in frmMain.myUC_QuanLyMenu.panelChiTietMonAn.Controls)
@@ -109,6 +118,11 @@ namespace GiaoDienPBL3.UC
         }
         private void msDaHetMon_Click(object sender, EventArgs e)
         {
+            if (panelBackGroundMonAn.BackColor != Color.Transparent)
+            {
+                frmMessageBox.Instance.ShowFrmMessageBox(frmMessageBox.StatusResult.Warning, "Món Ăn Này Đang Được Chọn" + Environment.NewLine + "Không Thể Đặt Hết Món");
+                return;
+            }
             picMonAn.Controls.Add(panelHetMon);
             picMonAn.BringToFront();
             panelHetMon.BringToFront();
@@ -133,6 +147,30 @@ namespace GiaoDienPBL3.UC
             picMonAn.Controls.Remove(panelHetMon);
             panelTenMonAn.BringToFront();
             panelGiaMonAn.BringToFront();
+        }
+
+        private void msChinhSua_Click(object sender, EventArgs e)
+        {
+            if (panelBackGroundMonAn.BackColor != Color.Transparent)
+            {
+                frmMessageBox.Instance.ShowFrmMessageBox(frmMessageBox.StatusResult.Warning, "Món Ăn Đang Được Chọn" + Environment.NewLine + "Không Thể Chỉnh Sửa");
+                return;
+            }
+            string productName = lblTenMonAn.Text;
+            if (UC_QuanLyMenu.my_UCThongTinVaCaiDatMonAn.txtMaMonAn.Text == "")
+            {
+                Product product = ProductBLL.Instance.GetProductByProductName(productName);
+                if (product != null)
+                {
+                    UC_QuanLyMenu.my_UCThongTinVaCaiDatMonAn.txtMaMonAn.Text = product.ProductId;
+                }
+            }
+            else
+            {
+                frmMessageBox.Instance.ShowFrmMessageBox(frmMessageBox.StatusResult.Warning, "Không Thể Chỉnh Sửa Cùng Lúc Nhiều Món Ăn");
+                return;
+            }
+            frmMain.myUC_QuanLyMenu.panelCaiDatVaThongTin.SendToBack();
         }
     }
 }
