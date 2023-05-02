@@ -29,12 +29,14 @@ namespace GUIClient
         public static UC_NapGioChoi myUC_NapGioChoi;
         public static UC_DongHo myUC_DongHo;
         public static frmDongHo DongHo;
+        public static UC_QuanLyMenuClient myUC_QuanLyMenuClient;
         public frmClient(string accountId, Computer computer, bool Role)
         {
             InitializeComponent();
             this.accountId = accountId;
             frmClient.Role = Role;
             frmClient.computer = computer;
+            myUC_QuanLyMenuClient = new UC_QuanLyMenuClient();
             if(Role) customer = CustomerBLL.Instance.GetCustomerByAccountId(accountId);
             myUC_TrangChuKhachHang = new UC_TrangChuKhachHang();
             typeComputer = ComputerBLL.Instance.GetTypeComputerByTypeId(computer.TypeId);
@@ -91,7 +93,7 @@ namespace GUIClient
         {
             Guna2Button btn = sender as Guna2Button;
             SetOnCheckStateButton(btn);
-            AddUserControlOnBackGround(frmMain.myUC_QuanLyMenu);
+            AddUserControlOnBackGround(myUC_QuanLyMenuClient);
         }
 
         private void btnNapGioChoi_Click(object sender, EventArgs e)

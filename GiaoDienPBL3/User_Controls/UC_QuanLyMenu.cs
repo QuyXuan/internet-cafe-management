@@ -20,7 +20,7 @@ namespace GiaoDienPBL3.UC
         public static UC_ThongTinVaCaiDatMonAn my_UCThongTinVaCaiDatMonAn;
         public UC_ChiTietMonAn my_UCChiTietMonAn;
         private bool checkBtnCaiDat = false;
-        public static bool checkBtnXacNhan = false;
+        public bool checkBtnXacNhan = false;
         //kiểm tra đây là form admin hay là client, false là admin
         private bool checkFormAdminOrClient = false;
         public UC_QuanLyMenu()
@@ -54,8 +54,9 @@ namespace GiaoDienPBL3.UC
             my_UCMonAn.TextGiaMonAn = string.Format("{0:N3}VNĐ", product.SellingPrice);
             my_UCMonAn.TextTenMonAn = product.ProductName;
             my_UCMonAn.ImagePanel = GetAnhByPathAnhMon(product.ImageFilePath);
-            my_UCMonAn.Tag = product;
-            frmMain.myUC_QuanLyMenu.panelMonAn.Controls.Add(my_UCMonAn);
+            my_UCMonAn.Tag = "Manager";
+            //my_UCMonAn.Tag = product;
+            /*frmMain.myUC_QuanLyMenu.*/panelMonAn.Controls.Add(my_UCMonAn);
         }
         private Image GetAnhByPathAnhMon(string nameImg)
         {
@@ -110,7 +111,7 @@ namespace GiaoDienPBL3.UC
                 btnXacNhan.Tag = (Convert.ToInt32(btnXacNhan.Tag) + 1).ToString();
                 my_UCChiTietMonAn.Width = 255;
                 my_UCChiTietMonAn.Tag = this;
-                frmMain.myUC_QuanLyMenu.panelChiTietMonAn.Controls.Add(my_UCChiTietMonAn);
+                /*frmMain.myUC_QuanLyMenu.*/panelChiTietMonAn.Controls.Add(my_UCChiTietMonAn);
             }
         }
         private string ConvertIfGraterThan1000(string cash)
@@ -120,10 +121,10 @@ namespace GiaoDienPBL3.UC
         private void HienThiVaTinhTongTien()
         {
             string textMenhGia = string.Format("{0:N3}VNĐ", cboMenhGia.Text);
-            int TongTien = Convert.ToInt32(frmMain.myUC_QuanLyMenu.lblTongTien.Tag);
+            int TongTien = Convert.ToInt32(/*frmMain.myUC_QuanLyMenu.*/lblTongTien.Tag);
             TongTien += Convert.ToInt32(textMenhGia.Substring(0, textMenhGia.Length - 7));
-            frmMain.myUC_QuanLyMenu.lblTongTien.Text = string.Format("{0:N3}VNĐ", TongTien);
-            frmMain.myUC_QuanLyMenu.lblTongTien.Tag = TongTien;
+            /*frmMain.myUC_QuanLyMenu.*/lblTongTien.Text = string.Format("{0:N3}VNĐ", TongTien);
+            /*frmMain.myUC_QuanLyMenu.*/lblTongTien.Tag = TongTien;
         }
 
         private void btnYeuCauThanhToan_Click(object sender, EventArgs e)
