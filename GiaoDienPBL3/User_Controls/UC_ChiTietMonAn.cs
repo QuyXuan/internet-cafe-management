@@ -59,7 +59,7 @@ namespace GiaoDienPBL3.UC
                 if (lblTenMon.Text == "Nạp Tiền")
                 {
                     frmMain.myUC_QuanLyMenu.panelChiTietMonAn.Controls.Remove(this);
-                    UC_QuanLyMenu.checkBtnXacNhan = false;
+                    frmMain.myUC_QuanLyMenu.checkBtnXacNhan = false;
                 }
                 else if (btnCongMon.Visible == false)
                 {

@@ -86,9 +86,17 @@ namespace GiaoDienPBL3.UC
             }
             if (lblGiaMonAn.Text == lblTenMonAn.Text)
             {
+                string Role = ((sender as PictureBox).Parent.Parent as UserControl).Tag.ToString();
                 if (panelBackGroundMonAn.BackColor == Color.Transparent)
                 {
-                    frmMain.myUC_QuanLyMenu.panelXacNhanLuaChon.Visible = true;
+                    if (Role == "Manager")
+                    {
+                        frmMain.myUC_QuanLyMenu.panelXacNhanLuaChon.Visible = true;
+                    }
+                    else
+                    {
+                        //GUIClient.frmClient.myUC_QuanLyMenu.panelXacNhanLuaChon.Visible = true;
+                    }
                     panelBackGroundMonAn.BackColor = Color.FromArgb(4, 121, 171);
                 }
                 else
