@@ -137,7 +137,7 @@ namespace GUIClient.User_Controls
                 if (button.Text == "Thanh Toán")
                 {
                     string MaHoaDon = txtMaHoaDon.Text;
-                    BillBLL.Instance.SetStatusChoXacNhanToXacNhan(MaHoaDon);
+                    //BillBLL.Instance.SetStatusChoXacNhanToXacNhan(MaHoaDon, employeeId);
                     frmMessageBox.Instance.ShowFrmMessageBox(frmMessageBox.StatusResult.Warning, "Thanh Toán Thành Công");
                     ResetUCQuanLyMenu();
                 }

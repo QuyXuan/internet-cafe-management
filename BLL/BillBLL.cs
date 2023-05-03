@@ -2,6 +2,7 @@
 using DTO;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -102,7 +103,7 @@ namespace BLL
                 return discountList;
             }
         }
-        public void SetStatusChoXacNhanToXacNhan(string billId)
+        public void SetStatusChoXacNhanToXacNhan(string billId, string employeeId)
         {
             using (var context = new QLNETDBContext())
             {
@@ -110,6 +111,16 @@ namespace BLL
                 var bill = context.Bills.FirstOrDefault(p => p.BillId == billId);
                 if (bill == null) return;
                 bill.Status = "Chấp Nhận";
+                bill.EmployeeId = employeeId;
+                context.SaveChanges();
+            }
+        }
+        public void AddBilllWithStatusChoXacNhan(Bill bill)
+        {
+            using (var context = new QLNETDBContext())
+            {
+                if (context == null) return;
+                context.Bills.AddOrUpdate(bill);
                 context.SaveChanges();
             }
         }
@@ -121,6 +132,49 @@ namespace BLL
                 var billDays = context.BillDays.Where(p => p.Type == type).ToList();
                 if (billDays == null) return null;
                 return billDays;
+            }
+        }
+        public string GetRandomBillId()
+        {
+            using (var context = new QLNETDBContext())
+            {
+                if (context == null)
+                {
+                    return null;
+                }
+                Random random = new Random();
+                string billId = "hd" + random.Next(0, 1000).ToString().PadLeft(4, '0');
+                while (context.Reciepts.Any(p => p.RecieptId == billId))
+                {
+                    billId = "hd" + random.Next(0, 1000).ToString().PadLeft(4, '0');
+                }
+                return billId;
+            }
+        }
+        public void AddListProductToBill(List<BillProduct> listBillProduct)
+        {
+            using (var context = new QLNETDBContext())
+            {
+                if (context == null) return;
+                if (listBillProduct == null) return;
+                foreach (BillProduct product in listBillProduct)
+                {
+                    context.BillProducts.AddOrUpdate(product);
+                }
+                context.SaveChanges();
+            }
+        }
+        public void AddListDiscountToBill(List<BillDiscount> listBillDiscount)
+        {
+            using (var context = new QLNETDBContext())
+            {
+                if (context == null) return;
+                if (listBillDiscount == null) return;
+                foreach(BillDiscount discount in listBillDiscount)
+                {
+                    context.BillDiscounts.AddOrUpdate(discount);
+                }
+                context.SaveChanges();
             }
         }
     }

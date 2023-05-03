@@ -129,7 +129,8 @@ namespace BLL
                         Type = product.Key.Type,
                         Stock = product.Value ?? 0,
                         SellingPrice = 0,
-                        ImageFilePath = "defaultFoodAndDrink.png"
+                        ImageFilePath = "defaultFoodAndDrink.png",
+                        Status = true
                     });
                 }
                 context.SaveChanges();
