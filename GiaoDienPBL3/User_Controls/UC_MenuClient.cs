@@ -74,6 +74,7 @@ namespace GiaoDienPBL3.User_Controls
             my_UCMonAn.TextTenMonAn = product.ProductName;
             my_UCMonAn.ImagePanel = GetAnhByPathAnhMon(product.ImageFilePath);
             my_UCMonAn.Tag = "Client";
+            my_UCMonAn.picMonAn.ContextMenuStrip = null;
             //my_UCMonAn.Tag = product;
             /*frmMain.myUC_QuanLyMenu.*/
             panelMonAn.Controls.Add(my_UCMonAn);
@@ -161,7 +162,6 @@ namespace GiaoDienPBL3.User_Controls
             {
                 Bill newBill = new Bill();
                 newBill.BillId = txtMaHoaDon.Text;
-                //newBill.EmployeeId = " ";
                 newBill.Date = dtpNgayNhan.Value;
                 newBill.ComputerId = ComputerId;
                 newBill.CustomerId = txtMaKhachHang.Text;
@@ -172,7 +172,6 @@ namespace GiaoDienPBL3.User_Controls
                 BillBLL.Instance.AddBilllWithStatusChoXacNhan(newBill);
                 BillBLL.Instance.AddListProductToBill(listBillProduct);
                 BillBLL.Instance.AddListDiscountToBill(listBillDiscount);
-                //BillBLL.Instance.SetStatusChoXacNhanToXacNhan(MaHoaDon);
                 frmMessageBox.Instance.ShowFrmMessageBox(frmMessageBox.StatusResult.Success, "Yêu Cầu Thành Công");
                 ResetUCQuanLyMenu();
             }

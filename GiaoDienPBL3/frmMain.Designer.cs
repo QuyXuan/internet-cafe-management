@@ -432,6 +432,7 @@
             this.btnNhanVien.Size = new System.Drawing.Size(216, 45);
             this.btnNhanVien.TabIndex = 6;
             this.btnNhanVien.Text = "Nhân Viên";
+            this.btnNhanVien.Click += new System.EventHandler(this.btnNhanVien_Click);
             // 
             // btnQuanLyCaLamViec
             // 
@@ -455,7 +456,6 @@
             this.btnQuanLyCaLamViec.Size = new System.Drawing.Size(216, 45);
             this.btnQuanLyCaLamViec.TabIndex = 6;
             this.btnQuanLyCaLamViec.Text = "Quản Lý Ca Làm Việc";
-            this.btnQuanLyCaLamViec.Click += new System.EventHandler(this.btnQuanLyCaLamViec_Click);
             // 
             // panel10
             // 

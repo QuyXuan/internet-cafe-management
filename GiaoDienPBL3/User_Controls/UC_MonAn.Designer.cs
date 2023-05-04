@@ -136,7 +136,7 @@
             this.msStatusMonAn.RenderStyle.SelectionForeColor = System.Drawing.Color.White;
             this.msStatusMonAn.RenderStyle.SeparatorColor = System.Drawing.Color.Gainsboro;
             this.msStatusMonAn.RenderStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
-            this.msStatusMonAn.Size = new System.Drawing.Size(163, 76);
+            this.msStatusMonAn.Size = new System.Drawing.Size(211, 104);
             // 
             // msDaHetMon
             // 
@@ -185,6 +185,6 @@
         private System.Windows.Forms.ToolStripMenuItem msChinhSua;
         private Guna.UI2.WinForms.Guna2GradientPanel panelTenMonAn;
         private Guna.UI2.WinForms.Guna2GradientPanel panelGiaMonAn;
-        private System.Windows.Forms.PictureBox picMonAn;
+        public System.Windows.Forms.PictureBox picMonAn;
     }
 }

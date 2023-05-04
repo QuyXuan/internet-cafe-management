@@ -2,6 +2,7 @@
 using DTO;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Runtime.Remoting.Contexts;
 using System.Text;
@@ -143,6 +144,56 @@ namespace BLL
                 account.Password = newPass;
                 context.SaveChanges();
                 return message;
+            }
+        }
+        public string GetUserNameByAccountId(string accountId)
+        {
+            using (var context = new QLNETDBContext())
+            {
+                if (context == null) return null;
+                var account = context.Accounts.FirstOrDefault(p =>p.AccountId == accountId);
+                if (account != null)
+                {
+                    return account.UserName;
+                }
+                return null;
+            }
+        }
+        public string GetRandomAccountId()
+        {
+            using (var context = new QLNETDBContext())
+            {
+                if (context == null)
+                {
+                    return null;
+                }
+                Random random = new Random();
+                string accountId = "acc" + random.Next(0, 1000).ToString().PadLeft(4, '0');
+                while (context.Accounts.Any(p => p.AccountId == accountId))
+                {
+                    accountId = "acc" + random.Next(0, 1000).ToString().PadLeft(4, '0');
+                }
+                return accountId;
+            }
+        }
+        public void AddNewAccount(Account account)
+        {
+            using (var context = new QLNETDBContext())
+            {
+                if (context == null) return;
+                context.Accounts.AddOrUpdate(account);
+                context.SaveChanges();
+            }
+        }
+        public void DeleteAccount(string AccountId)
+        {
+            using (var context = new QLNETDBContext())
+            {
+                if (context == null) return;
+                var account = context.Accounts.FirstOrDefault(p => p.AccountId == AccountId);
+                if (account == null) return;
+                context.Accounts.Remove(account);
+                context.SaveChanges();
             }
         }
     }

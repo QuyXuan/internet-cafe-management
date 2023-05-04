@@ -42,7 +42,20 @@ namespace BLL
                 return bills;
             }
         }
-
+        public List<Bill> GetListBillWithStatusAndStartEnd(int start, int end, string status = null)
+        {
+            using (var context = new QLNETDBContext())
+            {
+                if (context == null) return null;
+                if (status == null)
+                {
+                    var lstBill = context.Bills.OrderBy(p => p.BillId).Skip(start).Take(end).ToList();
+                    return lstBill;
+                }
+                var bills = context.Bills.Where(p => p.Status == status).OrderBy(p => p.BillId).Skip(start).Take(end).ToList();
+                return bills;
+            }
+        }
         //public string GetNumberComputerByComputerId(string computerId)
         //{
         //    using (var context = new QLNETDBContext())
@@ -59,7 +72,6 @@ namespace BLL
         //        return computer.ComputerName;
         //    }
         //}
-
         public List<ProductIdNameQuantityPrice> GetListProductByBillId(string billId)
         {
             using (var context = new QLNETDBContext())
@@ -144,7 +156,7 @@ namespace BLL
                 }
                 Random random = new Random();
                 string billId = "hd" + random.Next(0, 1000).ToString().PadLeft(4, '0');
-                while (context.Reciepts.Any(p => p.RecieptId == billId))
+                while (context.Bills.Any(p => p.BillId == billId))
                 {
                     billId = "hd" + random.Next(0, 1000).ToString().PadLeft(4, '0');
                 }

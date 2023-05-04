@@ -24,7 +24,6 @@ C:\Users\ADMIN\source\repos\pbl3lan2\GiaoDienPBL3\obj\Debug\GiaoDienPBL3.Propert
 C:\Users\ADMIN\source\repos\pbl3lan2\GiaoDienPBL3\obj\Debug\GiaoDienPBL3.User_Controls.UC_ChiTietHoaDonNhapKho.resources
 C:\Users\ADMIN\source\repos\pbl3lan2\GiaoDienPBL3\obj\Debug\GiaoDienPBL3.User_Controls.UC_ChiTietMay.resources
 C:\Users\ADMIN\source\repos\pbl3lan2\GiaoDienPBL3\obj\Debug\GiaoDienPBL3.UC.UC_ChiTietMonAn.resources
-C:\Users\ADMIN\source\repos\pbl3lan2\GiaoDienPBL3\obj\Debug\GiaoDienPBL3.User_Controls.UC_QuanLyCaLamViec.resources
 C:\Users\ADMIN\source\repos\pbl3lan2\GiaoDienPBL3\obj\Debug\GiaoDienPBL3.User_Controls.UC_QuanLyHoaDonNhapKho.resources
 C:\Users\ADMIN\source\repos\pbl3lan2\GiaoDienPBL3\obj\Debug\GiaoDienPBL3.User_Controls.UC_Loading.resources
 C:\Users\ADMIN\source\repos\pbl3lan2\GiaoDienPBL3\obj\Debug\GiaoDienPBL3.User_Controls.UC_QuanLyDoanhThu.resources
@@ -44,3 +43,4 @@ C:\Users\ADMIN\source\repos\pbl3lan2\GiaoDienPBL3\obj\Debug\GUI.csproj.CopyCompl
 C:\Users\ADMIN\source\repos\pbl3lan2\GiaoDienPBL3\obj\Debug\GiaoDienPBL3.exe
 C:\Users\ADMIN\source\repos\pbl3lan2\GiaoDienPBL3\obj\Debug\GiaoDienPBL3.pdb
 C:\Users\ADMIN\source\repos\pbl3lan2\GiaoDienPBL3\obj\Debug\GiaoDienPBL3.User_Controls.UC_MenuClient.resources
+C:\Users\ADMIN\source\repos\pbl3lan2\GiaoDienPBL3\obj\Debug\GiaoDienPBL3.User_Controls.UC_QuanLyNhanVien.resources

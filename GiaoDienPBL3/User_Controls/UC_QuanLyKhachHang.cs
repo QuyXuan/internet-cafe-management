@@ -61,6 +61,7 @@ namespace GiaoDienPBL3.User_Controls
                 if (e.ColumnIndex == dgvQuanLyThongTinKhachHang.Columns["btnXoa"].Index && e.RowIndex >= 0)
                 {
                     dgvQuanLyThongTinKhachHang.Rows.RemoveAt(e.RowIndex);
+                    frmMessageBox.Instance.ShowFrmMessageBox(frmMessageBox.StatusResult.Success, "Xóa Khách Hàng Thành Công");
                 }
                 else
                 {
@@ -73,6 +74,7 @@ namespace GiaoDienPBL3.User_Controls
             }
             catch(Exception) 
             {
+                frmMessageBox.Instance.ShowFrmMessageBox(frmMessageBox.StatusResult.Error, "Xóa Khách Hàng Thất Bại");
                 return;    
             }
         }
@@ -80,7 +82,7 @@ namespace GiaoDienPBL3.User_Controls
         private void btnKhoiPhucTaiKhoan_Click(object sender, EventArgs e)
         {
             SetVisibleControl(true);
-            txtTenTaiKhoan.Text = "tkkh" + random.Next(1000);
+            txtTenTaiKhoan.Text = "khachhang" + random.Next(1000);
             txtMatKhau.Text = "mkkh" + random.Next(1000);
         }
 

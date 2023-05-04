@@ -35,4 +35,3 @@ C:\Users\ADMIN\source\repos\pbl3lan2\GUIClient\obj\Debug\GUIClient.csproj.CoreCo
 C:\Users\ADMIN\source\repos\pbl3lan2\GUIClient\obj\Debug\GUIClient.csproj.CopyComplete
 C:\Users\ADMIN\source\repos\pbl3lan2\GUIClient\obj\Debug\GUIClient.exe
 C:\Users\ADMIN\source\repos\pbl3lan2\GUIClient\obj\Debug\GUIClient.pdb
-C:\Users\ADMIN\source\repos\pbl3lan2\GUIClient\obj\Debug\GUIClient.User_Controls.UC_QuanLyMenuClient.resources
