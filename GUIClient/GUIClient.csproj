@@ -88,12 +88,6 @@
     <Compile Include="User_Controls\UC_DongHo.Designer.cs">
       <DependentUpon>UC_DongHo.cs</DependentUpon>
     </Compile>
-    <Compile Include="User_Controls\UC_QuanLyMenuClient.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="User_Controls\UC_QuanLyMenuClient.Designer.cs">
-      <DependentUpon>UC_QuanLyMenuClient.cs</DependentUpon>
-    </Compile>
     <Compile Include="User_Controls\UC_NapGioChoi.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -130,9 +124,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="User_Controls\UC_NapGioChoi.resx">
       <DependentUpon>UC_NapGioChoi.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="User_Controls\UC_QuanLyMenuClient.resx">
-      <DependentUpon>UC_QuanLyMenuClient.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User_Controls\UC_TrangChuKhachHang.resx">
       <DependentUpon>UC_TrangChuKhachHang.cs</DependentUpon>

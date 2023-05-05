@@ -312,6 +312,7 @@
                     Balance = p.Balance,
                     AccountId = p.AccountId,
                     TotalTime = p.TotalTime,
+                    TypeCustomer = p.TypeCustomer,
                 }));
             context.SaveChanges();
         }
@@ -417,17 +418,17 @@
             #region Danh Sách Sản Phẩm
             var products = new List<Product>
             {
-                new Product {ProductId = "sp0001", ProductName = "Mỳ Tôm", SellingPrice = 10, Type = "Đồ Ăn", Stock = 15, Discription = " ", ImageFilePath = "mytom.jpg", CostPrice = 8},
-                new Product {ProductId = "sp0002", ProductName = "Miến Gà", SellingPrice = 15, Type = "Đồ Ăn", Stock = 15, Discription = " ", ImageFilePath = "mien.jpg", CostPrice = 10},
-                new Product {ProductId = "sp0003", ProductName = "Cơm Chiên", SellingPrice = 20, Type = "Đồ Ăn", Stock = 5, Discription = " ", ImageFilePath = "comchien.jpg", CostPrice = 15},
-                new Product {ProductId = "sp0004", ProductName = "Gà Rán", SellingPrice = 25, Type = "Đồ Ăn", Stock = 10, Discription = " ", ImageFilePath = "garan.jpg", CostPrice = 20},
-                new Product {ProductId = "sp0005", ProductName = "Coca Cola", SellingPrice = 10, Type = "Nước Uống", Stock = 15, Discription = " ", ImageFilePath = "cocacola.jpg", CostPrice = 8},
-                new Product {ProductId = "sp0006", ProductName = "Soda", SellingPrice = 10, Type = "Nước Uống", Stock = 15, Discription = " ", ImageFilePath = "soda.jpg", CostPrice = 8},
-                new Product {ProductId = "sp0007", ProductName = "Sting", SellingPrice = 10, Type = "Nước Uống", Stock = 15, Discription = " ", ImageFilePath = "sting.jpg", CostPrice = 8},
-                new Product {ProductId = "sp0008", ProductName = "Thuốc Lá", SellingPrice = 20, Type = "Đồ Ăn", Stock = 15, Discription = " ", ImageFilePath = "thuocla.jpg", CostPrice = 15},
-                new Product {ProductId = "sp0009", ProductName = "Trà Đào", SellingPrice = 20, Type = "Nước Uống", Stock = 15, Discription = " ", ImageFilePath = "tradao.jpg", CostPrice = 15},
-                new Product {ProductId = "sp0010", ProductName = "Trà Sữa", SellingPrice = 25, Type = "Nước Uống", Stock = 15, Discription = " ", ImageFilePath = "trasua.jpg", CostPrice = 20},
-                new Product {ProductId = "sp0011", ProductName = "Phở Bò", SellingPrice = 15, Type = "Đồ Ăn", Stock = 10, Discription = " ", ImageFilePath = "pho.jpg", CostPrice = 10}
+                new Product {ProductId = "sp0001", ProductName = "Mỳ Tôm", SellingPrice = 10, Type = "Đồ Ăn", Stock = 15, Discription = " ", ImageFilePath = "mytom.jpg", CostPrice = 8, Status = true},
+                new Product {ProductId = "sp0002", ProductName = "Miến Gà", SellingPrice = 15, Type = "Đồ Ăn", Stock = 15, Discription = " ", ImageFilePath = "mien.jpg", CostPrice = 10, Status = true},
+                new Product {ProductId = "sp0003", ProductName = "Cơm Chiên", SellingPrice = 20, Type = "Đồ Ăn", Stock = 5, Discription = " ", ImageFilePath = "comchien.jpg", CostPrice = 15, Status = true},
+                new Product {ProductId = "sp0004", ProductName = "Gà Rán", SellingPrice = 25, Type = "Đồ Ăn", Stock = 10, Discription = " ", ImageFilePath = "garan.jpg", CostPrice = 20, Status = true},
+                new Product {ProductId = "sp0005", ProductName = "Coca Cola", SellingPrice = 10, Type = "Nước Uống", Stock = 15, Discription = " ", ImageFilePath = "cocacola.jpg", CostPrice = 8, Status = true},
+                new Product {ProductId = "sp0006", ProductName = "Soda", SellingPrice = 10, Type = "Nước Uống", Stock = 15, Discription = " ", ImageFilePath = "soda.jpg", CostPrice = 8, Status = true},
+                new Product {ProductId = "sp0007", ProductName = "Sting", SellingPrice = 10, Type = "Nước Uống", Stock = 15, Discription = " ", ImageFilePath = "sting.jpg", CostPrice = 8, Status = true},
+                new Product {ProductId = "sp0008", ProductName = "Thuốc Lá", SellingPrice = 20, Type = "Đồ Ăn", Stock = 15, Discription = " ", ImageFilePath = "thuocla.jpg", CostPrice = 15, Status = true},
+                new Product {ProductId = "sp0009", ProductName = "Trà Đào", SellingPrice = 20, Type = "Nước Uống", Stock = 15, Discription = " ", ImageFilePath = "tradao.jpg", CostPrice = 15, Status = true},
+                new Product {ProductId = "sp0010", ProductName = "Trà Sữa", SellingPrice = 25, Type = "Nước Uống", Stock = 15, Discription = " ", ImageFilePath = "trasua.jpg", CostPrice = 20, Status = true},
+                new Product {ProductId = "sp0011", ProductName = "Phở Bò", SellingPrice = 15, Type = "Đồ Ăn", Stock = 10, Discription = " ", ImageFilePath = "pho.jpg", CostPrice = 10, Status = true}
             };
             #endregion
             products.ForEach(p => context.Products.AddOrUpdate(
@@ -441,7 +442,8 @@
                     Stock = p.Stock,
                     Discription = p.Discription,
                     ImageFilePath = p.ImageFilePath,
-                    CostPrice = p.CostPrice
+                    CostPrice = p.CostPrice,
+                    Status = p.Status,
                 }));
             context.SaveChanges();
         }

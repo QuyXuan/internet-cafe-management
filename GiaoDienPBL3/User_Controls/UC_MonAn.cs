@@ -51,7 +51,7 @@ namespace GiaoDienPBL3.UC
                 panelBackGroundMonAn.BackColor = Color.Transparent;
         }
 
-        private void ThemChiTietMonAnVaoFlowLayoutPanel()
+        private void ThemChiTietMonAnVaoFlowLayoutPanel(string Role)
         {
             UC_ChiTietMonAn myUCChiTietMonAn = new UC_ChiTietMonAn();
             myUCChiTietMonAn.TextTenMonAn = lblTenMonAn.Text;
@@ -60,33 +60,50 @@ namespace GiaoDienPBL3.UC
             lblTenMonAn.Tag = (Convert.ToInt32(lblTenMonAn.Tag) + 1).ToString();
             myUCChiTietMonAn.Width = 265;
             myUCChiTietMonAn.Tag = this;
-            frmMain.myUC_QuanLyMenu./*flowLayout*/panelChiTietMonAn.Controls.Add(myUCChiTietMonAn);
+            if (Role == "Manager")
+            {
+                frmMain.myUC_QuanLyMenu.panelChiTietMonAn.Controls.Add(myUCChiTietMonAn);
+            }
+            else
+            {
+                frmMain.myUC_MenuClient.panelChiTietMonAn.Controls.Add(myUCChiTietMonAn);
+            }
         }
 
-        private void HienThiVaTinhTongTien()
+        private void HienThiVaTinhTongTien(string Role)
         {
-            int TongTien = Convert.ToInt32(frmMain.myUC_QuanLyMenu.lblTongTien.Tag);
-            TongTien += Convert.ToInt32(lblGiaMonAn.Text.Substring(0, lblGiaMonAn.Text.Length - 7));
-            frmMain.myUC_QuanLyMenu.lblTongTien.Text = string.Format("{0:N3}VNĐ", TongTien);
-            frmMain.myUC_QuanLyMenu.lblTongTien.Tag = TongTien;
+            if (Role == "Manager")
+            {
+                int TongTien = Convert.ToInt32(frmMain.myUC_QuanLyMenu.lblTongTien.Tag);
+                TongTien += Convert.ToInt32(lblGiaMonAn.Text.Substring(0, lblGiaMonAn.Text.Length - 7));
+                frmMain.myUC_QuanLyMenu.lblTongTien.Text = string.Format("{0:N3}VNĐ", TongTien);
+                frmMain.myUC_QuanLyMenu.lblTongTien.Tag = TongTien;
+            }
+            else
+            {
+                int TongTien = Convert.ToInt32(frmMain.myUC_MenuClient.lblTongTien.Tag);
+                TongTien += Convert.ToInt32(lblGiaMonAn.Text.Substring(0, lblGiaMonAn.Text.Length - 7));
+                frmMain.myUC_MenuClient.lblTongTien.Text = string.Format("{0:N3}VNĐ", TongTien);
+                frmMain.myUC_MenuClient.lblTongTien.Tag = TongTien;
+            }
         }
 
         private void picMonAn_Click(object sender, EventArgs e)
         {
-            if (CheckUCMenuFromUcHoaDon())
+            string Role = ((sender as PictureBox).Parent.Parent as UserControl).Tag.ToString().Split(',')[0];
+            if (Role == "Manager" && CheckUCMenuFromUcHoaDon())
             {
                 frmMessageBox.Instance.ShowFrmMessageBox(frmMessageBox.StatusResult.Warning, "Bạn Không Thể Thay Đổi Món Ăn Trong Hóa Đơn Này");
                 return;
             }
             //kiểm tra xem có chọn món ăn trong lúc chỉnh sửa không
-            if (UC_QuanLyMenu.my_UCThongTinVaCaiDatMonAn.txtMaMonAn.Text != "")
+            if (Role == "Manager" && UC_QuanLyMenu.my_UCThongTinVaCaiDatMonAn.txtMaMonAn.Text != "")
             {
                 frmMessageBox.Instance.ShowFrmMessageBox(frmMessageBox.StatusResult.Warning, "Bạn Không Thể Chọn Món Ăn Trong Lúc Chỉnh Sửa");
                 return;
             }
             if (lblGiaMonAn.Text == lblTenMonAn.Text)
             {
-                string Role = ((sender as PictureBox).Parent.Parent as UserControl).Tag.ToString();
                 if (panelBackGroundMonAn.BackColor == Color.Transparent)
                 {
                     if (Role == "Manager")
@@ -95,21 +112,28 @@ namespace GiaoDienPBL3.UC
                     }
                     else
                     {
-                        //GUIClient.frmClient.myUC_QuanLyMenu.panelXacNhanLuaChon.Visible = true;
+                        frmMain.myUC_MenuClient.panelXacNhanLuaChon.Visible = true;
                     }
                     panelBackGroundMonAn.BackColor = Color.FromArgb(4, 121, 171);
                 }
                 else
                 {
-                    frmMain.myUC_QuanLyMenu.panelXacNhanLuaChon.Visible = false;
+                    if (Role == "Manager")
+                    {
+                        frmMain.myUC_QuanLyMenu.panelXacNhanLuaChon.Visible = false;
+                    }
+                    else
+                    {
+                        frmMain.myUC_MenuClient.panelXacNhanLuaChon.Visible = false;
+                    }
                     panelBackGroundMonAn.BackColor = Color.Transparent;
                 }
                 return;
             }
             if (panelBackGroundMonAn.BackColor == Color.FromArgb(4, 121, 171)) return;
             ChinhMauVienMonAn();
-            ThemChiTietMonAnVaoFlowLayoutPanel();
-            HienThiVaTinhTongTien();
+            ThemChiTietMonAnVaoFlowLayoutPanel(Role);
+            HienThiVaTinhTongTien(Role);
         }
         //Kiểm tra xem có thêm món ăn vào cái hóa đơn món ăn của khách hàng không
         private bool CheckUCMenuFromUcHoaDon()
@@ -134,6 +158,9 @@ namespace GiaoDienPBL3.UC
             picMonAn.Controls.Add(panelHetMon);
             picMonAn.BringToFront();
             panelHetMon.BringToFront();
+            string ProductId = (this.Tag as string).Split(',')[1];
+            //false co nghia la mon an da bi khoa
+            ProductBLL.Instance.SetStatusProduct(ProductId, false);
         }
         private void SetPanelHetMon()
         {
@@ -155,6 +182,9 @@ namespace GiaoDienPBL3.UC
             picMonAn.Controls.Remove(panelHetMon);
             panelTenMonAn.BringToFront();
             panelGiaMonAn.BringToFront();
+            string ProductId = (this.Tag as string).Split(',')[1];
+            //true co nghia la mon an da dc mo lai
+            ProductBLL.Instance.SetStatusProduct(ProductId, true);
         }
 
         private void msChinhSua_Click(object sender, EventArgs e)

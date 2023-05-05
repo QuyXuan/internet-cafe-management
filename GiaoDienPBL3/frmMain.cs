@@ -21,20 +21,32 @@ namespace GiaoDienPBL3
     {
         public static string AccountId;
         public static UC_TrangChu myUC_TrangChu = new UC_TrangChu();
-        public static UC_QuanLyMenu myUC_QuanLyMenu = new UC_QuanLyMenu();
+        public static UC_QuanLyMenu myUC_QuanLyMenu;
         public static UC_QuanLyMay myUC_QuanLyMay = new UC_QuanLyMay();
         public static UC_QuanLyKho myUC_QuanLyKho = new UC_QuanLyKho();
-        public static UC_QuanLyHoaDon myUC_QuanLyHoaDon = new UC_QuanLyHoaDon();
+        public static UC_QuanLyHoaDon myUC_QuanLyHoaDon;
         public static UC_QuanLyDoanhThu myUC_QuanLyDoanhThu = new UC_QuanLyDoanhThu();
         public static UC_QuanLyHoaDonNhapKho myUC_QuanLyHoaDonNhapKho = new UC_QuanLyHoaDonNhapKho();
-        public static UC_QuanLyCaLamViec myUC_QuanLyCaLamViec = new UC_QuanLyCaLamViec();
+        public static UC_QuanLyNhanVien myUC_QuanLyNhanVien = new UC_QuanLyNhanVien();
         public static UC_QuanLyKhachHang myUC_QuanLyKhachHang = new UC_QuanLyKhachHang();
         public static UC_Loading myUC_Loading = new UC_Loading();
+        public static UC_MenuClient myUC_MenuClient;
 
         public frmMain(string accountId = null)
         {
             InitializeComponent();
             AccountId = accountId;
+            if (AccountId != null)
+            {
+                string employeeId = EmployeeBLL.Instance.GetEmployeeIdByAccountId(AccountId);
+                myUC_QuanLyMenu = new UC_QuanLyMenu(employeeId);
+                myUC_QuanLyHoaDon = new UC_QuanLyHoaDon(employeeId);
+            }
+            else
+            {
+                myUC_QuanLyMenu = new UC_QuanLyMenu();
+                myUC_QuanLyHoaDon = new UC_QuanLyHoaDon();
+            }
         }
 
         private void imgbtnThoat_Click(object sender, EventArgs e)
@@ -172,8 +184,6 @@ namespace GiaoDienPBL3
 
         private void btnQuanLyHoaDon_Click(object sender, EventArgs e)
         {
-            myUC_QuanLyHoaDon.ResetData();
-            myUC_QuanLyHoaDon.SetData();
             AddUserControlOnBackGround(myUC_QuanLyHoaDon);
         }
 
@@ -190,17 +200,17 @@ namespace GiaoDienPBL3
             AddUserControlOnBackGround(myUC_QuanLyHoaDonNhapKho);
         }
 
-        private void btnQuanLyCaLamViec_Click(object sender, EventArgs e)
-        {
-            AddUserControlOnBackGround(myUC_QuanLyCaLamViec);
-        }
-
         private void btnQuanLyKhachHang_Click(object sender, EventArgs e)
         {
             Guna2Button btn = sender as Guna2Button;
             SetOnCheckStateButton(btn);
             HideSubMenu();
             AddUserControlOnBackGround(myUC_QuanLyKhachHang);
+        }
+
+        private void btnNhanVien_Click(object sender, EventArgs e)
+        {
+            AddUserControlOnBackGround(myUC_QuanLyNhanVien);
         }
     }
 }

@@ -136,26 +136,26 @@
             this.msStatusMonAn.RenderStyle.SelectionForeColor = System.Drawing.Color.White;
             this.msStatusMonAn.RenderStyle.SeparatorColor = System.Drawing.Color.Gainsboro;
             this.msStatusMonAn.RenderStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
-            this.msStatusMonAn.Size = new System.Drawing.Size(163, 76);
+            this.msStatusMonAn.Size = new System.Drawing.Size(211, 104);
             // 
             // msDaHetMon
             // 
             this.msDaHetMon.Name = "msDaHetMon";
-            this.msDaHetMon.Size = new System.Drawing.Size(162, 24);
-            this.msDaHetMon.Text = "Đã Hết Món";
+            this.msDaHetMon.Size = new System.Drawing.Size(210, 24);
+            this.msDaHetMon.Text = "Đóng Món";
             this.msDaHetMon.Click += new System.EventHandler(this.msDaHetMon_Click);
             // 
             // msDaCoMon
             // 
             this.msDaCoMon.Name = "msDaCoMon";
-            this.msDaCoMon.Size = new System.Drawing.Size(162, 24);
-            this.msDaCoMon.Text = "Đã Có Món";
+            this.msDaCoMon.Size = new System.Drawing.Size(152, 24);
+            this.msDaCoMon.Text = "Mở Món";
             this.msDaCoMon.Click += new System.EventHandler(this.msDaCoMon_Click);
             // 
             // msChinhSua
             // 
             this.msChinhSua.Name = "msChinhSua";
-            this.msChinhSua.Size = new System.Drawing.Size(162, 24);
+            this.msChinhSua.Size = new System.Drawing.Size(152, 24);
             this.msChinhSua.Text = "Chỉnh Sửa";
             this.msChinhSua.Click += new System.EventHandler(this.msChinhSua_Click);
             // 
@@ -178,13 +178,13 @@
         #endregion
         public Guna.UI2.WinForms.Guna2ShadowPanel panelBackGroundMonAn;
         private Guna.UI2.WinForms.Guna2ContextMenuStrip msStatusMonAn;
-        private System.Windows.Forms.ToolStripMenuItem msDaHetMon;
         private System.Windows.Forms.ToolStripMenuItem msDaCoMon;
         private System.Windows.Forms.Label lblTenMonAn;
         private System.Windows.Forms.Label lblGiaMonAn;
         private System.Windows.Forms.ToolStripMenuItem msChinhSua;
         private Guna.UI2.WinForms.Guna2GradientPanel panelTenMonAn;
         private Guna.UI2.WinForms.Guna2GradientPanel panelGiaMonAn;
-        private System.Windows.Forms.PictureBox picMonAn;
+        public System.Windows.Forms.PictureBox picMonAn;
+        private System.Windows.Forms.ToolStripMenuItem msDaHetMon;
     }
 }

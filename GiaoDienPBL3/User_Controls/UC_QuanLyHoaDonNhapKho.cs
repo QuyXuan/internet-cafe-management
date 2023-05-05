@@ -13,8 +13,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-//using Utilities.BunifuTextBox.Transitions;
-//using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskBand;
 
 namespace GiaoDienPBL3.User_Controls
 {

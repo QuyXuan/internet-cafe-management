@@ -40,7 +40,6 @@ namespace GiaoDienPBL3.UC
                         imageList1.Images[1], product.ProductId, product.ProductName, product.Type, string.Format("{0:N3}VNĐ", product.CostPrice), product.Stock
                     });
                 }
-
             }
             dgvKho.ClearSelection();
         }

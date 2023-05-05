@@ -127,11 +127,17 @@
     <Compile Include="User_Controls\UC_ChiTietMonAn.Designer.cs">
       <DependentUpon>UC_ChiTietMonAn.cs</DependentUpon>
     </Compile>
-    <Compile Include="User_Controls\UC_QuanLyCaLamViec.cs">
+    <Compile Include="User_Controls\UC_MenuClient.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="User_Controls\UC_QuanLyCaLamViec.Designer.cs">
-      <DependentUpon>UC_QuanLyCaLamViec.cs</DependentUpon>
+    <Compile Include="User_Controls\UC_MenuClient.Designer.cs">
+      <DependentUpon>UC_MenuClient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User_Controls\UC_QuanLyNhanVien.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User_Controls\UC_QuanLyNhanVien.Designer.cs">
+      <DependentUpon>UC_QuanLyNhanVien.cs</DependentUpon>
     </Compile>
     <Compile Include="User_Controls\UC_QuanLyHoaDonNhapKho.cs">
       <SubType>UserControl</SubType>
@@ -234,8 +240,11 @@
     <EmbeddedResource Include="User_Controls\UC_ChiTietMonAn.resx">
       <DependentUpon>UC_ChiTietMonAn.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="User_Controls\UC_QuanLyCaLamViec.resx">
-      <DependentUpon>UC_QuanLyCaLamViec.cs</DependentUpon>
+    <EmbeddedResource Include="User_Controls\UC_MenuClient.resx">
+      <DependentUpon>UC_MenuClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_Controls\UC_QuanLyNhanVien.resx">
+      <DependentUpon>UC_QuanLyNhanVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User_Controls\UC_QuanLyHoaDonNhapKho.resx">
       <DependentUpon>UC_QuanLyHoaDonNhapKho.cs</DependentUpon>
@@ -470,6 +479,12 @@
       <Project>{064bd462-197d-4e0d-a095-ef3e41b6edbc}</Project>
       <Name>DTO</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\previous1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\next.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
