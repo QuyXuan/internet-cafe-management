@@ -90,7 +90,7 @@ namespace GiaoDienPBL3.UC
 
         private void picMonAn_Click(object sender, EventArgs e)
         {
-            string Role = ((sender as PictureBox).Parent.Parent as UserControl).Tag.ToString();
+            string Role = ((sender as PictureBox).Parent.Parent as UserControl).Tag.ToString().Split(',')[0];
             if (Role == "Manager" && CheckUCMenuFromUcHoaDon())
             {
                 frmMessageBox.Instance.ShowFrmMessageBox(frmMessageBox.StatusResult.Warning, "Bạn Không Thể Thay Đổi Món Ăn Trong Hóa Đơn Này");
@@ -158,6 +158,9 @@ namespace GiaoDienPBL3.UC
             picMonAn.Controls.Add(panelHetMon);
             picMonAn.BringToFront();
             panelHetMon.BringToFront();
+            string ProductId = (this.Tag as string).Split(',')[1];
+            //false co nghia la mon an da bi khoa
+            ProductBLL.Instance.SetStatusProduct(ProductId, false);
         }
         private void SetPanelHetMon()
         {
@@ -179,6 +182,9 @@ namespace GiaoDienPBL3.UC
             picMonAn.Controls.Remove(panelHetMon);
             panelTenMonAn.BringToFront();
             panelGiaMonAn.BringToFront();
+            string ProductId = (this.Tag as string).Split(',')[1];
+            //true co nghia la mon an da dc mo lai
+            ProductBLL.Instance.SetStatusProduct(ProductId, true);
         }
 
         private void msChinhSua_Click(object sender, EventArgs e)

@@ -71,7 +71,7 @@ namespace BLL
                 return employeeId;
             }
         }
-        public string GetRandomUserName()
+        public string GetRandomUserNameAccount()
         {
             using (var context = new QLNETDBContext())
             {

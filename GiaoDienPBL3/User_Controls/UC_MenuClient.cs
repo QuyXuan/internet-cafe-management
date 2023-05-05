@@ -73,8 +73,12 @@ namespace GiaoDienPBL3.User_Controls
             my_UCMonAn.TextGiaMonAn = string.Format("{0:N3}VNĐ", product.SellingPrice);
             my_UCMonAn.TextTenMonAn = product.ProductName;
             my_UCMonAn.ImagePanel = GetAnhByPathAnhMon(product.ImageFilePath);
-            my_UCMonAn.Tag = "Client";
+            my_UCMonAn.Tag = "Client,0";
             my_UCMonAn.picMonAn.ContextMenuStrip = null;
+            if (product.Status == false)
+            {
+                my_UCMonAn.picMonAn.ContextMenuStrip.Items["msDaHetMon"].PerformClick();
+            }
             //my_UCMonAn.Tag = product;
             /*frmMain.myUC_QuanLyMenu.*/
             panelMonAn.Controls.Add(my_UCMonAn);

@@ -69,6 +69,19 @@ namespace BLL
                 return product;
             }
         }
+
+        public void SetStatusProduct(string productId, bool status)
+        {
+            using (var context = new QLNETDBContext())
+            {
+                if (context == null) return;
+                var product = context.Products.FirstOrDefault(p => p.ProductId == productId);
+                if (product == null) return;
+                product.Status = status;
+                context.SaveChanges();
+            }
+        }
+
         public string GetRandomProductId()
         {
             using (var context = new QLNETDBContext())

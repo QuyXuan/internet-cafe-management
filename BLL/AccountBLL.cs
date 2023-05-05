@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.Entity.Migrations;
 using System.Linq;
+using System.Net.Mime;
 using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
@@ -151,7 +152,7 @@ namespace BLL
             using (var context = new QLNETDBContext())
             {
                 if (context == null) return null;
-                var account = context.Accounts.FirstOrDefault(p =>p.AccountId == accountId);
+                var account = context.Accounts.FirstOrDefault(p => p.AccountId == accountId);
                 if (account != null)
                 {
                     return account.UserName;
@@ -193,6 +194,19 @@ namespace BLL
                 var account = context.Accounts.FirstOrDefault(p => p.AccountId == AccountId);
                 if (account == null) return;
                 context.Accounts.Remove(account);
+                context.SaveChanges();
+            }
+        }
+
+        public void UpdateUserNameAndPassword(string accountId, string userName, string password)
+        {
+            using (var context = new QLNETDBContext())
+            {
+                if (context == null) return;
+                var account = context.Accounts.FirstOrDefault(p => p.AccountId == accountId);
+                if (account == null) return;
+                account.UserName = userName;
+                account.Password = password;
                 context.SaveChanges();
             }
         }

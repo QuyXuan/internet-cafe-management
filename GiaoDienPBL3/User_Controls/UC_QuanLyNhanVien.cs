@@ -15,6 +15,7 @@ namespace GiaoDienPBL3.User_Controls
 {
     public partial class UC_QuanLyNhanVien : UserControl
     {
+        private Random random = new Random();
         public UC_QuanLyNhanVien()
         {
             InitializeComponent();
@@ -30,6 +31,7 @@ namespace GiaoDienPBL3.User_Controls
                     employee.EmployeeId, employee.EmployeeName, AccountBLL.Instance.GetUserNameByAccountId(employee.AccountId), string.Format("{0:N3}VNĐ", employee.Salary)
                 });
             }
+            dgvNhanVien.ClearSelection();
             txtMaNhanVien2.Text = EmployeeBLL.Instance.GetRandomEmployeeId();
         }
         private void AddColumnButton()
@@ -71,13 +73,22 @@ namespace GiaoDienPBL3.User_Controls
         }
         private void btnKhoiPhucTaiKhoan_Click(object sender, EventArgs e)
         {
+            if (dgvNhanVien.SelectedRows.Count != 1)
+            {
+                frmMessageBox.Instance.ShowFrmMessageBox(frmMessageBox.StatusResult.Warning,
+                    "Bạn Phải Chọn, Nhân Viên Cần Sửa" + Environment.NewLine +
+                    "Bạn Chỉ Có Thể Sửa Thông Tin Của Từng Người");
+                return;
+            }
             SetVisibleControl(true);
-            txtTenTaiKhoan2.Text = EmployeeBLL.Instance.GetRandomUserName();
-            txtMatKhau.Text = "123";
+            txtTenTaiKhoan2.Text = EmployeeBLL.Instance.GetRandomUserNameAccount();
+            txtMatKhau.Text = random.Next(0, 1000).ToString().PadLeft(3, '0');
         }
 
         private void btnXacNhanThayDoi_Click(object sender, EventArgs e)
         {
+            string accountId = EmployeeBLL.Instance.GetAccountIdByEmployeeId(dgvNhanVien.SelectedRows[0].Cells["MaNhanVien"].Value.ToString());
+            AccountBLL.Instance.UpdateUserNameAndPassword(accountId, txtTenTaiKhoan2.Text, txtMatKhau.Text);
             frmMessageBox.Instance.ShowFrmMessageBox(frmMessageBox.StatusResult.Success, "Thay Đổi Thành Công");
             txtMatKhau.Text = "";
             txtTenTaiKhoan2.Text = "";
@@ -104,7 +115,7 @@ namespace GiaoDienPBL3.User_Controls
         private void btnDangKy_Click(object sender, EventArgs e)
         {
             SetVisibleControlDangKy(true);
-            txtTenTaiKhoanDangKy.Text = EmployeeBLL.Instance.GetRandomUserName();
+            txtTenTaiKhoanDangKy.Text = EmployeeBLL.Instance.GetRandomUserNameAccount();
             txtMatKhauDangKy.Text = "123";
             txtMaTaiKhoan.Text = AccountBLL.Instance.GetRandomAccountId();
         }

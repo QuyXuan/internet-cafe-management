@@ -43,7 +43,7 @@ namespace GiaoDienPBL3.UC
         private void btnCongTruXoaMon_Click(object sender, EventArgs e)
         {
             Guna2Button btn = sender as Guna2Button;
-            string Role = (btn.Parent).Parent.Tag as string;
+            string Role = (((btn.Parent).Parent.Tag as UC_MonAn).Tag as string).Split(',')[0];
             int TongTien = 0;
             if (Role == "Manager")
             {
