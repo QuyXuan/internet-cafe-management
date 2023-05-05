@@ -90,8 +90,6 @@ namespace GiaoDienPBL3
                 panelQuanLyMenu.Visible = false;
             if (panelQuanLyKho.Visible == true)
                 panelQuanLyKho.Visible = false;
-            if (panelQuanLy3.Visible == true)
-                panelQuanLy3.Visible = false;
             if (panelCaiDat.Visible == true)
                 panelCaiDat.Visible = false;
         }
@@ -100,7 +98,6 @@ namespace GiaoDienPBL3
         {
             panelQuanLyMenu.Visible = false;
             panelQuanLyKho.Visible = false;
-            panelQuanLy3.Visible = false;
             panelCaiDat.Visible = false;
         }
 
@@ -136,7 +133,8 @@ namespace GiaoDienPBL3
         {
             Guna2Button btn = sender as Guna2Button;
             SetOnCheckStateButton(btn);
-            ShowSubMenu(panelQuanLy3);
+            HideSubMenu();
+            AddUserControlOnBackGround(myUC_QuanLyNhanVien);
         }
 
         private void btnCaiDat_Click(object sender, EventArgs e)
@@ -206,11 +204,6 @@ namespace GiaoDienPBL3
             SetOnCheckStateButton(btn);
             HideSubMenu();
             AddUserControlOnBackGround(myUC_QuanLyKhachHang);
-        }
-
-        private void btnNhanVien_Click(object sender, EventArgs e)
-        {
-            AddUserControlOnBackGround(myUC_QuanLyNhanVien);
         }
     }
 }
