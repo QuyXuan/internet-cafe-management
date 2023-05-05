@@ -37,20 +37,20 @@
             this.btnMinisize = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.panelSideBar = new System.Windows.Forms.Panel();
-            this.imgbtnThoat = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.btnTrangChu = new Guna.UI2.WinForms.Guna2Button();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.btnMenu = new Guna.UI2.WinForms.Guna2Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnNapGioChoi = new Guna.UI2.WinForms.Guna2Button();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.btnNapGioChoi = new Guna.UI2.WinForms.Guna2Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnMenu = new Guna.UI2.WinForms.Guna2Button();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.btnTrangChu = new Guna.UI2.WinForms.Guna2Button();
+            this.imgbtnThoat = new Guna.UI2.WinForms.Guna2ImageButton();
             this.panelDongHo = new System.Windows.Forms.Panel();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
             this.panelSideBar.SuspendLayout();
-            this.panel5.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelBackGround
@@ -137,6 +137,7 @@
             // guna2CirclePictureBox1
             // 
             this.guna2CirclePictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2CirclePictureBox1.Image = global::GUIClient.Properties.Resources.avatar;
             this.guna2CirclePictureBox1.ImageRotate = 0F;
             this.guna2CirclePictureBox1.Location = new System.Drawing.Point(870, 20);
             this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
@@ -161,21 +162,82 @@
             this.panelSideBar.Size = new System.Drawing.Size(283, 795);
             this.panelSideBar.TabIndex = 7;
             // 
-            // imgbtnThoat
+            // panel6
             // 
-            this.imgbtnThoat.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.imgbtnThoat.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.imgbtnThoat.HoverState.Image = global::GUIClient.Properties.Resources.icons8_log_out_40;
-            this.imgbtnThoat.HoverState.ImageSize = new System.Drawing.Size(64, 64);
-            this.imgbtnThoat.Image = global::GUIClient.Properties.Resources.icons8_logout_40;
-            this.imgbtnThoat.ImageOffset = new System.Drawing.Point(0, 0);
-            this.imgbtnThoat.ImageRotate = 0F;
-            this.imgbtnThoat.Location = new System.Drawing.Point(12, 737);
-            this.imgbtnThoat.Name = "imgbtnThoat";
-            this.imgbtnThoat.PressedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.imgbtnThoat.Size = new System.Drawing.Size(74, 56);
-            this.imgbtnThoat.TabIndex = 3;
-            this.imgbtnThoat.Click += new System.EventHandler(this.imgbtnThoat_Click);
+            this.panel6.Controls.Add(this.btnNapGioChoi);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel6.Location = new System.Drawing.Point(0, 188);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(283, 45);
+            this.panel6.TabIndex = 12;
+            // 
+            // btnNapGioChoi
+            // 
+            this.btnNapGioChoi.BorderRadius = 15;
+            this.btnNapGioChoi.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnNapGioChoi.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(165)))), ((int)(((byte)(208)))));
+            this.btnNapGioChoi.CheckedState.ForeColor = System.Drawing.Color.White;
+            this.btnNapGioChoi.CheckedState.Image = global::GUIClient.Properties.Resources.icons8_chart_arrow_rise_30__1_;
+            this.btnNapGioChoi.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNapGioChoi.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnNapGioChoi.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnNapGioChoi.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnNapGioChoi.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnNapGioChoi.FillColor = System.Drawing.SystemColors.Control;
+            this.btnNapGioChoi.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNapGioChoi.ForeColor = System.Drawing.Color.Black;
+            this.btnNapGioChoi.Image = global::GUIClient.Properties.Resources.icons8_chart_arrow_rise_30;
+            this.btnNapGioChoi.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnNapGioChoi.ImageSize = new System.Drawing.Size(30, 30);
+            this.btnNapGioChoi.Location = new System.Drawing.Point(12, 0);
+            this.btnNapGioChoi.Name = "btnNapGioChoi";
+            this.btnNapGioChoi.Size = new System.Drawing.Size(241, 45);
+            this.btnNapGioChoi.TabIndex = 6;
+            this.btnNapGioChoi.Text = "Nạp Giờ Chơi";
+            this.btnNapGioChoi.Click += new System.EventHandler(this.btnNapGioChoi_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.btnMenu);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 143);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(283, 45);
+            this.panel1.TabIndex = 7;
+            // 
+            // btnMenu
+            // 
+            this.btnMenu.BorderRadius = 15;
+            this.btnMenu.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnMenu.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(165)))), ((int)(((byte)(208)))));
+            this.btnMenu.CheckedState.ForeColor = System.Drawing.Color.White;
+            this.btnMenu.CheckedState.Image = global::GUIClient.Properties.Resources.icons8_bill_35__1_;
+            this.btnMenu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMenu.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnMenu.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnMenu.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnMenu.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnMenu.FillColor = System.Drawing.SystemColors.Control;
+            this.btnMenu.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
+            this.btnMenu.ForeColor = System.Drawing.Color.Black;
+            this.btnMenu.Image = global::GUIClient.Properties.Resources.icons8_bill_35;
+            this.btnMenu.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnMenu.ImageSize = new System.Drawing.Size(30, 30);
+            this.btnMenu.Location = new System.Drawing.Point(12, 0);
+            this.btnMenu.Name = "btnMenu";
+            this.btnMenu.Size = new System.Drawing.Size(241, 45);
+            this.btnMenu.TabIndex = 6;
+            this.btnMenu.Text = "Menu";
+            this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.btnTrangChu);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel5.Location = new System.Drawing.Point(0, 98);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(283, 45);
+            this.panel5.TabIndex = 4;
             // 
             // btnTrangChu
             // 
@@ -203,82 +265,21 @@
             this.btnTrangChu.Text = "Trang Chủ";
             this.btnTrangChu.Click += new System.EventHandler(this.btnTrangChu_Click);
             // 
-            // panel5
+            // imgbtnThoat
             // 
-            this.panel5.Controls.Add(this.btnTrangChu);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel5.Location = new System.Drawing.Point(0, 98);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(283, 45);
-            this.panel5.TabIndex = 4;
-            // 
-            // btnMenu
-            // 
-            this.btnMenu.BorderRadius = 15;
-            this.btnMenu.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.btnMenu.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(165)))), ((int)(((byte)(208)))));
-            this.btnMenu.CheckedState.ForeColor = System.Drawing.Color.White;
-            this.btnMenu.CheckedState.Image = global::GUIClient.Properties.Resources.icons8_bill_35__1_;
-            this.btnMenu.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMenu.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnMenu.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnMenu.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnMenu.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnMenu.FillColor = System.Drawing.SystemColors.Control;
-            this.btnMenu.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
-            this.btnMenu.ForeColor = System.Drawing.Color.Black;
-            this.btnMenu.Image = global::GUIClient.Properties.Resources.icons8_bill_35;
-            this.btnMenu.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnMenu.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnMenu.Location = new System.Drawing.Point(12, 0);
-            this.btnMenu.Name = "btnMenu";
-            this.btnMenu.Size = new System.Drawing.Size(241, 45);
-            this.btnMenu.TabIndex = 6;
-            this.btnMenu.Text = "Menu";
-            this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.btnMenu);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 143);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(283, 45);
-            this.panel1.TabIndex = 7;
-            // 
-            // btnNapGioChoi
-            // 
-            this.btnNapGioChoi.BorderRadius = 15;
-            this.btnNapGioChoi.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.btnNapGioChoi.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(165)))), ((int)(((byte)(208)))));
-            this.btnNapGioChoi.CheckedState.ForeColor = System.Drawing.Color.White;
-            this.btnNapGioChoi.CheckedState.Image = global::GUIClient.Properties.Resources.icons8_chart_arrow_rise_30__1_;
-            this.btnNapGioChoi.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNapGioChoi.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnNapGioChoi.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnNapGioChoi.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnNapGioChoi.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnNapGioChoi.FillColor = System.Drawing.SystemColors.Control;
-            this.btnNapGioChoi.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNapGioChoi.ForeColor = System.Drawing.Color.Black;
-            this.btnNapGioChoi.Image = global::GUIClient.Properties.Resources.icons8_chart_arrow_rise_30;
-            this.btnNapGioChoi.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnNapGioChoi.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnNapGioChoi.Location = new System.Drawing.Point(12, 0);
-            this.btnNapGioChoi.Name = "btnNapGioChoi";
-            this.btnNapGioChoi.Size = new System.Drawing.Size(241, 45);
-            this.btnNapGioChoi.TabIndex = 6;
-            this.btnNapGioChoi.Text = "Nạp Giờ Chơi";
-            this.btnNapGioChoi.Click += new System.EventHandler(this.btnNapGioChoi_Click);
-            // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.btnNapGioChoi);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel6.Location = new System.Drawing.Point(0, 188);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(283, 45);
-            this.panel6.TabIndex = 12;
+            this.imgbtnThoat.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.imgbtnThoat.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.imgbtnThoat.HoverState.Image = global::GUIClient.Properties.Resources.icons8_log_out_40;
+            this.imgbtnThoat.HoverState.ImageSize = new System.Drawing.Size(64, 64);
+            this.imgbtnThoat.Image = global::GUIClient.Properties.Resources.icons8_logout_40;
+            this.imgbtnThoat.ImageOffset = new System.Drawing.Point(0, 0);
+            this.imgbtnThoat.ImageRotate = 0F;
+            this.imgbtnThoat.Location = new System.Drawing.Point(12, 737);
+            this.imgbtnThoat.Name = "imgbtnThoat";
+            this.imgbtnThoat.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.imgbtnThoat.Size = new System.Drawing.Size(74, 56);
+            this.imgbtnThoat.TabIndex = 3;
+            this.imgbtnThoat.Click += new System.EventHandler(this.imgbtnThoat_Click);
             // 
             // panelDongHo
             // 
@@ -307,9 +308,9 @@
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
             this.panelSideBar.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
