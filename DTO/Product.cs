@@ -37,11 +37,14 @@ namespace DTO
 
         public string Discription { get; set; }
 
-        //[MaxLength]
-        //public byte[] Image { get; set; }
         [MaxLength]
-        public string ImageFilePath { get; set; }
+        public byte[] ProductImage { get; set; }
+
+        //[MaxLength]
+        //public string ImageFilePath { get; set; }
+
         public virtual ICollection<BillProduct> Bills { get; set; }
+
         public virtual ICollection<RecieptProduct> Reciepts { get; set; }
     }
 }

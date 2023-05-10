@@ -89,11 +89,11 @@ namespace GiaoDienPBL3.User_Controls
                 {
                     if (txtGia.Text == "")
                     {
-                        ProductBLL.Instance.UpdateProductWithPriceAndPath(txtMaMonAn.Text, SplitFilePath(txtPath.Text));
+                        ProductBLL.Instance.UpdateProductWithPriceAndPath(txtMaMonAn.Text, ProductBLL.Instance.GetImageByFilePath(ProductBLL.Instance.ConvertToFilePath(SplitFilePath(txtPath.Text))));
                     }
                     else if (txtPath.Text == "")
                     {
-                        ProductBLL.Instance.UpdateProductWithPriceAndPath(txtMaMonAn.Text, "", (float)Convert.ToDouble(txtGia.Text));
+                        ProductBLL.Instance.UpdateProductWithPriceAndPath(txtMaMonAn.Text, null, (float)Convert.ToDouble(txtGia.Text));
                     }
                     frmMessageBox.Instance.ShowFrmMessageBox(frmMessageBox.StatusResult.Success, "Chỉnh Sửa Thành Công");
                     btnHuy.PerformClick();

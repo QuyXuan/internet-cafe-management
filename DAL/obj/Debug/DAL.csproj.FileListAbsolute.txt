@@ -50,3 +50,6 @@ C:\Users\ADMIN\source\repos\pbl3lan2\DAL\obj\Debug\DAL.dll
 C:\Users\ADMIN\source\repos\pbl3lan2\DAL\obj\Debug\DAL.pdb
 C:\Users\ADMIN\source\repos\pbl3lan2\DAL\obj\Debug\DAL.Migrations.updatedb34.resources
 C:\Users\ADMIN\source\repos\pbl3lan2\DAL\obj\Debug\DAL.Migrations.updatedb35.resources
+C:\Users\ADMIN\source\repos\pbl3lan2\DAL\obj\Debug\DAL.Migrations.updatedb36.resources
+C:\Users\ADMIN\source\repos\pbl3lan2\DAL\obj\Debug\DAL.Migrations.updatedb37.resources
+C:\Users\ADMIN\source\repos\pbl3lan2\DAL\obj\Debug\DAL.Migrations.updatedb38.resources

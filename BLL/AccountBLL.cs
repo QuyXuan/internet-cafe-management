@@ -27,7 +27,7 @@ namespace BLL
             private set { instance = value; }
         }
         private AccountBLL() { }
-        public List<Account> GetListAccount()
+        public List<Account> GetListAccount(string Role = null)
         {
             using (var context = new QLNETDBContext())
             {
@@ -35,7 +35,15 @@ namespace BLL
                 {
                     return null;
                 }
-                var accounts = context.Accounts.ToList();
+                List<Account> accounts = new List<Account>();
+                if (Role == null)
+                {
+                    accounts = context.Accounts.ToList();
+                }
+                else
+                {
+                    accounts = context.Accounts.Where(p => p.Role == Role).ToList();
+                }
                 return accounts;
             }
         }
