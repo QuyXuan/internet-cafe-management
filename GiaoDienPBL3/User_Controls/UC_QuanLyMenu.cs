@@ -20,28 +20,18 @@ namespace GiaoDienPBL3.UC
         public static UC_ThongTinVaCaiDatMonAn my_UCThongTinVaCaiDatMonAn;
         public UC_ChiTietMonAn my_UCChiTietMonAn;
         private bool checkBtnCaiDat = false;
-        public static bool checkBtnXacNhan = false;
+        public bool checkBtnXacNhan = false;
         //kiểm tra đây là form admin hay là client, false là admin
         private bool checkFormAdminOrClient = false;
-        public UC_QuanLyMenu()
+        private string EmployeeId;
+        public UC_QuanLyMenu(string employeeId = null)
         {
             InitializeComponent();
             my_UCThongTinVaCaiDatMonAn = new UC_ThongTinVaCaiDatMonAn();
             AddUC();
+            EmployeeId = employeeId;
         }
-        private void btnCaiDat_Click(object sender, EventArgs e)
-        {
-            if (checkBtnCaiDat == false)
-            {
-                panelCaiDatVaThongTin.SendToBack();
-                checkBtnCaiDat = true;
-            }
-            else
-            {
-                panelCaiDatVaThongTin.BringToFront();
-                checkBtnCaiDat = false;
-            }
-        }
+
         private void AddUC()
         {
             panelThongTinChiTietMonAn.Controls.Add(my_UCThongTinVaCaiDatMonAn);
@@ -66,12 +56,13 @@ namespace GiaoDienPBL3.UC
             my_UCMonAn.TextGiaMonAn = string.Format("{0:N3}VNĐ", product.SellingPrice);
             my_UCMonAn.TextTenMonAn = product.ProductName;
             my_UCMonAn.ImagePanel = GetAnhByPathAnhMon(product.ImageFilePath);
-            my_UCMonAn.Tag = product;
-            //if (checkFormAdminOrClient == true)
-            //{
-             
-            //}
-            frmMain.myUC_QuanLyMenu.panelMonAn.Controls.Add(my_UCMonAn);
+            my_UCMonAn.Tag = "Manager" + "," + product.ProductId;
+            if (product.Status == false)
+            {
+                my_UCMonAn.picMonAn.ContextMenuStrip.Items["msDaHetMon"].PerformClick();
+            }
+            //my_UCMonAn.Tag = product;
+            /*frmMain.myUC_QuanLyMenu.*/panelMonAn.Controls.Add(my_UCMonAn);
         }
         private Image GetAnhByPathAnhMon(string nameImg)
         {
@@ -125,8 +116,8 @@ namespace GiaoDienPBL3.UC
                 my_UCChiTietMonAn.TextSoLuongMonAn = 1 + "";
                 btnXacNhan.Tag = (Convert.ToInt32(btnXacNhan.Tag) + 1).ToString();
                 my_UCChiTietMonAn.Width = 255;
-                my_UCChiTietMonAn.Tag = this;
-                frmMain.myUC_QuanLyMenu.panelChiTietMonAn.Controls.Add(my_UCChiTietMonAn);
+                my_UCChiTietMonAn.Tag = "Manager";
+                /*frmMain.myUC_QuanLyMenu.*/panelChiTietMonAn.Controls.Add(my_UCChiTietMonAn);
             }
         }
         private string ConvertIfGraterThan1000(string cash)
@@ -136,42 +127,43 @@ namespace GiaoDienPBL3.UC
         private void HienThiVaTinhTongTien()
         {
             string textMenhGia = string.Format("{0:N3}VNĐ", cboMenhGia.Text);
-            int TongTien = Convert.ToInt32(frmMain.myUC_QuanLyMenu.lblTongTien.Tag);
+            int TongTien = Convert.ToInt32(/*frmMain.myUC_QuanLyMenu.*/lblTongTien.Tag);
             TongTien += Convert.ToInt32(textMenhGia.Substring(0, textMenhGia.Length - 7));
-            frmMain.myUC_QuanLyMenu.lblTongTien.Text = string.Format("{0:N3}VNĐ", TongTien);
-            frmMain.myUC_QuanLyMenu.lblTongTien.Tag = TongTien;
+            /*frmMain.myUC_QuanLyMenu.*/lblTongTien.Text = string.Format("{0:N3}VNĐ", TongTien);
+            /*frmMain.myUC_QuanLyMenu.*/lblTongTien.Tag = TongTien;
         }
 
-        private void btnYeuCauThanhToan_Click(object sender, EventArgs e)
+        private void ResetUCQuanLyMenu()
+        {
+            txtMaHoaDon.Text = BillBLL.Instance.GetRandomBillId();
+            txtMaKhachHang.Text = "";
+            txtMaKhachHang.ReadOnly = false;
+            txtMaNhanVien.Text = EmployeeId;
+            txtSoMay.Text = "";
+            txtSoMay.ReadOnly = false;
+            txtTenKhachHang.Text = "";
+            txtTenKhachHang.ReadOnly = false;
+            txtTenNhanVien.Text = EmployeeBLL.Instance.GetEmployeeNameByEmployeeId(EmployeeId);
+            txtTongGiamGia.Text = "";
+            lblTongTien.Text = "0.000VNĐ";
+            panelChiTietMonAn.Controls.Clear();
+        }
+
+        private void btnThanhToan_Click(object sender, EventArgs e)
         {
             Guna2Button button = sender as Guna2Button;
             try
             {
-                if (button.Text == "Thanh Toán")
-                {
-                    string MaHoaDon = txtMaHoaDon.Text;
-                    BillBLL.Instance.SetStatusChoXacNhanToXacNhan(MaHoaDon);
-                    frmMessageBox.Instance.ShowFrmMessageBox(frmMessageBox.StatusResult.Warning, "Thanh Toán Thành Công");
-                    ResetUCQuanLyMenu();
-                }
+                string MaHoaDon = txtMaHoaDon.Text;
+                BillBLL.Instance.SetStatusChoXacNhanToXacNhan(MaHoaDon, EmployeeId);
+                frmMessageBox.Instance.ShowFrmMessageBox(frmMessageBox.StatusResult.Success, "Thanh Toán Thành Công");
+                ResetUCQuanLyMenu();
             }
             catch (Exception)
             {
+                frmMessageBox.Instance.ShowFrmMessageBox(frmMessageBox.StatusResult.Error, "Thanh Toán Thất Bại");
                 return;
             }
-        }
-        private void ResetUCQuanLyMenu()
-        {
-            txtMaHoaDon.Text = "";
-            txtMaKhachHang.Text = "";
-            txtMaNhanVien.Text = "";
-            txtSoMay.Text = "";
-            txtTenKhachHang.Text = "";
-            txtTenNhanVien.Text = "";
-            txtTongGiamGia.Text = "";
-            lblTongTien.Text = "0.000VNĐ";
-            btnYeuCauThanhToan.Text = "Yêu Cầu";
-            panelChiTietMonAn.Controls.Clear();
         }
     }
 }

@@ -79,5 +79,10 @@ namespace LoginPage
                 lblThongBao.Visible = false;
             }
         }
+
+        private void guna2ControlBox1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

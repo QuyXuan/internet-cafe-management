@@ -188,6 +188,14 @@
     <Compile Include="Migrations\202304270522305_updatedb33.designer.cs">
       <DependentUpon>202304270522305_updatedb33.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202305030948291_updatedb34.cs" />
+    <Compile Include="Migrations\202305030948291_updatedb34.designer.cs">
+      <DependentUpon>202305030948291_updatedb34.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202305031302525_updatedb35.cs" />
+    <Compile Include="Migrations\202305031302525_updatedb35.designer.cs">
+      <DependentUpon>202305031302525_updatedb35.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
@@ -308,6 +316,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202304270522305_updatedb33.resx">
       <DependentUpon>202304270522305_updatedb33.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202305030948291_updatedb34.resx">
+      <DependentUpon>202305030948291_updatedb34.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202305031302525_updatedb35.resx">
+      <DependentUpon>202305031302525_updatedb35.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

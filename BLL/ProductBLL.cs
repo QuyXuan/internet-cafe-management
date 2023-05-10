@@ -69,6 +69,19 @@ namespace BLL
                 return product;
             }
         }
+
+        public void SetStatusProduct(string productId, bool status)
+        {
+            using (var context = new QLNETDBContext())
+            {
+                if (context == null) return;
+                var product = context.Products.FirstOrDefault(p => p.ProductId == productId);
+                if (product == null) return;
+                product.Status = status;
+                context.SaveChanges();
+            }
+        }
+
         public string GetRandomProductId()
         {
             using (var context = new QLNETDBContext())
@@ -84,6 +97,25 @@ namespace BLL
                     productId = "sp" + random.Next(0, 1000);
                 }
                 return productId;
+            }
+        }
+        public void UpdateProductWithPriceAndPath(string productId, string imageFilePath, float sellingPrice = 0)
+        {
+            using (var context = new QLNETDBContext())
+            {
+                if (context == null) return;
+                var product = context.Products.FirstOrDefault(p => productId == p.ProductId);
+                if (product == null) return;
+                if (imageFilePath == "")
+                {
+                    product.SellingPrice = sellingPrice;
+                }
+                else
+                {
+                    product.SellingPrice = sellingPrice;
+                    product.ImageFilePath = imageFilePath;
+                }
+                context.SaveChanges();
             }
         }
         public void AddNewProduct(Product product)
@@ -110,7 +142,8 @@ namespace BLL
                         Type = product.Key.Type,
                         Stock = product.Value ?? 0,
                         SellingPrice = 0,
-                        ImageFilePath = "defaultFoodAndDrink.png"
+                        ImageFilePath = "defaultFoodAndDrink.png",
+                        Status = true
                     });
                 }
                 context.SaveChanges();

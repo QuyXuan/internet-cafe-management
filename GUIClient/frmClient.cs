@@ -2,6 +2,7 @@
 using DTO;
 using GiaoDienPBL3;
 using GiaoDienPBL3.UC;
+using GiaoDienPBL3.User_Controls;
 using GUIClient.User_Controls;
 using Guna.UI2.WinForms;
 using System;
@@ -35,6 +36,7 @@ namespace GUIClient
             this.accountId = accountId;
             frmClient.Role = Role;
             frmClient.computer = computer;
+            frmMain.myUC_MenuClient = new UC_MenuClient(accountId, computer.ComputerId);
             if(Role) customer = CustomerBLL.Instance.GetCustomerByAccountId(accountId);
             myUC_TrangChuKhachHang = new UC_TrangChuKhachHang();
             typeComputer = ComputerBLL.Instance.GetTypeComputerByTypeId(computer.TypeId);
@@ -91,7 +93,7 @@ namespace GUIClient
         {
             Guna2Button btn = sender as Guna2Button;
             SetOnCheckStateButton(btn);
-            AddUserControlOnBackGround(frmMain.myUC_QuanLyMenu);
+            AddUserControlOnBackGround(frmMain.myUC_MenuClient);
         }
 
         private void btnNapGioChoi_Click(object sender, EventArgs e)
@@ -111,6 +113,7 @@ namespace GUIClient
         {
             panelDongHo.Controls.Clear();
             panelDongHo.Controls.Add(myUC_DongHo);
+            myUC_DongHo.Dock = DockStyle.Fill;
         }
 
         private void btnMinisize_Click(object sender, EventArgs e)

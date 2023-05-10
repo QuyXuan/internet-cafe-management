@@ -2,6 +2,7 @@
 using DTO;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Runtime.Remoting.Contexts;
 using System.Security.Cryptography;
@@ -39,7 +40,24 @@ namespace BLL
                 return customers;
             }
         }
-
+        
+        public string GetRandomCustomerId()
+        {
+            using (var context = new QLNETDBContext())
+            {
+                if (context == null)
+                {
+                    return null;
+                }
+                Random random = new Random();
+                string customerId = "kh" + random.Next(0, 1000).ToString().PadLeft(4, '0');
+                while (context.Customers.Any(p => p.CustomerId == customerId))
+                {
+                    customerId = "kh" + random.Next(0, 1000).ToString().PadLeft(4, '0');
+                }
+                return customerId;
+            }
+        }
         public Customer GetCustomerByAccountId(string AccountID)
         {
             using (var context = new QLNETDBContext())
@@ -53,7 +71,7 @@ namespace BLL
             }
         }
 
-        public string GetNameCustomerByCustomerId(string customerId) 
+        public string GetNameCustomerByCustomerId(string customerId)
         {
             using (var context = new QLNETDBContext())
             {
@@ -100,6 +118,53 @@ namespace BLL
                 var customer = context.Customers.FirstOrDefault(p => p.CustomerId == customerId);
                 customer.Balance = (float)Balance;
                 context.SaveChanges();
+            }
+        }
+        public string GetRandomUserNameAccount()
+        {
+            using (var context = new QLNETDBContext())
+            {
+                if (context == null)
+                {
+                    return null;
+                }
+                Random random = new Random();
+                string userName = "khachhang" + random.Next(0, 1000).ToString().PadLeft(4, '0');
+                while (context.Customers.Any(p => p.CustomerName == userName))
+                {
+                    userName = "khachhang" + random.Next(0, 1000).ToString().PadLeft(4, '0');
+                }
+                return userName;
+            }
+        }
+        public void AddNewCustomer(Customer customer)
+        {
+            using (var context = new QLNETDBContext())
+            {
+                if (context == null) return;
+                context.Customers.AddOrUpdate(customer);
+                context.SaveChanges();
+            }
+        }
+        public void DeleteCustomer(string customerId)
+        {
+            using (var context = new QLNETDBContext())
+            {
+                if (context == null) return;
+                var customer = context.Customers.FirstOrDefault(p => p.CustomerId == customerId);
+                if (customer == null) return;
+                context.Customers.Remove(customer);
+                context.SaveChanges();
+            }
+        }
+        public string GetAccountIdByCustomerId(string customerId)
+        {
+            using (var context = new QLNETDBContext())
+            {
+                if (context == null) return null;
+                var customer = context.Customers.FirstOrDefault(p => p.CustomerId == customerId);
+                if (customer == null) return null;
+                return customer.AccountId;
             }
         }
     }

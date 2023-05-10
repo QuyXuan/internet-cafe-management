@@ -58,12 +58,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lblTongTien = new System.Windows.Forms.Label();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            this.btnYeuCauThanhToan = new Guna.UI2.WinForms.Guna2Button();
+            this.btnThanhToan = new Guna.UI2.WinForms.Guna2Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panelMonAn = new System.Windows.Forms.FlowLayoutPanel();
             this.uC_MonAn1 = new GiaoDienPBL3.UC.UC_MonAn();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnCaiDat = new Guna.UI2.WinForms.Guna2Button();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2CustomGradientPanel1.SuspendLayout();
             this.panelThongTinChiTietMonAn.SuspendLayout();
@@ -487,7 +486,7 @@
             this.panel3.BackColor = System.Drawing.Color.Transparent;
             this.panel3.Controls.Add(this.panel5);
             this.panel3.Controls.Add(this.guna2Button1);
-            this.panel3.Controls.Add(this.btnYeuCauThanhToan);
+            this.panel3.Controls.Add(this.btnThanhToan);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel3.Location = new System.Drawing.Point(0, 546);
             this.panel3.Name = "panel3";
@@ -546,22 +545,22 @@
             this.guna2Button1.TabIndex = 6;
             this.guna2Button1.Text = "In Hóa Đơn";
             // 
-            // btnYeuCauThanhToan
+            // btnThanhToan
             // 
-            this.btnYeuCauThanhToan.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnYeuCauThanhToan.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnYeuCauThanhToan.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnYeuCauThanhToan.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnYeuCauThanhToan.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnYeuCauThanhToan.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.btnYeuCauThanhToan.Font = new System.Drawing.Font("Segoe UI", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnYeuCauThanhToan.ForeColor = System.Drawing.Color.White;
-            this.btnYeuCauThanhToan.Location = new System.Drawing.Point(0, 77);
-            this.btnYeuCauThanhToan.Name = "btnYeuCauThanhToan";
-            this.btnYeuCauThanhToan.Size = new System.Drawing.Size(365, 35);
-            this.btnYeuCauThanhToan.TabIndex = 1;
-            this.btnYeuCauThanhToan.Text = "Yêu Cầu";
-            this.btnYeuCauThanhToan.Click += new System.EventHandler(this.btnYeuCauThanhToan_Click);
+            this.btnThanhToan.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnThanhToan.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnThanhToan.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnThanhToan.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnThanhToan.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnThanhToan.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.btnThanhToan.Font = new System.Drawing.Font("Segoe UI", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThanhToan.ForeColor = System.Drawing.Color.White;
+            this.btnThanhToan.Location = new System.Drawing.Point(0, 77);
+            this.btnThanhToan.Name = "btnThanhToan";
+            this.btnThanhToan.Size = new System.Drawing.Size(365, 35);
+            this.btnThanhToan.TabIndex = 1;
+            this.btnThanhToan.Text = "Thanh Toán";
+            this.btnThanhToan.Click += new System.EventHandler(this.btnThanhToan_Click);
             // 
             // panel4
             // 
@@ -590,42 +589,19 @@
             this.uC_MonAn1.Name = "uC_MonAn1";
             this.uC_MonAn1.Size = new System.Drawing.Size(164, 158);
             this.uC_MonAn1.TabIndex = 0;
+            this.uC_MonAn1.Tag = "Manager";
             this.uC_MonAn1.TextGiaMonAn = "Nạp Tiền";
             this.uC_MonAn1.TextTenMonAn = "Nạp Tiền";
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Controls.Add(this.btnCaiDat);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1249, 68);
             this.panel1.TabIndex = 0;
-            // 
-            // btnCaiDat
-            // 
-            this.btnCaiDat.BorderColor = System.Drawing.Color.Transparent;
-            this.btnCaiDat.BorderRadius = 8;
-            this.btnCaiDat.BorderThickness = 2;
-            this.btnCaiDat.CheckedState.BorderColor = System.Drawing.Color.Red;
-            this.btnCaiDat.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCaiDat.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnCaiDat.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnCaiDat.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnCaiDat.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnCaiDat.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnCaiDat.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCaiDat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnCaiDat.Image = global::GiaoDienPBL3.Properties.Resources.icons8_settings_30__1_;
-            this.btnCaiDat.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnCaiDat.Location = new System.Drawing.Point(1059, 23);
-            this.btnCaiDat.Name = "btnCaiDat";
-            this.btnCaiDat.Size = new System.Drawing.Size(132, 45);
-            this.btnCaiDat.TabIndex = 2;
-            this.btnCaiDat.Text = "Cài Đặt";
-            this.btnCaiDat.Click += new System.EventHandler(this.btnCaiDat_Click);
             // 
             // label1
             // 
@@ -670,7 +646,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel4;
-        private Guna.UI2.WinForms.Guna2Button btnCaiDat;
         private System.Windows.Forms.Panel panelThongTinChiTietMonAn;
         private Guna.UI2.WinForms.Guna2GroupBox groupBoxThongTinChung;
         private System.Windows.Forms.Label label5;
@@ -688,7 +663,6 @@
         public System.Windows.Forms.Label lblTongTien;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         public System.Windows.Forms.FlowLayoutPanel panelMonAn;
-        private UC_MonAn uC_MonAn1;
         public System.Windows.Forms.Panel panelCaiDatVaThongTin;
         public Guna.UI2.WinForms.Guna2TextBox txtSoMay;
         public Guna.UI2.WinForms.Guna2TextBox txtTenKhachHang;
@@ -698,10 +672,11 @@
         public Guna.UI2.WinForms.Guna2TextBox txtMaHoaDon;
         public Guna.UI2.WinForms.Guna2TextBox txtTongGiamGia;
         public Guna.UI2.WinForms.Guna2DateTimePicker dtpNgayNhan;
-        public Guna.UI2.WinForms.Guna2Button btnYeuCauThanhToan;
+        public Guna.UI2.WinForms.Guna2Button btnThanhToan;
         public System.Windows.Forms.Panel panelXacNhanLuaChon;
         private Guna.UI2.WinForms.Guna2Button btnXacNhan;
         private System.Windows.Forms.ComboBox cboMenhGia;
         private System.Windows.Forms.Panel panel2;
+        public UC_MonAn uC_MonAn1;
     }
 }
