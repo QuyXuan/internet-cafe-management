@@ -24,7 +24,7 @@ namespace BLL
             private set { instance = value; }
         }
         private DiscountBLL() { }
-        public List<Discount> GetListBillWithType(bool TypeCustomer)
+        public List<Discount> GetListDiscountWithType(bool TypeCustomer)
         {
             using (var context = new QLNETDBContext())
             {

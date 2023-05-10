@@ -2,6 +2,7 @@
 using DTO;
 using GiaoDienPBL3.User_Controls;
 using Guna.UI2.WinForms;
+using Guna.UI2.WinForms.Enums;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,6 +21,7 @@ namespace GiaoDienPBL3.UC
         private UC_ChiTietMay my_UCChiTietMay;
         private bool checkBtnCaiDat = false;
         private Dictionary<string, Color> COLOR;
+        private int CountOnline = 0;
         public UC_QuanLyMay()
         {
             InitializeComponent();
@@ -42,18 +44,21 @@ namespace GiaoDienPBL3.UC
             COLOR.Add("Pink", Color.FromArgb(225, 33, 246));
             COLOR.Add("Blue", Color.Blue);
         }
-        private void AddMayOnPanel(Computer computer)
+        private void AddComputerOnPanel(Computer computer)
         {
+            Panel panelTemp = new Panel();
+            panelTemp.Size = new Size(60, 60);
+            panelTemp.Padding = new Padding(10, 10, 10, 10);
             Guna2Button button = new Guna2Button();
-            button.Size = new Size(60, 60);
-            button.FillColor = Color.Gray;
+            button.Size = new Size(50, 50);
             button.BorderColor = Color.Transparent;
             button.BorderRadius = 8;
             button.BorderThickness = 3;
-            button.Margin = new Padding(10, 10, 10, 10);
-            button.Font = new Font("Segoe UI", 9, FontStyle.Bold);
+            //button.Margin = new Padding(10, 10, 10, 10);
+            button.Font = new Font("Segoe UI", 11, FontStyle.Bold);
             button.Text = computer.ComputerName;
-            button.ForeColor = Color.DarkGray;
+            button.Cursor = Cursors.Hand;
+            button.ButtonMode = ButtonMode.RadioButton;
             if (computer.TypeId == "type0001")
                 button.BorderColor = COLOR["Purple"];
             else if (computer.TypeId == "type0002")
@@ -66,40 +71,66 @@ namespace GiaoDienPBL3.UC
                 button.BorderColor = COLOR["BrightYellow"];
             else if (computer.TypeId == "type0006")
                 button.BorderColor = COLOR["Green"];
-            if (computer.Status == "Còn 5 Phút")
-                button.FillColor = COLOR["Red"];
-            else if (computer.Status == "Bảo Trì")
+            if (computer.Status == "Bảo Trì")
+            {
                 button.FillColor = COLOR["Blue"];
+                button.ForeColor = COLOR["Black"];
+            }
             else if (computer.Status == "Đã Tắt")
+            {
                 button.FillColor = COLOR["Black"];
+                button.ForeColor = Color.Wheat;
+            }
             else if (computer.Status == "Đang Hoạt Động")
+            {
                 button.FillColor = COLOR["Pink"];
+                button.ForeColor = COLOR["Black"];
+                CountOnline++;
+            }
             button.Tag = computer;
-            frmMain.myUC_QuanLyMay.panelQuanLyMay.Controls.Add(button);
+            panelTemp.Controls.Add(button);
+            frmMain.myUC_QuanLyMay.panelQuanLyMay.Controls.Add(panelTemp);
             button.MouseEnter += new EventHandler(button_MouseEnter);
             button.MouseLeave += new EventHandler(button_MouseLeave);
         }
+
         private void button_MouseEnter(object sender, EventArgs e)
         {
-            my_UCChiTietMay.Visible = true;
             Guna2Button button = sender as Guna2Button;
-            Computer computer = button.Tag as Computer;
+            Computer computer = (button.Tag) as Computer;
+            Panel panelTemp = (button.Parent) as Panel;
             my_UCChiTietMay.TextMaMay = computer.ComputerId;
             my_UCChiTietMay.TextSoMay = computer.ComputerName;
             my_UCChiTietMay.TextGiaMay = string.Format("{0:N3}VNĐ", 10);
             my_UCChiTietMay.TextLoaiMay = ComputerBLL.Instance.GetTypeComputerByTypeId(computer.TypeId).NameType;
             my_UCChiTietMay.TextTrangThai = computer.Status;
             panelPhu.Controls.Add(my_UCChiTietMay);
-            my_UCChiTietMay.Location = new Point(button.Location.X + 60, button.Location.Y + 60);
+            int locationX = panelTemp.Location.X + 50;
+            int locationY = panelTemp.Location.Y + 50;
+            if (panelTemp.Location.X + 50 + my_UCChiTietMay.Width > panelQuanLyMay.Width)
+            {
+                locationX = panelTemp.Location.X - my_UCChiTietMay.Width;
+            }
+            if (panelTemp.Location.Y + 50 + my_UCChiTietMay.Height > panelQuanLyMay.Height)
+            {
+                locationY = panelTemp.Location.Y - my_UCChiTietMay.Height;
+            }
+            my_UCChiTietMay.Location = new Point(locationX, locationY);
             my_UCChiTietMay.BringToFront();
+            my_UCChiTietMay.Visible = true;
+            panelTemp.Padding = new Padding(0, 0, 0, 0);
+            button.Dock = DockStyle.Fill;
         }
         private void button_MouseLeave(object sender, EventArgs e)
         {
+            Guna2Button button = sender as Guna2Button;
+            Panel panelTemp = button.Parent as Panel;
+            panelTemp.Padding = new Padding(10, 10, 10, 10);
+            button.Dock = DockStyle.None;
             my_UCChiTietMay.Visible = false;
         }
         private void btnCaiDat_Click(object sender, EventArgs e)
         {
-            my_UCThongTinVaCaiDatMay = new UC_ThongTinVaCaiDatMay();
             if (checkBtnCaiDat == false)
             {
                 panelChiTietQuanLyMay.SendToBack();
@@ -119,10 +150,12 @@ namespace GiaoDienPBL3.UC
         }
         private void UC_QuanLyMay_Load(object sender, EventArgs e)
         {
-            foreach (Computer computer in ComputerBLL.Instance.GetListComputer())
+            List<Computer> listComputer = ComputerBLL.Instance.GetListComputer();
+            foreach (Computer computer in listComputer)
             {
-                AddMayOnPanel(computer);
+                AddComputerOnPanel(computer);
             }
+            lblCountOnline.Text = CountOnline + "/" + listComputer.Count();
         }
 
     }

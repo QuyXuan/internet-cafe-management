@@ -77,20 +77,21 @@
             // cboTrangThai
             // 
             this.cboTrangThai.BackColor = System.Drawing.Color.Transparent;
+            this.cboTrangThai.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.cboTrangThai.BorderRadius = 8;
             this.cboTrangThai.BorderThickness = 2;
             this.cboTrangThai.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cboTrangThai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboTrangThai.Enabled = false;
-            this.cboTrangThai.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cboTrangThai.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cboTrangThai.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.cboTrangThai.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.cboTrangThai.Font = new System.Drawing.Font("Segoe UI", 10.2F);
             this.cboTrangThai.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cboTrangThai.ItemHeight = 30;
             this.cboTrangThai.Items.AddRange(new object[] {
-            "Còn 5 Phút",
-            "Bảo Trì",
-            "Bình Thường"});
+            "Đang Hoạt Động",
+            "Đã Tắt",
+            "Bảo Trì"});
             this.cboTrangThai.Location = new System.Drawing.Point(53, 315);
             this.cboTrangThai.Name = "cboTrangThai";
             this.cboTrangThai.Size = new System.Drawing.Size(191, 36);
@@ -99,25 +100,24 @@
             // cboLoaiMay
             // 
             this.cboLoaiMay.BackColor = System.Drawing.Color.Transparent;
+            this.cboLoaiMay.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.cboLoaiMay.BorderRadius = 8;
             this.cboLoaiMay.BorderThickness = 2;
             this.cboLoaiMay.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cboLoaiMay.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboLoaiMay.Enabled = false;
-            this.cboLoaiMay.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cboLoaiMay.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cboLoaiMay.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.cboLoaiMay.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.cboLoaiMay.Font = new System.Drawing.Font("Segoe UI", 10.2F);
             this.cboLoaiMay.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cboLoaiMay.ItemHeight = 30;
             this.cboLoaiMay.Items.AddRange(new object[] {
-            "Khách",
-            "Khách Thường Xuyên",
-            "Administrator",
-            "Nhân Viên",
-            "Học Sinh",
-            "Online",
-            "Offline",
-            "Trả Sau"});
+            "Máy Thường",
+            "Máy Game Moba",
+            "Máy Game FPS",
+            "Máy Thi Đấu",
+            "Máy Stream",
+            "Máy Luyện Tập"});
             this.cboLoaiMay.Location = new System.Drawing.Point(52, 253);
             this.cboLoaiMay.Name = "cboLoaiMay";
             this.cboLoaiMay.Size = new System.Drawing.Size(191, 36);
@@ -165,6 +165,7 @@
             // 
             // txtGia
             // 
+            this.txtGia.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.txtGia.BorderRadius = 8;
             this.txtGia.BorderThickness = 2;
             this.txtGia.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -174,7 +175,7 @@
             this.txtGia.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtGia.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtGia.Enabled = false;
-            this.txtGia.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtGia.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.txtGia.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtGia.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtGia.Location = new System.Drawing.Point(49, 191);
@@ -188,6 +189,7 @@
             // 
             // txtSoMay
             // 
+            this.txtSoMay.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.txtSoMay.BorderRadius = 8;
             this.txtSoMay.BorderThickness = 2;
             this.txtSoMay.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -197,7 +199,7 @@
             this.txtSoMay.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtSoMay.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtSoMay.Enabled = false;
-            this.txtSoMay.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSoMay.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.txtSoMay.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtSoMay.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSoMay.Location = new System.Drawing.Point(49, 133);
@@ -211,6 +213,7 @@
             // 
             // txtMaMay
             // 
+            this.txtMaMay.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.txtMaMay.BorderRadius = 8;
             this.txtMaMay.BorderThickness = 2;
             this.txtMaMay.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -220,7 +223,7 @@
             this.txtMaMay.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtMaMay.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtMaMay.Enabled = false;
-            this.txtMaMay.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtMaMay.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.txtMaMay.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtMaMay.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtMaMay.Location = new System.Drawing.Point(49, 72);

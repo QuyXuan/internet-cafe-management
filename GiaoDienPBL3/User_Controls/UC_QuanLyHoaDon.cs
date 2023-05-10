@@ -114,26 +114,28 @@ namespace GiaoDienPBL3.User_Controls
                         myUC_ChiTietMonAn.btnTruMon.Visible = false;
                         myUC_ChiTietMonAn.btnXoaMon.Visible = false;
                         frmMain.myUC_QuanLyMenu.panelChiTietMonAn.Controls.Add(myUC_ChiTietMonAn);
-                        frmMain.myUC_QuanLyMenu.txtMaHoaDon.Text = dgv.Rows[RowIndex].Cells[0].Value.ToString();
-                        frmMain.myUC_QuanLyMenu.dtpNgayNhan.Value = Convert.ToDateTime(dgv.Rows[RowIndex].Cells[4].Value.ToString());
-                        frmMain.myUC_QuanLyMenu.txtMaNhanVien.Text = EmployeeId;
-                        frmMain.myUC_QuanLyMenu.txtMaKhachHang.Text = dgv.Rows[RowIndex].Cells[2].Value.ToString();
-                        frmMain.myUC_QuanLyMenu.txtSoMay.Text = ComputerBLL.Instance.GetComputerByID(dgv.Rows[RowIndex].Cells[3].Value.ToString()).ComputerName;
-                        frmMain.myUC_QuanLyMenu.txtTenKhachHang.Text = CustomerBLL.Instance.GetNameCustomerByCustomerId(dgv.Rows[RowIndex].Cells[2].Value.ToString());
-                        frmMain.myUC_QuanLyMenu.txtTenNhanVien.Text = EmployeeBLL.Instance.GetEmployeeNameByEmployeeId(EmployeeId);
-                        frmMain.myUC_QuanLyMenu.txtTongGiamGia.Text = dgv.Rows[RowIndex].Cells[6].Value.ToString();
-                        frmMain.myUC_QuanLyMenu.lblTongTien.Text = dgv.Rows[RowIndex].Cells[7].Value.ToString();
-                        frmMain.myUC_QuanLyMenu.btnThanhToan.Text = "Thanh Toán";
-                        frmMain.myUC_QuanLyMenu.txtMaHoaDon.ReadOnly = true;
-                        frmMain.myUC_QuanLyMenu.dtpNgayNhan.Enabled = false;
-                        frmMain.myUC_QuanLyMenu.txtMaNhanVien.ReadOnly = true;
-                        frmMain.myUC_QuanLyMenu.txtMaKhachHang.ReadOnly = true;
-                        frmMain.myUC_QuanLyMenu.txtTenNhanVien.ReadOnly = true;
-                        frmMain.myUC_QuanLyMenu.txtTenKhachHang.ReadOnly = true;
-                        frmMain.myUC_QuanLyMenu.txtSoMay.ReadOnly = true;
-                        frmMain.myUC_QuanLyMenu.txtTongGiamGia.ReadOnly = true;
                     }
-                    
+                    frmMain.myUC_QuanLyMenu.txtMaHoaDon.Text = dgv.Rows[RowIndex].Cells[0].Value.ToString();
+                    frmMain.myUC_QuanLyMenu.cboTenTaiKhoan.SelectedIndex = -1;
+                    frmMain.myUC_QuanLyMenu.cboTenTaiKhoan.Enabled = false;
+                    frmMain.myUC_QuanLyMenu.dtpNgayNhan.Value = Convert.ToDateTime(dgv.Rows[RowIndex].Cells[4].Value.ToString());
+                    frmMain.myUC_QuanLyMenu.txtMaNhanVien.Text = EmployeeId;
+                    frmMain.myUC_QuanLyMenu.txtMaKhachHang.Text = dgv.Rows[RowIndex].Cells[2].Value.ToString();
+                    frmMain.myUC_QuanLyMenu.txtSoMay.Text = ComputerBLL.Instance.GetComputerByID(dgv.Rows[RowIndex].Cells[3].Value.ToString()).ComputerName;
+                    frmMain.myUC_QuanLyMenu.txtTenKhachHang.Text = CustomerBLL.Instance.GetNameCustomerByCustomerId(dgv.Rows[RowIndex].Cells[2].Value.ToString());
+                    frmMain.myUC_QuanLyMenu.txtTenNhanVien.Text = EmployeeBLL.Instance.GetEmployeeNameByEmployeeId(EmployeeId);
+                    frmMain.myUC_QuanLyMenu.txtTongGiamGia.Text = dgv.Rows[RowIndex].Cells[6].Value.ToString();
+                    frmMain.myUC_QuanLyMenu.lblTongTien.Text = dgv.Rows[RowIndex].Cells[7].Value.ToString();
+                    frmMain.myUC_QuanLyMenu.btnThanhToan.Text = "Thanh Toán";
+                    frmMain.myUC_QuanLyMenu.txtMaHoaDon.ReadOnly = true;
+                    frmMain.myUC_QuanLyMenu.dtpNgayNhan.Enabled = false;
+                    frmMain.myUC_QuanLyMenu.txtMaNhanVien.ReadOnly = true;
+                    frmMain.myUC_QuanLyMenu.txtMaKhachHang.ReadOnly = true;
+                    frmMain.myUC_QuanLyMenu.txtTenNhanVien.ReadOnly = true;
+                    frmMain.myUC_QuanLyMenu.txtTenKhachHang.ReadOnly = true;
+                    frmMain.myUC_QuanLyMenu.txtSoMay.ReadOnly = true;
+                    frmMain.myUC_QuanLyMenu.txtTongGiamGia.ReadOnly = true;
+
                     //Nếu xem hóa đơn đang trong trạng thái chờ xác nhận thì sẽ mở UCMenu lên,
                     //đầu tiên là tìm cái form frmMain sau đó tìm cái button có name == btnMenu trong form đó
                     //xong cho thao tác click để mở form

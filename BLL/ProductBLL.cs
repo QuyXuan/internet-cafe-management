@@ -9,6 +9,7 @@ using System.Reflection;
 using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
+using System.Drawing;
 
 
 namespace BLL
@@ -42,6 +43,21 @@ namespace BLL
                 var products = context.Products.ToList();
                 return products;
             }
+        }
+        public string ConvertToFilePath(string nameImg)
+        {
+            return Path.Combine(AppDomain.CurrentDomain.BaseDirectory.Replace(@"\GiaoDienPBL3\bin\Debug", ""), "img", nameImg);
+        }
+        public byte[] GetImageByFilePath(string filePath)
+        {
+            Image img = Image.FromFile(filePath);
+            byte[] imageBytes;
+            using (MemoryStream ms = new MemoryStream())
+            {
+                img.Save(ms, img.RawFormat);
+                imageBytes = ms.ToArray();
+            }
+            return imageBytes;
         }
         public List<string> GetListNameProduct()
         {
@@ -99,21 +115,21 @@ namespace BLL
                 return productId;
             }
         }
-        public void UpdateProductWithPriceAndPath(string productId, string imageFilePath, float sellingPrice = 0)
+        public void UpdateProductWithPriceAndPath(string productId, byte[] imageFilePath, float sellingPrice = 0)
         {
             using (var context = new QLNETDBContext())
             {
                 if (context == null) return;
                 var product = context.Products.FirstOrDefault(p => productId == p.ProductId);
                 if (product == null) return;
-                if (imageFilePath == "")
+                if (imageFilePath == null)
                 {
                     product.SellingPrice = sellingPrice;
                 }
                 else
                 {
                     product.SellingPrice = sellingPrice;
-                    product.ImageFilePath = imageFilePath;
+                    product.ProductImage = imageFilePath;
                 }
                 context.SaveChanges();
             }
@@ -142,7 +158,8 @@ namespace BLL
                         Type = product.Key.Type,
                         Stock = product.Value ?? 0,
                         SellingPrice = 0,
-                        ImageFilePath = "defaultFoodAndDrink.png",
+                        //ImageFilePath = "defaultFoodAndDrink.png",
+                        ProductImage = GetImageByFilePath(ConvertToFilePath("defaultFoodAndDrink.png")),
                         Status = true
                     });
                 }

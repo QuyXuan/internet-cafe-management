@@ -127,6 +127,12 @@
     <Compile Include="User_Controls\UC_ChiTietMonAn.Designer.cs">
       <DependentUpon>UC_ChiTietMonAn.cs</DependentUpon>
     </Compile>
+    <Compile Include="User_Controls\UC_LoaiMay.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User_Controls\UC_LoaiMay.Designer.cs">
+      <DependentUpon>UC_LoaiMay.cs</DependentUpon>
+    </Compile>
     <Compile Include="User_Controls\UC_MenuClient.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -239,6 +245,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="User_Controls\UC_ChiTietMonAn.resx">
       <DependentUpon>UC_ChiTietMonAn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_Controls\UC_LoaiMay.resx">
+      <DependentUpon>UC_LoaiMay.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User_Controls\UC_MenuClient.resx">
       <DependentUpon>UC_MenuClient.cs</DependentUpon>

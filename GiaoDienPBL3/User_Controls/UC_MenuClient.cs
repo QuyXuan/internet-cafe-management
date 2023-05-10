@@ -49,7 +49,7 @@ namespace GiaoDienPBL3.User_Controls
             dtpNgayNhan.Value = DateTime.Now;
             float TotalDiscount = 0;
             listBillDiscount = new List<BillDiscount>();
-            foreach (Discount discount in DiscountBLL.Instance.GetListBillWithType(customer.TypeCustomer))
+            foreach (Discount discount in DiscountBLL.Instance.GetListDiscountWithType(customer.TypeCustomer))
             {
                 listBillDiscount.Add(new BillDiscount { 
                     BillId = txtMaHoaDon.Text,
@@ -72,7 +72,7 @@ namespace GiaoDienPBL3.User_Controls
             UC_MonAn my_UCMonAn = new UC_MonAn();
             my_UCMonAn.TextGiaMonAn = string.Format("{0:N3}VNĐ", product.SellingPrice);
             my_UCMonAn.TextTenMonAn = product.ProductName;
-            my_UCMonAn.ImagePanel = GetAnhByPathAnhMon(product.ImageFilePath);
+            my_UCMonAn.ImagePanel = ByteArrayToImage(product.ProductImage);
             my_UCMonAn.Tag = "Client,0";
             my_UCMonAn.picMonAn.ContextMenuStrip = null;
             if (product.Status == false)
@@ -83,27 +83,41 @@ namespace GiaoDienPBL3.User_Controls
             /*frmMain.myUC_QuanLyMenu.*/
             panelMonAn.Controls.Add(my_UCMonAn);
         }
-        private Image GetAnhByPathAnhMon(string nameImg)
+        //private Image GetAnhByPathAnhMon(string nameImg)
+        //{
+        //    string imgFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory.Replace(@"GiaoDienPBL3\bin\Debug", ""), "img", nameImg);
+        //    try
+        //    {
+        //        Image image = Image.FromFile(imgFilePath);
+        //        checkFormAdminOrClient = false;
+        //        return image;
+        //    }
+        //    catch (FileNotFoundException)
+        //    {
+        //        imgFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory.Replace(@"\GUIClient\bin\Debug", ""), "img", nameImg);
+        //        Image image = Image.FromFile(imgFilePath);
+        //        image = Image.FromFile(imgFilePath);
+        //        checkFormAdminOrClient = true;
+        //        return image;
+        //    }
+        //    catch (Exception)
+        //    {
+        //        return null;
+        //    }
+        //}
+        private Image ByteArrayToImage(byte[] byteArray)
         {
-            string imgFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory.Replace(@"GiaoDienPBL3\bin\Debug", ""), "img", nameImg);
+            Image image = null;
             try
             {
-                Image image = Image.FromFile(imgFilePath);
-                checkFormAdminOrClient = false;
-                return image;
-            }
-            catch (FileNotFoundException)
-            {
-                imgFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory.Replace(@"\GUIClient\bin\Debug", ""), "img", nameImg);
-                Image image = Image.FromFile(imgFilePath);
-                image = Image.FromFile(imgFilePath);
-                checkFormAdminOrClient = true;
-                return image;
+                MemoryStream ms = new MemoryStream(byteArray);
+                image = Image.FromStream(ms);
             }
             catch (Exception)
             {
                 return null;
             }
+            return image;
         }
         private void btnXacNhan_Click(object sender, EventArgs e)
         {

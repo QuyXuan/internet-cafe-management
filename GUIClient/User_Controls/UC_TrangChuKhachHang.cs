@@ -44,7 +44,7 @@ namespace GUIClient.User_Controls
 
         public void SetThongTinGiamGia(Customer customer)
         {
-            dgvGiamGia.DataSource = DiscountBLL.Instance.GetListBillWithType(customer.TypeCustomer);
+            dgvGiamGia.DataSource = DiscountBLL.Instance.GetListDiscountWithType(customer.TypeCustomer);
             dgvGiamGia.Columns[0].Visible = false;
             dgvGiamGia.Columns[1].HeaderText = "Tên giảm giá";
             dgvGiamGia.Columns[2].HeaderText = "Phần trăm";
