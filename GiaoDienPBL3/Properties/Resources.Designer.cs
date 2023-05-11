@@ -303,6 +303,16 @@ namespace GiaoDienPBL3.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_filled_circle_24__3_ {
+            get {
+                object obj = ResourceManager.GetObject("icons8-filled-circle-24 (3)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_hand_drawn_star_30 {
             get {
                 object obj = ResourceManager.GetObject("icons8-hand-drawn-star-30", resourceCulture);

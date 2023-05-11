@@ -2,6 +2,7 @@
 using DTO;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Net.NetworkInformation;
 using System.Net.Sockets;
@@ -117,6 +118,65 @@ namespace BLL
                 }
             }
             return output;
+        }
+
+        public string GetRandomComputerId()
+        {
+            using (var context = new QLNETDBContext())
+            {
+                if (context == null)
+                {
+                    return null;
+                }
+                Random random = new Random();
+                string computerId = "mt" + random.Next(0, 1000).ToString().PadLeft(4, '0');
+                while (context.Computers.Any(p => p.ComputerId == computerId))
+                {
+                    computerId = "mt" + random.Next(0, 1000).ToString().PadLeft(4, '0');
+                }
+                return computerId;
+            }
+        }
+
+        public void AddNewComputer(Computer computer)
+        {
+            using (var context = new QLNETDBContext())
+            {
+                if (context == null) return;
+                context.Computers.AddOrUpdate(computer);
+                context.SaveChanges();
+            }
+        }
+
+        public void DeleteComputer(string computerId)
+        {
+            using (var context = new QLNETDBContext())
+            {
+                if (context == null) return;
+                var computer = context.Computers.FirstOrDefault(p => p.ComputerId == computerId);
+                if (context != null)
+                {
+                    context.Computers.Remove(computer);
+                    context.SaveChanges();
+                }
+            }
+        }
+        
+        public void EditComputer(Computer computer)
+        {
+            using (var context = new QLNETDBContext())
+            {
+                if (context == null) return;
+                var Computer = context.Computers.FirstOrDefault(p => p.ComputerId == computer.ComputerId);
+                if (context != null)
+                {
+                    Computer.ComputerName = computer.ComputerName;
+                    Computer.TypeId = computer.TypeId;
+                    Computer.Status = computer.Status;
+                    Computer.IPComputer = computer.IPComputer;
+                    context.SaveChanges();
+                }
+            }
         }
     }
 }
