@@ -209,6 +209,7 @@ namespace GiaoDienPBL3.UC
                 return;
             }
             frmMain.myUC_QuanLyMenu.panelCaiDatVaThongTin.SendToBack();
+            frmMain.myUC_QuanLyMenu.lblTitle.Tag = this;
         }
     }
 }

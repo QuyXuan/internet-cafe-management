@@ -260,7 +260,7 @@ namespace GiaoDienPBL3.User_Controls
                 txtMaHangHoa.ReadOnly = true;
                 txtGiaGoc.ReadOnly = false;
                 txtMaHangHoa.Text = ProductBLL.Instance.GetRandomProductId();
-                cboTenHangHoa.Items.Clear();
+                //cboTenHangHoa.Items.Clear();
             }
         }
         private void SetEnableTextBoxAndCombobox2(bool status)

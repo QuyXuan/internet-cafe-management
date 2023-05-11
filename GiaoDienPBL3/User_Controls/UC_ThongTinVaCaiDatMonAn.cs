@@ -26,18 +26,18 @@ namespace GiaoDienPBL3.User_Controls
         {
             InitializeComponent();
         }
-        private Image GetAnhByPathAnhMon(string path)
-        {
-            try
-            {
-                Image image = Image.FromFile(path);
-                return image;
-            }
-            catch (FileNotFoundException)
-            {
-                return null;
-            }
-        }
+        //private Image GetAnhByPathAnhMon(string path)
+        //{
+        //    try
+        //    {
+        //        Image image = Image.FromFile(path);
+        //        return image;
+        //    }
+        //    catch (FileNotFoundException)
+        //    {
+        //        return null;
+        //    }
+        //}
         private string GetPath()
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
@@ -87,13 +87,27 @@ namespace GiaoDienPBL3.User_Controls
             {
                 if (CheckValid())
                 {
+                    UC_MonAn myUC_MonAn = (frmMain.myUC_QuanLyMenu.lblTitle.Tag) as UC_MonAn;
+                    byte[] bytes = new byte[1000000];
                     if (txtGia.Text == "")
                     {
-                        ProductBLL.Instance.UpdateProductWithPriceAndPath(txtMaMonAn.Text, ProductBLL.Instance.GetImageByFilePath(ProductBLL.Instance.ConvertToFilePath(SplitFilePath(txtPath.Text))));
+                        bytes = ProductBLL.Instance.GetImageByFilePath(ProductBLL.Instance.ConvertToFilePath(SplitFilePath(txtPath.Text)));
+                        ProductBLL.Instance.UpdateProductWithPriceAndPath(txtMaMonAn.Text, bytes);
+                        myUC_MonAn.ImagePanel = ByteArrayToImage(bytes);
                     }
                     else if (txtPath.Text == "")
                     {
-                        ProductBLL.Instance.UpdateProductWithPriceAndPath(txtMaMonAn.Text, null, (float)Convert.ToDouble(txtGia.Text));
+                        float Gia = (float)Convert.ToDouble(txtGia.Text);
+                        ProductBLL.Instance.UpdateProductWithPriceAndPath(txtMaMonAn.Text, null, Gia);
+                        myUC_MonAn.TextGiaMonAn = string.Format("{0:N3}VNĐ", Gia);
+                    }
+                    else
+                    {
+                        float Gia = (float)Convert.ToDouble(txtGia.Text);
+                        bytes = ProductBLL.Instance.GetImageByFilePath(ProductBLL.Instance.ConvertToFilePath(SplitFilePath(txtPath.Text)));
+                        ProductBLL.Instance.UpdateProductWithPriceAndPath(txtMaMonAn.Text, bytes, Gia);
+                        myUC_MonAn.ImagePanel = ByteArrayToImage(bytes);
+                        myUC_MonAn.TextGiaMonAn = string.Format("{0:N3}VNĐ", Gia);
                     }
                     frmMessageBox.Instance.ShowFrmMessageBox(frmMessageBox.StatusResult.Success, "Chỉnh Sửa Thành Công");
                     btnHuy.PerformClick();
@@ -105,6 +119,22 @@ namespace GiaoDienPBL3.User_Controls
                 return;
             }
         }
+
+        private Image ByteArrayToImage(byte[] byteArray)
+        {
+            Image image = null;
+            try
+            {
+                MemoryStream ms = new MemoryStream(byteArray);
+                image = Image.FromStream(ms);
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+            return image;
+        }
+
         private string SplitFilePath(string path)
         {
             string[] strings = path.Split(new char[] { '\\' }, StringSplitOptions.RemoveEmptyEntries);
