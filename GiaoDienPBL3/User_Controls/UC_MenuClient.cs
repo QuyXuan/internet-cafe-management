@@ -64,6 +64,7 @@ namespace GiaoDienPBL3.User_Controls
             List<Product> listProduct = ProductBLL.Instance.GetListProduct();
             foreach (Product item in listProduct)
             {
+                if (item.ProductId == "sp0012") continue;
                 AddMonAn(item);
             }
         }

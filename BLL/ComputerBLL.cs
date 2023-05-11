@@ -178,5 +178,14 @@ namespace BLL
                 }
             }
         }
+
+        public bool CheckComputerName(string computerName)
+        {
+            using (var context = new QLNETDBContext())
+            {
+                if (context == null) return false;
+                return context.Computers.Any(p => p.ComputerName == computerName);
+            }
+        }
     }
 }

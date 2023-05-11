@@ -82,7 +82,7 @@ namespace GiaoDienPBL3.User_Controls
         }
         private void SetEnableComboboxAndTextBox(bool status)
         {
-            txtMaMay.ReadOnly = !status;
+            txtMaMay.ReadOnly = status;
             txtSoMay.ReadOnly = !status;
             //txtGia.ReadOnly = !status;
             cboLoaiMay.Enabled = status;
@@ -114,7 +114,6 @@ namespace GiaoDienPBL3.User_Controls
                 btnSua.Enabled = true;
                 SetEnableComboboxAndTextBox(true);
                 ClearComboboxAndTextBox();
-                txtMaMay.ReadOnly = true;
             }
             else
             {
@@ -133,6 +132,11 @@ namespace GiaoDienPBL3.User_Controls
                 {
                     if (lastButton.Name == "btnThem")
                     {
+                        if (ComputerBLL.Instance.CheckComputerName(txtSoMay.Text))
+                        {
+                            frmMessageBox.Instance.ShowFrmMessageBox(frmMessageBox.StatusResult.Warning, "Số Máy Đã Tồn Tại" + Environment.NewLine + "Vui Lòng Thay Đổi Số Máy");
+                            return;
+                        }
                         AddComputer(new Computer
                         {
                             ComputerId = txtMaMay.Text,
@@ -140,6 +144,17 @@ namespace GiaoDienPBL3.User_Controls
                             Status = cboTrangThai.Text,
                             TypeId = cboLoaiMay.SelectedValue as string,
                         });
+                        string[] Count = frmMain.myUC_QuanLyMay.lblCountOnline.Text.Split('/');
+                        int Online = Convert.ToInt32(Count[0]);
+                        int All = Convert.ToInt32(Count[1]);
+                        if (cboTrangThai.Text == "Đang Hoạt Động")
+                        {
+                            frmMain.myUC_QuanLyMay.lblCountOnline.Text = (Online + 1) + "/" + (All + 1);
+                        }
+                        else
+                        {
+                            frmMain.myUC_QuanLyMay.lblCountOnline.Text = Online + "/" + (All + 1);
+                        }
                     }
                     else if (lastButton.Name == "btnXoa")
                     {

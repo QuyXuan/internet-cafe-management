@@ -42,6 +42,16 @@ namespace BLL
                 return bills;
             }
         }
+        public Bill GetBillByBillId(string BillId)
+        {
+            using (var context = new QLNETDBContext())
+            {
+                if (context == null) return null;
+                var bill = context.Bills.FirstOrDefault(p => p.BillId == BillId);
+                if (bill == null) return null;
+                return bill;
+            }
+        }
         public List<Bill> GetListBillWithStatusAndStartEnd(int start, int end, string status = null)
         {
             using (var context = new QLNETDBContext())
@@ -136,16 +146,8 @@ namespace BLL
                 context.SaveChanges();
             }
         }
-        public List<BillDay> GetListBillDayByType(bool type)
-        {
-            using (var context = new QLNETDBContext())
-            {
-                if (context == null) return null;
-                var billDays = context.BillDays.Where(p => p.Type == type).ToList();
-                if (billDays == null) return null;
-                return billDays;
-            }
-        }
+        
+        
         public string GetRandomBillId()
         {
             using (var context = new QLNETDBContext())
@@ -163,6 +165,7 @@ namespace BLL
                 return billId;
             }
         }
+        
         public bool CheckExistBillId(string BillId)
         {
             using (var context = new QLNETDBContext())
@@ -206,13 +209,22 @@ namespace BLL
                 context.SaveChanges();
             }
         }
-        public void AddNewBillDay(BillDay billDay)
+        
+        //Kiểm tra xem khách hàng có tồn tại trong listbill không
+        public bool CheckCustomerId(string customerId)
         {
             using (var context = new QLNETDBContext())
             {
-                if (context == null) return;
-                context.BillDays.AddOrUpdate(billDay);
-                context.SaveChanges();
+                if (context == null) return false;
+                return context.Bills.Any(p => p.CustomerId == customerId);
+            }
+        }
+        public bool CheckEmployeeId(string employeeId)
+        {
+            using (var context = new QLNETDBContext())
+            {
+                if (context == null) return false;
+                return context.Bills.Any(p => p.EmployeeId == employeeId);
             }
         }
     }

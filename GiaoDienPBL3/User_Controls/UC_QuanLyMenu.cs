@@ -185,21 +185,51 @@ namespace GiaoDienPBL3.UC
                 if (BillBLL.Instance.CheckExistBillId(BillId))
                 {
                     BillBLL.Instance.SetStatusChoXacNhanToXacNhan(BillId, EmployeeId);
+                    float Total = BillBLL.Instance.GetBillByBillId(BillId).Total ?? 0;
+                    if (BillDayBLL.Instance.CheckBillDay(DateTime.Now.Date, true))
+                    {
+                        BillDayBLL.Instance.EditBillDay(DateTime.Now.Date, true, Total);
+                    }
+                    else
+                    {
+                        BillDayBLL.Instance.AddNewBillDay(new BillDay
+                        {
+                            BillDayId = BillDayBLL.Instance.GetRandomBillDayId(),
+                            Date = DateTime.Now.Date,
+                            TotalBill = Total,
+                            Type = true
+                        });
+                    }
                 }
                 else
                 {
+                    float total = (float)Convert.ToDouble(lblTongTien.Text.Substring(0, lblTongTien.Text.Length - 7).Replace(",", ""));
                     BillBLL.Instance.AddNewBill(new Bill
                     {
                         BillId = txtMaHoaDon.Text,
                         CustomerId = txtMaKhachHang.Text,
                         Date = dtpNgayNhan.Value.Date,
                         EmployeeId = txtMaNhanVien.Text,
-                        Total = (float)Convert.ToDouble(lblTongTien.Text.Substring(0, lblTongTien.Text.Length - 7).Replace(",", "")),
+                        Total = total,
                         TotalDiscountPercent = (float)Convert.ToDouble(txtTongGiamGia.Text.Substring(0, txtTongGiamGia.Text.Length - 2)),
                         Status = "Chấp Nhận"
                     });
                     BillBLL.Instance.AddListProductToBill(GetListBillProductOnPanel());
                     BillBLL.Instance.AddListDiscountToBill(listBillDiscout);
+                    if (BillDayBLL.Instance.CheckBillDay(DateTime.Now.Date, true))
+                    {
+                        BillDayBLL.Instance.EditBillDay(DateTime.Now.Date, true, total);
+                    }
+                    else
+                    {
+                        BillDayBLL.Instance.AddNewBillDay(new BillDay
+                        {
+                            BillDayId = BillDayBLL.Instance.GetRandomBillDayId(),
+                            Date = DateTime.Now.Date,
+                            TotalBill = total,
+                            Type = true
+                        });
+                    }
                 }
                 frmMessageBox.Instance.ShowFrmMessageBox(frmMessageBox.StatusResult.Success, "Thanh Toán Thành Công");
                 ResetUCQuanLyMenu();

@@ -430,7 +430,7 @@
                 new Product {ProductId = "sp0009", ProductName = "Trà Đào", SellingPrice = 20, Type = "Nước Uống", Stock = 15, Discription = " ", CostPrice = 15, Status = true, ProductImage = GetImageByFilePath(ConvertToFilePath("tradao.jpg"))},
                 new Product {ProductId = "sp0010", ProductName = "Trà Sữa", SellingPrice = 25, Type = "Nước Uống", Stock = 15, Discription = " ", CostPrice = 20, Status = true, ProductImage = GetImageByFilePath(ConvertToFilePath("trasua.jpg"))},
                 new Product {ProductId = "sp0011", ProductName = "Phở Bò", SellingPrice = 15, Type = "Đồ Ăn", Stock = 10, Discription = " ", CostPrice = 10, Status = true, ProductImage = GetImageByFilePath(ConvertToFilePath("pho.jpg"))},
-                new Product {ProductId = "sp0012", ProductName = "Nạp Tiền", Type = "Thẻ", Status = true}
+                new Product {ProductId = "sp0012", ProductName = "Nạp Tiền", Type = "Thẻ", Stock = 1, Status = true}
             };
             #endregion
             products.ForEach(p => context.Products.AddOrUpdate(
