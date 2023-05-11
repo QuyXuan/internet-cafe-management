@@ -163,6 +163,14 @@ namespace BLL
                 return billId;
             }
         }
+        public bool CheckExistBillId(string BillId)
+        {
+            using (var context = new QLNETDBContext())
+            {
+                if (context == null) return false;
+                return context.Bills.Any(p => p.BillId == BillId);
+            }
+        }
         public void AddListProductToBill(List<BillProduct> listBillProduct)
         {
             using (var context = new QLNETDBContext())
@@ -186,6 +194,24 @@ namespace BLL
                 {
                     context.BillDiscounts.AddOrUpdate(discount);
                 }
+                context.SaveChanges();
+            }
+        }
+        public void AddNewBill(Bill bill)
+        {
+            using (var context = new QLNETDBContext())
+            {
+                if (context == null) return;
+                context.Bills.AddOrUpdate(bill);
+                context.SaveChanges();
+            }
+        }
+        public void AddNewBillDay(BillDay billDay)
+        {
+            using (var context = new QLNETDBContext())
+            {
+                if (context == null) return;
+                context.BillDays.AddOrUpdate(billDay);
                 context.SaveChanges();
             }
         }
