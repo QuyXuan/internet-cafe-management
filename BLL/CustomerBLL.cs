@@ -167,5 +167,16 @@ namespace BLL
                 return customer.AccountId;
             }
         }
+        public void PlusCustomerBalance(string customerId, float balance)
+        {
+            using (var context = new QLNETDBContext())
+            {
+                if (context == null) return;
+                var customer = context.Customers.FirstOrDefault(p => p.CustomerId == customerId);
+                if (customer == null) return;
+                customer.Balance += balance;
+                context.SaveChanges();
+            }
+        }
     }
 }

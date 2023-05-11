@@ -71,7 +71,7 @@ namespace BLL
                 {
                     IPComputer = GetLocalIPv4(NetworkInterfaceType.Ethernet);
                 }
-                var computer = context.Computers.FirstOrDefault(p => p.IPComputer == IPComputer);
+                var computer = context.Computers.FirstOrDefault(p => p.IPComputer.Equals(IPComputer));
 
                 if (computer == null)
                 {

@@ -21,12 +21,15 @@ namespace GiaoDienPBL3.UC
         public UC_ChiTietMonAn my_UCChiTietMonAn;
         private bool checkBtnCaiDat = false;
         public bool checkBtnXacNhan = false;
+        List<UC_ChiTietMonAn> listUCThongTinHangHoa;
         //kiểm tra đây là form admin hay là client, false là admin
         private bool checkFormAdminOrClient = false;
+        private List<BillDiscount> listBillDiscout = new List<BillDiscount>();
         private string EmployeeId;
         public UC_QuanLyMenu(string employeeId = null)
         {
             InitializeComponent();
+            listUCThongTinHangHoa = new List<UC_ChiTietMonAn>();
             my_UCThongTinVaCaiDatMonAn = new UC_ThongTinVaCaiDatMonAn();
             AddUC();
             EmployeeId = employeeId;
@@ -59,6 +62,8 @@ namespace GiaoDienPBL3.UC
             List<Product> listProduct = ProductBLL.Instance.GetListProduct();
             foreach (Product item in listProduct)
             {
+                //bỏ qua cái nạp tiền
+                if (item.ProductId == "sp0012") continue;
                 AddMonAn(item);
             }
         }
@@ -76,28 +81,6 @@ namespace GiaoDienPBL3.UC
             //my_UCMonAn.Tag = product;
             /*frmMain.myUC_QuanLyMenu.*/panelMonAn.Controls.Add(my_UCMonAn);
         }
-        //private Image GetAnhByPathAnhMon(string nameImg)
-        //{
-        //    string imgFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory.Replace(@"GiaoDienPBL3\bin\Debug", ""), "img", nameImg);
-        //    try
-        //    {
-        //        Image image = Image.FromFile(imgFilePath);
-        //        checkFormAdminOrClient = false;
-        //        return image;
-        //    }
-        //    catch (FileNotFoundException)
-        //    {
-        //        imgFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory.Replace(@"\GUIClient\bin\Debug", ""), "img", nameImg);
-        //        Image image = Image.FromFile(imgFilePath);
-        //        image = Image.FromFile(imgFilePath);
-        //        checkFormAdminOrClient = true;
-        //        return image;
-        //    }
-        //    catch (Exception)
-        //    {
-        //        return null;
-        //    }
-        //}
         private Image ByteArrayToImage(byte[] byteArray)
         {
             Image image = null;
@@ -137,6 +120,8 @@ namespace GiaoDienPBL3.UC
             }
             else
             {
+                my_UCChiTietMonAn.btnCongMon.Visible = false;
+                my_UCChiTietMonAn.btnTruMon.Visible = false;
                 my_UCChiTietMonAn.TextTenMonAn = "Nạp Tiền";
                 my_UCChiTietMonAn.TextGiaMonAn = string.Format("{0:N3}VNĐ", cboMenhGia.Text);
                 my_UCChiTietMonAn.TextSoLuongMonAn = 1 + "";
@@ -166,14 +151,24 @@ namespace GiaoDienPBL3.UC
             txtMaKhachHang.ReadOnly = false;
             txtMaNhanVien.Text = EmployeeId;
             cboTenTaiKhoan.Enabled = true;
-            txtSoMay.Text = "";
+            txtSoMay.Text = "0";
             txtSoMay.ReadOnly = false;
             txtTenKhachHang.Text = "";
             txtTenKhachHang.ReadOnly = false;
             txtTenNhanVien.Text = EmployeeBLL.Instance.GetEmployeeNameByEmployeeId(EmployeeId);
             txtTongGiamGia.Text = "";
             lblTongTien.Text = "0.000VNĐ";
-            panelChiTietMonAn.Controls.Clear();
+            //panelChiTietMonAn.Controls.Clear();
+            foreach (Control control in panelChiTietMonAn.Controls)
+            {
+                UC_ChiTietMonAn myUC_ChiTietMonAn = control as UC_ChiTietMonAn;
+                listUCThongTinHangHoa.Add(myUC_ChiTietMonAn);
+            }
+            foreach (UC_ChiTietMonAn control in listUCThongTinHangHoa)
+            {
+                control.btnXoaMon.PerformClick();
+            }
+            listUCThongTinHangHoa.Clear();
         }
 
         private void btnThanhToan_Click(object sender, EventArgs e)
@@ -186,8 +181,26 @@ namespace GiaoDienPBL3.UC
             Guna2Button button = sender as Guna2Button;
             try
             {
-                string MaHoaDon = txtMaHoaDon.Text;
-                BillBLL.Instance.SetStatusChoXacNhanToXacNhan(MaHoaDon, EmployeeId);
+                string BillId = txtMaHoaDon.Text;
+                if (BillBLL.Instance.CheckExistBillId(BillId))
+                {
+                    BillBLL.Instance.SetStatusChoXacNhanToXacNhan(BillId, EmployeeId);
+                }
+                else
+                {
+                    BillBLL.Instance.AddNewBill(new Bill
+                    {
+                        BillId = txtMaHoaDon.Text,
+                        CustomerId = txtMaKhachHang.Text,
+                        Date = dtpNgayNhan.Value.Date,
+                        EmployeeId = txtMaNhanVien.Text,
+                        Total = (float)Convert.ToDouble(lblTongTien.Text.Substring(0, lblTongTien.Text.Length - 7).Replace(",", "")),
+                        TotalDiscountPercent = (float)Convert.ToDouble(txtTongGiamGia.Text.Substring(0, txtTongGiamGia.Text.Length - 2)),
+                        Status = "Chấp Nhận"
+                    });
+                    BillBLL.Instance.AddListProductToBill(GetListBillProductOnPanel());
+                    BillBLL.Instance.AddListDiscountToBill(listBillDiscout);
+                }
                 frmMessageBox.Instance.ShowFrmMessageBox(frmMessageBox.StatusResult.Success, "Thanh Toán Thành Công");
                 ResetUCQuanLyMenu();
             }
@@ -197,10 +210,31 @@ namespace GiaoDienPBL3.UC
                 return;
             }
         }
-
+        private List<BillProduct> GetListBillProductOnPanel()
+        {
+            List<BillProduct> listBillProduct = new List<BillProduct>();
+            foreach (Control control in panelChiTietMonAn.Controls)
+            {
+                UC_ChiTietMonAn myUC_ChiTietMonAn = control as UC_ChiTietMonAn;
+                if (myUC_ChiTietMonAn.TextTenMonAn == "Nạp Tiền")
+                {
+                    float balance = (float)Convert.ToDouble(myUC_ChiTietMonAn.TextGiaMonAn.Substring(0, myUC_ChiTietMonAn.TextGiaMonAn.Length - 7).Replace(",", ""));
+                    CustomerBLL.Instance.PlusCustomerBalance(txtMaKhachHang.Text, balance);
+                }
+                BillProduct billProduct = new BillProduct
+                {
+                    BillId = txtMaHoaDon.Text,
+                    ProductId = ProductBLL.Instance.GetProductByProductName(myUC_ChiTietMonAn.TextTenMonAn).ProductId,
+                    Quantity = (float)Convert.ToDouble(myUC_ChiTietMonAn.TextSoLuongMonAn)
+                };
+                listBillProduct.Add(billProduct);
+            }
+            return listBillProduct;
+        }
         private void cboTenTaiKhoan_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cboTenTaiKhoan.SelectedIndex == -1) return;
+            listBillDiscout.Clear();
             try
             {
                 Account account = cboTenTaiKhoan.SelectedValue as Account;
@@ -210,6 +244,11 @@ namespace GiaoDienPBL3.UC
                 float TotalDiscount = 0;
                 foreach (Discount discount in DiscountBLL.Instance.GetListDiscountWithType(customer.TypeCustomer))
                 {
+                    listBillDiscout.Add(new BillDiscount
+                    {
+                        BillId = txtMaHoaDon.Text,
+                        DiscountId = discount.DiscountId
+                    });
                     TotalDiscount += discount.DiscountPercent ?? 0;
                 }
                 txtTongGiamGia.Text = TotalDiscount + " %";
