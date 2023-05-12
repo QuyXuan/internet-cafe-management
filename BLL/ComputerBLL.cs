@@ -120,6 +120,15 @@ namespace BLL
             }
             return IPComputer;
         }
+        public List<Computer> GetComputerByStatus(string status)
+        {
+            using (var context = new QLNETDBContext())
+            {
+                if (context == null) return null;
+                var listComputer = context.Computers.Where(p => p.Status == status).ToList();
+                return listComputer;
+            }
+        }
         public string GetLocalIPv4(NetworkInterfaceType _type)
         {
             string output = "";

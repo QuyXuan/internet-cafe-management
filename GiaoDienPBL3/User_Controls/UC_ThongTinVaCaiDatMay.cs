@@ -144,32 +144,17 @@ namespace GiaoDienPBL3.User_Controls
                             Status = cboTrangThai.Text,
                             TypeId = cboLoaiMay.SelectedValue as string,
                         });
-                        string[] Count = frmMain.myUC_QuanLyMay.lblCountOnline.Text.Split('/');
-                        int Online = Convert.ToInt32(Count[0]);
-                        int All = Convert.ToInt32(Count[1]);
-                        if (cboTrangThai.Text == "Đang Hoạt Động")
-                        {
-                            frmMain.myUC_QuanLyMay.lblCountOnline.Text = (Online + 1) + "/" + (All + 1);
-                        }
-                        else
-                        {
-                            frmMain.myUC_QuanLyMay.lblCountOnline.Text = Online + "/" + (All + 1);
-                        }
+                        int Online = ComputerBLL.Instance.GetComputerByStatus("Đang Hoạt Động").Count();
+                        int All = ComputerBLL.Instance.GetListComputer().Count();
+                        frmMain.myUC_QuanLyMay.lblCountOnline.Text = Online + "/" + All;
                     }
                     else if (lastButton.Name == "btnXoa")
                     {
                         DeleteComputer(txtMaMay.Text);
                         string[] Count = frmMain.myUC_QuanLyMay.lblCountOnline.Text.Split('/');
-                        int Online = Convert.ToInt32(Count[0]);
-                        int All = Convert.ToInt32(Count[1]);
-                        if (cboTrangThai.Text == "Đang Hoạt Động")
-                        {
-                            frmMain.myUC_QuanLyMay.lblCountOnline.Text = (Online - 1) + "/" + (All - 1);
-                        }
-                        else
-                        {
-                            frmMain.myUC_QuanLyMay.lblCountOnline.Text = Online + "/" + (All - 1);
-                        }
+                        int Online = ComputerBLL.Instance.GetComputerByStatus("Đang Hoạt Động").Count();
+                        int All = ComputerBLL.Instance.GetListComputer().Count();
+                        frmMain.myUC_QuanLyMay.lblCountOnline.Text = Online + "/" + All;
                     }
                     else if (lastButton.Name == "btnSua")
                     {
@@ -181,16 +166,9 @@ namespace GiaoDienPBL3.User_Controls
                             TypeId = cboLoaiMay.SelectedValue as string,
                         });
                         string[] Count = frmMain.myUC_QuanLyMay.lblCountOnline.Text.Split('/');
-                        int Online = Convert.ToInt32(Count[0]);
-                        int All = Convert.ToInt32(Count[1]);
-                        if (cboTrangThai.Text == "Đang Hoạt Động")
-                        {
-                            frmMain.myUC_QuanLyMay.lblCountOnline.Text = (Online + 1) + "/" + All;
-                        }
-                        else
-                        {
-                            frmMain.myUC_QuanLyMay.lblCountOnline.Text = (Online - 1) + "/" + All;
-                        }
+                        int Online = ComputerBLL.Instance.GetComputerByStatus("Đang Hoạt Động").Count();
+                        int All = ComputerBLL.Instance.GetListComputer().Count();
+                        frmMain.myUC_QuanLyMay.lblCountOnline.Text = Online + "/" + All;
                     }
                     ClearComboboxAndTextBox();
                 }
