@@ -36,7 +36,7 @@ namespace GiaoDienPBL3.User_Controls
             for (int i = dtpNgayTruoc.Value.Day; i <= dtpNgaySau.Value.Day; i++)
             {
                 float TotalBillDay = 0;
-                foreach (BillDay billDay in BillBLL.Instance.GetListBillDayByType(true))
+                foreach (BillDay billDay in BillDayBLL.Instance.GetListBillDayByType(true))
                 {
                     if (billDay.Date.Day == i)
                     {
@@ -46,7 +46,7 @@ namespace GiaoDienPBL3.User_Controls
                 ColumnChart1.Series["Doanh Thu"].Points.AddXY(i + dtpNgayTruoc.Value.Date.ToString("MMM"), TotalBillDay);
                 
                 float TotalRecieptDay = 0;
-                foreach (BillDay billDay in BillBLL.Instance.GetListBillDayByType(false))
+                foreach (BillDay billDay in BillDayBLL.Instance.GetListBillDayByType(false))
                 {
                     if (billDay.Date.Day == i)
                     {
@@ -74,7 +74,7 @@ namespace GiaoDienPBL3.User_Controls
             for (int i = dtpNgayTruoc2.Value.Month; i <= dtpNgaySau2.Value.Month; i++)
             {
                 float TotalBillMonth = 0;
-                foreach (BillDay billDay in BillBLL.Instance.GetListBillDayByType(true))
+                foreach (BillDay billDay in BillDayBLL.Instance.GetListBillDayByType(true))
                 {
                     if (billDay.Date.Month == i)
                     {
@@ -84,7 +84,7 @@ namespace GiaoDienPBL3.User_Controls
                 ColumnChart2.Series["Doanh Thu"].Points.AddXY(DateTimeFormatInfo.CurrentInfo.GetMonthName(i) + dtpNgayTruoc2.Value.Year, TotalBillMonth);
 
                 float TotalRecieptMonth = 0;
-                foreach (BillDay billDay in BillBLL.Instance.GetListBillDayByType(false))
+                foreach (BillDay billDay in BillDayBLL.Instance.GetListBillDayByType(false))
                 {
                     if (billDay.Date.Month == i)
                     {
@@ -209,7 +209,7 @@ namespace GiaoDienPBL3.User_Controls
             for (int i = dtpNgayTruoc4.Value.Month; i <= dtpNgaySau4.Value.Month; i++)
             {
                 float TotalBillMonth = 0;
-                foreach (BillDay billDay in BillBLL.Instance.GetListBillDayByType(true))
+                foreach (BillDay billDay in BillDayBLL.Instance.GetListBillDayByType(true))
                 {
                     if (billDay.Date.Month == i)
                     {
@@ -226,7 +226,7 @@ namespace GiaoDienPBL3.User_Controls
                 lblTongTienKhachHang2.Text = lblTongDoanhThu2.Text = string.Format("{0:N3}VNĐ", TotalBillMonth);
 
                 float TotalRecieptMonth = 0;
-                foreach (BillDay billDay in BillBLL.Instance.GetListBillDayByType(false))
+                foreach (BillDay billDay in BillDayBLL.Instance.GetListBillDayByType(false))
                 {
                     if (billDay.Date.Month == i)
                     {

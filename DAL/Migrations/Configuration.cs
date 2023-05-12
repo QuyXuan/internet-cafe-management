@@ -346,12 +346,12 @@
             #region Danh Sách Các Loại Máy Tính
             var typecomputers = new List<TypeComputer>
             {
-                new TypeComputer {TypeId = "type0001", NameType = "Máy Thường", Price = 8},
-                new TypeComputer {TypeId = "type0002", NameType = "Máy Game Moba", Price = 9},
-                new TypeComputer {TypeId = "type0003", NameType = "Máy Game FPS", Price = 9},
-                new TypeComputer {TypeId = "type0004", NameType = "Máy Thi Đấu", Price = 10},
-                new TypeComputer {TypeId = "type0005", NameType = "Máy Stream", Price = 15},
-                new TypeComputer {TypeId = "type0006", NameType = "Máy Luyện Tập", Price = 8}
+                new TypeComputer {TypeId = "type0001", NameType = "Máy Thường", Price = 8, ColorId = "#FF6666"},
+                new TypeComputer {TypeId = "type0002", NameType = "Máy Game Moba", Price = 9, ColorId = "#FFFF00"},
+                new TypeComputer {TypeId = "type0003", NameType = "Máy Game FPS", Price = 9, ColorId = "#00CC00"},
+                new TypeComputer {TypeId = "type0004", NameType = "Máy Thi Đấu", Price = 10, ColorId = "#663300"},
+                new TypeComputer {TypeId = "type0005", NameType = "Máy Stream", Price = 15, ColorId = "#404040"},
+                new TypeComputer {TypeId = "type0006", NameType = "Máy Luyện Tập", Price = 8, ColorId = "#99004C"}
             };
             #endregion
             typecomputers.ForEach(p => context.TypeComputers.AddOrUpdate(
@@ -360,7 +360,8 @@
                 {
                     TypeId = p.TypeId,
                     NameType = p.NameType,
-                    Price = p.Price
+                    Price = p.Price,
+                    ColorId = p.ColorId,
                 }));
             context.SaveChanges();
         }
@@ -378,7 +379,7 @@
                 new Computer {ComputerId = "mt0007", ComputerName = "7", TypeId = "type0001", Status = "Bảo Trì"},
                 new Computer {ComputerId = "mt0008", ComputerName = "8", TypeId = "type0002", Status = "Đang Hoạt Động"},
                 new Computer {ComputerId = "mt0009", ComputerName = "9", TypeId = "type0003", Status = "Đã Tắt"},
-                new Computer {ComputerId = "mt0010", ComputerName = "10", TypeId = "type0004", Status = "Còn 5 Phút"},
+                new Computer {ComputerId = "mt0010", ComputerName = "10", TypeId = "type0004", Status = "Đã Tắt"},
                 new Computer {ComputerId = "mt0011", ComputerName = "11", TypeId = "type0001", Status = "Đã Tắt"},
                 new Computer {ComputerId = "mt0012", ComputerName = "12", TypeId = "type0002", Status = "Đã Tắt"},
                 new Computer {ComputerId = "mt0013", ComputerName = "13", TypeId = "type0003", Status = "Đã Tắt"},
@@ -398,7 +399,8 @@
                 new Computer {ComputerId = "mt0027", ComputerName = "27", TypeId = "type0001", Status = "Đã Tắt"},
                 new Computer {ComputerId = "mt0028", ComputerName = "28", TypeId = "type0002", Status = "Đã Tắt"},
                 new Computer {ComputerId = "mt0029", ComputerName = "29", TypeId = "type0003", Status = "Đã Tắt"},
-                new Computer {ComputerId = "mt0030", ComputerName = "30", TypeId = "type0004", Status = "Đã Tắt"}
+                new Computer {ComputerId = "mt0030", ComputerName = "30", TypeId = "type0004", Status = "Đã Tắt"},
+                new Computer {ComputerId = "mt0031", ComputerName = "0", TypeId = "type0001", Status = "Đã Tắt"}
                 #endregion
             };
             computers.ForEach(p => context.Computers.AddOrUpdate(
@@ -418,17 +420,18 @@
             #region Danh Sách Sản Phẩm
             var products = new List<Product>
             {
-                new Product {ProductId = "sp0001", ProductName = "Mỳ Tôm", SellingPrice = 10, Type = "Đồ Ăn", Stock = 15, Discription = " ", ImageFilePath = "mytom.jpg", CostPrice = 8, Status = true},
-                new Product {ProductId = "sp0002", ProductName = "Miến Gà", SellingPrice = 15, Type = "Đồ Ăn", Stock = 15, Discription = " ", ImageFilePath = "mien.jpg", CostPrice = 10, Status = true},
-                new Product {ProductId = "sp0003", ProductName = "Cơm Chiên", SellingPrice = 20, Type = "Đồ Ăn", Stock = 5, Discription = " ", ImageFilePath = "comchien.jpg", CostPrice = 15, Status = true},
-                new Product {ProductId = "sp0004", ProductName = "Gà Rán", SellingPrice = 25, Type = "Đồ Ăn", Stock = 10, Discription = " ", ImageFilePath = "garan.jpg", CostPrice = 20, Status = true},
-                new Product {ProductId = "sp0005", ProductName = "Coca Cola", SellingPrice = 10, Type = "Nước Uống", Stock = 15, Discription = " ", ImageFilePath = "cocacola.jpg", CostPrice = 8, Status = true},
-                new Product {ProductId = "sp0006", ProductName = "Soda", SellingPrice = 10, Type = "Nước Uống", Stock = 15, Discription = " ", ImageFilePath = "soda.jpg", CostPrice = 8, Status = true},
-                new Product {ProductId = "sp0007", ProductName = "Sting", SellingPrice = 10, Type = "Nước Uống", Stock = 15, Discription = " ", ImageFilePath = "sting.jpg", CostPrice = 8, Status = true},
-                new Product {ProductId = "sp0008", ProductName = "Thuốc Lá", SellingPrice = 20, Type = "Đồ Ăn", Stock = 15, Discription = " ", ImageFilePath = "thuocla.jpg", CostPrice = 15, Status = true},
-                new Product {ProductId = "sp0009", ProductName = "Trà Đào", SellingPrice = 20, Type = "Nước Uống", Stock = 15, Discription = " ", ImageFilePath = "tradao.jpg", CostPrice = 15, Status = true},
-                new Product {ProductId = "sp0010", ProductName = "Trà Sữa", SellingPrice = 25, Type = "Nước Uống", Stock = 15, Discription = " ", ImageFilePath = "trasua.jpg", CostPrice = 20, Status = true},
-                new Product {ProductId = "sp0011", ProductName = "Phở Bò", SellingPrice = 15, Type = "Đồ Ăn", Stock = 10, Discription = " ", ImageFilePath = "pho.jpg", CostPrice = 10, Status = true}
+                new Product {ProductId = "sp0001", ProductName = "Mỳ Tôm", SellingPrice = 10, Type = "Đồ Ăn", Stock = 15, Discription = " ", CostPrice = 8, Status = true, ProductImage = GetImageByFilePath(ConvertToFilePath("mytom.jpg"))},
+                new Product {ProductId = "sp0002", ProductName = "Miến Gà", SellingPrice = 15, Type = "Đồ Ăn", Stock = 15, Discription = " ", CostPrice = 10, Status = true, ProductImage = GetImageByFilePath(ConvertToFilePath("mien.jpg"))},
+                new Product {ProductId = "sp0003", ProductName = "Cơm Chiên", SellingPrice = 20, Type = "Đồ Ăn", Stock = 5, Discription = " ", CostPrice = 15, Status = true, ProductImage = GetImageByFilePath(ConvertToFilePath("comchien.jpg"))},
+                new Product {ProductId = "sp0004", ProductName = "Gà Rán", SellingPrice = 25, Type = "Đồ Ăn", Stock = 10, Discription = " ", CostPrice = 20, Status = true, ProductImage = GetImageByFilePath(ConvertToFilePath("garan.jpg"))},
+                new Product {ProductId = "sp0005", ProductName = "Coca Cola", SellingPrice = 10, Type = "Nước Uống", Stock = 15, Discription = " ", CostPrice = 8, Status = true, ProductImage = GetImageByFilePath(ConvertToFilePath("cocacola.jpg"))},
+                new Product {ProductId = "sp0006", ProductName = "Soda", SellingPrice = 10, Type = "Nước Uống", Stock = 15, Discription = " ", CostPrice = 8, Status = true, ProductImage = GetImageByFilePath(ConvertToFilePath("soda.jpg"))},
+                new Product {ProductId = "sp0007", ProductName = "Sting", SellingPrice = 10, Type = "Nước Uống", Stock = 15, Discription = " ", CostPrice = 8, Status = true, ProductImage = GetImageByFilePath(ConvertToFilePath("sting.jpg"))},
+                new Product {ProductId = "sp0008", ProductName = "Thuốc Lá", SellingPrice = 20, Type = "Đồ Ăn", Stock = 15, Discription = " ", CostPrice = 15, Status = true, ProductImage = GetImageByFilePath(ConvertToFilePath("thuocla.jpg"))},
+                new Product {ProductId = "sp0009", ProductName = "Trà Đào", SellingPrice = 20, Type = "Nước Uống", Stock = 15, Discription = " ", CostPrice = 15, Status = true, ProductImage = GetImageByFilePath(ConvertToFilePath("tradao.jpg"))},
+                new Product {ProductId = "sp0010", ProductName = "Trà Sữa", SellingPrice = 25, Type = "Nước Uống", Stock = 15, Discription = " ", CostPrice = 20, Status = true, ProductImage = GetImageByFilePath(ConvertToFilePath("trasua.jpg"))},
+                new Product {ProductId = "sp0011", ProductName = "Phở Bò", SellingPrice = 15, Type = "Đồ Ăn", Stock = 10, Discription = " ", CostPrice = 10, Status = true, ProductImage = GetImageByFilePath(ConvertToFilePath("pho.jpg"))},
+                new Product {ProductId = "sp0012", ProductName = "Nạp Tiền", Type = "Thẻ", Stock = 1, Status = true}
             };
             #endregion
             products.ForEach(p => context.Products.AddOrUpdate(
@@ -441,27 +444,27 @@
                     Type = p.Type,
                     Stock = p.Stock,
                     Discription = p.Discription,
-                    ImageFilePath = p.ImageFilePath,
                     CostPrice = p.CostPrice,
                     Status = p.Status,
+                    ProductImage = p.ProductImage,
                 }));
             context.SaveChanges();
         }
-        //private string ConvertToFilePath(string nameImg)
-        //{
-        //    return Path.Combine(AppDomain.CurrentDomain.BaseDirectory.Replace(@"\DAL\bin\Debug", ""), "img", nameImg);
-        //}
-        //private byte[] GetImageByFilePath(string filePath)
-        //{
-        //    Image img = Image.FromFile(filePath);
-        //    byte[] imageBytes;
-        //    using (MemoryStream ms = new MemoryStream())
-        //    {
-        //        img.Save(ms, img.RawFormat);
-        //        imageBytes = ms.ToArray();
-        //    }
-        //    return imageBytes;
-        //}
+        private string ConvertToFilePath(string nameImg)
+        {
+            return Path.Combine(AppDomain.CurrentDomain.BaseDirectory.Replace(@"\DAL\bin\Debug", ""), "img", nameImg);
+        }
+        private byte[] GetImageByFilePath(string filePath)
+        {
+            Image img = Image.FromFile(filePath);
+            byte[] imageBytes;
+            using (MemoryStream ms = new MemoryStream())
+            {
+                img.Save(ms, img.RawFormat);
+                imageBytes = ms.ToArray();
+            }
+            return imageBytes;
+        }
         private void CreateDiscounts(DAL.QLNETDBContext context)
         {
             #region Danh Sách Giảm Giá

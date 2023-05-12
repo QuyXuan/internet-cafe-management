@@ -52,10 +52,23 @@ namespace GiaoDienPBL3.User_Controls
                 if (e.ColumnIndex == dgvNhanVien.Columns["btnXoa"].Index && e.RowIndex >= 0)
                 {
                     string employeeId = dgvNhanVien.Rows[e.RowIndex].Cells["MaNhanVien"].Value.ToString();
-                    EmployeeBLL.Instance.DeleteEmployee(employeeId);
-                    AccountBLL.Instance.DeleteAccount(EmployeeBLL.Instance.GetAccountIdByEmployeeId(employeeId));
-                    frmMessageBox.Instance.ShowFrmMessageBox(frmMessageBox.StatusResult.Success, "Xóa Nhân Viên Thành Công");
-                    dgvNhanVien.Rows.RemoveAt(e.RowIndex);
+                    if (BillBLL.Instance.CheckEmployeeId(employeeId))
+                    {
+                        frmMessageBox.Instance.ShowFrmMessageBox(frmMessageBox.StatusResult.Warning, "Hóa Đơn Khách Hàng Của Nhân Viên Này Còn Tồn Tại" + Environment.NewLine + "Không Thể Xóa Được");
+                        return;
+                    }
+                    else if (RecieptBLL.Instance.CheckEmployeeId(employeeId))
+                    {
+                        frmMessageBox.Instance.ShowFrmMessageBox(frmMessageBox.StatusResult.Warning, "Hóa Đơn Nhập Kho Của Nhân Viên Này Còn Tồn Tại" + Environment.NewLine + "Không Thể Xóa Được");
+                        return;
+                    }
+                    else
+                    {
+                        EmployeeBLL.Instance.DeleteEmployee(employeeId);
+                        AccountBLL.Instance.DeleteAccount(EmployeeBLL.Instance.GetAccountIdByEmployeeId(employeeId));
+                        frmMessageBox.Instance.ShowFrmMessageBox(frmMessageBox.StatusResult.Success, "Xóa Nhân Viên Thành Công");
+                        dgvNhanVien.Rows.RemoveAt(e.RowIndex);
+                    }
                 }
                 else
                 {

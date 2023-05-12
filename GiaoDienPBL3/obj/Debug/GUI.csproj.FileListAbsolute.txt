@@ -47,4 +47,8 @@ E:\LEARN\PBL3\PBL3myCODE\DemoPBL03_GUI\DemoPBL03_GUI\GiaoDienPBL3\obj\Debug\Giao
 =======
 C:\Users\ADMIN\source\repos\pbl3lan2\GiaoDienPBL3\obj\Debug\GiaoDienPBL3.User_Controls.UC_MenuClient.resources
 C:\Users\ADMIN\source\repos\pbl3lan2\GiaoDienPBL3\obj\Debug\GiaoDienPBL3.User_Controls.UC_QuanLyNhanVien.resources
+<<<<<<< HEAD
 >>>>>>> a52f01dc40b01b34bc906d830e668bb19df7e59d
+=======
+C:\Users\ADMIN\source\repos\pbl3lan2\GiaoDienPBL3\obj\Debug\GiaoDienPBL3.User_Controls.UC_LoaiMay.resources
+>>>>>>> 650eddbc5d518cf3886dd35fcb1eb39a525d65c4

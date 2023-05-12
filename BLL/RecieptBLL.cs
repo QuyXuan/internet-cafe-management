@@ -101,5 +101,13 @@ namespace BLL
                 context.SaveChanges();
             }
         }
+        public bool CheckEmployeeId(string employeeId)
+        {
+            using (var context = new QLNETDBContext())
+            {
+                if (context == null) return false;
+                return context.Reciepts.Any(p => p.EmployeeId == employeeId);
+            }
+        }
     }
 }

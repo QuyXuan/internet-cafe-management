@@ -49,7 +49,7 @@ namespace GiaoDienPBL3.User_Controls
             {
                 dgvTatCaHoaDon.Rows.Add(new object[]
                 {
-                    bill.BillId, bill.EmployeeId, bill.CustomerId, ComputerBLL.Instance.GetComputerByID(bill.ComputerId).ComputerId, bill.Date, bill.Status, bill.TotalDiscountPercent + "%", string.Format("{0:N3}VNĐ", bill.Total)
+                    bill.BillId, bill.EmployeeId, bill.CustomerId, ComputerBLL.Instance.GetComputerByID(bill.ComputerId).ComputerName, bill.Date, bill.Status, bill.TotalDiscountPercent + "%", string.Format("{0:N3}VNĐ", bill.Total)
                 });
             }
             lblTrang1.Text = "Trang : " + (CurrentPageTatCaHoaDon + 1) + " / " + (BillBLL.Instance.GetListBillWithStatus().Count() / PAGE_SIZE + 1);
@@ -58,7 +58,7 @@ namespace GiaoDienPBL3.User_Controls
             {
                 dgvDaXacNhan.Rows.Add(new object[]
                 {
-                    bill.BillId, bill.EmployeeId, bill.CustomerId, ComputerBLL.Instance.GetComputerByID(bill.ComputerId).ComputerId, bill.Date, bill.Status, bill.TotalDiscountPercent + "%", string.Format("{0:N3}VNĐ", bill.Total)
+                    bill.BillId, bill.EmployeeId, bill.CustomerId, ComputerBLL.Instance.GetComputerByID(bill.ComputerId).ComputerName, bill.Date, bill.Status, bill.TotalDiscountPercent + "%", string.Format("{0:N3}VNĐ", bill.Total)
                 });
             }
             lblTrang2.Text = "Trang : " + (CurrentPageHoaDonChapNhan + 1) + " / " + (BillBLL.Instance.GetListBillWithStatus("Chấp Nhận").Count() / PAGE_SIZE + 1);
@@ -67,7 +67,7 @@ namespace GiaoDienPBL3.User_Controls
             {
                 dgvChoXacNhan.Rows.Add(new object[]
                 {
-                    bill.BillId, bill.EmployeeId, bill.CustomerId, ComputerBLL.Instance.GetComputerByID(bill.ComputerId).ComputerId, bill.Date, bill.Status, bill.TotalDiscountPercent + "%", string.Format("{0:N3}VNĐ", bill.Total)
+                    bill.BillId, bill.EmployeeId, bill.CustomerId, ComputerBLL.Instance.GetComputerByID(bill.ComputerId).ComputerName, bill.Date, bill.Status, bill.TotalDiscountPercent + "%", string.Format("{0:N3}VNĐ", bill.Total)
                 });
             }
             lblTrang3.Text = "Trang : " + (CurrentPageHoaDonChoChapNhan + 1) + " / " + (BillBLL.Instance.GetListBillWithStatus("Chờ Chấp Nhận").Count() / PAGE_SIZE + 1);
@@ -114,26 +114,28 @@ namespace GiaoDienPBL3.User_Controls
                         myUC_ChiTietMonAn.btnTruMon.Visible = false;
                         myUC_ChiTietMonAn.btnXoaMon.Visible = false;
                         frmMain.myUC_QuanLyMenu.panelChiTietMonAn.Controls.Add(myUC_ChiTietMonAn);
-                        frmMain.myUC_QuanLyMenu.txtMaHoaDon.Text = dgv.Rows[RowIndex].Cells[0].Value.ToString();
-                        frmMain.myUC_QuanLyMenu.dtpNgayNhan.Value = Convert.ToDateTime(dgv.Rows[RowIndex].Cells[4].Value.ToString());
-                        frmMain.myUC_QuanLyMenu.txtMaNhanVien.Text = EmployeeId;
-                        frmMain.myUC_QuanLyMenu.txtMaKhachHang.Text = dgv.Rows[RowIndex].Cells[2].Value.ToString();
-                        frmMain.myUC_QuanLyMenu.txtSoMay.Text = ComputerBLL.Instance.GetComputerByID(dgv.Rows[RowIndex].Cells[3].Value.ToString()).ComputerName;
-                        frmMain.myUC_QuanLyMenu.txtTenKhachHang.Text = CustomerBLL.Instance.GetNameCustomerByCustomerId(dgv.Rows[RowIndex].Cells[2].Value.ToString());
-                        frmMain.myUC_QuanLyMenu.txtTenNhanVien.Text = EmployeeBLL.Instance.GetEmployeeNameByEmployeeId(EmployeeId);
-                        frmMain.myUC_QuanLyMenu.txtTongGiamGia.Text = dgv.Rows[RowIndex].Cells[6].Value.ToString();
-                        frmMain.myUC_QuanLyMenu.lblTongTien.Text = dgv.Rows[RowIndex].Cells[7].Value.ToString();
-                        frmMain.myUC_QuanLyMenu.btnThanhToan.Text = "Thanh Toán";
-                        frmMain.myUC_QuanLyMenu.txtMaHoaDon.ReadOnly = true;
-                        frmMain.myUC_QuanLyMenu.dtpNgayNhan.Enabled = false;
-                        frmMain.myUC_QuanLyMenu.txtMaNhanVien.ReadOnly = true;
-                        frmMain.myUC_QuanLyMenu.txtMaKhachHang.ReadOnly = true;
-                        frmMain.myUC_QuanLyMenu.txtTenNhanVien.ReadOnly = true;
-                        frmMain.myUC_QuanLyMenu.txtTenKhachHang.ReadOnly = true;
-                        frmMain.myUC_QuanLyMenu.txtSoMay.ReadOnly = true;
-                        frmMain.myUC_QuanLyMenu.txtTongGiamGia.ReadOnly = true;
                     }
-                    
+                    frmMain.myUC_QuanLyMenu.txtMaHoaDon.Text = dgv.Rows[RowIndex].Cells[0].Value.ToString();
+                    frmMain.myUC_QuanLyMenu.cboTenTaiKhoan.SelectedIndex = -1;
+                    frmMain.myUC_QuanLyMenu.cboTenTaiKhoan.Enabled = false;
+                    frmMain.myUC_QuanLyMenu.dtpNgayNhan.Value = Convert.ToDateTime(dgv.Rows[RowIndex].Cells[4].Value.ToString());
+                    frmMain.myUC_QuanLyMenu.txtMaNhanVien.Text = EmployeeId;
+                    frmMain.myUC_QuanLyMenu.txtMaKhachHang.Text = dgv.Rows[RowIndex].Cells[2].Value.ToString();
+                    frmMain.myUC_QuanLyMenu.txtSoMay.Text = dgv.Rows[RowIndex].Cells[3].Value.ToString();
+                    frmMain.myUC_QuanLyMenu.txtTenKhachHang.Text = CustomerBLL.Instance.GetNameCustomerByCustomerId(dgv.Rows[RowIndex].Cells[2].Value.ToString());
+                    frmMain.myUC_QuanLyMenu.txtTenNhanVien.Text = EmployeeBLL.Instance.GetEmployeeNameByEmployeeId(EmployeeId);
+                    frmMain.myUC_QuanLyMenu.txtTongGiamGia.Text = dgv.Rows[RowIndex].Cells[6].Value.ToString();
+                    frmMain.myUC_QuanLyMenu.lblTongTien.Text = dgv.Rows[RowIndex].Cells[7].Value.ToString();
+                    frmMain.myUC_QuanLyMenu.btnThanhToan.Text = "Thanh Toán";
+                    frmMain.myUC_QuanLyMenu.txtMaHoaDon.ReadOnly = true;
+                    frmMain.myUC_QuanLyMenu.dtpNgayNhan.Enabled = false;
+                    frmMain.myUC_QuanLyMenu.txtMaNhanVien.ReadOnly = true;
+                    frmMain.myUC_QuanLyMenu.txtMaKhachHang.ReadOnly = true;
+                    frmMain.myUC_QuanLyMenu.txtTenNhanVien.ReadOnly = true;
+                    frmMain.myUC_QuanLyMenu.txtTenKhachHang.ReadOnly = true;
+                    frmMain.myUC_QuanLyMenu.txtSoMay.ReadOnly = true;
+                    frmMain.myUC_QuanLyMenu.txtTongGiamGia.ReadOnly = true;
+
                     //Nếu xem hóa đơn đang trong trạng thái chờ xác nhận thì sẽ mở UCMenu lên,
                     //đầu tiên là tìm cái form frmMain sau đó tìm cái button có name == btnMenu trong form đó
                     //xong cho thao tác click để mở form
@@ -335,9 +337,18 @@ namespace GiaoDienPBL3.User_Controls
             dgv.ResumeLayout();
             foreach (Bill bill in BillBLL.Instance.GetListBillWithStatusAndStartEnd(CurrentPage * PAGE_SIZE, PAGE_SIZE, status))
             {
+                //string computerId = "";
+                //if (bill.ComputerId != "")
+                //{
+                //    computerId = "";
+                //}
+                //else
+                //{
+                //    computerId = ;
+                //}
                 dgv.Rows.Add(new object[]
                 {
-                        bill.BillId, bill.EmployeeId, bill.CustomerId, ComputerBLL.Instance.GetComputerByID(bill.ComputerId).ComputerId, bill.Date, bill.Status, bill.TotalDiscountPercent + "%", string.Format("{0:N3}VNĐ", bill.Total)
+                        bill.BillId, bill.EmployeeId, bill.CustomerId, ComputerBLL.Instance.GetComputerByID(bill.ComputerId).ComputerName, bill.Date, bill.Status, bill.TotalDiscountPercent + "%", string.Format("{0:N3}VNĐ", bill.Total)
                 });
             }
         }

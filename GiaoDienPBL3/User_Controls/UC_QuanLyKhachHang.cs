@@ -53,10 +53,18 @@ namespace GiaoDienPBL3.User_Controls
                 if (e.ColumnIndex == dgvQuanLyThongTinKhachHang.Columns["btnXoa"].Index && e.RowIndex >= 0)
                 {
                     string customerId = dgvQuanLyThongTinKhachHang.Rows[e.RowIndex].Cells["MaKhachHang"].Value.ToString();
-                    CustomerBLL.Instance.DeleteCustomer(customerId);
-                    AccountBLL.Instance.DeleteAccount(CustomerBLL.Instance.GetAccountIdByCustomerId(customerId));
-                    frmMessageBox.Instance.ShowFrmMessageBox(frmMessageBox.StatusResult.Success, "Xóa Khách Hàng Thành Công");
-                    dgvQuanLyThongTinKhachHang.Rows.RemoveAt(e.RowIndex);
+                    if (BillBLL.Instance.CheckCustomerId(customerId))
+                    {
+                        frmMessageBox.Instance.ShowFrmMessageBox(frmMessageBox.StatusResult.Warning, "Hóa Đơn Khách Hàng Này Đang Tồn Tại" + Environment.NewLine + "Không Thể Xóa");
+                        return;
+                    }
+                    else
+                    {
+                        CustomerBLL.Instance.DeleteCustomer(customerId);
+                        AccountBLL.Instance.DeleteAccount(CustomerBLL.Instance.GetAccountIdByCustomerId(customerId));
+                        frmMessageBox.Instance.ShowFrmMessageBox(frmMessageBox.StatusResult.Success, "Xóa Khách Hàng Thành Công");
+                        dgvQuanLyThongTinKhachHang.Rows.RemoveAt(e.RowIndex);
+                    }
                 }
                 else
                 {

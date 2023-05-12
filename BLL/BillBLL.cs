@@ -42,6 +42,16 @@ namespace BLL
                 return bills;
             }
         }
+        public Bill GetBillByBillId(string BillId)
+        {
+            using (var context = new QLNETDBContext())
+            {
+                if (context == null) return null;
+                var bill = context.Bills.FirstOrDefault(p => p.BillId == BillId);
+                if (bill == null) return null;
+                return bill;
+            }
+        }
         public List<Bill> GetListBillWithStatusAndStartEnd(int start, int end, string status = null)
         {
             using (var context = new QLNETDBContext())
@@ -49,7 +59,7 @@ namespace BLL
                 if (context == null) return null;
                 if (status == null)
                 {
-                    var lstBill = context.Bills.OrderBy(p => p.BillId).Skip(start).Take(end).ToList();
+                    var lstBill = context.Bills.OrderByDescending(p => p.Date).Skip(start).Take(end).ToList();
                     return lstBill;
                 }
                 var bills = context.Bills.Where(p => p.Status == status).OrderBy(p => p.BillId).Skip(start).Take(end).ToList();
@@ -136,16 +146,8 @@ namespace BLL
                 context.SaveChanges();
             }
         }
-        public List<BillDay> GetListBillDayByType(bool type)
-        {
-            using (var context = new QLNETDBContext())
-            {
-                if (context == null) return null;
-                var billDays = context.BillDays.Where(p => p.Type == type).ToList();
-                if (billDays == null) return null;
-                return billDays;
-            }
-        }
+        
+        
         public string GetRandomBillId()
         {
             using (var context = new QLNETDBContext())
@@ -161,6 +163,15 @@ namespace BLL
                     billId = "hd" + random.Next(0, 1000).ToString().PadLeft(4, '0');
                 }
                 return billId;
+            }
+        }
+        
+        public bool CheckExistBillId(string BillId)
+        {
+            using (var context = new QLNETDBContext())
+            {
+                if (context == null) return false;
+                return context.Bills.Any(p => p.BillId == BillId);
             }
         }
         public void AddListProductToBill(List<BillProduct> listBillProduct)
@@ -187,6 +198,33 @@ namespace BLL
                     context.BillDiscounts.AddOrUpdate(discount);
                 }
                 context.SaveChanges();
+            }
+        }
+        public void AddNewBill(Bill bill)
+        {
+            using (var context = new QLNETDBContext())
+            {
+                if (context == null) return;
+                context.Bills.AddOrUpdate(bill);
+                context.SaveChanges();
+            }
+        }
+        
+        //Kiểm tra xem khách hàng có tồn tại trong listbill không
+        public bool CheckCustomerId(string customerId)
+        {
+            using (var context = new QLNETDBContext())
+            {
+                if (context == null) return false;
+                return context.Bills.Any(p => p.CustomerId == customerId);
+            }
+        }
+        public bool CheckEmployeeId(string employeeId)
+        {
+            using (var context = new QLNETDBContext())
+            {
+                if (context == null) return false;
+                return context.Bills.Any(p => p.EmployeeId == employeeId);
             }
         }
     }

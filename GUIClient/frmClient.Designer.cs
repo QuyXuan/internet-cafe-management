@@ -325,7 +325,6 @@
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
         private System.Windows.Forms.Panel panelSideBar;
         private Guna.UI2.WinForms.Guna2ImageButton imgbtnThoat;
-        private System.Windows.Forms.Label lblSoDu;
         private Guna.UI2.WinForms.Guna2ControlBox btnTat;
         private System.Windows.Forms.Panel panel6;
         private Guna.UI2.WinForms.Guna2Button btnNapGioChoi;
@@ -334,6 +333,7 @@
         private System.Windows.Forms.Panel panel5;
         private Guna.UI2.WinForms.Guna2Button btnTrangChu;
         private System.Windows.Forms.Panel panelDongHo;
+        private System.Windows.Forms.Label lblSoDu;
     }
 }
 

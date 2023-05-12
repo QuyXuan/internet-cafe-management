@@ -43,13 +43,21 @@ namespace GiaoDienPBL3.UC
         private void btnCongTruXoaMon_Click(object sender, EventArgs e)
         {
             Guna2Button btn = sender as Guna2Button;
-            string Role = (((btn.Parent).Parent.Tag as UC_MonAn).Tag as string).Split(',')[0];
+            string Role = " ";
+            if ((btn.Parent).Parent.Tag is string)
+            {
+                Role = (btn.Parent).Parent.Tag as string;
+            }
+            else
+            {
+                Role = (((btn.Parent).Parent.Tag as UC_MonAn).Tag as string).Split(',')[0];
+            }
             int TongTien = 0;
             if (Role == "Manager")
             {
                 TongTien = Convert.ToInt32(frmMain.myUC_QuanLyMenu.lblTongTien.Tag);
             }
-            else
+            else if (Role == "Client")
             {
                 TongTien = Convert.ToInt32(frmMain.myUC_MenuClient.lblTongTien.Tag);
             }
@@ -64,6 +72,16 @@ namespace GiaoDienPBL3.UC
             }
             else if (btn.Name == "btnXoaMon")
             {
+                if (Role == "Kho")
+                {
+                    string tien = frmMain.myUC_QuanLyHoaDonNhapKho.lblTongTien.Text;
+                    int Tien = Convert.ToInt32(tien.Substring(0, tien.Length - 7).Replace(",", ""));
+                    int tienMonAn = Convert.ToInt32(this.TextGiaMonAn.Substring(0, this.TextGiaMonAn.Length - 7).Replace(",", ""));
+                    frmMain.myUC_QuanLyHoaDonNhapKho.lblTongTien.Text = string.Format("{0:N3}VNĐ", Tien - tienMonAn);
+                    frmMain.myUC_QuanLyHoaDonNhapKho.panelHoaDon.Controls.Remove(this);
+                    this.Dispose();
+                    return;
+                }
                 TongTien -= GiaMon * Convert.ToInt32(lblSoLuongMon.Text);
                 if (lblTenMon.Text == "Nạp Tiền")
                 {
@@ -72,11 +90,12 @@ namespace GiaoDienPBL3.UC
                         frmMain.myUC_QuanLyMenu.panelChiTietMonAn.Controls.Remove(this);
                         frmMain.myUC_QuanLyMenu.checkBtnXacNhan = false;
                     }
-                    else
+                    else if (Role == "Client")
                     {
                         frmMain.myUC_MenuClient.panelChiTietMonAn.Controls.Remove(this);
                         frmMain.myUC_MenuClient.checkBtnXacNhan = false;
                     }
+                    
                 }
                 else if (btnCongMon.Visible == false)
                 {
