@@ -61,6 +61,7 @@ namespace GUIClient.User_Controls
 
         public void SetIPv4()
         {
+            txtIPV4.ReadOnly = true;
             txtIPV4.Text = ComputerBLL.Instance.GetMyIP();
         }
 
