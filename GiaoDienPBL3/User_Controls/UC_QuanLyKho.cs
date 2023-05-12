@@ -40,63 +40,10 @@ namespace GiaoDienPBL3.UC
                         imageList1.Images[1], product.ProductId, product.ProductName, product.Type, string.Format("{0:N3}VNĐ", product.CostPrice), product.Stock
                     });
                 }
-
             }
             dgvKho.ClearSelection();
         }
-        private void SetAllButtonDisableAndVisible()
-        {
-            btnXoa.Enabled = false;
-            btnSua.Enabled = false;
-            btnHuy.Visible = true;
-            btnOK.Visible = true;
-        }
-        private void SetAllButtonEnableAndInvisible()
-        {
-            btnXoa.Enabled = true;
-            btnSua.Enabled = true;
-            btnXoa.Checked = false;
-            btnSua.Checked = false;
-            btnHuy.Visible = false;
-            btnOK.Visible = false;
-        }
-        private void SetEnableComboboxAndTextBox(bool status)
-        {
-            txtGiaGoc.Enabled = status;
-            txtMaMon.Enabled = status;
-            txtSoLuongTru.Enabled = status;
-            txtTenMon.Enabled = status;
-            cboLoai.Enabled = status;
-        }
-        private void ClearComboboxAndTextBox()
-        {
-            txtMaMon.Text = "";
-            txtTenMon.Text = "";
-            txtGiaGoc.Text = "";
-            txtSoLuongTru.Text = "";
-            cboLoai.SelectedIndex = -1;
-        }
-        private void ThemXoaSuaClick(object sender, EventArgs e)
-        {
-            Guna2Button btn = sender as Guna2Button;
-            SetAllButtonDisableAndVisible();
-            if (btn.Name == "btnSua")
-            {
-                btnSua.Enabled = true;
-                SetEnableComboboxAndTextBox(true);
-            }
-            else
-            {
-                btnXoa.Enabled = true;
-                ClearComboboxAndTextBox();
-            }
-        }
-        private void HuyOKClick(object sender, EventArgs e)
-        {
-            //Guna2Button btn = sender as Guna2Button;
-            SetAllButtonEnableAndInvisible();
-            SetEnableComboboxAndTextBox(false);
-        }
+        
         private void TatCaMonAnNuocUongClick(object sender, EventArgs e)
         {
             foreach (DataGridViewRow row in dgvKho.Rows)

@@ -63,6 +63,16 @@ namespace GUIClient.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap avatar {
+            get {
+                object obj = ResourceManager.GetObject("avatar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_bill_35 {
             get {
                 object obj = ResourceManager.GetObject("icons8-bill-35", resourceCulture);
@@ -96,6 +106,16 @@ namespace GUIClient.Properties {
         internal static System.Drawing.Bitmap icons8_chart_arrow_rise_30__1_ {
             get {
                 object obj = ResourceManager.GetObject("icons8-chart-arrow-rise-30 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_credit_card_100 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-credit-card-100", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

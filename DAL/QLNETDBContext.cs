@@ -50,7 +50,6 @@ namespace DAL
         public DbSet<Employee> Employees { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<Reciept> Reciepts { get; set; }
-        public DbSet<Session> Sessions { get; set; }
         public DbSet<BillDay> BillDays { get; set; }
         public DbSet<TypeComputer> TypeComputers { get; set; }
         public DbSet<BillProduct> BillProducts { get; set; }

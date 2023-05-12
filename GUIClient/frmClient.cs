@@ -2,6 +2,7 @@
 using DTO;
 using GiaoDienPBL3;
 using GiaoDienPBL3.UC;
+using GiaoDienPBL3.User_Controls;
 using GUIClient.User_Controls;
 using Guna.UI2.WinForms;
 using System;
@@ -20,8 +21,10 @@ namespace GUIClient
 {
     public partial class frmClient : Form
     {
-        private string accountId;
+        public static string accountId;
+        public static string computerId;
         public static bool Role;
+        public static bool CheckComputer;
         public static Computer computer;
         public static TypeComputer typeComputer;
         public static Customer customer;
@@ -29,17 +32,27 @@ namespace GUIClient
         public static UC_NapGioChoi myUC_NapGioChoi;
         public static UC_DongHo myUC_DongHo;
         public static frmDongHo DongHo;
-        public frmClient(string accountId, Computer computer, bool Role)
+        private bool AccessMenu = false;
+
+        public frmClient(string accountId, Computer computer, bool Role, bool CheckComputer)
         {
             InitializeComponent();
-            this.accountId = accountId;
+            frmClient.accountId = accountId;
             frmClient.Role = Role;
             frmClient.computer = computer;
-            if(Role) customer = CustomerBLL.Instance.GetCustomerByAccountId(accountId);
+            frmClient.CheckComputer = CheckComputer;
+            if (CheckComputer) frmClient.computerId = null;
+            else
+            {
+                frmClient.computerId = computer.ComputerId;
+                typeComputer = ComputerBLL.Instance.GetTypeComputerByTypeId(computer.TypeId);
+            }
+            frmMain.myUC_MenuClient = new UC_MenuClient(frmClient.Role,accountId,frmClient.computerId);
+            if (Role) customer = CustomerBLL.Instance.GetCustomerByAccountId(accountId);
             myUC_TrangChuKhachHang = new UC_TrangChuKhachHang();
-            typeComputer = ComputerBLL.Instance.GetTypeComputerByTypeId(computer.TypeId);
             myUC_NapGioChoi = new UC_NapGioChoi();
-            if(Role) myUC_NapGioChoi.sendBalance += new UC_NapGioChoi.SendBalance(SetBalance);
+            if (Role) myUC_NapGioChoi.sendBalance += new UC_NapGioChoi.SendBalance(SetBalance);
+            if (Role) frmMain.myUC_MenuClient.updateBalance += new UC_MenuClient.UpdateBalance(SetBalance);
             myUC_DongHo = new UC_DongHo(this.Handle);
             myUC_DongHo.checkaccess += new UC_DongHo.CheckAccess(CheckAccess);
         }
@@ -47,7 +60,7 @@ namespace GUIClient
         {
             AddUserControlOnBackGround(myUC_TrangChuKhachHang);
             SetDongHo();
-            if(Role)
+            if (Role)
             {
                 lblTenKhachHang.Text = customer.CustomerName;
                 if (customer.TypeCustomer) lblLoaiKhachHang.Text = "Khách Hàng VIP";
@@ -64,7 +77,7 @@ namespace GUIClient
         private void imgbtnThoat_Click(object sender, EventArgs e)
         {
             frmLoginClient frmLoginClient = new frmLoginClient();
-            if(Role) CustomerBLL.Instance.SetTotalTime(myUC_DongHo.getCurrentTime(), customer.CustomerId, typeComputer.NameType);
+            if (Role) CustomerBLL.Instance.SetTotalTime(myUC_DongHo.getCurrentTime(), customer.CustomerId, typeComputer.NameType);
             frmLoginClient.Show();
             Dispose();
         }
@@ -85,13 +98,15 @@ namespace GUIClient
             Guna2Button btn = sender as Guna2Button;
             SetOnCheckStateButton(btn);
             AddUserControlOnBackGround(myUC_TrangChuKhachHang);
+            this.AccessMenu = false;
         }
 
         private void btnMenu_Click(object sender, EventArgs e)
         {
             Guna2Button btn = sender as Guna2Button;
             SetOnCheckStateButton(btn);
-            AddUserControlOnBackGround(frmMain.myUC_QuanLyMenu);
+            AddUserControlOnBackGround(frmMain.myUC_MenuClient);
+            this.AccessMenu = true;
         }
 
         private void btnNapGioChoi_Click(object sender, EventArgs e)
@@ -99,6 +114,7 @@ namespace GUIClient
             Guna2Button btn = sender as Guna2Button;
             SetOnCheckStateButton(btn);
             AddUserControlOnBackGround(myUC_NapGioChoi);
+            this.AccessMenu = false;
         }
         private void AddUserControlOnBackGround(UserControl userControl)
         {
@@ -111,12 +127,15 @@ namespace GUIClient
         {
             panelDongHo.Controls.Clear();
             panelDongHo.Controls.Add(myUC_DongHo);
+            myUC_DongHo.Dock = DockStyle.Fill;
         }
 
         private void btnMinisize_Click(object sender, EventArgs e)
         {
-            DongHo = new frmDongHo(this.Handle);
-            DongHo.Show();
+            this.Hide();
+            if(AccessMenu) frmMain.myUC_MenuClient.Dispose();
+            DongHo = new frmDongHo();
+            DongHo.ShowDialog();
         }
 
         //Hàm Set Số dư
@@ -130,9 +149,9 @@ namespace GUIClient
         //Hàm kiểm tra khả năng truy cập vào máy
         public void CheckAccess(Time time)
         {
-            if(time.hour == 0 && time.minute == 0 && time.second == 0)
+            if (time.hour == 0 && time.minute == 0 && time.second == 0)
             {
-               btnMinisize.Visible = false;
+                btnMinisize.Visible = false;
             }
             else
             {

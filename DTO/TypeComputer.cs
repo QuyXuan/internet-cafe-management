@@ -22,6 +22,11 @@ namespace DTO
 
         public Nullable<float> Price { get; set; }
 
+
+        [StringLength(10)]
+        [Column(TypeName = "varchar")]
+        public string ColorId { get; set; }
+
         public virtual ICollection<Computer> Computers { get; set; }
     }
 }

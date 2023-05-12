@@ -43,7 +43,24 @@ namespace GiaoDienPBL3.UC
         private void btnCongTruXoaMon_Click(object sender, EventArgs e)
         {
             Guna2Button btn = sender as Guna2Button;
-            int TongTien = Convert.ToInt32(frmMain.myUC_QuanLyMenu.lblTongTien.Tag);
+            string Role = " ";
+            if ((btn.Parent).Parent.Tag is string)
+            {
+                Role = (btn.Parent).Parent.Tag as string;
+            }
+            else
+            {
+                Role = (((btn.Parent).Parent.Tag as UC_MonAn).Tag as string).Split(',')[0];
+            }
+            int TongTien = 0;
+            if (Role == "Manager")
+            {
+                TongTien = Convert.ToInt32(frmMain.myUC_QuanLyMenu.lblTongTien.Tag);
+            }
+            else if (Role == "Client")
+            {
+                TongTien = Convert.ToInt32(frmMain.myUC_MenuClient.lblTongTien.Tag);
+            }
             int GiaMon = Convert.ToInt32(ChuyenDoiGiaMon(lblGiaMon.Text).Replace(",", ""));
             if (btn.Text == "+")
             {
@@ -55,11 +72,30 @@ namespace GiaoDienPBL3.UC
             }
             else if (btn.Name == "btnXoaMon")
             {
+                if (Role == "Kho")
+                {
+                    string tien = frmMain.myUC_QuanLyHoaDonNhapKho.lblTongTien.Text;
+                    int Tien = Convert.ToInt32(tien.Substring(0, tien.Length - 7).Replace(",", ""));
+                    int tienMonAn = Convert.ToInt32(this.TextGiaMonAn.Substring(0, this.TextGiaMonAn.Length - 7).Replace(",", ""));
+                    frmMain.myUC_QuanLyHoaDonNhapKho.lblTongTien.Text = string.Format("{0:N3}VNĐ", Tien - tienMonAn);
+                    frmMain.myUC_QuanLyHoaDonNhapKho.panelHoaDon.Controls.Remove(this);
+                    this.Dispose();
+                    return;
+                }
                 TongTien -= GiaMon * Convert.ToInt32(lblSoLuongMon.Text);
                 if (lblTenMon.Text == "Nạp Tiền")
                 {
-                    frmMain.myUC_QuanLyMenu.panelChiTietMonAn.Controls.Remove(this);
-                    UC_QuanLyMenu.checkBtnXacNhan = false;
+                    if (Role == "Manager")
+                    {
+                        frmMain.myUC_QuanLyMenu.panelChiTietMonAn.Controls.Remove(this);
+                        frmMain.myUC_QuanLyMenu.checkBtnXacNhan = false;
+                    }
+                    else if (Role == "Client")
+                    {
+                        frmMain.myUC_MenuClient.panelChiTietMonAn.Controls.Remove(this);
+                        frmMain.myUC_MenuClient.checkBtnXacNhan = false;
+                    }
+                    
                 }
                 else if (btnCongMon.Visible == false)
                 {
@@ -72,7 +108,14 @@ namespace GiaoDienPBL3.UC
                 }
                 else
                 {
-                    frmMain.myUC_QuanLyMenu.panelChiTietMonAn.Controls.Remove(this);
+                    if (Role == "Manager")
+                    {
+                        frmMain.myUC_QuanLyMenu.panelChiTietMonAn.Controls.Remove(this);
+                    }
+                    else
+                    {
+                        frmMain.myUC_MenuClient.panelChiTietMonAn.Controls.Remove(this);
+                    }
                     UC_MonAn myUCMonAn = this.Tag as UC_MonAn;
                     myUCMonAn.panelBackGroundMonAn.BackColor = Color.Transparent;
                 }
@@ -81,7 +124,14 @@ namespace GiaoDienPBL3.UC
             {
                 if (lblTenMon.Text != "Nạp Tiền")
                 {
-                    frmMain.myUC_QuanLyMenu.panelChiTietMonAn.Controls.Remove(this);
+                    if (Role == "Manager")
+                    {
+                        frmMain.myUC_QuanLyMenu.panelChiTietMonAn.Controls.Remove(this);
+                    }
+                    else
+                    {
+                        frmMain.myUC_MenuClient.panelChiTietMonAn.Controls.Remove(this);
+                    }
                     TongTien -= GiaMon;
                     UC_MonAn myUCMonAn = this.Tag as UC_MonAn;
                     myUCMonAn.panelBackGroundMonAn.BackColor = Color.Transparent;
@@ -92,8 +142,16 @@ namespace GiaoDienPBL3.UC
                 lblSoLuongMon.Text = (Convert.ToInt32(lblSoLuongMon.Text) - 1).ToString();
                 TongTien -= GiaMon;
             }
-            frmMain.myUC_QuanLyMenu.lblTongTien.Text = string.Format("{0:N3}VNĐ", TongTien);
-            frmMain.myUC_QuanLyMenu.lblTongTien.Tag = TongTien;
+            if (Role == "Manager")
+            {
+                frmMain.myUC_QuanLyMenu.lblTongTien.Text = string.Format("{0:N3}VNĐ", TongTien);
+                frmMain.myUC_QuanLyMenu.lblTongTien.Tag = TongTien;
+            }
+            else
+            {
+                frmMain.myUC_MenuClient.lblTongTien.Text = string.Format("{0:N3}VNĐ", TongTien);
+                frmMain.myUC_MenuClient.lblTongTien.Tag = TongTien;
+            }
         }
     }
 }

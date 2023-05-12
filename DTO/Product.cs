@@ -25,20 +25,26 @@ namespace DTO
         public Nullable<float> CostPrice { get; set; }
 
         [Required]
-        [RegularExpression(@"^(Nước Uống|Đồ Ăn)$")]
+        [RegularExpression(@"^(Nước Uống|Đồ Ăn|Thẻ)$")]
         public string Type { get; set; }
 
         public Nullable<float> Stock { get; set; }
-        
+
         //public Nullable<float> Quantity { get; set; }
+
+        [Required]
+        public bool Status { get; set; }
 
         public string Discription { get; set; }
 
-        //[MaxLength]
-        //public byte[] Image { get; set; }
         [MaxLength]
-        public string ImageFilePath { get; set; }
+        public byte[] ProductImage { get; set; }
+
+        //[MaxLength]
+        //public string ImageFilePath { get; set; }
+
         public virtual ICollection<BillProduct> Bills { get; set; }
+
         public virtual ICollection<RecieptProduct> Reciepts { get; set; }
     }
 }

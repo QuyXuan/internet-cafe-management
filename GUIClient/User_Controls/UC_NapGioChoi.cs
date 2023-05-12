@@ -26,7 +26,7 @@ namespace GUIClient.User_Controls
             InitializeComponent();
             this.computer = frmClient.computer;
             this.typeComputer = frmClient.typeComputer;
-            SetForm();
+            if(frmClient.CheckComputer == false) SetForm();
             if(frmClient.Role == false) btnXacNhan.Enabled = false;
         }
         
@@ -47,6 +47,7 @@ namespace GUIClient.User_Controls
             dgvGiaMay.Columns[1].HeaderText = "Loại Máy";
             dgvGiaMay.Columns[2].HeaderText = "Giá Máy";
             dgvGiaMay.Columns[3].Visible = false;
+            dgvGiaMay.Columns[4].Visible = false;
         }
 
         private void btn_Click(object sender, EventArgs e)

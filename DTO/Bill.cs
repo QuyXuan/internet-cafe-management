@@ -17,7 +17,6 @@ namespace DTO
         [Column(TypeName = "varchar")]
         public string BillId { get; set; }
 
-        [Required]
         [StringLength(10)]
         [Column(TypeName = "varchar")]
         public string EmployeeId { get; set; }

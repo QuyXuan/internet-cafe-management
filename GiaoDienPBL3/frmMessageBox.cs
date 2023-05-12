@@ -57,7 +57,7 @@ namespace GiaoDienPBL3
             }
             else if (status == StatusResult.Success)
             {
-                backColorAlertBox = Color.LightGray;
+                backColorAlertBox = Color.LightGreen;
                 colorLineAlertBox = Color.SeaGreen;
                 imageAlertBox = Properties.Resources.success;
                 titleAlertBox = "Thành Công";

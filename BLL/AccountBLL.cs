@@ -2,7 +2,9 @@
 using DTO;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.Migrations;
 using System.Linq;
+using System.Net.Mime;
 using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,7 +27,7 @@ namespace BLL
             private set { instance = value; }
         }
         private AccountBLL() { }
-        public List<Account> GetListAccount()
+        public List<Account> GetListAccount(string Role = null)
         {
             using (var context = new QLNETDBContext())
             {
@@ -33,7 +35,15 @@ namespace BLL
                 {
                     return null;
                 }
-                var accounts = context.Accounts.ToList();
+                List<Account> accounts = new List<Account>();
+                if (Role == null)
+                {
+                    accounts = context.Accounts.ToList();
+                }
+                else
+                {
+                    accounts = context.Accounts.Where(p => p.Role == Role).ToList();
+                }
                 return accounts;
             }
         }
@@ -143,6 +153,69 @@ namespace BLL
                 account.Password = newPass;
                 context.SaveChanges();
                 return message;
+            }
+        }
+        public string GetUserNameByAccountId(string accountId)
+        {
+            using (var context = new QLNETDBContext())
+            {
+                if (context == null) return null;
+                var account = context.Accounts.FirstOrDefault(p => p.AccountId == accountId);
+                if (account != null)
+                {
+                    return account.UserName;
+                }
+                return null;
+            }
+        }
+        public string GetRandomAccountId()
+        {
+            using (var context = new QLNETDBContext())
+            {
+                if (context == null)
+                {
+                    return null;
+                }
+                Random random = new Random();
+                string accountId = "acc" + random.Next(0, 1000).ToString().PadLeft(4, '0');
+                while (context.Accounts.Any(p => p.AccountId == accountId))
+                {
+                    accountId = "acc" + random.Next(0, 1000).ToString().PadLeft(4, '0');
+                }
+                return accountId;
+            }
+        }
+        public void AddNewAccount(Account account)
+        {
+            using (var context = new QLNETDBContext())
+            {
+                if (context == null) return;
+                context.Accounts.AddOrUpdate(account);
+                context.SaveChanges();
+            }
+        }
+        public void DeleteAccount(string AccountId)
+        {
+            using (var context = new QLNETDBContext())
+            {
+                if (context == null) return;
+                var account = context.Accounts.FirstOrDefault(p => p.AccountId == AccountId);
+                if (account == null) return;
+                context.Accounts.Remove(account);
+                context.SaveChanges();
+            }
+        }
+
+        public void UpdateUserNameAndPassword(string accountId, string userName, string password)
+        {
+            using (var context = new QLNETDBContext())
+            {
+                if (context == null) return;
+                var account = context.Accounts.FirstOrDefault(p => p.AccountId == accountId);
+                if (account == null) return;
+                account.UserName = userName;
+                account.Password = password;
+                context.SaveChanges();
             }
         }
     }
