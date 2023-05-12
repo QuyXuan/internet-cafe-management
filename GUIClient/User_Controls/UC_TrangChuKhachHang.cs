@@ -24,10 +24,17 @@ namespace GUIClient.User_Controls
             {
                 setThongTinCaNhan(frmClient.customer);
                 SetThongTinGiamGia(frmClient.customer);
+                panelGiamGia.Text = "Giảm Giá Của Tôi";
+                txtIPV4.Visible = false;
+                dgvGiamGia.Visible = true;
             }
             else
             {
                 btnCapNhatMatKhau.Enabled = false;
+                panelGiamGia.Text = "Địa Chỉ IPv4";
+                dgvGiamGia.Visible = false;
+                txtIPV4.Visible = true;
+                SetIPv4();
             }
             lblThongBao.Visible = false;
         }
@@ -50,6 +57,11 @@ namespace GUIClient.User_Controls
             dgvGiamGia.Columns[2].HeaderText = "Phần trăm";
             dgvGiamGia.Columns[3].Visible = false;
             dgvGiamGia.Columns[4].Visible = false;
+        }
+
+        public void SetIPv4()
+        {
+            txtIPV4.Text = ComputerBLL.Instance.GetMyIP();
         }
 
         private void btnCapNhatMatKhau_Click(object sender, EventArgs e)

@@ -74,7 +74,7 @@ namespace GUIClient
                 {
                     if(panelBackground.Controls.OfType<UserControl>().Any() == false)
                     {
-                        frmMain.myUC_MenuClient = new GiaoDienPBL3.User_Controls.UC_MenuClient(frmClient.Role,frmClient.accountId, frmClient.computer.ComputerId);
+                        frmMain.myUC_MenuClient = new GiaoDienPBL3.User_Controls.UC_MenuClient(frmClient.Role,frmClient.accountId, frmClient.computerId);
                         panelBackground.Controls.Add(frmMain.myUC_MenuClient);
                     }
                 }

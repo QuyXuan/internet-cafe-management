@@ -58,25 +58,27 @@ namespace GUIClient
         {
             if (ConnectionBLL.Instance.hasInternetAccess())
             {
-                Computer computer = ComputerBLL.Instance.GetComputerByIP();
-                if (computer != null)
+                if (AccountBLL.Instance.CheckDangNhap(txtTaiKhoan.Text, txtMatKhau.Text))
                 {
-                    if (AccountBLL.Instance.CheckDangNhap(txtTaiKhoan.Text, txtMatKhau.Text))
+                    string AccountId = AccountBLL.Instance.GetAccountIdByUserName(txtTaiKhoan.Text);
+                    KeyValuePair<string, string>? TenVaVaiTro = AccountBLL.Instance.GetTenVaVaiTro(AccountId);
+                    bool Role = false;
+                    bool CheckComputer = false;
+                    if (TenVaVaiTro == null) Role = true;
+                    Computer computer = ComputerBLL.Instance.GetComputerByIP();
+                    if (computer == null) CheckComputer = true;
+                    if (computer != null || (computer == null && Role == false))
                     {
-                        string AccountId = AccountBLL.Instance.GetAccountIdByUserName(txtTaiKhoan.Text);
-                        KeyValuePair<string, string>? TenVaVaiTro = AccountBLL.Instance.GetTenVaVaiTro(AccountId);
-                        bool Role = false;
-                        if(TenVaVaiTro == null) Role = true;
                         if (TenVaVaiTro == null || TenVaVaiTro.Value.Value == "Quản Lý")
                         {
                             this.Hide();
-                            frmClient Client = new frmClient(AccountId, computer, Role);
+                            frmClient Client = new frmClient(AccountId, computer, Role, CheckComputer);
                             Client.ShowDialog();
                         }
                     }
-                    ShowThongBao("Tên Tài Khoản Hoặc Mật Khẩu Sai" + Environment.NewLine + "VUI LÒNG NHẬP LẠI!!!");
+                    else ShowThongBao("Máy không nằm trong hệ thống" + Environment.NewLine + "VUI LÒNG THIẾT KIỂM TRA LẠI!!!");
                 }
-                else ShowThongBao("Máy không nằm trong hệ thống" + Environment.NewLine + "VUI LÒNG THIẾT KIỂM TRA LẠI!!!");
+                else ShowThongBao("Tên Tài Khoản Hoặc Mật Khẩu Sai" + Environment.NewLine + "VUI LÒNG NHẬP LẠI!!!");
             }
             else ShowThongBao("Mất kết nối" + Environment.NewLine + "VUI LÒNG KẾT NỐI MẠNG!!!");
         }

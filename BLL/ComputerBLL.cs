@@ -111,6 +111,15 @@ namespace BLL
         //    }
         //}
         //Hàm lấy IP của máy
+        public string GetMyIP()
+        {
+            string IPComputer = GetLocalIPv4(NetworkInterfaceType.Wireless80211);
+            if (string.IsNullOrEmpty(IPComputer))
+            {
+                IPComputer = GetLocalIPv4(NetworkInterfaceType.Ethernet);
+            }
+            return IPComputer;
+        }
         public string GetLocalIPv4(NetworkInterfaceType _type)
         {
             string output = "";

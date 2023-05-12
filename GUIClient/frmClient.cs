@@ -22,7 +22,9 @@ namespace GUIClient
     public partial class frmClient : Form
     {
         public static string accountId;
+        public static string computerId;
         public static bool Role;
+        public static bool CheckComputer;
         public static Computer computer;
         public static TypeComputer typeComputer;
         public static Customer customer;
@@ -32,16 +34,22 @@ namespace GUIClient
         public static frmDongHo DongHo;
         private bool AccessMenu = false;
 
-        public frmClient(string accountId, Computer computer, bool Role)
+        public frmClient(string accountId, Computer computer, bool Role, bool CheckComputer)
         {
             InitializeComponent();
             frmClient.accountId = accountId;
             frmClient.Role = Role;
             frmClient.computer = computer;
-            frmMain.myUC_MenuClient = new UC_MenuClient(frmClient.Role,accountId, computer.ComputerId);
+            frmClient.CheckComputer = CheckComputer;
+            if (CheckComputer) frmClient.computerId = null;
+            else
+            {
+                frmClient.computerId = computer.ComputerId;
+                typeComputer = ComputerBLL.Instance.GetTypeComputerByTypeId(computer.TypeId);
+            }
+            frmMain.myUC_MenuClient = new UC_MenuClient(frmClient.Role,accountId,frmClient.computerId);
             if (Role) customer = CustomerBLL.Instance.GetCustomerByAccountId(accountId);
             myUC_TrangChuKhachHang = new UC_TrangChuKhachHang();
-            typeComputer = ComputerBLL.Instance.GetTypeComputerByTypeId(computer.TypeId);
             myUC_NapGioChoi = new UC_NapGioChoi();
             if (Role) myUC_NapGioChoi.sendBalance += new UC_NapGioChoi.SendBalance(SetBalance);
             if (Role) frmMain.myUC_MenuClient.updateBalance += new UC_MenuClient.UpdateBalance(SetBalance);

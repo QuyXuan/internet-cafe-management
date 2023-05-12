@@ -44,7 +44,7 @@
             this.txtMatKhauCu = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtMatKhauMoi = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtXacNhanMatKhau = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.panelGiamGia = new Guna.UI2.WinForms.Guna2GroupBox();
             this.dgvGiamGia = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.guna2GroupBox3 = new Guna.UI2.WinForms.Guna2GroupBox();
@@ -61,10 +61,12 @@
             this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.lblTrangChu = new System.Windows.Forms.Label();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.txtIPV4 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2CustomGradientPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.guna2GroupBox2.SuspendLayout();
-            this.guna2GroupBox1.SuspendLayout();
+            this.panelGiamGia.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGiamGia)).BeginInit();
             this.panel1.SuspendLayout();
             this.guna2GroupBox3.SuspendLayout();
@@ -90,7 +92,7 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.Transparent;
             this.panel2.Controls.Add(this.guna2GroupBox2);
-            this.panel2.Controls.Add(this.guna2GroupBox1);
+            this.panel2.Controls.Add(this.panelGiamGia);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(637, 98);
             this.panel2.Name = "panel2";
@@ -252,18 +254,19 @@
             this.txtXacNhanMatKhau.Size = new System.Drawing.Size(438, 36);
             this.txtXacNhanMatKhau.TabIndex = 14;
             // 
-            // guna2GroupBox1
+            // panelGiamGia
             // 
-            this.guna2GroupBox1.Controls.Add(this.dgvGiamGia);
-            this.guna2GroupBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.guna2GroupBox1.FillColor = System.Drawing.Color.Transparent;
-            this.guna2GroupBox1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2GroupBox1.ForeColor = System.Drawing.Color.Black;
-            this.guna2GroupBox1.Location = new System.Drawing.Point(0, 0);
-            this.guna2GroupBox1.Name = "guna2GroupBox1";
-            this.guna2GroupBox1.Size = new System.Drawing.Size(604, 210);
-            this.guna2GroupBox1.TabIndex = 0;
-            this.guna2GroupBox1.Text = "Giảm Giá Của Tôi";
+            this.panelGiamGia.Controls.Add(this.txtIPV4);
+            this.panelGiamGia.Controls.Add(this.dgvGiamGia);
+            this.panelGiamGia.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelGiamGia.FillColor = System.Drawing.Color.Transparent;
+            this.panelGiamGia.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panelGiamGia.ForeColor = System.Drawing.Color.Black;
+            this.panelGiamGia.Location = new System.Drawing.Point(0, 0);
+            this.panelGiamGia.Name = "panelGiamGia";
+            this.panelGiamGia.Size = new System.Drawing.Size(604, 210);
+            this.panelGiamGia.TabIndex = 0;
+            this.panelGiamGia.Text = "Giảm Giá Của Tôi";
             // 
             // dgvGiamGia
             // 
@@ -498,6 +501,32 @@
             this.guna2Elipse1.BorderRadius = 20;
             this.guna2Elipse1.TargetControl = this.lblThongBao;
             // 
+            // txtIPV4
+            // 
+            this.txtIPV4.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtIPV4.DefaultText = "Địa Chỉ IPV4";
+            this.txtIPV4.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtIPV4.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtIPV4.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtIPV4.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtIPV4.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtIPV4.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIPV4.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtIPV4.Location = new System.Drawing.Point(25, 99);
+            this.txtIPV4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtIPV4.Name = "txtIPV4";
+            this.txtIPV4.PasswordChar = '\0';
+            this.txtIPV4.PlaceholderText = "";
+            this.txtIPV4.SelectedText = "";
+            this.txtIPV4.Size = new System.Drawing.Size(566, 61);
+            this.txtIPV4.TabIndex = 2;
+            this.txtIPV4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // guna2Elipse2
+            // 
+            this.guna2Elipse2.BorderRadius = 20;
+            this.guna2Elipse2.TargetControl = this.txtIPV4;
+            // 
             // UC_TrangChuKhachHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -509,7 +538,7 @@
             this.panel2.ResumeLayout(false);
             this.guna2GroupBox2.ResumeLayout(false);
             this.guna2GroupBox2.PerformLayout();
-            this.guna2GroupBox1.ResumeLayout(false);
+            this.panelGiamGia.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvGiamGia)).EndInit();
             this.panel1.ResumeLayout(false);
             this.guna2GroupBox3.ResumeLayout(false);
@@ -531,7 +560,7 @@
         private Guna.UI2.WinForms.Guna2TextBox txtMatKhauCu;
         private Guna.UI2.WinForms.Guna2TextBox txtMatKhauMoi;
         private Guna.UI2.WinForms.Guna2TextBox txtXacNhanMatKhau;
-        private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox1;
+        private Guna.UI2.WinForms.Guna2GroupBox panelGiamGia;
         private System.Windows.Forms.Panel panel1;
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox3;
         private System.Windows.Forms.Label label5;
@@ -549,5 +578,7 @@
         private System.Windows.Forms.Label lblThongBao;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private System.Windows.Forms.DataGridView dgvGiamGia;
+        private Guna.UI2.WinForms.Guna2TextBox txtIPV4;
+        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse2;
     }
 }
