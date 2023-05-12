@@ -21,8 +21,10 @@ namespace GUIClient
 {
     public partial class frmClient : Form
     {
-        private string accountId;
+        public static string accountId;
+        public static string computerId;
         public static bool Role;
+        public static bool CheckComputer;
         public static Computer computer;
         public static TypeComputer typeComputer;
         public static Customer customer;
@@ -30,17 +32,24 @@ namespace GUIClient
         public static UC_NapGioChoi myUC_NapGioChoi;
         public static UC_DongHo myUC_DongHo;
         public static frmDongHo DongHo;
+        private bool AccessMenu = false;
 
-        public frmClient(string accountId, Computer computer, bool Role)
+        public frmClient(string accountId, Computer computer, bool Role, bool CheckComputer)
         {
             InitializeComponent();
-            this.accountId = accountId;
+            frmClient.accountId = accountId;
             frmClient.Role = Role;
             frmClient.computer = computer;
-            frmMain.myUC_MenuClient = new UC_MenuClient(accountId, computer.ComputerId);
+            frmClient.CheckComputer = CheckComputer;
+            if (CheckComputer) frmClient.computerId = null;
+            else
+            {
+                frmClient.computerId = computer.ComputerId;
+                typeComputer = ComputerBLL.Instance.GetTypeComputerByTypeId(computer.TypeId);
+            }
+            frmMain.myUC_MenuClient = new UC_MenuClient(frmClient.Role,accountId,frmClient.computerId);
             if (Role) customer = CustomerBLL.Instance.GetCustomerByAccountId(accountId);
             myUC_TrangChuKhachHang = new UC_TrangChuKhachHang();
-            typeComputer = ComputerBLL.Instance.GetTypeComputerByTypeId(computer.TypeId);
             myUC_NapGioChoi = new UC_NapGioChoi();
             if (Role) myUC_NapGioChoi.sendBalance += new UC_NapGioChoi.SendBalance(SetBalance);
             if (Role) frmMain.myUC_MenuClient.updateBalance += new UC_MenuClient.UpdateBalance(SetBalance);
@@ -89,6 +98,7 @@ namespace GUIClient
             Guna2Button btn = sender as Guna2Button;
             SetOnCheckStateButton(btn);
             AddUserControlOnBackGround(myUC_TrangChuKhachHang);
+            this.AccessMenu = false;
         }
 
         private void btnMenu_Click(object sender, EventArgs e)
@@ -96,6 +106,7 @@ namespace GUIClient
             Guna2Button btn = sender as Guna2Button;
             SetOnCheckStateButton(btn);
             AddUserControlOnBackGround(frmMain.myUC_MenuClient);
+            this.AccessMenu = true;
         }
 
         private void btnNapGioChoi_Click(object sender, EventArgs e)
@@ -103,6 +114,7 @@ namespace GUIClient
             Guna2Button btn = sender as Guna2Button;
             SetOnCheckStateButton(btn);
             AddUserControlOnBackGround(myUC_NapGioChoi);
+            this.AccessMenu = false;
         }
         private void AddUserControlOnBackGround(UserControl userControl)
         {
@@ -120,8 +132,10 @@ namespace GUIClient
 
         private void btnMinisize_Click(object sender, EventArgs e)
         {
-            DongHo = new frmDongHo(this.Handle);
-            DongHo.Show();
+            this.Hide();
+            if(AccessMenu) frmMain.myUC_MenuClient.Dispose();
+            DongHo = new frmDongHo();
+            DongHo.ShowDialog();
         }
 
         //Hàm Set Số dư
