@@ -153,7 +153,7 @@ namespace GiaoDienPBL3.User_Controls
                 {
                     txtMaHoaDon.Text = dgv.Rows[RowIndex].Cells[0].Value.ToString();
                     txtMaKhachHang.Text = dgv.Rows[RowIndex].Cells[2].Value.ToString();
-                    txtMaNhanVien.Text = dgv.Rows[RowIndex].Cells[1].Value.ToString();
+                    if(dgv.Rows[RowIndex].Cells[1].Value != null) txtMaNhanVien.Text = dgv.Rows[RowIndex].Cells[1].Value.ToString();
                     txtNgayNhan.Text = dgv.Rows[RowIndex].Cells[4].Value.ToString();
                     txtSoMay.Text = dgv.Rows[RowIndex].Cells[3].Value.ToString();
                     txtTrangThai.Text = dgv.Rows[RowIndex].Cells[5].Value.ToString();

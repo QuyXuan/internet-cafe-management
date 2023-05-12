@@ -1,4 +1,5 @@
 ﻿using DTO;
+using GiaoDienPBL3;
 using GUIClient.User_Controls;
 using System;
 using System.Collections.Generic;
@@ -15,17 +16,12 @@ namespace GUIClient
 {
     public partial class frmDongHo : Form
     {
-        [DllImport("user32.dll")]
-        private static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
-        private const int SW_RESTORE = 9;
-        IntPtr hWnd;
-        public frmDongHo(IntPtr hWnd)
+        public frmDongHo()
         {
             InitializeComponent();
             frmClient.myUC_DongHo.closedongho += new UC_DongHo.CloseDongHo(CloseDongHo);
             frmClient.myUC_DongHo.SetDiChuyen(true);
             panelDongHo.Controls.Add(frmClient.myUC_DongHo);
-            this.hWnd = hWnd;
         }
 
         private void btnMinisize_Click(object sender, EventArgs e)
@@ -73,8 +69,19 @@ namespace GUIClient
                     frmClient.myUC_DongHo.SetDiChuyen(false);
                     panel.Controls.Add(frmClient.myUC_DongHo);
                 }
+                Panel panelBackground = frmclient.Controls.Find("panelBackGround", true).FirstOrDefault() as Panel;
+                if (panelBackground != null)
+                {
+                    if(panelBackground.Controls.OfType<UserControl>().Any() == false)
+                    {
+                        frmMain.myUC_MenuClient = new GiaoDienPBL3.User_Controls.UC_MenuClient(frmClient.Role,frmClient.accountId, frmClient.computer.ComputerId);
+                        panelBackground.Controls.Add(frmMain.myUC_MenuClient);
+                    }
+                }
             }
-            ShowWindow(hWnd, SW_RESTORE);
+            frmclient.WindowState = FormWindowState.Maximized;
+            frmclient.Show();
+            frmclient.BringToFront();
             Dispose();
         }
     }

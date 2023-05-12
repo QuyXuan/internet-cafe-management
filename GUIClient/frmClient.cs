@@ -21,7 +21,7 @@ namespace GUIClient
 {
     public partial class frmClient : Form
     {
-        private string accountId;
+        public static string accountId;
         public static bool Role;
         public static Computer computer;
         public static TypeComputer typeComputer;
@@ -30,14 +30,15 @@ namespace GUIClient
         public static UC_NapGioChoi myUC_NapGioChoi;
         public static UC_DongHo myUC_DongHo;
         public static frmDongHo DongHo;
+        private bool AccessMenu = false;
 
         public frmClient(string accountId, Computer computer, bool Role)
         {
             InitializeComponent();
-            this.accountId = accountId;
+            frmClient.accountId = accountId;
             frmClient.Role = Role;
             frmClient.computer = computer;
-            frmMain.myUC_MenuClient = new UC_MenuClient(accountId, computer.ComputerId);
+            frmMain.myUC_MenuClient = new UC_MenuClient(frmClient.Role,accountId, computer.ComputerId);
             if (Role) customer = CustomerBLL.Instance.GetCustomerByAccountId(accountId);
             myUC_TrangChuKhachHang = new UC_TrangChuKhachHang();
             typeComputer = ComputerBLL.Instance.GetTypeComputerByTypeId(computer.TypeId);
@@ -89,6 +90,7 @@ namespace GUIClient
             Guna2Button btn = sender as Guna2Button;
             SetOnCheckStateButton(btn);
             AddUserControlOnBackGround(myUC_TrangChuKhachHang);
+            this.AccessMenu = false;
         }
 
         private void btnMenu_Click(object sender, EventArgs e)
@@ -96,6 +98,7 @@ namespace GUIClient
             Guna2Button btn = sender as Guna2Button;
             SetOnCheckStateButton(btn);
             AddUserControlOnBackGround(frmMain.myUC_MenuClient);
+            this.AccessMenu = true;
         }
 
         private void btnNapGioChoi_Click(object sender, EventArgs e)
@@ -103,6 +106,7 @@ namespace GUIClient
             Guna2Button btn = sender as Guna2Button;
             SetOnCheckStateButton(btn);
             AddUserControlOnBackGround(myUC_NapGioChoi);
+            this.AccessMenu = false;
         }
         private void AddUserControlOnBackGround(UserControl userControl)
         {
@@ -120,8 +124,10 @@ namespace GUIClient
 
         private void btnMinisize_Click(object sender, EventArgs e)
         {
-            DongHo = new frmDongHo(this.Handle);
-            DongHo.Show();
+            this.Hide();
+            if(AccessMenu) frmMain.myUC_MenuClient.Dispose();
+            DongHo = new frmDongHo();
+            DongHo.ShowDialog();
         }
 
         //Hàm Set Số dư
