@@ -30,6 +30,7 @@ namespace GUIClient
         public static UC_NapGioChoi myUC_NapGioChoi;
         public static UC_DongHo myUC_DongHo;
         public static frmDongHo DongHo;
+
         public frmClient(string accountId, Computer computer, bool Role)
         {
             InitializeComponent();
@@ -37,11 +38,12 @@ namespace GUIClient
             frmClient.Role = Role;
             frmClient.computer = computer;
             frmMain.myUC_MenuClient = new UC_MenuClient(accountId, computer.ComputerId);
-            if(Role) customer = CustomerBLL.Instance.GetCustomerByAccountId(accountId);
+            if (Role) customer = CustomerBLL.Instance.GetCustomerByAccountId(accountId);
             myUC_TrangChuKhachHang = new UC_TrangChuKhachHang();
             typeComputer = ComputerBLL.Instance.GetTypeComputerByTypeId(computer.TypeId);
             myUC_NapGioChoi = new UC_NapGioChoi();
-            if(Role) myUC_NapGioChoi.sendBalance += new UC_NapGioChoi.SendBalance(SetBalance);
+            if (Role) myUC_NapGioChoi.sendBalance += new UC_NapGioChoi.SendBalance(SetBalance);
+            if (Role) frmMain.myUC_MenuClient.updateBalance += new UC_MenuClient.UpdateBalance(SetBalance);
             myUC_DongHo = new UC_DongHo(this.Handle);
             myUC_DongHo.checkaccess += new UC_DongHo.CheckAccess(CheckAccess);
         }
@@ -49,7 +51,7 @@ namespace GUIClient
         {
             AddUserControlOnBackGround(myUC_TrangChuKhachHang);
             SetDongHo();
-            if(Role)
+            if (Role)
             {
                 lblTenKhachHang.Text = customer.CustomerName;
                 if (customer.TypeCustomer) lblLoaiKhachHang.Text = "Khách Hàng VIP";
@@ -66,7 +68,7 @@ namespace GUIClient
         private void imgbtnThoat_Click(object sender, EventArgs e)
         {
             frmLoginClient frmLoginClient = new frmLoginClient();
-            if(Role) CustomerBLL.Instance.SetTotalTime(myUC_DongHo.getCurrentTime(), customer.CustomerId, typeComputer.NameType);
+            if (Role) CustomerBLL.Instance.SetTotalTime(myUC_DongHo.getCurrentTime(), customer.CustomerId, typeComputer.NameType);
             frmLoginClient.Show();
             Dispose();
         }
@@ -133,9 +135,9 @@ namespace GUIClient
         //Hàm kiểm tra khả năng truy cập vào máy
         public void CheckAccess(Time time)
         {
-            if(time.hour == 0 && time.minute == 0 && time.second == 0)
+            if (time.hour == 0 && time.minute == 0 && time.second == 0)
             {
-               btnMinisize.Visible = false;
+                btnMinisize.Visible = false;
             }
             else
             {

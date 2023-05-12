@@ -2,6 +2,7 @@
 using DTO;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Net.NetworkInformation;
@@ -99,7 +100,16 @@ namespace BLL
                 return computer;
             }
         }
-
+        //public Computer GetComputerByComputerName(string computerName)
+        //{
+        //    using (var context = new QLNETDBContext())
+        //    {
+        //        if (context == null) return null;
+        //        var computer = context.Computers.FirstOrDefault(p => p.ComputerName == computerName);
+        //        if (computer == null) return null;
+        //        return computer;
+        //    }
+        //}
         //Hàm lấy IP của máy
         public string GetLocalIPv4(NetworkInterfaceType _type)
         {

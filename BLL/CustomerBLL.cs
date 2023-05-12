@@ -70,7 +70,16 @@ namespace BLL
                 return customer;
             }
         }
-
+        public Customer GetCustomerByCustomerId(string customerId)
+        {
+            using (var context = new QLNETDBContext())
+            {
+                if (context == null) return null;
+                var customer = context.Customers.FirstOrDefault(p => p.CustomerId == customerId);
+                if (customer == null) return null;
+                return customer;
+            }
+        }
         public string GetNameCustomerByCustomerId(string customerId)
         {
             using (var context = new QLNETDBContext())
@@ -167,14 +176,23 @@ namespace BLL
                 return customer.AccountId;
             }
         }
-        public void PlusCustomerBalance(string customerId, float balance)
+        public void EditCustomerBalance(string customerId, float balance, bool type)
         {
             using (var context = new QLNETDBContext())
             {
                 if (context == null) return;
                 var customer = context.Customers.FirstOrDefault(p => p.CustomerId == customerId);
                 if (customer == null) return;
-                customer.Balance += balance;
+                //nếu true là cộng lên nếu false là trừ ra
+                if (type == true)
+                {
+                    customer.Balance += balance;
+
+                }
+                else
+                {
+                    customer.Balance -= balance;
+                }
                 context.SaveChanges();
             }
         }

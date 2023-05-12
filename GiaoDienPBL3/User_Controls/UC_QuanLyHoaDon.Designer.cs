@@ -123,6 +123,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.btnLamMoi = new Guna.UI2.WinForms.Guna2Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnTimKiem = new Guna.UI2.WinForms.Guna2Button();
             this.guna2TextBox7 = new Guna.UI2.WinForms.Guna2TextBox();
@@ -135,7 +136,6 @@
             this.MaKhacHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaNhanVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaHoaDon = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnLamMoi = new Guna.UI2.WinForms.Guna2Button();
             this.guna2CustomGradientPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tabHoaDon.SuspendLayout();
@@ -1319,6 +1319,26 @@
             this.panel4.Size = new System.Drawing.Size(1254, 40);
             this.panel4.TabIndex = 4;
             // 
+            // btnLamMoi
+            // 
+            this.btnLamMoi.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnLamMoi.BorderRadius = 8;
+            this.btnLamMoi.BorderThickness = 2;
+            this.btnLamMoi.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLamMoi.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnLamMoi.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnLamMoi.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnLamMoi.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnLamMoi.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnLamMoi.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnLamMoi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnLamMoi.Location = new System.Drawing.Point(439, 6);
+            this.btnLamMoi.Name = "btnLamMoi";
+            this.btnLamMoi.Size = new System.Drawing.Size(124, 28);
+            this.btnLamMoi.TabIndex = 1;
+            this.btnLamMoi.Text = "Làm Mới";
+            this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
+            // 
             // panel3
             // 
             this.panel3.Controls.Add(this.btnTimKiem);
@@ -1448,26 +1468,6 @@
             this.MaHoaDon.ReadOnly = true;
             this.MaHoaDon.Width = 125;
             // 
-            // btnLamMoi
-            // 
-            this.btnLamMoi.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnLamMoi.BorderRadius = 8;
-            this.btnLamMoi.BorderThickness = 2;
-            this.btnLamMoi.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLamMoi.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnLamMoi.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnLamMoi.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnLamMoi.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnLamMoi.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnLamMoi.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnLamMoi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnLamMoi.Location = new System.Drawing.Point(439, 6);
-            this.btnLamMoi.Name = "btnLamMoi";
-            this.btnLamMoi.Size = new System.Drawing.Size(124, 28);
-            this.btnLamMoi.TabIndex = 1;
-            this.btnLamMoi.Text = "Làm Mới";
-            this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
-            // 
             // UC_QuanLyHoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1518,7 +1518,6 @@
         private Guna.UI2.WinForms.Guna2Button btnTimKiem;
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBox7;
         private System.Windows.Forms.TabPage tabTatCaHoaDon;
-        private System.Windows.Forms.DataGridView dgvTatCaHoaDon;
         private System.Windows.Forms.DataGridViewTextBoxColumn TongTien;
         private System.Windows.Forms.DataGridViewTextBoxColumn ChietKhau;
         private System.Windows.Forms.DataGridViewCheckBoxColumn TrangThai;
@@ -1526,8 +1525,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn MaKhacHang;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaNhanVien;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaHoaDon;
-        private System.Windows.Forms.DataGridView dgvDaXacNhan;
-        private System.Windows.Forms.DataGridView dgvDaHuy;
         private System.Windows.Forms.TabPage tabThongTinHoaDon;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel2;
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox3;
@@ -1601,5 +1598,8 @@
         private Guna.UI2.WinForms.Guna2ImageButton btnNext4;
         private Guna.UI2.WinForms.Guna2ImageButton btnPrevious4;
         private Guna.UI2.WinForms.Guna2Button btnLamMoi;
+        private System.Windows.Forms.DataGridView dgvTatCaHoaDon;
+        private System.Windows.Forms.DataGridView dgvDaXacNhan;
+        private System.Windows.Forms.DataGridView dgvDaHuy;
     }
 }

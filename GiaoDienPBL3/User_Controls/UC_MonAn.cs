@@ -110,10 +110,10 @@ namespace GiaoDienPBL3.UC
                     {
                         frmMain.myUC_QuanLyMenu.panelXacNhanLuaChon.Visible = true;
                     }
-                    else
-                    {
-                        frmMain.myUC_MenuClient.panelXacNhanLuaChon.Visible = true;
-                    }
+                    //else
+                    //{
+                    //    frmMain.myUC_MenuClient.panelXacNhanLuaChon.Visible = true;
+                    //}
                     panelBackGroundMonAn.BackColor = Color.FromArgb(4, 121, 171);
                 }
                 else
@@ -122,10 +122,10 @@ namespace GiaoDienPBL3.UC
                     {
                         frmMain.myUC_QuanLyMenu.panelXacNhanLuaChon.Visible = false;
                     }
-                    else
-                    {
-                        frmMain.myUC_MenuClient.panelXacNhanLuaChon.Visible = false;
-                    }
+                    //else
+                    //{
+                    //    frmMain.myUC_MenuClient.panelXacNhanLuaChon.Visible = false;
+                    //}
                     panelBackGroundMonAn.BackColor = Color.Transparent;
                 }
                 return;

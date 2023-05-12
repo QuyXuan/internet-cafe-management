@@ -25,6 +25,7 @@ namespace GiaoDienPBL3.UC
         //kiểm tra đây là form admin hay là client, false là admin
         private bool checkFormAdminOrClient = false;
         private List<BillDiscount> listBillDiscout = new List<BillDiscount>();
+        private List<UC_MonAn> listProductOnPanel = new List<UC_MonAn>();
         private string EmployeeId;
         public UC_QuanLyMenu(string employeeId = null)
         {
@@ -80,6 +81,7 @@ namespace GiaoDienPBL3.UC
             }
             //my_UCMonAn.Tag = product;
             /*frmMain.myUC_QuanLyMenu.*/panelMonAn.Controls.Add(my_UCMonAn);
+            listProductOnPanel.Add(my_UCMonAn);
         }
         private Image ByteArrayToImage(byte[] byteArray)
         {
@@ -166,6 +168,11 @@ namespace GiaoDienPBL3.UC
             }
             foreach (UC_ChiTietMonAn control in listUCThongTinHangHoa)
             {
+                if (control.btnXoaMon.Visible == false)
+                {
+                    panelChiTietMonAn.Controls.Clear();
+                    break;
+                }
                 control.btnXoaMon.PerformClick();
             }
             listUCThongTinHangHoa.Clear();
@@ -249,7 +256,7 @@ namespace GiaoDienPBL3.UC
                 if (myUC_ChiTietMonAn.TextTenMonAn == "Nạp Tiền")
                 {
                     float balance = (float)Convert.ToDouble(myUC_ChiTietMonAn.TextGiaMonAn.Substring(0, myUC_ChiTietMonAn.TextGiaMonAn.Length - 7).Replace(",", ""));
-                    CustomerBLL.Instance.PlusCustomerBalance(txtMaKhachHang.Text, balance);
+                    CustomerBLL.Instance.EditCustomerBalance(txtMaKhachHang.Text, balance, true);
                 }
                 BillProduct billProduct = new BillProduct
                 {
@@ -269,7 +276,7 @@ namespace GiaoDienPBL3.UC
             {
                 Account account = cboTenTaiKhoan.SelectedValue as Account;
                 Customer customer = CustomerBLL.Instance.GetCustomerByAccountId(account.AccountId);
-                txtMaKhachHang.Text = customer.CustomerId;
+                 txtMaKhachHang.Text = customer.CustomerId;
                 txtTenKhachHang.Text = customer.CustomerName;
                 float TotalDiscount = 0;
                 foreach (Discount discount in DiscountBLL.Instance.GetListDiscountWithType(customer.TypeCustomer))
@@ -288,6 +295,17 @@ namespace GiaoDienPBL3.UC
                 frmMessageBox.Instance.ShowFrmMessageBox(frmMessageBox.StatusResult.Error, "Lỗi");
                 return;
             }
+        }
+
+        private void msLamMoiMenu_Click(object sender, EventArgs e)
+        {
+            foreach (UC_MonAn item in listProductOnPanel)
+            {
+                panelMonAn.Controls.Remove(item);
+                item.Dispose();
+            }
+            listProductOnPanel.Clear();
+            SetFullMonAn();
         }
     }
 }
