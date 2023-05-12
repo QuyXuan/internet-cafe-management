@@ -22,23 +22,26 @@ namespace GiaoDienPBL3.User_Controls
         public bool checkBtnXacNhan = false;
         private string AccountId;
         private string ComputerId;
+        private bool Role;
         private List<BillDiscount> listBillDiscount;
         List<UC_ChiTietMonAn> listUCThongTinHangHoa;
         public delegate void UpdateBalance(double Balance);
         public UpdateBalance updateBalance { get; set; }
         //kiểm tra đây là form admin hay là client, false là admin
         //private bool checkFormAdminOrClient = false;
-        public UC_MenuClient(string accountId = null, string computerId = null)
+        public UC_MenuClient(bool role,string accountId = null, string computerId = null)
         {
             InitializeComponent();
             listUCThongTinHangHoa = new List<UC_ChiTietMonAn>();
             AccountId = accountId;
             ComputerId = computerId;
+            Role = role;
         }
         private void UC_QuanLyMenu_Load(object sender, EventArgs e)
         {
             SetFullMonAn();
-            SetFullInfo();
+            if(Role) SetFullInfo();
+            else btnYeuCau.Enabled = false;
         }
         private void SetFullInfo()
         {
