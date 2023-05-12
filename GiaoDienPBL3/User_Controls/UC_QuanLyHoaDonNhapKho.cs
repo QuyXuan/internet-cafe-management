@@ -45,7 +45,7 @@ namespace GiaoDienPBL3.User_Controls
                 my_UCChiTietMonAn.TextTenMonAn = cboTenHangHoa.Text;
                 my_UCChiTietMonAn.TextSoLuongMonAn = txtSoLuong.Text;
                 my_UCChiTietMonAn.Size = new Size(300, 56);
-                
+                my_UCChiTietMonAn.Tag = "Kho";
                 AddOrUpdateThongTinHangHoa(my_UCChiTietMonAn);
                 //panelHoaDon.Controls.Add(my_UCChiTietMonAn);
                 //panelHoaDon.Controls.SetChildIndex(my_UCChiTietMonAn, 1);
@@ -260,7 +260,7 @@ namespace GiaoDienPBL3.User_Controls
                 txtMaHangHoa.ReadOnly = true;
                 txtGiaGoc.ReadOnly = false;
                 txtMaHangHoa.Text = ProductBLL.Instance.GetRandomProductId();
-                //cboTenHangHoa.Items.Clear();
+                cboTenHangHoa.DataSource = null;
             }
         }
         private void SetEnableTextBoxAndCombobox2(bool status)
@@ -273,7 +273,11 @@ namespace GiaoDienPBL3.User_Controls
         }
         private void btnThemChiTietHangNhap_Click(object sender, EventArgs e)
         {
-            if (listUCThongTinHangHoa.Count == 0) return;
+            if (listUCThongTinHangHoa.Count == 0)
+            {
+                frmMessageBox.Instance.ShowFrmMessageBox(frmMessageBox.StatusResult.Warning, "Không Có Hàng Hóa Để Thêm");
+                return;
+            }
             //List<KeyValuePair<Product, float?>> listProduct = new List<KeyValuePair<Product, float?>>();
             foreach (Control control in listUCThongTinHangHoa)
             {

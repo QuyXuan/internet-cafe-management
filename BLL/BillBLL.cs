@@ -59,7 +59,7 @@ namespace BLL
                 if (context == null) return null;
                 if (status == null)
                 {
-                    var lstBill = context.Bills.OrderBy(p => p.BillId).Skip(start).Take(end).ToList();
+                    var lstBill = context.Bills.OrderByDescending(p => p.Date).Skip(start).Take(end).ToList();
                     return lstBill;
                 }
                 var bills = context.Bills.Where(p => p.Status == status).OrderBy(p => p.BillId).Skip(start).Take(end).ToList();

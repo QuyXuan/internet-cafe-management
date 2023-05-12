@@ -399,7 +399,8 @@
                 new Computer {ComputerId = "mt0027", ComputerName = "27", TypeId = "type0001", Status = "Đã Tắt"},
                 new Computer {ComputerId = "mt0028", ComputerName = "28", TypeId = "type0002", Status = "Đã Tắt"},
                 new Computer {ComputerId = "mt0029", ComputerName = "29", TypeId = "type0003", Status = "Đã Tắt"},
-                new Computer {ComputerId = "mt0030", ComputerName = "30", TypeId = "type0004", Status = "Đã Tắt"}
+                new Computer {ComputerId = "mt0030", ComputerName = "30", TypeId = "type0004", Status = "Đã Tắt"},
+                new Computer {ComputerId = "mt0031", ComputerName = "0", TypeId = "type0001", Status = "Đã Tắt"}
                 #endregion
             };
             computers.ForEach(p => context.Computers.AddOrUpdate(

@@ -56,16 +56,18 @@
             this.label5 = new System.Windows.Forms.Label();
             this.panelChiTietMonAn = new System.Windows.Forms.FlowLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.btnThanhToan = new Guna.UI2.WinForms.Guna2Button();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panelMonAn = new System.Windows.Forms.FlowLayoutPanel();
-            this.uC_MonAn1 = new GiaoDienPBL3.UC.UC_MonAn();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.lblTitle = new System.Windows.Forms.Label();
-            this.btnHuyYeuCau = new Guna.UI2.WinForms.Guna2Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.lblTongTien = new System.Windows.Forms.Label();
+            this.btnHuyYeuCau = new Guna.UI2.WinForms.Guna2Button();
+            this.btnThanhToan = new Guna.UI2.WinForms.Guna2Button();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panelMonAn = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lblTitle = new System.Windows.Forms.Label();
+            this.msLamMoi = new Guna.UI2.WinForms.Guna2ContextMenuStrip();
+            this.msLamMoiMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.uC_MonAn1 = new GiaoDienPBL3.UC.UC_MonAn();
             this.guna2CustomGradientPanel1.SuspendLayout();
             this.panelThongTinChiTietMonAn.SuspendLayout();
             this.panelCaiDatVaThongTin.SuspendLayout();
@@ -73,10 +75,11 @@
             this.panelXacNhanLuaChon.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panelMonAn.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.panel5.SuspendLayout();
+            this.msLamMoi.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2CustomGradientPanel1
@@ -530,92 +533,6 @@
             this.panel3.Size = new System.Drawing.Size(365, 112);
             this.panel3.TabIndex = 11;
             // 
-            // btnThanhToan
-            // 
-            this.btnThanhToan.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnThanhToan.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnThanhToan.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnThanhToan.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnThanhToan.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnThanhToan.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.btnThanhToan.Font = new System.Drawing.Font("Segoe UI", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThanhToan.ForeColor = System.Drawing.Color.White;
-            this.btnThanhToan.Location = new System.Drawing.Point(0, 77);
-            this.btnThanhToan.Name = "btnThanhToan";
-            this.btnThanhToan.Size = new System.Drawing.Size(365, 35);
-            this.btnThanhToan.TabIndex = 1;
-            this.btnThanhToan.Text = "Thanh Toán";
-            this.btnThanhToan.Click += new System.EventHandler(this.btnThanhToan_Click);
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.Transparent;
-            this.panel4.Controls.Add(this.panelMonAn);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel4.Location = new System.Drawing.Point(0, 68);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(884, 658);
-            this.panel4.TabIndex = 0;
-            // 
-            // panelMonAn
-            // 
-            this.panelMonAn.Controls.Add(this.uC_MonAn1);
-            this.panelMonAn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelMonAn.Location = new System.Drawing.Point(0, 0);
-            this.panelMonAn.Name = "panelMonAn";
-            this.panelMonAn.Size = new System.Drawing.Size(884, 658);
-            this.panelMonAn.TabIndex = 0;
-            // 
-            // uC_MonAn1
-            // 
-            this.uC_MonAn1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.uC_MonAn1.ImagePanel = global::GiaoDienPBL3.Properties.Resources.icons8_credit_card_100;
-            this.uC_MonAn1.Location = new System.Drawing.Point(3, 3);
-            this.uC_MonAn1.Name = "uC_MonAn1";
-            this.uC_MonAn1.Size = new System.Drawing.Size(164, 158);
-            this.uC_MonAn1.TabIndex = 0;
-            this.uC_MonAn1.Tag = "Manager";
-            this.uC_MonAn1.TextGiaMonAn = "Nạp Tiền";
-            this.uC_MonAn1.TextTenMonAn = "Nạp Tiền";
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Controls.Add(this.lblTitle);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1249, 68);
-            this.panel1.TabIndex = 0;
-            // 
-            // lblTitle
-            // 
-            this.lblTitle.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.lblTitle.Location = new System.Drawing.Point(0, 0);
-            this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(1249, 68);
-            this.lblTitle.TabIndex = 0;
-            this.lblTitle.Text = "Quản Lý Menu Món Ăn/Nước Uống";
-            this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // btnHuyYeuCau
-            // 
-            this.btnHuyYeuCau.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnHuyYeuCau.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnHuyYeuCau.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnHuyYeuCau.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnHuyYeuCau.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnHuyYeuCau.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btnHuyYeuCau.Font = new System.Drawing.Font("Segoe UI", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHuyYeuCau.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnHuyYeuCau.Location = new System.Drawing.Point(0, 42);
-            this.btnHuyYeuCau.Name = "btnHuyYeuCau";
-            this.btnHuyYeuCau.Size = new System.Drawing.Size(365, 35);
-            this.btnHuyYeuCau.TabIndex = 9;
-            this.btnHuyYeuCau.Text = "Huỷ Yêu Cầu";
-            // 
             // panel5
             // 
             this.panel5.Controls.Add(this.label2);
@@ -652,6 +569,120 @@
             this.lblTongTien.Text = "0.000VNĐ";
             this.lblTongTien.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // btnHuyYeuCau
+            // 
+            this.btnHuyYeuCau.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnHuyYeuCau.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnHuyYeuCau.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnHuyYeuCau.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnHuyYeuCau.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnHuyYeuCau.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnHuyYeuCau.Font = new System.Drawing.Font("Segoe UI", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHuyYeuCau.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnHuyYeuCau.Location = new System.Drawing.Point(0, 42);
+            this.btnHuyYeuCau.Name = "btnHuyYeuCau";
+            this.btnHuyYeuCau.Size = new System.Drawing.Size(365, 35);
+            this.btnHuyYeuCau.TabIndex = 9;
+            this.btnHuyYeuCau.Text = "Huỷ Yêu Cầu";
+            // 
+            // btnThanhToan
+            // 
+            this.btnThanhToan.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnThanhToan.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnThanhToan.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnThanhToan.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnThanhToan.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnThanhToan.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.btnThanhToan.Font = new System.Drawing.Font("Segoe UI", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThanhToan.ForeColor = System.Drawing.Color.White;
+            this.btnThanhToan.Location = new System.Drawing.Point(0, 77);
+            this.btnThanhToan.Name = "btnThanhToan";
+            this.btnThanhToan.Size = new System.Drawing.Size(365, 35);
+            this.btnThanhToan.TabIndex = 1;
+            this.btnThanhToan.Text = "Thanh Toán";
+            this.btnThanhToan.Click += new System.EventHandler(this.btnThanhToan_Click);
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.Transparent;
+            this.panel4.Controls.Add(this.panelMonAn);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel4.Location = new System.Drawing.Point(0, 68);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(884, 658);
+            this.panel4.TabIndex = 0;
+            // 
+            // panelMonAn
+            // 
+            this.panelMonAn.ContextMenuStrip = this.msLamMoi;
+            this.panelMonAn.Controls.Add(this.uC_MonAn1);
+            this.panelMonAn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelMonAn.Location = new System.Drawing.Point(0, 0);
+            this.panelMonAn.Name = "panelMonAn";
+            this.panelMonAn.Size = new System.Drawing.Size(884, 658);
+            this.panelMonAn.TabIndex = 0;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.lblTitle);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1249, 68);
+            this.panel1.TabIndex = 0;
+            // 
+            // lblTitle
+            // 
+            this.lblTitle.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.lblTitle.Location = new System.Drawing.Point(0, 0);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(1249, 68);
+            this.lblTitle.TabIndex = 0;
+            this.lblTitle.Text = "Quản Lý Menu Món Ăn/Nước Uống";
+            this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // msLamMoi
+            // 
+            this.msLamMoi.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.msLamMoi.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.msLamMoiMenu});
+            this.msLamMoi.Name = "msLamMoi";
+            this.msLamMoi.RenderStyle.ArrowColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.msLamMoi.RenderStyle.BorderColor = System.Drawing.Color.Gainsboro;
+            this.msLamMoi.RenderStyle.ColorTable = null;
+            this.msLamMoi.RenderStyle.RoundedEdges = true;
+            this.msLamMoi.RenderStyle.SelectionArrowColor = System.Drawing.Color.White;
+            this.msLamMoi.RenderStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.msLamMoi.RenderStyle.SelectionForeColor = System.Drawing.Color.White;
+            this.msLamMoi.RenderStyle.SeparatorColor = System.Drawing.Color.Gainsboro;
+            this.msLamMoi.RenderStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            this.msLamMoi.Size = new System.Drawing.Size(201, 32);
+            // 
+            // msLamMoiMenu
+            // 
+            this.msLamMoiMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.msLamMoiMenu.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.msLamMoiMenu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.msLamMoiMenu.Name = "msLamMoiMenu";
+            this.msLamMoiMenu.Size = new System.Drawing.Size(200, 28);
+            this.msLamMoiMenu.Text = "Làm Mới Menu";
+            this.msLamMoiMenu.Click += new System.EventHandler(this.msLamMoiMenu_Click);
+            // 
+            // uC_MonAn1
+            // 
+            this.uC_MonAn1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.uC_MonAn1.ImagePanel = global::GiaoDienPBL3.Properties.Resources.icons8_credit_card_100;
+            this.uC_MonAn1.Location = new System.Drawing.Point(3, 3);
+            this.uC_MonAn1.Name = "uC_MonAn1";
+            this.uC_MonAn1.Size = new System.Drawing.Size(164, 158);
+            this.uC_MonAn1.TabIndex = 0;
+            this.uC_MonAn1.Tag = "Manager";
+            this.uC_MonAn1.TextGiaMonAn = "Nạp Tiền";
+            this.uC_MonAn1.TextTenMonAn = "Nạp Tiền";
+            // 
             // UC_QuanLyMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -668,11 +699,12 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panelMonAn.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
+            this.msLamMoi.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -717,5 +749,7 @@
         private System.Windows.Forms.Label label2;
         public System.Windows.Forms.Label lblTongTien;
         public Guna.UI2.WinForms.Guna2Button btnHuyYeuCau;
+        private Guna.UI2.WinForms.Guna2ContextMenuStrip msLamMoi;
+        private System.Windows.Forms.ToolStripMenuItem msLamMoiMenu;
     }
 }
