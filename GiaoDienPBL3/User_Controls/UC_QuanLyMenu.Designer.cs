@@ -638,7 +638,7 @@
             this.msLamMoi.RenderStyle.SelectionForeColor = System.Drawing.Color.White;
             this.msLamMoi.RenderStyle.SeparatorColor = System.Drawing.Color.Gainsboro;
             this.msLamMoi.RenderStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
-            this.msLamMoi.Size = new System.Drawing.Size(201, 32);
+            this.msLamMoi.Size = new System.Drawing.Size(211, 60);
             // 
             // msLamMoiMenu
             // 
@@ -646,7 +646,7 @@
             this.msLamMoiMenu.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.msLamMoiMenu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.msLamMoiMenu.Name = "msLamMoiMenu";
-            this.msLamMoiMenu.Size = new System.Drawing.Size(200, 28);
+            this.msLamMoiMenu.Size = new System.Drawing.Size(210, 28);
             this.msLamMoiMenu.Text = "Làm Mới Menu";
             this.msLamMoiMenu.Click += new System.EventHandler(this.msLamMoiMenu_Click);
             // 

@@ -19,6 +19,7 @@ namespace GiaoDienPBL3
 {
     public partial class frmMain : Form
     {
+        private string Role;
         public static string AccountId;
         public static UC_TrangChu myUC_TrangChu = new UC_TrangChu();
         public static UC_QuanLyMenu myUC_QuanLyMenu;
@@ -33,10 +34,11 @@ namespace GiaoDienPBL3
         public static UC_CaiDatChung myUC_CaiDatChung = new UC_CaiDatChung();
         public static UC_MenuClient myUC_MenuClient;
 
-        public frmMain(string accountId = null)
+        public frmMain(string accountId = null, string role = null)
         {
             InitializeComponent();
             AccountId = accountId;
+            Role = role;
             if (AccountId != null)
             {
                 string employeeId = EmployeeBLL.Instance.GetEmployeeIdByAccountId(AccountId);
@@ -47,6 +49,14 @@ namespace GiaoDienPBL3
             {
                 myUC_QuanLyMenu = new UC_QuanLyMenu();
                 myUC_QuanLyHoaDon = new UC_QuanLyHoaDon();
+            }
+            if (Role == "Nhân Viên")
+            {
+                btnCaiDat.Enabled = false;
+                btnQuanLyKho.Enabled = false;
+                btnQuanLyNhanVien.Enabled = false;
+                btnQuanLyDoanhThu.Enabled = false;
+                myUC_QuanLyMay.btnCaiDat.Enabled = false;
             }
         }
 

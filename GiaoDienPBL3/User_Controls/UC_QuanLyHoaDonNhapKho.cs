@@ -57,6 +57,10 @@ namespace GiaoDienPBL3.User_Controls
                     int GiamGia = Convert.ToInt32(txtGiamGia.Text/*.Substring(0, txtGiamGia.Text.Length - 1)*/);
                     lblTongTien.Text = string.Format("{0:N3}VNĐ", Math.Ceiling(TotalMoney / 100 * (100 - GiamGia)));
                 }
+                else
+                {
+                    lblTongTien.Text = string.Format("{0:N3}VNĐ", Math.Ceiling(TotalMoney));
+                }
                 //HangHoa hangHoa = new HangHoa(txtMaHangHoa.Text, cboTenHangHoa.Text, Convert.ToInt32(txtSoLuong.Text), cboLoai.Text, my_UCChiTietMonAn.TextGiaMonAn);
                 if (btnThemHangMoi.Checked == true)
                 {

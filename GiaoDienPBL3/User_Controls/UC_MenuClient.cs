@@ -25,6 +25,7 @@ namespace GiaoDienPBL3.User_Controls
         private bool Role;
         private List<BillDiscount> listBillDiscount;
         List<UC_ChiTietMonAn> listUCThongTinHangHoa;
+        private List<UC_MonAn> listProductOnPanel = new List<UC_MonAn>();
         public static double TotalMoney = 0;
         public delegate void UpdateBalance(double Balance);
         public UpdateBalance updateBalance { get; set; }
@@ -81,14 +82,15 @@ namespace GiaoDienPBL3.User_Controls
             my_UCMonAn.TextTenMonAn = product.ProductName;
             my_UCMonAn.ImagePanel = ByteArrayToImage(product.ProductImage);
             my_UCMonAn.Tag = "Client," + product.ProductId;
-            my_UCMonAn.picMonAn.ContextMenuStrip = null;
             if (product.Status == false)
             {
                 my_UCMonAn.picMonAn.ContextMenuStrip.Items["msDaHetMon"].PerformClick();
             }
+            my_UCMonAn.picMonAn.ContextMenuStrip = null;
             //my_UCMonAn.Tag = product;
             /*frmMain.myUC_QuanLyMenu.*/
             panelMonAn.Controls.Add(my_UCMonAn);
+            listProductOnPanel.Add(my_UCMonAn);
         }
         //private Image GetAnhByPathAnhMon(string nameImg)
         //{
@@ -251,6 +253,17 @@ namespace GiaoDienPBL3.User_Controls
             TotalMoney = 0;
             lblTongTien.Text = "0.000VNĐ";
             listUCThongTinHangHoa.Clear();
+        }
+
+        private void msLamMoiMenu_Click(object sender, EventArgs e)
+        {
+            foreach (UC_MonAn item in listProductOnPanel)
+            {
+                panelMonAn.Controls.Remove(item);
+                item.Dispose();
+            }
+            listProductOnPanel.Clear();
+            SetFullMonAn();
         }
     }
 }

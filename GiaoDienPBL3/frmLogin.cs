@@ -65,7 +65,7 @@ namespace LoginPage
                     if (TenVaVaiTro != null)
                     {
                         this.Hide();
-                        frmMain Main = new frmMain(AccountId);
+                        frmMain Main = new frmMain(AccountId, TenVaVaiTro.Value.Value);
                         Main.ShowDialog();
                     }
                 }

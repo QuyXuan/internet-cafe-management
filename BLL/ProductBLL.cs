@@ -136,7 +136,7 @@ namespace BLL
                 return productId;
             }
         }
-        public void UpdateProductWithPriceAndPath(string productId, byte[] imageFilePath, float sellingPrice = 0)
+        public void UpdateProductWithPriceAndPath(string productId, byte[] imageFilePath, float sellingPrice = -1)
         {
             using (var context = new QLNETDBContext())
             {
@@ -149,8 +149,15 @@ namespace BLL
                 }
                 else
                 {
-                    product.SellingPrice = sellingPrice;
-                    product.ProductImage = imageFilePath;
+                    if (sellingPrice == -1)
+                    {
+                        product.ProductImage = imageFilePath;
+                    }
+                    else
+                    {
+                        product.SellingPrice = sellingPrice;
+                        product.ProductImage = imageFilePath;
+                    }
                 }
                 context.SaveChanges();
             }

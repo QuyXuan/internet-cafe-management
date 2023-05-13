@@ -57,6 +57,8 @@ namespace GiaoDienPBL3.User_Controls
             this.panelMonAn = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.msLamMoi = new Guna.UI2.WinForms.Guna2ContextMenuStrip();
+            this.msLamMoiMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.guna2CustomGradientPanel1.SuspendLayout();
             this.panelThongTinChiTietMonAn.SuspendLayout();
             this.panelCaiDatVaThongTin.SuspendLayout();
@@ -66,6 +68,7 @@ namespace GiaoDienPBL3.User_Controls
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.msLamMoi.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2CustomGradientPanel1
@@ -434,6 +437,7 @@ namespace GiaoDienPBL3.User_Controls
             // 
             // panelMonAn
             // 
+            this.panelMonAn.ContextMenuStrip = this.msLamMoi;
             this.panelMonAn.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMonAn.Location = new System.Drawing.Point(0, 0);
             this.panelMonAn.Name = "panelMonAn";
@@ -462,6 +466,32 @@ namespace GiaoDienPBL3.User_Controls
             this.label1.Text = "Quản Lý Menu Món Ăn/Nước Uống";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // msLamMoi
+            // 
+            this.msLamMoi.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.msLamMoi.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.msLamMoiMenu});
+            this.msLamMoi.Name = "msLamMoi";
+            this.msLamMoi.RenderStyle.ArrowColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.msLamMoi.RenderStyle.BorderColor = System.Drawing.Color.Gainsboro;
+            this.msLamMoi.RenderStyle.ColorTable = null;
+            this.msLamMoi.RenderStyle.RoundedEdges = true;
+            this.msLamMoi.RenderStyle.SelectionArrowColor = System.Drawing.Color.White;
+            this.msLamMoi.RenderStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.msLamMoi.RenderStyle.SelectionForeColor = System.Drawing.Color.White;
+            this.msLamMoi.RenderStyle.SeparatorColor = System.Drawing.Color.Gainsboro;
+            this.msLamMoi.RenderStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            this.msLamMoi.Size = new System.Drawing.Size(184, 28);
+            // 
+            // msLamMoiMenu
+            // 
+            this.msLamMoiMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.msLamMoiMenu.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.msLamMoiMenu.Name = "msLamMoiMenu";
+            this.msLamMoiMenu.Size = new System.Drawing.Size(210, 24);
+            this.msLamMoiMenu.Text = "Làm Mới Menu";
+            this.msLamMoiMenu.Click += new System.EventHandler(this.msLamMoiMenu_Click);
+            // 
             // UC_MenuClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -481,6 +511,7 @@ namespace GiaoDienPBL3.User_Controls
             this.panel5.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            this.msLamMoi.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -514,5 +545,7 @@ namespace GiaoDienPBL3.User_Controls
         public Guna.UI2.WinForms.Guna2DateTimePicker dtpNgayNhan;
         public Guna.UI2.WinForms.Guna2Button btnYeuCau;
         private System.Windows.Forms.Panel panel2;
+        private Guna.UI2.WinForms.Guna2ContextMenuStrip msLamMoi;
+        private System.Windows.Forms.ToolStripMenuItem msLamMoiMenu;
     }
 }
