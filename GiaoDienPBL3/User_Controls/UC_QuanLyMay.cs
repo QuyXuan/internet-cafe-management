@@ -22,7 +22,7 @@ namespace GiaoDienPBL3.UC
         private bool checkBtnCaiDat = false;
         public Guna2Button lastButtonComputer = null;
         //private Dictionary<string, Color> COLOR;
-        private int CountOnline = 0;
+        public List<Panel> listComputerOnPanel = new List<Panel>();
         public UC_QuanLyMay()
         {
             InitializeComponent();
@@ -84,10 +84,10 @@ namespace GiaoDienPBL3.UC
             {
                 button.FillColor = Color.Pink;
                 button.ForeColor = Color.Black;
-                CountOnline++;
             }
             button.Tag = computer;
             panelTemp.Controls.Add(button);
+            listComputerOnPanel.Add(panelTemp);
             frmMain.myUC_QuanLyMay.panelQuanLyMay.Controls.Add(panelTemp);
             button.MouseEnter += new EventHandler(button_MouseEnter);
             button.MouseLeave += new EventHandler(button_MouseLeave);
@@ -169,13 +169,28 @@ namespace GiaoDienPBL3.UC
         }
         private void UC_QuanLyMay_Load(object sender, EventArgs e)
         {
+            AddComputerOnPanel();
+        }
+        private void AddComputerOnPanel()
+        {
             List<Computer> listComputer = ComputerBLL.Instance.GetListComputer();
             foreach (Computer computer in listComputer)
             {
                 if (computer.ComputerId == "mt0031") continue;
                 AddComputerOnPanel(computer);
             }
-            lblCountOnline.Text = CountOnline + "/" + listComputer.Count();
+            int Online = ComputerBLL.Instance.GetComputerByStatus("Đang Hoạt Động").Count();
+            int All = ComputerBLL.Instance.GetListComputer().Count();
+            lblCountOnline.Text = Online + "/" + All;
+        }
+        private void msLamMoiDanhSachMay_Click(object sender, EventArgs e)
+        {
+            foreach (Panel panel in listComputerOnPanel)
+            {
+                panelQuanLyMay.Controls.Remove(panel);
+                panel.Dispose();
+            }
+            AddComputerOnPanel();
         }
     }
 }

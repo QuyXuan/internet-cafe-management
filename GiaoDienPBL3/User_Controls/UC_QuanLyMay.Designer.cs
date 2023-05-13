@@ -47,6 +47,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnCaiDat = new Guna.UI2.WinForms.Guna2Button();
             this.label32 = new System.Windows.Forms.Label();
+            this.msLamMoi = new Guna.UI2.WinForms.Guna2ContextMenuStrip();
+            this.msLamMoiDanhSachMay = new System.Windows.Forms.ToolStripMenuItem();
             this.guna2CustomGradientPanel1.SuspendLayout();
             this.panelPhu.SuspendLayout();
             this.panelThongTin.SuspendLayout();
@@ -55,6 +57,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
+            this.msLamMoi.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2CustomGradientPanel1
@@ -84,6 +87,7 @@
             // 
             // panelQuanLyMay
             // 
+            this.panelQuanLyMay.ContextMenuStrip = this.msLamMoi;
             this.panelQuanLyMay.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelQuanLyMay.Location = new System.Drawing.Point(0, 0);
             this.panelQuanLyMay.Name = "panelQuanLyMay";
@@ -284,6 +288,32 @@
             this.label32.Text = "Quản Lý Máy";
             this.label32.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // msLamMoi
+            // 
+            this.msLamMoi.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.msLamMoi.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.msLamMoiDanhSachMay});
+            this.msLamMoi.Name = "msLamMoi";
+            this.msLamMoi.RenderStyle.ArrowColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.msLamMoi.RenderStyle.BorderColor = System.Drawing.Color.Gainsboro;
+            this.msLamMoi.RenderStyle.ColorTable = null;
+            this.msLamMoi.RenderStyle.RoundedEdges = true;
+            this.msLamMoi.RenderStyle.SelectionArrowColor = System.Drawing.Color.White;
+            this.msLamMoi.RenderStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.msLamMoi.RenderStyle.SelectionForeColor = System.Drawing.Color.White;
+            this.msLamMoi.RenderStyle.SeparatorColor = System.Drawing.Color.Gainsboro;
+            this.msLamMoi.RenderStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            this.msLamMoi.Size = new System.Drawing.Size(251, 28);
+            // 
+            // msLamMoiDanhSachMay
+            // 
+            this.msLamMoiDanhSachMay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.msLamMoiDanhSachMay.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.msLamMoiDanhSachMay.Name = "msLamMoiDanhSachMay";
+            this.msLamMoiDanhSachMay.Size = new System.Drawing.Size(250, 24);
+            this.msLamMoiDanhSachMay.Text = "Làm Mới Danh Sách Máy";
+            this.msLamMoiDanhSachMay.Click += new System.EventHandler(this.msLamMoiDanhSachMay_Click);
+            // 
             // UC_QuanLyMay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -301,6 +331,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
+            this.msLamMoi.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -326,5 +357,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         public System.Windows.Forms.Label lblCountOnline;
+        private Guna.UI2.WinForms.Guna2ContextMenuStrip msLamMoi;
+        private System.Windows.Forms.ToolStripMenuItem msLamMoiDanhSachMay;
     }
 }

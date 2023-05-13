@@ -97,7 +97,9 @@ namespace GiaoDienPBL3.UC
 
         private void picMonAn_Click(object sender, EventArgs e)
         {
-            string Role = ((sender as PictureBox).Parent.Parent as UserControl).Tag.ToString().Split(',')[0];
+            string[] RoleAndProductId = ((sender as PictureBox).Parent.Parent as UserControl).Tag.ToString().Split(',');
+            string Role = RoleAndProductId[0];
+            string ProductId = RoleAndProductId[1];
             if (Role == "Manager" && CheckUCMenuFromUcHoaDon())
             {
                 frmMessageBox.Instance.ShowFrmMessageBox(frmMessageBox.StatusResult.Warning, "Bạn Không Thể Thay Đổi Món Ăn Trong Hóa Đơn Này");
@@ -107,6 +109,16 @@ namespace GiaoDienPBL3.UC
             if (Role == "Manager" && UC_QuanLyMenu.my_UCThongTinVaCaiDatMonAn.txtMaMonAn.Text != "")
             {
                 frmMessageBox.Instance.ShowFrmMessageBox(frmMessageBox.StatusResult.Warning, "Bạn Không Thể Chọn Món Ăn Trong Lúc Chỉnh Sửa");
+                return;
+            }
+            if (!ProductBLL.Instance.CheckStockProduct(ProductId, 1) && ProductId != "sp0012")
+            {
+                frmMessageBox.Instance.ShowFrmMessageBox(frmMessageBox.StatusResult.Warning, "Số Lượng Món Ăn Không Đủ Để Phục Vụ");
+                return;
+            }
+            if (Role == "Manager" && frmMain.myUC_QuanLyMenu.cboTenTaiKhoan.SelectedIndex == -1)
+            {
+                frmMessageBox.Instance.ShowFrmMessageBox(frmMessageBox.StatusResult.Warning, "Bạn Phải Chọn Khách Hàng Trước Khi Chọn Món");
                 return;
             }
             if (lblGiaMonAn.Text == lblTenMonAn.Text)

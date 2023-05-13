@@ -49,7 +49,7 @@ namespace GiaoDienPBL3.User_Controls
             {
                 dgvTatCaHoaDon.Rows.Add(new object[]
                 {
-                    bill.BillId, bill.EmployeeId, bill.CustomerId, ComputerBLL.Instance.GetComputerByID(bill.ComputerId).ComputerName, bill.Date, bill.Status, bill.TotalDiscountPercent + "%", string.Format("{0:N3}VNĐ", bill.Total)
+                    bill.BillId, bill.EmployeeId, bill.CustomerId, ComputerBLL.Instance.GetComputerByID(bill.ComputerId).ComputerName, bill.Date, bill.Status, bill.TotalDiscountPercent + " %", string.Format("{0:N3}VNĐ", bill.Total)
                 });
             }
             lblTrang1.Text = "Trang : " + (CurrentPageTatCaHoaDon + 1) + " / " + (BillBLL.Instance.GetListBillWithStatus().Count() / PAGE_SIZE + 1);
@@ -58,7 +58,7 @@ namespace GiaoDienPBL3.User_Controls
             {
                 dgvDaXacNhan.Rows.Add(new object[]
                 {
-                    bill.BillId, bill.EmployeeId, bill.CustomerId, ComputerBLL.Instance.GetComputerByID(bill.ComputerId).ComputerName, bill.Date, bill.Status, bill.TotalDiscountPercent + "%", string.Format("{0:N3}VNĐ", bill.Total)
+                    bill.BillId, bill.EmployeeId, bill.CustomerId, ComputerBLL.Instance.GetComputerByID(bill.ComputerId).ComputerName, bill.Date, bill.Status, bill.TotalDiscountPercent + " %", string.Format("{0:N3}VNĐ", bill.Total)
                 });
             }
             lblTrang2.Text = "Trang : " + (CurrentPageHoaDonChapNhan + 1) + " / " + (BillBLL.Instance.GetListBillWithStatus("Chấp Nhận").Count() / PAGE_SIZE + 1);
@@ -67,7 +67,7 @@ namespace GiaoDienPBL3.User_Controls
             {
                 dgvChoXacNhan.Rows.Add(new object[]
                 {
-                    bill.BillId, bill.EmployeeId, bill.CustomerId, ComputerBLL.Instance.GetComputerByID(bill.ComputerId).ComputerName, bill.Date, bill.Status, bill.TotalDiscountPercent + "%", string.Format("{0:N3}VNĐ", bill.Total)
+                    bill.BillId, bill.EmployeeId, bill.CustomerId, ComputerBLL.Instance.GetComputerByID(bill.ComputerId).ComputerName, bill.Date, bill.Status, bill.TotalDiscountPercent + " %", string.Format("{0:N3}VNĐ", bill.Total)
                 });
             }
             lblTrang3.Text = "Trang : " + (CurrentPageHoaDonChoChapNhan + 1) + " / " + (BillBLL.Instance.GetListBillWithStatus("Chờ Chấp Nhận").Count() / PAGE_SIZE + 1);
