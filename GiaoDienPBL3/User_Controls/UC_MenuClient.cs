@@ -80,7 +80,7 @@ namespace GiaoDienPBL3.User_Controls
             my_UCMonAn.TextGiaMonAn = string.Format("{0:N3}VNĐ", product.SellingPrice);
             my_UCMonAn.TextTenMonAn = product.ProductName;
             my_UCMonAn.ImagePanel = ByteArrayToImage(product.ProductImage);
-            my_UCMonAn.Tag = "Client,0";
+            my_UCMonAn.Tag = "Client," + product.ProductId;
             my_UCMonAn.picMonAn.ContextMenuStrip = null;
             if (product.Status == false)
             {
@@ -239,8 +239,6 @@ namespace GiaoDienPBL3.User_Controls
         private void ResetUCQuanLyMenu()
         {
             txtMaHoaDon.Text = BillBLL.Instance.GetRandomBillId();
-            lblTongTien.Text = "0.000VNĐ";
-            TotalMoney = 0;
             foreach (Control control in panelChiTietMonAn.Controls)
             {
                 UC_ChiTietMonAn myUC_ChiTietMonAn = control as UC_ChiTietMonAn;
@@ -250,6 +248,8 @@ namespace GiaoDienPBL3.User_Controls
             {
                 control.btnXoaMon.PerformClick();
             }
+            TotalMoney = 0;
+            lblTongTien.Text = "0.000VNĐ";
             listUCThongTinHangHoa.Clear();
         }
     }

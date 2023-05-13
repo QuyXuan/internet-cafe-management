@@ -37,5 +37,9 @@ namespace DTO
         [StringLength(100)]
         [Column(TypeName = "varchar")]
         public string IPComputer { get; set; }
+
+        [StringLength(10)]
+        [Column(TypeName = "varchar")]
+        public string AccountId { get; set; }
     }
 }
