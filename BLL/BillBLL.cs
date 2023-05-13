@@ -42,6 +42,23 @@ namespace BLL
                 return bills;
             }
         }
+        public List<Bill> GetListBillWithStatusAndCustomerId(string customerId, string status = null)
+        {
+            using (var context = new QLNETDBContext())
+            {
+                if (context == null)
+                {
+                    return null;
+                }
+                if (status == null)
+                {
+                    var lstBill = context.Bills.Where(p => p.CustomerId == customerId).ToList();
+                    return lstBill;
+                }
+                var bills = context.Bills.Where(p => p.CustomerId == customerId && p.Status == status).ToList();
+                return bills;
+            }
+        }
         public Bill GetBillByBillId(string BillId)
         {
             using (var context = new QLNETDBContext())
@@ -62,7 +79,21 @@ namespace BLL
                     var lstBill = context.Bills.OrderByDescending(p => p.Date).Skip(start).Take(end).ToList();
                     return lstBill;
                 }
-                var bills = context.Bills.Where(p => p.Status == status).OrderBy(p => p.BillId).Skip(start).Take(end).ToList();
+                var bills = context.Bills.Where(p => p.Status == status).OrderByDescending(p => p.Date).Skip(start).Take(end).ToList();
+                return bills;
+            }
+        }
+        public List<Bill> GetListBillWithStatusCustomerIdAndStartEnd(string customerId, int start, int end, string status = null)
+        {
+            using (var context = new QLNETDBContext())
+            {
+                if (context == null) return null;
+                if (status == null)
+                {
+                    var lstBill = context.Bills.Where(p => p.CustomerId == customerId).OrderByDescending(p => p.Date).Skip(start).Take(end).ToList();
+                    return lstBill;
+                }
+                var bills = context.Bills.Where(p => p.CustomerId == customerId && p.Status == status).OrderByDescending(p => p.BillId).Skip(start).Take(end).ToList();
                 return bills;
             }
         }

@@ -24,6 +24,7 @@ namespace GiaoDienPBL3.User_Controls
         private List<KeyValuePair<Product, float?>> newProducts = new List<KeyValuePair<Product, float?>>();
         private List<KeyValuePair<string, float?>> productsKVP = new List<KeyValuePair<string, float?>>();
         private bool checkFirstAdd = false;
+        public static double TotalMoney = 0;
         public UC_QuanLyHoaDonNhapKho()
         {
             InitializeComponent();
@@ -46,11 +47,16 @@ namespace GiaoDienPBL3.User_Controls
                 my_UCChiTietMonAn.TextSoLuongMonAn = txtSoLuong.Text;
                 my_UCChiTietMonAn.Size = new Size(300, 56);
                 my_UCChiTietMonAn.Tag = "Kho";
+                TotalMoney += ThanhTien;
                 AddOrUpdateThongTinHangHoa(my_UCChiTietMonAn);
                 //panelHoaDon.Controls.Add(my_UCChiTietMonAn);
                 //panelHoaDon.Controls.SetChildIndex(my_UCChiTietMonAn, 1);
-                int TotalMoney = Convert.ToInt32(lblTongTien.Text.Substring(0, lblTongTien.Text.Length - 7).Replace(",", "")) + ThanhTien;
-                lblTongTien.Text = string.Format("{0:N3}VNĐ", TotalMoney);
+                //int TotalMoney = Convert.ToInt32(lblTongTien.Text.Substring(0, lblTongTien.Text.Length - 7).Replace(",", "")) + ThanhTien;
+                if (txtGiamGia.Text != "")
+                {
+                    int GiamGia = Convert.ToInt32(txtGiamGia.Text/*.Substring(0, txtGiamGia.Text.Length - 1)*/);
+                    lblTongTien.Text = string.Format("{0:N3}VNĐ", Math.Ceiling(TotalMoney / 100 * (100 - GiamGia)));
+                }
                 //HangHoa hangHoa = new HangHoa(txtMaHangHoa.Text, cboTenHangHoa.Text, Convert.ToInt32(txtSoLuong.Text), cboLoai.Text, my_UCChiTietMonAn.TextGiaMonAn);
                 if (btnThemHangMoi.Checked == true)
                 {
@@ -73,9 +79,10 @@ namespace GiaoDienPBL3.User_Controls
             cboTenHangHoa.SelectedIndex = -1;
             txtSoLuong.Text = "";
             txtGiaGoc.Text = "";
-            if (txtGiamGia.Text != "")
-                txtTongTien.Text = string.Format("{0:N3}VNĐ", (Math.Ceiling(((float)Convert.ToDouble(lblTongTien.Text.Substring(0, lblTongTien.Text.Length - 7).Replace(",", ""))) * (100 - (Convert.ToDouble(txtGiamGia.Text)) / 100))));
-            else txtTongTien.Text = lblTongTien.Text;
+            //if (txtGiamGia.Text != "")
+            //    txtTongTien.Text = string.Format("{0:N3}VNĐ", (Math.Ceiling(((float)Convert.ToDouble(lblTongTien.Text.Substring(0, lblTongTien.Text.Length - 7).Replace(",", ""))) * (100 - (Convert.ToDouble(txtGiamGia.Text)) / 100))));
+            //else txtTongTien.Text = lblTongTien.Text;
+            txtTongTien.Text = lblTongTien.Text;
             cboLoai.SelectedIndex = -1;
             panelChiTietHangNhap.Visible = false;
             btnThemHangCu.Checked = false;
@@ -127,7 +134,7 @@ namespace GiaoDienPBL3.User_Controls
             }
             else if (txtGiamGia.Text.Length > 2 || (int.TryParse(txtGiamGia.Text, out _) == false && txtGiamGia.Text != ""))
             {
-                frmMessageBox.Instance.ShowFrmMessageBox(frmMessageBox.StatusResult.Warning, "Giảm Giá Phải Là Một Số Nguyên");
+                frmMessageBox.Instance.ShowFrmMessageBox(frmMessageBox.StatusResult.Warning, "Giảm Giá Phải Là Một Số Nguyên Không Âm" + Environment.NewLine + "Có Ít Nhất 2 Chữ Số");
                 return false;
             }
             return true;
@@ -148,7 +155,7 @@ namespace GiaoDienPBL3.User_Controls
             dgvHoaDonNhap.SuspendLayout();
             dgvHoaDonNhap.Rows.Clear();
             dgvHoaDonNhap.ResumeLayout();
-
+            TotalMoney = 0;
         }
         private void btnThem_Click(object sender, EventArgs e)
         {

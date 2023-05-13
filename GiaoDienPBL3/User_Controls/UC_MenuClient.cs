@@ -25,6 +25,7 @@ namespace GiaoDienPBL3.User_Controls
         private bool Role;
         private List<BillDiscount> listBillDiscount;
         List<UC_ChiTietMonAn> listUCThongTinHangHoa;
+        public static double TotalMoney = 0;
         public delegate void UpdateBalance(double Balance);
         public UpdateBalance updateBalance { get; set; }
         //kiểm tra đây là form admin hay là client, false là admin
@@ -239,6 +240,7 @@ namespace GiaoDienPBL3.User_Controls
         {
             txtMaHoaDon.Text = BillBLL.Instance.GetRandomBillId();
             lblTongTien.Text = "0.000VNĐ";
+            TotalMoney = 0;
             foreach (Control control in panelChiTietMonAn.Controls)
             {
                 UC_ChiTietMonAn myUC_ChiTietMonAn = control as UC_ChiTietMonAn;

@@ -1,5 +1,6 @@
 ﻿using BLL;
 using DTO;
+using GiaoDienPBL3.User_Controls;
 using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
@@ -74,17 +75,23 @@ namespace GiaoDienPBL3.UC
         {
             if (Role == "Manager")
             {
-                int TongTien = Convert.ToInt32(frmMain.myUC_QuanLyMenu.lblTongTien.Tag);
-                TongTien += Convert.ToInt32(lblGiaMonAn.Text.Substring(0, lblGiaMonAn.Text.Length - 7));
-                frmMain.myUC_QuanLyMenu.lblTongTien.Text = string.Format("{0:N3}VNĐ", TongTien);
-                frmMain.myUC_QuanLyMenu.lblTongTien.Tag = TongTien;
+                //float TongTien = (float)Convert.ToDouble(frmMain.myUC_QuanLyMenu.lblTongTien.Tag);
+                int GiamGia = Convert.ToInt32(frmMain.myUC_QuanLyMenu.txtTongGiamGia.Text.Substring(0, frmMain.myUC_QuanLyMenu.txtTongGiamGia.Text.Length - 2));
+                int TienMonAn = Convert.ToInt32(lblGiaMonAn.Text.Substring(0, lblGiaMonAn.Text.Length - 7).Replace(",", ""));
+                //TongTien += TienMonAn;
+                UC_QuanLyMenu.TotalMoney += TienMonAn;
+                frmMain.myUC_QuanLyMenu.lblTongTien.Text = string.Format("{0:N3}VNĐ", Math.Ceiling(UC_QuanLyMenu.TotalMoney / 100 * (100 - GiamGia)));
+                frmMain.myUC_QuanLyMenu.lblTongTien.Tag = UC_QuanLyMenu.TotalMoney;
             }
             else
             {
-                int TongTien = Convert.ToInt32(frmMain.myUC_MenuClient.lblTongTien.Tag);
-                TongTien += Convert.ToInt32(lblGiaMonAn.Text.Substring(0, lblGiaMonAn.Text.Length - 7));
-                frmMain.myUC_MenuClient.lblTongTien.Text = string.Format("{0:N3}VNĐ", TongTien);
-                frmMain.myUC_MenuClient.lblTongTien.Tag = TongTien;
+                int GiamGia = Convert.ToInt32(frmMain.myUC_MenuClient.txtTongGiamGia.Text.Substring(0, frmMain.myUC_MenuClient.txtTongGiamGia.Text.Length - 2));
+                //int TongTien = Convert.ToInt32(frmMain.myUC_MenuClient.lblTongTien.Tag);
+                int TienMonAn = Convert.ToInt32(lblGiaMonAn.Text.Substring(0, lblGiaMonAn.Text.Length - 7).Replace(",", ""));
+                // TongTien += Convert.ToInt32(lblGiaMonAn.Text.Substring(0, lblGiaMonAn.Text.Length - 7));
+                UC_MenuClient.TotalMoney += TienMonAn;
+                frmMain.myUC_MenuClient.lblTongTien.Text = string.Format("{0:N3}VNĐ", Math.Ceiling(UC_MenuClient.TotalMoney / 100 * (100 - GiamGia)));
+                frmMain.myUC_MenuClient.lblTongTien.Tag = UC_MenuClient.TotalMoney;
             }
         }
 

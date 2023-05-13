@@ -337,15 +337,6 @@ namespace GiaoDienPBL3.User_Controls
             dgv.ResumeLayout();
             foreach (Bill bill in BillBLL.Instance.GetListBillWithStatusAndStartEnd(CurrentPage * PAGE_SIZE, PAGE_SIZE, status))
             {
-                //string computerId = "";
-                //if (bill.ComputerId != "")
-                //{
-                //    computerId = "";
-                //}
-                //else
-                //{
-                //    computerId = ;
-                //}
                 dgv.Rows.Add(new object[]
                 {
                         bill.BillId, bill.EmployeeId, bill.CustomerId, ComputerBLL.Instance.GetComputerByID(bill.ComputerId).ComputerName, bill.Date, bill.Status, bill.TotalDiscountPercent + "%", string.Format("{0:N3}VNĐ", bill.Total)

@@ -8,6 +8,7 @@ using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using GiaoDienPBL3.User_Controls;
 using Guna.UI2.WinForms;
 
 namespace GiaoDienPBL3.UC
@@ -67,22 +68,45 @@ namespace GiaoDienPBL3.UC
                 if (lblTenMon.Text != "Nạp Tiền")
                 {
                     lblSoLuongMon.Text = (Convert.ToInt32(lblSoLuongMon.Text) + 1).ToString();
-                    TongTien += GiaMon;
+                    //TongTien += GiaMon;
+                    if (Role == "Manager")
+                    {
+                        UC_QuanLyMenu.TotalMoney += GiaMon;
+                    }
+                    else if (Role == "Client")
+                    {
+                        UC_MenuClient.TotalMoney += GiaMon;
+                    }
                 }
             }
             else if (btn.Name == "btnXoaMon")
             {
                 if (Role == "Kho")
                 {
-                    string tien = frmMain.myUC_QuanLyHoaDonNhapKho.lblTongTien.Text;
-                    int Tien = Convert.ToInt32(tien.Substring(0, tien.Length - 7).Replace(",", ""));
-                    int tienMonAn = Convert.ToInt32(this.TextGiaMonAn.Substring(0, this.TextGiaMonAn.Length - 7).Replace(",", ""));
-                    frmMain.myUC_QuanLyHoaDonNhapKho.lblTongTien.Text = string.Format("{0:N3}VNĐ", Tien - tienMonAn);
+                    //string tien = frmMain.myUC_QuanLyHoaDonNhapKho.lblTongTien.Text;
+                    //int Tien = Convert.ToInt32(tien.Substring(0, tien.Length - 7).Replace(",", ""));
+                    //int tienMonAn = Convert.ToInt32(this.TextGiaMonAn.Substring(0, this.TextGiaMonAn.Length - 7).Replace(",", ""));
+                    int giamGia = 0;
+                    if (frmMain.myUC_QuanLyHoaDonNhapKho.txtGiamGia.Text != "")
+                    {
+                        giamGia = Convert.ToInt32(frmMain.myUC_QuanLyHoaDonNhapKho.txtGiamGia.Text);
+                    }
+                    UC_QuanLyHoaDonNhapKho.TotalMoney -= Convert.ToInt32(TextGiaMonAn.Substring(0, TextGiaMonAn.Length - 7).Replace(",", ""));
+                    frmMain.myUC_QuanLyHoaDonNhapKho.lblTongTien.Text = string.Format("{0:N3}VNĐ", Math.Ceiling(UC_QuanLyHoaDonNhapKho.TotalMoney / 100 * (100 - giamGia)));
                     frmMain.myUC_QuanLyHoaDonNhapKho.panelHoaDon.Controls.Remove(this);
                     this.Dispose();
                     return;
                 }
-                TongTien -= GiaMon * Convert.ToInt32(lblSoLuongMon.Text);
+                if (Role == "Manager")
+                {
+                    UC_QuanLyMenu.TotalMoney -= GiaMon * Convert.ToInt32(lblSoLuongMon.Text);
+
+                }
+                else if (Role == "Client")
+                {
+                    UC_MenuClient.TotalMoney -= GiaMon * Convert.ToInt32(lblSoLuongMon.Text);
+                }
+                //TongTien -= GiaMon * Convert.ToInt32(lblSoLuongMon.Text);
                 if (lblTenMon.Text == "Nạp Tiền")
                 {
                     if (Role == "Manager")
@@ -132,7 +156,15 @@ namespace GiaoDienPBL3.UC
                     {
                         frmMain.myUC_MenuClient.panelChiTietMonAn.Controls.Remove(this);
                     }
-                    TongTien -= GiaMon;
+                    if (Role == "Manager")
+                    {
+                        UC_QuanLyMenu.TotalMoney -= GiaMon;
+                    }
+                    else
+                    {
+                        UC_MenuClient.TotalMoney -= GiaMon;
+                    }
+                    //TongTien -= GiaMon;
                     UC_MonAn myUCMonAn = this.Tag as UC_MonAn;
                     myUCMonAn.panelBackGroundMonAn.BackColor = Color.Transparent;
                 }
@@ -140,17 +172,27 @@ namespace GiaoDienPBL3.UC
             else
             {
                 lblSoLuongMon.Text = (Convert.ToInt32(lblSoLuongMon.Text) - 1).ToString();
-                TongTien -= GiaMon;
+                if (Role == "Manager")
+                {
+                    UC_QuanLyMenu.TotalMoney -= GiaMon;
+                }
+                else if (Role == "Client")
+                {
+                    UC_MenuClient.TotalMoney -= GiaMon;
+                }
+                //TongTien -= GiaMon;
             }
             if (Role == "Manager")
             {
-                frmMain.myUC_QuanLyMenu.lblTongTien.Text = string.Format("{0:N3}VNĐ", TongTien);
-                frmMain.myUC_QuanLyMenu.lblTongTien.Tag = TongTien;
+                int GiamGia = Convert.ToInt32(frmMain.myUC_QuanLyMenu.txtTongGiamGia.Text.Substring(0, frmMain.myUC_QuanLyMenu.txtTongGiamGia.Text.Length - 2));
+                frmMain.myUC_QuanLyMenu.lblTongTien.Text = string.Format("{0:N3}VNĐ", Math.Ceiling(UC_QuanLyMenu.TotalMoney / 100 * (100 - GiamGia)));
+                frmMain.myUC_QuanLyMenu.lblTongTien.Tag = UC_QuanLyMenu.TotalMoney;
             }
             else
             {
-                frmMain.myUC_MenuClient.lblTongTien.Text = string.Format("{0:N3}VNĐ", TongTien);
-                frmMain.myUC_MenuClient.lblTongTien.Tag = TongTien;
+                int GiamGia = Convert.ToInt32(frmMain.myUC_MenuClient.txtTongGiamGia.Text.Substring(0, frmMain.myUC_MenuClient.txtTongGiamGia.Text.Length - 2));
+                frmMain.myUC_MenuClient.lblTongTien.Text = string.Format("{0:N3}VNĐ", Math.Ceiling(UC_MenuClient.TotalMoney / 100 * (100 - GiamGia)));
+                frmMain.myUC_MenuClient.lblTongTien.Tag = UC_MenuClient.TotalMoney;
             }
         }
     }

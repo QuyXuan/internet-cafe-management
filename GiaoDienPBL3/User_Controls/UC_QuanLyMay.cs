@@ -172,6 +172,7 @@ namespace GiaoDienPBL3.UC
             List<Computer> listComputer = ComputerBLL.Instance.GetListComputer();
             foreach (Computer computer in listComputer)
             {
+                if (computer.ComputerId == "mt0031") continue;
                 AddComputerOnPanel(computer);
             }
             lblCountOnline.Text = CountOnline + "/" + listComputer.Count();

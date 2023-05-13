@@ -31,6 +31,7 @@ namespace GUIClient
         public static UC_TrangChuKhachHang myUC_TrangChuKhachHang;
         public static UC_NapGioChoi myUC_NapGioChoi;
         public static UC_DongHo myUC_DongHo;
+        public static UC_HoaDonClient myUC_HoaDonClient;
         public static frmDongHo DongHo;
         private bool AccessMenu = false;
 
@@ -51,6 +52,14 @@ namespace GUIClient
             if (Role) customer = CustomerBLL.Instance.GetCustomerByAccountId(accountId);
             myUC_TrangChuKhachHang = new UC_TrangChuKhachHang();
             myUC_NapGioChoi = new UC_NapGioChoi();
+            if (Role)
+            {
+                myUC_HoaDonClient = new UC_HoaDonClient(customer.CustomerId);
+            }
+            else
+            {
+                btnDanhSachHoaDon.Enabled = false;
+            }
             if (Role) myUC_NapGioChoi.sendBalance += new UC_NapGioChoi.SendBalance(SetBalance);
             if (Role) frmMain.myUC_MenuClient.updateBalance += new UC_MenuClient.UpdateBalance(SetBalance);
             myUC_DongHo = new UC_DongHo(this.Handle);
@@ -190,6 +199,14 @@ namespace GUIClient
         private void btnTat_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void btnDanhSachHoaDon_Click(object sender, EventArgs e)
+        {
+            Guna2Button btn = sender as Guna2Button;
+            SetOnCheckStateButton(btn);
+            AddUserControlOnBackGround(myUC_HoaDonClient);
+            this.AccessMenu = false;
         }
     }
 }
