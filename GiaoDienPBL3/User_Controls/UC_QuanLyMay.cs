@@ -120,9 +120,11 @@ namespace GiaoDienPBL3.UC
             Panel panelTemp = (button.Parent) as Panel;
             my_UCChiTietMay.TextMaMay = computer.ComputerId;
             my_UCChiTietMay.TextSoMay = computer.ComputerName;
-            my_UCChiTietMay.TextGiaMay = string.Format("{0:N3}VNĐ", 10);
-            my_UCChiTietMay.TextLoaiMay = ComputerBLL.Instance.GetTypeComputerByTypeId(computer.TypeId).NameType;
+            TypeComputer typeComputer = ComputerBLL.Instance.GetTypeComputerByTypeId(computer.TypeId);
+            my_UCChiTietMay.TextLoaiMay = typeComputer.NameType;
+            my_UCChiTietMay.TextGiaMay = string.Format("{0:N3}VNĐ", typeComputer.Price);
             my_UCChiTietMay.TextTrangThai = computer.Status;
+            my_UCChiTietMay.TextNguoiDung = computer.AccountId;
             panelPhu.Controls.Add(my_UCChiTietMay);
             int locationX = panelTemp.Location.X + 50;
             int locationY = panelTemp.Location.Y + 50;

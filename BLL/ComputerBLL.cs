@@ -9,6 +9,7 @@ using System.Net.NetworkInformation;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace BLL
 {
@@ -217,7 +218,7 @@ namespace BLL
         }
         
         //Hàm cập nhật trạng thái máy
-        public void UpdateStatus(bool Status,string ComputerId)
+        public void UpdateStatus(bool Status,string ComputerId,string AccountID)
         {
             using (var context = new QLNETDBContext())
             {
@@ -225,10 +226,33 @@ namespace BLL
                 var Computer = context.Computers.FirstOrDefault(p => p.ComputerId == ComputerId);
                 if (context != null)
                 {
-                    if (Status) Computer.Status = "Đang Hoạt Động";
-                    else Computer.Status = "Đã Tắt";
+                    if (Status)
+                    {
+                        Computer.Status = "Đang Hoạt Động";
+                        Computer.AccountId = AccountID;
+                    }
+                    else
+                    {
+                        Computer.Status = "Đã Tắt";
+                        Computer.AccountId = null;
+                    }
                     context.SaveChanges();
                 }
+            }
+        }
+
+        // Hàm kiểm tra xem tài khoản đã đăng nhập vào máy nào chưa?
+        public bool CheckLogin(string AccountID) 
+        {
+            using (var context = new QLNETDBContext())
+            {
+                if (context == null) return false;
+                var Computer = context.Computers.FirstOrDefault(p => p.AccountId == AccountID);
+                if (context != null)
+                {
+                    if (Computer != null) return false;
+                }
+                return true;
             }
         }
     }

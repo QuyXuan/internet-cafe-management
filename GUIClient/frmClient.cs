@@ -47,7 +47,7 @@ namespace GUIClient
             {
                 frmClient.computerId = computer.ComputerId;
                 typeComputer = ComputerBLL.Instance.GetTypeComputerByTypeId(computer.TypeId);
-                ComputerBLL.Instance.UpdateStatus(true, computerId);
+                ComputerBLL.Instance.UpdateStatus(true, computerId, accountId);
             }
             frmMain.myUC_MenuClient = new UC_MenuClient(frmClient.Role,accountId,frmClient.computerId);
             if (Role) customer = CustomerBLL.Instance.GetCustomerByAccountId(accountId);
@@ -88,7 +88,7 @@ namespace GUIClient
         {
             frmLoginClient frmLoginClient = new frmLoginClient();
             if (Role) CustomerBLL.Instance.SetTotalTime(myUC_DongHo.getCurrentTime(), customer.CustomerId, typeComputer.NameType);
-            if(CheckComputer == false) ComputerBLL.Instance.UpdateStatus(false, computerId);
+            if(CheckComputer == false) ComputerBLL.Instance.UpdateStatus(false, computerId, accountId);
             frmLoginClient.Show();
             Dispose();
         }
@@ -204,6 +204,7 @@ namespace GUIClient
 
         private void btnTat_Click(object sender, EventArgs e)
         {
+            ComputerBLL.Instance.UpdateStatus(false, computerId, accountId);
             Application.Exit();
         }
 

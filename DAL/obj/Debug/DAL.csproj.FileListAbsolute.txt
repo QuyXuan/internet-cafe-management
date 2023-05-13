@@ -109,3 +109,4 @@ C:\Users\ADMIN\source\repos\pbl3lan2\DAL\obj\Debug\DAL.csproj.CopyComplete
 C:\Users\ADMIN\source\repos\pbl3lan2\DAL\obj\Debug\DAL.dll
 C:\Users\ADMIN\source\repos\pbl3lan2\DAL\obj\Debug\DAL.pdb
 C:\Users\ADMIN\source\repos\pbl3lan2\DAL\obj\Debug\DAL.Migrations.updatedb39.resources
+E:\LEARN\PBL3\PBL3myCODE\DemoPBL03_GUI\DemoPBL03_GUI\DAL\obj\Debug\DAL.Migrations.updatedb39.resources
