@@ -55,19 +55,23 @@ namespace LoginPage
 
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
-            if (AccountBLL.Instance.CheckDangNhap(txtTaiKhoan.Text, txtMatKhau.Text))
+            if (ConnectionBLL.Instance.hasInternetAccess())
             {
-                string AccountId = AccountBLL.Instance.GetAccountIdByUserName(txtTaiKhoan.Text);
-                KeyValuePair<string, string>? TenVaVaiTro = AccountBLL.Instance.GetTenVaVaiTro(AccountId);
-                //nếu null thì khách hàng
-                if (TenVaVaiTro != null)
+                if (AccountBLL.Instance.CheckDangNhap(txtTaiKhoan.Text, txtMatKhau.Text))
                 {
-                    this.Hide();
-                    frmMain Main = new frmMain(AccountId);
-                    Main.ShowDialog();
+                    string AccountId = AccountBLL.Instance.GetAccountIdByUserName(txtTaiKhoan.Text);
+                    KeyValuePair<string, string>? TenVaVaiTro = AccountBLL.Instance.GetTenVaVaiTro(AccountId);
+                    //nếu null thì khách hàng
+                    if (TenVaVaiTro != null)
+                    {
+                        this.Hide();
+                        frmMain Main = new frmMain(AccountId);
+                        Main.ShowDialog();
+                    }
                 }
+                ShowThongBao("Tên Tài Khoản Hoặc Mật Khẩu Sai" + Environment.NewLine + "VUI LÒNG NHẬP LẠI!!!");
             }
-            ShowThongBao("Tên Tài Khoản Hoặc Mật Khẩu Sai" + Environment.NewLine + "VUI LÒNG NHẬP LẠI!!!");
+            else ShowThongBao("Mất kết nối" + Environment.NewLine + "VUI LÒNG KẾT NỐI MẠNG!!!");
         }
         private async void ShowThongBao(string message)
         {
