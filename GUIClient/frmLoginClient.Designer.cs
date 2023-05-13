@@ -233,6 +233,7 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmLoginClient";
+            this.TopMost = true;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panelDangNhap.ResumeLayout(false);
             this.panelDangNhap.PerformLayout();
