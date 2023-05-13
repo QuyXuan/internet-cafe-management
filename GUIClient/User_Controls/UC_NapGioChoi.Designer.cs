@@ -40,7 +40,6 @@
             this.btnXacNhan = new Guna.UI2.WinForms.Guna2Button();
             this.lblTongTien = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.lblThongBao = new System.Windows.Forms.Label();
             this.lblQuyDoiThanhGioChoi = new System.Windows.Forms.Label();
             this.lblSoTienMuonNap = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -160,7 +159,6 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.lblThongBao);
             this.panel3.Controls.Add(this.lblQuyDoiThanhGioChoi);
             this.panel3.Controls.Add(this.lblSoTienMuonNap);
             this.panel3.Controls.Add(this.label10);
@@ -170,20 +168,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(812, 237);
             this.panel3.TabIndex = 8;
-            // 
-            // lblThongBao
-            // 
-            this.lblThongBao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.lblThongBao.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblThongBao.ForeColor = System.Drawing.Color.Red;
-            this.lblThongBao.Location = new System.Drawing.Point(352, 0);
-            this.lblThongBao.Name = "lblThongBao";
-            this.lblThongBao.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.lblThongBao.Size = new System.Drawing.Size(315, 66);
-            this.lblThongBao.TabIndex = 13;
-            this.lblThongBao.Text = "ThongBao";
-            this.lblThongBao.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblThongBao.Visible = false;
             // 
             // lblQuyDoiThanhGioChoi
             // 
@@ -573,7 +557,6 @@
             // guna2Elipse1
             // 
             this.guna2Elipse1.BorderRadius = 20;
-            this.guna2Elipse1.TargetControl = this.lblThongBao;
             // 
             // UC_NapGioChoi
             // 
@@ -629,7 +612,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblSoMay;
         private System.Windows.Forms.DataGridView dgvGiaMay;
-        private System.Windows.Forms.Label lblThongBao;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
     }
 }

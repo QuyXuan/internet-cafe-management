@@ -69,26 +69,30 @@ namespace GUIClient
                     Computer computer = ComputerBLL.Instance.GetComputerByIP();
                     bool CheckComputer = false;
                     if (computer == null) CheckComputer = true;
-                    if(Role == false)
+                    if(ComputerBLL.Instance.CheckLogin(AccountId))
                     {
-                        this.Hide();
-                        frmClient Client = new frmClient(AccountId, computer, Role, CheckComputer);
-                        Client.ShowDialog();
-                    }
-                    else
-                    {
-                        if (computer != null)
+                        if (Role == false)
                         {
-                            if (computer.Status != "Bảo Trì")
-                            {
-                                this.Hide();
-                                frmClient Client = new frmClient(AccountId, computer, Role, CheckComputer);
-                                Client.ShowDialog();
-                            }
-                            else ShowThongBao("Máy đang bảo trì" + Environment.NewLine + "VUI LÒNG TRỞ LẠI SAU!!!");
+                            this.Hide();
+                            frmClient Client = new frmClient(AccountId, computer, Role, CheckComputer);
+                            Client.ShowDialog();
                         }
-                        else ShowThongBao("Máy không nằm trong hệ thống" + Environment.NewLine + "VUI LÒNG KIỂM TRA LẠI!!!");
+                        else
+                        {
+                            if (computer != null)
+                            {
+                                if (computer.Status != "Bảo Trì")
+                                {
+                                    this.Hide();
+                                    frmClient Client = new frmClient(AccountId, computer, Role, CheckComputer);
+                                    Client.ShowDialog();
+                                }
+                                else ShowThongBao("Máy đang bảo trì" + Environment.NewLine + "VUI LÒNG TRỞ LẠI SAU!!!");
+                            }
+                            else ShowThongBao("Máy không nằm trong hệ thống" + Environment.NewLine + "VUI LÒNG KIỂM TRA LẠI!!!");
+                        }
                     }
+                    else ShowThongBao("Tài khoản của bạn đang được đăng nhập vào máy khác" + Environment.NewLine + "VUI LÒNG KIỂM TRA LẠI!!!");
                 }
                 else ShowThongBao("Tên Tài Khoản Hoặc Mật Khẩu Sai" + Environment.NewLine + "VUI LÒNG NHẬP LẠI!!!");
             }
