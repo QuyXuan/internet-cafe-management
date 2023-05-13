@@ -120,6 +120,15 @@ namespace BLL
             }
             return IPComputer;
         }
+        public List<Computer> GetComputerByStatus(string status)
+        {
+            using (var context = new QLNETDBContext())
+            {
+                if (context == null) return null;
+                var listComputer = context.Computers.Where(p => p.Status == status).ToList();
+                return listComputer;
+            }
+        }
         public string GetLocalIPv4(NetworkInterfaceType _type)
         {
             string output = "";
@@ -204,6 +213,22 @@ namespace BLL
             {
                 if (context == null) return false;
                 return context.Computers.Any(p => p.ComputerName == computerName);
+            }
+        }
+        
+        //Hàm cập nhật trạng thái máy
+        public void UpdateStatus(bool Status,string ComputerId)
+        {
+            using (var context = new QLNETDBContext())
+            {
+                if (context == null) return;
+                var Computer = context.Computers.FirstOrDefault(p => p.ComputerId == ComputerId);
+                if (context != null)
+                {
+                    if (Status) Computer.Status = "Đang Hoạt Động";
+                    else Computer.Status = "Đã Tắt";
+                    context.SaveChanges();
+                }
             }
         }
     }

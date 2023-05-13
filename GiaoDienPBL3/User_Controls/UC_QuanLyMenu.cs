@@ -26,6 +26,7 @@ namespace GiaoDienPBL3.UC
         private bool checkFormAdminOrClient = false;
         private List<BillDiscount> listBillDiscout = new List<BillDiscount>();
         private List<UC_MonAn> listProductOnPanel = new List<UC_MonAn>();
+        public static double TotalMoney = 0;
         private string EmployeeId;
         public UC_QuanLyMenu(string employeeId = null)
         {
@@ -80,7 +81,8 @@ namespace GiaoDienPBL3.UC
                 my_UCMonAn.picMonAn.ContextMenuStrip.Items["msDaHetMon"].PerformClick();
             }
             //my_UCMonAn.Tag = product;
-            /*frmMain.myUC_QuanLyMenu.*/panelMonAn.Controls.Add(my_UCMonAn);
+            /*frmMain.myUC_QuanLyMenu.*/
+            panelMonAn.Controls.Add(my_UCMonAn);
             listProductOnPanel.Add(my_UCMonAn);
         }
         private Image ByteArrayToImage(byte[] byteArray)
@@ -130,7 +132,8 @@ namespace GiaoDienPBL3.UC
                 btnXacNhan.Tag = (Convert.ToInt32(btnXacNhan.Tag) + 1).ToString();
                 my_UCChiTietMonAn.Width = 255;
                 my_UCChiTietMonAn.Tag = "Manager";
-                /*frmMain.myUC_QuanLyMenu.*/panelChiTietMonAn.Controls.Add(my_UCChiTietMonAn);
+                /*frmMain.myUC_QuanLyMenu.*/
+                panelChiTietMonAn.Controls.Add(my_UCChiTietMonAn);
             }
         }
         private string ConvertIfGraterThan1000(string cash)
@@ -142,8 +145,10 @@ namespace GiaoDienPBL3.UC
             string textMenhGia = string.Format("{0:N3}VNĐ", cboMenhGia.Text);
             int TongTien = Convert.ToInt32(/*frmMain.myUC_QuanLyMenu.*/lblTongTien.Tag);
             TongTien += Convert.ToInt32(textMenhGia.Substring(0, textMenhGia.Length - 7));
-            /*frmMain.myUC_QuanLyMenu.*/lblTongTien.Text = string.Format("{0:N3}VNĐ", TongTien);
-            /*frmMain.myUC_QuanLyMenu.*/lblTongTien.Tag = TongTien;
+            /*frmMain.myUC_QuanLyMenu.*/
+            lblTongTien.Text = string.Format("{0:N3}VNĐ", TongTien);
+            /*frmMain.myUC_QuanLyMenu.*/
+            lblTongTien.Tag = TongTien;
         }
 
         private void ResetUCQuanLyMenu()
@@ -160,6 +165,7 @@ namespace GiaoDienPBL3.UC
             txtTenNhanVien.Text = EmployeeBLL.Instance.GetEmployeeNameByEmployeeId(EmployeeId);
             txtTongGiamGia.Text = "";
             lblTongTien.Text = "0.000VNĐ";
+            TotalMoney = 0;
             //panelChiTietMonAn.Controls.Clear();
             foreach (Control control in panelChiTietMonAn.Controls)
             {
@@ -276,7 +282,7 @@ namespace GiaoDienPBL3.UC
             {
                 Account account = cboTenTaiKhoan.SelectedValue as Account;
                 Customer customer = CustomerBLL.Instance.GetCustomerByAccountId(account.AccountId);
-                 txtMaKhachHang.Text = customer.CustomerId;
+                txtMaKhachHang.Text = customer.CustomerId;
                 txtTenKhachHang.Text = customer.CustomerName;
                 float TotalDiscount = 0;
                 foreach (Discount discount in DiscountBLL.Instance.GetListDiscountWithType(customer.TypeCustomer))
@@ -289,6 +295,7 @@ namespace GiaoDienPBL3.UC
                     TotalDiscount += discount.DiscountPercent ?? 0;
                 }
                 txtTongGiamGia.Text = TotalDiscount + " %";
+                lblTongTien.Text = string.Format("{0:N3}VNĐ", Math.Ceiling(UC_MenuClient.TotalMoney / 100 * (100 - TotalDiscount)));
             }
             catch (Exception)
             {
