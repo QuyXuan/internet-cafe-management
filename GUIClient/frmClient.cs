@@ -142,7 +142,11 @@ namespace GUIClient
         private void btnMinisize_Click(object sender, EventArgs e)
         {
             this.Hide();
-            if(AccessMenu) frmMain.myUC_MenuClient.Dispose();
+            if(AccessMenu)
+            {
+                frmMain.myUC_MenuClient.Dispose();
+                UC_MenuClient.TotalMoney = 0;
+            }
             DongHo = new frmDongHo();
             DongHo.ShowDialog();
         }
