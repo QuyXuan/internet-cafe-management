@@ -85,7 +85,28 @@ namespace BLL
                 return product;
             }
         }
-
+        //public void UpdateStockProduct(string productId, float quantity)
+        //{
+        //    using (var context = new QLNETDBContext())
+        //    {
+        //        if (context == null) return;
+        //        var product = context.Products.FirstOrDefault(p => p.ProductId == productId);
+        //        if (product == null) return;
+        //        product.Stock -= quantity;
+        //        context.SaveChanges();
+        //    }
+        //}
+        public bool CheckStockProduct(string productId, float quantity)
+        {
+            using (var context = new QLNETDBContext())
+            {
+                if (context == null) return false;
+                var product = context.Products.FirstOrDefault(p => p.ProductId == productId);
+                if (product == null) return false;
+                if (product.Stock < quantity) return false;
+                return true;
+            }
+        }
         public void SetStatusProduct(string productId, bool status)
         {
             using (var context = new QLNETDBContext())

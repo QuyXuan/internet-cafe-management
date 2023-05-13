@@ -657,7 +657,7 @@
             this.uC_MonAn1.Name = "uC_MonAn1";
             this.uC_MonAn1.Size = new System.Drawing.Size(164, 158);
             this.uC_MonAn1.TabIndex = 0;
-            this.uC_MonAn1.Tag = "Manager";
+            this.uC_MonAn1.Tag = "Manager,sp0012";
             this.uC_MonAn1.TextGiaMonAn = "Nạp Tiền";
             this.uC_MonAn1.TextTenMonAn = "Nạp Tiền";
             // 

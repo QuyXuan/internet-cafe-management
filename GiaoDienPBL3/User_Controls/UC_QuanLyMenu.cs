@@ -142,30 +142,19 @@ namespace GiaoDienPBL3.UC
         }
         private void HienThiVaTinhTongTien()
         {
-            string textMenhGia = string.Format("{0:N3}VNĐ", cboMenhGia.Text);
-            int TongTien = Convert.ToInt32(/*frmMain.myUC_QuanLyMenu.*/lblTongTien.Tag);
-            TongTien += Convert.ToInt32(textMenhGia.Substring(0, textMenhGia.Length - 7));
+            //string textMenhGia = string.Format("{0:N3}VNĐ", cboMenhGia.Text);
+            //int TongTien = Convert.ToInt32(/*frmMain.myUC_QuanLyMenu.*/lblTongTien.Tag);
+            ///TongTien += Convert.ToInt32(textMenhGia.Substring(0, textMenhGia.Length - 7));
             /*frmMain.myUC_QuanLyMenu.*/
-            lblTongTien.Text = string.Format("{0:N3}VNĐ", TongTien);
+            UC_QuanLyMenu.TotalMoney += Convert.ToInt32(cboMenhGia.Text.Substring(0, cboMenhGia.Text.Length - 4).Replace(",", ""));
+            int GiamGia = Convert.ToInt32(txtTongGiamGia.Text.Substring(0, txtTongGiamGia.Text.Length - 2));
+            lblTongTien.Text = string.Format("{0:N3}VNĐ", Math.Ceiling(UC_QuanLyMenu.TotalMoney / 100 * (100 - GiamGia)));
             /*frmMain.myUC_QuanLyMenu.*/
-            lblTongTien.Tag = TongTien;
+            lblTongTien.Tag = UC_QuanLyMenu.TotalMoney;
         }
 
         private void ResetUCQuanLyMenu()
         {
-            txtMaHoaDon.Text = BillBLL.Instance.GetRandomBillId();
-            txtMaKhachHang.Text = "";
-            txtMaKhachHang.ReadOnly = false;
-            txtMaNhanVien.Text = EmployeeId;
-            cboTenTaiKhoan.Enabled = true;
-            txtSoMay.Text = "0";
-            txtSoMay.ReadOnly = false;
-            txtTenKhachHang.Text = "";
-            txtTenKhachHang.ReadOnly = false;
-            txtTenNhanVien.Text = EmployeeBLL.Instance.GetEmployeeNameByEmployeeId(EmployeeId);
-            txtTongGiamGia.Text = "";
-            lblTongTien.Text = "0.000VNĐ";
-            TotalMoney = 0;
             //panelChiTietMonAn.Controls.Clear();
             foreach (Control control in panelChiTietMonAn.Controls)
             {
@@ -182,6 +171,19 @@ namespace GiaoDienPBL3.UC
                 control.btnXoaMon.PerformClick();
             }
             listUCThongTinHangHoa.Clear();
+            txtMaHoaDon.Text = BillBLL.Instance.GetRandomBillId();
+            txtMaKhachHang.Text = "";
+            txtMaKhachHang.ReadOnly = false;
+            txtMaNhanVien.Text = EmployeeId;
+            cboTenTaiKhoan.Enabled = true;
+            txtSoMay.Text = "0";
+            txtSoMay.ReadOnly = false;
+            txtTenKhachHang.Text = "";
+            txtTenKhachHang.ReadOnly = false;
+            txtTenNhanVien.Text = EmployeeBLL.Instance.GetEmployeeNameByEmployeeId(EmployeeId);
+            txtTongGiamGia.Text = "";
+            lblTongTien.Text = "0.000VNĐ";
+            TotalMoney = 0;
         }
 
         private void btnThanhToan_Click(object sender, EventArgs e)
@@ -198,6 +200,7 @@ namespace GiaoDienPBL3.UC
                 if (BillBLL.Instance.CheckExistBillId(BillId))
                 {
                     BillBLL.Instance.SetStatusChoXacNhanToXacNhan(BillId, EmployeeId);
+                    BillBLL.Instance.UpdateQuantityProduct(BillId);
                     float Total = BillBLL.Instance.GetBillByBillId(BillId).Total ?? 0;
                     if (BillDayBLL.Instance.CheckBillDay(DateTime.Now.Date, true))
                     {
@@ -225,7 +228,8 @@ namespace GiaoDienPBL3.UC
                         EmployeeId = txtMaNhanVien.Text,
                         Total = total,
                         TotalDiscountPercent = (float)Convert.ToDouble(txtTongGiamGia.Text.Substring(0, txtTongGiamGia.Text.Length - 2)),
-                        Status = "Chấp Nhận"
+                        Status = "Chấp Nhận",
+                        ComputerId = "mt0031"
                     });
                     BillBLL.Instance.AddListProductToBill(GetListBillProductOnPanel());
                     BillBLL.Instance.AddListDiscountToBill(listBillDiscout);
@@ -243,6 +247,7 @@ namespace GiaoDienPBL3.UC
                             Type = true
                         });
                     }
+                    BillBLL.Instance.UpdateQuantityProduct(BillId);
                 }
                 frmMessageBox.Instance.ShowFrmMessageBox(frmMessageBox.StatusResult.Success, "Thanh Toán Thành Công");
                 ResetUCQuanLyMenu();
@@ -295,7 +300,7 @@ namespace GiaoDienPBL3.UC
                     TotalDiscount += discount.DiscountPercent ?? 0;
                 }
                 txtTongGiamGia.Text = TotalDiscount + " %";
-                lblTongTien.Text = string.Format("{0:N3}VNĐ", Math.Ceiling(UC_MenuClient.TotalMoney / 100 * (100 - TotalDiscount)));
+                lblTongTien.Text = string.Format("{0:N3}VNĐ", Math.Ceiling(UC_QuanLyMenu.TotalMoney / 100 * (100 - TotalDiscount)));
             }
             catch (Exception)
             {
