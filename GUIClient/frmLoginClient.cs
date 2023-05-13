@@ -69,21 +69,26 @@ namespace GUIClient
                     Computer computer = ComputerBLL.Instance.GetComputerByIP();
                     bool CheckComputer = false;
                     if (computer == null) CheckComputer = true;
-
-                    if (computer != null || (computer == null && Role == false))
+                    if(Role == false)
                     {
-                        if(computer.Status != "Bảo Trì" || (computer.Status == "Bảo Trì" && Role == false))
+                        this.Hide();
+                        frmClient Client = new frmClient(AccountId, computer, Role, CheckComputer);
+                        Client.ShowDialog();
+                    }
+                    else
+                    {
+                        if (computer != null)
                         {
-                            if (TenVaVaiTro == null || TenVaVaiTro.Value.Value == "Quản Lý")
+                            if (computer.Status != "Bảo Trì")
                             {
                                 this.Hide();
                                 frmClient Client = new frmClient(AccountId, computer, Role, CheckComputer);
                                 Client.ShowDialog();
                             }
+                            else ShowThongBao("Máy đang bảo trì" + Environment.NewLine + "VUI LÒNG TRỞ LẠI SAU!!!");
                         }
-                        else ShowThongBao("Máy đang bảo trì" + Environment.NewLine + "VUI LÒNG TRỞ LẠI SAU!!!");
+                        else ShowThongBao("Máy không nằm trong hệ thống" + Environment.NewLine + "VUI LÒNG KIỂM TRA LẠI!!!");
                     }
-                    else ShowThongBao("Máy không nằm trong hệ thống" + Environment.NewLine + "VUI LÒNG KIỂM TRA LẠI!!!");
                 }
                 else ShowThongBao("Tên Tài Khoản Hoặc Mật Khẩu Sai" + Environment.NewLine + "VUI LÒNG NHẬP LẠI!!!");
             }
