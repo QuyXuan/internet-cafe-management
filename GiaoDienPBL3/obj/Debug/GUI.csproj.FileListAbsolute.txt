@@ -92,3 +92,4 @@ C:\Users\ADMIN\source\repos\pbl3lan2\GiaoDienPBL3\obj\Debug\GUI.csproj.CoreCompi
 C:\Users\ADMIN\source\repos\pbl3lan2\GiaoDienPBL3\obj\Debug\GUI.csproj.CopyComplete
 C:\Users\ADMIN\source\repos\pbl3lan2\GiaoDienPBL3\obj\Debug\GiaoDienPBL3.exe
 C:\Users\ADMIN\source\repos\pbl3lan2\GiaoDienPBL3\obj\Debug\GiaoDienPBL3.pdb
+C:\Users\ADMIN\source\repos\pbl3lan2\GiaoDienPBL3\obj\Debug\GiaoDienPBL3.User_Controls.UC_CaiDatChung.resources
