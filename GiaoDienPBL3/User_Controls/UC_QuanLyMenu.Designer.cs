@@ -65,9 +65,9 @@
             this.panelMonAn = new System.Windows.Forms.FlowLayoutPanel();
             this.msLamMoi = new Guna.UI2.WinForms.Guna2ContextMenuStrip();
             this.msLamMoiMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.uC_MonAn1 = new GiaoDienPBL3.UC.UC_MonAn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblTitle = new System.Windows.Forms.Label();
+            this.uC_MonAn1 = new GiaoDienPBL3.UC.UC_MonAn();
             this.guna2CustomGradientPanel1.SuspendLayout();
             this.panelThongTinChiTietMonAn.SuspendLayout();
             this.panelCaiDatVaThongTin.SuspendLayout();
@@ -584,6 +584,7 @@
             this.btnHuyYeuCau.Size = new System.Drawing.Size(365, 35);
             this.btnHuyYeuCau.TabIndex = 9;
             this.btnHuyYeuCau.Text = "Huỷ Yêu Cầu";
+            this.btnHuyYeuCau.Click += new System.EventHandler(this.btnHuyYeuCau_Click);
             // 
             // btnThanhToan
             // 
@@ -649,18 +650,6 @@
             this.msLamMoiMenu.Text = "Làm Mới Menu";
             this.msLamMoiMenu.Click += new System.EventHandler(this.msLamMoiMenu_Click);
             // 
-            // uC_MonAn1
-            // 
-            this.uC_MonAn1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.uC_MonAn1.ImagePanel = global::GiaoDienPBL3.Properties.Resources.icons8_credit_card_100;
-            this.uC_MonAn1.Location = new System.Drawing.Point(3, 3);
-            this.uC_MonAn1.Name = "uC_MonAn1";
-            this.uC_MonAn1.Size = new System.Drawing.Size(164, 158);
-            this.uC_MonAn1.TabIndex = 0;
-            this.uC_MonAn1.Tag = "Manager,sp0012";
-            this.uC_MonAn1.TextGiaMonAn = "Nạp Tiền";
-            this.uC_MonAn1.TextTenMonAn = "Nạp Tiền";
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
@@ -682,6 +671,18 @@
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "Quản Lý Menu Món Ăn/Nước Uống";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // uC_MonAn1
+            // 
+            this.uC_MonAn1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.uC_MonAn1.ImagePanel = global::GiaoDienPBL3.Properties.Resources.icons8_credit_card_100;
+            this.uC_MonAn1.Location = new System.Drawing.Point(3, 3);
+            this.uC_MonAn1.Name = "uC_MonAn1";
+            this.uC_MonAn1.Size = new System.Drawing.Size(164, 158);
+            this.uC_MonAn1.TabIndex = 0;
+            this.uC_MonAn1.Tag = "Manager,sp0012";
+            this.uC_MonAn1.TextGiaMonAn = "Nạp Tiền";
+            this.uC_MonAn1.TextTenMonAn = "Nạp Tiền";
             // 
             // UC_QuanLyMenu
             // 

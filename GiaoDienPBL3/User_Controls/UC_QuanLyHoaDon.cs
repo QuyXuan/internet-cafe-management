@@ -71,6 +71,15 @@ namespace GiaoDienPBL3.User_Controls
                 });
             }
             lblTrang3.Text = "Trang : " + (CurrentPageHoaDonChoChapNhan + 1) + " / " + (BillBLL.Instance.GetListBillWithStatus("Chờ Chấp Nhận").Count() / PAGE_SIZE + 1);
+
+            foreach (Bill bill in BillBLL.Instance.GetListBillWithStatusAndStartEnd(0, PAGE_SIZE, "Từ Chối"))
+            {
+                dgvDaHuy.Rows.Add(new object[]
+                {
+                    bill.BillId, bill.EmployeeId, bill.CustomerId, ComputerBLL.Instance.GetComputerByID(bill.ComputerId).ComputerName, bill.Date, bill.Status, bill.TotalDiscountPercent + " %", string.Format("{0:N3}VNĐ", bill.Total)
+                });
+            }
+            lblTrang4.Text = "Trang : " + (CurrentPageHoaDonChoChapNhan + 1) + " / " + (BillBLL.Instance.GetListBillWithStatus("Từ Chối").Count() / PAGE_SIZE + 1);
         }
         private void ResetData()
         {
@@ -217,6 +226,10 @@ namespace GiaoDienPBL3.User_Controls
             {
                 NextPreviousClick(true, dgvChoXacNhan, "Chờ Chấp Nhận");
             }
+            else if (button.Name == "btnNext4")
+            {
+                NextPreviousClick(true, dgvDaHuy, "Từ Chối");
+            }
             else if (button.Name == "btnPrevious1")
             {
                 NextPreviousClick(false, dgvTatCaHoaDon);
@@ -228,6 +241,10 @@ namespace GiaoDienPBL3.User_Controls
             else if (button.Name == "btnPrevious3")
             {
                 NextPreviousClick(false, dgvChoXacNhan, "Chờ Chấp Nhận");
+            }
+            else if (button.Name == "btnPrevious4")
+            {
+                NextPreviousClick(false, dgvDaHuy, "Từ Chối");
             }
         }
         //type == true nghia la next, false nghia la previous

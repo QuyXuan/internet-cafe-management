@@ -35,6 +35,11 @@
             this.tabQuanLyChung = new Guna.UI2.WinForms.Guna2TabControl();
             this.tabQuanLyCaLamViecTrongNgay = new System.Windows.Forms.TabPage();
             this.dgvQuanLyThongTinKhachHang = new System.Windows.Forms.DataGridView();
+            this.MaKhachHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenKhachHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LoaiKhach = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoDuTaiKhoan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ThoiGianConLai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.guna2GroupBox2 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.btnXacNhanThayDoi = new Guna.UI2.WinForms.Guna2Button();
@@ -61,22 +66,19 @@
             this.label6 = new System.Windows.Forms.Label();
             this.cboLoaiKhach = new Guna.UI2.WinForms.Guna2ComboBox();
             this.txtMatKhauDangKy = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtMaTaiKhoan = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtTenTaiKhoanDangKy = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblMatKhauDangKy = new System.Windows.Forms.Label();
+            this.lblMaTaiKhoan = new System.Windows.Forms.Label();
+            this.txtMaKhachHang2 = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtTenKhachHangDangKy = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.lblTenTaiKhoanDangKy = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.lblMaTaiKhoan = new System.Windows.Forms.Label();
-            this.txtMaTaiKhoan = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txtMaKhachHang2 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.MaKhachHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenKhachHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LoaiKhach = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoDuTaiKhoan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ThoiGianConLai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.msLamMoi = new Guna.UI2.WinForms.Guna2ContextMenuStrip();
+            this.msLamMoiDanhSach = new System.Windows.Forms.ToolStripMenuItem();
             this.guna2CustomGradientPanel1.SuspendLayout();
             this.tabQuanLyChung.SuspendLayout();
             this.tabQuanLyCaLamViecTrongNgay.SuspendLayout();
@@ -86,6 +88,7 @@
             this.guna2GroupBox1.SuspendLayout();
             this.tabThemCaLamViec.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.msLamMoi.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2CustomGradientPanel1
@@ -173,6 +176,7 @@
             this.LoaiKhach,
             this.SoDuTaiKhoan,
             this.ThoiGianConLai});
+            this.dgvQuanLyThongTinKhachHang.ContextMenuStrip = this.msLamMoi;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.Silver;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -193,6 +197,41 @@
             this.dgvQuanLyThongTinKhachHang.Size = new System.Drawing.Size(852, 578);
             this.dgvQuanLyThongTinKhachHang.TabIndex = 29;
             this.dgvQuanLyThongTinKhachHang.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvQuanLyThongTinKhachHang_CellContentClick);
+            // 
+            // MaKhachHang
+            // 
+            this.MaKhachHang.HeaderText = "Mã Khách Hàng";
+            this.MaKhachHang.MinimumWidth = 6;
+            this.MaKhachHang.Name = "MaKhachHang";
+            this.MaKhachHang.ReadOnly = true;
+            // 
+            // TenKhachHang
+            // 
+            this.TenKhachHang.HeaderText = "Tên Khách Hàng";
+            this.TenKhachHang.MinimumWidth = 6;
+            this.TenKhachHang.Name = "TenKhachHang";
+            this.TenKhachHang.ReadOnly = true;
+            // 
+            // LoaiKhach
+            // 
+            this.LoaiKhach.HeaderText = "Loại Khách";
+            this.LoaiKhach.MinimumWidth = 6;
+            this.LoaiKhach.Name = "LoaiKhach";
+            this.LoaiKhach.ReadOnly = true;
+            // 
+            // SoDuTaiKhoan
+            // 
+            this.SoDuTaiKhoan.HeaderText = "Số Dư Tài Khoản";
+            this.SoDuTaiKhoan.MinimumWidth = 6;
+            this.SoDuTaiKhoan.Name = "SoDuTaiKhoan";
+            this.SoDuTaiKhoan.ReadOnly = true;
+            // 
+            // ThoiGianConLai
+            // 
+            this.ThoiGianConLai.HeaderText = "Thời Gian Còn Lại";
+            this.ThoiGianConLai.MinimumWidth = 6;
+            this.ThoiGianConLai.Name = "ThoiGianConLai";
+            this.ThoiGianConLai.ReadOnly = true;
             // 
             // panel2
             // 
@@ -660,6 +699,32 @@
             this.txtMatKhauDangKy.TabIndex = 34;
             this.txtMatKhauDangKy.Visible = false;
             // 
+            // txtMaTaiKhoan
+            // 
+            this.txtMaTaiKhoan.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtMaTaiKhoan.BorderRadius = 5;
+            this.txtMaTaiKhoan.BorderThickness = 2;
+            this.txtMaTaiKhoan.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtMaTaiKhoan.DefaultText = "";
+            this.txtMaTaiKhoan.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtMaTaiKhoan.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtMaTaiKhoan.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtMaTaiKhoan.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtMaTaiKhoan.FocusedState.BorderColor = System.Drawing.Color.Black;
+            this.txtMaTaiKhoan.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaTaiKhoan.ForeColor = System.Drawing.Color.Black;
+            this.txtMaTaiKhoan.HoverState.BorderColor = System.Drawing.Color.Black;
+            this.txtMaTaiKhoan.Location = new System.Drawing.Point(426, 339);
+            this.txtMaTaiKhoan.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtMaTaiKhoan.Name = "txtMaTaiKhoan";
+            this.txtMaTaiKhoan.PasswordChar = '\0';
+            this.txtMaTaiKhoan.PlaceholderText = "";
+            this.txtMaTaiKhoan.ReadOnly = true;
+            this.txtMaTaiKhoan.SelectedText = "";
+            this.txtMaTaiKhoan.Size = new System.Drawing.Size(486, 42);
+            this.txtMaTaiKhoan.TabIndex = 34;
+            this.txtMaTaiKhoan.Visible = false;
+            // 
             // txtTenTaiKhoanDangKy
             // 
             this.txtTenTaiKhoanDangKy.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -697,6 +762,42 @@
             this.lblMatKhauDangKy.Text = "Mật Khẩu :";
             this.lblMatKhauDangKy.Visible = false;
             // 
+            // lblMaTaiKhoan
+            // 
+            this.lblMaTaiKhoan.AutoSize = true;
+            this.lblMaTaiKhoan.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMaTaiKhoan.Location = new System.Drawing.Point(259, 348);
+            this.lblMaTaiKhoan.Name = "lblMaTaiKhoan";
+            this.lblMaTaiKhoan.Size = new System.Drawing.Size(128, 23);
+            this.lblMaTaiKhoan.TabIndex = 33;
+            this.lblMaTaiKhoan.Text = "Mã Tài Khoản :";
+            this.lblMaTaiKhoan.Visible = false;
+            // 
+            // txtMaKhachHang2
+            // 
+            this.txtMaKhachHang2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtMaKhachHang2.BorderRadius = 5;
+            this.txtMaKhachHang2.BorderThickness = 2;
+            this.txtMaKhachHang2.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtMaKhachHang2.DefaultText = "";
+            this.txtMaKhachHang2.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtMaKhachHang2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtMaKhachHang2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtMaKhachHang2.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtMaKhachHang2.FocusedState.BorderColor = System.Drawing.Color.Black;
+            this.txtMaKhachHang2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaKhachHang2.ForeColor = System.Drawing.Color.Black;
+            this.txtMaKhachHang2.HoverState.BorderColor = System.Drawing.Color.Black;
+            this.txtMaKhachHang2.Location = new System.Drawing.Point(426, 31);
+            this.txtMaKhachHang2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtMaKhachHang2.Name = "txtMaKhachHang2";
+            this.txtMaKhachHang2.PasswordChar = '\0';
+            this.txtMaKhachHang2.PlaceholderText = "";
+            this.txtMaKhachHang2.ReadOnly = true;
+            this.txtMaKhachHang2.SelectedText = "";
+            this.txtMaKhachHang2.Size = new System.Drawing.Size(486, 42);
+            this.txtMaKhachHang2.TabIndex = 34;
+            // 
             // txtTenKhachHangDangKy
             // 
             this.txtTenKhachHangDangKy.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -720,6 +821,16 @@
             this.txtTenKhachHangDangKy.SelectedText = "";
             this.txtTenKhachHangDangKy.Size = new System.Drawing.Size(486, 42);
             this.txtTenKhachHangDangKy.TabIndex = 34;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(259, 41);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(146, 23);
+            this.label8.TabIndex = 33;
+            this.label8.Text = "Mã Khách Hàng :";
             // 
             // lblTenTaiKhoanDangKy
             // 
@@ -764,112 +875,31 @@
             this.label1.Text = "Quản Lý Khách Hàng";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lblMaTaiKhoan
+            // msLamMoi
             // 
-            this.lblMaTaiKhoan.AutoSize = true;
-            this.lblMaTaiKhoan.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMaTaiKhoan.Location = new System.Drawing.Point(259, 348);
-            this.lblMaTaiKhoan.Name = "lblMaTaiKhoan";
-            this.lblMaTaiKhoan.Size = new System.Drawing.Size(128, 23);
-            this.lblMaTaiKhoan.TabIndex = 33;
-            this.lblMaTaiKhoan.Text = "Mã Tài Khoản :";
-            this.lblMaTaiKhoan.Visible = false;
+            this.msLamMoi.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.msLamMoi.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.msLamMoiDanhSach});
+            this.msLamMoi.Name = "msLamMoi";
+            this.msLamMoi.RenderStyle.ArrowColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.msLamMoi.RenderStyle.BorderColor = System.Drawing.Color.Gainsboro;
+            this.msLamMoi.RenderStyle.ColorTable = null;
+            this.msLamMoi.RenderStyle.RoundedEdges = true;
+            this.msLamMoi.RenderStyle.SelectionArrowColor = System.Drawing.Color.White;
+            this.msLamMoi.RenderStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.msLamMoi.RenderStyle.SelectionForeColor = System.Drawing.Color.White;
+            this.msLamMoi.RenderStyle.SeparatorColor = System.Drawing.Color.Gainsboro;
+            this.msLamMoi.RenderStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            this.msLamMoi.Size = new System.Drawing.Size(217, 28);
             // 
-            // txtMaTaiKhoan
+            // msLamMoiDanhSach
             // 
-            this.txtMaTaiKhoan.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtMaTaiKhoan.BorderRadius = 5;
-            this.txtMaTaiKhoan.BorderThickness = 2;
-            this.txtMaTaiKhoan.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtMaTaiKhoan.DefaultText = "";
-            this.txtMaTaiKhoan.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtMaTaiKhoan.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtMaTaiKhoan.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtMaTaiKhoan.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtMaTaiKhoan.FocusedState.BorderColor = System.Drawing.Color.Black;
-            this.txtMaTaiKhoan.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaTaiKhoan.ForeColor = System.Drawing.Color.Black;
-            this.txtMaTaiKhoan.HoverState.BorderColor = System.Drawing.Color.Black;
-            this.txtMaTaiKhoan.Location = new System.Drawing.Point(426, 339);
-            this.txtMaTaiKhoan.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtMaTaiKhoan.Name = "txtMaTaiKhoan";
-            this.txtMaTaiKhoan.PasswordChar = '\0';
-            this.txtMaTaiKhoan.PlaceholderText = "";
-            this.txtMaTaiKhoan.ReadOnly = true;
-            this.txtMaTaiKhoan.SelectedText = "";
-            this.txtMaTaiKhoan.Size = new System.Drawing.Size(486, 42);
-            this.txtMaTaiKhoan.TabIndex = 34;
-            this.txtMaTaiKhoan.Visible = false;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(259, 41);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(146, 23);
-            this.label8.TabIndex = 33;
-            this.label8.Text = "Mã Khách Hàng :";
-            // 
-            // txtMaKhachHang2
-            // 
-            this.txtMaKhachHang2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtMaKhachHang2.BorderRadius = 5;
-            this.txtMaKhachHang2.BorderThickness = 2;
-            this.txtMaKhachHang2.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtMaKhachHang2.DefaultText = "";
-            this.txtMaKhachHang2.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtMaKhachHang2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtMaKhachHang2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtMaKhachHang2.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtMaKhachHang2.FocusedState.BorderColor = System.Drawing.Color.Black;
-            this.txtMaKhachHang2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaKhachHang2.ForeColor = System.Drawing.Color.Black;
-            this.txtMaKhachHang2.HoverState.BorderColor = System.Drawing.Color.Black;
-            this.txtMaKhachHang2.Location = new System.Drawing.Point(426, 31);
-            this.txtMaKhachHang2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtMaKhachHang2.Name = "txtMaKhachHang2";
-            this.txtMaKhachHang2.PasswordChar = '\0';
-            this.txtMaKhachHang2.PlaceholderText = "";
-            this.txtMaKhachHang2.ReadOnly = true;
-            this.txtMaKhachHang2.SelectedText = "";
-            this.txtMaKhachHang2.Size = new System.Drawing.Size(486, 42);
-            this.txtMaKhachHang2.TabIndex = 34;
-            // 
-            // MaKhachHang
-            // 
-            this.MaKhachHang.HeaderText = "Mã Khách Hàng";
-            this.MaKhachHang.MinimumWidth = 6;
-            this.MaKhachHang.Name = "MaKhachHang";
-            this.MaKhachHang.ReadOnly = true;
-            // 
-            // TenKhachHang
-            // 
-            this.TenKhachHang.HeaderText = "Tên Khách Hàng";
-            this.TenKhachHang.MinimumWidth = 6;
-            this.TenKhachHang.Name = "TenKhachHang";
-            this.TenKhachHang.ReadOnly = true;
-            // 
-            // LoaiKhach
-            // 
-            this.LoaiKhach.HeaderText = "Loại Khách";
-            this.LoaiKhach.MinimumWidth = 6;
-            this.LoaiKhach.Name = "LoaiKhach";
-            this.LoaiKhach.ReadOnly = true;
-            // 
-            // SoDuTaiKhoan
-            // 
-            this.SoDuTaiKhoan.HeaderText = "Số Dư Tài Khoản";
-            this.SoDuTaiKhoan.MinimumWidth = 6;
-            this.SoDuTaiKhoan.Name = "SoDuTaiKhoan";
-            this.SoDuTaiKhoan.ReadOnly = true;
-            // 
-            // ThoiGianConLai
-            // 
-            this.ThoiGianConLai.HeaderText = "Thời Gian Còn Lại";
-            this.ThoiGianConLai.MinimumWidth = 6;
-            this.ThoiGianConLai.Name = "ThoiGianConLai";
-            this.ThoiGianConLai.ReadOnly = true;
+            this.msLamMoiDanhSach.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.msLamMoiDanhSach.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.msLamMoiDanhSach.Name = "msLamMoiDanhSach";
+            this.msLamMoiDanhSach.Size = new System.Drawing.Size(216, 24);
+            this.msLamMoiDanhSach.Text = "Làm Mới Danh Sách";
+            this.msLamMoiDanhSach.Click += new System.EventHandler(this.msLamMoiDanhSach_Click);
             // 
             // UC_QuanLyKhachHang
             // 
@@ -890,6 +920,7 @@
             this.tabThemCaLamViec.ResumeLayout(false);
             this.tabThemCaLamViec.PerformLayout();
             this.panel1.ResumeLayout(false);
+            this.msLamMoi.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -942,5 +973,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn LoaiKhach;
         private System.Windows.Forms.DataGridViewTextBoxColumn SoDuTaiKhoan;
         private System.Windows.Forms.DataGridViewTextBoxColumn ThoiGianConLai;
+        private Guna.UI2.WinForms.Guna2ContextMenuStrip msLamMoi;
+        private System.Windows.Forms.ToolStripMenuItem msLamMoiDanhSach;
     }
 }

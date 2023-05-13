@@ -195,7 +195,7 @@ namespace GiaoDienPBL3.User_Controls
                 }
                 Bill newBill = new Bill();
                 newBill.BillId = txtMaHoaDon.Text;
-                newBill.Date = dtpNgayNhan.Value;
+                newBill.Date = DateTime.Now;
                 newBill.ComputerId = ComputerId;
                 newBill.CustomerId = txtMaKhachHang.Text;
                 newBill.Total = total;

@@ -195,5 +195,12 @@ namespace GiaoDienPBL3.User_Controls
             txtMaKhachHang2.Text = CustomerBLL.Instance.GetRandomCustomerId();
             cboLoaiKhach.SelectedIndex = -1;
         }
+
+        private void msLamMoiDanhSach_Click(object sender, EventArgs e)
+        {
+            dgvQuanLyThongTinKhachHang.SuspendLayout();
+            dgvQuanLyThongTinKhachHang.Rows.Clear();
+            SetData();
+        }
     }
 }

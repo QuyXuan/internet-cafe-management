@@ -168,6 +168,18 @@ namespace BLL
                 context.SaveChanges();
             }
         }
+        public void SetStatusChoXacNhanToTuChoi(string billId, string employeeId)
+        {
+            using (var context = new QLNETDBContext())
+            {
+                if (context == null) return;
+                var bill = context.Bills.FirstOrDefault(p => p.BillId == billId);
+                if (bill == null) return;
+                bill.Status = "Từ Chối";
+                bill.EmployeeId = employeeId;
+                context.SaveChanges();
+            }
+        }
         public void UpdateQuantityProduct(string billId)
         {
             using (var context = new QLNETDBContext())
@@ -265,12 +277,23 @@ namespace BLL
                 return context.Bills.Any(p => p.CustomerId == customerId);
             }
         }
+
         public bool CheckEmployeeId(string employeeId)
         {
             using (var context = new QLNETDBContext())
             {
                 if (context == null) return false;
                 return context.Bills.Any(p => p.EmployeeId == employeeId);
+            }
+        }
+
+        public bool CheckBillWithStatus(string billId, string status)
+        {
+            using (var context = new QLNETDBContext())
+            {
+                if (context == null) return false;
+                var bill = context.Bills.Any(p =>  p.BillId == billId && p.Status == status);
+                return bill;
             }
         }
     }

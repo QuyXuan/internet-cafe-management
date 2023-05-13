@@ -70,7 +70,6 @@
             this.MaximizeBox = false;
             this.Name = "frmDongHo";
             this.ShowInTaskbar = false;
-            this.TopMost = true;
             this.ResumeLayout(false);
 
         }
