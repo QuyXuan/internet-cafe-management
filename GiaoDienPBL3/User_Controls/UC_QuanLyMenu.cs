@@ -211,7 +211,7 @@ namespace GiaoDienPBL3.UC
                         BillDayBLL.Instance.AddNewBillDay(new BillDay
                         {
                             BillDayId = BillDayBLL.Instance.GetRandomBillDayId(),
-                            Date = DateTime.Now.Date,
+                            Date = DateTime.Now,
                             TotalBill = Total,
                             Type = true
                         });
@@ -224,7 +224,7 @@ namespace GiaoDienPBL3.UC
                     {
                         BillId = txtMaHoaDon.Text,
                         CustomerId = txtMaKhachHang.Text,
-                        Date = dtpNgayNhan.Value.Date,
+                        Date = DateTime.Now,
                         EmployeeId = txtMaNhanVien.Text,
                         Total = total,
                         TotalDiscountPercent = (float)Convert.ToDouble(txtTongGiamGia.Text.Substring(0, txtTongGiamGia.Text.Length - 2)),
@@ -318,6 +318,27 @@ namespace GiaoDienPBL3.UC
             }
             listProductOnPanel.Clear();
             SetFullMonAn();
+        }
+
+        private void btnHuyYeuCau_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (!BillBLL.Instance.CheckBillWithStatus(txtMaHoaDon.Text, "Chờ Chấp Nhận"))
+                {
+                    frmMessageBox.Instance.ShowFrmMessageBox(frmMessageBox.StatusResult.Warning, "Không Thể Hủy");
+                    return;
+                }
+                BillBLL.Instance.SetStatusChoXacNhanToTuChoi(txtMaHoaDon.Text, EmployeeId);
+                CustomerBLL.Instance.EditCustomerBalance(txtMaKhachHang.Text, Convert.ToInt32(lblTongTien.Text.Split('.')[0].Replace(",", "")), true);
+                frmMessageBox.Instance.ShowFrmMessageBox(frmMessageBox.StatusResult.Success, "Hủy Thành Công");
+                ResetUCQuanLyMenu();
+            }
+            catch (Exception)
+            {
+                frmMessageBox.Instance.ShowFrmMessageBox(frmMessageBox.StatusResult.Error, "Lỗi");
+                return;
+            }
         }
     }
 }

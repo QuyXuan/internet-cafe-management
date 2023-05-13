@@ -230,7 +230,7 @@ namespace GiaoDienPBL3.User_Controls
                 ComputerBLL.Instance.DeleteComputer(ComputerId);
                 frmMessageBox.Instance.ShowFrmMessageBox(frmMessageBox.StatusResult.Success, "Xóa Máy Thành Công");
                 Guna2Button buttonComputer = frmMain.myUC_QuanLyMay.lastButtonComputer;
-                buttonComputer.Parent.Visible = false;
+                buttonComputer.Visible = false;
             }
             catch (Exception)
             {

@@ -759,7 +759,7 @@
             this.tabDaHuy.Padding = new System.Windows.Forms.Padding(3);
             this.tabDaHuy.Size = new System.Drawing.Size(1246, 559);
             this.tabDaHuy.TabIndex = 3;
-            this.tabDaHuy.Text = "Đã Hủy";
+            this.tabDaHuy.Text = "Đã Từ Chối";
             this.tabDaHuy.UseVisualStyleBackColor = true;
             // 
             // panel8

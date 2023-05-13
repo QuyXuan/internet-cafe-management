@@ -37,7 +37,8 @@ namespace BLL
                 }
                 var MayThuong = context.TypeComputers.FirstOrDefault(p => p.NameType == "Máy Thường");
                 var MayHienTai = context.TypeComputers.FirstOrDefault(p => p.NameType == NameType);
-                return (float)(TotalTime * (MayThuong.Price / MayHienTai.Price));
+                float time = (float)(TotalTime * (MayThuong.Price / MayHienTai.Price));
+                return time;
             }
         }
 
@@ -65,7 +66,7 @@ namespace BLL
                 {
                     return 0;
                 }
-                Money = Money / 1000;
+                //Money = Money / 1000;
                 var MayThuong = context.TypeComputers.FirstOrDefault(p => p.NameType == "Máy Thường");
                 float Time = (float)(Money / MayThuong.Price) * 60;
                 return ChangeTime(Time, NameType);

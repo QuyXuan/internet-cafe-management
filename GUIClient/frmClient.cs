@@ -63,6 +63,7 @@ namespace GUIClient
             }
             if (Role) myUC_NapGioChoi.sendBalance += new UC_NapGioChoi.SendBalance(SetBalance);
             if (Role) frmMain.myUC_MenuClient.updateBalance += new UC_MenuClient.UpdateBalance(SetBalance);
+            if (Role) myUC_HoaDonClient.setBalance += new UC_HoaDonClient.SetBalance(SetBalance);
             myUC_DongHo = new UC_DongHo(this.Handle);
             myUC_DongHo.checkaccess += new UC_DongHo.CheckAccess(CheckAccess);
         }
@@ -97,6 +98,7 @@ namespace GUIClient
             btnMenu.Checked = false;
             btnNapGioChoi.Checked = false;
             btnTrangChu.Checked = false;
+            btnDanhSachHoaDon.Checked = false;
         }
         private void SetOnCheckStateButton(Guna2Button btn)
         {

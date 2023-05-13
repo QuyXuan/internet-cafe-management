@@ -22,6 +22,9 @@ namespace GUIClient.User_Controls
         private int CurrentPageHoaDonChapNhan = 0;
         private int CurrentPageHoaDonChoChapNhan = 0;
         private const int PAGE_SIZE = 12;
+        public delegate void SetBalance(double balance);
+        public SetBalance setBalance { get; set; }
+
         public UC_HoaDonClient(string customerId = null)
         {
             InitializeComponent();
@@ -178,6 +181,8 @@ namespace GUIClient.User_Controls
         }
         private void btnLamMoi_Click(object sender, EventArgs e)
         {
+            double balance = CustomerBLL.Instance.GetCustomerByCustomerId(CustomerId).Balance ?? 0;
+            setBalance(balance);
             ResetData();
             SetData();
         }

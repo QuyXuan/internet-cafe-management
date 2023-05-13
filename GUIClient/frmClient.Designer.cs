@@ -340,7 +340,6 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmClient";
             this.Text = "Form1";
-            this.TopMost = true;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmClient_Load);
             this.panel3.ResumeLayout(false);
@@ -373,9 +372,9 @@
         private System.Windows.Forms.Panel panel5;
         private Guna.UI2.WinForms.Guna2Button btnTrangChu;
         private System.Windows.Forms.Panel panelDongHo;
-        private System.Windows.Forms.Label lblSoDu;
         private System.Windows.Forms.Panel panel2;
         private Guna.UI2.WinForms.Guna2Button btnDanhSachHoaDon;
+        private System.Windows.Forms.Label lblSoDu;
     }
 }
 

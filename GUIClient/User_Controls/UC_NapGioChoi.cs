@@ -55,7 +55,7 @@ namespace GUIClient.User_Controls
         {
             Guna2Button btn = (Guna2Button)sender;
             lblSoTienMuonNap.Text = btn.Text;
-            double money = Convert.ToDouble(btn.Text.Split('V')[0]);
+            double money = Convert.ToDouble(btn.Text.Split('.')[0]);
             lblQuyDoiThanhGioChoi.Text = TimerBLL.Instance.ChangeMoneyToTime(money,typeComputer.NameType).ToString();
             lblTongTien.Text = btn.Text;
         }
@@ -64,10 +64,10 @@ namespace GUIClient.User_Controls
         {
             if(lblSoTienMuonNap.Text != "0.000VNĐ")
             {
-                if (Convert.ToDouble(frmClient.customer.Balance) >= Convert.ToDouble(lblSoTienMuonNap.Text.Split('V')[0]) / 1000)
+                if (Convert.ToDouble(frmClient.customer.Balance) >= Convert.ToDouble(lblSoTienMuonNap.Text.Split('.')[0])/* / 1000*/)
                 {
                     frmClient.myUC_DongHo.UpdateTime(float.Parse(lblQuyDoiThanhGioChoi.Text));
-                    double CurrentBalance = Convert.ToDouble(frmClient.customer.Balance) - Convert.ToDouble(lblSoTienMuonNap.Text.Split('V')[0]) / 1000;
+                    double CurrentBalance = Convert.ToDouble(frmClient.customer.Balance) - Convert.ToDouble(lblSoTienMuonNap.Text.Split('.')[0])/* / 1000*/;
                     CustomerBLL.Instance.SetBalance(CurrentBalance, frmClient.customer.CustomerId);
                     sendBalance(CurrentBalance);
                 }
