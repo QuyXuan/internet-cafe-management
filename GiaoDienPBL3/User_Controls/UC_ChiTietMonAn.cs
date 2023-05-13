@@ -8,6 +8,7 @@ using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BLL;
 using GiaoDienPBL3.User_Controls;
 using Guna.UI2.WinForms;
 
@@ -45,6 +46,7 @@ namespace GiaoDienPBL3.UC
         {
             Guna2Button btn = sender as Guna2Button;
             string Role = " ";
+            string ProductId = " ";
             if ((btn.Parent).Parent.Tag is string)
             {
                 Role = (btn.Parent).Parent.Tag as string;
@@ -52,6 +54,7 @@ namespace GiaoDienPBL3.UC
             else
             {
                 Role = (((btn.Parent).Parent.Tag as UC_MonAn).Tag as string).Split(',')[0];
+                ProductId = (((btn.Parent).Parent.Tag as UC_MonAn).Tag as string).Split(',')[1];
             }
             int TongTien = 0;
             if (Role == "Manager")
@@ -67,6 +70,12 @@ namespace GiaoDienPBL3.UC
             {
                 if (lblTenMon.Text != "Nạp Tiền")
                 {
+                    int SoLuong = Convert.ToInt32(lblSoLuongMon.Text) + 1;
+                    if (!ProductBLL.Instance.CheckStockProduct(ProductId, SoLuong))
+                    {
+                        frmMessageBox.Instance.ShowFrmMessageBox(frmMessageBox.StatusResult.Warning, "Số Lượng Món Ăn Không Đủ Để Phục Vụ");
+                        return;
+                    }
                     lblSoLuongMon.Text = (Convert.ToInt32(lblSoLuongMon.Text) + 1).ToString();
                     //TongTien += GiaMon;
                     if (Role == "Manager")

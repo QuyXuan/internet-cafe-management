@@ -168,6 +168,21 @@ namespace BLL
                 context.SaveChanges();
             }
         }
+        public void UpdateQuantityProduct(string billId)
+        {
+            using (var context = new QLNETDBContext())
+            {
+                if (context == null) return;
+                var listBillProduct = context.BillProducts.Where(p => p.BillId == billId).ToList();
+                foreach (var billProduct in listBillProduct)
+                {
+                    var product = context.Products.FirstOrDefault(c => c.ProductId == billProduct.ProductId);
+                    if (product == null) continue;
+                    product.Stock -= billProduct.Quantity;
+                }
+                context.SaveChanges();
+            }
+        }
         public void AddBilllWithStatusChoXacNhan(Bill bill)
         {
             using (var context = new QLNETDBContext())
