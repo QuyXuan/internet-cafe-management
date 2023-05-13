@@ -36,5 +36,14 @@ namespace BLL
                 return discounts;
             }
         }
+        public List<Discount> GetListDiscount()
+        {
+            using (var context = new QLNETDBContext())
+            {
+                if (context == null) return null;
+                var discounts = context.Discounts.ToList();
+                return discounts;
+            }
+        }
     }
 }

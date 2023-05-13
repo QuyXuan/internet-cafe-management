@@ -21,8 +21,7 @@ namespace GiaoDienPBL3.UC
         private UC_ChiTietMay my_UCChiTietMay;
         private bool checkBtnCaiDat = false;
         public Guna2Button lastButtonComputer = null;
-        //private Dictionary<string, Color> COLOR;
-        public List<Panel> listComputerOnPanel = new List<Panel>();
+        public List<Guna2Button> listComputerOnPanel = new List<Guna2Button>();
         public UC_QuanLyMay()
         {
             InitializeComponent();
@@ -56,9 +55,9 @@ namespace GiaoDienPBL3.UC
         }
         public void AddComputerOnPanel(Computer computer)
         {
-            Panel panelTemp = new Panel();
-            panelTemp.Size = new Size(60, 60);
-            panelTemp.Padding = new Padding(10, 10, 10, 10);
+            //Panel panelTemp = new Panel();
+            //panelTemp.Size = new Size(60, 60);
+            //panelTemp.Padding = new Padding(10, 10, 10, 10);
             Guna2Button button = new Guna2Button();
             button.Size = new Size(50, 50);
             button.BorderColor = Color.Transparent;
@@ -67,6 +66,7 @@ namespace GiaoDienPBL3.UC
             button.Font = new Font("Segoe UI", 11, FontStyle.Bold);
             button.Text = computer.ComputerName;
             button.Cursor = Cursors.Hand;
+            button.Margin = new Padding(10, 10, 10, 10);
             //button.ButtonMode = ButtonMode.RadioButton;
             Color color = ConvertToArgb(TypeComputerBLL.Instance.GetColoIdByTypeId(computer.TypeId));
             button.BorderColor = color;
@@ -86,9 +86,10 @@ namespace GiaoDienPBL3.UC
                 button.ForeColor = Color.Black;
             }
             button.Tag = computer;
-            panelTemp.Controls.Add(button);
-            listComputerOnPanel.Add(panelTemp);
-            frmMain.myUC_QuanLyMay.panelQuanLyMay.Controls.Add(panelTemp);
+            //panelTemp.Controls.Add(button);
+            listComputerOnPanel.Add(button);
+            //frmMain.myUC_QuanLyMay.panelQuanLyMay.Controls.Add(panelTemp);
+            frmMain.myUC_QuanLyMay.panelQuanLyMay.Controls.Add(button);
             button.MouseEnter += new EventHandler(button_MouseEnter);
             button.MouseLeave += new EventHandler(button_MouseLeave);
             button.Click += new EventHandler(button_Click);
@@ -117,7 +118,7 @@ namespace GiaoDienPBL3.UC
         {
             Guna2Button button = sender as Guna2Button;
             Computer computer = (button.Tag) as Computer;
-            Panel panelTemp = (button.Parent) as Panel;
+            //Panel panelTemp = (button.Parent) as Panel;
             my_UCChiTietMay.TextMaMay = computer.ComputerId;
             my_UCChiTietMay.TextSoMay = computer.ComputerName;
             TypeComputer typeComputer = ComputerBLL.Instance.GetTypeComputerByTypeId(computer.TypeId);
@@ -126,28 +127,28 @@ namespace GiaoDienPBL3.UC
             my_UCChiTietMay.TextTrangThai = computer.Status;
             my_UCChiTietMay.TextNguoiDung = computer.AccountId;
             panelPhu.Controls.Add(my_UCChiTietMay);
-            int locationX = panelTemp.Location.X + 50;
-            int locationY = panelTemp.Location.Y + 50;
-            if (panelTemp.Location.X + 50 + my_UCChiTietMay.Width > panelQuanLyMay.Width)
+            int locationX = button.Location.X + 50;
+            int locationY = button.Location.Y + 50;
+            if (button.Location.X + 50 + my_UCChiTietMay.Width > panelQuanLyMay.Width)
             {
-                locationX = panelTemp.Location.X - my_UCChiTietMay.Width;
+                locationX = button.Location.X - my_UCChiTietMay.Width;
             }
-            if (panelTemp.Location.Y + 50 + my_UCChiTietMay.Height > panelQuanLyMay.Height)
+            if (button.Location.Y + 50 + my_UCChiTietMay.Height > panelQuanLyMay.Height)
             {
-                locationY = panelTemp.Location.Y - my_UCChiTietMay.Height;
+                locationY = button.Location.Y - my_UCChiTietMay.Height;
             }
             my_UCChiTietMay.Location = new Point(locationX, locationY);
             my_UCChiTietMay.BringToFront();
             my_UCChiTietMay.Visible = true;
-            panelTemp.Padding = new Padding(0, 0, 0, 0);
-            button.Dock = DockStyle.Fill;
+            //panelTemp.Padding = new Padding(0, 0, 0, 0);
+            //button.Dock = DockStyle.Fill;
         }
         private void button_MouseLeave(object sender, EventArgs e)
         {
-            Guna2Button button = sender as Guna2Button;
-            Panel panelTemp = button.Parent as Panel;
-            panelTemp.Padding = new Padding(10, 10, 10, 10);
-            button.Dock = DockStyle.None;
+            //Guna2Button button = sender as Guna2Button;
+            //Panel panelTemp = button.Parent as Panel;
+            //panelTemp.Padding = new Padding(10, 10, 10, 10);
+            //button.Dock = DockStyle.None;
             my_UCChiTietMay.Visible = false;
         }
         private void btnCaiDat_Click(object sender, EventArgs e)
@@ -187,12 +188,15 @@ namespace GiaoDienPBL3.UC
         }
         private void msLamMoiDanhSachMay_Click(object sender, EventArgs e)
         {
-            foreach (Panel panel in listComputerOnPanel)
+            msLamMoiDanhSachMay.Enabled = false;
+            panelQuanLyMay.Controls.Clear();
+            foreach (Guna2Button button in listComputerOnPanel)
             {
-                panelQuanLyMay.Controls.Remove(panel);
-                panel.Dispose();
+                panelQuanLyMay.Controls.Remove(button);
+                button.Dispose();
             }
             AddComputerOnPanel();
+            msLamMoiDanhSachMay.Enabled = true;
         }
     }
 }

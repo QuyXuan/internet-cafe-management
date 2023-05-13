@@ -30,6 +30,7 @@ namespace GiaoDienPBL3
         public static UC_QuanLyNhanVien myUC_QuanLyNhanVien = new UC_QuanLyNhanVien();
         public static UC_QuanLyKhachHang myUC_QuanLyKhachHang = new UC_QuanLyKhachHang();
         public static UC_Loading myUC_Loading = new UC_Loading();
+        public static UC_CaiDatChung myUC_CaiDatChung = new UC_CaiDatChung();
         public static UC_MenuClient myUC_MenuClient;
 
         public frmMain(string accountId = null)
@@ -141,7 +142,8 @@ namespace GiaoDienPBL3
         {
             Guna2Button btn = sender as Guna2Button;
             SetOnCheckStateButton(btn);
-            ShowSubMenu(panelCaiDat);
+            //ShowSubMenu(panelCaiDat);
+            AddUserControlOnBackGround(myUC_CaiDatChung);
         }
 
         private void AddUserControlOnBackGround(UserControl userControl)
