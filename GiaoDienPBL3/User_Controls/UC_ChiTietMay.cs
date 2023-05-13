@@ -37,10 +37,15 @@ namespace GiaoDienPBL3.User_Controls
             get { return lblTrangThai.Text.Trim(); }
             set { lblTrangThai.Text = value; }
         }
+        public string TextNguoiDung
+        {
+            get { return lblNguoiDung.Text.Trim(); }
+            set { lblNguoiDung.Text = value; }
+        }
+
         public UC_ChiTietMay()
         {
             InitializeComponent();
         }
-
     }
 }

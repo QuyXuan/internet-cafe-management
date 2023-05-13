@@ -190,7 +190,7 @@ namespace GiaoDienPBL3.User_Controls
                 frmMessageBox.Instance.ShowFrmMessageBox(frmMessageBox.StatusResult.Warning, "Số Máy Không Được Để Trống");
                 return false;
             }
-            else if ((txtGia.Text.Length < 7) || txtGia.Text.Substring(txtGia.Text.Length - 7) != ".000VNĐ")
+            else if ((txtGia.Text.Length < 7) || (txtGia.Text.Substring(txtGia.Text.Length - 7) != ".000VNĐ" && txtGia.Text.Substring(txtGia.Text.Length - 7) != ",000VNĐ"))
             {
                 frmMessageBox.Instance.ShowFrmMessageBox(frmMessageBox.StatusResult.Warning, "Bạn Phải Nhập Theo Định Dạng #,###.000VNĐ" + Environment.NewLine + "Ví Dụ: 20.000VNĐ / 1,000.000VNĐ");
                 return false;

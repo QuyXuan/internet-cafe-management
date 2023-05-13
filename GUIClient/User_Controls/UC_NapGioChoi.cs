@@ -1,5 +1,6 @@
 ﻿using BLL;
 using DTO;
+using GiaoDienPBL3;
 using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
@@ -61,25 +62,18 @@ namespace GUIClient.User_Controls
 
         private void btnXacNhan_Click(object sender, EventArgs e)
         {
-            if (Convert.ToDouble(frmClient.customer.Balance) >= Convert.ToDouble(lblSoTienMuonNap.Text.Split('V')[0])/1000)
+            if(lblSoTienMuonNap.Text != "0.000VNĐ")
             {
-                frmClient.myUC_DongHo.UpdateTime(float.Parse(lblQuyDoiThanhGioChoi.Text));
-                double CurrentBalance = Convert.ToDouble(frmClient.customer.Balance) - Convert.ToDouble(lblSoTienMuonNap.Text.Split('V')[0])/1000;
-                CustomerBLL.Instance.SetBalance(CurrentBalance, frmClient.customer.CustomerId);
-                sendBalance(CurrentBalance);
+                if (Convert.ToDouble(frmClient.customer.Balance) >= Convert.ToDouble(lblSoTienMuonNap.Text.Split('V')[0]) / 1000)
+                {
+                    frmClient.myUC_DongHo.UpdateTime(float.Parse(lblQuyDoiThanhGioChoi.Text));
+                    double CurrentBalance = Convert.ToDouble(frmClient.customer.Balance) - Convert.ToDouble(lblSoTienMuonNap.Text.Split('V')[0]) / 1000;
+                    CustomerBLL.Instance.SetBalance(CurrentBalance, frmClient.customer.CustomerId);
+                    sendBalance(CurrentBalance);
+                }
+                else frmMessageBox.Instance.ShowFrmMessageBox(frmMessageBox.StatusResult.Warning, "Số Dư Của Bạn Không Đủ");
             }
-            else ShowThongBao("Số Dư Không Đủ");
-        }
-        //Hàm hiển thị thông báo hết tiền
-        public async void ShowThongBao(string thongbao)
-        {
-            lblThongBao.Visible = true;
-            lblThongBao.Text = thongbao;
-            while (lblThongBao.Visible)
-            {
-                await Task.Delay(3000);
-                lblThongBao.Visible = false;
-            }
+            else frmMessageBox.Instance.ShowFrmMessageBox(frmMessageBox.StatusResult.Warning, "Chưa có mức nạp nào được chọn");
         }
     }
 }
