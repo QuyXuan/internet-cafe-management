@@ -146,6 +146,10 @@ namespace BLL
                 {
                     return message = "Mật Khẩu Sai";
                 }
+                if(newPass.Length < 8 || newPass.Length > 15 || newPass.Contains(" "))
+                {
+                    return message = "Mật khẩu từ 8-15 kí tự, không chứa không trắng";
+                }
                 if (newPass != confirmPass)
                 {
                     return message = "Mật khẩu Không Khớp";
