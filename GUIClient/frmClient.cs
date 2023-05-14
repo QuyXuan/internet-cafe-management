@@ -49,7 +49,7 @@ namespace GUIClient
                 typeComputer = ComputerBLL.Instance.GetTypeComputerByTypeId(computer.TypeId);
                 ComputerBLL.Instance.UpdateStatus(true, computerId, accountId);
             }
-            frmMain.myUC_MenuClient = new UC_MenuClient(frmClient.Role,accountId,frmClient.computerId);
+            frmMain.myUC_MenuClient = new UC_MenuClient(frmClient.Role, accountId, frmClient.computerId);
             if (Role) customer = CustomerBLL.Instance.GetCustomerByAccountId(accountId);
             myUC_TrangChuKhachHang = new UC_TrangChuKhachHang();
             myUC_NapGioChoi = new UC_NapGioChoi();
@@ -89,7 +89,7 @@ namespace GUIClient
         {
             frmLoginClient frmLoginClient = new frmLoginClient();
             if (Role) CustomerBLL.Instance.SetTotalTime(myUC_DongHo.getCurrentTime(), customer.CustomerId, typeComputer.NameType);
-            if(CheckComputer == false) ComputerBLL.Instance.UpdateStatus(false, computerId, accountId);
+            if (CheckComputer == false) ComputerBLL.Instance.UpdateStatus(false, computerId, accountId);
             frmLoginClient.Show();
             Dispose();
         }
@@ -146,7 +146,7 @@ namespace GUIClient
         private void btnMinisize_Click(object sender, EventArgs e)
         {
             this.Hide();
-            if(AccessMenu)
+            if (AccessMenu)
             {
                 frmMain.myUC_MenuClient.Dispose();
                 UC_MenuClient.TotalMoney = 0;
@@ -206,7 +206,7 @@ namespace GUIClient
 
         private void btnTat_Click(object sender, EventArgs e)
         {
-            ComputerBLL.Instance.UpdateStatus(false, computerId, accountId);
+            if (CheckComputer == false) ComputerBLL.Instance.UpdateStatus(false, computerId, accountId);
             Application.Exit();
         }
 
