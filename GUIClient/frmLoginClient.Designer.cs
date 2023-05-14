@@ -73,6 +73,7 @@
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(52, 28);
             this.btnThoat.TabIndex = 8;
+            this.btnThoat.Visible = false;
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // txtMatKhau
@@ -230,8 +231,10 @@
             this.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmLoginClient";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmLoginClient";
+            this.TopMost = true;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panelDangNhap.ResumeLayout(false);
             this.panelDangNhap.PerformLayout();

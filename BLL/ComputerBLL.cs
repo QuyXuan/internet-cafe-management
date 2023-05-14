@@ -217,6 +217,14 @@ namespace BLL
             }
         }
         
+        public bool CheckIPComputer(string ipComputer)
+        {
+            using (var context = new QLNETDBContext())
+            {
+                if (context == null) return false;
+                return context.Computers.Any(p => p.IPComputer == ipComputer);
+            }
+        }
         //Hàm cập nhật trạng thái máy
         public void UpdateStatus(bool Status,string ComputerId,string AccountID)
         {
@@ -240,7 +248,19 @@ namespace BLL
                 }
             }
         }
-
+        public void AddIPComputer(string computerId, string ipComputer)
+        {
+            using (var context = new QLNETDBContext())
+            {
+                if (context == null) return;
+                var computer = context.Computers.FirstOrDefault(p => p.ComputerId == computerId);
+                if (computer != null)
+                {
+                    computer.IPComputer = ipComputer;
+                }
+                context.SaveChanges();
+            }
+        }
         // Hàm kiểm tra xem tài khoản đã đăng nhập vào máy nào chưa?
         public bool CheckLogin(string AccountID) 
         {

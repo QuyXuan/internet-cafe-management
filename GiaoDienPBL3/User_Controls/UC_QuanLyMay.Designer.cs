@@ -229,6 +229,7 @@
             // 
             // panelLoaiMay
             // 
+            this.panelLoaiMay.AutoScroll = true;
             this.panelLoaiMay.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLoaiMay.Location = new System.Drawing.Point(0, 100);
             this.panelLoaiMay.Name = "panelLoaiMay";

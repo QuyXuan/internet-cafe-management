@@ -16,6 +16,10 @@ namespace GUIClient
         [STAThread]
         static void Main()
         {
+            /*string appName = "GUIClient";
+            RegistryKey registryKey = Registry.CurrentUser.OpenSubKey
+                ("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
+            registryKey.SetValue(appName, Application.ExecutablePath.ToString());*/
             CultureInfo culture = new CultureInfo("en-US");
             Thread.CurrentThread.CurrentCulture = culture;
             Application.EnableVisualStyles();

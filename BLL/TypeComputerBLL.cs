@@ -2,6 +2,7 @@
 using DTO;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Runtime.Remoting.Contexts;
 using System.Text;
@@ -55,7 +56,14 @@ namespace BLL
                 return null;
             }
         }
-
+        public bool CheckColorId(string colorId)
+        {
+            using (var context = new QLNETDBContext())
+            {
+                if (context == null) return false;
+                return context.TypeComputers.Any(p => p.ColorId == colorId);
+            }
+        }
         public TypeComputer GetTypeComputerByTypeComputerId(string typeComputerId)
         {
             using (var context = new QLNETDBContext())
@@ -66,7 +74,31 @@ namespace BLL
                 return null;
             }
         }
-
+        public string GetRandomTypeComputerId()
+        {
+            using (var context = new QLNETDBContext())
+            {
+                if (context == null)
+                {
+                    return null;
+                }
+                Random random = new Random();
+                string typeComputerId = "type" + random.Next(0, 1000).ToString().PadLeft(4, '0');
+                while (context.TypeComputers.Any(p => p.TypeId == typeComputerId))
+                {
+                    typeComputerId = "type" + random.Next(0, 1000).ToString().PadLeft(4, '0');
+                }
+                return typeComputerId;
+            }
+        }
+        public bool CheckTypeComputerName(string typeComputerName)
+        {
+            using (var context = new QLNETDBContext())
+            {
+                if (context == null) return false;
+                return context.TypeComputers.Any(p => p.NameType == typeComputerName);
+            }
+        }
         public float GetPriceByTypeId(string typeId)
         {
             using (var context = new QLNETDBContext())
@@ -81,6 +113,15 @@ namespace BLL
                     return typeComputer.Price ?? 0;
                 }
                 return 0;
+            }
+        }
+        public void AddNewTypeComputer(TypeComputer typeComputer)
+        {
+            using (var context = new QLNETDBContext())
+            {
+                if (context == null) return;
+                context.TypeComputers.AddOrUpdate(typeComputer);
+                context.SaveChanges();
             }
         }
     }
