@@ -97,6 +97,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmMessageBox";
             this.Text = "frmMessageBox";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.frmMessageBox_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picAlertBox)).EndInit();
             this.ResumeLayout(false);
