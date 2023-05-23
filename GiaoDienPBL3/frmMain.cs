@@ -32,6 +32,7 @@ namespace GiaoDienPBL3
         public static UC_QuanLyKhachHang myUC_QuanLyKhachHang = new UC_QuanLyKhachHang();
         public static UC_Loading myUC_Loading = new UC_Loading();
         public static UC_CaiDatChung myUC_CaiDatChung = new UC_CaiDatChung();
+        public static UC_ThongTinCaNhan myUC_ThongTinCaNhan;
         public static UC_MenuClient myUC_MenuClient;
 
         public frmMain(string accountId = null, string role = null)
@@ -39,6 +40,7 @@ namespace GiaoDienPBL3
             InitializeComponent();
             AccountId = accountId;
             Role = role;
+            myUC_ThongTinCaNhan = new UC_ThongTinCaNhan(accountId);
             if (AccountId != null)
             {
                 string employeeId = EmployeeBLL.Instance.GetEmployeeIdByAccountId(AccountId);
@@ -216,6 +218,11 @@ namespace GiaoDienPBL3
             SetOnCheckStateButton(btn);
             HideSubMenu();
             AddUserControlOnBackGround(myUC_QuanLyKhachHang);
+        }
+
+        private void btnThongTinNhanVien_Click(object sender, EventArgs e)
+        {
+            AddUserControlOnBackGround(myUC_ThongTinCaNhan);
         }
     }
 }

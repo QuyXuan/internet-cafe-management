@@ -54,6 +54,15 @@ namespace BLL
                 return employees;
             }
         }
+        public Employee GetEmployeeByEmployeeId(string employeeId)
+        {
+            using (var context = new QLNETDBContext())
+            {
+                if (context == null) return null;
+                var employee = context.Employees.FirstOrDefault(p => p.EmployeeId == employeeId);
+                return employee;
+            }
+        }
         public string GetRandomEmployeeId()
         {
             using (var context = new QLNETDBContext())

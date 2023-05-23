@@ -205,6 +205,12 @@
     <Compile Include="User_Controls\UC_QuanLyMenu.Designer.cs">
       <DependentUpon>UC_QuanLyMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="User_Controls\UC_ThongTinCaNhan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User_Controls\UC_ThongTinCaNhan.Designer.cs">
+      <DependentUpon>UC_ThongTinCaNhan.cs</DependentUpon>
+    </Compile>
     <Compile Include="User_Controls\UC_ThongTinVaCaiDatMay.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -290,6 +296,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="User_Controls\UC_QuanLyMenu.resx">
       <DependentUpon>UC_QuanLyMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_Controls\UC_ThongTinCaNhan.resx">
+      <DependentUpon>UC_ThongTinCaNhan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User_Controls\UC_ThongTinVaCaiDatMay.resx">
       <DependentUpon>UC_ThongTinVaCaiDatMay.cs</DependentUpon>
@@ -509,6 +518,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-filled-circle-24 %283%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-user-menu-male-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-user-menu-male-30 %281%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

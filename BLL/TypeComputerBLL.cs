@@ -115,12 +115,43 @@ namespace BLL
                 return 0;
             }
         }
+        public bool CheckColorIdToEdit(string typeId, string colorId)
+        {
+            using (var context = new QLNETDBContext())
+            {
+                if (context == null) return false;
+                var typeComputer = context.TypeComputers.FirstOrDefault(p => p.TypeId == typeId);
+                if (typeComputer == null) return false;
+                if (typeComputer.ColorId == colorId) return true;
+                else if (context.TypeComputers.Any(p => p.ColorId == colorId)) return false;
+                return true;
+            }
+        }
         public void AddNewTypeComputer(TypeComputer typeComputer)
         {
             using (var context = new QLNETDBContext())
             {
                 if (context == null) return;
                 context.TypeComputers.AddOrUpdate(typeComputer);
+                context.SaveChanges();
+            }
+        }
+        public void EditTypeComputer(TypeComputer typeComputer)
+        {
+            using (var context = new QLNETDBContext())
+            {
+                if (context == null) return;
+                context.TypeComputers.AddOrUpdate(typeComputer);
+                context.SaveChanges();
+            }
+        }
+        public void DeleteTypeComputer(string typeId)
+        {
+            using (var context = new QLNETDBContext())
+            {
+                if (context == null) return;
+                var typeComputer = context.TypeComputers.FirstOrDefault(p => p.TypeId == typeId);
+                context.TypeComputers.Remove(typeComputer);
                 context.SaveChanges();
             }
         }

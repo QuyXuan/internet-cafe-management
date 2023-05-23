@@ -225,6 +225,15 @@ namespace BLL
                 return context.Computers.Any(p => p.IPComputer == ipComputer);
             }
         }
+        public bool CheckIPByComputerName(string computerName)
+        {
+            using (var context = new QLNETDBContext())
+            {
+                if (context == null) return false;
+                string IpComputer = context.Computers.FirstOrDefault(p => p.ComputerName == computerName).IPComputer;
+                return IpComputer != null;
+            }
+        }
         //Hàm cập nhật trạng thái máy
         public void UpdateStatus(bool Status,string ComputerId,string AccountID)
         {

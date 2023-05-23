@@ -89,5 +89,25 @@ namespace BLL
                 context.SaveChanges();
             }
         }
+        public void EditDiscount(Discount discount)
+        {
+            using (var context = new QLNETDBContext())
+            {
+                if (context == null) return;
+                context.Discounts.AddOrUpdate(discount);
+                context.SaveChanges();
+            }
+        }
+        public void RemoveDiscount(string discountId)
+        {
+            using (var context = new QLNETDBContext())
+            {
+                if (context == null) return;
+                var discount = context.Discounts.FirstOrDefault(p => p.DiscountId == discountId);
+                if (discount == null) return;
+                context.Discounts.Remove(discount);
+                context.SaveChanges();
+            }
+        }
     }
 }

@@ -47,7 +47,9 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.uC_TrangChu1 = new GiaoDienPBL3.UC_TrangChu();
+            this.panel11 = new System.Windows.Forms.Panel();
             this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.btnThongTinNhanVien = new Guna.UI2.WinForms.Guna2Button();
             this.btnCaiDatQuayThuong = new Guna.UI2.WinForms.Guna2Button();
             this.btnCaiDatIP = new Guna.UI2.WinForms.Guna2Button();
             this.btnCaiDatTienGio = new Guna.UI2.WinForms.Guna2Button();
@@ -78,6 +80,7 @@
             this.panelQuanLyMenu.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panel11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -146,6 +149,7 @@
             // 
             this.panelSideBar.AutoScroll = true;
             this.panelSideBar.BackColor = System.Drawing.SystemColors.Control;
+            this.panelSideBar.Controls.Add(this.panel11);
             this.panelSideBar.Controls.Add(this.panelCaiDat);
             this.panelSideBar.Controls.Add(this.panel7);
             this.panelSideBar.Controls.Add(this.panel9);
@@ -272,6 +276,15 @@
             this.uC_TrangChu1.Size = new System.Drawing.Size(833, 652);
             this.uC_TrangChu1.TabIndex = 0;
             // 
+            // panel11
+            // 
+            this.panel11.Controls.Add(this.btnThongTinNhanVien);
+            this.panel11.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel11.Location = new System.Drawing.Point(0, 887);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(262, 45);
+            this.panel11.TabIndex = 18;
+            // 
             // guna2CirclePictureBox1
             // 
             this.guna2CirclePictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -284,6 +297,30 @@
             this.guna2CirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.guna2CirclePictureBox1.TabIndex = 0;
             this.guna2CirclePictureBox1.TabStop = false;
+            // 
+            // btnThongTinNhanVien
+            // 
+            this.btnThongTinNhanVien.BorderRadius = 15;
+            this.btnThongTinNhanVien.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnThongTinNhanVien.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(165)))), ((int)(((byte)(208)))));
+            this.btnThongTinNhanVien.CheckedState.ForeColor = System.Drawing.Color.White;
+            this.btnThongTinNhanVien.CheckedState.Image = global::GiaoDienPBL3.Properties.Resources.icons8_user_menu_male_30__1_;
+            this.btnThongTinNhanVien.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnThongTinNhanVien.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnThongTinNhanVien.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnThongTinNhanVien.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnThongTinNhanVien.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnThongTinNhanVien.FillColor = System.Drawing.SystemColors.Control;
+            this.btnThongTinNhanVien.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThongTinNhanVien.ForeColor = System.Drawing.Color.Black;
+            this.btnThongTinNhanVien.Image = global::GiaoDienPBL3.Properties.Resources.icons8_user_menu_male_30;
+            this.btnThongTinNhanVien.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnThongTinNhanVien.Location = new System.Drawing.Point(12, 1);
+            this.btnThongTinNhanVien.Name = "btnThongTinNhanVien";
+            this.btnThongTinNhanVien.Size = new System.Drawing.Size(241, 45);
+            this.btnThongTinNhanVien.TabIndex = 4;
+            this.btnThongTinNhanVien.Text = "Thông Tin Nhân Viên";
+            this.btnThongTinNhanVien.Click += new System.EventHandler(this.btnThongTinNhanVien_Click);
             // 
             // btnCaiDatQuayThuong
             // 
@@ -681,7 +718,7 @@
             this.imgbtnThoat.Image = global::GiaoDienPBL3.Properties.Resources.icons8_logout_40;
             this.imgbtnThoat.ImageOffset = new System.Drawing.Point(0, 0);
             this.imgbtnThoat.ImageRotate = 0F;
-            this.imgbtnThoat.Location = new System.Drawing.Point(12, 1571);
+            this.imgbtnThoat.Location = new System.Drawing.Point(12, 2543);
             this.imgbtnThoat.Name = "imgbtnThoat";
             this.imgbtnThoat.PressedState.ImageSize = new System.Drawing.Size(64, 64);
             this.imgbtnThoat.Size = new System.Drawing.Size(74, 56);
@@ -718,6 +755,7 @@
             this.panelQuanLyMenu.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            this.panel11.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -760,6 +798,8 @@
         private System.Windows.Forms.Panel panel8;
         private Guna.UI2.WinForms.Guna2Button btnQuanLyKho;
         private Guna.UI2.WinForms.Guna2Button btnMenu;
+        private System.Windows.Forms.Panel panel11;
+        private Guna.UI2.WinForms.Guna2Button btnThongTinNhanVien;
     }
 }
 

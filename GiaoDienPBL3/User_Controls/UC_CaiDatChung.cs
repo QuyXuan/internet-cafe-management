@@ -117,11 +117,35 @@ namespace GiaoDienPBL3.User_Controls
             else if (btn.Name == "btnSua")
             {
                 btnSua.Enabled = true;
+                if (lastButtonCaiDat == null)
+                {
+                    frmMessageBox.Instance.ShowFrmMessageBox(frmMessageBox.StatusResult.Warning, "Bạn Phải Chọn Chức Năng Trước");
+                    return;
+                }
+                else if (lastButtonCaiDat.Name == "btnCaiDatLoaiMay")
+                {
+                    txtGia.ReadOnly = false;
+                    btnChonMau.Enabled = true;
+                }
+                else if (lastButtonCaiDat.Name == "btnCaiDatGiamGia")
+                {
+                    txtPhanTramGiamGia.ReadOnly = false;
+                    cboLoaiKhach.Enabled = true;
+                }
+                else if (lastButtonCaiDat.Name == "btnCaiDatIP")
+                {
+                    txtIPMay.ReadOnly = false;
+                }
+                //ClearComboboxAndTextBox();
             }
             else
             {
                 btnXoa.Enabled = true;
-                //ClearComboboxAndTextBox();
+                if (lastButtonCaiDat == null)
+                {
+                    frmMessageBox.Instance.ShowFrmMessageBox(frmMessageBox.StatusResult.Warning, "Bạn Phải Chọn Chức Năng Trước");
+                    return;
+                }
             }
             lastButton = btn;
         }
@@ -132,9 +156,9 @@ namespace GiaoDienPBL3.User_Controls
                 frmMessageBox.Instance.ShowFrmMessageBox(frmMessageBox.StatusResult.Warning, "Mã Loại Máy Không Được Để Trống");
                 return false;
             }
-            else if (TypeComputerBLL.Instance.CheckTypeComputerName(cboTenLoaiMay.Text.Trim()) || cboTenLoaiMay.Text.Trim() == "")
+            else if (cboTenLoaiMay.Text.Trim() == "")
             {
-                frmMessageBox.Instance.ShowFrmMessageBox(frmMessageBox.StatusResult.Warning, "Tên Loại Máy Không Được Để Trống" + Environment.NewLine + "Tên Loại Máy Không Được Trùng");
+                frmMessageBox.Instance.ShowFrmMessageBox(frmMessageBox.StatusResult.Warning, "Tên Loại Máy Không Được Để Trống");
                 return false;
             }
             else if (int.TryParse(txtGia.Text, out _) == false)
@@ -142,7 +166,7 @@ namespace GiaoDienPBL3.User_Controls
                 frmMessageBox.Instance.ShowFrmMessageBox(frmMessageBox.StatusResult.Warning, "Giá Không Hợp Lệ");
                 return false;
             }
-            else if (TypeComputerBLL.Instance.CheckColorId(txtMau.Text) || txtMau.Text.Trim() == "")
+            else if (txtMau.Text.Trim() == "")
             {
                 frmMessageBox.Instance.ShowFrmMessageBox(frmMessageBox.StatusResult.Warning, "Mã Màu Máy Không Được Để Trống" + Environment.NewLine + "Mã Màu Máy Không Được Trùng");
                 return false;
@@ -156,14 +180,14 @@ namespace GiaoDienPBL3.User_Controls
                 frmMessageBox.Instance.ShowFrmMessageBox(frmMessageBox.StatusResult.Warning, "Mã Máy Tính Không Được Để Trống");
                 return false;
             }
-            else if (ComputerBLL.Instance.CheckComputerName(cboSoMay.Text.Trim()) || cboSoMay.Text.Trim() == "")
+            else if (cboSoMay.Text.Trim() == "")
             {
-                frmMessageBox.Instance.ShowFrmMessageBox(frmMessageBox.StatusResult.Warning, "Số Máy Không Được Để Trống" + Environment.NewLine + "Số Máy Không Được Trùng");
+                frmMessageBox.Instance.ShowFrmMessageBox(frmMessageBox.StatusResult.Warning, "Số Máy Không Được Để Trống");
                 return false;
             }
-            else if (ComputerBLL.Instance.CheckIPComputer(txtIPMay.Text.Trim()) || txtIPMay.Text.Trim() == "")
+            else if (txtIPMay.Text.Trim() == "")
             {
-                frmMessageBox.Instance.ShowFrmMessageBox(frmMessageBox.StatusResult.Warning, "IP Máy Không Được Để Trống" + Environment.NewLine + "IP Máy Không Được Trùng");
+                frmMessageBox.Instance.ShowFrmMessageBox(frmMessageBox.StatusResult.Warning, "IP Máy Không Được Để Trống");
                 return false;
             }
             return true;
@@ -175,9 +199,9 @@ namespace GiaoDienPBL3.User_Controls
                 frmMessageBox.Instance.ShowFrmMessageBox(frmMessageBox.StatusResult.Warning, "Mã Giảm Giá Không Được Để Trống");
                 return false;
             }
-            else if (DiscountBLL.Instance.CheckDiscountName(cboTenGiamGia.Text.Trim()) || cboTenGiamGia.Text.Trim() == "")
+            else if (cboTenGiamGia.Text.Trim() == "")
             {
-                frmMessageBox.Instance.ShowFrmMessageBox(frmMessageBox.StatusResult.Warning, "Tên Giảm Giá Không Được Để Trống" + Environment.NewLine + "Tên Giảm Giá Không Được Trùng");
+                frmMessageBox.Instance.ShowFrmMessageBox(frmMessageBox.StatusResult.Warning, "Tên Giảm Giá Không Được Để Trống");
                 return false;
             }
             else if (int.TryParse(txtPhanTramGiamGia.Text, out _) == false)
@@ -203,6 +227,16 @@ namespace GiaoDienPBL3.User_Controls
                     {
                         if (CheckValidTypeComputer())
                         {
+                            if (TypeComputerBLL.Instance.CheckTypeComputerName(cboTenLoaiMay.Text.Trim()))
+                            {
+                                frmMessageBox.Instance.ShowFrmMessageBox(frmMessageBox.StatusResult.Warning, "Máy Đã Tồn Tại, Vui Lòng Đổi");
+                                return;
+                            }
+                            if (TypeComputerBLL.Instance.CheckColorId(txtMau.Text))
+                            {
+                                frmMessageBox.Instance.ShowFrmMessageBox(frmMessageBox.StatusResult.Warning, "Màu Đã Tồn Tại, Vui Lòng Đổi");
+                                return;
+                            }
                             TypeComputerBLL.Instance.AddNewTypeComputer(new TypeComputer
                             {
                                 TypeId = txtMaLoaiMay.Text,
@@ -217,6 +251,16 @@ namespace GiaoDienPBL3.User_Controls
                     {
                         if (CheckValidIP())
                         {
+                            if (ComputerBLL.Instance.CheckIPByComputerName(cboSoMay.Text))
+                            {
+                                frmMessageBox.Instance.ShowFrmMessageBox(frmMessageBox.StatusResult.Warning, "Máy Này Đã Có IP, Không Thể Thêm");
+                                return;
+                            }
+                            if (ComputerBLL.Instance.CheckIPComputer(txtIPMay.Text.Trim()))
+                            {
+                                frmMessageBox.Instance.ShowFrmMessageBox(frmMessageBox.StatusResult.Warning, "IP Này Đã Tồn Tại, Không Thể Thêm");
+                                return;
+                            }
                             ComputerBLL.Instance.AddIPComputer(txtMaMayTinh.Text.Trim(), txtIPMay.Text.Trim());
                             frmMessageBox.Instance.ShowFrmMessageBox(frmMessageBox.StatusResult.Success, "Thêm IP Thành Công");
                         }
@@ -225,6 +269,11 @@ namespace GiaoDienPBL3.User_Controls
                     {
                         if (CheckValidDiscount())
                         {
+                            if (DiscountBLL.Instance.CheckDiscountName(cboTenGiamGia.Text.Trim()))
+                            {
+                                frmMessageBox.Instance.ShowFrmMessageBox(frmMessageBox.StatusResult.Warning, "Tên Giảm Giá Không Được Trùng");
+                                return;
+                            }
                             DiscountBLL.Instance.AddNewDiscount(new Discount
                             {
                                 DiscountId = txtMaGiamGia.Text.Trim(),
@@ -233,6 +282,82 @@ namespace GiaoDienPBL3.User_Controls
                                 TypeCustomer = (cboLoaiKhach.SelectedIndex == 1)
                             });
                             frmMessageBox.Instance.ShowFrmMessageBox(frmMessageBox.StatusResult.Success, "Thêm Giảm Giá Thành Công");
+                        }
+                    }
+                }
+                else if (lastButton.Name == "btnSua")
+                {
+                    if (lastButtonCaiDat.Name == "btnCaiDatLoaiMay")
+                    {
+                        if (TypeComputerBLL.Instance.CheckColorIdToEdit(txtMaLoaiMay.Text.Trim(), txtMau.Text.Trim()))
+                        {
+                            frmMessageBox.Instance.ShowFrmMessageBox(frmMessageBox.StatusResult.Warning, "Mã Màu Này Đã Tồn Tại, Vui Lòng Đổi");
+                            return;
+                        }
+                        if (CheckValidTypeComputer())
+                        {
+                            TypeComputerBLL.Instance.EditTypeComputer(new TypeComputer
+                            {
+                                TypeId = txtMaLoaiMay.Text,
+                                ColorId = txtMau.Text,
+                                NameType = cboTenLoaiMay.Text,
+                                Price = (float)Convert.ToDouble(txtGia.Text),
+                            });
+                            frmMessageBox.Instance.ShowFrmMessageBox(frmMessageBox.StatusResult.Success, "Sửa Loại Máy Thành Công");
+                        }
+                    }
+                    else if (lastButtonCaiDat.Name == "btnCaiDatIP")
+                    {
+                        if (CheckValidIP())
+                        {
+                            if (ComputerBLL.Instance.CheckIPComputer(txtIPMay.Text.Trim()))
+                            {
+                                frmMessageBox.Instance.ShowFrmMessageBox(frmMessageBox.StatusResult.Warning, "IP Này Đã Tồn Tại, Vui Lòng Đổi");
+                                return;
+                            }
+                            ComputerBLL.Instance.AddIPComputer(txtMaMayTinh.Text.Trim(), txtIPMay.Text.Trim());
+                            frmMessageBox.Instance.ShowFrmMessageBox(frmMessageBox.StatusResult.Success, "Sửa IP Thành Công");
+                        }
+                    }
+                    else if (lastButtonCaiDat.Name == "btnCaiDatGiamGia")
+                    {
+                        if (CheckValidDiscount())
+                        {
+                            DiscountBLL.Instance.EditDiscount(new Discount
+                            {
+                                DiscountId = txtMaGiamGia.Text.Trim(),
+                                DiscountName = cboTenGiamGia.Text.Trim(),
+                                DiscountPercent = (float)Convert.ToDouble(txtPhanTramGiamGia.Text),
+                                TypeCustomer = (cboLoaiKhach.SelectedIndex == 1)
+                            });
+                            frmMessageBox.Instance.ShowFrmMessageBox(frmMessageBox.StatusResult.Success, "Sửa Giảm Giá Thành Công");
+                        }
+                    }
+                }
+                else
+                {
+                    if (lastButtonCaiDat.Name == "btnCaiDatLoaiMay")
+                    {
+                        if (CheckValidTypeComputer())
+                        {
+                            TypeComputerBLL.Instance.DeleteTypeComputer(txtMaLoaiMay.Text.Trim());
+                            frmMessageBox.Instance.ShowFrmMessageBox(frmMessageBox.StatusResult.Success, "Xóa Loại Máy Thành Công");
+                        }
+                    }
+                    else if (lastButtonCaiDat.Name == "btnCaiDatIP")
+                    {
+                        if (CheckValidIP())
+                        {
+                            ComputerBLL.Instance.AddIPComputer(txtMaMayTinh.Text.Trim(), "");
+                            frmMessageBox.Instance.ShowFrmMessageBox(frmMessageBox.StatusResult.Success, "Xóa IP Thành Công");
+                        }
+                    }
+                    else if (lastButtonCaiDat.Name == "btnCaiDatGiamGia")
+                    {
+                        if (CheckValidDiscount())
+                        {
+                            DiscountBLL.Instance.RemoveDiscount(txtMaGiamGia.Text.Trim());
+                            frmMessageBox.Instance.ShowFrmMessageBox(frmMessageBox.StatusResult.Success, "Xóa Giảm Giá Thành Công");
                         }
                     }
                 }

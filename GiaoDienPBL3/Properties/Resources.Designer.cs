@@ -523,6 +523,26 @@ namespace GiaoDienPBL3.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_user_menu_male_30 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-user-menu-male-30", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_user_menu_male_30__1_ {
+            get {
+                object obj = ResourceManager.GetObject("icons8-user-menu-male-30 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_workstation_35 {
             get {
                 object obj = ResourceManager.GetObject("icons8-workstation-35", resourceCulture);

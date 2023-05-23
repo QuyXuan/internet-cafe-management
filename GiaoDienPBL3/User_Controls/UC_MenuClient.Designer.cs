@@ -55,10 +55,10 @@ namespace GiaoDienPBL3.User_Controls
             this.btnYeuCau = new Guna.UI2.WinForms.Guna2Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panelMonAn = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.msLamMoi = new Guna.UI2.WinForms.Guna2ContextMenuStrip();
             this.msLamMoiMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.guna2CustomGradientPanel1.SuspendLayout();
             this.panelThongTinChiTietMonAn.SuspendLayout();
             this.panelCaiDatVaThongTin.SuspendLayout();
@@ -67,8 +67,8 @@ namespace GiaoDienPBL3.User_Controls
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.msLamMoi.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2CustomGradientPanel1
@@ -437,34 +437,13 @@ namespace GiaoDienPBL3.User_Controls
             // 
             // panelMonAn
             // 
+            this.panelMonAn.AutoScroll = true;
             this.panelMonAn.ContextMenuStrip = this.msLamMoi;
             this.panelMonAn.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMonAn.Location = new System.Drawing.Point(0, 0);
             this.panelMonAn.Name = "panelMonAn";
             this.panelMonAn.Size = new System.Drawing.Size(884, 658);
             this.panelMonAn.TabIndex = 0;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1249, 68);
-            this.panel1.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1249, 68);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Quản Lý Menu Món Ăn/Nước Uống";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // msLamMoi
             // 
@@ -488,9 +467,31 @@ namespace GiaoDienPBL3.User_Controls
             this.msLamMoiMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.msLamMoiMenu.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.msLamMoiMenu.Name = "msLamMoiMenu";
-            this.msLamMoiMenu.Size = new System.Drawing.Size(210, 24);
+            this.msLamMoiMenu.Size = new System.Drawing.Size(183, 24);
             this.msLamMoiMenu.Text = "Làm Mới Menu";
             this.msLamMoiMenu.Click += new System.EventHandler(this.msLamMoiMenu_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1249, 68);
+            this.panel1.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(1249, 68);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Quản Lý Menu Món Ăn/Nước Uống";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // UC_MenuClient
             // 
@@ -510,8 +511,8 @@ namespace GiaoDienPBL3.User_Controls
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.panel4.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
             this.msLamMoi.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

@@ -94,3 +94,4 @@ C:\Users\ADMIN\source\repos\pbl3lan2\GiaoDienPBL3\obj\Debug\GiaoDienPBL3.exe
 C:\Users\ADMIN\source\repos\pbl3lan2\GiaoDienPBL3\obj\Debug\GiaoDienPBL3.pdb
 C:\Users\ADMIN\source\repos\pbl3lan2\GiaoDienPBL3\obj\Debug\GiaoDienPBL3.User_Controls.UC_CaiDatChung.resources
 E:\LEARN\PBL3\PBL3myCODE\DemoPBL03_GUI\DemoPBL03_GUI\GiaoDienPBL3\obj\Debug\GiaoDienPBL3.User_Controls.UC_CaiDatChung.resources
+C:\Users\ADMIN\source\repos\pbl3lan2\GiaoDienPBL3\obj\Debug\GiaoDienPBL3.User_Controls.UC_ThongTinCaNhan.resources

@@ -67,6 +67,17 @@ namespace BLL
                 }
             }
         }
+        public void EditPassword(string accountId, string password)
+        {
+            using (var context = new QLNETDBContext())
+            {
+                if (context == null) return;
+                var account = context.Accounts.FirstOrDefault(p => p.AccountId == accountId);
+                if (account == null) return;
+                account.Password = password;
+                context.SaveChanges();
+            }
+        }
         //hàm trả về cặp giá trị là tên và vai trò
         public KeyValuePair<string, string>? GetTenVaVaiTro(string accountId)
         {
@@ -141,22 +152,21 @@ namespace BLL
                     return null;
                 }
                 var account = context.Accounts.FirstOrDefault(p => p.AccountId == accountID);
-                string message = null;
                 if (account.Password != oldPass)
                 {
-                    return message = "Mật Khẩu Sai";
+                    return "Mật Khẩu Sai";
                 }
                 if(newPass.Length < 8 || newPass.Length > 15 || newPass.Contains(" "))
                 {
-                    return message = "Mật khẩu từ 8-15 kí tự, không chứa không trắng";
+                    return "Mật Khẩu Từ 8-15 Ký Tự, Không Chứa Khoảng Trắng";
                 }
                 if (newPass != confirmPass)
                 {
-                    return message = "Mật khẩu Không Khớp";
+                    return "Mật Khẩu Không Khớp";
                 }
                 account.Password = newPass;
                 context.SaveChanges();
-                return message;
+                return "Thay Đổi Mật Khẩu Thành Công";
             }
         }
         public string GetUserNameByAccountId(string accountId)
