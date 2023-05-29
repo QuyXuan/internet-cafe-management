@@ -22,5 +22,7 @@ namespace DTO
         public virtual Bill Bill { get; set; }
 
         public Nullable<float> Quantity { get; set; }
+
+        public Nullable<float> Price { get; set; }
     }
 }

@@ -121,7 +121,8 @@ namespace BLL
                 var listProduct = context.BillProducts.Where(p => p.BillId == billId).Select(p => new
                 {
                     p.ProductId,
-                    p.Quantity
+                    p.Quantity,
+                    p.Price
                 }).ToList();
                 if (listProduct == null) return null;
                 var productList = new List<ProductIdNameQuantityPrice>();
@@ -132,7 +133,7 @@ namespace BLL
                     productIdNameQuantity.ProductId = product.ProductId;
                     productIdNameQuantity.ProductName = productTemp.ProductName;
                     productIdNameQuantity.Quantity = product.Quantity ?? 0;
-                    productIdNameQuantity.SellingPrice = productTemp.SellingPrice ?? 0;
+                    productIdNameQuantity.SellingPrice = product.Price ?? 0;
                     productList.Add(productIdNameQuantity);
                 }
                 return productList;

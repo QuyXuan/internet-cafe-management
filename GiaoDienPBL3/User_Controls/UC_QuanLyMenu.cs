@@ -273,7 +273,8 @@ namespace GiaoDienPBL3.UC
                 {
                     BillId = txtMaHoaDon.Text,
                     ProductId = ProductBLL.Instance.GetProductByProductName(myUC_ChiTietMonAn.TextTenMonAn).ProductId,
-                    Quantity = (float)Convert.ToDouble(myUC_ChiTietMonAn.TextSoLuongMonAn)
+                    Quantity = (float)Convert.ToDouble(myUC_ChiTietMonAn.TextSoLuongMonAn),
+                    Price = (float)Convert.ToDouble(myUC_ChiTietMonAn.TextGiaMonAn.Split('.')[0])
                 };
                 listBillProduct.Add(billProduct);
             }
