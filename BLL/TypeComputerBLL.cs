@@ -155,5 +155,13 @@ namespace BLL
                 context.SaveChanges();
             }
         }
+        public bool CheckTypeIsUsing(string typeId)
+        {
+            using (var context = new QLNETDBContext())
+            {
+                if (context == null) return false;
+                return context.Computers.Any(p => p.TypeId == typeId);
+            }
+        }
     }
 }

@@ -20,5 +20,7 @@ namespace DTO
         [Column(TypeName = "varchar")]
         public string BillId { get; set; }
         public virtual Bill Bill { get; set; }
+
+        public Nullable<float> DiscountPercent { get; set; }
     }
 }

@@ -105,7 +105,7 @@ namespace BLL
                 if (context == null) return;
                 var discount = context.Discounts.FirstOrDefault(p => p.DiscountId == discountId);
                 if (discount == null) return;
-                context.Discounts.Remove(discount);
+                discount.DiscountPercent = 0;
                 context.SaveChanges();
             }
         }

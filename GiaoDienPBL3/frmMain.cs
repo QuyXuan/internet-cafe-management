@@ -89,6 +89,7 @@ namespace GiaoDienPBL3
             btnQuanLyNhanVien.Checked = false;
             btnCaiDat.Checked = false;
             btnTrangChu.Checked = false;
+            btnThongTinNhanVien.Checked = false;
         }
 
         private void SetOnCheckStateButton(Guna2Button btn)
@@ -154,6 +155,7 @@ namespace GiaoDienPBL3
         {
             Guna2Button btn = sender as Guna2Button;
             SetOnCheckStateButton(btn);
+            HideSubMenu();
             //ShowSubMenu(panelCaiDat);
             AddUserControlOnBackGround(myUC_CaiDatChung);
         }
@@ -222,6 +224,9 @@ namespace GiaoDienPBL3
 
         private void btnThongTinNhanVien_Click(object sender, EventArgs e)
         {
+            Guna2Button btn = sender as Guna2Button;
+            SetOnCheckStateButton(btn);
+            HideSubMenu();
             AddUserControlOnBackGround(myUC_ThongTinCaNhan);
         }
     }

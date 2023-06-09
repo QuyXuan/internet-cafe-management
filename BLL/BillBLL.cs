@@ -144,14 +144,14 @@ namespace BLL
             using (var context = new QLNETDBContext())
             {
                 if (context == null) return null;
-                var listDiscount = context.BillDiscounts.Where(p => p.BillId == billId).Select(p => new { p.DiscountId }).ToList();
+                var listDiscount = context.BillDiscounts.Where(p => p.BillId == billId).ToList();
                 if (listDiscount == null) return null;
                 var discountList = new List<KeyValuePair<string, float?>>();
                 foreach (var discount in listDiscount)
                 {
                     KeyValuePair<string, float?> discountKVP;
                     var discountTemp = context.Discounts.FirstOrDefault(p => p.DiscountId == discount.DiscountId);
-                    discountKVP = new KeyValuePair<string, float?>(discountTemp.DiscountName, discountTemp.DiscountPercent);
+                    discountKVP = new KeyValuePair<string, float?>(discountTemp.DiscountName, discount.DiscountPercent);
                     discountList.Add(discountKVP);
                 }
                 return discountList;

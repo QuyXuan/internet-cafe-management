@@ -296,7 +296,8 @@ namespace GiaoDienPBL3.UC
                     listBillDiscout.Add(new BillDiscount
                     {
                         BillId = txtMaHoaDon.Text,
-                        DiscountId = discount.DiscountId
+                        DiscountId = discount.DiscountId,
+                        DiscountPercent = discount.DiscountPercent
                     });
                     TotalDiscount += discount.DiscountPercent ?? 0;
                 }

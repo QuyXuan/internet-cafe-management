@@ -201,6 +201,7 @@ namespace GiaoDienPBL3.User_Controls
             List<KeyValuePair<string, float?>> discountList = BillBLL.Instance.GetListDiscountByBillId(billId);
             foreach (KeyValuePair<string, float?> discount in discountList)
             {
+                if (discount.Value == 0) continue;
                 UC_ChiTietMonAn myUC_ChiTietMonAn = new UC_ChiTietMonAn();
                 myUC_ChiTietMonAn.TextGiaMonAn = discount.Key;
                 myUC_ChiTietMonAn.TextTenMonAn = discount.Value + "%";

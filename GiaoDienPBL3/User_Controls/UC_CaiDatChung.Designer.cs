@@ -57,6 +57,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.btnCaiDatGiamGia = new Guna.UI2.WinForms.Guna2Button();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.btnChonMau = new Guna.UI2.WinForms.Guna2Button();
             this.cboTenLoaiMay = new System.Windows.Forms.ComboBox();
             this.txtMau = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtGia = new Guna.UI2.WinForms.Guna2TextBox();
@@ -68,7 +69,6 @@
             this.btnCaiDatLoaiMay = new Guna.UI2.WinForms.Guna2Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnChonMau = new Guna.UI2.WinForms.Guna2Button();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.guna2CustomGradientPanel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -477,6 +477,7 @@
             this.txtMaGiamGia.Name = "txtMaGiamGia";
             this.txtMaGiamGia.PasswordChar = '\0';
             this.txtMaGiamGia.PlaceholderText = "";
+            this.txtMaGiamGia.ReadOnly = true;
             this.txtMaGiamGia.SelectedText = "";
             this.txtMaGiamGia.Size = new System.Drawing.Size(291, 25);
             this.txtMaGiamGia.TabIndex = 9;
@@ -560,6 +561,25 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(594, 312);
             this.panel4.TabIndex = 0;
+            // 
+            // btnChonMau
+            // 
+            this.btnChonMau.BorderRadius = 8;
+            this.btnChonMau.BorderThickness = 2;
+            this.btnChonMau.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnChonMau.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnChonMau.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnChonMau.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnChonMau.Enabled = false;
+            this.btnChonMau.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnChonMau.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChonMau.ForeColor = System.Drawing.Color.White;
+            this.btnChonMau.Location = new System.Drawing.Point(293, 260);
+            this.btnChonMau.Name = "btnChonMau";
+            this.btnChonMau.Size = new System.Drawing.Size(180, 45);
+            this.btnChonMau.TabIndex = 12;
+            this.btnChonMau.Text = "Chọn Màu";
+            this.btnChonMau.Click += new System.EventHandler(this.btnChonMau_Click);
             // 
             // cboTenLoaiMay
             // 
@@ -732,25 +752,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Cài Đặt Chung";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // btnChonMau
-            // 
-            this.btnChonMau.BorderRadius = 8;
-            this.btnChonMau.BorderThickness = 2;
-            this.btnChonMau.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnChonMau.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnChonMau.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnChonMau.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnChonMau.Enabled = false;
-            this.btnChonMau.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnChonMau.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChonMau.ForeColor = System.Drawing.Color.White;
-            this.btnChonMau.Location = new System.Drawing.Point(293, 260);
-            this.btnChonMau.Name = "btnChonMau";
-            this.btnChonMau.Size = new System.Drawing.Size(180, 45);
-            this.btnChonMau.TabIndex = 12;
-            this.btnChonMau.Text = "Chọn Màu";
-            this.btnChonMau.Click += new System.EventHandler(this.btnChonMau_Click);
             // 
             // UC_CaiDatChung
             // 

@@ -338,32 +338,29 @@ namespace GiaoDienPBL3.User_Controls
                 {
                     if (lastButtonCaiDat.Name == "btnCaiDatLoaiMay")
                     {
-                        if (CheckValidTypeComputer())
+                        if (TypeComputerBLL.Instance.CheckTypeIsUsing(txtMaLoaiMay.Text.Trim()))
                         {
-                            TypeComputerBLL.Instance.DeleteTypeComputer(txtMaLoaiMay.Text.Trim());
-                            frmMessageBox.Instance.ShowFrmMessageBox(frmMessageBox.StatusResult.Success, "Xóa Loại Máy Thành Công");
+                            frmMessageBox.Instance.ShowFrmMessageBox(frmMessageBox.StatusResult.Warning, "Loại Máy Này Đang Được Sử Dụng Không Thể Xóa Được");
+                            return;
                         }
+                        TypeComputerBLL.Instance.DeleteTypeComputer(txtMaLoaiMay.Text.Trim());
+                        frmMessageBox.Instance.ShowFrmMessageBox(frmMessageBox.StatusResult.Success, "Xóa Loại Máy Thành Công");
                     }
                     else if (lastButtonCaiDat.Name == "btnCaiDatIP")
                     {
-                        if (CheckValidIP())
-                        {
-                            ComputerBLL.Instance.AddIPComputer(txtMaMayTinh.Text.Trim(), "");
-                            frmMessageBox.Instance.ShowFrmMessageBox(frmMessageBox.StatusResult.Success, "Xóa IP Thành Công");
-                        }
+                        ComputerBLL.Instance.AddIPComputer(txtMaMayTinh.Text.Trim(), "");
+                        frmMessageBox.Instance.ShowFrmMessageBox(frmMessageBox.StatusResult.Success, "Xóa IP Thành Công");
                     }
                     else if (lastButtonCaiDat.Name == "btnCaiDatGiamGia")
                     {
-                        if (CheckValidDiscount())
-                        {
-                            DiscountBLL.Instance.RemoveDiscount(txtMaGiamGia.Text.Trim());
-                            frmMessageBox.Instance.ShowFrmMessageBox(frmMessageBox.StatusResult.Success, "Xóa Giảm Giá Thành Công");
-                        }
+                        DiscountBLL.Instance.RemoveDiscount(txtMaGiamGia.Text.Trim());
+                        frmMessageBox.Instance.ShowFrmMessageBox(frmMessageBox.StatusResult.Success, "Xóa Giảm Giá Thành Công");
                     }
                 }
             }
             SetAllButtonEnableAndInvisible();
             SetDisable();
+            SetData();
             //SetEnableComboboxAndTextBox(false);
         }
         private void SetEnableTypeComputer(bool status)
@@ -453,11 +450,11 @@ namespace GiaoDienPBL3.User_Controls
             txtPhanTramGiamGia.Text = discount.DiscountPercent + " %";
             if (discount.TypeCustomer == true)
             {
-                cboLoaiKhach.SelectedIndex = 0;
+                cboLoaiKhach.SelectedIndex = 1;
             }
             else
             {
-                cboLoaiKhach.SelectedIndex = 1;
+                cboLoaiKhach.SelectedIndex = 0;
             }
         }
     }
