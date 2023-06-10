@@ -162,6 +162,9 @@ namespace GiaoDienPBL3.User_Controls
                     TotalTime = 60,
                     TypeCustomer = (cboLoaiKhach.SelectedIndex == 1)
                 });
+                
+                frmMain.myUC_QuanLyMenu.cboTenTaiKhoan.DataSource = AccountBLL.Instance.GetListAccount("Khách Hàng");
+                //cboTenTaiKhoan.DisplayMember = "UserName";
                 frmMessageBox.Instance.ShowFrmMessageBox(frmMessageBox.StatusResult.Success, "Đăng Ký Tài Khoản Thành Công");
                 dgvQuanLyThongTinKhachHang.Rows.Add(row);
                 btnHuy.PerformClick();

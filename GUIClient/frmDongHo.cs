@@ -82,6 +82,7 @@ namespace GUIClient
             frmclient.WindowState = FormWindowState.Maximized;
             frmclient.Show();
             frmclient.BringToFront();
+            frmClient.DongHo = null;
             Dispose();
         }
     }

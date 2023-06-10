@@ -172,6 +172,7 @@ namespace GiaoDienPBL3.UC
             }
             listUCThongTinHangHoa.Clear();
             txtMaHoaDon.Text = BillBLL.Instance.GetRandomBillId();
+            cboTenTaiKhoan.SelectedIndex = -1;
             txtMaKhachHang.Text = "";
             txtMaKhachHang.ReadOnly = false;
             txtMaNhanVien.Text = EmployeeId;

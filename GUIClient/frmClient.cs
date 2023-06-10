@@ -32,7 +32,7 @@ namespace GUIClient
         public static UC_NapGioChoi myUC_NapGioChoi;
         public static UC_DongHo myUC_DongHo;
         public static UC_HoaDonClient myUC_HoaDonClient;
-        public static frmDongHo DongHo;
+        public static frmDongHo DongHo = null;
         private bool AccessMenu = false;
 
         public frmClient(string accountId, Computer computer, bool Role, bool CheckComputer)

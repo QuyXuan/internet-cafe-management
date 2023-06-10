@@ -33,7 +33,7 @@ namespace BLL
                 {
                     return null;
                 }
-                var discounts = context.Discounts.Where(p => p.TypeCustomer == TypeCustomer).ToList();
+                var discounts = context.Discounts.Where(p => p.TypeCustomer == TypeCustomer && p.DiscountPercent > 0).ToList();
                 return discounts;
             }
         }
