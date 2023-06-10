@@ -67,9 +67,9 @@ namespace BLL
                     return 0;
                 }
                 //Money = Money / 1000;
-                var MayThuong = context.TypeComputers.FirstOrDefault(p => p.NameType == "Máy Thường");
-                float Time = (float)(Money / MayThuong.Price) * 60;
-                return ChangeTime(Time, NameType);
+                var MayHienTai = context.TypeComputers.FirstOrDefault(p => p.NameType == NameType);
+                float Time = (float)(Money / MayHienTai.Price) * 60;
+                return Time;
             }
         }
 

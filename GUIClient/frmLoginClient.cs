@@ -81,11 +81,11 @@ namespace GUIClient
                     Client.ShowDialog();
                 }
 
-                if (computer != null)
+                else if (computer != null)
                 {
                     if (computer.Status != "Bảo Trì")
                     {
-                        if (checkTK)
+                        if (checkTK && Role == true)
                         {
                             if (ComputerBLL.Instance.CheckLogin(AccountId))
                             {
