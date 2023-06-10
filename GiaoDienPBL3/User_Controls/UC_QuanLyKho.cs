@@ -25,6 +25,7 @@ namespace GiaoDienPBL3.UC
         {
             foreach (Product product in ProductBLL.Instance.GetListProduct())
             {
+                if (product.ProductId == "sp0012") continue;
                 string typeProduct = product.Type;
                 if (typeProduct == "Đồ Ăn")
                 {

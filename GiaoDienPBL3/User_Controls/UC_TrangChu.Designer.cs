@@ -35,7 +35,7 @@
             // guna2PictureBox1
             // 
             this.guna2PictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2PictureBox1.Image = global::GiaoDienPBL3.Properties.Resources._330983559_925630818639504_808078382580386074_n;
+            this.guna2PictureBox1.Image = global::GiaoDienPBL3.Properties.Resources.posterInternet;
             this.guna2PictureBox1.ImageRotate = 0F;
             this.guna2PictureBox1.Location = new System.Drawing.Point(0, 0);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
