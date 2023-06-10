@@ -58,43 +58,48 @@ namespace GUIClient
         {
             if (ConnectionBLL.Instance.hasInternetAccess())
             {
+                string AccountId = null;
+                bool Role = false, checkTK = false;
                 if (AccountBLL.Instance.CheckDangNhap(txtTaiKhoan.Text, txtMatKhau.Text))
                 {
-                    string AccountId = AccountBLL.Instance.GetAccountIdByUserName(txtTaiKhoan.Text);
+                    checkTK = true;
+
+                    AccountId = AccountBLL.Instance.GetAccountIdByUserName(txtTaiKhoan.Text);
                     KeyValuePair<string, string>? TenVaVaiTro = AccountBLL.Instance.GetTenVaVaiTro(AccountId);
 
-                    bool Role = false;
                     if (TenVaVaiTro == null) Role = true;
-
-                    Computer computer = ComputerBLL.Instance.GetComputerByIP();
-                    bool CheckComputer = false;
-                    if (computer == null) CheckComputer = true;
-                    if(ComputerBLL.Instance.CheckLogin(AccountId))
-                    {
-                        if (Role == false)
-                        {
-                            this.Hide();
-                            frmClient Client = new frmClient(AccountId, computer, Role, CheckComputer);
-                            Client.ShowDialog();
-                        }
-                        else
-                        {
-                            if (computer != null)
-                            {
-                                if (computer.Status != "Bảo Trì")
-                                {
-                                    this.Hide();
-                                    frmClient Client = new frmClient(AccountId, computer, Role, CheckComputer);
-                                    Client.ShowDialog();
-                                }
-                                else ShowThongBao("Máy đang bảo trì" + Environment.NewLine + "VUI LÒNG TRỞ LẠI SAU!!!");
-                            }
-                            else ShowThongBao("Máy không nằm trong hệ thống" + Environment.NewLine + "VUI LÒNG KIỂM TRA LẠI!!!");
-                        }
-                    }
-                    else ShowThongBao("Tài khoản của bạn đang được đăng nhập vào máy khác" + Environment.NewLine + "VUI LÒNG KIỂM TRA LẠI!!!");
                 }
-                else ShowThongBao("Tên Tài Khoản Hoặc Mật Khẩu Sai" + Environment.NewLine + "VUI LÒNG NHẬP LẠI!!!");
+
+                Computer computer = ComputerBLL.Instance.GetComputerByIP();
+                bool CheckComputer = false;
+                if (computer == null) CheckComputer = true;
+
+                if (checkTK && Role == false)
+                {
+                    this.Hide();
+                    frmClient Client = new frmClient(AccountId, computer, Role, CheckComputer);
+                    Client.ShowDialog();
+                }
+
+                if (computer != null)
+                {
+                    if (computer.Status != "Bảo Trì")
+                    {
+                        if (checkTK)
+                        {
+                            if (ComputerBLL.Instance.CheckLogin(AccountId))
+                            {
+                                this.Hide();
+                                frmClient Client = new frmClient(AccountId, computer, Role, CheckComputer);
+                                Client.ShowDialog();
+                            }
+                            else ShowThongBao("Tài khoản của bạn đang được đăng nhập vào máy khác" + Environment.NewLine + "VUI LÒNG KIỂM TRA LẠI!!!");
+                        }
+                        else ShowThongBao("Tên Tài Khoản Hoặc Mật Khẩu Sai" + Environment.NewLine + "VUI LÒNG NHẬP LẠI!!!");
+                    }
+                    else ShowThongBao("Máy đang bảo trì" + Environment.NewLine + "VUI LÒNG TRỞ LẠI SAU!!!");
+                }
+                else ShowThongBao("Máy không nằm trong hệ thống" + Environment.NewLine + "VUI LÒNG KIỂM TRA LẠI!!!");
             }
             else ShowThongBao("Mất kết nối" + Environment.NewLine + "VUI LÒNG KẾT NỐI MẠNG!!!");
         }
