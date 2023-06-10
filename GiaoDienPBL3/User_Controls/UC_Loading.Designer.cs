@@ -67,7 +67,7 @@
             // 
             this.circlerProgressBarLoad.animated = true;
             this.circlerProgressBarLoad.animationIterval = 0;
-            this.circlerProgressBarLoad.animationSpeed = 300;
+            this.circlerProgressBarLoad.animationSpeed = 1500;
             this.circlerProgressBarLoad.BackColor = System.Drawing.Color.Transparent;
             this.circlerProgressBarLoad.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("circlerProgressBarLoad.BackgroundImage")));
             this.circlerProgressBarLoad.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F);
