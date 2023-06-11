@@ -183,7 +183,7 @@ namespace GiaoDienPBL3.UC
                 AddComputerOnPanel(computer);
             }
             int Online = ComputerBLL.Instance.GetComputerByStatus("Đang Hoạt Động").Count();
-            int All = ComputerBLL.Instance.GetListComputer().Count();
+            int All = ComputerBLL.Instance.GetListComputer().Count() - 1;
             lblCountOnline.Text = Online + "/" + All;
         }
         private void msLamMoiDanhSachMay_Click(object sender, EventArgs e)
